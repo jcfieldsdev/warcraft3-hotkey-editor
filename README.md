@@ -1,6 +1,6 @@
 # warcraft3-hotkey-editor
 
-A hotkey editor for Warcraft III written in JavaScript. Includes all units and structures from standard multiplayer and the official campaigns.
+A [hotkey editor for Warcraft III](https://jcfields.gitlab.io/warcraft3-hotkey-editor/) written in JavaScript. Includes all units and structures from standard multiplayer and the official campaigns.
 
 ## Authors
 
