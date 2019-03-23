@@ -1,0 +1,5598 @@
+[cmdmove]
+Tip=|cffffcc00M|rove
+Hotkey=M
+Buttonpos=0,0
+
+[cmdattack]
+Tip=|cffffcc00A|rttack
+Hotkey=A
+Buttonpos=3,0
+
+[cmdattackground]
+Tip=Attack |cffffcc00G|rround
+Hotkey=G
+Buttonpos=3,1
+
+[cmdbuild]
+Tip=|cffffcc00B|ruild Structure
+Hotkey=B
+Buttonpos=0,2
+
+[cmdbuildhuman]
+Tip=|cffffcc00B|ruild Structure
+Hotkey=B
+[ahbu]
+Buttonpos=0,2
+
+[cmdbuildorc]
+Tip=|cffffcc00B|ruild Structure
+Hotkey=B
+[aobu]
+Buttonpos=0,2
+
+[cmdbuildnightelf]
+Tip=Create |cffffcc00B|ruilding
+Hotkey=B
+[aebu]
+Buttonpos=0,2
+
+[cmdbuildundead]
+Tip=Summon |cffffcc00B|ruilding
+Hotkey=B
+[aubu]
+Buttonpos=0,2
+
+[cmdbuildnaga]
+Tip=|cffffcc00B|ruild Structure
+Hotkey=B
+[agbu]
+Buttonpos=0,2
+
+[cmdcancel]
+Tip=Cancel (|cffffcc00ESC|r)
+Hotkey=512
+Buttonpos=3,2
+
+[cmdcancelbuild]
+Tip=Cancel (|cffffcc00ESC|r)
+Hotkey=512
+Buttonpos=3,2
+
+[cmdholdpos]
+Tip=|cffffcc00H|rold Position
+Hotkey=H
+Buttonpos=2,0
+
+[cmdpatrol]
+Tip=|cffffcc00P|ratrol
+Hotkey=P
+Buttonpos=0,1
+
+[cmdrally]
+Tip=Set Rall|cffffcc00y|r Point
+Hotkey=Y
+Buttonpos=3,1
+
+[cmdselectskill]
+Tip=Her|cffffcc00o|r Abilities
+Hotkey=O
+Buttonpos=3,1
+
+[cmdstop]
+Tip=|cffffcc00S|rtop
+Hotkey=S
+Buttonpos=1,0
+
+[ahar]
+Tip=|cffffcc00G|rather
+Untip=R|cffffcc00e|rturn Resources
+Hotkey=G
+Unhotkey=E
+Buttonpos=3,1
+Unbuttonpos=3,1
+
+[ahrl]
+Tip=|cffffcc00G|rather
+Untip=R|cffffcc00e|rturn Resources
+Hotkey=G
+Unhotkey=E
+Buttonpos=3,1
+Unbuttonpos=3,1
+
+[arep]
+Tip=|cffffcc00R|repair
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=1,1
+
+[ahrp]
+Tip=|cffffcc00R|repair
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=1,1
+
+[anei]
+Tip=Select |cffffcc00U|rser
+Hotkey=U
+Buttonpos=3,2
+
+[ane2]
+Tip=Select |cffffcc00U|rser
+Hotkey=U
+Buttonpos=3,2
+
+[asds]
+Tip=Ka|cffffcc00b|room!
+Hotkey=B
+Buttonpos=0,2
+
+[ahr3]
+Tip=|cffffcc00G|rather
+Hotkey=G
+Buttonpos=3,1
+
+[aloa]
+Tip=|cffffcc00L|road
+Hotkey=L
+Buttonpos=0,2
+
+[adro]
+Tip=|cffffcc00U|rnload All
+Hotkey=U
+Buttonpos=1,2
+
+[slo3]
+Tip=|cffffcc00L|road
+Hotkey=L
+Buttonpos=0,2
+
+[sdro]
+Tip=|cffffcc00U|rnload All
+Hotkey=U
+Buttonpos=1,2
+
+[hdhw]
+Tip=Train |cffffcc00D|rragonhawk Rider
+Hotkey=D
+Buttonpos=0,0
+
+[amls]
+Tip=A|cffffcc00e|rrial Shackles
+Hotkey=E
+Buttonpos=0,2
+
+[aclf]
+Tip=|cffffcc00C|rloud
+Hotkey=C
+Buttonpos=1,2
+
+[hfoo]
+Tip=Train |cffffcc00F|rootman
+Hotkey=F
+Buttonpos=0,0
+
+[adef]
+Tip=|cffffcc00D|refend
+Untip=Stop |cffffcc00D|refend
+Hotkey=D
+Unhotkey=D
+Buttonpos=0,2
+Unbuttonpos=0,2
+
+[hgyr]
+Hotkey=F
+Tip=Train |cffffcc00F|rlying Machine
+Buttonpos=0,0
+
+[hkni]
+Hotkey=K
+Tip=Train |cffffcc00K|rnight
+Buttonpos=2,0
+
+[hmpr]
+Hotkey=P
+Tip=Train |cffffcc00P|rriest
+Buttonpos=1,0
+
+[ainf]
+Tip=Inner |cffffcc00F|rire
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=F
+Buttonpos=2,2
+
+[ahea]
+Tip=H|cffffcc00e|ral
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=E
+Buttonpos=0,2
+
+[adis]
+Tip=|cffffcc00D|rispel Magic
+Hotkey=D
+Buttonpos=1,2
+
+[hmtm]
+Tip=Train |cffffcc00M|rortar Team
+Hotkey=M
+Buttonpos=1,0
+
+[afla]
+Tip=|cffffcc00F|rlare
+Hotkey=F
+Buttonpos=0,2
+
+[hpea]
+Tip=Train |cffffcc00P|reasant
+Hotkey=P
+Buttonpos=0,0
+
+[hmil]
+Tip=Train Militia
+
+[amil]
+Tip=|cffffcc00C|rall to Arms
+Untip=Back to |cffffcc00W|rork
+Hotkey=C
+Unhotkey=W
+Buttonpos=1,2
+Unbuttonpos=1,2
+
+[amic]
+Tip=|cffffcc00C|rall to Arms
+Untip=Back to |cffffcc00W|rork
+Hotkey=C
+Unhotkey=W
+Buttonpos=1,2
+Unbuttonpos=1,2
+
+[hrif]
+Tip=Train |cffffcc00R|rifleman
+Hotkey=R
+Buttonpos=1,0
+
+[hsor]
+Tip=Train |cffffcc00S|rorceress
+Hotkey=S
+Buttonpos=0,0
+
+[aslo]
+Tip=Slo|cffffcc00w|r
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=W
+Buttonpos=0,2
+
+[aply]
+Tip=Polym|cffffcc00o|rrph
+Hotkey=O
+Buttonpos=2,2
+
+[aivs]
+Tip=|cffffcc00I|rnvisibility
+Hotkey=I
+Buttonpos=1,2
+
+[hspt]
+Tip=Train Spell |cffffcc00B|rreaker
+Hotkey=B
+Buttonpos=2,0
+
+[asps]
+Tip=Spell S|cffffcc00t|real
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=T
+Buttonpos=0,2
+
+[acmg]
+Tip=|cffffcc00C|rontrol Magic
+Hotkey=C
+Buttonpos=1,2
+
+[hmtt]
+Tip=Train Siege |cffffcc00E|rngine
+Hotkey=E
+Buttonpos=2,0
+
+[hrtt]
+Tip=Train Siege |cffffcc00E|rngine
+Hotkey=E
+Buttonpos=2,0
+
+[hgry]
+Tip=Train |cffffcc00G|rryphon Rider
+Hotkey=G
+Buttonpos=1,0
+
+[rhss]
+Tip=Research Control Ma|cffffcc00g|ric
+Hotkey=G
+Buttonpos=2,1
+
+[rhme]
+Tip=Upgrade to Iron Forged |cffffcc00S|rwords,Upgrade to Steel Forged |cffffcc00S|rwords,Upgrade to Mithril Forged |cffffcc00S|rwords
+Hotkey=S,S,S
+Buttonpos=0,0
+
+[rhra]
+Tip=Upgrade to Black |cffffcc00G|runpowder,Upgrade to Refined |cffffcc00G|runpowder,Upgrade to Imbued |cffffcc00G|runpowder
+Hotkey=G,G,G
+Buttonpos=1,0
+
+[rhar]
+Tip=Upgrade to Iron |cffffcc00P|rlating,Upgrade to Steel |cffffcc00P|rlating,Upgrade to Mithril |cffffcc00P|rlating
+Hotkey=P,P,P
+Buttonpos=0,1
+
+[rhla]
+Tip=Upgrade to Studded Leather |cffffcc00A|rrmor,Upgrade to Reinforced Leather |cffffcc00A|rrmor,Upgrade to Dragonhide |cffffcc00A|rrmor
+Hotkey=A,A,A
+Buttonpos=1,1
+
+[rhac]
+Tip=Upgrade to Improved |cffffcc00M|rasonry,Upgrade to Advanced |cffffcc00M|rasonry,Upgrade to Imbued |cffffcc00M|rasonry
+Hotkey=M,M,M
+Buttonpos=1,0
+
+[rhgb]
+Tip=Research Flying Machine |cffffcc00B|rombs
+Hotkey=B
+Buttonpos=0,1
+
+[rhlh]
+Tip=Improved |cffffcc00L|rumber Harvesting,Advanced |cffffcc00L|rumber Harvesting
+Hotkey=L,L
+Buttonpos=0,0
+
+[rhde]
+Tip=Research |cffffcc00D|refend
+Hotkey=D
+Buttonpos=0,2
+
+[rhan]
+Tip=Research |cffffcc00A|rnimal War Training
+Hotkey=A
+Buttonpos=2,2
+
+[rhpt]
+Tip=Pries|cffffcc00t|r Adept Training,Pries|cffffcc00t|r Master Training
+Hotkey=T,T
+Buttonpos=1,2
+
+[rhst]
+Tip=S|cffffcc00o|rrceress Adept Training,S|cffffcc00o|rrceress Master Training
+Hotkey=O,O
+Buttonpos=0,2
+
+[rhri]
+Tip=Upgrade to |cffffcc00L|rong Rifles
+Hotkey=L
+Buttonpos=1,2
+
+[rhse]
+Tip=Research |cffffcc00M|ragic Sentry
+Hotkey=M
+Buttonpos=2,2
+
+[rhfl]
+Tip=Research Fla|cffffcc00r|re
+Hotkey=R
+Buttonpos=1,2
+
+[rhhb]
+Tip=Research Storm |cffffcc00H|rammers
+Hotkey=H
+Buttonpos=1,2
+
+[rhrt]
+Tip=Research Barra|cffffcc00g|re
+Hotkey=G
+Buttonpos=2,1
+
+[rhpm]
+Tip=Research |cffffcc00B|rackpack
+Hotkey=B
+Buttonpos=3,0
+
+[rhfc]
+Tip=Research Flak |cffffcc00C|rannons
+Hotkey=C
+Buttonpos=0,2
+
+[rhfs]
+Tip=Research Fragmentation |cffffcc00S|rhards
+Hotkey=S
+Buttonpos=1,1
+
+[rhcd]
+Tip=Research |cffffcc00C|rloud
+Hotkey=C
+Buttonpos=0,2
+
+[halt]
+Hotkey=A
+Tip=Build |cffffcc00A|rltar of Kings
+Buttonpos=1,1
+
+[harm]
+Hotkey=W
+Tip=Build |cffffcc00W|rorkshop
+Buttonpos=3,1
+
+[hars]
+Hotkey=R
+Tip=Build A|cffffcc00r|rcane Sanctum
+Buttonpos=2,1
+
+[hbar]
+Hotkey=B
+Tip=Build |cffffcc00B|rarracks
+Buttonpos=1,0
+
+[hbla]
+Hotkey=S
+Tip=Build Black|cffffcc00s|rmith
+Buttonpos=3,0
+
+[hcas]
+Hotkey=U
+Tip=|cffffcc00U|rpgrade to Castle
+Buttonpos=0,2
+
+[hhou]
+Hotkey=F
+Tip=Build |cffffcc00F|rarm
+Buttonpos=0,1
+
+[hgra]
+Hotkey=G
+Tip=Build |cffffcc00G|rryphon Aviary
+Buttonpos=1,2
+
+[hctw]
+Hotkey=C
+Tip=Upgrade to |cffffcc00C|rannon Tower
+Buttonpos=1,2
+
+[hgtw]
+Hotkey=G
+Tip=Upgrade to |cffffcc00G|ruard Tower
+Buttonpos=0,2
+
+[hwtw]
+Hotkey=T
+Tip=Build Scout |cffffcc00T|rower
+Buttonpos=0,2
+
+[hatw]
+Hotkey=N
+Tip=Upgrade to Arca|cffffcc00n|re Tower
+Buttonpos=2,2
+
+[ahta]
+Tip=|cffffcc00R|reveal
+Hotkey=R
+Buttonpos=0,2
+
+[hvlt]
+Hotkey=V
+Tip=Build Arcane |cffffcc00V|rault
+Buttonpos=2,2
+
+[hlum]
+Hotkey=L
+Tip=Build |cffffcc00L|rumber Mill
+Buttonpos=2,0
+
+[hkee]
+Hotkey=U
+Tip=|cffffcc00U|rpgrade to Keep
+Buttonpos=0,2
+
+[htow]
+Hotkey=H
+Tip=Build Town |cffffcc00H|rall
+Buttonpos=0,0
+
+[hamg]
+Hotkey=A
+Tip=Summon |cffffcc00A|rrchmage
+Revivetip=Revive |cffffcc00A|rrchmage
+Awakentip=Revive |cffffcc00A|rrchmage
+Buttonpos=0,2
+
+[ahbz]
+Tip=|cffffcc00B|rlizzard - [|cffffcc00Level 1|r],|cffffcc00B|rlizzard - [|cffffcc00Level 2|r],|cffffcc00B|rlizzard - [|cffffcc00Level 3|r]
+Hotkey=B
+Researchtip=Learn |cffffcc00B|rlizzard - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ahwe]
+Tip=Summon |cffffcc00W|rater Elemental - [|cffffcc00Level 1|r],Summon |cffffcc00W|rater Elemental - [|cffffcc00Level 2|r],Summon |cffffcc00W|rater Elemental - [|cffffcc00Level 3|r]
+Researchtip=Learn Summon |cffffcc00W|rater Elemental - [|cffffcc00Level %d|r]
+Hotkey=W
+Researchhotkey=W
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[ahab]
+Tip=Brilliance Aura - [|cffffcc00Level 1|r],Brilliance Aura - [|cffffcc00Level 2|r],Brilliance Aura - [|cffffcc00Level 3|r]
+Researchtip=Learn B|cffffcc00r|rilliance Aura - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[ahmt]
+Tip=Mass |cffffcc00T|releport
+Hotkey=T
+Researchtip=Learn Mass |cffffcc00T|releport
+Researchhotkey=T
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[hmkg]
+Hotkey=M
+Tip=Summon |cffffcc00M|rountain King
+Revivetip=Revive |cffffcc00M|rountain King
+Awakentip=Revive |cffffcc00M|rountain King
+Buttonpos=1,2
+
+[ahtb]
+Tip=S|cffffcc00t|rorm Bolt - [|cffffcc00Level 1|r],S|cffffcc00t|rorm Bolt - [|cffffcc00Level 2|r],S|cffffcc00t|rorm Bolt - [|cffffcc00Level 3|r]
+Hotkey=T
+Researchtip=Learn S|cffffcc00t|rorm Bolt - [|cffffcc00Level %d|r]
+Researchhotkey=T
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ahtc]
+Tip=Thunder |cffffcc00C|rlap - [|cffffcc00Level 1|r],Thunder |cffffcc00C|rlap - [|cffffcc00Level 2|r],Thunder |cffffcc00C|rlap - [|cffffcc00Level 3|r]
+Hotkey=C
+Researchtip=Learn Thunder |cffffcc00C|rlap - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[ahbh]
+Tip=Bash - [|cffffcc00Level 1|r],Bash - [|cffffcc00Level 2|r],Bash - [|cffffcc00Level 3|r]
+Researchtip=Learn |cffffcc00B|rash - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[ahav]
+Tip=Activate A|cffffcc00v|ratar
+Untip=Deactivate A|cffffcc00v|ratar
+Hotkey=V
+Unhotkey=V
+Researchtip=Learn A|cffffcc00v|ratar
+Researchhotkey=V
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+
+[hpal]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=2,2
+
+[ahhb]
+Tip=Holy Ligh|cffffcc00t|r - [|cffffcc00Level 1|r],Holy Ligh|cffffcc00t|r - [|cffffcc00Level 2|r],Holy Ligh|cffffcc00t|r - [|cffffcc00Level 3|r]
+Hotkey=T
+Researchtip=Learn Holy Ligh|cffffcc00t|r - [|cffffcc00Level %d|r]
+Researchhotkey=T
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ahds]
+Tip=Activate |cffffcc00D|rivine Shield - [|cffffcc00Level 1|r],Activate |cffffcc00D|rivine Shield - [|cffffcc00Level 2|r],Activate |cffffcc00D|rivine Shield - [|cffffcc00Level 3|r]
+Untip=Deactivate |cffffcc00D|rivine Shield
+Hotkey=D
+Unhotkey=D
+Researchtip=Learn |cffffcc00D|rivine Shield - [|cffffcc00Level %d|r]
+Researchhotkey=D
+Buttonpos=1,2
+Unbuttonpos=1,2
+Researchbuttonpos=1,0
+
+[ahad]
+Tip=Devotion Aura - [|cffffcc00Level 1|r],Devotion Aura - [|cffffcc00Level 2|r],Devotion Aura - [|cffffcc00Level 3|r]
+Researchtip=Learn De|cffffcc00v|rotion Aura - [|cffffcc00Level %d|r]
+Researchhotkey=V
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[ahre]
+Tip=|cffffcc00R|resurrection
+Hotkey=R
+Researchtip=Learn |cffffcc00R|resurrection
+Researchhotkey=R
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[hblm]
+Hotkey=B
+Tip=Summon |cffffcc00B|rlood Mage
+Revivetip=Revive |cffffcc00B|rlood Mage
+Awakentip=Revive |cffffcc00B|rlood Mage
+Buttonpos=0,1
+
+[ahfs]
+Tip=|cffffcc00F|rlame Strike - [|cffffcc00Level 1|r],|cffffcc00F|rlame Strike - [|cffffcc00Level 2|r],|cffffcc00F|rlame Strike - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn |cffffcc00F|rlame Strike - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ahbn]
+Tip=|cffffcc00B|ranish - [|cffffcc00Level 1|r],|cffffcc00B|ranish - [|cffffcc00Level 2|r],|cffffcc00B|ranish - [|cffffcc00Level 3|r]
+Hotkey=B
+Researchtip=Learn |cffffcc00B|ranish - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[ahdr]
+Tip=Sipho|cffffcc00n|r Mana - [|cffffcc00Level 1|r],Sipho|cffffcc00n|r Mana - [|cffffcc00Level 2|r],Sipho|cffffcc00n|r Mana - [|cffffcc00Level 3|r]
+Hotkey=N
+Researchtip=Learn Sipho|cffffcc00n|r Mana - [|cffffcc00Level %d|r]
+Researchhotkey=N
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[ahpx]
+Tip=Phoeni|cffffcc00x|r
+Hotkey=X
+Researchtip=Learn Phoeni|cffffcc00x|r
+Researchhotkey=X
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ansh]
+Tip=Shock|cffffcc00w|rave - [|cffffcc00Level 1|r],Shock|cffffcc00w|rave - [|cffffcc00Level 2|r],Shock|cffffcc00w|rave - [|cffffcc00Level 3|r]
+Hotkey=W
+Researchtip=Learn Shock|cffffcc00w|rave - [|cffffcc00Level %d|r]
+Researchhotkey=W
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[anav]
+Tip=Activate A|cffffcc00v|ratar
+Untip=Deactivate A|cffffcc00v|ratar
+Hotkey=V
+Unhotkey=V
+Researchtip=Learn A|cffffcc00v|ratar
+Researchhotkey=V
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+
+[hart]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=2,2
+
+[harf]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=2,1
+
+[huth]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=0,0
+
+[hjai]
+Hotkey=A
+Tip=Summon |cffffcc00A|rrchmage
+Revivetip=Revive |cffffcc00A|rrchmage
+Awakentip=Revive |cffffcc00A|rrchmage
+Buttonpos=0,2
+
+[hant]
+Hotkey=A
+Tip=Summon |cffffcc00A|rrchmage
+Revivetip=Revive |cffffcc00A|rrchmage
+Awakentip=Revive |cffffcc00A|rrchmage
+Buttonpos=0,1
+
+[hmbr]
+Hotkey=M
+Tip=Summon |cffffcc00M|rountain King
+Revivetip=Revive |cffffcc00M|rountain King
+Awakentip=Revive |cffffcc00M|rountain King
+Buttonpos=1,2
+
+[hkal]
+Hotkey=B
+Tip=Summon |cffffcc00B|rlood Mage
+Revivetip=Revive |cffffcc00B|rlood Mage
+Awakentip=Revive |cffffcc00B|rlood Mage
+Buttonpos=0,1
+
+[hvwd]
+Hotkey=R
+Tip=Summon |cffffcc00R|ranger
+Revivetip=Revive |cffffcc00R|ranger
+Awakentip=Revive |cffffcc00R|ranger
+Buttonpos=0,0
+
+[hlgr]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=1,1
+
+[adts]
+Tip=Magic Sentry
+Buttonpos=2,1
+
+[afbt]
+Tip=Feedback
+Buttonpos=3,2
+
+[agyv]
+Tip=True Sight
+Buttonpos=0,2
+
+[amim]
+Tip=Spell Immunity
+Buttonpos=2,2
+
+[afbk]
+Tip=Feedback
+Buttonpos=3,2
+
+[agyb]
+Tip=Flying Machine Bombs
+Buttonpos=1,2
+
+[aflk]
+Tip=Flak Cannons
+Buttonpos=2,2
+
+[afsh]
+Tip=Fragmentation Shards
+Buttonpos=1,2
+
+[aroc]
+Tip=Barrage
+Buttonpos=0,2
+
+[asth]
+Tip=Storm Hammers
+Buttonpos=0,2
+
+[amrf]
+Tip=Raven |cffffcc00F|rorm
+Untip=Human |cffffcc00F|rorm
+Hotkey=F
+Unhotkey=F
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[ocat]
+Hotkey=D
+Tip=Train |cffffcc00D|remolisher
+Buttonpos=2,0
+
+[odoc]
+Hotkey=W
+Tip=Train Troll |cffffcc00W|ritch Doctor
+Buttonpos=1,0
+
+[aeye]
+Tip=Sentry |cffffcc00W|rard
+Hotkey=W
+Buttonpos=0,2
+
+[asta]
+Tip=Stasis |cffffcc00T|rrap
+Hotkey=T
+Buttonpos=1,2
+
+[ahwd]
+Tip=H|cffffcc00e|raling Ward
+Hotkey=E
+Buttonpos=2,2
+
+[ogru]
+Hotkey=G
+Tip=Train |cffffcc00G|rrunt
+Buttonpos=0,0
+
+[ohun]
+Hotkey=T
+Tip=Train |cffffcc00T|rroll Headhunter
+Buttonpos=1,0
+
+[otbk]
+Hotkey=T
+Tip=Train |cffffcc00T|rroll Berserker
+Buttonpos=1,0
+
+[absk]
+Tip=|cffffcc00B|rerserk
+Hotkey=B
+Buttonpos=0,2
+
+[okod]
+Hotkey=K
+Tip=Train |cffffcc00K|rodo Beast
+Buttonpos=2,0
+
+[adev]
+Tip=|cffffcc00D|revour
+Hotkey=D
+Buttonpos=0,2
+
+[opeo]
+Hotkey=P
+Tip=Train |cffffcc00P|reon
+Buttonpos=0,0
+
+[orai]
+Hotkey=R
+Tip=Train |cffffcc00R|raider
+Buttonpos=0,0
+
+[aens]
+Tip=|cffffcc00E|rnsnare
+Hotkey=E
+Buttonpos=0,2
+
+[oshm]
+Hotkey=S
+Tip=Train |cffffcc00S|rhaman
+Buttonpos=0,0
+
+[aprg]
+Tip=Pur|cffffcc00g|re
+Hotkey=G
+Buttonpos=0,2
+
+[apg2]
+Tip=Pur|cffffcc00g|re
+Hotkey=G
+Buttonpos=0,2
+
+[ablo]
+Tip=|cffffcc00B|rloodlust
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=B
+Buttonpos=2,2
+
+[alsh]
+Tip=|cffffcc00L|rightning Shield
+Hotkey=L
+Buttonpos=1,2
+
+[otau]
+Hotkey=T
+Tip=Train |cffffcc00T|rauren
+Buttonpos=1,0
+
+[otbr]
+Hotkey=B
+Tip=Train Troll |cffffcc00B|ratrider
+Buttonpos=3,0
+
+[auco]
+Tip=Unstable |cffffcc00C|roncoction
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=C
+Buttonpos=0,2
+
+[owyv]
+Hotkey=W
+Tip=Train |cffffcc00W|rind Rider
+Buttonpos=1,0
+
+[ospm]
+Hotkey=W
+Tip=Train Spirit |cffffcc00W|ralker
+Buttonpos=0,0
+
+[aast]
+Tip=An|cffffcc00c|restral Spirit
+Hotkey=C
+Buttonpos=2,2
+
+[adcn]
+Tip=|cffffcc00D|risenchant
+Hotkey=D
+Buttonpos=1,2
+
+[acpf]
+Tip=Corporeal |cffffcc00F|rorm
+Untip=Ethereal |cffffcc00F|rorm
+Hotkey=F
+Unhotkey=F
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[aetf]
+Tip=Ethereal |cffffcc00F|rorm
+Untip=Corporeal |cffffcc00F|rorm
+Hotkey=F
+Unhotkey=F
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[aspl]
+Tip=Spi|cffffcc00r|rit Link
+Hotkey=R
+Buttonpos=0,2
+
+[rome]
+Tip=Upgrade to Steel |cffffcc00M|relee Weapons,Upgrade to Thorium |cffffcc00M|relee Weapons,Upgrade to Arcanite |cffffcc00M|relee Weapons
+Hotkey=M,M,M
+Buttonpos=0,0
+
+[rora]
+Tip=Upgrade to Steel |cffffcc00R|ranged Weapons,Upgrade to Thorium |cffffcc00R|ranged Weapons,Upgrade to Arcanite |cffffcc00R|ranged Weapons
+Hotkey=R,R,R
+Buttonpos=1,0
+
+[roar]
+Tip=Upgrade to Steel Unit |cffffcc00A|rrmor,Upgrade to Thorium Unit |cffffcc00A|rrmor,Upgrade to Arcanite Unit |cffffcc00A|rrmor
+Hotkey=A,A,A
+Buttonpos=0,1
+
+[rwdm]
+Tip=Upgrade War |cffffcc00D|rrums
+Hotkey=D
+Buttonpos=2,2
+
+[ropg]
+Tip=Pilla|cffffcc00g|re
+Hotkey=G
+Buttonpos=2,2
+
+[robs]
+Tip=Research |cffffcc00B|rerserker Strength
+Hotkey=B
+Buttonpos=0,2
+
+[rows]
+Tip=Research |cffffcc00P|rulverize
+Hotkey=P
+Buttonpos=1,2
+
+[roen]
+Tip=Research E|cffffcc00n|rsnare
+Hotkey=N
+Buttonpos=0,2
+
+[rovs]
+Tip=Research |cffffcc00E|rnvenomed Spears
+Hotkey=E
+Buttonpos=1,2
+
+[rowd]
+Tip=Witch |cffffcc00D|roctor Adept Training,Witch |cffffcc00D|roctor Master Training
+Hotkey=D,D
+Buttonpos=1,2
+
+[rost]
+Tip=Sha|cffffcc00m|ran Adept Training,Sha|cffffcc00m|ran Master Training
+Hotkey=M,M
+Buttonpos=0,2
+
+[rosp]
+Tip=Upgrade to |cffffcc00S|rpiked Barricades,Upgrade to Improved |cffffcc00S|rpiked Barricades,Upgrade to Advanced |cffffcc00S|rpiked Barricades
+Hotkey=S,S,S
+Buttonpos=2,0
+
+[rotr]
+Tip=Research Troll |cffffcc00R|regeneration
+Hotkey=R
+Buttonpos=1,2
+
+[rolf]
+Tip=Research |cffffcc00L|riquid Fire
+Hotkey=L
+Buttonpos=2,1
+
+[ropm]
+Tip=Research |cffffcc00B|rackpack
+Hotkey=B
+Buttonpos=3,0
+
+[rowt]
+Tip=Spi|cffffcc00r|rit Walker Adept Training,Spi|cffffcc00r|rit Walker Master Training
+Hotkey=R,R
+Buttonpos=0,2
+
+[robk]
+Tip=B|cffffcc00e|rrserker Upgrade
+Hotkey=E
+Buttonpos=1,1
+
+[rorb]
+Tip=Reinforced |cffffcc00D|refenses
+Hotkey=D
+Buttonpos=2,1
+
+[robf]
+Tip=Bur|cffffcc00n|ring Oil
+Hotkey=N
+Buttonpos=2,1
+
+[oalt]
+Hotkey=A
+Tip=Build |cffffcc00A|rltar of Storms
+Buttonpos=1,1
+
+[obar]
+Hotkey=B
+Tip=Build |cffffcc00B|rarracks
+Buttonpos=1,0
+
+[obea]
+Hotkey=E
+Tip=Build B|cffffcc00e|rastiary
+Buttonpos=3,1
+
+[ofor]
+Hotkey=M
+Tip=Build War |cffffcc00M|rill
+Buttonpos=2,0
+
+[ofrt]
+Hotkey=U
+Tip=|cffffcc00U|rpgrade to Fortress
+Buttonpos=0,2
+
+[ogre]
+Hotkey=H
+Tip=Build Great |cffffcc00H|rall
+Buttonpos=0,0
+
+[osld]
+Hotkey=S
+Tip=Build |cffffcc00S|rpirit Lodge
+Buttonpos=2,1
+
+[ostr]
+Hotkey=U
+Tip=|cffffcc00U|rpgrade to Stronghold
+Buttonpos=0,2
+
+[otrb]
+Hotkey=O
+Tip=Build |cffffcc00O|rrc Burrow
+Buttonpos=0,1
+
+[abtl]
+Tip=|cffffcc00B|rattle Stations
+Hotkey=B
+Buttonpos=0,2
+
+[astd]
+Tip=Stand |cffffcc00D|rown
+Hotkey=D
+Buttonpos=1,2
+
+[orbr]
+Hotkey=O
+Tip=Build Reinforced |cffffcc00O|rrc Burrow
+Buttonpos=0,1
+
+[otto]
+Hotkey=T
+Tip=Build |cffffcc00T|rauren Totem
+Buttonpos=0,2
+
+[ovln]
+Hotkey=V
+Tip=Build |cffffcc00V|roodoo Lounge
+Buttonpos=1,2
+
+[owtw]
+Hotkey=W
+Tip=Build |cffffcc00W|ratch Tower
+Buttonpos=3,0
+
+[obla]
+Hotkey=B
+Tip=Summon |cffffcc00B|rlademaster
+Revivetip=Revive |cffffcc00B|rlademaster
+Awakentip=Revive |cffffcc00B|rlademaster
+Buttonpos=0,2
+
+[aowk]
+Tip=|cffffcc00W|rind Walk - [|cffffcc00Level 1|r],|cffffcc00W|rind Walk - [|cffffcc00Level 2|r],|cffffcc00W|rind Walk - [|cffffcc00Level 3|r]
+Hotkey=W
+Researchtip=Learn |cffffcc00W|rind Walk - [|cffffcc00Level %d|r]
+Researchhotkey=W
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aomi]
+Tip=Mirro|cffffcc00r|r Image - [|cffffcc00Level 1|r],Mirro|cffffcc00r|r Image - [|cffffcc00Level 2|r],Mirro|cffffcc00r|r Image - [|cffffcc00Level 3|r]
+Hotkey=R
+Researchtip=Learn Mirro|cffffcc00r|r Image - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aocr]
+Tip=Critical Strike - [|cffffcc00Level 1|r],Critical Strike - [|cffffcc00Level 2|r],Critical Strike - [|cffffcc00Level 3|r]
+Researchtip=Learn |cffffcc00C|rritical Strike - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aoww]
+Tip=|cffffcc00B|rladestorm
+Hotkey=B
+Researchtip=Learn |cffffcc00B|rladestorm
+Researchhotkey=B
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ofar]
+Hotkey=F
+Tip=Summon |cffffcc00F|rar Seer
+Revivetip=Revive |cffffcc00F|rar Seer
+Awakentip=Revive |cffffcc00F|rar Seer
+Buttonpos=1,2
+
+[aofs]
+Tip=|cffffcc00F|rar Sight - [|cffffcc00Level 1|r],|cffffcc00F|rar Sight - [|cffffcc00Level 2|r],|cffffcc00F|rar Sight - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn |cffffcc00F|rar Sight - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aocl]
+Tip=|cffffcc00C|rhain Lightning - [|cffffcc00Level 1|r],|cffffcc00C|rhain Lightning - [|cffffcc00Level 2|r],|cffffcc00C|rhain Lightning - [|cffffcc00Level 3|r]
+Hotkey=C
+Researchtip=Learn |cffffcc00C|rhain Lightning - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aosf]
+Tip=Feral Spiri|cffffcc00t|r - [|cffffcc00Level 1|r],Feral Spiri|cffffcc00t|r - [|cffffcc00Level 2|r],Feral Spiri|cffffcc00t|r - [|cffffcc00Level 3|r]
+Researchtip=Learn Feral Spiri|cffffcc00t|r - [|cffffcc00Level %d|r]
+Hotkey=T
+Researchhotkey=T
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aoeq]
+Tip=|cffffcc00E|rarthquake
+Hotkey=E
+Researchtip=Learn |cffffcc00E|rarthquake
+Researchhotkey=E
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[otch]
+Hotkey=T
+Tip=Summon |cffffcc00T|rauren Chieftain
+Revivetip=Revive |cffffcc00T|rauren Chieftain
+Awakentip=Revive |cffffcc00T|rauren Chieftain
+Buttonpos=2,2
+
+[aosh]
+Tip=Shock|cffffcc00w|rave - [|cffffcc00Level 1|r],Shock|cffffcc00w|rave - [|cffffcc00Level 2|r],Shock|cffffcc00w|rave - [|cffffcc00Level 3|r]
+Hotkey=W
+Researchtip=Learn Shock|cffffcc00w|rave - [|cffffcc00Level %d|r]
+Researchhotkey=W
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aows]
+Tip=War S|cffffcc00t|romp - [|cffffcc00Level 1|r],War S|cffffcc00t|romp - [|cffffcc00Level 2|r],War S|cffffcc00t|romp - [|cffffcc00Level 3|r]
+Researchtip=Learn War S|cffffcc00t|romp - [|cffffcc00Level %d|r]
+Hotkey=T
+Researchhotkey=T
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aoae]
+Tip=Endurance Aura - [|cffffcc00Level 1|r],Endurance Aura - [|cffffcc00Level 2|r],Endurance Aura - [|cffffcc00Level 3|r]
+Researchtip=Learn |cffffcc00E|rndurance Aura - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aore]
+Tip=Reincarnation
+Researchtip=Learn |cffffcc00R|reincarnation
+Researchhotkey=R
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[oshd]
+Hotkey=H
+Tip=Summon Shadow |cffffcc00H|runter
+Revivetip=Revive Shadow |cffffcc00H|runter
+Awakentip=Revive Shadow |cffffcc00H|runter
+Buttonpos=0,1
+
+[aohw]
+Tip=H|cffffcc00e|raling Wave - [|cffffcc00Level 1|r],H|cffffcc00e|raling Wave - [|cffffcc00Level 2|r],H|cffffcc00e|raling Wave - [|cffffcc00Level 3|r]
+Hotkey=E
+Researchtip=Learn H|cffffcc00e|raling Wave - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aohx]
+Tip=He|cffffcc00x|r - [|cffffcc00Level 1|r],He|cffffcc00x|r - [|cffffcc00Level 2|r],He|cffffcc00x|r - [|cffffcc00Level 3|r]
+Hotkey=X
+Researchtip=Learn He|cffffcc00x|r - [|cffffcc00Level %d|r]
+Researchhotkey=X
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aosw]
+Tip=Serpent |cffffcc00W|rard - [|cffffcc00Level 1|r],Serpent |cffffcc00W|rard - [|cffffcc00Level 2|r],Serpent |cffffcc00W|rard - [|cffffcc00Level 3|r]
+Hotkey=W
+Researchtip=Learn Serpent |cffffcc00W|rard - [|cffffcc00Level %d|r]
+Researchhotkey=W
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aovd]
+Tip=Big Bad |cffffcc00V|roodoo
+Hotkey=V
+Researchtip=Learn Big Bad |cffffcc00V|roodoo
+Researchhotkey=V
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ogrh]
+Hotkey=B
+Tip=Summon |cffffcc00B|rlademaster
+Revivetip=Revive |cffffcc00B|rlademaster
+Awakentip=Revive |cffffcc00B|rlademaster
+Buttonpos=0,2
+
+[opgh]
+Hotkey=B
+Tip=Summon |cffffcc00B|rlademaster
+Revivetip=Revive |cffffcc00B|rlademaster
+Awakentip=Revive |cffffcc00B|rlademaster
+Buttonpos=0,1
+
+[osam]
+Hotkey=B
+Tip=Summon |cffffcc00B|rlademaster
+Revivetip=Revive |cffffcc00B|rlademaster
+Awakentip=Revive |cffffcc00B|rlademaster
+Buttonpos=0,2
+
+[othr]
+Hotkey=F
+Tip=Summon |cffffcc00F|rar Seer
+Revivetip=Revive |cffffcc00F|rar Seer
+Awakentip=Revive |cffffcc00F|rar Seer
+Buttonpos=1,2
+
+[odrt]
+Hotkey=F
+Tip=Summon |cffffcc00F|rar Seer
+Revivetip=Revive |cffffcc00F|rar Seer
+Awakentip=Revive |cffffcc00F|rar Seer
+Buttonpos=1,2
+
+[ocbh]
+Hotkey=T
+Tip=Summon |cffffcc00T|rauren Chieftain
+Revivetip=Revive |cffffcc00T|rauren Chieftain
+Awakentip=Revive |cffffcc00T|rauren Chieftain
+Buttonpos=2,2
+
+[asal]
+Tip=Pillage
+Buttonpos=1,2
+
+[abof]
+Tip=Burning Oil
+Buttonpos=0,2
+
+[aven]
+Tip=Envenomed Spears
+Buttonpos=0,2
+
+[aakb]
+Tip=War Drums
+Buttonpos=1,2
+
+[aliq]
+Tip=Liquid Fire
+Buttonpos=1,2
+
+[awar]
+Tip=Pulverize
+Buttonpos=0,2
+
+[acsk]
+Tip=Resistant Skin
+Buttonpos=3,1
+
+[uaco]
+Tip=Train A|cffffcc00c|rolyte
+Hotkey=C
+Buttonpos=0,0
+
+[auns]
+Tip=|cffffcc00U|rnsummon Building
+Hotkey=U
+Buttonpos=1,2
+
+[aaha]
+Tip=|cffffcc00G|rather
+Hotkey=G
+Buttonpos=3,1
+
+[arst]
+Tip=|cffffcc00R|restore
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=1,1
+
+[uabo]
+Tip=Train |cffffcc00A|rbomination
+Hotkey=A
+Buttonpos=1,0
+
+[acn2]
+Tip=|cffffcc00C|rannibalize
+Hotkey=C
+Buttonpos=0,2
+
+[uban]
+Tip=Train |cffffcc00B|ranshee
+Hotkey=B
+Buttonpos=1,0
+
+[acrs]
+Tip=|cffffcc00C|rurse
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=C
+Buttonpos=0,2
+
+[aams]
+Tip=A|cffffcc00n|rti-magic Shell
+Hotkey=N
+Buttonpos=1,2
+
+[aam2]
+Tip=A|cffffcc00n|rti-magic Shell
+Hotkey=N
+Buttonpos=1,2
+
+[apos]
+Tip=P|cffffcc00o|rssession
+Hotkey=O
+Buttonpos=2,2
+
+[aps2]
+Tip=P|cffffcc00o|rssession
+Hotkey=O
+Buttonpos=2,2
+
+[ucry]
+Tip=Train Crypt |cffffcc00F|riend
+Hotkey=F
+Buttonpos=1,0
+
+[aweb]
+Tip=|cffffcc00W|reb
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=W
+Buttonpos=0,2
+
+[abur]
+Tip=|cffffcc00B|rurrow
+Untip=Un|cffffcc00b|rurrow
+Hotkey=B
+Unhotkey=B
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[ufro]
+Tip=Train |cffffcc00F|rrost Wyrm
+Hotkey=F
+Buttonpos=0,0
+
+[ugar]
+Tip=Train G|cffffcc00a|rrgoyle
+Hotkey=A
+Buttonpos=2,0
+
+[astn]
+Tip=Stone |cffffcc00F|rorm
+Untip=Gargoyle |cffffcc00F|rorm
+Hotkey=F
+Unhotkey=F
+Buttonpos=0,2
+Unbuttonpos=0,2
+
+[ugho]
+Tip=Train |cffffcc00G|rhoul
+Hotkey=G
+Buttonpos=0,0
+
+[acan]
+Tip=|cffffcc00C|rannibalize
+Hotkey=C
+Buttonpos=0,2
+
+[unec]
+Tip=Train |cffffcc00N|recromancer
+Hotkey=N
+Buttonpos=0,0
+
+[arai]
+Tip=|cffffcc00R|raise Dead
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=0,2
+
+[auhf]
+Tip=|cffffcc00U|rnholy Frenzy
+Hotkey=U
+Buttonpos=1,2
+
+[acri]
+Tip=|cffffcc00C|rripple
+Hotkey=C
+Buttonpos=2,2
+
+[umtw]
+Tip=Train |cffffcc00M|reat Wagon
+Hotkey=M
+Buttonpos=0,0
+
+[amel]
+Tip=Get |cffffcc00C|rorpse
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=C
+Buttonpos=0,2
+
+[amed]
+Tip=|cffffcc00D|rrop All Corpses
+Hotkey=D
+Buttonpos=1,2
+
+[uobs]
+Tip=Create |cffffcc00O|rbsidian Statue
+Hotkey=O
+Buttonpos=2,0
+
+[arpm]
+Tip=Spirit Tou|cffffcc00c|rh
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=C
+Buttonpos=0,2
+
+[arpl]
+Tip=Essence of |cffffcc00B|rlight
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=B
+Buttonpos=1,2
+
+[aave]
+Tip=Morph into Des|cffffcc00t|rroyer
+Hotkey=T
+Buttonpos=3,2
+
+[ubsp]
+Tip=Morph into Des|cffffcc00t|rroyer
+Hotkey=T
+Buttonpos=3,2
+
+[afak]
+Tip=|cffffcc00O|rrb of Annihilation
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=O
+Buttonpos=1,2
+
+[advm]
+Tip=|cffffcc00D|revour Magic
+Hotkey=D
+Buttonpos=0,2
+
+[aabs]
+Tip=A|cffffcc00b|rsorb Mana
+Hotkey=B
+Buttonpos=3,2
+
+[rusp]
+Tip=Research Des|cffffcc00t|rroyer Form
+Hotkey=T
+Buttonpos=2,2
+
+[rume]
+Tip=Upgrade to Unholy |cffffcc00S|rtrength,Upgrade to Improved Unholy |cffffcc00S|rtrength,Upgrade to Advanced Unholy |cffffcc00S|rtrength
+Hotkey=S,S,S
+Buttonpos=0,0
+
+[rura]
+Tip=Upgrade to Creature |cffffcc00A|rttack,Upgrade to Improved Creature |cffffcc00A|rttack,Upgrade to Advanced Creature |cffffcc00A|rttack
+Hotkey=A,A,A
+Buttonpos=1,0
+
+[ruar]
+Tip=Upgrade to |cffffcc00U|rnholy Armor,Upgrade to Improved |cffffcc00U|rnholy Armor,Upgrade to Advanced |cffffcc00U|rnholy Armor
+Hotkey=U,U,U
+Buttonpos=0,1
+
+[rucr]
+Tip=Upgrade to Creature |cffffcc00C|rarapace,Upgrade to Improved Creature |cffffcc00C|rarapace,Upgrade to Advanced Creature |cffffcc00C|rarapace
+Hotkey=C,C,C
+Buttonpos=1,1
+
+[ruac]
+Tip=Research |cffffcc00C|rannibalize
+Hotkey=C
+Buttonpos=0,2
+
+[rugf]
+Tip=Research Ghoul Fren|cffffcc00z|ry
+Hotkey=Z
+Buttonpos=0,1
+
+[ruwb]
+Tip=Research |cffffcc00W|reb
+Hotkey=W
+Buttonpos=1,2
+
+[rusf]
+Tip=Research |cffffcc00S|rtone Form
+Hotkey=S
+Buttonpos=2,1
+
+[rune]
+Tip=N|cffffcc00e|rcromancer Adept Training,N|cffffcc00e|rcromancer Master Training
+Hotkey=E,E
+Buttonpos=0,2
+
+[ruba]
+Tip=B|cffffcc00a|rnshee Adept Training,B|cffffcc00a|rnshee Master Training
+Hotkey=A,A
+Buttonpos=1,2
+
+[rufb]
+Tip=Research Freezing |cffffcc00B|rreath
+Hotkey=B
+Buttonpos=0,2
+
+[rusl]
+Tip=Research |cffffcc00S|rkeletal Longevity
+Hotkey=S
+Buttonpos=2,1
+
+[rupc]
+Tip=Research |cffffcc00D|risease Cloud
+Hotkey=D
+Buttonpos=1,2
+
+[rusm]
+Tip=Research Skeletal |cffffcc00M|rastery
+Hotkey=M
+Buttonpos=0,1
+
+[rubu]
+Tip=Research |cffffcc00B|rurrow
+Hotkey=B
+Buttonpos=1,1
+
+[ruex]
+Tip=Research |cffffcc00E|rxhume Corpses
+Hotkey=E
+Buttonpos=0,2
+
+[rupm]
+Tip=Research |cffffcc00B|rackpack
+Hotkey=B
+Buttonpos=3,0
+
+[ubon]
+Tip=Summon |cffffcc00B|roneyard
+Hotkey=B
+Buttonpos=1,2
+
+[usap]
+Tip=Summon |cffffcc00S|racrificial Pit
+Hotkey=S
+Buttonpos=0,2
+
+[ushd]
+Tip=Train Shade
+
+[alam]
+Tip=Sa|cffffcc00c|rrifice
+Hotkey=C
+Buttonpos=3,2
+
+[asac]
+Tip=Sa|cffffcc00c|rrifice
+Hotkey=C
+Buttonpos=0,0
+
+[uslh]
+Tip=Summon Slaughter|cffffcc00h|rouse
+Hotkey=H
+Buttonpos=3,1
+
+[ugrv]
+Tip=Summon Gra|cffffcc00v|reyard
+Hotkey=V
+Buttonpos=3,0
+
+[uaod]
+Tip=Summon |cffffcc00A|rltar of Darkness
+Hotkey=A
+Buttonpos=1,1
+
+[unpl]
+Tip=Summon |cffffcc00N|recropolis
+Hotkey=N
+Buttonpos=0,0
+
+[unp1]
+Tip=|cffffcc00U|rpgrade to Halls of the Dead
+Hotkey=U
+Buttonpos=0,2
+
+[unp2]
+Tip=|cffffcc00U|rpgrade to Black Citadel
+Hotkey=U
+Buttonpos=0,2
+
+[usep]
+Tip=Summon |cffffcc00C|rrypt
+Hotkey=C
+Buttonpos=1,0
+
+[utod]
+Tip=Summon |cffffcc00T|remple of the Damned
+Hotkey=T
+Buttonpos=2,1
+
+[utom]
+Hotkey=R
+Tip=Summon Tomb of |cffffcc00R|relics
+Buttonpos=2,2
+
+[ugol]
+Tip=Haunt |cffffcc00G|rold Mine
+Hotkey=G
+Buttonpos=2,0
+
+[uzig]
+Tip=Summon |cffffcc00Z|riggurat
+Hotkey=Z
+Buttonpos=0,1
+
+[uzg1]
+Tip=Upgrade to Spirit |cffffcc00T|rower
+Hotkey=T
+Buttonpos=0,2
+
+[uzg2]
+Tip=Upgrade to |cffffcc00N|rerubian Tower
+Hotkey=N
+Buttonpos=1,2
+
+[udea]
+Tip=Summon |cffffcc00D|reath Knight
+Revivetip=Revive |cffffcc00D|reath Knight
+Awakentip=Revive |cffffcc00D|reath Knight
+Hotkey=D
+Buttonpos=0,2
+
+[audc]
+Tip=Death |cffffcc00C|roil - [|cffffcc00Level 1|r],Death |cffffcc00C|roil - [|cffffcc00Level 2|r],Death |cffffcc00C|roil - [|cffffcc00Level 3|r]
+Hotkey=C
+Researchtip=Learn Death |cffffcc00C|roil - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[audp]
+Tip=D|cffffcc00e|rath Pact - [|cffffcc00Level 1|r],D|cffffcc00e|rath Pact - [|cffffcc00Level 2|r],D|cffffcc00e|rath Pact - [|cffffcc00Level 3|r]
+Hotkey=E
+Researchtip=Learn D|cffffcc00e|rath Pact - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[auau]
+Tip=Unholy Aura - [|cffffcc00Level 1|r],Unholy Aura - [|cffffcc00Level 2|r],Unholy Aura - [|cffffcc00Level 3|r]
+Researchtip=Learn |cffffcc00U|rnholy Aura - [|cffffcc00Level %d|r]
+Researchhotkey=U
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[auan]
+Tip=Animate |cffffcc00D|read
+Hotkey=D
+Researchtip=Learn Animate |cffffcc00D|read
+Researchhotkey=D
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[udre]
+Tip=Summon Dr|cffffcc00e|radlord
+Revivetip=Revive Dr|cffffcc00e|radlord
+Awakentip=Revive Dr|cffffcc00e|radlord
+Hotkey=E
+Buttonpos=1,2
+
+[aucs]
+Tip=|cffffcc00C|rarrion Swarm - [|cffffcc00Level 1|r],|cffffcc00C|rarrion Swarm - [|cffffcc00Level 2|r],|cffffcc00C|rarrion Swarm - [|cffffcc00Level 3|r]
+Hotkey=C
+Researchtip=Learn |cffffcc00C|rarrion Swarm - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ausl]
+Tip=Sl|cffffcc00e|rep - [|cffffcc00Level 1|r],Sl|cffffcc00e|rep - [|cffffcc00Level 2|r],Sl|cffffcc00e|rep - [|cffffcc00Level 3|r]
+Hotkey=E
+Researchtip=Learn Sl|cffffcc00e|rep - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[auav]
+Tip=Vampiric Aura - [|cffffcc00Level 1|r],Vampiric Aura - [|cffffcc00Level 2|r],Vampiric Aura - [|cffffcc00Level 3|r]
+Researchtip=Learn |cffffcc00V|rampiric Aura - [|cffffcc00Level %d|r]
+Researchhotkey=V
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[auin]
+Tip=I|cffffcc00n|rferno
+Hotkey=N
+Researchtip=Learn I|cffffcc00n|rferno
+Researchhotkey=N
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ulic]
+Tip=Summon |cffffcc00L|rich
+Revivetip=Revive |cffffcc00L|rich
+Awakentip=Revive |cffffcc00L|rich
+Hotkey=L
+Buttonpos=2,2
+
+[aufn]
+Tip=Frost |cffffcc00N|rova - [|cffffcc00Level 1|r],Frost |cffffcc00N|rova - [|cffffcc00Level 2|r],Frost |cffffcc00N|rova - [|cffffcc00Level 3|r]
+Hotkey=N
+Researchtip=Learn Frost |cffffcc00N|rova - [|cffffcc00Level %d|r]
+Researchhotkey=N
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aufu]
+Tip=|cffffcc00F|rrost Armor - [|cffffcc00Level 1|r],|cffffcc00F|rrost Armor - [|cffffcc00Level 2|r],|cffffcc00F|rrost Armor - [|cffffcc00Level 3|r]
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=F
+Researchtip=Learn |cffffcc00F|rrost Armor - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[audr]
+Tip=Dark |cffffcc00R|ritual - [|cffffcc00Level 1|r],Dark |cffffcc00R|ritual - [|cffffcc00Level 2|r],Dark |cffffcc00R|ritual - [|cffffcc00Level 3|r]
+Hotkey=R
+Researchtip=Learn Dark |cffffcc00R|ritual - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[audd]
+Tip=|cffffcc00D|reath And Decay
+Hotkey=D
+Researchtip=Learn |cffffcc00D|reath And Decay
+Researchhotkey=D
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ucrl]
+Tip=Summon |cffffcc00C|rrypt Lord
+Hotkey=C
+Revivetip=Revive |cffffcc00C|rrypt Lord
+Awakentip=Revive |cffffcc00C|rrypt Lord
+Buttonpos=0,1
+
+[auim]
+Tip=Impal|cffffcc00e|r - [|cffffcc00Level 1|r],Impal|cffffcc00e|r - [|cffffcc00Level 2|r],Impal|cffffcc00e|r - [|cffffcc00Level 3|r]
+Hotkey=E
+Researchtip=Learn Impal|cffffcc00e|r - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aucb]
+Tip=|cffffcc00C|rarrion Beetles - [|cffffcc00Level 1|r],|cffffcc00C|rarrion Beetles - [|cffffcc00Level 2|r],|cffffcc00C|rarrion Beetles - [|cffffcc00Level 3|r]
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=C
+Researchtip=Learn |cffffcc00C|rarrion Beetles - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[abu2]
+Tip=|cffffcc00B|rurrow
+Untip=Un|cffffcc00b|rurrow
+Hotkey=B
+Unhotkey=B
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[abu3]
+Tip=|cffffcc00B|rurrow
+Untip=Un|cffffcc00b|rurrow
+Hotkey=B
+Unhotkey=B
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[abu5]
+Tip=|cffffcc00B|rurrow
+Untip=Un|cffffcc00b|rurrow
+Hotkey=B
+Unhotkey=B
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[auts]
+Tip=Spiked Carapace - [|cffffcc00Level 1|r],Spiked Carapace - [|cffffcc00Level 2|r],Spiked Carapace - [|cffffcc00Level 3|r]
+Researchtip=Learn |cffffcc00S|rpiked Carapace - [|cffffcc00Level %d|r]
+Researchhotkey=S
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[auls]
+Tip=|cffffcc00L|rocust Swarm
+Hotkey=L
+Researchtip=Learn |cffffcc00L|rocust Swarm
+Researchhotkey=L
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[uear]
+Tip=Summon |cffffcc00D|reath Knight
+Revivetip=Revive |cffffcc00D|reath Knight
+Awakentip=Revive |cffffcc00D|reath Knight
+Hotkey=D
+Buttonpos=0,2
+
+[umal]
+Tip=Summon Dr|cffffcc00e|radlord
+Revivetip=Revive Dr|cffffcc00e|radlord
+Awakentip=Revive Dr|cffffcc00e|radlord
+Hotkey=E
+Buttonpos=0,0
+
+[uvar]
+Tip=Summon Dr|cffffcc00e|radlord
+Revivetip=Revive Dr|cffffcc00e|radlord
+Awakentip=Revive Dr|cffffcc00e|radlord
+Hotkey=E
+Buttonpos=1,2
+
+[uktl]
+Tip=Summon |cffffcc00L|rich
+Revivetip=Revive |cffffcc00L|rich
+Awakentip=Revive |cffffcc00L|rich
+Hotkey=L
+Buttonpos=2,2
+
+[uanb]
+Tip=Summon |cffffcc00C|rrypt Lord
+Hotkey=C
+Revivetip=Revive |cffffcc00C|rrypt Lord
+Awakentip=Revive |cffffcc00C|rrypt Lord
+Buttonpos=0,1
+
+[usyl]
+Hotkey=R
+Tip=Summon Dark |cffffcc00R|ranger
+Revivetip=Revive Dark |cffffcc00R|ranger
+Awakentip=Revive Dark |cffffcc00R|ranger
+Buttonpos=1,1
+
+[npld]
+Hotkey=P
+Tip=Summon |cffffcc00P|rit Lord
+Revivetip=Revive |cffffcc00P|rit Lord
+Awakentip=Revive |cffffcc00P|rit Lord
+Buttonpos=0,0
+
+[nman]
+Hotkey=P
+Tip=Summon |cffffcc00P|rit Lord
+Revivetip=Revive |cffffcc00P|rit Lord
+Awakentip=Revive |cffffcc00P|rit Lord
+Buttonpos=0,0
+
+[nmag]
+Hotkey=P
+Tip=Summon |cffffcc00P|rit Lord
+Revivetip=Revive |cffffcc00P|rit Lord
+Awakentip=Revive |cffffcc00P|rit Lord
+Buttonpos=0,0
+
+[uwar]
+Hotkey=W
+Tip=Summon |cffffcc00W|rarlock
+Revivetip=Revive |cffffcc00W|rarlock
+Awakentip=Revive |cffffcc00W|rarlock
+Buttonpos=0,0
+
+[andp]
+Tip=|cffffcc00D|rark Portal
+Hotkey=D
+Researchtip=Learn |cffffcc00D|rark Portal
+Researchhotkey=D
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[anrc]
+Tip=|cffffcc00R|rain of Chaos
+Hotkey=R
+Researchtip=Learn |cffffcc00R|rain of Chaos
+Researchhotkey=R
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[anfd]
+Tip=|cffffcc00F|ringer of Death
+Hotkey=F
+Researchtip=Learn |cffffcc00F|ringer of Death
+Researchhotkey=F
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[anrn]
+Tip=Reincarnation
+Researchtip=Learn |cffffcc00R|reincarnation
+Researchhotkey=R
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[andc]
+Tip=Dar|cffffcc00k|r Conversion
+Hotkey=K
+Researchtip=Learn Dar|cffffcc00k|r Conversion
+Researchhotkey=K
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[ansl]
+Tip=Sou|cffffcc00l|r Preservation
+Hotkey=L
+Researchtip=Learn Sou|cffffcc00l|r Preservation
+Researchhotkey=L
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[afra]
+Tip=Frost Attack
+Buttonpos=0,2
+
+[afr2]
+Tip=Frost Attack
+Buttonpos=1,2
+
+[atru]
+Tip=True Sight
+Buttonpos=0,2
+
+[apts]
+Tip=Disease Cloud
+Buttonpos=2,2
+
+[aexh]
+Tip=Exhume Corpses
+Buttonpos=3,2
+
+[aap1]
+Tip=Disease Cloud
+Buttonpos=1,2
+
+[acmi]
+Tip=Spell Immunity
+Buttonpos=2,2
+
+[afrz]
+Tip=Freezing Breath
+Buttonpos=0,2
+
+[uarb]
+Tip=Summon Sky |cffffcc00B|rarge
+Hotkey=B
+Buttonpos=0,0
+
+[nzom]
+Tip=Summon Zombie
+
+[ashm]
+Tip=H|cffffcc00i|rde
+Hotkey=I
+Buttonpos=2,1
+
+[ahid]
+Tip=H|cffffcc00i|rde
+Hotkey=I
+Buttonpos=2,1
+
+[ebal]
+Hotkey=T
+Tip=Train Glaive |cffffcc00T|rhrower
+Buttonpos=2,0
+
+[echm]
+Hotkey=C
+Tip=Train |cffffcc00C|rhimaera
+Buttonpos=0,0
+
+[edoc]
+Hotkey=C
+Tip=Train Druid of the |cffffcc00C|rlaw
+Buttonpos=1,0
+
+[aroa]
+Tip=|cffffcc00R|roar
+Hotkey=R
+Buttonpos=0,2
+
+[arej]
+Tip=R|cffffcc00e|rjuvenation
+Hotkey=E
+Buttonpos=1,2
+
+[abrf]
+Tip=Bear |cffffcc00F|rorm
+Untip=Night Elf |cffffcc00F|rorm
+Hotkey=F
+Unhotkey=F
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[ara2]
+Tip=|cffffcc00R|roar
+Hotkey=R
+Buttonpos=0,2
+
+[edot]
+Hotkey=T
+Tip=Train Druid of the |cffffcc00T|ralon
+Buttonpos=1,0
+
+[afae]
+Tip=Fae|cffffcc00r|rie Fire
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=0,2
+
+[acyc]
+Tip=|cffffcc00C|ryclone
+Hotkey=C
+Buttonpos=1,2
+
+[arav]
+Tip=Storm Crow |cffffcc00F|rorm
+Hotkey=F
+Untip=Night Elf |cffffcc00F|rorm
+Unhotkey=F
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[afa2]
+Tip=Fae|cffffcc00r|rie Fire
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=0,2
+
+[ewsp]
+Hotkey=W
+Tip=Train |cffffcc00W|risp
+Buttonpos=0,0
+
+[aren]
+Tip=|cffffcc00R|renew
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=1,1
+
+[awha]
+Tip=|cffffcc00G|rather
+Hotkey=G
+Buttonpos=3,1
+
+[adtn]
+Tip=|cffffcc00D|retonate
+Hotkey=D
+Buttonpos=1,2
+
+[esen]
+Hotkey=H
+Tip=Train |cffffcc00H|runtress
+Buttonpos=1,0
+
+[aesn]
+Tip=S|cffffcc00e|rntinel
+Hotkey=E
+Buttonpos=0,2
+
+[earc]
+Hotkey=A
+Tip=Train |cffffcc00A|rrcher
+Buttonpos=0,0
+
+[acoa]
+Tip=Mo|cffffcc00u|rnt Hippogryph
+Hotkey=U
+Buttonpos=0,2
+
+[aco2]
+Tip=Mo|cffffcc00u|rnt Hippogryph
+Hotkey=U
+Buttonpos=0,2
+
+[adec]
+Tip=Dismo|cffffcc00u|rnt Archer & Hippogryph
+Hotkey=U
+Buttonpos=0,2
+
+[edry]
+Hotkey=D
+Tip=Train |cffffcc00D|rryad
+Buttonpos=0,0
+
+[aadm]
+Tip=A|cffffcc00b|rolish Magic
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=B
+Buttonpos=0,2
+
+[ehip]
+Hotkey=H
+Tip=Train |cffffcc00H|rippogryph
+Buttonpos=0,0
+
+[acoh]
+Tip=Pick |cffffcc00u|rp Archer
+Hotkey=U
+Buttonpos=0,2
+
+[aco3]
+Tip=Pick |cffffcc00u|rp Archer
+Hotkey=U
+Buttonpos=0,2
+
+[emtg]
+Hotkey=G
+Tip=Train Mountain |cffffcc00G|riant
+Buttonpos=2,0
+
+[agra]
+Tip=|cffffcc00W|rar Club
+Hotkey=W
+Buttonpos=1,2
+
+[atau]
+Tip=|cffffcc00T|raunt
+Hotkey=T
+Buttonpos=0,2
+
+[efdr]
+Hotkey=F
+Tip=Train |cffffcc00F|raerie Dragon
+Buttonpos=2,0
+
+[amfl]
+Tip=Mana |cffffcc00F|rlare
+Untip=Stop Mana |cffffcc00F|rlare
+Hotkey=F
+Unhotkey=F
+Buttonpos=1,2
+Unbuttonpos=1,2
+
+[apsh]
+Tip=Phas|cffffcc00e|r Shift
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=E
+Buttonpos=0,2
+
+[resm]
+Tip=Upgrade to Strength of the |cffffcc00M|roon,Upgrade to Improved Strength of the |cffffcc00M|roon,Upgrade to Advanced Strength of the |cffffcc00M|roon
+Hotkey=M,M,M
+Buttonpos=0,0
+
+[resw]
+Tip=Upgrade to Strength of the |cffffcc00W|rild,Upgrade to Improved Strength of the |cffffcc00W|rild,Upgrade to Advanced Strength of the |cffffcc00W|rild
+Hotkey=W,W,W
+Buttonpos=1,0
+
+[rema]
+Tip=Upgrade to Moon |cffffcc00A|rrmor,Upgrade to Improved Moon |cffffcc00A|rrmor,Upgrade to Advanced Moon |cffffcc00A|rrmor
+Hotkey=A,A,A
+Buttonpos=0,1
+
+[rerh]
+Tip=Upgrade to |cffffcc00R|reinforced Hides,Upgrade to Improved |cffffcc00R|reinforced Hides,Upgrade to Advanced |cffffcc00R|reinforced Hides
+Hotkey=R,R,R
+Buttonpos=1,1
+
+[reuv]
+Tip=Upgrade to |cffffcc00U|rltravision
+Hotkey=U
+Buttonpos=2,0
+
+[renb]
+Tip=Research |cffffcc00N|rature's Blessing
+Hotkey=N
+Buttonpos=2,0
+
+[reib]
+Tip=Research |cffffcc00I|rmproved Bows
+Hotkey=I
+Buttonpos=0,2
+
+[remk]
+Tip=Research |cffffcc00M|rarksmanship
+Hotkey=M
+Buttonpos=0,1
+
+[remg]
+Tip=Upgrade Moon |cffffcc00G|rlaive
+Hotkey=G
+Buttonpos=1,1
+
+[resc]
+Tip=Research |cffffcc00S|rentinel
+Hotkey=S
+Buttonpos=1,2
+
+[redt]
+Tip=Druid of the T|cffffcc00a|rlon Adept Training,Druid of the T|cffffcc00a|rlon Master Training
+Hotkey=A,A
+Buttonpos=1,2
+
+[redc]
+Tip=Druid of the C|cffffcc00l|raw Adept Training,Druid of the C|cffffcc00l|raw Master Training
+Hotkey=L,L
+Buttonpos=1,2
+
+[resi]
+Tip=Research Aboli|cffffcc00s|rh Magic
+Hotkey=S
+Buttonpos=0,2
+
+[reht]
+Tip=Research H|cffffcc00i|rppogryph Taming
+Hotkey=I
+
+[recb]
+Tip=Research Corrosive |cffffcc00B|rreath
+Hotkey=B
+Buttonpos=0,2
+
+[repb]
+Tip=Research Vor|cffffcc00p|ral Blades
+Hotkey=P
+Buttonpos=2,2
+
+[rers]
+Tip=Research Resis|cffffcc00t|rant Skin
+Hotkey=T
+Buttonpos=2,2
+
+[rehs]
+Tip=Research |cffffcc00H|rardened Skin
+Hotkey=H
+Buttonpos=2,1
+
+[reeb]
+Tip=Research |cffffcc00M|rark of the Claw
+Hotkey=M
+Buttonpos=1,1
+
+[reec]
+Tip=Research |cffffcc00M|rark of the Talon
+Hotkey=M
+Buttonpos=1,1
+
+[rews]
+Tip=Research W|cffffcc00e|rll Spring
+Hotkey=E
+Buttonpos=3,0
+
+[repm]
+Tip=Research |cffffcc00B|rackpack
+Hotkey=B
+Buttonpos=3,0
+
+[aeat]
+Tip=|cffffcc00E|rat Tree
+Hotkey=E
+Buttonpos=0,2
+
+[aroo]
+Tip=|cffffcc00R|root
+Untip=Up|cffffcc00r|root
+Hotkey=R
+Unhotkey=R
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[aro1]
+Tip=|cffffcc00R|root
+Untip=Up|cffffcc00r|root
+Hotkey=R
+Unhotkey=R
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[aro2]
+Tip=|cffffcc00R|root
+Untip=Up|cffffcc00r|root
+Hotkey=R
+Unhotkey=R
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[etrp]
+Hotkey=P
+Tip=Create Ancient |cffffcc00P|rrotector
+Buttonpos=3,0
+
+[etol]
+Hotkey=T
+Tip=Create |cffffcc00T|rree of Life
+Buttonpos=0,0
+
+[aent]
+Tip=Entangle |cffffcc00G|rold Mine
+Hotkey=G
+Buttonpos=1,2
+
+[aenc]
+Tip=|cffffcc00L|road
+Untip=|cffffcc00U|rnload All
+Hotkey=L
+Unhotkey=U
+Buttonpos=0,2
+Unbuttonpos=0,2
+
+[slo2]
+Tip=|cffffcc00L|road Wisp
+Hotkey=L
+Buttonpos=0,2
+
+[adri]
+Tip=|cffffcc00U|rnload All
+Hotkey=U
+Buttonpos=1,2
+
+[etoa]
+Hotkey=U
+Tip=|cffffcc00U|rpgrade to Tree of Ages
+Buttonpos=0,2
+
+[etoe]
+Hotkey=U
+Tip=|cffffcc00U|rpgrade to Tree of Eternity
+Buttonpos=0,2
+
+[edob]
+Hotkey=H
+Tip=Create |cffffcc00H|runter's Hall
+Buttonpos=2,0
+
+[eate]
+Hotkey=A
+Tip=Create |cffffcc00A|rltar of Elders
+Buttonpos=1,1
+
+[eaoe]
+Hotkey=L
+Tip=Create Ancient of |cffffcc00L|rore
+Buttonpos=2,1
+
+[eaom]
+Hotkey=R
+Tip=Create Ancient of Wa|cffffcc00r|r
+Buttonpos=1,0
+
+[eaow]
+Hotkey=W
+Tip=Create Ancient of |cffffcc00W|rind
+Buttonpos=0,2
+
+[eden]
+Hotkey=D
+Tip=Build Ancient of Won|cffffcc00d|rers
+Buttonpos=2,2
+
+[edos]
+Hotkey=C
+Tip=Create |cffffcc00C|rhimaera Roost
+Buttonpos=1,2
+
+[emow]
+Hotkey=M
+Tip=Create |cffffcc00M|roon Well
+Buttonpos=0,1
+
+[ambt]
+Tip=|cffffcc00R|replenish Mana and Life
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=0,0
+
+[edem]
+Hotkey=D
+Tip=Summon |cffffcc00D|remon Hunter
+Revivetip=Revive |cffffcc00D|remon Hunter
+Awakentip=Revive |cffffcc00D|remon Hunter
+Buttonpos=0,2
+
+[aemb]
+Tip=Mana |cffffcc00B|rurn - [|cffffcc00Level 1|r],Mana |cffffcc00B|rurn - [|cffffcc00Level 2|r],Mana |cffffcc00B|rurn - [|cffffcc00Level 3|r]
+Hotkey=B
+Researchtip=Learn Mana |cffffcc00B|rurn - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aeim]
+Tip=Activate Immo|cffffcc00l|ration - [|cffffcc00Level 1|r],Activate Immo|cffffcc00l|ration - [|cffffcc00Level 2|r],Activate Immo|cffffcc00l|ration - [|cffffcc00Level 3|r]
+Untip=Deactivate Immo|cffffcc00l|ration
+Hotkey=L
+Unhotkey=L
+Researchtip=Learn Immo|cffffcc00l|ration - [|cffffcc00Level %d|r]
+Researchhotkey=L
+Buttonpos=1,2
+Unbuttonpos=1,2
+Researchbuttonpos=1,0
+
+[aeev]
+Tip=Evasion - [|cffffcc00Level 1|r],Evasion - [|cffffcc00Level 2|r],Evasion - [|cffffcc00Level 3|r]
+Researchtip=Learn |cffffcc00E|rvasion - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aeme]
+Tip=Me|cffffcc00t|ramorphosis
+Hotkey=T
+Researchtip=Learn Me|cffffcc00t|ramorphosis
+Researchhotkey=T
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ekee]
+Hotkey=K
+Tip=Summon |cffffcc00K|reeper of the Grove
+Revivetip=Revive |cffffcc00K|reeper of the Grove
+Awakentip=Revive |cffffcc00K|reeper of the Grove
+Buttonpos=1,2
+
+[aeer]
+Tip=|cffffcc00E|rntangling Roots - [|cffffcc00Level 1|r],|cffffcc00E|rntangling Roots - [|cffffcc00Level 2|r],|cffffcc00E|rntangling Roots - [|cffffcc00Level 3|r]
+Hotkey=E
+Researchtip=Learn |cffffcc00E|rntangling Roots - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aefn]
+Tip=|cffffcc00F|rorce of Nature - [|cffffcc00Level 1|r],|cffffcc00F|rorce of Nature - [|cffffcc00Level 2|r],|cffffcc00F|rorce of Nature - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn |cffffcc00F|rorce of Nature - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aeah]
+Tip=Thorns Aura - [|cffffcc00Level 1|r],Thorns Aura - [|cffffcc00Level 2|r],Thorns Aura - [|cffffcc00Level 3|r]
+Researchtip=Learn Tho|cffffcc00r|rns Aura - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aetq]
+Tip=|cffffcc00T|rranquility
+Hotkey=T
+Researchtip=Learn |cffffcc00T|rranquility
+Researchhotkey=T
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[emoo]
+Hotkey=P
+Tip=Summon |cffffcc00P|rriestess of the Moon
+Revivetip=Revive |cffffcc00P|rriestess of the Moon
+Awakentip=Revive |cffffcc00P|rriestess of the Moon
+Buttonpos=2,2
+
+[aest]
+Tip=S|cffffcc00c|rout - [|cffffcc00Level 1|r],S|cffffcc00c|rout - [|cffffcc00Level 2|r],S|cffffcc00c|rout - [|cffffcc00Level 3|r]
+Hotkey=C
+Researchtip=Learn S|cffffcc00c|rout - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ahca]
+Tip=|cffffcc00C|rold Arrows - [|cffffcc00Level 1|r],|cffffcc00C|rold Arrows - [|cffffcc00Level 2|r],|cffffcc00C|rold Arrows - [|cffffcc00Level 3|r]
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=C
+Researchtip=Learn |cffffcc00C|rold Arrows - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[ahfa]
+Tip=Sea|cffffcc00r|ring Arrows - [|cffffcc00Level 1|r],Sea|cffffcc00r|ring Arrows - [|cffffcc00Level 2|r],Sea|cffffcc00r|ring Arrows - [|cffffcc00Level 3|r]
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Researchtip=Learn Sea|cffffcc00r|ring Arrows - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aear]
+Tip=Trueshot Aura - [|cffffcc00Level 1|r],Trueshot Aura - [|cffffcc00Level 2|r],Trueshot Aura - [|cffffcc00Level 3|r]
+Researchtip=Learn |cffffcc00T|rrueshot Aura - [|cffffcc00Level %d|r]
+Researchhotkey=T
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aesf]
+Tip=Star|cffffcc00f|rall
+Hotkey=F
+Researchtip=Learn Star|cffffcc00f|rall
+Researchhotkey=F
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ewar]
+Hotkey=W
+Tip=Summon |cffffcc00W|rarden
+Revivetip=Revive |cffffcc00W|rarden
+Awakentip=Revive |cffffcc00W|rarden
+Buttonpos=0,1
+
+[aefk]
+Tip=|cffffcc00F|ran of Knives - [|cffffcc00Level 1|r],|cffffcc00F|ran of Knives - [|cffffcc00Level 2|r],|cffffcc00F|ran of Knives - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn |cffffcc00F|ran of Knives - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aebl]
+Tip=|cffffcc00B|rlink - [|cffffcc00Level 1|r],|cffffcc00B|rlink - [|cffffcc00Level 2|r],|cffffcc00B|rlink - [|cffffcc00Level 3|r]
+Hotkey=B
+Researchtip=Learn |cffffcc00B|rlink - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aesh]
+Tip=Sha|cffffcc00d|row Strike - [|cffffcc00Level 1|r],Sha|cffffcc00d|row Strike - [|cffffcc00Level 2|r],Sha|cffffcc00d|row Strike - [|cffffcc00Level 3|r]
+Hotkey=D
+Researchtip=Learn Sha|cffffcc00d|row Strike - [|cffffcc00Level %d|r]
+Researchhotkey=D
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aesv]
+Tip=|cffffcc00V|rengeance
+Hotkey=V
+Researchtip=Learn |cffffcc00V|rengeance
+Researchhotkey=V
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[avng]
+Tip=Spirit of |cffffcc00V|rengeance
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=V
+Buttonpos=0,2
+
+[eill]
+Hotkey=D
+Tip=Summon |cffffcc00D|remon Hunter
+Revivetip=Revive |cffffcc00D|remon Hunter
+Awakentip=Revive |cffffcc00D|remon Hunter
+Buttonpos=0,2
+
+[efur]
+Hotkey=K
+Tip=Summon |cffffcc00K|reeper of the Grove
+Revivetip=Revive |cffffcc00K|reeper of the Grove
+Awakentip=Revive |cffffcc00K|reeper of the Grove
+Buttonpos=1,2
+
+[emns]
+Hotkey=K
+Tip=Summon |cffffcc00K|reeper of the Grove
+Revivetip=Revive |cffffcc00K|reeper of the Grove
+Awakentip=Revive |cffffcc00K|reeper of the Grove
+Buttonpos=1,1
+
+[emfr]
+Hotkey=K
+Tip=Summon |cffffcc00K|reeper of the Grove
+Revivetip=Revive |cffffcc00K|reeper of the Grove
+Awakentip=Revive |cffffcc00K|reeper of the Grove
+Buttonpos=2,1
+
+[etyr]
+Hotkey=P
+Tip=Summon |cffffcc00P|rriestess of the Moon
+Revivetip=Revive |cffffcc00P|rriestess of the Moon
+Awakentip=Revive |cffffcc00P|rriestess of the Moon
+Buttonpos=2,2
+
+[ewrd]
+Hotkey=W
+Tip=Summon |cffffcc00W|rarden
+Revivetip=Revive |cffffcc00W|rarden
+Awakentip=Revive |cffffcc00W|rarden
+Buttonpos=0,1
+
+[adtg]
+Tip=True Sight
+Buttonpos=0,2
+
+[aegr]
+Tip=Elune's Grace
+Buttonpos=1,2
+
+[amgl]
+Tip=Moon Glaive
+Buttonpos=1,2
+
+[aimp]
+Tip=Vorpal Blades
+Buttonpos=0,2
+
+[aspo]
+Tip=Slow Poison
+Buttonpos=1,2
+
+[assk]
+Tip=Hardened Skin
+Buttonpos=2,2
+
+[arsk]
+Tip=Resistant Skin
+Buttonpos=3,2
+
+[acor]
+Tip=Corrosive Breath
+Buttonpos=0,2
+
+[aesr]
+Tip=S|cffffcc00e|rntinel
+Hotkey=E
+Buttonpos=0,2
+
+[amgr]
+Tip=Moon Glaive
+Buttonpos=1,2
+
+[nngs]
+Hotkey=G
+Tip=Summon Na|cffffcc00g|ra Sea Witch
+Revivetip=Revive Na|cffffcc00g|ra Sea Witch
+Awakentip=Revive Na|cffffcc00g|ra Sea Witch
+Buttonpos=0,1
+
+[anfl]
+Tip=|cffffcc00F|rorked Lightning - [|cffffcc00Level 1|r],|cffffcc00F|rorked Lightning - [|cffffcc00Level 2|r],|cffffcc00F|rorked Lightning - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn |cffffcc00F|rorked Lightning - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[anfa]
+Tip=F|cffffcc00r|rost Arrows - [|cffffcc00Level 1|r],F|cffffcc00r|rost Arrows - [|cffffcc00Level 2|r],F|cffffcc00r|rost Arrows - [|cffffcc00Level 3|r]
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Researchtip=Learn F|cffffcc00r|rost Arrows - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[anms]
+Tip=Activate Ma|cffffcc00n|ra Shield - [|cffffcc00Level 1|r],Activate Ma|cffffcc00n|ra Shield - [|cffffcc00Level 2|r],Activate Ma|cffffcc00n|ra Shield - [|cffffcc00Level 3|r]
+Untip=Deactivate Ma|cffffcc00n|ra Shield
+Hotkey=N
+Unhotkey=N
+Researchtip=Learn Ma|cffffcc00n|ra Shield - [|cffffcc00Level %d|r]
+Researchhotkey=N
+Buttonpos=2,2
+Unbuttonpos=2,2
+Researchbuttonpos=2,0
+
+[anto]
+Tip=|cffffcc00T|rornado
+Hotkey=T
+Researchtip=Learn |cffffcc00T|rornado
+Researchhotkey=T
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[nplh]
+Hotkey=I
+Tip=Summon P|cffffcc00i|rt Lord
+Revivetip=Revive P|cffffcc00i|rt Lord
+Awakentip=Revive P|cffffcc00i|rt Lord
+Buttonpos=0,2
+
+[anrf]
+Tip=Rain of |cffffcc00F|rire - [|cffffcc00Level 1|r],Rain of |cffffcc00F|rire - [|cffffcc00Level 2|r],Rain of |cffffcc00F|rire - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn Rain of |cffffcc00F|rire - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[anht]
+Tip=Howl of |cffffcc00T|rerror - [|cffffcc00Level 1|r],Howl of |cffffcc00T|rerror - [|cffffcc00Level 2|r],Howl of |cffffcc00T|rerror - [|cffffcc00Level 3|r]
+Hotkey=T
+Researchtip=Learn Howl of |cffffcc00T|rerror - [|cffffcc00Level %d|r]
+Researchhotkey=T
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[anca]
+Tip=Cleaving Attack - [|cffffcc00Level 1|r],Cleaving Attack - [|cffffcc00Level 2|r],Cleaving Attack - [|cffffcc00Level 3|r]
+Researchtip=Learn |cffffcc00C|rleaving Attack - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[ando]
+Tip=|cffffcc00D|room
+Hotkey=D
+Researchtip=Learn |cffffcc00D|room
+Researchhotkey=D
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[npbm]
+Hotkey=N
+Tip=Summon Pa|cffffcc00n|rdaren Brewmaster
+Revivetip=Revive Pa|cffffcc00n|rdaren Brewmaster
+Awakentip=Revive Pa|cffffcc00n|rdaren Brewmaster
+Buttonpos=2,1
+
+[anbf]
+Tip=Breath of |cffffcc00F|rire - [|cffffcc00Level 1|r],Breath of |cffffcc00F|rire - [|cffffcc00Level 2|r],Breath of |cffffcc00F|rire - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn Breath of |cffffcc00F|rire - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[andh]
+Tip=|cffffcc00D|rrunken Haze - [|cffffcc00Level 1|r],|cffffcc00D|rrunken Haze - [|cffffcc00Level 2|r],|cffffcc00D|rrunken Haze - [|cffffcc00Level 3|r]
+Hotkey=D
+Researchtip=Learn |cffffcc00D|rrunken Haze - [|cffffcc00Level %d|r]
+Researchhotkey=D
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[andb]
+Tip=Drunken Brawler - [|cffffcc00Level 1|r],Drunken Brawler - [|cffffcc00Level 2|r],Drunken Brawler - [|cffffcc00Level 3|r]
+Researchtip=Learn Drunken |cffffcc00B|rrawler - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[anef]
+Tip="Storm, |cffffcc00E|rarth, And Fire"
+Hotkey=E
+Researchtip="Learn Storm, |cffffcc00E|rarth, And Fire"
+Researchhotkey=E
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[nbst]
+Hotkey=S
+Tip=Summon Bea|cffffcc00s|rtmaster
+Revivetip=Revive Bea|cffffcc00s|rtmaster
+Awakentip=Revive Bea|cffffcc00s|rtmaster
+Buttonpos=1,2
+
+[ansg]
+Tip=Summon |cffffcc00B|rear - [|cffffcc00Level 1|r],Summon |cffffcc00B|rear - [|cffffcc00Level 2|r],Summon |cffffcc00B|rear - [|cffffcc00Level 3|r]
+Hotkey=B
+Researchtip=Learn Summon |cffffcc00B|rear - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ansq]
+Tip=Summon |cffffcc00Q|ruilbeast - [|cffffcc00Level 1|r],Summon |cffffcc00Q|ruilbeast - [|cffffcc00Level 2|r],Summon |cffffcc00Q|ruilbeast - [|cffffcc00Level 3|r]
+Hotkey=Q
+Researchtip=Learn Summon |cffffcc00Q|ruilbeast - [|cffffcc00Level %d|r]
+Researchhotkey=Q
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[answ]
+Tip=Summon Ha|cffffcc00w|rk - [|cffffcc00Level 1|r],Summon Ha|cffffcc00w|rk - [|cffffcc00Level 2|r],Summon Ha|cffffcc00w|rk - [|cffffcc00Level 3|r]
+Hotkey=W
+Researchtip=Learn Summon Ha|cffffcc00w|rk - [|cffffcc00Level %d|r]
+Researchhotkey=W
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[anst]
+Tip=S|cffffcc00t|rampede
+Hotkey=T
+Researchtip=Learn S|cffffcc00t|rampede
+Researchhotkey=T
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[nbrn]
+Hotkey=R
+Tip=Summon Dark |cffffcc00R|ranger
+Revivetip=Revive Dark |cffffcc00R|ranger
+Awakentip=Revive Dark |cffffcc00R|ranger
+Buttonpos=1,1
+
+[ansi]
+Tip=Sil|cffffcc00e|rnce - [|cffffcc00Level 1|r],Sil|cffffcc00e|rnce - [|cffffcc00Level 2|r],Sil|cffffcc00e|rnce - [|cffffcc00Level 3|r]
+Hotkey=E
+Researchtip=Learn Sil|cffffcc00e|rnce - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[anba]
+Tip=|cffffcc00B|rlack Arrow - [|cffffcc00Level 1|r],|cffffcc00B|rlack Arrow - [|cffffcc00Level 2|r],|cffffcc00B|rlack Arrow - [|cffffcc00Level 3|r]
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=B
+Researchtip=Learn |cffffcc00B|rlack Arrow - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[andr]
+Tip=Life |cffffcc00D|rrain - [|cffffcc00Level 1|r],Life |cffffcc00D|rrain - [|cffffcc00Level 2|r],Life |cffffcc00D|rrain - [|cffffcc00Level 3|r]
+Hotkey=D
+Researchtip=Learn Life |cffffcc00D|rrain - [|cffffcc00Level %d|r]
+Researchhotkey=D
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[anch]
+Tip=|cffffcc00C|rharm
+Hotkey=C
+Researchtip=Learn |cffffcc00C|rharm
+Researchhotkey=C
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ntin]
+Tip=Summon Tinker (|cffffcc00Z|r)
+Hotkey=Z
+Revivetip=Revive Tinker (|cffffcc00Z|r)
+Awakentip=Revive Tinker (|cffffcc00Z|r)
+Buttonpos=2,2
+
+[nrob]
+Tip=Summon Tinker (|cffffcc00Z|r)
+Hotkey=Z
+Revivetip=Revive Tinker (|cffffcc00Z|r)
+Awakentip=Revive Tinker (|cffffcc00Z|r)
+
+[ansy]
+Tip=Pocket |cffffcc00F|ractory - [|cffffcc00Level 1|r],Pocket |cffffcc00F|ractory - [|cffffcc00Level 2|r],Pocket |cffffcc00F|ractory - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn Pocket |cffffcc00F|ractory - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ans1]
+Tip=Pocket |cffffcc00F|ractory - [|cffffcc00Level 1|r],Pocket |cffffcc00F|ractory - [|cffffcc00Level 2|r],Pocket |cffffcc00F|ractory - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn Pocket |cffffcc00F|ractory - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ans2]
+Tip=Pocket |cffffcc00F|ractory - [|cffffcc00Level 1|r],Pocket |cffffcc00F|ractory - [|cffffcc00Level 2|r],Pocket |cffffcc00F|ractory - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn Pocket |cffffcc00F|ractory - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ans3]
+Tip=Pocket |cffffcc00F|ractory - [|cffffcc00Level 1|r],Pocket |cffffcc00F|ractory - [|cffffcc00Level 2|r],Pocket |cffffcc00F|ractory - [|cffffcc00Level 3|r]
+Hotkey=F
+Researchtip=Learn Pocket |cffffcc00F|ractory - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ancs]
+Tip=Cluster |cffffcc00R|rockets - [|cffffcc00Level 1|r],Cluster |cffffcc00R|rockets - [|cffffcc00Level 2|r],Cluster |cffffcc00R|rockets - [|cffffcc00Level 3|r]
+Hotkey=R
+Researchtip=Learn Cluster |cffffcc00R|rockets - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[anc1]
+Tip=Cluster |cffffcc00R|rockets - [|cffffcc00Level 1|r],Cluster |cffffcc00R|rockets - [|cffffcc00Level 2|r],Cluster |cffffcc00R|rockets - [|cffffcc00Level 3|r]
+Hotkey=R
+Researchtip=Learn Cluster |cffffcc00R|rockets - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[anc2]
+Tip=Cluster |cffffcc00R|rockets - [|cffffcc00Level 1|r],Cluster |cffffcc00R|rockets - [|cffffcc00Level 2|r],Cluster |cffffcc00R|rockets - [|cffffcc00Level 3|r]
+Hotkey=R
+Researchtip=Learn Cluster |cffffcc00R|rockets - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[anc3]
+Tip=Cluster |cffffcc00R|rockets - [|cffffcc00Level 1|r],Cluster |cffffcc00R|rockets - [|cffffcc00Level 2|r],Cluster |cffffcc00R|rockets - [|cffffcc00Level 3|r]
+Hotkey=R
+Researchtip=Learn Cluster |cffffcc00R|rockets - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aneg]
+Tip=Engineering Upgrade - [|cffffcc00Level 1|r],Engineering Upgrade - [|cffffcc00Level 2|r],Engineering Upgrade - [|cffffcc00Level 3|r]
+Hotkey=E
+Researchtip=Learn |cffffcc00E|rngineering Upgrade - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[anrg]
+Tip=Ro|cffffcc00b|ro-Goblin
+Untip=Revert to |cffffcc00T|rinker Form
+Hotkey=B
+Unhotkey=T
+Researchtip=Learn Ro|cffffcc00b|ro-Goblin
+Researchhotkey=B
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+
+[ang1]
+Tip=Ro|cffffcc00b|ro-Goblin
+Untip=Revert to |cffffcc00T|rinker Form
+Hotkey=B
+Unhotkey=T
+Researchtip=Learn Ro|cffffcc00b|ro-Goblin
+Researchhotkey=B
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+
+[ang2]
+Tip=Ro|cffffcc00b|ro-Goblin
+Untip=Revert to |cffffcc00T|rinker Form
+Hotkey=B
+Unhotkey=T
+Researchtip=Learn Ro|cffffcc00b|ro-Goblin
+Researchhotkey=B
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+
+[ang3]
+Tip=Ro|cffffcc00b|ro-Goblin
+Untip=Revert to |cffffcc00T|rinker Form
+Hotkey=B
+Unhotkey=T
+Researchtip=Learn Ro|cffffcc00b|ro-Goblin
+Researchhotkey=B
+Buttonpos=3,2
+Unbuttonpos=3,2
+Researchbuttonpos=3,0
+
+[ande]
+Tip=Demolish
+
+[and1]
+Tip=Demolish - Upgrade Level 1
+
+[and2]
+Tip=Demolish - Upgrade Level 2
+
+[and3]
+Tip=Demolish - Upgrade Level 3
+
+[anfy]
+Tip=Factory
+
+[anf1]
+Tip=Factory - Upgrade Level 1
+
+[anf2]
+Tip=Factory - Upgrade Level 2
+
+[anf3]
+Tip=Factory - Upgrade Level 3
+
+[asdg]
+Tip=Ka|cffffcc00b|room!
+Hotkey=B
+Unhotkey=B
+Buttonpos=0,2
+Unbuttonpos=0,2
+
+[asd2]
+Tip=Ka|cffffcc00b|room!
+Hotkey=B
+Unhotkey=B
+Buttonpos=0,2
+Unbuttonpos=0,2
+
+[asd3]
+Tip=Ka|cffffcc00b|room!
+Hotkey=B
+Unhotkey=B
+Buttonpos=0,2
+Unbuttonpos=0,2
+
+[nalc]
+Hotkey=X
+Tip=Summon Alchemist (|cffffcc00X|r)
+Revivetip=Revive Alchemist (|cffffcc00X|r)
+Awakentip=Revive Alchemist (|cffffcc00X|r)
+Buttonpos=3,2
+
+[nalm]
+Hotkey=X
+Tip=Summon Alchemist (|cffffcc00X|r)
+Revivetip=Revive Alchemist (|cffffcc00X|r)
+Awakentip=Revive Alchemist (|cffffcc00X|r)
+Buttonpos=3,2
+
+[nal2]
+Hotkey=X
+Tip=Summon Alchemist (|cffffcc00X|r)
+Revivetip=Revive Alchemist (|cffffcc00X|r)
+Awakentip=Revive Alchemist (|cffffcc00X|r)
+Buttonpos=3,2
+
+[nal3]
+Hotkey=X
+Tip=Summon Alchemist (|cffffcc00X|r)
+Revivetip=Revive Alchemist (|cffffcc00X|r)
+Awakentip=Revive Alchemist (|cffffcc00X|r)
+Buttonpos=3,2
+
+[anhs]
+Tip=H|cffffcc00e|raling Spray - [|cffffcc00Level 1|r],H|cffffcc00e|raling Spray - [|cffffcc00Level 2|r],H|cffffcc00e|raling Spray - [|cffffcc00Level 3|r]
+Hotkey=E
+Researchtip=Learn H|cffffcc00e|raling Spray - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[ancr]
+Tip=Chemical |cffffcc00R|rage - [|cffffcc00Level 1|r],Chemical |cffffcc00R|rage - [|cffffcc00Level 2|r],Chemical |cffffcc00R|rage - [|cffffcc00Level 3|r]
+Hotkey=R
+Researchtip=Learn Chemical |cffffcc00R|rage - [|cffffcc00Level %d|r]
+Researchhotkey=R
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[anab]
+Tip=Acid |cffffcc00B|romb - [|cffffcc00Level 1|r],Acid |cffffcc00B|romb - [|cffffcc00Level 2|r],Acid |cffffcc00B|romb - [|cffffcc00Level 3|r]
+Hotkey=B
+Researchtip=Learn Acid |cffffcc00B|romb - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[antm]
+Tip=|cffffcc00T|rransmute
+Hotkey=T
+Researchtip=Learn |cffffcc00T|rransmute
+Researchhotkey=T
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[nfir]
+Hotkey=O
+Tip=Summon Firel|cffffcc00o|rrd
+Revivetip=Revive Firel|cffffcc00o|rrd
+Awakentip=Revive Firel|cffffcc00o|rrd
+Buttonpos=3,1
+
+[anso]
+Tip=Soul |cffffcc00B|rurn - [|cffffcc00Level 1|r],Soul |cffffcc00B|rurn - [|cffffcc00Level 2|r],Soul |cffffcc00B|rurn - [|cffffcc00Level 3|r]
+Hotkey=B
+Researchtip=Learn Soul |cffffcc00B|rurn - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[anlm]
+Tip=Summon Lava Spa|cffffcc00w|rn - [|cffffcc00Level 1|r],Summon Lava Spa|cffffcc00w|rn - [|cffffcc00Level 2|r],Summon Lava Spa|cffffcc00w|rn - [|cffffcc00Level 3|r]
+Hotkey=W
+Researchtip=Learn Summon Lava Spa|cffffcc00w|rn - [|cffffcc00Level %d|r]
+Researchhotkey=W
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[ania]
+Tip=Incinerate - [|cffffcc00Level 1|r],Incinerate - [|cffffcc00Level 2|r],Incinerate - [|cffffcc00Level 3|r]
+Hotkey=C
+Researchtip=Learn In|cffffcc00c|rinerate - [|cffffcc00Level %d|r]
+Researchhotkey=C
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[anvc]
+Tip=|cffffcc00V|rolcano
+Hotkey=V
+Researchtip=Learn |cffffcc00V|rolcano
+Researchhotkey=V
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ngsp]
+Tip=Hire Goblin |cffffcc00S|rapper
+Hotkey=S
+Buttonpos=0,0
+
+[nzep]
+Tip=Hire Goblin |cffffcc00Z|reppelin
+Hotkey=Z
+Buttonpos=1,0
+
+[ngir]
+Tip=Hire |cffffcc00G|roblin Shredder
+Hotkey=G
+Buttonpos=2,0
+
+[andt]
+Tip=|cffffcc00R|reveal
+Hotkey=R
+Buttonpos=3,0
+
+[nbot]
+Tip=Hire |cffffcc00T|rransport Ship
+Hotkey=T
+Buttonpos=0,0
+
+[hbot]
+Tip=Hire |cffffcc00T|rransport Ship
+Hotkey=T
+Buttonpos=0,0
+
+[hdes]
+Tip=Hire |cffffcc00F|rrigate
+Hotkey=F
+Buttonpos=1,0
+
+[hbsh]
+Tip=Hire |cffffcc00B|rattleship
+Hotkey=B
+Buttonpos=2,0
+
+[obot]
+Tip=Hire |cffffcc00T|rransport Ship
+Hotkey=T
+Buttonpos=0,0
+
+[odes]
+Tip=Hire |cffffcc00F|rrigate
+Hotkey=F
+Buttonpos=1,0
+
+[ojgn]
+Tip=Train O|cffffcc00r|rc Juggernaught
+Hotkey=R
+Buttonpos=2,0
+
+[ubot]
+Tip=Hire |cffffcc00T|rransport Ship
+Hotkey=T
+Buttonpos=0,0
+
+[udes]
+Tip=Hire |cffffcc00F|rrigate
+Hotkey=F
+Buttonpos=1,0
+
+[uubs]
+Tip=Hire |cffffcc00B|rattleship
+Hotkey=B
+Buttonpos=2,0
+
+[etrs]
+Tip=Hire |cffffcc00T|rransport Ship
+Hotkey=T
+Buttonpos=0,0
+
+[edes]
+Tip=Hire |cffffcc00F|rrigate
+Hotkey=F
+Buttonpos=1,0
+
+[ebsh]
+Tip=Hire |cffffcc00B|rattleship
+Hotkey=B
+Buttonpos=2,0
+
+[bspd]
+Tip=Purchase Boots of |cffffcc00S|rpeed
+Hotkey=S
+Buttonpos=0,0
+
+[prvt]
+Tip=Purchase Periapt of |cffffcc00V|ritality
+Hotkey=V
+Buttonpos=1,0
+
+[cnob]
+Tip=Purchase |cffffcc00C|rirclet of Nobility
+Hotkey=C
+Buttonpos=2,0
+
+[dust]
+Tip=Purchase |cffffcc00D|rust of Appearance
+Hotkey=D
+Buttonpos=3,0
+
+[spro]
+Tip=Purchase Scroll of P|cffffcc00r|rotection
+Hotkey=R
+Buttonpos=0,1
+
+[pinv]
+Tip=Purchase Potion of |cffffcc00I|rnvisibility
+Hotkey=I
+Buttonpos=1,1
+
+[stwp]
+Tip=Purchase Scroll of |cffffcc00T|rown Portal
+Hotkey=T
+Buttonpos=2,1
+
+[stel]
+Tip=Purchase Staff of T|cffffcc00e|rleportation
+Hotkey=E
+Buttonpos=3,1
+
+[tret]
+Tip=Purchase T|cffffcc00o|rme of Retraining
+Hotkey=O
+Buttonpos=0,2
+
+[shea]
+Tip=Purchase Scroll of |cffffcc00H|realing
+Hotkey=H
+Buttonpos=1,2
+
+[pnvl]
+Tip=Purchase Potion of Lesser I|cffffcc00n|rvulnerability
+Hotkey=N
+Buttonpos=2,2
+
+[plcl]
+Tip=Purchase Lesser |cffffcc00C|rlarity Potion
+Hotkey=C
+Buttonpos=1,0
+
+[phea]
+Tip=Purchase |cffffcc00P|rotion of Healing
+Hotkey=P
+Buttonpos=0,1
+
+[pman]
+Tip=Purchase Potion of |cffffcc00M|rana
+Hotkey=M
+Buttonpos=1,1
+
+[sreg]
+Tip=Purchase Scroll of |cffffcc00R|regeneration
+Hotkey=R
+Buttonpos=0,0
+
+[mcri]
+Tip=Purchase M|cffffcc00e|rchanical Critter
+Hotkey=E
+Buttonpos=2,0
+
+[tsct]
+Tip=Purchase I|cffffcc00v|rory Tower
+Hotkey=V
+Buttonpos=3,1
+
+[ofir]
+Tip=Purchase Orb of |cffffcc00F|rire
+Hotkey=F
+Buttonpos=0,2
+
+[ssan]
+Tip=Purchase Staff of Sa|cffffcc00n|rctuary
+Hotkey=N
+Buttonpos=1,2
+
+[hslv]
+Tip=Purchase |cffffcc00H|realing Salve
+Hotkey=H
+Buttonpos=0,0
+
+[shas]
+Tip=Purchase Scroll of |cffffcc00S|rpeed
+Hotkey=S
+Buttonpos=2,0
+
+[oli2]
+Tip=Purchase Orb of |cffffcc00L|rightning
+Hotkey=L
+Buttonpos=0,2
+
+[tgrh]
+Tip=Purchase Tiny |cffffcc00G|rreat Hall
+Hotkey=G
+Buttonpos=1,2
+
+[moon]
+Tip=Purchase Moo|cffffcc00n|rstone
+Hotkey=N
+Buttonpos=0,0
+
+[spre]
+Tip=Purchase Staff of Pr|cffffcc00e|rservation
+Hotkey=E
+Buttonpos=3,1
+
+[oven]
+Tip=Purchase Orb of |cffffcc00V|renom
+Hotkey=V
+Buttonpos=0,2
+
+[pams]
+Tip=Purchase |cffffcc00A|rnti-magic Potion
+Hotkey=A
+Buttonpos=1,2
+
+[rnec]
+Tip=Purchase |cffffcc00R|rod of Necromancy
+Hotkey=R
+Buttonpos=0,0
+
+[skul]
+Tip=Purchase Sacrificial S|cffffcc00k|rull
+Hotkey=K
+Buttonpos=1,0
+
+[ocor]
+Tip=Purchase Or|cffffcc00b|r of Corruption
+Hotkey=B
+Buttonpos=0,2
+
+[nrdk]
+Tip=Summon Red Dragon |cffffcc00W|rhelp
+Hotkey=W
+Buttonpos=0,0
+
+[nrdr]
+Tip=Summon Red Dra|cffffcc00k|re
+Hotkey=E
+Buttonpos=1,0
+
+[nrwm]
+Tip=Summon Red |cffffcc00D|rragon
+Hotkey=D
+Buttonpos=2,0
+
+[ngrw]
+Tip=Summon Green Dragon |cffffcc00W|rhelp
+Hotkey=W
+Buttonpos=0,0
+
+[ngdk]
+Tip=Summon Green Dra|cffffcc00k|re
+Hotkey=E
+Buttonpos=1,0
+
+[ngrd]
+Tip=Summon Green |cffffcc00D|rragon
+Hotkey=D
+Buttonpos=2,0
+
+[nadw]
+Tip=Summon Blue Dragon |cffffcc00W|rhelp
+Hotkey=W
+Buttonpos=0,0
+
+[nadk]
+Tip=Summon Blue Dra|cffffcc00k|re
+Hotkey=E
+Buttonpos=1,0
+
+[nadr]
+Tip=Summon Blue |cffffcc00D|rragon
+Hotkey=D
+Buttonpos=2,0
+
+[nbzw]
+Tip=Summon Bronze Dragon |cffffcc00W|rhelp
+Hotkey=W
+Buttonpos=0,0
+
+[nbzk]
+Tip=Summon Bronze Dra|cffffcc00k|re
+Hotkey=E
+Buttonpos=1,0
+
+[nbzd]
+Tip=Summon Bronze |cffffcc00D|rragon
+Hotkey=D
+Buttonpos=2,0
+
+[nbdr]
+Tip=Summon Black Dragon |cffffcc00W|rhelp
+Hotkey=W
+Buttonpos=0,0
+
+[nbdk]
+Tip=Summon Black Dra|cffffcc00k|re
+Hotkey=E
+Buttonpos=1,0
+
+[nbwm]
+Tip=Summon Black |cffffcc00D|rragon
+Hotkey=D
+Buttonpos=2,0
+
+[nnht]
+Tip=Summon Nether Dragon |cffffcc00H|ratchling
+Hotkey=H
+Buttonpos=0,0
+
+[nndk]
+Tip=Summon Nether Dra|cffffcc00k|re
+Hotkey=E
+Buttonpos=1,0
+
+[nndr]
+Tip=Summon Nether |cffffcc00D|rragon
+Hotkey=D
+Buttonpos=2,0
+
+[ndtr]
+Tip=Hire Dark |cffffcc00T|rroll
+Hotkey=T
+Buttonpos=0,0
+
+[ndtp]
+Tip=Hire Dark Troll Shadow |cffffcc00P|rriest
+Hotkey=P
+Buttonpos=0,0
+
+[ndtt]
+Tip=Hire |cffffcc00D|rark Troll Trapper
+Hotkey=D
+Buttonpos=0,0
+
+[ndtb]
+Tip=Hire Dark Troll |cffffcc00B|rerserker
+Hotkey=B
+Buttonpos=0,0
+
+[ndth]
+Tip=Hire Dark Troll |cffffcc00H|righ Priest
+Hotkey=H
+Buttonpos=0,0
+
+[ndtw]
+Tip=Hire Dark Troll |cffffcc00W|rarlord
+Hotkey=W
+Buttonpos=0,0
+
+[nftr]
+Tip=Hire Forest |cffffcc00T|rroll
+Hotkey=T
+Buttonpos=0,0
+
+[nfsp]
+Tip=Hire Forest Troll Shadow |cffffcc00P|rriest
+Hotkey=P
+Buttonpos=0,0
+
+[nftt]
+Tip=Hire |cffffcc00F|rorest Troll Trapper
+Hotkey=F
+Buttonpos=0,0
+
+[nftb]
+Tip=Hire Forest Troll |cffffcc00B|rerserker
+Hotkey=B
+Buttonpos=1,0
+
+[nfsh]
+Tip=Hire Forest Troll |cffffcc00H|righ Priest
+Hotkey=H
+Buttonpos=3,0
+
+[ndtw]
+Tip=Hire Forest Troll |cffffcc00W|rarlord
+Hotkey=W
+Buttonpos=0,0
+
+[nitr]
+Tip=Hire Ice |cffffcc00T|rroll
+Hotkey=T
+Buttonpos=0,0
+
+[nitp]
+Tip=Hire Ice Troll |cffffcc00P|rriest
+Hotkey=P
+Buttonpos=0,0
+
+[nitt]
+Tip=Hire Ice Troll |cffffcc00T|rrapper
+Hotkey=T
+Buttonpos=0,0
+
+[nits]
+Tip=Hire Ice Troll |cffffcc00B|rerserker
+Hotkey=B
+Buttonpos=1,0
+
+[nith]
+Tip=Hire Ice Troll |cffffcc00H|righ Priest
+Hotkey=H
+Buttonpos=0,0
+
+[nitw]
+Tip=Hire Ice Troll |cffffcc00W|rarlord
+Hotkey=W
+Buttonpos=0,0
+
+[ngrk]
+Tip=Summon M|cffffcc00u|rd Golem
+Hotkey=U
+Buttonpos=2,0
+
+[ngst]
+Tip=Summon Rock Golem
+Buttonpos=0,0
+
+[nggr]
+Tip=Summon Granite Golem
+Buttonpos=0,0
+
+[narg]
+Tip=Summon Battle Golem
+Buttonpos=0,0
+
+[nwrg]
+Tip=Summon War Golem
+Buttonpos=0,0
+
+[nsgg]
+Tip=Summon Siege Golem
+Buttonpos=0,0
+
+[nogr]
+Tip=Hire Ogre |cffffcc00W|rarrior
+Hotkey=W
+Buttonpos=0,0
+
+[nomg]
+Tip=Hire O|cffffcc00g|rre Magi
+Hotkey=G
+Buttonpos=3,0
+
+[nogm]
+Tip=Hire Ogre |cffffcc00M|rauler
+Hotkey=M
+Buttonpos=3,0
+
+[nogl]
+Tip=Hire Ogre |cffffcc00L|rord
+Hotkey=L
+Buttonpos=0,0
+
+[nban]
+Tip=Hire |cffffcc00B|randit
+Hotkey=B
+Buttonpos=0,0
+
+[nbrg]
+Tip=Hire Brigand
+Buttonpos=0,0
+
+[nrog]
+Tip=Hire |cffffcc00R|rogue
+Hotkey=R
+Buttonpos=1,0
+
+[nass]
+Tip=Hire |cffffcc00A|rssassin
+Hotkey=A
+Buttonpos=0,0
+
+[nenf]
+Tip=Hire |cffffcc00E|rnforcer
+Hotkey=E
+Buttonpos=0,0
+
+[nbld]
+Tip=Hire Bandit Lord
+Buttonpos=0,0
+
+[nwiz]
+Tip=Hire Apprentice Wizard
+Buttonpos=0,0
+
+[nwzr]
+Tip=Hire Rogue Wizard
+Buttonpos=0,0
+
+[nwzg]
+Tip=Hire Renegade Wizard
+Buttonpos=0,0
+
+[nwzd]
+Tip=Hire Dark Wizard
+Buttonpos=0,0
+
+[nhfp]
+Tip=Hire Fallen Priest
+Buttonpos=0,0
+
+[nhdc]
+Tip=Hire Deceiver
+Buttonpos=0,0
+
+[nhhr]
+Tip=Hire Heretic
+Buttonpos=0,0
+
+[nhyh]
+Tip=Summon Hydra Hatchling
+Buttonpos=0,0
+
+[nhyd]
+Tip=Summon Hydra
+Buttonpos=0,0
+
+[nehy]
+Tip=Summon Elder Hydra
+Buttonpos=0,0
+
+[nahy]
+Tip=Summon Ancient Hydra
+Buttonpos=0,0
+
+[nmrl]
+Tip=Hire Murloc Tiderunner
+Buttonpos=0,0
+
+[nmrr]
+Tip=Hire Murloc |cffffcc00H|runtsman
+Hotkey=H
+Buttonpos=3,0
+
+[nmpg]
+Tip=Hire Murloc Plaguebearer
+Buttonpos=0,0
+
+[nmfs]
+Tip=Hire |cffffcc00M|rurloc Flesheater
+Hotkey=M
+Buttonpos=0,0
+
+[nmrm]
+Tip=Hire Murloc Nightcrawler
+Buttonpos=0,0
+
+[nmmu]
+Tip=Hire Murloc Mutant
+Buttonpos=0,0
+
+[nslm]
+Tip=Summon Sludge Minion
+Buttonpos=0,0
+
+[nslf]
+Tip=Summon Sludge |cffffcc00F|rlinger
+Hotkey=F
+Buttonpos=1,0
+
+[nsln]
+Tip=Summon Sludge Monstrosity
+Buttonpos=0,0
+
+[nfrl]
+Tip=Hire Furbolg
+Buttonpos=0,0
+
+[nfrs]
+Tip=Hire |cffffcc00F|rurbolg Shaman
+Hotkey=F
+Buttonpos=0,0
+
+[nfrb]
+Tip=Hire Furbolg Tracker
+Buttonpos=0,0
+
+[nfrg]
+Tip=Hire Furbolg Champion
+Buttonpos=0,0
+
+[nfre]
+Tip=Hire Furbolg Elder Shaman
+Buttonpos=0,0
+
+[nfra]
+Tip=Hire Furbolg Ursa Warrior
+Buttonpos=0,0
+
+[nfrp]
+Tip=Hire Pandaren
+Buttonpos=0,0
+
+[nplb]
+Tip=Hire Polar Bear
+Buttonpos=0,0
+
+[nplg]
+Tip=Hire Giant Polar Bear
+Buttonpos=0,0
+
+[nfpl]
+Tip=Hire Polar Furbolg
+Buttonpos=0,0
+
+[nfps]
+Tip=Hire Polar |cffffcc00F|rurbolg Shaman
+Hotkey=F
+Buttonpos=2,0
+
+[nfpt]
+Tip=Hire Polar Furbolg Tracker
+Buttonpos=0,0
+
+[nfpc]
+Tip=Hire Polar Furbolg Champion
+Buttonpos=0,0
+
+[nfpe]
+Tip=Hire Polar Furbolg Elder Shaman
+Buttonpos=0,0
+
+[nfpu]
+Tip=Hire Polar Furbolg Ursa Warrior
+Buttonpos=0,0
+
+[ngh1]
+Tip=Summon Ghost
+Buttonpos=0,0
+
+[ngh1]
+Tip=Summon Wraith
+Buttonpos=0,0
+
+[nltl]
+Tip=Summon Lightning Lizard
+Buttonpos=0,0
+
+[nthl]
+Tip=Summon |cffffcc00T|rhunder Lizard
+Hotkey=T
+Buttonpos=1,0
+
+[nstw]
+Tip=Summon Storm Wyrm
+Buttonpos=0,0
+
+[nslh]
+Tip=Summon Salamander Hatchling
+Buttonpos=0,0
+
+[nslr]
+Tip=Summon Salamander
+Buttonpos=0,0
+
+[nslv]
+Tip=Summon Salamander Vizier
+Buttonpos=0,0
+
+[nsll]
+Tip=Summon Salamander Lord
+Buttonpos=0,0
+
+[nsqt]
+Tip=Summon Sasquatch
+Buttonpos=0,0
+
+[nsqe]
+Tip=Summon Elder Sasquatch
+Buttonpos=0,0
+
+[nsqo]
+Tip=Summon Sasquatch Oracle
+Buttonpos=0,0
+
+[nsqa]
+Tip=Summon Ancient Sasquatch
+Buttonpos=0,0
+
+[nsty]
+Tip=Hire Satyr
+Buttonpos=0,0
+
+[nsat]
+Tip=Hire Satyr Trickster
+Buttonpos=0,0
+
+[nsts]
+Tip=Hire Satyr |cffffcc00S|rhadowdancer
+Hotkey=S
+Buttonpos=2,0
+
+[nstl]
+Tip=Hire Satyr |cffffcc00S|roulstealer
+Hotkey=S
+Buttonpos=2,0
+
+[nsth]
+Tip=Hire Satyr Hellcaller
+Buttonpos=0,0
+
+[ngno]
+Tip=Hire Gnoll |cffffcc00R|robber
+Hotkey=R
+Buttonpos=0,0
+
+[ngna]
+Tip=Hire Gnoll Po|cffffcc00a|rrcher
+Hotkey=A
+Buttonpos=0,0
+
+[ngns]
+Tip=Hire Gnoll |cffffcc00A|rssassin
+Hotkey=A
+Buttonpos=0,0
+
+[ngnb]
+Tip=Hire Gnoll |cffffcc00B|rrute
+Hotkey=B
+Buttonpos=0,0
+
+[ngnw]
+Tip=Hire Gnoll |cffffcc00W|rarden
+Hotkey=W
+Buttonpos=1,0
+
+[ngnv]
+Tip=Hire Gnoll |cffffcc00O|rverseer
+Hotkey=O
+Buttonpos=3,0
+
+[nkob]
+Tip=Hire |cffffcc00K|robold
+Hotkey=K
+Buttonpos=1,0
+
+[nkog]
+Tip=Hire Kobold |cffffcc00G|reomancer
+Hotkey=G
+Buttonpos=2,0
+
+[nkot]
+Tip=Hire Kobolt Tunneler
+Buttonpos=0,0
+
+[nkol]
+Tip=Hire Kobold Taskmaster
+Buttonpos=0,0
+
+[ncea]
+Tip=Hire Centaur |cffffcc00A|rrcher
+Hotkey=A
+Buttonpos=0,0
+
+[ncer]
+Tip=Hire Centaur |cffffcc00D|rrudge
+Hotkey=D
+Buttonpos=0,0
+
+[ncim]
+Tip=Hire Centaur Impaler
+Buttonpos=0,0
+
+[ncen]
+Tip=Hire Centaur |cffffcc00O|rutrunner
+Hotkey=O
+Buttonpos=0,0
+
+[ncks]
+Tip=Hire Centaur Sorcerer
+Buttonpos=0,0
+
+[ncnk]
+Tip=Hire Centaur Khan
+Buttonpos=0,0
+
+[nhar]
+Tip=Hire Harpy Scout
+Buttonpos=0,0
+
+[nhrr]
+Tip=Hire Harpy |cffffcc00R|rogue
+Hotkey=R
+Buttonpos=1,0
+
+[nhrw]
+Tip=Hire Harpy |cffffcc00W|rindwitch
+Hotkey=W
+Buttonpos=2,0
+
+[nhrh]
+Tip=Hire Harpy Storm-hag
+Buttonpos=0,0
+
+[nhrq]
+Tip=Hire Harpy Queen
+Buttonpos=0,0
+
+[nrzt]
+Tip=Hire Quillboar
+Buttonpos=0,0
+
+[nrzs]
+Tip=Hire Razormane Scout
+Buttonpos=0,0
+
+[nqbh]
+Tip=Hire Quillboar Hunter
+Buttonpos=0,0
+
+[nrzb]
+Tip=Hire Razormane Brute
+Buttonpos=0,0
+
+[nrzm]
+Tip=Hire Razormane Medicine |cffffcc00	M|ran
+Hotkey=M
+Buttonpos=3,0
+
+[nrzg]
+Tip=Hire Razormane Chieftain
+Buttonpos=0,0
+
+[nnwa]
+Tip=Summon Nerubian |cffffcc00W|rarrior
+Hotkey=W
+Buttonpos=0,0
+
+[nnwl]
+Tip=Summon |cffffcc00N|rerubian Webspinner
+Hotkey=N
+Buttonpos=2,0
+
+[nnwr]
+Tip=Summon Nerubian Seer
+Buttonpos=0,0
+
+[nnws]
+Tip=Summon Nerubian Spider Lord
+Buttonpos=0,0
+
+[nnwq]
+Tip=Summon Nerubian Queen
+Buttonpos=0,0
+
+[nrvf]
+Tip=Summon Fire Revenant
+Buttonpos=0,0
+
+[ntrv]
+Tip=Summon Revenant of the Tides
+Buttonpos=0,0
+
+[nrvs]
+Tip=Summon |cffffcc00F|rrost Revenant
+Hotkey=F
+Buttonpos=3,0
+
+[nsrv]
+Tip=Summon Revenant of the Seas
+Buttonpos=0,0
+
+[nrvl]
+Tip=Summon Lightning Revenant
+Buttonpos=0,0
+
+[nrvi]
+Tip=Summon Ice Revenant
+Buttonpos=0,0
+
+[ndrv]
+Tip=Summon Revenant of the Depths
+Buttonpos=0,0
+
+[nrvd]
+Tip=Summon Death Revenant
+Buttonpos=0,0
+
+[nlrv]
+Tip=Summon Deeplord Revenant
+Buttonpos=0,0
+
+[nsko]
+Tip=Summon Skeletal Orc
+Buttonpos=0,0
+
+[nsog]
+Tip=Summon Skeletal Orc Grunt
+Buttonpos=0,0
+
+[nsoc]
+Tip=Summon Skeletal Orc Champion
+Buttonpos=0,0
+
+[nsra]
+Tip=Summon Stormreaver Apprentice
+Buttonpos=0,0
+
+[nsrh]
+Tip=Summon Stormreaver Hermit
+Buttonpos=0,0
+
+[nsrn]
+Tip=Summon Stormreaver Necrolyte
+Buttonpos=0,0
+
+[nsrw]
+Tip=Summon Stormreaver Warlock
+Buttonpos=0,0
+
+[nska]
+Tip=Hire Skeleton Archer
+Buttonpos=0,0
+
+[nskf]
+Tip=Hire |cffffcc00B|rurning Archer
+Hotkey=B
+Buttonpos=0,0
+
+[nskm]
+Tip=Hire S|cffffcc00k|reletal Marksman
+Hotkey=K
+Buttonpos=0,0
+
+[nske]
+Tip=Hire Skeleton Warrior
+Buttonpos=0,0
+
+[nskg]
+Tip=Hire Giant Skeleton Warrior
+Buttonpos=0,0
+
+[nowb]
+Tip=Summon |cffffcc00W|rildkin
+Hotkey=W
+Buttonpos=1,0
+
+[nowe]
+Tip=Summon Enraged Wildkin
+Buttonpos=0,0
+
+[nowk]
+Tip=Summon Berserk Wildkin
+Buttonpos=0,0
+
+[ntrh]
+Tip=Hire Sea Turtle Hatchling
+Buttonpos=0,0
+
+[ntrs]
+Tip=Hire Sea Turtle
+Buttonpos=0,0
+
+[ntrt]
+Tip=Hire Giant Sea |cffffcc00T|rurtle
+Hotkey=T
+Buttonpos=0,0
+
+[ntrg]
+Tip=Hire Gargantuan Sea Turtle
+Buttonpos=0,0
+
+[ntrd]
+Tip=Hire Dragon Turtle
+Buttonpos=0,0
+
+[ntkf]
+Tip=Hire Tuskarr Fighter
+Buttonpos=0,0
+
+[ntka]
+Tip=Hire Tuskarr Spearman
+Buttonpos=0,0
+
+[ntkh]
+Tip=Hire Tuskarr Healer
+Buttonpos=0,0
+
+[ntkt]
+Tip=Hire Tuskarr Trapper
+Buttonpos=0,0
+
+[ntkw]
+Tip=Hire Tuskarr Warrior
+Buttonpos=0,0
+
+[ntks]
+Tip=Hire Tuskarr Sorcerer
+Buttonpos=0,0
+
+[ntkc]
+Tip=Hire Tuskarr Chieftain
+Buttonpos=0,0
+
+[nubk]
+Tip=Hire Unbroken Darkhunter
+Buttonpos=0,0
+
+[nubr]
+Tip=Hire Unbroken Rager
+Buttonpos=0,0
+
+[nubw]
+Tip=Hire Unbroken Darkweaver
+Buttonpos=0,0
+
+[nmcf]
+Tip=Hire Mur'gul Cliffrunner
+Buttonpos=0,0
+
+[nmbg]
+Tip=Hire Mur'gul Blood-Gill
+Buttonpos=0,0
+
+[nmtw]
+Tip=Hire Mur'gul Tidewarrior
+Buttonpos=0,0
+
+[nmsn]
+Tip=Hire Mur'|cffffcc00g|rul Snarecaster
+Hotkey=G
+Buttonpos=2,0
+
+[nmrv]
+Tip=Hire Mur'gul Marauder
+Buttonpos=0,0
+
+[nmsc]
+Tip=Hire Mur'gul Shadowcaster
+Buttonpos=0,0
+
+[nlpr]
+Tip=Hire Makrura Prawn
+Buttonpos=0,0
+
+[nlpd]
+Tip=Hire Makrura Pooldweller
+Buttonpos=0,0
+
+[nltc]
+Tip=Hire Makrura Tidecaller
+Buttonpos=0,0
+
+[nlds]
+Tip=Hire Makrura |cffffcc00D|reepseer
+Hotkey=D
+Buttonpos=3,0
+
+[nlsn]
+Tip=Hire Mak|cffffcc00r|rura Snapper
+Hotkey=R
+Buttonpos=1,0
+
+[nlkl]
+Tip=Hire Makrura Tidal Lord
+Buttonpos=0,0
+
+[nanm]
+Tip=Hire |cffffcc00B|rarbed Arachnathid
+Hotkey=B
+Buttonpos=0,0
+
+[nanb]
+Tip=Hire |cffffcc00B|rarbed Arachnathid
+Hotkey=B
+Buttonpos=0,0
+
+[nanc]
+Tip=Hire Crystal Arachnathid
+Buttonpos=0,0
+
+[nanw]
+Tip=Hire Warrior Arachnathid
+Buttonpos=0,0
+
+[nbdm]
+Tip=Hire Blue |cffffcc00D|rragonspawn Meddler
+Hotkey=D
+Buttonpos=1,0
+
+[nbda]
+Tip=Hire Blue Dragonspawn Apprentice
+Buttonpos=0,0
+
+[nbdw]
+Tip=Hire Blue Dragonspawn Warrior
+Buttonpos=0,0
+
+[nbds]
+Tip=Hire Blue Dragonspawn Sorcerer
+Buttonpos=0,0
+
+[nbdo]
+Tip=Hire Blue Dragonspawn Overseer
+Buttonpos=0,0
+
+[nmgw]
+Tip=Hire Magnataur |cffffcc00W|rarrior
+Hotkey=W
+Buttonpos=3,0
+
+[nmgr]
+Tip=Hire Magnataur Reaver
+Buttonpos=0,0
+
+[nmgd]
+Tip=Hire Magnataur Destroyer
+Buttonpos=0,0
+
+[nmam]
+Tip=Hire Mammoth
+Buttonpos=0,0
+
+[nmit]
+Tip=Hire Icetusk Mammoth
+Buttonpos=0,0
+
+[nmdr]
+Tip=Hire Dire Mammoth
+Buttonpos=0,0
+
+[nsgn]
+Tip=Summon Sea Giant
+Buttonpos=0,0
+
+[nsgh]
+Tip=Summon Sea Giant Hunter
+Buttonpos=0,0
+
+[nsgb]
+Tip=Summon Sea Giant Behemoth
+Buttonpos=0,0
+
+[nspb]
+Tip=Summon Black Spider
+Buttonpos=0,0
+
+[nspg]
+Tip=Summon Forest Spider
+Buttonpos=0,0
+
+[nspr]
+Tip=Summon Spider
+Buttonpos=0,0
+
+[nssp]
+Tip=Summon Spitting Spider
+Buttonpos=0,0
+
+[nsgt]
+Tip=Summon Giant Spider
+Buttonpos=0,0
+
+[nsbm]
+Tip=Summon Brood Mother
+Buttonpos=0,0
+
+[nscb]
+Tip=Hire Spider |cffffcc00C|rrab Shorecrawler
+Hotkey=C
+Buttonpos=0,0
+
+[nsc2]
+Tip=Hire Spider |cffffcc00C|rrab Limbripper
+Hotkey=C
+Buttonpos=0,0
+
+[nsc3]
+Tip=Hire Spider |cffffcc00C|rrab Behemoth
+Hotkey=C
+Buttonpos=0,0
+
+[nfgu]
+Tip=Summon Fel Guard
+Buttonpos=0,0
+
+[nfgb]
+Tip=Summon Bloodfiend
+Buttonpos=0,0
+
+[nfov]
+Tip=Summon Overlord
+Buttonpos=0,0
+
+[npfl]
+Tip=Summon |cffffcc00F|rel Beast
+Hotkey=F
+Buttonpos=0,0
+
+[nfel]
+Tip=Summon Fel Stalker
+Buttonpos=0,0
+
+[npfm]
+Tip=Summon Fel Ravager
+Buttonpos=0,0
+
+[ndrf]
+Tip=Hire Draenei Guardian
+Buttonpos=1,0
+
+[ndrm]
+Tip=Hire Draenei |cffffcc00D|risciple
+Hotkey=D
+Buttonpos=1,0
+
+[ndrp]
+Tip=Hire Draenei Protector
+Buttonpos=1,0
+
+[ndrw]
+Tip=Hire Draenei Watcher
+Buttonpos=1,0
+
+[ndrh]
+Tip=Train Draenei |cffffcc00H|rarbinger
+Hotkey=H
+Buttonpos=1,0
+
+[ndrd]
+Tip=Hire Draenei Dark|cffffcc00s|rlayer
+Hotkey=S
+Buttonpos=3,0
+
+[ndrs]
+Tip=Train Draenei |cffffcc00S|reer
+Hotkey=S
+Buttonpos=0,0
+
+[nvdl]
+Tip=Hire Lesser Voidwalker
+Buttonpos=0,0
+
+[nvdw]
+Tip=Hire |cffffcc00V|roidwalker
+Hotkey=V
+Buttonpos=2,0
+
+[nvdg]
+Tip=Hire Greater |cffffcc00V|roidwalker
+Hotkey=V
+Buttonpos=3,0
+
+[nvde]
+Tip=Hire Elder Voidwalker
+Buttonpos=0,0
+
+[nwen]
+Tip=Summon Wendigo
+Buttonpos=0,0
+
+[nwnr]
+Tip=Summon Elder Wendigo
+Buttonpos=0,0
+
+[nwns]
+Tip=Summon Wendigo Shaman
+Buttonpos=0,0
+
+[nwna]
+Tip=Summon Ancient Wendigo
+Buttonpos=0,0
+
+[nwwf]
+Tip=Summon Frost Wolf
+Buttonpos=0,0
+
+[nwlt]
+Tip=Summon Timber Wolf
+Buttonpos=0,0
+
+[nwwg]
+Tip=Summon Giant Frost Wolf
+Buttonpos=0,0
+
+[nwlg]
+Tip=Summon Giant Wolf
+Buttonpos=0,0
+
+[nwwd]
+Tip=Summon Dire Frost Wolf
+Buttonpos=0,0
+
+[nwld]
+Tip=Summon Dire Wolf
+Buttonpos=0,0
+
+[nrel]
+Tip=Summon Reef Elemental
+Buttonpos=0,0
+
+[nele]
+Tip=Summon Enraged Elemental
+Buttonpos=0,0
+
+[nenc]
+Tip=Summon Corrupted Treant
+Buttonpos=0,0
+
+[nenp]
+Tip=Summon Poison Treant
+Buttonpos=0,0
+
+[nepl]
+Tip=Summon Plague Treant
+Buttonpos=0,0
+
+[ners]
+Tip=Summon Eredar Sorcerer
+Buttonpos=0,0
+
+[nerd]
+Tip=Summon Eredar Diabolist
+Buttonpos=0,0
+
+[nerw]
+Tip=Summon Eredar Warlock
+Buttonpos=0,0
+
+[nfor]
+Tip=Summon Faceless One Trickster
+Buttonpos=0,0
+
+[nfot]
+Tip=Summon Faceless One Terror
+Buttonpos=0,0
+
+[nfod]
+Tip=Summon Faceless One Deathbringer
+Buttonpos=0,0
+
+[ninc]
+Tip=Summon Infernal Contraption
+Buttonpos=0,0
+
+[ninm]
+Tip=Summon Infernal Machine
+Buttonpos=0,0
+
+[nina]
+Tip=Summon Infernal Juggernaut
+Buttonpos=0,0
+
+[ndqn]
+Tip=Hire Succubus
+Buttonpos=0,0
+
+[ndqv]
+Tip=Hire Vile Tormentor
+Buttonpos=0,0
+
+[ndqt]
+Tip=Hire Vile Temptress
+Buttonpos=0,0
+
+[ndqp]
+Tip=Hire Maiden of Pain
+Buttonpos=0,0
+
+[ndqs]
+Tip=Hire Queen of Suffering
+Buttonpos=0,0
+
+[nbal]
+Tip=Summon Doom Guard
+Buttonpos=0,0
+
+[ndqs]
+Tip=Summon Infernal
+Buttonpos=0,0
+
+[ndrj]
+Tip=Hire Dalaran Reject
+Buttonpos=0,0
+
+[ndmu]
+Tip=Hire Dalaran Mutant
+Buttonpos=0,0
+
+[anwk]
+Tip=|cffffcc00W|rind Walk
+Hotkey=W
+Buttonpos=0,2
+
+[anta]
+Tip=|cffffcc00T|raunt
+Hotkey=T
+Buttonpos=1,2
+
+[acmi]
+Tip=Spell Immunity
+Buttonpos=2,2
+
+[acrk]
+Tip=Resistant Skin
+Buttonpos=3,2
+
+[acsk]
+Tip=Resistant Skin
+Buttonpos=3,1
+
+[acac]
+Tip=Command Aura
+Buttonpos=0,2
+
+[acam]
+Tip=A|cffffcc00n|rti-magic Shell
+Hotkey=N
+Buttonpos=1,2
+
+[anpi]
+Tip=Permanent Immolation
+Buttonpos=0,2
+
+[acfr]
+Tip=|cffffcc00F|rorce of Nature
+Hotkey=F
+Buttonpos=0,2
+
+[acrf]
+Tip=Rain of |cffffcc00F|rire
+Hotkey=F
+Buttonpos=3,2
+
+[anbl]
+Hotkey=B
+Tip=|cffffcc00B|rlink
+Buttonpos=0,2
+
+[afzy]
+Tip=|cffffcc00F|rrenzy
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=F
+Buttonpos=0,2
+
+[antr]
+Tip=True Sight
+Buttonpos=0,2
+
+[acbk]
+Tip=|cffffcc00B|rlack Arrow
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=B
+Buttonpos=0,2
+
+[acbb]
+Tip=|cffffcc00B|rloodlust
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=B
+Buttonpos=0,2
+
+[acbl]
+Tip=B|cffffcc00l|roodlust
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=L
+Buttonpos=1,2
+
+[acbc]
+Tip=Breath of |cffffcc00F|rire
+Hotkey=F
+Buttonpos=0,2
+
+[acbz]
+Tip=|cffffcc00B|rlizzard
+Hotkey=B
+Buttonpos=0,2
+
+[accn]
+Tip=|cffffcc00C|rannibalize
+Hotkey=C
+Buttonpos=0,2
+
+[accw]
+Tip=|cffffcc00C|rold Arrows
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=C
+Buttonpos=0,2
+
+[accs]
+Tip=|cffffcc00C|rurse
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=C
+Buttonpos=0,2
+
+[acdc]
+Tip=Death |cffffcc00C|roil
+Hotkey=C
+Buttonpos=0,2
+
+[acdv]
+Tip=|cffffcc00D|revour
+Hotkey=D
+Buttonpos=0,2
+
+[acen]
+Tip=|cffffcc00E|rnsnare
+Hotkey=E
+Buttonpos=0,2
+
+[aenr]
+Tip=|cffffcc00E|rntangling Roots
+Hotkey=E
+Buttonpos=0,2
+
+[aenw]
+Tip=|cffffcc00E|rntangling Roots
+Hotkey=E
+Buttonpos=0,2
+
+[acff]
+Tip=Fae|cffffcc00r|rie Fire
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=0,2
+
+[acfb]
+Tip=|cffffcc00F|rirebolt
+Hotkey=F
+Buttonpos=0,2
+
+[acfd]
+Tip=|cffffcc00F|ringer of Pain
+Hotkey=F
+Buttonpos=0,2
+
+[acfn]
+Tip=Frost |cffffcc00N|rova
+Hotkey=N
+Buttonpos=0,2
+
+[anh1]
+Tip=H|cffffcc00e|ral
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=E
+Buttonpos=0,2
+
+[anh2]
+Tip=H|cffffcc00e|ral
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=E
+Buttonpos=0,2
+
+[achw]
+Tip=H|cffffcc00e|raling Ward
+Hotkey=E
+Buttonpos=0,2
+
+[achv]
+Tip=H|cffffcc00e|raling Wave
+Hotkey=E
+Buttonpos=0,2
+
+[acht]
+Tip=Ho|cffffcc00w|rl of Terror
+Hotkey=W
+Buttonpos=0,2
+
+[actb]
+Tip=Hurl |cffffcc00B|roulder
+Hotkey=B
+Buttonpos=0,2
+
+[acbf]
+Tip=Breath of |cffffcc00F|rrost
+Hotkey=F
+Buttonpos=0,2
+
+[acdr]
+Tip=Life D|cffffcc00r|rain
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=0,2
+
+[ambb]
+Tip=Mana |cffffcc00B|rurn
+Hotkey=B
+Buttonpos=0,2
+
+[ambd]
+Tip=Ma|cffffcc00n|ra Burn
+Hotkey=N
+Buttonpos=2,2
+
+[acmo]
+Tip=Monsoo|cffffcc00n|r
+Hotkey=N
+Buttonpos=0,2
+
+[acpa]
+Tip=Pa|cffffcc00r|rasite
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=0,2
+
+[acpu]
+Tip=Pur|cffffcc00g|re
+Hotkey=G
+Buttonpos=0,2
+
+[acrd]
+Tip=|cffffcc00R|raise Dead
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=0,2
+
+[acro]
+Tip=|cffffcc00R|roar
+Hotkey=R
+Buttonpos=0,2
+
+[acsi]
+Tip=Sil|cffffcc00e|rnce
+Hotkey=E
+Buttonpos=0,2
+
+[acdm]
+Tip=A|cffffcc00b|rolish Magic
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=B
+Buttonpos=0,2
+
+[acd2]
+Tip=A|cffffcc00b|rolish Magic
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=B
+Buttonpos=1,2
+
+[acca]
+Tip=|cffffcc00C|rarrion Swarm
+Hotkey=C
+Buttonpos=1,2
+
+[acce]
+Tip=Cleaving Attack
+Buttonpos=1,2
+
+[accy]
+Tip=|cffffcc00C|ryclone
+Hotkey=C
+Buttonpos=1,2
+
+[acde]
+Tip=|cffffcc00D|revour Magic
+Hotkey=D
+Buttonpos=1,2
+
+[aap3]
+Tip=Disease Cloud
+Buttonpos=1,2
+
+[acds]
+Tip=Activate |cffffcc00D|rivine Shield
+Hotkey=D
+Buttonpos=1,2
+
+[achx]
+Tip=He|cffffcc00x|r
+Hotkey=X
+Buttonpos=1,2
+
+[acs9]
+Tip=Feral Spiri|cffffcc00t|r
+Hotkey=T
+Buttonpos=1,2
+
+[acsh]
+Tip=Shock|cffffcc00w|rave
+Hotkey=W
+Buttonpos=0,2
+
+[acf2]
+Tip=|cffffcc00F|rrost Armor
+Hotkey=F
+Buttonpos=1,2
+
+[anfb]
+Tip=Fire|cffffcc00b|rolt
+Hotkey=B
+Buttonpos=1,2
+
+[acfl]
+Tip=|cffffcc00F|rorked Lightning
+Hotkey=F
+Buttonpos=0,2
+
+[acim]
+Tip=Activate Immo|cffffcc00l|ration
+Untip=Deactivate Immo|cffffcc00l|ration
+Hotkey=L
+Unhotkey=L
+Buttonpos=1,2
+Unbuttonpos=1,2
+
+[acls]
+Tip=|cffffcc00L|rightning Shield
+Hotkey=L
+Buttonpos=1,2
+
+[acmf]
+Tip=Activate Ma|cffffcc00n|ra Shield
+Untip=Deactivate Ma|cffffcc00n|ra Shield
+Hotkey=N
+Unhotkey=N
+Buttonpos=1,2
+Unbuttonpos=1,2
+
+[acrj]
+Tip=R|cffffcc00e|rjuvenation
+Hotkey=E
+Buttonpos=1,2
+
+[acr2]
+Tip=R|cffffcc00e|rjuvenation
+Hotkey=E
+Buttonpos=0,2
+
+[acsa]
+Tip=Sea|cffffcc00r|ring Arrows
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=1,2
+
+[actc]
+Tip=S|cffffcc00l|ram
+Hotkey=L
+Buttonpos=1,2
+
+[act2]
+Tip=S|cffffcc00l|ram
+Hotkey=L
+Buttonpos=0,2
+
+[acsl]
+Tip=S|cffffcc00l|reep
+Hotkey=L
+Buttonpos=1,2
+
+[acsw]
+Tip=Slo|cffffcc00w|r
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=W
+Buttonpos=0,2
+
+[awrs]
+Tip=War S|cffffcc00t|romp
+Hotkey=T
+Buttonpos=1,2
+
+[acwb]
+Tip=|cffffcc00W|reb
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=W
+Buttonpos=1,2
+
+[ache]
+Tip=Cast |cffffcc00R|ray of Disruption
+Hotkey=R
+Buttonpos=1,2
+
+[acbh]
+Tip=Bash
+Buttonpos=2,2
+
+[acba]
+Tip=Brilliance Aura
+Buttonpos=2,2
+
+[accl]
+Tip=|cffffcc00C|rhain Lightning
+Hotkey=C
+Buttonpos=0,2
+
+[accr]
+Tip=|cffffcc00C|rripple
+Hotkey=C
+Buttonpos=2,2
+
+[acct]
+Tip=Critical Strike
+Buttonpos=2,2
+
+[acav]
+Tip=Devotion Aura
+Buttonpos=2,2
+
+[adsm]
+Tip=|cffffcc00D|rispel Magic
+Hotkey=D
+Buttonpos=0,2
+
+[scae]
+Tip=Endurance Aura
+Buttonpos=2,2
+
+[acev]
+Tip=Evasion
+Buttonpos=2,2
+
+[acif]
+Tip=Inner |cffffcc00F|rire
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=F
+Buttonpos=2,2
+
+[acps]
+Tip=P|cffffcc00o|rssession
+Hotkey=O
+Buttonpos=2,2
+
+[acss]
+Tip=Sha|cffffcc00d|row Strike
+Hotkey=D
+Buttonpos=2,2
+
+[aslp]
+Tip=Summon P|cffffcc00r|rawns
+Hotkey=R
+Buttonpos=2,2
+
+[acah]
+Tip=Thorns Aura
+Buttonpos=2,2
+
+[acat]
+Tip=Trueshot Aura
+Buttonpos=2,2
+
+[acua]
+Tip=Unholy Aura
+Buttonpos=2,2
+
+[acvp]
+Tip=Vampiric Aura
+Buttonpos=2,2
+
+[awrh]
+Tip=War S|cffffcc00t|romp
+Hotkey=T
+Buttonpos=2,2
+
+[acad]
+Tip=Animate |cffffcc00D|read
+Hotkey=D
+Buttonpos=3,2
+
+[acch]
+Tip=Cha|cffffcc00r|rm
+Hotkey=R
+Buttonpos=3,2
+
+[acpy]
+Tip=P|cffffcc00o|rlymorph
+Hotkey=O
+Buttonpos=2,2
+
+[acrn]
+Tip=Reincarnation
+Buttonpos=3,2
+
+[anin]
+Tip=|cffffcc00I|rnferno
+Hotkey=I
+Buttonpos=3,2
+
+[acuf]
+Tip=|cffffcc00U|rnholy Frenzy
+Hotkey=U
+Buttonpos=1,2
+
+[anbh]
+Tip=Bash
+Buttonpos=3,1
+
+[acvs]
+Tip=Envenomed Weapons
+Buttonpos=0,2
+
+[acpv]
+Tip=Pulverize
+Buttonpos=0,2
+
+[ncpn]
+Tip=Train Chaos |cffffcc00P|reon
+Hotkey=P
+Buttonpos=0,0
+
+[nchg]
+Tip=Train Chaos |cffffcc00G|rrunt
+Hotkey=G
+Buttonpos=0,0
+
+[nchr]
+Tip=Train Chaos |cffffcc00R|raider
+Hotkey=R
+Buttonpos=0,0
+
+[nckb]
+Tip=Train Chaos |cffffcc00K|rodo Beast
+Hotkey=K
+Buttonpos=2,0
+
+[nchw]
+Tip=Train Chao|cffffcc00s|r Warlock
+Hotkey=S
+Buttonpos=0,0
+
+[awfb]
+Tip=|cffffcc00F|rirebolt
+Hotkey=F
+Buttonpos=0,2
+
+[suhf]
+Tip=|cffffcc00U|rnholy Frenzy
+Hotkey=U
+Buttonpos=1,2
+
+[scri]
+Tip=|cffffcc00C|rripple
+Hotkey=C
+Buttonpos=2,2
+
+[nhew]
+Tip=Train |cffffcc00W|rorker
+Hotkey=W
+Buttonpos=0,0
+
+[nbee]
+Tip=Train Blood Elf |cffffcc00E|rngineer
+Hotkey=E
+Buttonpos=0,0
+
+[hhes]
+Tip=Train |cffffcc00S|rwordsman
+Hotkey=S
+Buttonpos=0,0
+
+[nhea]
+Tip=Train |cffffcc00A|rrcher
+Hotkey=A
+Buttonpos=1,0
+
+[nchp]
+Tip=Train |cffffcc00C|rhaplain
+Hotkey=C
+Buttonpos=1,0
+
+[nhym]
+Tip=Train H|cffffcc00y|rdromancer
+Hotkey=Y
+Buttonpos=0,0
+
+[net1]
+Tip=Build |cffffcc00E|rnergy Tower
+Hotkey=E
+Buttonpos=0,0
+
+[net2]
+Tip=|cffffcc00U|rpgrade to Advanced Energy Tower
+Hotkey=U
+Buttonpos=0,2
+
+[nbt1]
+Tip=Build |cffffcc00B|roulder Tower
+Hotkey=B
+Buttonpos=1,0
+
+[nbt2]
+Tip=|cffffcc00U|rpgrade to Advanced Boulder Tower
+Hotkey=U
+Buttonpos=0,2
+
+[nft1]
+Tip=Build |cffffcc00F|rlame Tower
+Hotkey=F
+Buttonpos=0,1
+
+[nft2]
+Tip=|cffffcc00U|rpgrade to Advanced Flame Tower
+Hotkey=U
+Buttonpos=0,2
+
+[ndt1]
+Tip=Build |cffffcc00C|rold Tower
+Hotkey=C
+Buttonpos=1,1
+
+[ndt2]
+Tip=|cffffcc00U|rpgrade to Advanced Cold Tower
+Hotkey=U
+Buttonpos=0,2
+
+[ntt1]
+Tip=Build |cffffcc00D|reath Tower
+Hotkey=D
+Buttonpos=0,2
+
+[ntx2]
+Tip=|cffffcc00U|rpgrade to Advanced Death Tower
+Hotkey=U
+Buttonpos=0,2
+
+[aamk]
+Tip=Attribute Bonus - [|cffffcc00Level %d|r]
+Researchtip=Learn Attribute |cffffcc00B|ronus - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=1,1
+Researchbuttonpos=3,1
+
+[arsg]
+Tip=Summon M|cffffcc00i|rsha - [|cffffcc00Level 1|r],Summon M|cffffcc00i|rsha - [|cffffcc00Level 2|r],Summon M|cffffcc00i|rsha - [|cffffcc00Level 3|r],Summon M|cffffcc00i|rsha - [|cffffcc00Level 4|r]
+Hotkey=I
+Researchtip=Learn Summon M|cffffcc00i|rsha - [|cffffcc00Level %d|r]
+Researchhotkey=I
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[arsq]
+Tip=Summon |cffffcc00Q|ruilbeast - [|cffffcc00Level 1|r],Summon |cffffcc00Q|ruilbeast - [|cffffcc00Level 2|r],Summon |cffffcc00Q|ruilbeast - [|cffffcc00Level 3|r],Summon |cffffcc00Q|ruilbeast - [|cffffcc00Level 4|r]
+Hotkey=Q
+Researchtip=Learn Summon |cffffcc00Q|ruilbeast - [|cffffcc00Level %d|r]
+Researchhotkey=Q
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[ansb]
+Tip=S|cffffcc00t|rorm Bolt - [|cffffcc00Level 1|r],S|cffffcc00t|rorm Bolt - [|cffffcc00Level 2|r],S|cffffcc00t|rorm Bolt - [|cffffcc00Level 3|r],S|cffffcc00t|rorm Bolt - [|cffffcc00Level 4|r]
+Hotkey=T
+Researchtip=Learn S|cffffcc00t|rorm Bolt - [|cffffcc00Level %d|r]
+Researchhotkey=T
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[arsp]
+Tip=Stamp|cffffcc00e|rde - [|cffffcc00Level 1|r],Stamp|cffffcc00e|rde - [|cffffcc00Level 2|r]
+Hotkey=E
+Researchtip=Learn Stamp|cffffcc00e|rde - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[anhw]
+Tip=H|cffffcc00e|raling Wave - [|cffffcc00Level 1|r],H|cffffcc00e|raling Wave - [|cffffcc00Level 2|r],H|cffffcc00e|raling Wave - [|cffffcc00Level 3|r],H|cffffcc00e|raling Wave - [|cffffcc00Level 4|r]
+Hotkey=E
+Researchtip=Learn H|cffffcc00e|raling Wave - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[anhx]
+Tip=He|cffffcc00x|r - [|cffffcc00Level 1|r],He|cffffcc00x|r - [|cffffcc00Level 2|r],He|cffffcc00x|r - [|cffffcc00Level 3|r],He|cffffcc00x|r - [|cffffcc00Level 4|r]
+Hotkey=X
+Researchtip=Learn He|cffffcc00x|r - [|cffffcc00Level %d|r]
+Researchhotkey=X
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[arsw]
+Tip=Serpent |cffffcc00W|rard - [|cffffcc00Level 1|r],Serpent |cffffcc00W|rard - [|cffffcc00Level 2|r],Serpent |cffffcc00W|rard - [|cffffcc00Level 3|r],Serpent |cffffcc00W|rard - [|cffffcc00Level 4|r]
+Hotkey=W
+Researchtip=Learn Serpent |cffffcc00W|rard - [|cffffcc00Level %d|r]
+Researchhotkey=W
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aols]
+Tip=|cffffcc00V|roodoo Spirits - [|cffffcc00Level 1|r],|cffffcc00V|roodoo Spirits - [|cffffcc00Level 2|r]
+Hotkey=V
+Researchtip=Learn |cffffcc00V|roodoo Spirits - [|cffffcc00Level %d|r]
+Researchhotkey=V
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ancf]
+Tip=Breath of |cffffcc00F|rire - [|cffffcc00Level 1|r],Breath of |cffffcc00F|rire - [|cffffcc00Level 2|r],Breath of |cffffcc00F|rire - [|cffffcc00Level 3|r],Breath of |cffffcc00F|rire - [|cffffcc00Level 4|r]
+Hotkey=F
+Researchtip=Learn Breath of |cffffcc00F|rire - [|cffffcc00Level %d|r]
+Researchhotkey=F
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[acdh]
+Name=Drunken Haze
+Tip=|cffffcc00D|rrunken Haze - [|cffffcc00Level 1|r],|cffffcc00D|rrunken Haze - [|cffffcc00Level 2|r],|cffffcc00D|rrunken Haze - [|cffffcc00Level 3|r],|cffffcc00D|rrunken Haze - [|cffffcc00Level 4|r]
+Hotkey=D
+Researchtip=Learn |cffffcc00D|rrunken Haze - [|cffffcc00Level %d|r]
+Researchhotkey=D
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[acdb]
+Tip=Drunken Brawler - [|cffffcc00Level 1|r],Drunken Brawler - [|cffffcc00Level 2|r],Drunken Brawler - [|cffffcc00Level 3|r],Drunken Brawler - [|cffffcc00Level 4|r]
+Researchtip=Learn Drunken |cffffcc00B|rrawler - [|cffffcc00Level %d|r]
+Researchhotkey=B
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[acef]
+Tip="Storm, |cffffcc00E|rarth, And Fire - [|cffffcc00Level 1|r]","Storm, |cffffcc00E|rarth, And Fire - [|cffffcc00Level 2|r]"
+Hotkey=E
+Researchtip="Learn Storm, |cffffcc00E|rarth, And Fire - [|cffffcc00Level %d|r]"
+Researchhotkey=E
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[aos2]
+Tip=Shock|cffffcc00w|rave - [|cffffcc00Level 1|r],Shock|cffffcc00w|rave - [|cffffcc00Level 2|r],Shock|cffffcc00w|rave - [|cffffcc00Level 3|r],Shock|cffffcc00w|rave - [|cffffcc00Level 4|r]
+Hotkey=W
+Researchtip=Learn Shock|cffffcc00w|rave - [|cffffcc00Level %d|r]
+Researchhotkey=W
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[aow2]
+Tip=War S|cffffcc00t|romp - [|cffffcc00Level 1|r],War S|cffffcc00t|romp - [|cffffcc00Level 2|r],War S|cffffcc00t|romp - [|cffffcc00Level 3|r],War S|cffffcc00t|romp - [|cffffcc00Level 4|r]
+Hotkey=T
+Researchtip=Learn War S|cffffcc00t|romp - [|cffffcc00Level %d|r]
+Researchhotkey=T
+Buttonpos=1,2
+Researchbuttonpos=1,0
+
+[aor2]
+Tip=Endurance Aura - [|cffffcc00Level 1|r],Endurance Aura - [|cffffcc00Level 2|r],Endurance Aura - [|cffffcc00Level 3|r],Endurance Aura - [|cffffcc00Level 4|r]
+Researchtip=Learn |cffffcc00E|rndurance Aura - [|cffffcc00Level %d|r]
+Researchhotkey=E
+Buttonpos=2,2
+Researchbuttonpos=2,0
+
+[aor3]
+Tip=Reincarnation - [|cffffcc00Level 1|r],Reincarnation - [|cffffcc00Level 2|r]
+Researchtip=Learn |cffffcc00R|reincarnation
+Researchhotkey=R
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[naka]
+Hotkey=K
+Tip=Summon A|cffffcc00k|rama
+Revivetip=Revive A|cffffcc00k|rama
+Awakentip=Revive A|cffffcc00k|rama
+Buttonpos=1,1
+
+[acs7]
+Tip=Feral Spiri|cffffcc00t|r - [|cffffcc00Level 1|r],Feral Spiri|cffffcc00t|r - [|cffffcc00Level 2|r],Feral Spiri|cffffcc00t|r - [|cffffcc00Level 3|r]
+Researchtip=Learn Feral Spiri|cffffcc00t|r - [|cffffcc00Level %d|r]
+Hotkey=T
+Researchhotkey=T
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[anr2]
+Tip=Reincarnation
+Researchtip=Learn |cffffcc00R|reincarnation
+Researchhotkey=R
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[ndrl]
+Tip=Train |cffffcc00D|rraenei Laborer
+Hotkey=D
+Buttonpos=0,0
+
+[ndrt]
+Tip=Train Draenei |cffffcc00S|rtalker
+Hotkey=S
+Buttonpos=1,0
+
+[ndrn]
+Tip=Train Draenei |cffffcc00V|rindicator
+Hotkey=V
+Buttonpos=0,0
+
+[ncat]
+Tip=Train Draenei |cffffcc00D|remolisher
+Hotkey=D
+Buttonpos=3,0
+
+[ndsa]
+Tip=Train Sa|cffffcc00l|ramander
+Hotkey=L
+Buttonpos=2,0
+
+[ndh2]
+Tip=Build Draenei |cffffcc00H|raven
+Hotkey=H
+Buttonpos=0,0
+
+[ndh3]
+Tip=Build |cffffcc00D|rraenei Barracks
+Hotkey=D
+Buttonpos=0,1
+
+[ndh4]
+Tip=Build |cffffcc00S|reer's Den
+Hotkey=S
+Buttonpos=1,1
+
+[eevi]
+Hotkey=D
+Tip=Summon |cffffcc00D|remon Hunter
+Revivetip=Revive |cffffcc00D|remon Hunter
+Awakentip=Revive |cffffcc00D|remon Hunter
+Buttonpos=0,2
+
+[hvsh]
+Hotkey=G
+Tip=Summon Na|cffffcc00g|ra Sea Witch
+Revivetip=Revive Na|cffffcc00g|ra Sea Witch
+Awakentip=Revive Na|cffffcc00g|ra Sea Witch
+Buttonpos=1,2
+
+[aell]
+Tip=Me|cffffcc00t|ramorphosis
+Hotkey=T
+Researchtip=Learn Me|cffffcc00t|ramorphosis
+Researchhotkey=T
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[aevi]
+Tip=Me|cffffcc00t|ramorphosis
+Hotkey=T
+Researchtip=Learn Me|cffffcc00t|ramorphosis
+Researchhotkey=T
+Buttonpos=3,2
+Researchbuttonpos=3,0
+
+[nmpe]
+Tip=Train Mur'gul Sla|cffffcc00v|re
+Hotkey=V
+Buttonpos=0,0
+
+[nnmg]
+Tip=Train Mur'gul |cffffcc00R|reaver
+Hotkey=R
+Buttonpos=1,0
+
+[nmyr]
+Tip=Train Naga |cffffcc00M|ryrmidon
+Hotkey=M
+Buttonpos=0,0
+
+[nsnp]
+Tip=Train Snap |cffffcc00D|rragon
+Hotkey=D
+Buttonpos=1,0
+
+[nhyc]
+Tip=Train Dragon |cffffcc00T|rurtle
+Hotkey=T
+Buttonpos=2,0
+
+[rnen]
+Tip=Research E|cffffcc00n|rsnare
+Hotkey=N
+Buttonpos=0,2
+
+[nnsw]
+Tip=Train Naga |cffffcc00S|riren
+Hotkey=S
+Buttonpos=0,0
+
+[nwgs]
+Tip=Train |cffffcc00C|rouatl
+Hotkey=C
+Buttonpos=1,0
+
+[rnsw]
+Tip=Research |cffffcc00N|raga Siren Adept Training,Research |cffffcc00N|raga Siren Master Training
+Hotkey=N,N
+Buttonpos=0,2
+
+[rnsi]
+Tip=Research A|cffffcc00b|rolish Magic
+Hotkey=B
+Buttonpos=1,2
+
+[rnat]
+Tip=Upgrade to Coral |cffffcc00B|rlades,Upgrade to Chitinous |cffffcc00B|rlades,Upgrade to Razorspine |cffffcc00B|rlades
+Hotkey=B,B,B
+Buttonpos=0,2
+
+[rnam]
+Tip=Upgrade to Coral S|cffffcc00c|rales,Upgrade to Chitinous S|cffffcc00c|rales,Upgrade to Razorspine S|cffffcc00c|rales
+Hotkey=C,C,C
+Buttonpos=1,2
+
+[rnsb]
+Tip=Research S|cffffcc00u|rbmerge
+Hotkey=U
+Buttonpos=2,2
+
+[anha]
+Tip=|cffffcc00G|rather
+Untip=R|cffffcc00e|rturn Resources
+Hotkey=G
+Unhotkey=E
+Buttonpos=3,1
+Unbuttonpos=3,1
+
+[nntt]
+Tip=Build |cffffcc00T|remple of Tides
+Hotkey=T
+Buttonpos=0,0
+
+[nnsg]
+Tip=Build |cffffcc00S|rpawning Grounds
+Hotkey=S
+Buttonpos=1,0
+
+[nnfm]
+Tip=Build |cffffcc00C|roral Bed
+Hotkey=C
+Buttonpos=2,0
+
+[nntg]
+Tip=Build Ti|cffffcc00d|ral Guardian
+Hotkey=D
+Buttonpos=3,0
+
+[nnsa]
+Tip=Build Shrine of |cffffcc00A|rzshara
+Hotkey=A
+Buttonpos=0,1
+
+[nnad]
+Tip=Build A|cffffcc00l|rtar of the Depths
+Hotkey=L
+Buttonpos=1,1
+
+[anen]
+Tip=|cffffcc00E|rnsnare
+Hotkey=E
+Buttonpos=0,2
+
+[anpa]
+Tip=Pa|cffffcc00r|rasite
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=R
+Buttonpos=0,2
+
+[acfu]
+Tip=|cffffcc00F|rrost Armor
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=F
+Buttonpos=1,2
+
+[acny]
+Tip=|cffffcc00C|ryclone
+Hotkey=C
+Buttonpos=2,2
+
+[andm]
+Tip=A|cffffcc00b|rolish Magic
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
+Hotkey=B
+Buttonpos=0,2
+
+[accv]
+Tip=|cffffcc00C|rrushing Wave
+Hotkey=C
+Buttonpos=0,2
+
+[acc2]
+Tip=|cffffcc00C|rrushing Wave
+Hotkey=C
+Buttonpos=1,2
+
+[acc3]
+Tip=|cffffcc00C|rrushing Wave
+Hotkey=C
+Buttonpos=1,2
+
+[accb]
+Tip=|cffffcc00F|rrost Bolt
+Hotkey=F
+Buttonpos=0,2
+
+[acwe]
+Tip=Summon Sea |cffffcc00E|rlemental
+Hotkey=E
+Buttonpos=2,2
+
+[asb1]
+Tip=S|cffffcc00u|rbmerge
+Untip=S|cffffcc00u|rrface
+Hotkey=U
+Unhotkey=U
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[asb2]
+Tip=S|cffffcc00u|rbmerge
+Untip=S|cffffcc00u|rrface
+Hotkey=U
+Unhotkey=U
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[asb3]
+Tip=S|cffffcc00u|rbmerge
+Untip=S|cffffcc00u|rrface
+Hotkey=U
+Unhotkey=U
+Buttonpos=3,2
+Unbuttonpos=3,2
+
+[anth]
+Tip=Spiked Shell
+Buttonpos=1,2
+
+[ant2]
+Tip=Spiked Shell
+Buttonpos=2,2
+
+[ansk]
+Tip=Hardened Skin
+Buttonpos=2,2

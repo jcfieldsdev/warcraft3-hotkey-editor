@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Warcraft III Hotkey Editor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="title" content="Warcraft III Hotkey Editor">
+<meta name="description" content="Generates a custom hotkey file for Warcraft III.">
+<link href="mailto:jcfields+hotkey@gmail.com" rel="author" title="J.C. Fields">
+<link href="layout/style.css" media="screen" rel="stylesheet" type="text/css">
+<link href="layout/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="layout/homeicon.jpg" rel="apple-touch-icon-precomposed" type="image/jpeg">
+<script src="scripts/units.js" type="text/javascript"></script>
+<script src="scripts/editor.js" type="text/javascript"></script></head>
+<body><header><h1>Warcraft III Hotkey Editor</h1></header>
+<nav><ul id="filters"><li><a id="human" class="filter">Human</a></li>
+<li><a id="orc" class="filter">Orc</a></li>
+<li><a id="undead" class="filter">Undead</a></li>
+<li><a id="nightelf" class="filter">Night Elf</a></li>
+<li><a id="neutral" class="filter">Neutral</a></li></ul></nav>
+<main><noscript><p>Must have JavaScript enabled.</p></noscript>
+<section id="units_human"><h2>Human</h2>
+<h3>Melee</h3>
+<ul class="human"><li>Heroes
+	<ul><li><a href="#hpal">Paladin</a></li>
+	<li><a href="#hamg">Archmage</a></li>
+	<li><a href="#hmkg">Mountain King</a></li>
+	<li><a href="#hblm">Blood Mage</a></li></ul>
+</li>
+<li>Units
+	<ul><li><a href="#hpea">Peasant</a>
+		<ul><li><a href="#cmdbuildhuman">Build Structure</a></li>
+		<li><a href="#hmil">Militia</a></li></ul>
+	</li>
+	<li><a href="#hfoo">Footman</a></li>
+	<li><a href="#hrif" class="nocmds">Rifleman</a></li>
+	<li><a href="#hkni" class="nocmds">Knight</a></li>
+	<li><a href="#hmpr">Priest</a></li>
+	<li><a href="#hsor">Sorceress</a></li>
+	<li><a href="#hspt">Spell Breaker</a></li>
+	<li><a href="#hgyr">Flying Machine</a></li>
+	<li><a href="#hmtm">Mortar Team</a></li>
+	<li><a href="#hmtt">Siege Engine</a></li>
+	<li><a href="#hgry">Gryphon Rider</a></li>
+	<li><a href="#hdhw">Dragonhawk Rider</a></li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#htow">Town Hall</a>
+		<ul><li><a href="#hkee">Keep</a>
+			<ul><li><a href="#hcas">Castle</a></li></ul>
+		</li></ul>
+	</li>
+	<li><a href="#hbar">Barracks</a></li>
+	<li><a href="#hlum">Lumber Mill</a></li>
+	<li><a href="#hbla">Blacksmith</a></li>
+	<li><a href="#hhou" class="nocmds">Farm</a></li>
+	<li><a href="#halt">Altar of Kings</a></li>
+	<li><a href="#hars">Arcane Sanctum</a></li>
+	<li><a href="#harm">Workshop</a>
+		<ul><li><a href="#harm2">with Barrage Tank</a></li></ul>
+	</li>
+	<li><a href="#hwtw">Scout Tower</a>
+		<ul><li><a href="#hgtw">Guard Tower</a></li>
+		<li><a href="#hctw">Cannon Tower</a></li>
+		<li><a href="#hatw">Arcane Tower</a></li></ul>
+	</li>
+	<li><a href="#hgra">Gryphon Aviary</a></li>
+	<li><a href="#hvlt">Arcane Vault</a></li></ul>
+</li>
+<li>Summons
+	<ul><li><a href="#hwt3" class="nocmds">Water Elemental</a></li>
+	<li><a href="#hphx">Phoenix</a></li></ul>
+</li></ul>
+<h3>Campaign</h3>
+<ul class="human"><li>Heroes
+	<ul><li><a href="#hlgr">Lord Garithos</a></li></ul>
+</li>
+<li>Units
+	<ul><li><a href="#hbot">Human Transport Ship</a></li>
+	<li><a href="#hdes" class="nocmds">Human Frigate</a></li>
+	<li><a href="#hbsh" class="nocmds">Human Battleship</a></li>
+	<li><a href="#hcth">Captain</a></li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#halt2">Altar of Kings</a></li>
+	<li><a href="#hshy">Human Shipyard</a></li></ul>
+</li></ul>
+<ul class="bloodelf"><li>Units
+	<ul><li><a href="#nbee">Blood Elf Engineer</a>
+		<ul><li><a href="#cmdbuildbloodelf">Build Structure</a></li></ul>
+	</li>
+	<li><a href="#hhes">Swordsman</a></li>
+	<li><a href="#nhea" class="nocmds">Archer</a></li>
+	<li><a href="#nbel">Blood Elf Lieutenant</a></li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#bloodelftownhall">Blood Elf Town Hall</a></li>
+	<li><a href="#bloodelfbarracks">Blood Elf Barracks</a></li>
+	<li><a href="#net1">Energy Tower</a></li>
+	<li><a href="#nbt1">Boulder Tower</a></li>
+	<li><a href="#nft1">Flame Tower</a></li>
+	<li><a href="#ndt1">Cold Tower</a></li>
+	<li><a href="#ntt1">Death Tower</a></li></ul>
+</li></ul></section>
+<section id="units_orc"><h2>Orc</h2>
+<h3>Melee</h3>
+<ul class="orc"><li>Heroes
+	<ul><li><a href="#obla">Blademaster</a></li>
+	<li><a href="#ofar">Far Seer</a></li>
+	<li><a href="#otch">Tauren Chieftain</a></li>
+	<li><a href="#oshd">Shadow Hunter</a></li></ul>
+</li>
+<li>Units
+	<ul><li><a href="#opeo">Peon</a>
+		<ul><li><a href="#cmdbuildorc">Build Structure</a></li></ul>
+	</li>
+	<li><a href="#ogru">Grunt</a></li>
+	<li><a href="#ohun" class="nocmds">Troll Headhunter</a>
+		<ul><li><a href="#otbk">Troll Berserker</a></li></ul>
+	</li>
+	<li><a href="#ocat">Demolisher</a></li>
+	<li><a href="#oshm">Shaman</a></li>
+	<li><a href="#odoc">Witch Doctor</a></li>
+	<li><a href="#ospw">Spirit Walker</a></li>
+	<li><a href="#orai">Raider</a></li>
+	<li><a href="#okod">Kodo Beast</a></li>
+	<li><a href="#owyv">Wind Rider</a></li>
+	<li><a href="#otbr">Troll Batrider</a></li>
+	<li><a href="#otau">Tauren</a></li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#ogre">Great Hall</a>
+		<ul><li><a href="#ostr">Stronghold</a>
+			<ul><li><a href="#ofrt">Fortress</a></li></ul>
+		</li></ul>
+	</li>
+	<li><a href="#obar">Barracks</a>
+		<ul><li><a href="#obar2">with Berserkers</a></li></ul>
+	</li>
+	<li><a href="#ofor">War Mill</a></li>
+	<li><a href="#owtw" class="nocmds">Watch Tower</a></li>
+	<li><a href="#otrb">Burrow</a></li>
+	<li><a href="#oalt">Altar of Storms</a></li>
+	<li><a href="#osld">Spirit Lodge</a></li>
+	<li><a href="#obea">Beastiary</a></li>
+	<li><a href="#otto">Tauren Totem</a></li>
+	<li><a href="#ovln">Voodoo Lounge</a></li></ul>
+</li>
+<li>Summons
+	<ul><li><a href="#osw3">Spirit Wolf</a></li></ul>
+</li></ul>
+<h3>Campaign</h3>
+<ul class="orc"><li>Heroes
+	<ul><li><a href="#orex">Rexxar</a></li>
+	<li><a href="#orkn">Rokhan</a></li>
+	<li><a href="#nsjs">Chen Stormstout</a></li>
+	<li><a href="#ocb2">Cairne Bloodhoof</a></li></ul>
+</li>
+<li>Units
+	<ul><li><a href="#obot">Orc Transport Ship</a></li>
+	<li><a href="#odes" class="nocmds">Orc Frigate</a></li>
+	<li><a href="#ojgn" class="nocmds">Orc Juggernaught</a></li>
+	<li><a href="#nchw">Chaos Warlock</a></li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#oalt2">Altar of Storms</a></li>
+	<li><a href="#oshy">Orc Shipyard</a></li>
+	<li><a href="#chaosgreathall">Chaos Great Hall</a></li>
+	<li><a href="#chaosbarracks">Chaos Barracks</a></li>
+	<li><a href="#chaosspiritlodge">Chaos Spirit Lodge</a></li>
+	<li><a href="#chaosbeastiary">Chaos Beastiary</a></li></ul>
+</li></ul>
+<ul class="draenei"><li>Heroes
+	<ul><li><a href="#naka">Akama</a></li></ul>
+</li>
+<li>Units
+	<ul><li><a href="#ndrd2">Draenei Elite Assassin</a></li>
+	<li><a href="#ndrs2">Draenei Saboteur</a></li></ul>
+</li></ul></section>
+<section id="units_undead"><h2>Undead</h2>
+<h3>Melee</h3>
+<ul class="undead"><li>Heroes
+	<ul><li><a href="#udea">Death Knight</a></li>
+	<li><a href="#udre">Dreadlord</a></li>
+	<li><a href="#ulic">Lich</a></li>
+	<li><a href="#ucrl">Crypt Lord</a></li></ul>
+</li>
+<li>Units
+	<ul><li><a href="#uaco">Acolyte</a>
+		<ul><li><a href="#cmdbuildundead">Build Structure</a></li>
+		<li><a href="#ushd">Shade</a></li></ul>
+	</li>
+	<li><a href="#ugho">Ghoul</a></li>
+	<li><a href="#ucry">Crypt Fiend</a></li>
+	<li><a href="#ugar">Gargoyle</a></li>
+	<li><a href="#uabo">Abomination</a></li>
+	<li><a href="#umtw">Meat Wagon</a></li>
+	<li><a href="#unec">Necromancer</a></li>
+	<li><a href="#uban">Banshee</a></li>
+	<li><a href="#ufro">Frost Wyrm</a></li>
+	<li><a href="#uobs">Obsidian Statue</a>
+		<ul><li><a href="#ubsp">Destroyer</a></li></ul>
+	</li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#unpl">Necropolis</a>
+		<ul><li><a href="#unp1">Halls of the Dead</a>
+			<ul><li><a href="#unp2">Black Citadel</a></li></ul>
+		</li></ul>
+	</li>
+	<li><a href="#usep">Crypt</a></li>
+	<li><a href="#ugrv">Graveyard</a></li>
+	<li><a href="#uzig">Ziggurat</a>
+		<ul><li><a href="#uzg1" class="nocmds">Spirit Tower</a></li>
+		<li><a href="#uzg2">Nerubian Tower</a></li></ul>
+	</li>
+	<li><a href="#uaod">Altar of Darkness</a></li>
+	<li><a href="#utod">Temple of the Damned</a></li>
+	<li><a href="#uslh">Slaughterhouse</a></li>
+	<li><a href="#usap">Sacrificial Pit</a></li>
+	<li><a href="#ubon">Boneyard</a></li>
+	<li><a href="#utom">Tomb of Relics</a></li></ul>
+</li>
+<li>Summons
+	<ul><li><a href="#ninf">Infernal</a></li>
+	<li>Carrion Beetle
+		<ul><li><a href="#ucs1" class="nocmds">Level 1</a></li>
+		<li><a href="#ucs2">Level 2</a></li>
+		<li><a href="#ucs3">Level 3</a></li></ul>
+	</li></ul>
+</li></ul>
+<h3>Campaign</h3>
+<ul class="undead"><li>Units
+	<ul><li><a href="#ubot">Undead Transport Ship</a></li>
+	<li><a href="#udes" class="nocmds">Undead Frigate</a></li>
+	<li><a href="#uubs" class="nocmds">Undead Battleship</a></li>
+	<li><a href="#uswb">Sylvanas Windrunner</a></li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#uaod2">Altar of Darkness</a></li>
+	<li><a href="#ushp">Undead Shipyard</a></li></ul>
+</li></ul>
+<ul class="demon"><li>Heroes
+	<ul><li><a href="#uvar">Varimathras</a></li></ul>
+</li></ul></section>
+<section id="units_nightelf"><h2>Night Elf</h2>
+<h3>Melee</h3>
+<ul class="nightelf"><li>Heroes
+	<ul><li><a href="#edem">Demon Hunter</a></li>
+	<li><a href="#ekee">Keeper of the Grove</a></li>
+	<li><a href="#emoo">Priestess of the Moon</a></li>
+	<li><a href="#ewar">Warden</a></li></ul>
+</li>
+<li>Units
+	<ul><li><a href="#ewsp">Wisp</a>
+		<ul><li><a href="#cmdbuildnightelf">Build Structure</a></li></ul>
+	</li>
+	<li><a href="#earc">Archer</a></li>
+	<li><a href="#esen">Huntress</a></li>
+	<li><a href="#ebal">Glaive Thrower</a></li>
+	<li><a href="#edry">Dryad</a></li>
+	<li><a href="#edoc">Druid of the Claw</a>
+		<ul><li><a href="#edcm">Bear Form</a></li></ul>
+	</li>
+	<li><a href="#emtg">Mountain Giant</a></li>
+	<li><a href="#ehip">Hippogryph</a>
+		<ul><li><a href="#ehpr">Hippogryph Rider</a></li></ul>
+	</li>
+	<li><a href="#edot">Druid of the Talon</a>
+		<ul><li><a href="#edtm">Storm Crow Form</a></li></ul>
+	</li>
+	<li><a href="#efdr">Faerie Dragon</a></li>
+	<li><a href="#echm">Chimaera</a></li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#etol">Tree of Life</a>
+		<ul><li><a href="#etoa">Tree of Ages</a>
+			<ul><li><a href="#etoe">Tree of Eternity</a></li></ul>
+		<li><a href="#egol">Entangled Gold Mine</a></li>
+		<li><a href="#aroo">Uprooted</a></ul>
+	</li>
+	<li><a href="#eaom">Ancient of War</a></li>
+	<li><a href="#edob">Hunter&rsquo;s Hall</a></li>
+	<li><a href="#etrp">Ancient Protector</a></li>
+	<li><a href="#emow">Moon Well</a></li>
+	<li><a href="#eate">Altar of Elders</a></li>
+	<li><a href="#eaoe">Ancient of Lore</a></li>
+	<li><a href="#eaow">Ancient of Wind</a></li>
+	<li><a href="#edos">Chimaera Roost</a></li>
+	<li><a href="#eden">Ancient of Wonders</a></li></ul>
+</li>
+<li>Summons
+	<ul><li><a href="#efon" class="nocmds">Treant</a></li>
+	<li><a href="#now3">Owl Scout</a></li>
+	<li><a href="#espv">Avatar of Vengeance</a>
+		<ul><li><a href="#even" class="nocmds">Spirit of Vengeance</a></li></ul>
+	</li></ul>
+</li></ul>
+<h3>Campaign</h3>
+<ul class="nightelf"><li>Heroes
+	<ul><li><a href="#eill">Illidan</a>
+		<ul><li><a href="#eevi">Expansion</a></li></ul>
+	</li></ul>
+</li>
+<li>Units
+	<ul><li><a href="#etrs">Night Elf Transport Ship</a></li>
+	<li><a href="#edes" class="nocmds">Night Elf Frigate</a></li>
+	<li><a href="#ebsh" class="nocmds">Night Elf Battleship</a></li>
+	<li><a href="#eshd" class="nocmds">Shandris</a></li>
+	<li><a href="#ensh">Naisha</a></li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#eate2">Altar of Elders</a></li>
+	<li><a href="#eshy">Night Elf Shipyard</a></li></ul>
+</li></ul>
+<ul class="naga"><li>Units
+	<ul><li><a href="#nmpe">Mur&rsquo;gul Slave</a>
+		<ul><li><a href="#cmdbuildnaga">Build Structure</a></li></ul>
+	</li>
+	<li><a href="#nnmg" class="nocmds">Mur&rsquo;gul Reaver</a></li>
+	<li><a href="#nmyr">Naga Myrmidon</a></li>
+	<li><a href="#nnrg">Naga Royal Guard</a></li>
+	<li><a href="#nsnp">Snap Dragon</a></li>
+	<li><a href="#nhyc">Dragon Turtle</a></li>
+	<li><a href="#nnsw">Naga Siren</a></li>
+	<li><a href="#nwgs">Couatl</a></li></ul>
+</li>
+<li class="naga">Buildings
+	<ul><li><a href="#nntt">Temple of the Tides</a></li>
+	<li><a href="#nnsg">Spawning Grounds</a></li>
+	<li><a href="#nnfm" class="nocmds">Coral Bed</a></li>
+	<li><a href="#nntg" class="nocmds">Tidal Guardian</a></li>
+	<li><a href="#nnsa">Shrine of Azshara</a></li>
+	<li><a href="#nnad">Altar of the Depths</a></li></ul>
+</li>
+<li class="naga">Summons
+	<ul><li><a href="#nsel">Sea Elemental</a></li></ul>
+</li></ul></section>
+<section id="units_neutral"><h2>Neutral</h2>
+<h3>Neutral Passive</h3>
+<ul class="neutral"><li>Heroes
+	<ul><li><a href="#nngs">Naga Sea Witch</a></li>
+	<li><a href="#nbrn">Dark Ranger</a></li>
+	<li><a href="#npbm">Pandaren Brewmaster</a></li>
+	<li><a href="#nbst">Beastmaster</a></li>
+	<li><a href="#nplh">Pit Lord</a></li>
+	<li><a href="#ntin">Goblin Tinker</a>
+		<ul><li><a href="#ntin1">Engineering Upgrade 1</a></li>
+		<li><a href="#ntin2">Engineering Upgrade 2</a></li>
+		<li><a href="#ntin3">Engineering Upgrade 3</a></li></ul>
+	</li>
+	<li><a href="#nfir">Firelord</a></li>
+	<li><a href="#nalc">Goblin Alchemist</a></li></ul>
+</li>
+<li>Units
+	<ul><li><a href="#ngsp">Goblin Sappers</a></li>
+	<li><a href="#nzep">Goblin Zeppelin</a></li>
+	<li><a href="#ngir">Goblin Shredder</a></li></ul>
+</li>
+<li>Buildings
+	<ul><li><a href="#ntav">Tavern</a></li>
+	<li><a href="#ngme">Goblin Merchant</a></li>
+	<li><a href="#ngad">Goblin Laboratory</a></li>
+	<li><a href="#nshp">Goblin Shipyard</a></li>
+	<li>Dragon Roost
+		<ul><li><a href="#ndrr">Red</a></li>
+		<li><a href="#ndrg">Green</a></li>
+		<li><a href="#ndru">Blue</a></li>
+		<li><a href="#ndrz">Bronze</a></li>
+		<li><a href="#ndrk">Black</a></li>
+		<li><a href="#ndro">Nether</a></li></ul>
+	</li>
+	<li>Mercenary Camp
+		<ul><li><a href="#nmer">Lordaeron Summer</a></li>
+		<li><a href="#nmr2">Lordaeron Fall</a></li>
+		<li><a href="#nmr3">Lordaeron Winter</a></li>
+		<li><a href="#nmr4">Barrens</a></li>
+		<li><a href="#nmr5">Ashenvale</a></li>
+		<li><a href="#nmr6">Felwood</a></li>
+		<li><a href="#nmr7">Northrend</a></li>
+		<li><a href="#nmr8">Cityscape / Dalaran</a></li>
+		<li><a href="#nmr0">Village</a></li>
+		<li><a href="#nmra">Dungeon / Underground</a></li>
+		<li><a href="#nmrc">Sunken Ruins</a></li>
+		<li><a href="#nmrd">Icecrown Glacier</a></li>
+		<li><a href="#nmrf">Black Citadel / Outland</a></li></ul>
+	</li></ul>
+</li>
+<li>Summons
+	<ul><li><a href="#npn2">Storm</a></li>
+	<li><a href="#npn3">Earth</a></li>
+	<li><a href="#npn1">Fire</a></li>
+	<li><a href="#ngz3">Spirit Bear</a></li>
+	<li><a href="#nqb3">Raging Quilbeast</a></li>
+	<li><a href="#nwe3">Spirit Hawk</a></li>
+	<li><a href="#nba2">Doom Guard</a></li>
+	<li>Clockwerk Goblin
+		<ul><li><a href="#ncgb">Level 1</a></li>
+		<li><a href="#ncg1">Level 2</a></li>
+		<li><a href="#ncg2">Level 3</a></li></ul>
+	</li>
+	<li><a href="#nlv3" class="nocmds">Lava Spawn</a></li></ul>
+</li></ul>
+<h3>Neutral Hostile</h3>
+<ul><li>Units
+	<ul><li><a href="#nanm">Barbed Arachnathid</a></li>
+	<li><a href="#nanc" class="nocmds">Crystal Arachnathid</a></li>
+	<li><a href="#nanw" class="nocmds">Warrior Arachnathid</a></li>
+	<li><a href="#nane">Arachnathid Earth-borer</a></li>
+	<li><a href="#nano">Overlord Arachnathid</a></li>
+	<li><a href="#nban" class="nocmds">Bandit</a></li>
+	<li><a href="#nbrg" class="nocmds">Brigand</a></li>
+	<li><a href="#nrog" class="nocmds">Rogue</a></li>
+	<li><a href="#nass">Assassin</a></li>
+	<li><a href="#nenf">Enforcer</a></li>
+	<li><a href="#nbld">Bandit Lord</a></li>
+	<li><a href="#nbdm">Blue Dragonspawn Meddler</a></li>
+	<li><a href="#nbda">Blue Dragonspawn Apprentice</a></li>
+	<li><a href="#nbdw">Blue Dragonspawn Warrior</a></li>
+	<li><a href="#nbds">Blue Dragonspawn Sorcerer</a></li>
+	<li><a href="#nbdo">Blue Dragonspawn Overseer</a></li>
+	<li><a href="#ncea" class="nocmds">Centaur Archer</a></li>
+	<li><a href="#ncer" class="nocmds">Centaur Drudge</a></li>
+	<li><a href="#ncim">Centaur Impaler</a></li>
+	<li><a href="#ncen" class="nocmds">Centaur Outrunner</a></li>
+	<li><a href="#ncks">Centaur Sorcerer</a></li>
+	<li><a href="#ncnk">Centaur Khan</a></li>
+	<li><a href="#nscb" class="nocmds">Spider Crab Shorecrawler</a></li>
+	<li><a href="#nsc2" class="nocmds">Spider Crab Limbripper</a></li>
+	<li><a href="#nsc3" class="nocmds">Spider Crab Behemoth</a></li>
+	<li><a href="#ndtr" class="nocmds">Dark Troll</a></li>
+	<li><a href="#ndtp">Dark Troll Shadow Priest</a></li>
+	<li><a href="#ndtt">Dark Troll Trapper</a></li>
+	<li><a href="#ndtb" class="nocmds">Dark Troll Berserker</a></li>
+	<li><a href="#ndth">Dark Troll High Priest</a></li>
+	<li><a href="#ndtw">Dark Troll Warlord</a></li>
+	<li><a href="#ndrf" class="nocmds">Draenei Guardian</a></li>
+	<li><a href="#ndrm">Draenei Disciple</a></li>
+	<li><a href="#ndrp">Draenei Protector</a></li>
+	<li><a href="#ndrw" class="nocmds">Draenei Watcher</a></li>
+	<li><a href="#ndrh">Draenei Harbinger</a></li>
+	<li><a href="#ndrd">Draenei Darkslayer</a></li>
+	<li><a href="#ndrs">Draenei Seer</a></li>
+	<li><a href="#nrdk" class="nocmds">Red Dragon Whelp</a></li>
+	<li><a href="#nrdr" class="nocmds">Red Drake</a></li>
+	<li><a href="#nrwm">Red Dragon</a></li>
+	<li><a href="#nbdr" class="nocmds">Black Dragon Whelp</a></li>
+	<li><a href="#nbdk" class="nocmds">Black Drake</a></li>
+	<li><a href="#nbwm">Black Dragon</a></li>
+	<li><a href="#nbzw" class="nocmds">Bronze Dragon Whelp</a></li>
+	<li><a href="#nbzk" class="nocmds">Bronze Drake</a></li>
+	<li><a href="#nbzd">Bronze Dragon</a></li>
+	<li><a href="#ngrw" class="nocmds">Green Dragon Whelp</a></li>
+	<li><a href="#ngdk" class="nocmds">Green Drake</a></li>
+	<li><a href="#ngrd">Green Dragon</a></li>
+	<li><a href="#nadw" class="nocmds">Blue Dragon Whelp</a></li>
+	<li><a href="#nadk" class="nocmds">Blue Drake</a></li>
+	<li><a href="#nadr">Blue Dragon</a></li>
+	<li><a href="#nnht" class="nocmds">Nether Dragon Hatchling</a></li>
+	<li><a href="#nndk" class="nocmds">Nether Drake</a></li>
+	<li><a href="#nndr">Nether Dragon</a></li>
+	<li><a href="#nrel" class="nocmds">Reef Elemental</a></li>
+	<li><a href="#nele">Enraged Elemental</a></li>
+	<li><a href="#nelb">Berserk Elemental</a></li>
+	<li><a href="#nenc" class="nocmds">Corrupted Treant</a></li>
+	<li><a href="#nenp">Poison Treant</a></li>
+	<li><a href="#nepl">Plague Treant</a></li>
+	<li><a href="#ners">Eredar Sorcerer</a></li>
+	<li><a href="#nerd">Eredar Diabolist</a></li>
+	<li><a href="#nerw">Eredar Warlock</a></li>
+	<li><a href="#nfor">Faceless One Trickster</a></li>
+	<li><a href="#nfot">Faceless One Terror</a></li>
+	<li><a href="#nfod">Faceless One Deathbringer</a></li>
+	<li><a href="#nfgu" class="nocmds">Felguard</a></li>
+	<li><a href="#nfgb">Bloodfiend</a></li>
+	<li><a href="#nfov">Overlord</a></li>
+	<li><a href="#npfl" class="nocmds">Fel Beast</a></li>
+	<li><a href="#nfel">Fel Stalker</a></li>
+	<li><a href="#npfm">Fel Ravager</a></li>
+	<li><a href="#nftr" class="nocmds">Forest Troll</a></li>
+	<li><a href="#nfsp">Forest Troll Shadow Priest</a></li>
+	<li><a href="#nftt">Forest Troll Trapper</a></li>
+	<li><a href="#nftb" class="nocmds">Forest Troll Berserker</a></li>
+	<li><a href="#nfsh">Forest Troll High Priest</a></li>
+	<li><a href="#nftk">Forest Troll Warlord</a></li>
+	<li><a href="#nfrl" class="nocmds">Furbolg</a></li>
+	<li><a href="#nfrs">Furbolg Shaman</a></li>
+	<li><a href="#nfrp" class="nocmds">Pandaren</a></li>
+	<li><a href="#nfrb">Furbolg Tracker</a></li>
+	<li><a href="#nfrg" class="nocmds">Furbolg Champion</a></li>
+	<li><a href="#nfre">Furbolg Elder Shaman</a></li>
+	<li><a href="#nfra">Furbolg Ursa Warrior</a></li>
+	<li><a href="#ngh1">Ghost</a></li>
+	<li><a href="#ngh2">Wraith</a></li>
+	<li><a href="#nsgn">Sea Giant</a></li>
+	<li><a href="#nsgh">Sea Giant Hunter</a></li>
+	<li><a href="#nsgb">Sea Giant Behemoth</a></li>
+	<li><a href="#nspb" class="nocmds">Black Spider</a></li>
+	<li><a href="#nspg" class="nocmds">Forest Spider</a></li>
+	<li><a href="#nspr" class="nocmds">Spider</a></li>
+	<li><a href="#nssp">Spitting Spider</a></li>
+	<li><a href="#nsgt">Giant Spider</a></li>
+	<li><a href="#nsbm">Brood Mother</a></li>
+	<li><a href="#ngna" class="nocmds">Gnoll Poacher</a></li>
+	<li><a href="#ngns">Gnoll Assassin</a></li>
+	<li><a href="#ngno" class="nocmds">Gnoll</a></li>
+	<li><a href="#ngnb" class="nocmds">Gnoll Brute</a></li>
+	<li><a href="#ngnw">Gnoll Warden</a></li>
+	<li><a href="#ngnv">Gnoll Overseer</a></li>
+	<li><a href="#ngrk">Mud Golem</a></li>
+	<li><a href="#ngst">Rock Golem</a></li>
+	<li><a href="#nggr">Granite Golem</a></li>
+	<li><a href="#narg">Battle Golem</a></li>
+	<li><a href="#nwrg">War Golem</a></li>
+	<li><a href="#nsgg">Siege Golem</a></li>
+	<li><a href="#nhar" class="nocmds">Harpy Scout</a></li>
+	<li><a href="#nhrr" class="nocmds">Harpy Rogue</a></li>
+	<li><a href="#nhrw">Harpy Windwitch</a></li>
+	<li><a href="#nhrh">Harpy Storm-hag</a></li>
+	<li><a href="#nhrq">Harpy Queen</a></li>
+	<li><a href="#nhfp" class="nocmds">Fallen Priest</a></li>
+	<li><a href="#nhdc">Deceiver</a></li>
+	<li><a href="#nhhr">Heretic</a></li>
+	<li><a href="#nhyh">Hydra Hatchling</a></li>
+	<li><a href="#nhyd">Hydra</a></li>
+	<li><a href="#nehy">Elder Hydra</a></li>
+	<li><a href="#nahy">Ancient Hydra</a></li>
+	<li><a href="#nitr" class="nocmds">Ice Troll</a></li>
+	<li><a href="#nitp">Ice Troll Priest</a></li>
+	<li><a href="#nitt">Ice Troll Trapper</a></li>
+	<li><a href="#nits" class="nocmds">Ice Troll Berserker</a></li>
+	<li><a href="#nith">Ice Troll High Priest</a></li>
+	<li><a href="#nitw">Ice Troll Warlord</a></li>
+	<li><a href="#ninc" class="nocmds">Infernal Contraption</a></li>
+	<li><a href="#ninm">Infernal Machine</a></li>
+	<li><a href="#nina">Infernal Juggernaut</a></li>
+	<li><a href="#nkob" class="nocmds">Kobold</a></li>
+	<li><a href="#nkog">Kobold Geomancer</a></li>
+	<li><a href="#nkot">Kobold Tunneler</a></li>
+	<li><a href="#nkol">Kobold Taskmaster</a></li>
+	<li><a href="#nltl">Lightning Lizard</a></li>
+	<li><a href="#nthl">Thunder Lizard</a></li>
+	<li><a href="#nstw">Storm Wyrm</a></li>
+	<li><a href="#nlpr" class="nocmds">Makrura Prawn</a></li>
+	<li><a href="#nlpd" class="nocmds">Makrura Pooldweller</a></li>
+	<li><a href="#nltc">Makrura Tidecaller</a></li>
+	<li><a href="#nlds">Makrura Deepseer</a></li>
+	<li><a href="#nlsn" class="nocmds">Makrura Snapper</a></li>
+	<li><a href="#nlkl">Makrura Tidal Lord</a></li>
+	<li><a href="#nwiz" class="nocmds">Apprentice Wizard</a></li>
+	<li><a href="#nwzr">Rogue Wizard</a></li>
+	<li><a href="#nwzg">Renegade Wizard</a></li>
+	<li><a href="#nwzd">Dark Wizard</a></li>
+	<li><a href="#nmgw">Magnataur Warrior</a></li>
+	<li><a href="#nmgr">Magnataur Reaver</a></li>
+	<li><a href="#nmgd">Magnataur Destroyer</a></li>
+	<li><a href="#nmam" class="nocmds">Mammoth</a></li>
+	<li><a href="#nmit" class="nocmds">Icetusk Mammoth</a></li>
+	<li><a href="#nmdr" class="nocmds">Dire Mammoth</a></li>
+	<li><a href="#nmcf" class="nocmds">Mur&rsquo;gul Cliffrunner</a></li>
+	<li><a href="#nmbg">Mur&rsquo;gul Blood-Gill</a></li>
+	<li><a href="#nmtw" class="nocmds">Mur&rsquo;gul Tidewarrior</a></li>
+	<li><a href="#nmsn">Mur&rsquo;gul Snarecaster</a></li>
+	<li><a href="#nmrv">Mur&rsquo;gul Marauder</a></li>
+	<li><a href="#nmsc">Mur&rsquo;gul Shadowcaster</a></li>
+	<li><a href="#nmrl" class="nocmds">Murloc Tiderunner</a></li>
+	<li><a href="#nmrr">Murloc Huntsman</a></li>
+	<li><a href="#nmpg">Murloc Plaguebearer</a></li>
+	<li><a href="#nmfs">Murloc Flesheater</a></li>
+	<li><a href="#nmrm">Murloc Nightcrawler</a></li>
+	<li><a href="#nmmu">Murloc Mutant</a></li>
+	<li><a href="#nspd" class="nocmds">Spiderling</a></li>
+	<li><a href="#nnwa" class="nocmds">Nerubian Warrior</a></li>
+	<li><a href="#nnwl">Nerubian Webspinner</a></li>
+	<li><a href="#nnwr">Nerubian Seer</a></li>
+	<li><a href="#nnws" class="nocmds">Nerubian Spider Lord</a></li>
+	<li><a href="#nnwq">Nerubian Queen</a></li>
+	<li><a href="#nogr" class="nocmds">Ogre Warrior</a></li>
+	<li><a href="#nomg">Ogre Magi</a></li>
+	<li><a href="#nogm" class="nocmds">Ogre Mauler</a></li>
+	<li><a href="#nogl">Ogre Lord</a></li>
+	<li><a href="#nowb" class="nocmds">Wildkin</a></li>
+	<li><a href="#nowe" class="nocmds">Enraged Wildkin</a></li>
+	<li><a href="#nowk">Berserk Wildkin</a></li>
+	<li><a href="#nplb" class="nocmds">Polar Bear</a></li>
+	<li><a href="#nplg" class="nocmds">Giant Polar Bear</a></li>
+	<li><a href="#nfpl" class="nocmds">Polar Furbolg</a></li>
+	<li><a href="#nfps">Polar Furbolg Shaman</a></li>
+	<li><a href="#nfpt">Polar Furbolg Tracker</a></li>
+	<li><a href="#nfpc" class="nocmds">Polar Furbolg Champion</a></li>
+	<li><a href="#nfpe">Polar Furbolg Elder Shaman</a></li>
+	<li><a href="#nfpu">Polar Furbolg Ursa Warrior</a></li>
+	<li><a href="#nrzt" class="nocmds">Quillboar</a></li>
+	<li><a href="#nrzs" class="nocmds">Razormane Scout</a></li>
+	<li><a href="#nqbh">Quillboar Hunter</a></li>
+	<li><a href="#nrzb" class="nocmds">Razormane Brute</a></li>
+	<li><a href="#nrzm">Razormane Medicine Man</a></li>
+	<li><a href="#nrzg">Razormane Chieftain</a></li>
+	<li><a href="#nrvf">Fire Revenant</a></li>
+	<li><a href="#ntrv" class="nocmds">Revenant of the Tides</a></li>
+	<li><a href="#nrvs">Frost Revenant</a></li>
+	<li><a href="#nsrv" class="nocmds">Revenant of the Seas</a></li>
+	<li><a href="#nrvl">Lightning Revenant</a></li>
+	<li><a href="#nrvi">Ice Revenant</a></li>
+	<li><a href="#ndrv">Revenant of the Depths</a></li>
+	<li><a href="#nrvd">Death Revenant</a></li>
+	<li><a href="#nlrv">Deeplord Revenant</a></li>
+	<li><a href="#nslh" class="nocmds">Salamander Hatchling</a></li>
+	<li><a href="#nslr">Salamander</a></li>
+	<li><a href="#nslv">Salamander Vizier</a></li>
+	<li><a href="#nsll">Salamander Lord</a></li>
+	<li><a href="#nsqt" class="nocmds">Sasquatch</a></li>
+	<li><a href="#nsqe">Elder Sasquatch</a></li>
+	<li><a href="#nsqo">Sasquatch Oracle</a></li>
+	<li><a href="#nsqa">Ancient Sasquatch</a></li>
+	<li><a href="#nsty" class="nocmds">Satyr</a></li>
+	<li><a href="#nsat">Satyr Trickster</a></li>
+	<li><a href="#nsts">Satyr Shadowdancer</a></li>
+	<li><a href="#nstl">Satyr Soulstealer</a></li>
+	<li><a href="#nsth">Satyr Hellcaller</a></li>
+	<li><a href="#nsko" class="nocmds">Skeletal Orc</a></li>
+	<li><a href="#nsog" class="nocmds">Skeletal Orc Grunt</a></li>
+	<li><a href="#nsoc">Skeletal Orc Champion</a></li>
+	<li><a href="#nslm">Sludge Minion</a></li>
+	<li><a href="#nslf">Sludge Flinger</a></li>
+	<li><a href="#nsln">Sludge Monstrosity</a></li>
+	<li><a href="#nsra" class="nocmds">Stormreaver Apprentice</a></li>
+	<li><a href="#nsrh">Stormreaver Hermit</a></li>
+	<li><a href="#nsrn">Stormreaver Necrolyte</a></li>
+	<li><a href="#nsrw">Stormreaver Warlock</a></li>
+	<li><a href="#ndqn" class="nocmds">Succubus</a></li>
+	<li><a href="#ndqv">Vile Tormentor</a></li>
+	<li><a href="#ndqt" class="nocmds">Vile Temptress</a></li>
+	<li><a href="#ndqp">Maiden of Pain</a></li>
+	<li><a href="#ndqs">Queen of Suffering</a></li>
+	<li><a href="#ntrh">Sea Turtle Hatchling</a></li>
+	<li><a href="#ntrs">Sea Turtle</a></li>
+	<li><a href="#ntrt">Giant Sea Turtle</a></li>
+	<li><a href="#ntrg">Gargantuan Sea Turtle</a></li>
+	<li><a href="#ntrd">Dragon Turtle</a></li>
+	<li><a href="#ntkf" class="nocmds">Tuskarr Fighter</a></li>
+	<li><a href="#ntka" class="nocmds">Tuskarr Spearman</a></li>
+	<li><a href="#ntkh">Tuskarr Healer</a></li>
+	<li><a href="#ntkt">Tuskarr Trapper</a></li>
+	<li><a href="#ntkw" class="nocmds">Tuskarr Warrior</a></li>
+	<li><a href="#ntks">Tuskarr Sorcerer</a></li>
+	<li><a href="#ntkc">Tuskarr Chieftain</a></li>
+	<li><a href="#nubk" class="nocmds">Unbroken Darkhunter</a></li>
+	<li><a href="#nubr">Unbroken Rager</a></li>
+	<li><a href="#nubw">Unbroken Darkweaver</a></li>
+	<li><a href="#nvdl" class="nocmds">Lesser Voidwalker</a></li>
+	<li><a href="#nvdw">Voidwalker</a></li>
+	<li><a href="#nvdg">Greater Voidwalker</a></li>
+	<li><a href="#nvde">Elder Voidwalker</a></li>
+	<li><a href="#nwen" class="nocmds">Wendigo</a></li>
+	<li><a href="#nwnr">Elder Wendigo</a></li>
+	<li><a href="#nwns">Wendigo Shaman</a></li>
+	<li><a href="#nwna">Ancient Wendigo</a></li>
+	<li><a href="#nwwf" class="nocmds">Frost Wolf</a></li>
+	<li><a href="#nwlt" class="nocmds">Timber Wolf</a></li>
+	<li><a href="#nwwg">Giant Frost Wolf</a></li>
+	<li><a href="#nwlg">Giant Wolf</a></li>
+	<li><a href="#nwwd">Dire Frost Wolf</a></li>
+	<li><a href="#nwld">Dire Wolf</a></li>
+	<li><a href="#nska" class="nocmds">Skeleton Archer</a></li>
+	<li><a href="#nskf">Burning Archer</a></li>
+	<li><a href="#nskm">Skeletal Marksman</a></li>
+	<li><a href="#nbal">Doom Guard</a></li>
+	<li><a href="#ndrj" class="nocmds">Dalaran Reject</a></li>
+	<li><a href="#ndmu" class="nocmds">Dalaran Mutant</a></li>
+	<li><a href="#nske" class="nocmds">Skeleton Warrior</a></li>
+	<li><a href="#nskg" class="nocmds">Giant Skeleton Warrior</a></li>
+	<li><a href="#njg1" class="nocmds">Jungle Stalker</a></li>
+	<li><a href="#njga" class="nocmds">Elder Jungle Stalker</a></li>
+	<li><a href="#njgb">Enraged Jungle Stalker</a></li></ul>
+</li></ul></section></main>
+<div id="editor">
+	<h2 id="unit"></h2>
+	<div id="card">
+		<div id="Y0X0"></div><div id="Y0X1"></div><div id="Y0X2"></div><div id="Y0X3"></div>
+		<div id="Y1X0"></div><div id="Y1X1"></div><div id="Y1X2"></div><div id="Y1X3"></div>
+		<div id="Y2X0"></div><div id="Y2X1"></div><div id="Y2X2"></div><div id="Y2X3"></div>
+	</div>
+	<div class="option"><label title="Changing a hotkey will change all hotkeys for that command simultaneously."><input type="checkbox" id="link" checked="checked"> Spirit link hotkeys.</label></div>
+	<div class="option"><label title="Changing a hotkey will automatically change the tooltip to include the new hotkey."><input type="checkbox" id="tooltips" checked="checked"> Write tooltips automatically.</label> <label><input type="radio" name="end" id="start"> Beginning</label> <label><input type="radio" name="end" id="end" checked="checked"> End</label></div>
+	<h3 id="command"></h3>
+	<div id="fields">
+		<p id="Tip" class="tip"></p>
+		<p id="Hotkey" class="hotkey"></p>
+		<p id="Untip" class="tip"></p>
+		<p id="Unhotkey" class="hotkey"></p>
+		<p id="Researchtip" class="tip"></p>
+		<p id="Researchhotkey" class="hotkey"></p>
+		<p id="Revivetip" class="tip"></p>
+		<p id="Awakentip" class="tip"></p>
+		<ul id="other"></ul>
+	</div>
+	<p id="default"></p>
+</div>
+<div id="overlay_load" class="overlay"><p>Copy and paste a hotkey file in the area below or select a set from the list.</p>
+<p><a href="https://liquipedia.net/warcraft/Custom_Hotkeys_Guide">QWEASZ hotkey set</a> by WTVR.</p>
+<p><select id="files"></select></p>
+<textarea id="text_load" cols="80" rows="20"></textarea>
+<p><button type="button" id="open" accesskey="o"><span class="hotkey">O</span>pen</button>
+<button type="button" id="reset" accesskey="r"><span class="hotkey">R</span>eset</button>
+<button type="button" id="close_load">Close (<span class="hotkey">Esc</span>)</button></p></div>
+<div id="overlay_save" class="overlay"><p>Save as &ldquo;CustomKeys.txt&rdquo; in your <cite>Warcraft III</cite> user profile directory.</p>
+<textarea id="text_save" cols="80" rows="20"></textarea>
+<p><button type="button" id="copy" accesskey="c"><span class="hotkey">C</span>opy</button>
+<button type="button" id="save" accesskey="d"><span class="hotkey">D</span>ownload</button>
+<button type="button" id="close_save">Close (<span class="hotkey">Esc</span>)</button></p>
+<p><a id="download">Download &ldquo;CustomKeys.txt&rdquo;</a></p></div>
+<footer><div id="search"><input type="search" placeholder="Find unit..." id="query" accesskey="f">
+<ul id="results"></ul></div>
+<div id="author">Created by <a href="mailto:jcfields+hotkey@gmail.com">typhoon</a>. Hosted by <a href="https://gitlab.com/jcfields/warcraft3-hotkey-editor">GitLab</a>.</div>
+<div id="buttons"><button type="button" id="help" accesskey="h">?</button>
+<button type="button" id="btn_load" accesskey="l"><span class="hotkey">L</span>oad</button>
+<button type="button" id="btn_save" accesskey="s"><span class="hotkey">S</span>ave</button></div></footer></body></html>

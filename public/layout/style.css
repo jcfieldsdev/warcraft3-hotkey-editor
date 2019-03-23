@@ -1,0 +1,807 @@
+@font-face {
+	font-family: Souvenir;
+	font-weight: normal;
+	font-style: normal;
+	src: url(fonts/Souvenir-Medium.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Souvenir;
+	font-style: italic;
+	font-weight: normal;
+	src: url(fonts/Souvenir-MediumItalic.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Souvenir;
+	font-style: normal;
+	font-weight: bold;
+	src: url(fonts/Souvenir-Demi.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Souvenir;
+	font-style: italic;
+	font-weight: bold;
+	src: url(fonts/Souvenir-DemiItalic.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: "Space Mono";
+	font-weight: normal;
+	font-style: normal;
+	src: url(fonts/SpaceMono-Regular.woff2) format("woff2");
+}
+
+*.hidden, a#download, h1, section h2 {
+	display: none;
+}
+
+a {
+	background: none;
+	color: #ffcc00;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a, button, div#editor img {
+	cursor: pointer;
+}
+
+a.conflict, span.conflict {
+	background: none;
+	color: #f00;
+}
+
+a:hover, a:active {
+	background: none;
+	color: #fff;
+	text-decoration: underline;
+}
+
+a#human {
+	background-image: url(seal-human.png);
+}
+
+a#neutral {
+	background-image: url(seal-neutral.png);
+}
+
+a#nightelf {
+	background-image: url(seal-nightelf.png);
+}
+
+a#orc {
+	background-image: url(seal-orc.png);
+}
+
+a#undead {
+	background-image: url(seal-undead.png);
+}
+
+a.nocmds, span.passive {
+	opacity: 0.5;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	background: #002040 linear-gradient(#004060, #002040);
+	border: 3px solid #006080;
+	border-radius: 0.5em;
+	color: #ffcc00;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 0 0.25em 0.5em;
+	padding: 0.25em;
+	width: 8em;
+}
+
+button, input, select {
+	font-family: inherit;
+}
+
+button span.hotkey {
+	background: none;
+	color: #fff;
+}
+
+button:focus, input:focus, select:focus, textarea:focus {
+	outline: 0;
+}
+
+button:hover {
+	border-color: #fff !important;
+}
+
+button#help {
+	border-radius: 50%;
+	width: 2em;
+}
+
+cite {
+	font-style: normal;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+code {
+	background: #404040;
+	border: 2px solid #606060;
+	color: #fff;
+}
+
+code, kbd, textarea {
+	font-family: "Space Mono", Consolas, monospace;
+	font-variant-ligatures: none;
+}
+
+div#author {
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+div#buttons {
+	text-align: right;
+}
+
+div#card {
+	clear: left;
+	display: grid;
+	grid-gap: 5px 5px;
+	grid-template-columns: 64px 64px 64px 64px;
+	grid-template-rows: 64px 64px 64px;
+	line-height: 100%;
+	margin: 0 auto;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+div#card div {
+	justify-self: center;
+	position: relative;
+}
+
+div#card div, div#card img, h2 img {
+	height: 64px;
+	width: 64px;
+}
+
+div#card span {
+	font-weight: bold;
+	left: 5px;
+	position: absolute;
+	top: 4px;
+}
+
+div#card span, h2#unit, h3#command, p.hotkey input {
+	text-shadow: 2px 2px #000;
+}
+
+div#editor {
+	background: #202020;
+	border: 2px solid #404040;
+	border-radius: 1em;
+	bottom: 9em;
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+	position: fixed;
+	right: 5em;
+	top: 5em;
+	width: 33%;
+}
+
+div#editor.bloodelf {
+	background: #602000;
+	border-color: #804000;
+	color: inherit;
+}
+
+div#editor.bloodelf button {
+	background: #602000 linear-gradient(#602000, #400000);
+	border-color: #804000;
+}
+
+div#editor.bloodelf div.grid>div, div#editor.bloodelf p.tip:focus {
+	outline-color: #804000;
+}
+
+div#editor.demon {
+	background: #600020;
+	border-color: #802040;
+	color: inherit;
+}
+
+div#editor.demon button {
+	background: #600020 linear-gradient(#600020, #802040);
+	border-color: #a04060;
+}
+
+div#editor.demon div.grid>div, div#editor.demon p.tip:focus {
+	outline-color: #802040;
+}
+
+div#editor.draenei {
+	background: #404020;
+	border-color: #c0c080;
+	color: inherit;
+}
+
+div#editor.draenei button {
+	background: #404020 linear-gradient(#404020, #202000);
+	border-color: #a0a060;
+}
+
+div#editor.draenei div.grid>div, div#editor.draenei p.tip:focus {
+	outline-color: #a0a060;
+}
+
+div#editor.human {
+	background: #002040;
+	border-color: #004060;
+	color: inherit;
+}
+
+div#editor.human div.grid>div, div#editor.human p.tip:focus {
+	outline-color: #004060;
+}
+
+div#editor.neutral button {
+	background: #404040 linear-gradient(#404040, #202020);
+	border-color: #606060;
+}
+
+div#editor.naga {
+	background: #004040;
+	border-color: #006060;
+	color: inherit;
+}
+
+div#editor.naga button {
+	background: #006060 linear-gradient(#006060, #004040);
+	border-color: #008080;
+}
+
+div#editor.naga div.grid>div, div#editor.naga p.tip:focus {
+	outline-color: #008080;
+}
+
+div#editor.nightelf {
+	background: #204020;
+	border-color: #406040;
+	color: inherit;
+}
+
+div#editor.nightelf button {
+	background: #206020 linear-gradient(#206020, #204020);
+	border-color: #408040;
+}
+
+div#editor.nightelf div.grid>div, div#editor.nightelf p.tip:focus {
+	outline-color: #408040;
+}
+
+div#editor.orc {
+	background: #402000;
+	border-color: #804020;
+	color: inherit;
+}
+
+div#editor.orc button {
+	background: #604020 linear-gradient(#604020, #402000);
+	border-color: #804020;
+}
+
+div#editor.orc div.grid>div, div#editor.orc p.tip:focus {
+	outline-color: #804020;
+}
+
+div#editor.undead {
+	background: #402040;
+	border-color: #604060;
+	color: inherit;
+}
+
+div#editor.undead button {
+	background: #602060 linear-gradient(#602060, #400040);
+	border-color: #804080;
+}
+
+div#editor.undead div.grid>div, div#editor.undead p.tip:focus {
+	outline-color: #804080;
+}
+
+div#editor, div.overlay, select {
+	font-size: 1.25rem;
+}
+
+div#editor button {
+	font-size: 0.8rem;
+	padding: 0.25em 1em;
+	width: auto;
+}
+
+div#editor img:hover {
+	outline: 2px solid #fff;
+}
+
+div#editor img:active {
+	cursor: move;
+}
+
+div#fields {
+	margin-bottom: 3em;
+	overflow: auto;
+}
+
+div#fields, h3#command {
+	padding: 1px 1px 0;
+}
+
+div.conflict img {
+	outline: 1px solid #f00;
+}
+
+div.drag img {
+	box-shadow: 0 0 4px 4px #fff;
+}
+
+div.grid>div, p.tip:focus  {
+	outline: 1px solid #606060;
+}
+
+div.option, figcaption {
+	font-size: 0.8rem;
+}
+
+div.overlay {
+	background: rgba(0, 0, 0, 0.5);
+	color: inherit;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	width: 100%;
+	visibility: hidden;
+	z-index: 1;
+}
+
+div.overlay p, figcaption, h4, label {
+	font-style: italic;
+}
+
+div.overlay textarea {
+	height: 50%;
+	width: 80%;
+}
+
+div.overlay.open {
+	visibility: visible;
+}
+
+figure {
+	background: #202020;
+	border: 1px solid #404040;
+	margin: 1em auto;
+	padding: 0.5em 0.5em 0;
+	width: fit-content;
+	width: -moz-fit-content;
+}
+
+footer {
+	align-items: center;
+	background: transparent linear-gradient(transparent, #000);
+	bottom: 0;
+	color: inherit;
+	display: flex;
+	left: 0;
+	position: fixed;
+	width: 100%;
+}
+
+footer div {
+	flex-grow: 1;
+}
+
+h2, h3, h4 {
+	font-weight: bold;
+}
+
+h2#unit {
+	font-size: 1.5rem;
+	line-height: 64px;
+	margin: 0 0 1em;
+	overflow: hidden;
+	padding: 2px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+h2#unit img {
+	float: left;
+	margin-right: 0.5em;
+}
+
+h3#command {
+	font-size: inherit;
+	font-style: italic;
+	font-weight: normal;
+}
+
+header {
+	margin-top: 1em;
+	text-align: center;
+}
+
+header h2 {
+	font-size: 2rem;
+	margin: 2em 0;
+}
+
+html {
+	background: #000;
+	color: #fff;
+	font: 12pt/200% Souvenir, Georgia, serif;
+	padding: 0;
+}
+
+input#query {
+	border-radius: 1.5em;
+	margin-left: 1em;
+	padding: 0.5em;
+	width: 20em;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
+input[type="search"], input[type="text"], select, textarea {
+	background: #404040;
+	border: 2px solid #606060;
+	color: #fff;
+	font-size: inherit;
+	padding: 0.25em;
+}
+
+input[type="search"]:focus, input[type="text"]:focus {
+	background: #808080;
+	color: #fff;
+	border-color: #fff;
+}
+
+input[type="search"]::placeholder {
+	background: none;
+	color: #808080;
+	font-style: italic;
+}
+
+input[type="text"]::selection {
+	background: none;
+	color: inherit;
+}
+
+kbd {
+	background: #808080;
+	border: 2px outset #a0a0a0;
+	color: inherit;
+	margin: 0 0.25em;
+	padding: 0.1em 0.5em;
+}
+
+main {
+	margin-left: 275px;
+	padding-bottom: 5em;
+}
+
+main>p {
+	margin-top: 3em;
+}
+
+main.doc {
+	margin: 0 5%;
+}
+
+main.doc h3 {
+	border-bottom: 1px dotted #606060;
+	font-size: 1.5rem;
+	line-height: 100%;
+}
+
+main.doc h4 {
+	font-size: 1.25rem;
+}
+
+main.doc section p {
+	margin-left: 2em;
+}
+
+nav {
+	padding: 5em 0 0 5em;
+}
+
+p#default {
+	position: absolute;
+	bottom: 1em;
+	margin: 0;
+}
+
+p.hotkey {
+	text-indent: 2em;
+}
+
+p.hotkey input {
+	border-radius: 0.25em;
+	box-shadow: 2px 2px #606060;
+	height: 1em;
+	margin-right: 0.5em;
+	text-align: center;
+	text-transform: uppercase;
+	width: 1em;
+}
+
+p.hotkey input:focus {
+	box-shadow: 2px 2px #fff;
+}
+
+p.tip {
+	cursor: text;
+	margin: 0 0 1em;
+}
+
+section h3 {
+	font-size: 1.5rem;
+	margin: 0 0 1em;
+	text-shadow: 2px 2px #404040;
+}
+
+section>ul~h3 {
+	margin-top: 2em;
+}
+
+section ul ul {
+	margin-left: 2em;
+}
+
+select {
+	background-image: url(select.svg);
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+	border-radius: 0.5em;
+	width: 12em;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+span.button {
+	border-bottom: 1px dotted #fff;
+}
+
+span.hotkey {
+	background: none;
+	color: #ffcc00;
+}
+
+span.note {
+	background: none;
+	color: #c3dbff;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#filters {
+	position: fixed;
+}
+
+ul#filters a {
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	background-size: 125px 125px;
+	color: #fff;
+	display: block;
+	font-variant: small-caps;
+	height: 125px;
+	padding-bottom: 0.5em;
+	text-align: center;
+	width: 125px;
+}
+
+ul#filters a:hover, ul#filters a:active {
+	text-decoration: none;
+	text-shadow: 0 0 8px #fff;
+}
+
+ul#other img, ul#results img {
+	height: 1em;
+	margin-right: 0.5em;
+	vertical-align: text-bottom;
+	width: 1em;
+}
+
+ul#other img:hover {
+	cursor: default;
+	outline: 0;
+}
+
+ul#results {
+	background: rgba(0, 0, 0, 0.8);
+	bottom: 4em;
+	color: inherit;
+	left: 2em;
+	max-height: 50vh;
+	overflow: auto;
+	position: absolute;
+	white-space: nowrap;
+	width: 24em;
+}
+
+ul#results li.selected {
+	background: transparent linear-gradient(to right, #004060, rgba(0, 64, 96, 0));
+	color: inherit;
+}
+
+ul.bloodelf {
+	background: none;
+	color: #ff4020;
+}
+
+ul.demon {
+	background: none;
+	color: #a04060;
+}
+
+ul.draenei {
+	background: none;
+	color: #c0c080;
+}
+
+ul.human {
+	background: none;
+	color: #40a0ff;
+}
+
+ul.naga {
+	background: none;
+	color: #40c0c0;
+}
+
+ul.neutral {
+	background: none;
+	color: #c0c0c0;
+}
+
+ul.nightelf {
+	background: none;
+	color: #60c000;
+}
+
+ul.orc {
+	background: none;
+	color: #c08040;
+}
+
+ul.undead {
+	background: none;
+	color: #a060a0;
+}
+
+@media (max-height: 1080px), (orientation: portrait) {
+	div#card {
+		grid-gap: 4px 4px;
+		grid-template-columns: 56px 56px 56px 56px;
+		grid-template-rows: 56px 56px 56px;
+	}
+
+	div#card div, div#card img, h2 img {
+		height: 56px;
+		width: 56px;
+	}
+
+	div#editor {
+		bottom: 7em;
+		right: 3em;
+		top: 3em;
+	}
+
+	h2#unit {
+		line-height: 56px;
+	}
+
+	html {
+		font-size: 11pt;
+	}
+
+	input#query {
+		padding: 0.25em;
+	}
+
+	main {
+		margin-left: 200px;
+		padding-bottom: 4em;
+	}
+
+	nav {
+		padding: 3em 0 0 3em;
+	}
+
+	ul#filters a {
+		background-size: 100px 100px;
+		height: 100px;
+		width: 100px;
+	}
+
+	ul#results {
+		bottom: 3.75em;
+	}
+}
+
+@media (max-height: 900px) {
+	button {
+		font-size: 1.25rem;
+	}
+
+	div#card {
+		grid-gap: 3px 3px;
+		grid-template-columns: 48px 48px 48px 48px;
+		grid-template-rows: 48px 48px 48px;
+	}
+
+	div#card div, div#card img, h2 img {
+		height: 48px;
+		width: 48px;
+	}
+
+	div#card span {
+		left: 3px;
+		top: 2px;
+	}
+
+	div#editor {
+		bottom: 4.5em;
+		font-size: 1rem;
+		right: 1em;
+		top: 1em;
+	}
+
+	div.overlay textarea {
+		height: 60%;
+	}
+
+	h2#unit {
+		line-height: 48px;
+	}
+
+	html {
+		font-size: 10pt;
+	}
+
+	main {
+		margin-left: 125px;
+		padding-bottom: 3em;
+	}
+
+	nav {
+		padding: 1em 0 0 1em;
+	}
+
+	ul#filters a {
+		background-size: 75px 75px;
+		height: 75px;
+		width: 75px;
+	}
+
+	ul#results {
+		bottom: 2.75em;
+	}
+}
