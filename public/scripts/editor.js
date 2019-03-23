@@ -15,7 +15,7 @@ const DEFAULT_UNIT="hpea";
 const DEFAULT_HOTKEY_FILE="default.txt";
 const DEFAULT_SAVE_NAME="CustomKeys.txt";
 const HOTKEY_DIR="hotkeys/";
-const DIR_LIST="scripts/list.json";
+const DIR_LIST="hotkeys/index.json";
 const HELP_PAGE="help.html";
 
 // pattern for splitting multi-line tips
