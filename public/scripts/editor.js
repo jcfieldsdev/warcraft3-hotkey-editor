@@ -976,26 +976,26 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 
 	let label=document.createElement("label");
 	label.innerHTML=key+": ";
-	label.setAttribute("for", p.id+"0");
-	p.appendChild(label);
 
 	// handles multi-tier hotkeys (e.g., weapon/armor upgrades)
-	let hotkeys=hotkey.split(","), self=this;
+	let hotkeys=hotkey.split(",");
 
-	for (let i=0; i<hotkeys.length; i++) {
+	hotkeys.forEach(function(hotkey) {
 		let input=document.createElement("input");
-		input.id=p.id+i;
 		input.setAttribute("type", "text");
-		input.setAttribute("value", hotkeys[i]);
-		input.addEventListener("click", function() {
+		input.setAttribute("value", hotkey);
+		input.addEventListener("click", function(event) {
+			event.preventDefault(); // prevents click from activating label
 			this.select();
 		});
 		input.addEventListener("input", function() {
-			self.editHotkey(this, key);
-		});
+			this.editHotkey(input, key);
+		}.bind(this));
 
-		p.appendChild(input);
-	}
+		label.appendChild(input);
+	}, this);
+
+	p.appendChild(label);
 
 	// appends "Set to Esc" button for cancel buttons
 	if (this.command.startsWith("cmdcancel")) {
