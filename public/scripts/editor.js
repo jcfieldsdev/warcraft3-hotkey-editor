@@ -745,7 +745,6 @@ Editor.prototype.drop=function(from, to) {
 
 	this.clearButtons();
 	this.unitEditor();
-	this.commandEditor();
 };
 
 Editor.prototype.commandEditor=function() {
@@ -977,26 +976,26 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 
 	let label=document.createElement("label");
 	label.innerHTML=key+": ";
+	label.setAttribute("for", p.id+"0");
+	p.appendChild(label);
 
 	// handles multi-tier hotkeys (e.g., weapon/armor upgrades)
-	let hotkeys=hotkey.split(","), inputs=Array(hotkeys.length).fill();
-	let self=this;
+	let hotkeys=hotkey.split(","), self=this;
 
 	for (let i=0; i<hotkeys.length; i++) {
-		inputs[i]=document.createElement("input");
-		inputs[i].setAttribute("type", "text");
-		inputs[i].setAttribute("value", hotkeys[i]);
-		inputs[i].addEventListener("click", function() {
+		let input=document.createElement("input");
+		input.id=p.id+i;
+		input.setAttribute("type", "text");
+		input.setAttribute("value", hotkeys[i]);
+		input.addEventListener("click", function() {
 			this.select();
 		});
-		inputs[i].addEventListener("input", function() {
-			self.editHotkey(this, key, this.value);
+		input.addEventListener("input", function() {
+			self.editHotkey(this, key);
 		});
 
-		label.appendChild(inputs[i]);
+		p.appendChild(input);
 	}
-
-	p.appendChild(label);
 
 	// appends "Set to Esc" button for cancel buttons
 	if (this.command.startsWith("cmdcancel")) {
@@ -1016,23 +1015,23 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 	document.getElementById(key).replaceWith(p);
 };
 
-Editor.prototype.editHotkey=function(input, key, hotkey) {
+Editor.prototype.editHotkey=function(input, key) {
 	// removes non-letter characters
-	if (hotkey.match(/[A-Z]/i)==null) {
+	if (input.value.match(/[A-Z]/i)==null) {
 		input.value="";
 		return;
 	}
 
 	// limits input to one character
-	if (hotkey.length>1) {
-		hotkey=hotkey.slice(0, 1);
+	if (input.value.length>1) {
+		input.value=input.value.slice(0, 1);
 	}
 
 	// sets all hotkeys together if "spirit link" option selected
 	if (document.getElementById("link").checked) {
-		this.setHotkey("Hotkey", hotkey);
-		this.setHotkey("Unhotkey", hotkey);
-		this.setHotkey("Researchhotkey", hotkey);
+		this.setHotkey("Hotkey", input.value);
+		this.setHotkey("Unhotkey", input.value);
+		this.setHotkey("Researchhotkey", input.value);
 	} else {
 		this.setHotkey(key);
 	}
@@ -1057,18 +1056,18 @@ Editor.prototype.setHotkey=function(key, hotkey="") {
 
 		// handles multi-tier hotkeys (e.g., weapons/armor upgrades)
 		if (hotkey.length>1) {
-			fields[i]=hotkey[i];
+			fields.push(hotkey[i]);
 			input.value=hotkey[i];
 		} else {
 			if (hotkey!="") {
 				// sets hotkeys to the optional function parameter value;
 				// this is the case when "spirit linking" is used
 				// and also when setting the "Esc" key
-				fields[i]=hotkey[0];
+				fields.push(hotkey[0]);
 				input.value=hotkey[0];
 			} else {
 				// uses input field value if optional parameter not specified
-				fields[i]=input.value;
+				fields.push(input.value);
 			}
 		}
 	}
@@ -1088,7 +1087,6 @@ Editor.prototype.resetDefaults=function() {
 	this.clearButtons();
 	this.clearFields();
 	this.unitEditor();
-	this.commandEditor();
 };
 
 Editor.prototype.filter=function(race) {
