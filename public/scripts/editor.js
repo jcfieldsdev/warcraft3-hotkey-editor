@@ -1024,7 +1024,7 @@ Editor.prototype.editHotkey=function(input, key) {
 
 	// limits input to one character
 	if (input.value.length>1) {
-		input.value=input.value.slice(0, 1);
+		input.value=input.value.slice(-1);
 	}
 
 	// sets all hotkeys together if "spirit link" option selected
