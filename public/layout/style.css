@@ -140,6 +140,7 @@ code, kbd, textarea {
 }
 
 div#author {
+	flex-grow: 1;
 	font-size: 0.8rem;
 	text-align: center;
 }
@@ -402,12 +403,9 @@ footer {
 	color: inherit;
 	display: flex;
 	left: 0;
+	line-height: 100%;
 	position: fixed;
 	width: 100%;
-}
-
-footer div {
-	flex-grow: 1;
 }
 
 h2, h3, h4 {
@@ -498,7 +496,7 @@ kbd {
 
 main {
 	margin-left: 275px;
-	padding-bottom: 5em;
+	padding: 5em 0;
 }
 
 main>p {
@@ -507,6 +505,7 @@ main>p {
 
 main.doc {
 	margin: 0 5%;
+	padding-top: 0;
 }
 
 main.doc h3 {
@@ -524,7 +523,10 @@ main.doc section p {
 }
 
 nav {
+	left: 0;
 	padding: 5em 0 0 5em;
+	position: fixed;
+	top: 0;
 }
 
 p#default {
@@ -600,10 +602,6 @@ ul {
 	padding: 0;
 }
 
-ul#filters {
-	position: fixed;
-}
-
 ul#filters a {
 	background-position: 0 100%;
 	background-repeat: no-repeat;
@@ -620,6 +618,20 @@ ul#filters a {
 ul#filters a:hover, ul#filters a:active {
 	text-decoration: none;
 	text-shadow: 0 0 8px #fff;
+}
+
+ul#links {
+	margin-top: 6em;
+	text-align: center;
+}
+
+ul#links li {
+	display: inline-block;
+}
+
+ul#links img {
+	height: 32px;
+	width: 32px;
 }
 
 ul#other img, ul#results img {
@@ -728,7 +740,7 @@ ul.undead {
 
 	main {
 		margin-left: 200px;
-		padding-bottom: 4em;
+		padding: 3em 0;
 	}
 
 	nav {
@@ -739,6 +751,15 @@ ul.undead {
 		background-size: 100px 100px;
 		height: 100px;
 		width: 100px;
+	}
+
+	ul#links {
+		margin-top: 4em;
+	}
+
+	ul#links img {
+		height: 28px;
+		width: 28px;
 	}
 
 	ul#results {
@@ -788,7 +809,7 @@ ul.undead {
 
 	main {
 		margin-left: 125px;
-		padding-bottom: 3em;
+		padding: 1em 0;
 	}
 
 	nav {
@@ -799,6 +820,15 @@ ul.undead {
 		background-size: 75px 75px;
 		height: 75px;
 		width: 75px;
+	}
+
+	ul#links {
+		margin-top: 2em;
+	}
+
+	ul#links img {
+		height: 24px;
+		width: 24px;
 	}
 
 	ul#results {
