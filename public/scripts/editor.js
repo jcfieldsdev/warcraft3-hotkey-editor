@@ -448,11 +448,7 @@ Editor.prototype.clearFields=function() {
 	for (let i=0; i<children.length; i++) {
 		// removes event listeners for hotkey inputs (which are removed and
 		// recreated) but not tips (which are persistent)
-		if (children[i].classList.contains("tip")) {
-			this.clear(children[i], false);
-		} else {
-			this.clear(children[i], true);
-		}
+		this.clear(children[i], !children[i].classList.contains("tip"));
 
 		// also hides element so it does not remain editable
 		children[i].classList.add("hidden");
