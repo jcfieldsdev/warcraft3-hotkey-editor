@@ -327,7 +327,9 @@ Editor.prototype.unitEditor=function() {
 		});
 		divs[i].addEventListener("drop", function(event) {
 			event.preventDefault();
-			this.drop(event.dataTransfer.getData("text"), event.target.id);
+
+			let data=event.dataTransfer.getData("text");
+			this.drop(data, event.target.id, event.shiftKey);
 			document.getElementById("card").classList.remove("grid");
 		}.bind(this));
 	}
@@ -670,13 +672,13 @@ Editor.prototype.checkAllConflicts=function() {
 	}
 };
 
-Editor.prototype.drop=function(from, to) {
+Editor.prototype.drop=function(from, to, mod) {
 	if (from==to) {
 		return;
 	}
 
 	let pattern=/Y(\d)X(\d)/;
-	let oldpos="", newpos="", oldunpos="", newunpos="", swap=false;
+	let oldpos="", newpos="", oldunpos="", newunpos="";
 
 	// trims "img_" prefix
 	from=from.replace("img_", "");
@@ -697,43 +699,48 @@ Editor.prototype.drop=function(from, to) {
 		to=this.convertBuildCommand(to);
 
 		newpos=commands.get(to, "Buttonpos");
-		newunpos=commands.get(to, "Unbuttonpos");
 
-		oldpos=commands.get(from, "Buttonpos");
+		// modifier key held during drop overrides swap behavior and allows
+		// position conflict
+		if (!mod) {
+			newunpos=commands.get(to, "Unbuttonpos");
+			oldpos=commands.get(from, "Buttonpos");
 
-		// uses location of button in card if available (so that drag-and-drop
-		// operations try to match how the button positions are displayed over
-		// how they are stored), otherwise uses stored value
-		for (let y=0; y<ROWS; y++) {
-			for (let x=0; x<COLS; x++ ){
-				if (from==this.card[y][x]) {
-					oldpos=x+","+y;
+			// uses location of button in card if available, otherwise uses
+			// stored value (so drag-and-drop operations try to match how the
+			// button positions are displayed over how they are stored, which
+			// is more consistent with user expectations)
+			for (let y=0; y<ROWS; y++) {
+				for (let x=0; x<COLS; x++ ){
+					if (from==this.card[y][x]) {
+						oldpos=x+","+y;
 
-					if (oldunpos!="") {
-						oldunpos=oldpos;
+						if (oldunpos!="") {
+							oldunpos=oldpos;
+						}
 					}
-				}
 
-				if (to==this.card[y][x]) {
-					newpos=x+","+y;
+					if (to==this.card[y][x]) {
+						newpos=x+","+y;
 
-					if (newunpos!="") {
-						newunpos=newpos;
+						if (newunpos!="") {
+							newunpos=newpos;
+						}
 					}
 				}
 			}
-		}
 
-		// if both buttons have same position,
-		// empty old button position to resolve conflict
-		if (oldpos==newpos) {
-			oldpos="";
-		}
+			// if both buttons have same position,
+			// empty old button position to resolve conflict
+			if (oldpos==newpos) {
+				oldpos="";
+			}
 
-		commands.set(to, "Buttonpos", oldpos);
+			commands.set(to, "Buttonpos", oldpos);
 
-		if (newunpos!="") {
-			commands.set(to, "Unbuttonpos", oldpos);
+			if (newunpos!="") {
+				commands.set(to, "Unbuttonpos", oldpos);
+			}
 		}
 	}
 
