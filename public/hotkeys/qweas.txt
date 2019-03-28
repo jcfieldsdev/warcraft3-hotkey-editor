@@ -93,7 +93,6 @@ Researchtip=Learn Bash - [|cffffcc00Level %d|r] (|cffffcc00C|r)
 
 [ahav]
 Tip=Activate Avatar (|cffffcc00V|r)
-Untip=Deactivate Avatar (|cffffcc00V|r)
 Researchtip=Learn Avatar (|cffffcc00V|r)
 
 [ahfs]
@@ -497,7 +496,6 @@ Researchtip=Learn Shockwave - [|cffffcc00Level %d|r] (|cffffcc00X|r)
 
 [anav]
 Tip=Activate Avatar (|cffffcc00V|r)
-Untip=Deactivate Avatar (|cffffcc00V|r)
 Researchtip=Learn Avatar (|cffffcc00V|r)
 
 [slo3]

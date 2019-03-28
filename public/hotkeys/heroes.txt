@@ -73,8 +73,6 @@ Researchtip=Learn Bash - [|cffffcc00Level %d|r] (|cffffcc00E|r)
 [ahav]
 Hotkey=R
 Tip=Activate Avatar (|cffffcc00R|r)
-Unhotkey=R
-Untip=Deactivate Avatar (|cffffcc00R|r)
 Researchhotkey=R
 Researchtip=Learn Avatar (|cffffcc00R|r)
 
@@ -127,8 +125,6 @@ Researchtip=Learn Starfall (|cffffcc00R|r)
 [anav]
 Hotkey=R
 Tip=Activate Avatar (|cffffcc00R|r)
-Unhotkey=R
-Untip=Deactivate Avatar (|cffffcc00R|r)
 Researchhotkey=R
 Researchtip=Learn Avatar (|cffffcc00R|r)
 

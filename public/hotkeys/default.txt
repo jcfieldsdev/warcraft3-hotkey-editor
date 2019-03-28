@@ -562,13 +562,10 @@ Researchbuttonpos=2,0
 
 [ahav]
 Tip=Activate A|cffffcc00v|ratar
-Untip=Deactivate A|cffffcc00v|ratar
 Hotkey=V
-Unhotkey=V
 Researchtip=Learn A|cffffcc00v|ratar
 Researchhotkey=V
 Buttonpos=3,2
-Unbuttonpos=3,2
 Researchbuttonpos=3,0
 
 [hpal]
@@ -661,13 +658,10 @@ Researchbuttonpos=1,0
 
 [anav]
 Tip=Activate A|cffffcc00v|ratar
-Untip=Deactivate A|cffffcc00v|ratar
 Hotkey=V
-Unhotkey=V
 Researchtip=Learn A|cffffcc00v|ratar
 Researchhotkey=V
 Buttonpos=3,2
-Unbuttonpos=3,2
 Researchbuttonpos=3,0
 
 [hart]
