@@ -8,7 +8,7 @@ const DRAENEI="draenei";
 const DEMON="demon";
 const NAGA="naga";
 
-const OTHER=0
+const OTHER=0;
 const UNIT=1;
 const HERO=2;
 const NOATTACK=3;
@@ -5366,11 +5366,6 @@ const units={
 		commands: {
 			acuf: "Unholy Frenzy"
 		}
-	},
-	nvdl: {
-		name: "Lesser Voidwalker",
-		race: NEUTRAL,
-		type: UNIT
 	},
 	nvdw: {
 		name: "Voidwalker",

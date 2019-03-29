@@ -403,7 +403,6 @@ footer {
 	color: inherit;
 	display: flex;
 	left: 0;
-	line-height: 100%;
 	position: fixed;
 	width: 100%;
 }
