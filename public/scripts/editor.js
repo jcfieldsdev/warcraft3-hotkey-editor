@@ -37,7 +37,7 @@ const editor=new Editor();
 
 window.addEventListener("load", function() {
 	// loads default commands and calls init() once retrieved
-	let text=files.load(DEFAULT_HOTKEY_FILE, init);
+	files.load(DEFAULT_HOTKEY_FILE, init);
 });
 
 function init(text) {
@@ -195,7 +195,7 @@ function Editor() {
 		return Array(COLS).fill();
 	});
 	this.selected=-1; // selected search result
-};
+}
 
 Editor.prototype.load=function() {
 	let unit="";
@@ -256,7 +256,7 @@ Editor.prototype.unitEditor=function() {
 	document.getElementById("unit").replaceWith(h2);
 
 	if (unit.suffix!=undefined) {
-		h2.innerHTML+=" ("+unit.suffix+")"
+		h2.innerHTML+=" ("+unit.suffix+")";
 	}
 
 	let h3=document.getElementById("command");
@@ -1404,7 +1404,7 @@ Overlay.prototype.focus=function() {
 };
 
 Overlay.prototype.select=function() {
-	document.getElementById(this.textarea).select()
+	document.getElementById(this.textarea).select();
 };
 
 /*
