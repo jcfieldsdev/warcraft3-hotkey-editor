@@ -251,16 +251,16 @@ Editor.prototype.unitEditor=function() {
 
 	let h2=document.createElement("h2");
 	h2.id="unit";
-	h2.innerHTML=unit.name;
+	h2.appendChild(document.createTextNode(unit.name));
 	h2.insertBefore(this.createButton(this.unit, unit.name), h2.firstChild);
 	document.getElementById("unit").replaceWith(h2);
 
 	if (unit.suffix!=undefined) {
-		h2.innerHTML+=" ("+unit.suffix+")";
+		h2.textContent+=" ("+unit.suffix+")";
 	}
 
 	let h3=document.getElementById("command");
-	h3.innerHTML="";
+	h3.textContent="";
 	h3.classList.add("hidden");
 
 	let buttons=this.getCommands(unit);
@@ -600,12 +600,12 @@ Editor.prototype.setVisibleHotkeys=function() {
 			// (for passives)
 			if (hotkey!="") {
 				if (hotkey=="512") {
-					span.innerHTML="Esc";
+					span.textContent="Esc";
 				} else { // only show first letter (even if multi-tiered)
-					span.innerHTML=hotkey.slice(0, 1);
+					span.textContent=hotkey.slice(0, 1);
 				}
 			} else if (researchhotkey!="") {
-				span.innerHTML=researchhotkey.slice(0, 1);
+				span.textContent=researchhotkey.slice(0, 1);
 				span.classList.add("passive");
 			}
 		}
@@ -781,7 +781,7 @@ Editor.prototype.commandEditor=function() {
 	}
 
 	let h3=document.getElementById("command");
-	h3.innerHTML=this.name;
+	h3.textContent=this.name;
 	h3.classList.remove("hidden");
 
 	let p=document.createElement("p");
@@ -792,7 +792,7 @@ Editor.prototype.commandEditor=function() {
 	button.addEventListener("click", function() {
 		this.resetDefaults();
 	}.bind(this));
-	button.innerHTML="Reset to Default Values";
+	button.appendChild(document.createTextNode("Reset to Default Values"));
 	p.appendChild(button);
 
 	if (!this.command.startsWith("cmd")) { // omits basic commands
@@ -801,7 +801,7 @@ Editor.prototype.commandEditor=function() {
 		button.addEventListener("click", function() {
 			this.findUnitsWith(this.command);
 		}.bind(this));
-		button.innerHTML="Show Units with This Command";
+		button.appendChild(document.createTextNode("Show Units with Command"));
 		p.appendChild(button);
 	}
 
@@ -978,7 +978,7 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 	}
 
 	let label=document.createElement("label");
-	label.innerHTML=key+": ";
+	label.textContent=key+": ";
 
 	// handles multi-tier hotkeys (e.g., weapon/armor upgrades)
 	let hotkeys=hotkey.split(",");
@@ -1010,7 +1010,7 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 			this.setVisibleHotkeys();
 			this.checkAllConflicts();
 		}.bind(this));
-		button.innerHTML="Set to Esc";
+		button.appendChild(document.createTextNode("Set to Esc"));
 		p.appendChild(button);
 	}
 
@@ -1152,7 +1152,7 @@ Editor.prototype.findUnitsWith=function(command) {
 
 	let h3=document.getElementById("command");
 	h3.classList.remove("hidden");
-	h3.innerHTML+=" ("+this.command+")";
+	h3.textContent+=" ("+this.command+")";
 
 	this.clearFields();
 	this.formatResults("other", matches);
@@ -1165,7 +1165,7 @@ Editor.prototype.findUnitsWith=function(command) {
 	button.addEventListener("click", function() {
 		this.commandEditor();
 	}.bind(this));
-	button.innerHTML="Edit This Command";
+	button.appendChild(document.createTextNode("Edit Command"));
 	p.appendChild(button);
 
 	document.getElementById("default").replaceWith(p);
@@ -1186,7 +1186,7 @@ Editor.prototype.formatResults=function(id, matches) {
 
 		let a=document.createElement("a");
 		a.href="#"+match;
-		a.innerHTML=unit.name;
+		a.appendChild(document.createTextNode(unit.name));
 		a.classList.toggle("conflict", this.checkConflicts(match));
 
 		// special case for currently selected unit (which will not fire
@@ -1199,7 +1199,7 @@ Editor.prototype.formatResults=function(id, matches) {
 		}
 
 		if (unit.suffix!=undefined) {
-			a.innerHTML+=" ("+unit.suffix+")";
+			a.textContent+=" ("+unit.suffix+")";
 		}
 
 		li.appendChild(img);
@@ -1431,12 +1431,12 @@ Files.prototype.getList=function() {
 			});
 
 			let option=document.createElement("option");
-			option.innerHTML="(Select a set...)";
+			option.appendChild(document.createTextNode("(Select a set...)"));
 			select.appendChild(option);
 
 			for (let i=0; i<this.response.length; i++) {
 				option=document.createElement("option");
-				option.innerHTML=this.response[i];
+				option.appendChild(document.createTextNode(this.response[i]));
 				select.appendChild(option);
 			}
 
