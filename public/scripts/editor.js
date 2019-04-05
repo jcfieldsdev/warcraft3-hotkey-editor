@@ -558,10 +558,7 @@ Editor.prototype.getConflicts=function(id) {
 		}
 	});
 
-	return {
-		hotkeys: hotkeys,
-		researchhotkeys: researchhotkeys
-	};
+	return {hotkeys, researchhotkeys};
 
 	function recordHotkey(id, hotkey, keys) {
 		let hotkeys=hotkey.split(",");
