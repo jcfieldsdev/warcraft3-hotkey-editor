@@ -33,7 +33,7 @@
 	src: url(fonts/SpaceMono-Regular.woff2) format("woff2");
 }
 
-*.hidden, a#download, h1, section h2 {
+*.hidden, a#file, h1, section h2 {
 	display: none;
 }
 

@@ -74,30 +74,24 @@ function init(text) {
 		overlays.load.hide();
 	});
 	document.getElementById("copy").addEventListener("click", function() {
-		overlays.save.select();
+		overlays[this.value].select();
 		document.execCommand("copy");
 	});
-	document.getElementById("save").addEventListener("click", function() {
+	document.getElementById("download").addEventListener("click", function() {
 		let contents=new Blob([overlays.save.getText()], {type: "text/plain"});
 
-		let a=document.getElementById("download");
+		let a=document.getElementById("file");
 		a.download=DEFAULT_SAVE_NAME;
 		a.href=window.URL.createObjectURL(contents);
 		a.click();
 	});
-	document.getElementById("close_load").addEventListener("click", function() {
-		overlays.load.hide();
-	});
-	document.getElementById("close_save").addEventListener("click", function() {
-		overlays.save.hide();
-	});
 	document.getElementById("help").addEventListener("click", function() {
 		window.location=HELP_PAGE;
 	});
-	document.getElementById("btn_load").addEventListener("click", function() {
+	document.getElementById("load").addEventListener("click", function() {
 		overlays.load.show();
 	});
-	document.getElementById("btn_save").addEventListener("click", function() {
+	document.getElementById("save").addEventListener("click", function() {
 		store.save(commands.list);
 
 		overlays.save.setText(commands.convert());
@@ -151,6 +145,14 @@ function init(text) {
 	for (let i=0; i<filters.length; i++) {
 		filters[i].addEventListener("click", function() {
 			editor.filter(this.id);
+		});
+	}
+
+	let close=document.getElementsByClassName("close");
+
+	for (let i=0; i<close.length; i++) {
+		close[i].addEventListener("click", function() {
+			overlays[this.value].hide();
 		});
 	}
 
