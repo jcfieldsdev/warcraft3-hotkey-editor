@@ -1,3 +1,5 @@
+"use strict";
+
 const NEUTRAL="neutral";
 const HUMAN="human";
 const ORC="orc";
