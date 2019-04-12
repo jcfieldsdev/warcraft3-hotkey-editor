@@ -14,12 +14,16 @@ const DEFAULT_UNIT="hpea";
 // file names and locations
 const DEFAULT_HOTKEY_FILE="default.txt";
 const DEFAULT_SAVE_NAME="CustomKeys.txt";
+const ICONS_DIR="icons/";
+const ICONS_EXT=".png";
 const HOTKEY_DIR="hotkeys/";
 const DIR_LIST="hotkeys/index.json";
 const HELP_PAGE="help.html";
 
+// delimiter for multi-level tips, multi-tier hotkeys, and button positions
+const DELIMITER=",";
 // pattern for splitting multi-line tips
-const DELIMITER=/,(?=(?:[^"]|"[^"]*")*$)/;
+const MULTI_DELIMITER=/,(?=(?:[^"]|"[^"]*")*$)/;
 
 // objects
 const store=new Storage("wc3hk");
@@ -281,7 +285,7 @@ Editor.prototype.unitEditor=function() {
 		let buttonpos=commands.get(idpos, "Buttonpos");
 
 		if (buttonpos) {
-			let pos=buttonpos.split(",");
+			let pos=buttonpos.split(DELIMITER);
 			[x, y]=this.getPosition(pos[0], pos[1]);
 			conflict=pos[0]!=x||pos[1]!=y;
 		} else {
@@ -390,7 +394,7 @@ Editor.prototype.createButton=function(id, name) {
 	let div=document.createElement("div");
 	let img=document.createElement("img");
 	img.id="img_"+id;
-	img.setAttribute("src", "icons/"+id+".png");
+	img.setAttribute("src", ICONS_DIR+id+ICONS_EXT);
 	img.setAttribute("alt", "["+name+"]");
 	img.setAttribute("title", name);
 	img.addEventListener("click", function() {
@@ -563,7 +567,7 @@ Editor.prototype.getConflicts=function(id) {
 	return {hotkeys, researchhotkeys};
 
 	function recordHotkey(id, hotkey, keys) {
-		let hotkeys=hotkey.split(",");
+		let hotkeys=hotkey.split(DELIMITER);
 
 		hotkeys.forEach(function(hotkey) {
 			if (hotkey=="") {
@@ -708,7 +712,7 @@ Editor.prototype.drop=function(from, to, mod) {
 			for (let y=0; y<ROWS; y++) {
 				for (let x=0; x<COLS; x++ ){
 					if (from==this.card[y][x]) {
-						oldpos=x+","+y;
+						oldpos=x+DELIMITER+y;
 
 						if (oldunpos!="") {
 							oldunpos=oldpos;
@@ -716,7 +720,7 @@ Editor.prototype.drop=function(from, to, mod) {
 					}
 
 					if (to==this.card[y][x]) {
-						newpos=x+","+y;
+						newpos=x+DELIMITER+y;
 
 						if (newunpos!="") {
 							newunpos=newpos;
@@ -822,7 +826,7 @@ Editor.prototype.formatTip=function(key, tip) {
 	tip=tip.replace(/\|cffc3dbff([^|]+)\|r/g, '<span class="note">$1</span>');
 
 	// splits string by comma unless comma is within quotes
-	let tips=tip.split(DELIMITER);
+	let tips=tip.split(MULTI_DELIMITER);
 
 	for (let i=0; i<tips.length; i++) {
 		tips[i]=tips[i].replace(/"/g, ""); // removes quotes
@@ -862,14 +866,14 @@ Editor.prototype.editTip=function(key) {
 	let tips=tip.split("<br>");
 
 	for (let i=0; i<tips.length; i++) {
-		if (tips[i].match(",")) { // quotes strings containing a comma
+		if (tips[i].match(DELIMITER)) { // quotes strings containing a comma
 			tips[i]="\""+tips[i]+"\"";
 		}
 	}
 
-	tip=tips.join(",");
+	tip=tips.join(DELIMITER);
 
-	if (tip.endsWith(",")) { // chops terminal ","
+	if (tip.endsWith(DELIMITER)) { // chops terminal ","
 		tip=tip.slice(0, -1);
 	}
 
@@ -893,7 +897,7 @@ Editor.prototype.autoSetTip=function(key, fields) {
 
 	let tips=commands.get(this.command, key);
 	// splits string by comma unless comma is within quotes
-	tips=tips.split(DELIMITER);
+	tips=tips.split(MULTI_DELIMITER);
 
 	// handles patterns with hotkey at start (common with many user files)
 	// or at end (Blizzard's convention), depending on user preference
@@ -950,12 +954,12 @@ Editor.prototype.autoSetTip=function(key, fields) {
 			}
 		}
 
-		if (tips[i].match(",")) { // quotes strings containing a comma
+		if (tips[i].match(DELIMITER)) { // quotes strings containing a comma
 			tips[i]="\""+tips[i]+"\"";
 		}
 	}
 
-	let tip=tips.join(",");
+	let tip=tips.join(DELIMITER);
 
 	commands.set(this.command, key, tip);
 	this.formatTip(key, tip);
@@ -980,7 +984,7 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 	label.textContent=key+": ";
 
 	// handles multi-tier hotkeys (e.g., weapon/armor upgrades)
-	let hotkeys=hotkey.split(",");
+	let hotkeys=hotkey.split(DELIMITER);
 
 	hotkeys.forEach(function(hotkey) {
 		let input=document.createElement("input");
@@ -1051,7 +1055,7 @@ Editor.prototype.setHotkey=function(key, hotkey="") {
 	let inputs=document.getElementById(key).getElementsByTagName("input");
 	let fields=[], input=null;
 
-	hotkey=hotkey.split(",");
+	hotkey=hotkey.split(DELIMITER);
 
 	for (let i=0; i<inputs.length; i++) {
 		input=inputs[i];
@@ -1074,7 +1078,7 @@ Editor.prototype.setHotkey=function(key, hotkey="") {
 		}
 	}
 
-	commands.set(this.command, key, fields.join(",").toUpperCase());
+	commands.set(this.command, key, fields.join(DELIMITER).toUpperCase());
 
 	if (document.getElementById("tooltips").checked) {
 		this.autoSetTip(key, fields);
@@ -1179,7 +1183,7 @@ Editor.prototype.formatResults=function(id, matches) {
 
 		let li=document.createElement("li");
 		let img=document.createElement("img");
-		img.setAttribute("src", "icons/"+match+".png");
+		img.setAttribute("src", ICONS_DIR+match+ICONS_EXT);
 		img.setAttribute("alt", "["+unit.name+"]");
 		img.setAttribute("title", unit.name);
 
