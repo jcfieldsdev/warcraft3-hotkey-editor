@@ -258,12 +258,13 @@ Editor.prototype.unitEditor=function() {
 	let h2=document.createElement("h2");
 	h2.id="unit";
 	h2.appendChild(document.createTextNode(unit.name));
-	h2.insertBefore(this.createButton(this.unit, unit.name), h2.firstChild);
 	document.getElementById("unit").replaceWith(h2);
 
 	if (unit.suffix!=undefined) {
 		h2.textContent+=" ("+unit.suffix+")";
 	}
+
+	h2.insertBefore(this.createButton(this.unit, unit.name), h2.firstChild);
 
 	let h3=document.getElementById("command");
 	h3.textContent="";
