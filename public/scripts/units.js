@@ -5364,10 +5364,7 @@ const units={
 	nvdl: {
 		name: "Lesser Voidwalker",
 		race: NEUTRAL,
-		type: UNIT,
-		commands: {
-			acuf: "Unholy Frenzy"
-		}
+		type: UNIT
 	},
 	nvdw: {
 		name: "Voidwalker",
