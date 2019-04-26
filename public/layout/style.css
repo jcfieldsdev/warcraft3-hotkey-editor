@@ -175,6 +175,7 @@ div#card div, div#card img, h2 img {
 div#card span {
 	font-weight: bold;
 	left: 5px;
+	pointer-events: none;
 	position: absolute;
 	top: 4px;
 }
