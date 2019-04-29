@@ -2434,6 +2434,8 @@ Tip=Unload All (|cffffcc00X|r)
 [ahr3]
 Hotkey=F
 Tip=Gather (|cffffcc00F|r)
+Unhotkey=F
+Untip=Return Resources (|cffffcc00F|r)
 
 [nngs]
 Hotkey=A
