@@ -23,7 +23,7 @@ const HELP_PAGE="help.html";
 // delimiter for multi-level tips, multi-tier hotkeys, and button positions
 const DELIMITER=",";
 // pattern for splitting multi-line tips
-const MULTI_DELIMITER=/,(?=(?:[^"]|"[^"]*")*$)/;
+const PATTERN=/,(?=(?:[^"]|"[^"]*")*$)/;
 
 // objects
 const store=new Storage("wc3hk");
@@ -305,7 +305,7 @@ Editor.prototype.unitEditor=function() {
 
 		this.card[y][x]=id;
 
-		// re-select command if selected on previously viewed unit
+		// re-selects command if selected on previously viewed unit
 		if (this.command==id) {
 			this.setCommand(id, title);
 		}
@@ -502,7 +502,7 @@ Editor.prototype.getPosition=function(x, y) {
 	function iterateForwards() {
 		x++;
 
-		if (x>=COLS) { // wrap to next row
+		if (x>=COLS) { // wraps to next row
 			y++;
 			x=0;
 		}
@@ -520,7 +520,7 @@ Editor.prototype.getPosition=function(x, y) {
 	function iterateBackwards() {
 		x--;
 
-		if (x<0) { // wrap to previous row
+		if (x<0) { // wraps to previous row
 			y--;
 			x=COLS-1;
 		}
@@ -827,7 +827,7 @@ Editor.prototype.formatTip=function(key, tip) {
 	tip=tip.replace(/\|cffc3dbff([^|]+)\|r/g, '<span class="note">$1</span>');
 
 	// splits string by comma unless comma is within quotes
-	let tips=tip.split(MULTI_DELIMITER);
+	let tips=tip.split(PATTERN);
 
 	for (let i=0; i<tips.length; i++) {
 		tips[i]=tips[i].replace(/"/g, ""); // removes quotes
@@ -898,7 +898,7 @@ Editor.prototype.autoSetTip=function(key, fields) {
 
 	let tips=commands.get(this.command, key);
 	// splits string by comma unless comma is within quotes
-	tips=tips.split(MULTI_DELIMITER);
+	tips=tips.split(PATTERN);
 
 	// handles patterns with hotkey at start (common with many user files)
 	// or at end (Blizzard's convention), depending on user preference
