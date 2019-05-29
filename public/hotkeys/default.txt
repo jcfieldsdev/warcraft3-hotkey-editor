@@ -192,6 +192,10 @@ Hotkey=K
 Tip=Train |cffffcc00K|rnight
 Buttonpos=2,0
 
+[ahsb]
+Tip=Sundering Blades
+Buttonpos=0,2
+
 [hmpr]
 Hotkey=P
 Tip=Train |cffffcc00P|rriest
@@ -349,6 +353,11 @@ Buttonpos=0,0
 Tip=Research |cffffcc00D|refend
 Hotkey=D
 Buttonpos=0,2
+
+[rhsb]
+Tip=Research Sundering |cffffcc00B|rlades
+Hotkey=B
+Buttonpos=2,1
 
 [rhan]
 Tip=Research |cffffcc00A|rnimal War Training
@@ -962,7 +971,7 @@ Hotkey=B
 Buttonpos=0,2
 
 [rows]
-Tip=Research |cffffcc00P|rulverize
+Tip=Upgrade |cffffcc00P|rulverize
 Hotkey=P
 Buttonpos=1,2
 
@@ -987,8 +996,8 @@ Hotkey=M,M
 Buttonpos=0,2
 
 [rosp]
-Tip=Upgrade to |cffffcc00S|rpiked Barricades,Upgrade to Improved |cffffcc00S|rpiked Barricades,Upgrade to Advanced |cffffcc00S|rpiked Barricades
-Hotkey=S,S,S
+Tip=Upgrade to |cffffcc00S|rpiked Barricades,Upgrade to Improved |cffffcc00S|rpiked Barricades
+Hotkey=S,S
 Buttonpos=2,0
 
 [rotr]
@@ -1438,20 +1447,20 @@ Tip=Train |cffffcc00N|recromancer
 Hotkey=N
 Buttonpos=0,0
 
+[acri]
+Tip=|cffffcc00C|rripple
+Hotkey=C
+Buttonpos=0,2
+
 [arai]
 Tip=|cffffcc00R|raise Dead
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Buttonpos=0,2
-
-[auhf]
-Tip=|cffffcc00U|rnholy Frenzy
-Hotkey=U
 Buttonpos=1,2
 
-[acri]
-Tip=|cffffcc00C|rripple
-Hotkey=C
+[auhf]
+Tip=Incite |cffffcc00U|rnholy Frenzy
+Hotkey=U
 Buttonpos=2,2
 
 [umtw]
@@ -3394,10 +3403,15 @@ Tip=Purchase |cffffcc00R|rod of Necromancy
 Hotkey=R
 Buttonpos=0,0
 
+[ritd]
+Tip=Purchase Ritu|cffffcc00a|rl Dagger
+Hotkey=A
+Buttonpos=1,0
+
 [skul]
 Tip=Purchase Sacrificial S|cffffcc00k|rull
 Hotkey=K
-Buttonpos=1,0
+Buttonpos=2,0
 
 [ocor]
 Tip=Purchase Or|cffffcc00b|r of Corruption

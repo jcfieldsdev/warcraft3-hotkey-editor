@@ -282,6 +282,10 @@ Tip=Research Defend (|cffffcc00Z|r)
 Hotkey=X
 Tip=Upgrade to Long Rifles (|cffffcc00X|r)
 
+[rhsb]
+Hotkey=D
+Tip=Research Sundering Blades (|cffffcc00D|r)
+
 [rhan]
 Hotkey=C
 Tip=Research Animal War Training (|cffffcc00C|r)
@@ -828,8 +832,8 @@ Hotkey=W,W,W
 Tip=Upgrade to Steel Ranged Weapons (|cffffcc00W|r),Upgrade to Thorium Ranged Weapons (|cffffcc00W|r),Upgrade to Arcanite Ranged Weapons (|cffffcc00W|r)
 
 [rosp]
-Hotkey=E,E,E
-Tip=Upgrade to Spiked Barricades (|cffffcc00E|r),Upgrade to Improved Spiked Barricades (|cffffcc00E|r),Upgrade to Advanced Spiked Barricades (|cffffcc00E|r)
+Hotkey=E,E
+Tip=Upgrade to Spiked Barricades (|cffffcc00E|r),Upgrade to Improved Spiked Barricades (|cffffcc00E|r)
 
 [roar]
 Tip=Upgrade to Steel Unit Armor (|cffffcc00A|r),Upgrade to Thorium Unit Armor (|cffffcc00A|r),Upgrade to Arcanite Unit Armor (|cffffcc00A|r)
@@ -934,7 +938,7 @@ Tip=Spirit Walker Adept Training (|cffffcc00Z|r),Spirit Walker Master Training (
 
 [rows]
 Hotkey=X
-Tip=Research Pulverize (|cffffcc00X|r)
+Tip=Upgrade Pulverize (|cffffcc00X|r)
 
 [hslv]
 Hotkey=Q
@@ -1308,16 +1312,17 @@ Tip=Get Corpse (|cffffcc00Z|r)
 Hotkey=X
 Tip=Drop All Corpses (|cffffcc00X|r)
 
-[arai]
+[acri]
 Hotkey=Z
-Tip=Raise Dead (|cffffcc00Z|r)
+Tip=Cripple (|cffffcc00Z|r)
+
+[arai]
+Hotkey=X
+Tip=Raise Dead (|cffffcc00X|r)
 
 [auhf]
-Hotkey=X
-Tip=Unholy Frenzy (|cffffcc00X|r)
-
-[acri]
-Tip=Cripple (|cffffcc00C|r)
+Hotkey=C
+Tip=Incite Unholy Frenzy (|cffffcc00C|r)
 
 [acrs]
 Hotkey=Z
@@ -1511,14 +1516,18 @@ Tip=Research Freezing Breath (|cffffcc00Z|r)
 Hotkey=Q
 Tip=Purchase Rod of Necromancy (|cffffcc00Q|r)
 
-[skul]
+[ritd]
 Hotkey=W
-Tip=Purchase Sacrificial Skull (|cffffcc00W|r)
+Tip=Purchase Ritual Dagger (|cffffcc00W|r)
+
+[skul]
+Hotkey=E
+Tip=Purchase Sacrificial Skull (|cffffcc00E|r)
 
 [dust]
-Buttonpos=2,0
-Hotkey=E
-Tip=Purchase Dust of Appearance (|cffffcc00E|r)
+Buttonpos=3,0
+Hotkey=R
+Tip=Purchase Dust of Appearance (|cffffcc00R|r)
 
 [ocor]
 Hotkey=Z
@@ -2479,9 +2488,9 @@ Awakentip=Revive Alchemist (|cffffcc00V|r)
 Revivetip=Revive Alchemist (|cffffcc00V|r)
 
 [cnob]
-Buttonpos=3,0
-Hotkey=R
-Tip=Purchase Circlet of Nobility (|cffffcc00R|r)
+Buttonpos=2,0
+Hotkey=E
+Tip=Purchase Circlet of Nobility (|cffffcc00E|r)
 
 [bspd]
 Hotkey=Q

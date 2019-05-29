@@ -141,7 +141,10 @@ const units={
 	hkni: {
 		name: "Knight",
 		race: HUMAN,
-		type: UNIT
+		type: UNIT,
+		commands: {
+			ahsb: "Sundering Blades"
+		}
 	},
 	hmpr: {
 		name: "Priest",
@@ -277,6 +280,7 @@ const units={
 			cmdrally: "Set Rally Point",
 			rhde: "Research Defend",
 			rhri: "Research Long Rifles",
+			rhsb: "Research Sundering Blades",
 			rhan: "Research Animal War Training",
 			cmdcancelbuild: "Cancel"
 		}
@@ -1942,8 +1946,9 @@ const units={
 		type: BUILDING,
 		commands: {
 			rnec: "Purchase Rod of Necromancy",
-			dust: "Purchase Dust of Appearance",
+			ritd: "Purchase Ritual Dagger",
 			skul: "Purchase Sacrificial Skull",
+			dust: "Purchase Dust of Appearance",
 			phea: "Purchase Potion of Healing",
 			pman: "Purchase Potion of Mana",
 			stwp: "Purchase Scroll of Town Portal",
