@@ -2046,6 +2046,11 @@ Tip=H|cffffcc00i|rde
 Hotkey=I
 Buttonpos=2,1
 
+[aihm]
+Tip=H|cffffcc00i|rde
+Hotkey=I
+Buttonpos=2,1
+
 [ebal]
 Hotkey=T
 Tip=Train Glaive |cffffcc00T|rhrower

@@ -1110,6 +1110,10 @@ Researchtip=Learn Reincarnation (|cffffcc00V|r)
 Hotkey=D
 Tip=Hide (|cffffcc00D|r)
 
+[aihm]
+Hotkey=D
+Tip=Hide (|cffffcc00D|r)
+
 [acht]
 Hotkey=Z
 Tip=Howl of Terror (|cffffcc00Z|r)
