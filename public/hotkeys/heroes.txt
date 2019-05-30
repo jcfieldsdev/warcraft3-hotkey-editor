@@ -154,17 +154,17 @@ Tip=Bladestorm (|cffffcc00R|r)
 Researchhotkey=R
 Researchtip=Learn Bladestorm (|cffffcc00R|r)
 
-[aofs]
-Hotkey=Q
-Tip=Far Sight - [|cffffcc00Level 1|r] (|cffffcc00Q|r),Far Sight - [|cffffcc00Level 2|r] (|cffffcc00Q|r),Far Sight - [|cffffcc00Level 3|r] (|cffffcc00Q|r)
-Researchhotkey=Q
-Researchtip=Learn Far Sight - [|cffffcc00Level %d|r] (|cffffcc00Q|r)
-
 [aocl]
+Hotkey=Q
+Tip=Chain Lightning - [|cffffcc00Level 1|r] (|cffffcc00Q|r),Chain Lightning - [|cffffcc00Level 2|r] (|cffffcc00Q|r),Chain Lightning - [|cffffcc00Level 3|r] (|cffffcc00Q|r)
+Researchhotkey=Q
+Researchtip=Learn Chain Lightning - [|cffffcc00Level %d|r] (|cffffcc00Q|r)
+
+[aofs]
 Hotkey=W
-Tip=Chain Lightning - [|cffffcc00Level 1|r] (|cffffcc00W|r),Chain Lightning - [|cffffcc00Level 2|r] (|cffffcc00W|r),Chain Lightning - [|cffffcc00Level 3|r] (|cffffcc00W|r)
+Tip=Far Sight - [|cffffcc00Level 1|r] (|cffffcc00W|r),Far Sight - [|cffffcc00Level 2|r] (|cffffcc00W|r),Far Sight - [|cffffcc00Level 3|r] (|cffffcc00W|r)
 Researchhotkey=W
-Researchtip=Learn Chain Lightning - [|cffffcc00Level %d|r] (|cffffcc00W|r)
+Researchtip=Learn Far Sight - [|cffffcc00Level %d|r] (|cffffcc00W|r)
 
 [aosf]
 Hotkey=E

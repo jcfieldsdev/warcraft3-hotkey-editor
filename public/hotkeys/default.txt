@@ -1160,16 +1160,16 @@ Tip=|cffffcc00F|rar Sight - [|cffffcc00Level 1|r],|cffffcc00F|rar Sight - [|cfff
 Hotkey=F
 Researchtip=Learn |cffffcc00F|rar Sight - [|cffffcc00Level %d|r]
 Researchhotkey=F
-Buttonpos=0,2
-Researchbuttonpos=0,0
+Buttonpos=1,2
+Researchbuttonpos=1,0
 
 [aocl]
 Tip=|cffffcc00C|rhain Lightning - [|cffffcc00Level 1|r],|cffffcc00C|rhain Lightning - [|cffffcc00Level 2|r],|cffffcc00C|rhain Lightning - [|cffffcc00Level 3|r]
 Hotkey=C
 Researchtip=Learn |cffffcc00C|rhain Lightning - [|cffffcc00Level %d|r]
 Researchhotkey=C
-Buttonpos=1,2
-Researchbuttonpos=1,0
+Buttonpos=0,2
+Researchbuttonpos=0,0
 
 [aosf]
 Tip=Feral Spiri|cffffcc00t|r - [|cffffcc00Level 1|r],Feral Spiri|cffffcc00t|r - [|cffffcc00Level 2|r],Feral Spiri|cffffcc00t|r - [|cffffcc00Level 3|r]
