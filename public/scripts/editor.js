@@ -785,7 +785,7 @@ Editor.prototype.commandEditor=function() {
 	}
 
 	let h3=document.getElementById("command");
-	h3.textContent=this.name;
+	h3.textContent=this.name+" ("+this.command+")";
 	h3.classList.remove("hidden");
 
 	let p=document.createElement("p");
@@ -1154,9 +1154,7 @@ Editor.prototype.findUnitsWith=function(command) {
 		});
 	});
 
-	let h3=document.getElementById("command");
-	h3.classList.remove("hidden");
-	h3.textContent+=" ("+this.command+")";
+	document.getElementById("command").classList.remove("hidden");
 
 	this.clearFields();
 	this.formatResults("other", matches);
