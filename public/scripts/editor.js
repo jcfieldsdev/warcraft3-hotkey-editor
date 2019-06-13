@@ -101,6 +101,18 @@ function init(text) {
 		overlays.save.setText(commands.convert());
 		overlays.save.show();
 	});
+	document.getElementById("file").addEventListener("input", function(event) {
+		let file=event.target.files[0];
+
+		if (file) {
+			let reader=new FileReader();
+			reader.addEventListener("load", function(event) {
+				document.getElementById("files").selectedIndex=0;
+				overlays.load.setText(event.target.result);
+			});
+			reader.readAsText(file);
+		}
+	});
 	disableAutocomplete(document.getElementById("text_load"));
 	disableAutocomplete(document.getElementById("text_save"));
 
