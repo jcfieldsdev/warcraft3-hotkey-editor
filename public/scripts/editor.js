@@ -489,8 +489,8 @@ Editor.prototype.clearSearch=function(clearQuery=false) {
 Editor.prototype.getPosition=function(x, y) {
 	let dir=true;
 
-	x=parseInt(x);
-	y=parseInt(y);
+	x=Number.parseInt(x);
+	y=Number.parseInt(y);
 
 	do {
 		if (this.card[y][x]=="") {
@@ -872,7 +872,7 @@ Editor.prototype.editTip=function(key) {
 	tip=tip.replace(/&amp;/g, "&");
 	tip=tip.replace(/&lt;/g, "<");
 	tip=tip.replace(/&gt;/g, ">");
-	tip=tip.replace(/"/g, "");
+	tip=tip.replace(/"/g, ""); // removes quotes
 	tip=tip.replace(/\*([^*]+)\*/g, "|cffffcc00$1|r");
 	tip=tip.replace(/\^([^^]+)\^/g, "|cffc3dbff$1|r");
 
@@ -919,8 +919,8 @@ Editor.prototype.autoSetTip=function(key, fields) {
 
 	let startPattern=/^\(\|cffffcc00(ESC|\w)\|r\) /g;
 	let endPattern=/ \(\|cffffcc00(ESC|\w)\|r\)$/g;
-	let pattern=start?startPattern:endPattern;
-	let otherPattern=start?endPattern:startPattern;
+	let pattern=start?startPattern:endPattern; // the user-selected pattern
+	let otherPattern=start?endPattern:startPattern; // the non-selected pattern
 
 	for (let i=0; i<tips.length; i++ ) {
 		tips[i]=tips[i].replace(/"/g, ""); // removes quotes
@@ -1109,6 +1109,7 @@ Editor.prototype.resetDefaults=function() {
 };
 
 Editor.prototype.filter=function(race) {
+	// converts campaign races to multiplayer equivalents
 	if (race=="bloodelf") {
 		race="human";
 	} else if (race=="draenei") {
