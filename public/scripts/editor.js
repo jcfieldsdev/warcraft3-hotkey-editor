@@ -126,9 +126,9 @@ function init(text) {
 	});
 	window.addEventListener("keyup", function(event) {
 		if (event.keyCode==27) { // Esc
-			Object.values(overlays).forEach(function(overlay) {
-				overlay.hide();
-			});
+			for (let overlay in overlays) {
+				overlays[overlay].hide();
+			}
 		}
 	});
 
@@ -284,14 +284,14 @@ Editor.prototype.unitEditor=function() {
 
 	let buttons=this.getCommands(unit);
 
-	Object.entries(buttons).forEach(function([id, title]) {
+	for (let id in buttons) {
 		// special exception for build buttons, whose hotkeys and tooltips are
 		// under cmdbuild* but whose buttonpos are under a?bu
 		let idpos=this.convertBuildCommand(id);
 
 		if (!commands.exists(idpos)) {
 			console.error("Undefined: "+idpos+" (command)");
-			return;
+			continue;
 		}
 
 		let conflict=false, x=0, y=0;
@@ -312,23 +312,23 @@ Editor.prototype.unitEditor=function() {
 			// could not find position for button;
 			// theoretically should never happen since it would require a unit
 			// have more commands than positions available (i.e., more than 12)
-			return;
+			continue;
 		}
 
 		this.card[y][x]=id;
 
 		// re-selects command if selected on previously viewed unit
 		if (this.command==id) {
-			this.setCommand(id, title);
+			this.setCommand(id, buttons[id]);
 		}
 
-		let button=this.createButton(id, title);
+		let button=this.createButton(id, buttons[id]);
 		button.id="Y"+y+"X"+x;
 		button.classList.toggle("conflict", conflict);
 
 		let pos=COLS*y+x;
 		document.getElementById("card").children[pos].replaceWith(button);
-	}, this);
+	}
 
 	let divs=document.getElementById("card").getElementsByTagName("div");
 
@@ -454,8 +454,8 @@ Editor.prototype.clearButtons=function() {
 		this.clear(element);
 	}
 
-	for (let y=0; y<ROWS; y++) {
-		for (let x=0; x<COLS; x++) {
+	for (let y in this.card) {
+		for (let x in this.card[y]) {
 			this.card[y][x]="";
 		}
 	}
@@ -558,9 +558,9 @@ Editor.prototype.getConflicts=function(id) {
 
 	let buttons=this.getCommands(unit);
 
-	Object.keys(buttons).forEach(function(id) {
+	for (let id in buttons) {
 		if (!commands.exists(id)) {
-			return;
+			continue;
 		}
 
 		let hotkey=commands.get(id, "Hotkey");
@@ -575,7 +575,7 @@ Editor.prototype.getConflicts=function(id) {
 		if (hotkey!=unhotkey) {
 			recordHotkey(id, unhotkey, hotkeys);
 		}
-	});
+	}
 
 	return {hotkeys, researchhotkeys};
 
@@ -599,8 +599,8 @@ Editor.prototype.getConflicts=function(id) {
 };
 
 Editor.prototype.setVisibleHotkeys=function() {
-	for (let y=0; y<ROWS; y++) {
-		for (let x=0; x<COLS; x++) {
+	for (let y in this.card) {
+		for (let x in this.card[y]) {
 			let id=this.card[y][x];
 
 			if (!commands.exists(id)) {
@@ -722,8 +722,8 @@ Editor.prototype.drop=function(from, to, mod) {
 			// stored value (so drag-and-drop operations try to match how the
 			// button positions are displayed over how they are stored, which
 			// is more consistent with user expectations)
-			for (let y=0; y<ROWS; y++) {
-				for (let x=0; x<COLS; x++ ){
+			for (let y in this.card) {
+				for (let x in this.card[y]){
 					if (from==this.card[y][x]) {
 						oldpos=x+DELIMITER+y;
 
@@ -994,10 +994,10 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 	// handles multi-tier hotkeys (e.g., weapon/armor upgrades)
 	let hotkeys=hotkey.split(DELIMITER);
 
-	hotkeys.forEach(function(hotkey) {
+	for (let hotkey in hotkeys) {
 		let input=document.createElement("input");
 		input.setAttribute("type", "text");
-		input.setAttribute("value", hotkey);
+		input.setAttribute("value", hotkeys[hotkey]);
 		input.addEventListener("click", function(event) {
 			event.preventDefault(); // prevents click from activating label
 			this.select();
@@ -1007,7 +1007,7 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 		}.bind(this));
 
 		label.appendChild(input);
-	}, this);
+	}
 
 	p.appendChild(label);
 
@@ -1125,15 +1125,15 @@ Editor.prototype.findUnitsNamed=function(query) {
 
 	query=query.toLowerCase();
 
-	Object.entries(units).forEach(function([unit, properties]) {
-		if (properties.name==undefined) {
-			return;
+	for (let unit in units) {
+		if (units[unit].name==undefined) {
+			continue;
 		}
 
-		if (properties.name.toLowerCase().indexOf(query)!=-1) {
+		if (units[unit].name.toLowerCase().indexOf(query)!=-1) {
 			matches.push(unit);
 		}
-	});
+	}
 
 	this.formatResults("results", matches);
 };
@@ -1141,17 +1141,17 @@ Editor.prototype.findUnitsNamed=function(query) {
 Editor.prototype.findUnitsWith=function(command) {
 	let matches=new Set();
 
-	Object.entries(units).forEach(function([unit, properties]) {
-		if (properties.commands==undefined) {
-			return;
+	for (let unit in units) {
+		if (units[unit].commands==undefined) {
+			continue;
 		}
 
-		Object.entries(properties.commands).forEach(function([id, name]) {
+		for (let id in units[unit].commands) {
 			if (id==command) {
 				matches.add(unit);
 			}
-		});
-	});
+		}
+	}
 
 	document.getElementById("command").classList.remove("hidden");
 
