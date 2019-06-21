@@ -158,38 +158,38 @@ function init(text) {
 
 	let filters=document.getElementsByClassName("filter");
 
-	for (let i=0; i<filters.length; i++) {
-		filters[i].addEventListener("click", function() {
+	for (let element of filters) {
+		element.addEventListener("click", function() {
 			editor.filter(this.id);
 		});
 	}
 
 	let close=document.getElementsByClassName("close");
 
-	for (let i=0; i<close.length; i++) {
-		close[i].addEventListener("click", function() {
+	for (let element of close) {
+		element.addEventListener("click", function() {
 			overlays[this.value].hide();
 		});
 	}
 
 	let tips=document.getElementsByClassName("tip");
 
-	for (let i=0; i<tips.length; i++) {
-		tips[i].addEventListener("focus", function() {
+	for (let element of tips) {
+		element.addEventListener("focus", function() {
 			editor.focusTip(this.id);
 		});
-		tips[i].addEventListener("blur", function() {
+		element.addEventListener("blur", function() {
 			editor.editTip(this.id);
 		});
-		tips[i].addEventListener("drop", function(event) {
+		element.addEventListener("drop", function(event) {
 			// prevents dropping HTML-formatted objects (namely images)
 			// onto tooltip text
 			if (event.dataTransfer.getData("text/html")!="") {
 				event.preventDefault();
 			}
 		});
-		tips[i].setAttribute("contenteditable", "true");
-		disableAutocomplete(tips[i]);
+		element.setAttribute("contenteditable", "true");
+		disableAutocomplete(element);
 	}
 
 	function disableAutocomplete(input) {
@@ -333,18 +333,18 @@ Editor.prototype.unitEditor=function() {
 	let divs=document.getElementById("card").getElementsByTagName("div");
 
 	// adds listeners for drag-and-drop events
-	for (let i=0; i<divs.length; i++) {
-		divs[i].addEventListener("dragover", function(event) {
+	for (let element of divs) {
+		element.addEventListener("dragover", function(event) {
 			event.preventDefault();
 		});
-		divs[i].addEventListener("dragenter", function(event) {
+		element.addEventListener("dragenter", function(event) {
 			event.preventDefault();
 			this.classList.add("drag");
 		});
-		divs[i].addEventListener("dragleave", function() {
+		element.addEventListener("dragleave", function() {
 			this.classList.remove("drag");
 		});
-		divs[i].addEventListener("drop", function(event) {
+		element.addEventListener("drop", function(event) {
 			event.preventDefault();
 
 			let data=event.dataTransfer.getData("text");
@@ -450,8 +450,8 @@ Editor.prototype.clear=function(element, removeListeners=true) {
 Editor.prototype.clearButtons=function() {
 	let children=document.getElementById("card").children;
 
-	for (let i=0; i<children.length; i++) {
-		this.clear(children[i]);
+	for (let element of children) {
+		this.clear(element);
 	}
 
 	for (let y=0; y<ROWS; y++) {
@@ -464,13 +464,13 @@ Editor.prototype.clearButtons=function() {
 Editor.prototype.clearFields=function() {
 	let children=document.getElementById("fields").children;
 
-	for (let i=0; i<children.length; i++) {
+	for (let element of children) {
 		// removes event listeners for hotkey inputs (which are removed and
 		// recreated) but not tips (which are persistent)
-		this.clear(children[i], !children[i].classList.contains("tip"));
+		this.clear(element, !element.classList.contains("tip"));
 
 		// also hides element so it does not remain editable
-		children[i].classList.add("hidden");
+		element.classList.add("hidden");
 	}
 
 	this.clear(document.getElementById("default"));
@@ -674,12 +674,12 @@ Editor.prototype.checkConflicts=function(unit) {
 Editor.prototype.checkAllConflicts=function() {
 	let sections=document.getElementsByTagName("section");
 
-	for (let i=0; i<sections.length; i++) {
-		let links=sections[i].getElementsByTagName("a");
+	for (let section of sections) {
+		let links=section.getElementsByTagName("a");
 
-		for (let j=0; j<links.length; j++) {
-			let unit=links[j].hash.replace("#", "");
-			links[j].classList.toggle("conflict", this.checkConflicts(unit));
+		for (let link of links) {
+			let unit=link.hash.replace("#", "");
+			link.classList.toggle("conflict", this.checkConflicts(unit));
 		}
 	}
 };
@@ -839,11 +839,9 @@ Editor.prototype.formatTip=function(key, tip) {
 	tip=tip.replace(/\|cffc3dbff([^|]+)\|r/g, '<span class="note">$1</span>');
 
 	// splits string by comma unless comma is within quotes
-	let tips=tip.split(PATTERN);
-
-	for (let i=0; i<tips.length; i++) {
-		tips[i]=tips[i].replace(/"/g, ""); // removes quotes
-	}
+	let tips=tip.split(PATTERN).map(function(tip) {
+		return tip.replace(/"/g, ""); // removes quotes
+	});
 
 	tip=tips.join("<br>");
 
@@ -876,13 +874,10 @@ Editor.prototype.editTip=function(key) {
 	tip=tip.replace(/\*([^*]+)\*/g, "|cffffcc00$1|r");
 	tip=tip.replace(/\^([^^]+)\^/g, "|cffc3dbff$1|r");
 
-	let tips=tip.split("<br>");
-
-	for (let i=0; i<tips.length; i++) {
-		if (tips[i].match(DELIMITER)) { // quotes strings containing a comma
-			tips[i]="\""+tips[i]+"\"";
-		}
-	}
+	let tips=tip.split("<br>").map(function(tip) {
+		// quotes strings containing a comma
+		return tip.match(DELIMITER)?"\""+tip+"\"":tip;
+	});
 
 	tip=tips.join(DELIMITER);
 
@@ -908,9 +903,8 @@ Editor.prototype.autoSetTip=function(key, fields) {
 		return;
 	}
 
-	let tips=commands.get(this.command, key);
 	// splits string by comma unless comma is within quotes
-	tips=tips.split(PATTERN);
+	let tips=commands.get(this.command, key).split(PATTERN);
 
 	// handles patterns with hotkey at start (common with many user files)
 	// or at end (Blizzard's convention), depending on user preference
@@ -922,12 +916,11 @@ Editor.prototype.autoSetTip=function(key, fields) {
 	let pattern=start?startPattern:endPattern; // the user-selected pattern
 	let otherPattern=start?endPattern:startPattern; // the non-selected pattern
 
-	for (let i=0; i<tips.length; i++ ) {
-		tips[i]=tips[i].replace(/"/g, ""); // removes quotes
+	tips=tips.map(function(tip, i) {
+		tip=tip.replace(/"/g, ""); // removes quotes
 
-		// skips hint lines
-		if (tips[i].startsWith("|cffc3dbff")) {
-			continue;
+		if (tip.startsWith("|cffc3dbff")) {
+			return; // skips hint lines
 		}
 
 		// if there are multiple fields,
@@ -948,29 +941,31 @@ Editor.prototype.autoSetTip=function(key, fields) {
 		}
 
 		// handles tips already in the desired format
-		if (tips[i].match(pattern)) {
-			tips[i]=tips[i].replace(pattern, replace);
+		if (tip.match(pattern)) {
+			tip=tip.replace(pattern, replace);
 		} else {
 			// removes hotkey in opposite (start/end) pattern
-			if (tips[i].match(otherPattern)) {
-				tips[i]=tips[i].replace(otherPattern, "");
+			if (tip.match(otherPattern)) {
+				tip=tip.replace(otherPattern, "");
 			}
 
 			// removes existing highlighting (matches letters and numbers
 			// but not whitespace to avoid matching "Level \d")
-			tips[i]=tips[i].replace(/\|cffffcc00(\w+)\|r/g, "$1");
+			tip=tip.replace(/\|cffffcc00(\w+)\|r/g, "$1");
 
 			if (start) {
-				tips[i]=replace+tips[i];
+				tip=replace+tip;
 			} else {
-				tips[i]+=replace;
+				tip+=replace;
 			}
 		}
 
-		if (tips[i].match(DELIMITER)) { // quotes strings containing a comma
-			tips[i]="\""+tips[i]+"\"";
+		if (tip.match(DELIMITER)) { // quotes strings containing a comma
+			tip="\""+tip+"\"";
 		}
-	}
+
+		return tip;
+	});
 
 	let tip=tips.join(DELIMITER);
 
@@ -1052,6 +1047,8 @@ Editor.prototype.editHotkey=function(input, key) {
 		this.setHotkey("Unhotkey", input.value);
 		this.setHotkey("Researchhotkey", input.value);
 	} else {
+		// does not send input value in this case in order to properly handle
+		// commands with multiple inputs (e.g., weapon/armor upgrades)
 		this.setHotkey(key);
 	}
 
@@ -1068,26 +1065,15 @@ Editor.prototype.setHotkey=function(key, hotkey="") {
 	let inputs=document.getElementById(key).getElementsByTagName("input");
 	let fields=[], input=null;
 
-	hotkey=hotkey.split(DELIMITER);
-
-	for (let i=0; i<inputs.length; i++) {
-		input=inputs[i];
-
-		// handles multi-tier hotkeys (e.g., weapons/armor upgrades)
-		if (hotkey.length>1) {
-			fields.push(hotkey[i]);
-			input.value=hotkey[i];
+	for (let element of inputs) {
+		if (hotkey!="") {
+			// sets hotkey to the optional function parameter value;
+			// (spirit-linking is on or setting the "Esc" key)
+			fields.push(hotkey);
+			element.value=hotkey;
 		} else {
-			if (hotkey!="") {
-				// sets hotkeys to the optional function parameter value;
-				// this is the case when "spirit linking" is used
-				// and also when setting the "Esc" key
-				fields.push(hotkey[0]);
-				input.value=hotkey[0];
-			} else {
-				// uses input field value if optional parameter not specified
-				fields.push(input.value);
-			}
+			// uses input field value (spirit-linking is off)
+			fields.push(element.value);
 		}
 	}
 
@@ -1123,8 +1109,8 @@ Editor.prototype.filter=function(race) {
 	let sections=document.getElementsByTagName("section");
 
 	// hides unit lists for races other than selected
-	for (let i=0; i<sections.length; i++) {
-		sections[i].classList.toggle("hidden", sections[i].id!="units_"+race);
+	for (let element of sections) {
+		element.classList.toggle("hidden", element.id!="units_"+race);
 	}
 };
 
@@ -1244,14 +1230,14 @@ Editor.prototype.highlightResult=function(dir) {
 		}
 	}
 
-	for (let i=0; i<results.length; i++) {
+	Array.from(results).forEach(function(result, i) {
 		if (this.selected==i) {
-			results[i].classList.add("selected");
-			results[i].scrollIntoView(); // for long lists with scrollbars
+			result.classList.add("selected");
+			result.scrollIntoView(); // for long lists with scrollbars
 		} else {
-			results[i].classList.remove("selected");
+			result.classList.remove("selected");
 		}
-	}
+	}, this);
 };
 
 Editor.prototype.openResult=function() {
@@ -1292,10 +1278,10 @@ Commands.prototype.parse=function(text) {
 	// ensures empty line at end of file so final command block is saved
 	lines.push("");
 
-	for (let i=0; i<lines.length; i++) {
+	lines.forEach(function(line, i) {
 		// adds command block to object whenever new command block is found
 		// or at end of file (for the last command block)
-		if (lines.length==i+1||lines[i].match(/^\[(\w+)\]$/)) {
+		if (lines.length==i+1||line.match(/^\[(\w+)\]$/)) {
 			if (id!="") {
 				id=id.toLowerCase();
 
@@ -1307,16 +1293,16 @@ Commands.prototype.parse=function(text) {
 				block={};
 			}
 
-			id=lines[i].slice(1, -1);
+			id=line.slice(1, -1);
 		}
 
 		// matches key=value pairs
-		if (lines[i].match(pattern)) {
-			key=lines[i].replace(pattern, "$1");
-			value=lines[i].replace(pattern, "$2");
+		if (line.match(pattern)) {
+			key=line.replace(pattern, "$1");
+			value=line.replace(pattern, "$2");
 			block[key]=value;
 		}
-	}
+	});
 
 	this.load(list);
 };
@@ -1449,11 +1435,11 @@ Files.prototype.getList=function() {
 			option.appendChild(document.createTextNode("(Select a set...)"));
 			select.appendChild(option);
 
-			for (let i=0; i<this.response.length; i++) {
+			this.response.forEach(function(file) {
 				option=document.createElement("option");
-				option.appendChild(document.createTextNode(this.response[i]));
+				option.appendChild(document.createTextNode(file));
 				select.appendChild(option);
-			}
+			});
 
 			document.getElementById(self.id).replaceWith(select);
 		}
