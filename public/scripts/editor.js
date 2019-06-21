@@ -994,10 +994,10 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 	// handles multi-tier hotkeys (e.g., weapon/armor upgrades)
 	let hotkeys=hotkey.split(DELIMITER);
 
-	for (let hotkey in hotkeys) {
+	hotkeys.forEach(function(hotkey) {
 		let input=document.createElement("input");
 		input.setAttribute("type", "text");
-		input.setAttribute("value", hotkeys[hotkey]);
+		input.setAttribute("value", hotkey);
 		input.addEventListener("click", function(event) {
 			event.preventDefault(); // prevents click from activating label
 			this.select();
@@ -1007,7 +1007,7 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 		}.bind(this));
 
 		label.appendChild(input);
-	}
+	}, this);
 
 	p.appendChild(label);
 
