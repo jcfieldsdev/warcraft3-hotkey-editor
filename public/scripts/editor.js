@@ -84,10 +84,11 @@ function init(text) {
 	document.getElementById("download").addEventListener("click", function() {
 		let contents=new Blob([overlays.save.getText()], {type: "text/plain"});
 
-		let a=document.getElementById("file");
+		let a=document.getElementById("link");
 		a.download=DEFAULT_SAVE_NAME;
 		a.href=window.URL.createObjectURL(contents);
 		a.click();
+		window.URL.revokeObjectURL(contents);
 	});
 	document.getElementById("help").addEventListener("click", function() {
 		window.location=HELP_PAGE;
@@ -1042,7 +1043,7 @@ Editor.prototype.editHotkey=function(input, key) {
 	}
 
 	// sets all hotkeys together if "spirit link" option selected
-	if (document.getElementById("link").checked) {
+	if (document.getElementById("spiritlink").checked) {
 		this.setHotkey("Hotkey", input.value);
 		this.setHotkey("Unhotkey", input.value);
 		this.setHotkey("Researchhotkey", input.value);
