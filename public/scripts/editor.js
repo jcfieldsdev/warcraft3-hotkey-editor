@@ -19,6 +19,7 @@ const ICONS_EXT=".png";
 const HOTKEY_DIR="hotkeys/";
 const DIR_LIST="hotkeys/index.json";
 const HELP_PAGE="help.html";
+const STORAGE_NAME="wc3hk";
 
 // delimiter for multi-level tips, multi-tier hotkeys, and button positions
 const DELIMITER=",";
@@ -26,7 +27,7 @@ const DELIMITER=",";
 const PATTERN=/,(?=(?:[^"]|"[^"]*")*$)/;
 
 // objects
-const store=new Storage("wc3hk");
+const store=new Storage(STORAGE_NAME);
 const files=new Files("files");
 const overlays={
 	load: new Overlay("load"),
