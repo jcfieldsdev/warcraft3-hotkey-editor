@@ -1123,7 +1123,7 @@ Editor.prototype.findUnitsNamed=function(query) {
 		return;
 	}
 
-	let matches=[];
+	let matches=new Set();
 
 	query=query.toLowerCase();
 
@@ -1133,7 +1133,7 @@ Editor.prototype.findUnitsNamed=function(query) {
 		}
 
 		if (units[unit].name.toLowerCase().indexOf(query)!=-1) {
-			matches.push(unit);
+			matches.add(unit);
 		}
 	}
 
@@ -1178,7 +1178,7 @@ Editor.prototype.formatResults=function(id, matches) {
 	let ul=document.createElement("ul");
 	ul.id=id;
 
-	matches.forEach(function(match) {
+	for (let match of matches) {
 		let unit=units[match];
 
 		let li=document.createElement("li");
@@ -1208,7 +1208,7 @@ Editor.prototype.formatResults=function(id, matches) {
 		li.appendChild(img);
 		li.appendChild(a);
 		ul.appendChild(li);
-	}, this);
+	}
 
 	document.getElementById(id).replaceWith(ul);
 };
