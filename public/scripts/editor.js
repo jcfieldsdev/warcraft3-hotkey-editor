@@ -128,8 +128,8 @@ function init(text) {
 	});
 	window.addEventListener("keyup", function(event) {
 		if (event.keyCode==27) { // Esc
-			for (let overlay in overlays) {
-				overlays[overlay].hide();
+			for (let overlay of Object.values(overlays)) {
+				overlay.hide();
 			}
 		}
 	});
@@ -584,9 +584,9 @@ Editor.prototype.getConflicts=function(id) {
 	function recordHotkey(id, hotkey, keys) {
 		let hotkeys=hotkey.split(DELIMITER);
 
-		hotkeys.forEach(function(hotkey) {
+		for (let hotkey of hotkeys) {
 			if (hotkey=="") {
-				return;
+				continue;
 			}
 
 			if (keys[hotkey]==undefined) {
@@ -596,7 +596,7 @@ Editor.prototype.getConflicts=function(id) {
 			}
 
 			keys[hotkey].add(id);
-		});
+		}
 	}
 };
 
@@ -639,8 +639,8 @@ Editor.prototype.setVisibleHotkeys=function() {
 	flagHotkeys(keys.researchhotkeys);
 
 	function flagHotkeys(hotkeys) {
-		Object.values(hotkeys).forEach(function(values) {
-			values.forEach(function(value) {
+		for (let values of Object.values(hotkeys)) {
+			for (let value of values) {
 				let conflict=values.size>1;
 				let span=document.getElementById("span_"+value);
 
@@ -651,26 +651,23 @@ Editor.prototype.setVisibleHotkeys=function() {
 				if (conflict) {
 					conflicts.push(value);
 				}
-			});
-		});
+			}
+		}
 	}
 };
 
 Editor.prototype.checkConflicts=function(unit) {
-	let keys=this.getConflicts(unit), conflict=false;
+	let keys=this.getConflicts(unit);
 
-	Object.values(keys).forEach(function(hotkeys) {
-		Object.values(hotkeys).forEach(function(values) {
-			values.forEach(function() {
-				if (values.size>1) {
-					conflict=true;
-					return;
-				}
-			});
-		});
-	});
+	for (let hotkeys of Object.values(keys)) {
+		for (let values of Object.values(hotkeys)) {
+			if (values.size>1) {
+				return true;
+			}
+		}
+	}
 
-	return conflict;
+	return false;
 };
 
 Editor.prototype.checkAllConflicts=function() {
@@ -996,7 +993,7 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 	// handles multi-tier hotkeys (e.g., weapon/armor upgrades)
 	let hotkeys=hotkey.split(DELIMITER);
 
-	hotkeys.forEach(function(hotkey) {
+	for (let hotkey of hotkeys) {
 		let input=document.createElement("input");
 		input.setAttribute("type", "text");
 		input.setAttribute("value", hotkey);
@@ -1009,7 +1006,7 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 		}.bind(this));
 
 		label.appendChild(input);
-	}, this);
+	}
 
 	p.appendChild(label);
 
@@ -1232,14 +1229,14 @@ Editor.prototype.highlightResult=function(dir) {
 		}
 	}
 
-	Array.from(results).forEach(function(result, i) {
+	for (let [i, result] of Array.from(results).entries()) {
 		if (this.selected==i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
 		} else {
 			result.classList.remove("selected");
 		}
-	}, this);
+	}
 };
 
 Editor.prototype.openResult=function() {
@@ -1280,7 +1277,7 @@ Commands.prototype.parse=function(text) {
 	// ensures empty line at end of file so final command block is saved
 	lines.push("");
 
-	lines.forEach(function(line, i) {
+	for (let [i, line] of lines.entries()) {
 		// adds command block to object whenever new command block is found
 		// or at end of file (for the last command block)
 		if (lines.length==i+1||line.match(/^\[(\w+)\]$/)) {
@@ -1304,7 +1301,7 @@ Commands.prototype.parse=function(text) {
 			value=line.replace(pattern, "$2");
 			block[key]=value;
 		}
-	});
+	}
 
 	this.load(list);
 };
@@ -1437,11 +1434,11 @@ Files.prototype.getList=function() {
 			option.appendChild(document.createTextNode("(Select a set...)"));
 			select.appendChild(option);
 
-			this.response.forEach(function(file) {
+			for (let file of this.response) {
 				option=document.createElement("option");
 				option.appendChild(document.createTextNode(file));
 				select.appendChild(option);
-			});
+			}
 
 			document.getElementById(self.id).replaceWith(select);
 		}
