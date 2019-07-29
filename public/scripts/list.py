@@ -12,5 +12,5 @@ except OSError:
 
 files.sort()
 
-print "Content-Type: application/json; charset=utf-8\n"
-print json.dumps(files)
+print("Content-Type: application/json; charset=utf-8\n")
+print(json.dumps(files))
