@@ -17,6 +17,7 @@ const NOATTACK=3;
 const BUILDING=4;
 const SUMMON=5;
 const TOWER=6;
+const ITEM=7;
 
 const common={
 	basic: {
@@ -455,7 +456,7 @@ const units={
 			pman: "Purchase Potion of Mana",
 			stwp: "Purchase Scroll of Town Portal",
 			tsct: "Purchase Ivory Tower",
-			ofir: "Purchase Orb of Fire",
+			ofr2: "Purchase Orb of Fire",
 			ssan: "Purchase Staff of Sanctuary",
 			anei: "Select User"
 		}
@@ -1733,7 +1734,7 @@ const units={
 		commands: {
 			acri: "Cripple",
 			arai: "Raise Dead",
-			auhf: "Unholy Frenzy"
+			auuf: "Unholy Frenzy"
 		}
 	},
 	uban: {
@@ -3235,6 +3236,14 @@ const units={
 		suffix: "Level 3",
 		race: NEUTRAL,
 		type: SUMMON
+	},
+	clsd: {
+		name: "Cloak of Shadows",
+		race: NEUTRAL,
+		type: ITEM,
+		commands: {
+			aihm: "Hide"
+		}
 	},
 	ngsp: {
 		name: "Goblin Sappers",

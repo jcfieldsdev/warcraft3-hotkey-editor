@@ -365,7 +365,7 @@ Editor.prototype.getCommands=function(unit) {
 	// adds common commands
 	if (unit.type==UNIT||unit.type==SUMMON) {
 		Object.assign(buttons, common.basic);
-	} else if (unit.type==HERO) {
+	} else if (unit.type==HERO||unit.type==ITEM) {
 		Object.assign(buttons, common.basic, common.hero);
 	} else if (unit.type==NOATTACK) {
 		Object.assign(buttons, common.noattack);

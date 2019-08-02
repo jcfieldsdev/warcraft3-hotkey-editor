@@ -1459,6 +1459,11 @@ Hotkey=R
 Buttonpos=1,2
 
 [auhf]
+Tip=|cffffcc00U|rnholy Frenzy
+Hotkey=U
+Buttonpos=2,1
+
+[auuf]
 Tip=Incite |cffffcc00U|rnholy Frenzy
 Hotkey=U
 Buttonpos=2,2
@@ -3354,6 +3359,11 @@ Hotkey=V
 Buttonpos=3,1
 
 [ofir]
+Tip=Purchase Orb of |cffffcc00F|rire
+Hotkey=F
+Buttonpos=0,2
+
+[ofr2]
 Tip=Purchase Orb of |cffffcc00F|rire
 Hotkey=F
 Buttonpos=0,2

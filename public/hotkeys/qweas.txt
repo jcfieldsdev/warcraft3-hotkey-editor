@@ -462,6 +462,10 @@ Tip=Purchase Ivory Tower (|cffffcc00F|r)
 Hotkey=Z
 Tip=Purchase Orb of Fire (|cffffcc00Z|r)
 
+[ofr2]
+Hotkey=Z
+Tip=Purchase Orb of Fire (|cffffcc00Z|r)
+
 [ssan]
 Hotkey=X
 Tip=Purchase Staff of Sanctuary (|cffffcc00X|r)
@@ -551,14 +555,12 @@ Hotkey=W
 Tip=Train Archer (|cffffcc00W|r)
 
 [remk]
-Hotkey=S
-Tip=Research Marksmanship (|cffffcc00S|r)
-Buttonpos=1,1
+Hotkey=A
+Tip=Research Marksmanship (|cffffcc00A|r)
 
 [reib]
-Hotkey=X
-Tip=Research Improved Bows (|cffffcc00X|r)
-Buttonpos=1,2
+Hotkey=Z
+Tip=Research Improved Bows (|cffffcc00Z|r)
 
 [_hhes]
 Buttonpos=0,0
@@ -1330,6 +1332,10 @@ Tip=Raise Dead (|cffffcc00X|r)
 
 [auhf]
 Hotkey=C
+Tip=Unholy Frenzy (|cffffcc00C|r)
+
+[auuf]
+Hotkey=C
 Tip=Incite Unholy Frenzy (|cffffcc00C|r)
 
 [acrs]
@@ -1869,28 +1875,24 @@ Hotkey=Z
 Tip=Eat Tree (|cffffcc00Z|r)
 
 [earc]
-Hotkey=W
-Tip=Train Archer (|cffffcc00W|r)
-Buttonpos=1,0
+Hotkey=Q
+Tip=Train Archer (|cffffcc00Q|r)
 
 [esen]
-Hotkey=Q
-Tip=Train Huntress (|cffffcc00Q|r)
-Buttonpos=0,0
+Hotkey=W
+Tip=Train Huntress (|cffffcc00W|r)
 
 [ebal]
 Hotkey=E
 Tip=Train Glaive Thrower (|cffffcc00E|r)
 
 [remg]
-Hotkey=A
-Tip=Upgrade Moon Glaive (|cffffcc00A|r)
-Buttonpos=0,1
+Hotkey=S
+Tip=Upgrade Moon Glaive (|cffffcc00S|r)
 
 [resc]
-Buttonpos=0,2
-Hotkey=Z
-Tip=Research Sentinel (|cffffcc00Z|r)
+Hotkey=X
+Tip=Research Sentinel (|cffffcc00X|r)
 
 [repb]
 Hotkey=C
