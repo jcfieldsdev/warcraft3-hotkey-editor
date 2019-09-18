@@ -1114,6 +1114,8 @@ Editor.prototype.filter=function(race) {
 };
 
 Editor.prototype.findUnitsNamed=function(query) {
+	query=query.toLowerCase().trim();
+
 	// minimum three characters to search to prevent huge result lists
 	if (query.length<3) {
 		this.clearSearch();
@@ -1134,7 +1136,11 @@ Editor.prototype.findUnitsNamed=function(query) {
 		}
 	}
 
-	this.formatResults("results", matches);
+	if (matches.size>0) {
+		this.formatResults("results", matches);
+	} else {
+		this.clearSearch();
+	}
 };
 
 Editor.prototype.findUnitsWith=function(command) {
