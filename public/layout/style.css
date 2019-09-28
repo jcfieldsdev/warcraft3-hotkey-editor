@@ -358,7 +358,7 @@ div.grid>div, p.tip:focus  {
 	outline: 1px solid #606060;
 }
 
-div.option, figcaption {
+div.option, figcaption, p.note {
 	font-size: 0.8rem;
 }
 
