@@ -6,6 +6,8 @@ A [hotkey editor for *Warcraft III*](https://jcfields.gitlab.io/warcraft3-hotke
 
 Uses the [QWEASZ hotkey set by WTVR](https://www.reddit.com/r/WC3/comments/69p3nv/improved_custom_hotkeys_setup_by_wtvr/) as one of the sample hotkey sets.
 
+[WTii's Unit Tester map](https://www.hiveworkshop.com/threads/wtiis-unit-tester.239333/) was very handy for testing.
+
 ## Authors
 
 - J.C. Fields <jcfields+gitlab@gmail.com>

@@ -1737,6 +1737,17 @@ const units={
 			auuf: "Unholy Frenzy"
 		}
 	},
+	unec2: {
+		name: "Necromancer",
+		suffix: "Campaign",
+		race: UNDEAD,
+		type: UNIT,
+		commands: {
+			arai: "Raise Dead",
+			auhf: "Unholy Frenzy",
+			acri: "Cripple"
+		}
+	},
 	uban: {
 		name: "Banshee",
 		race: UNDEAD,
@@ -1903,6 +1914,21 @@ const units={
 			rune: "Necromancer Training",
 			ruba: "Banshee Training",
 			rusm: "Research Skeletal Mastery",
+			cmdrally: "Set Rally Point",
+			cmdcancelbuild: "Cancel"
+		}
+	},
+	utod2: {
+		name: "Temple of the Damned",
+		suffix: "Campaign",
+		race: UNDEAD,
+		type: BUILDING,
+		commands: {
+			unec: "Train Necromancer",
+			uban: "Train Banshee",
+			rune: "Necromancer Training",
+			ruba: "Banshee Training",
+			rusl: "Research Skeletal Longevity",
 			cmdrally: "Set Rally Point",
 			cmdcancelbuild: "Cancel"
 		}

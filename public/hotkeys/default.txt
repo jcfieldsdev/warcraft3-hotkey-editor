@@ -1461,7 +1461,7 @@ Buttonpos=1,2
 [auhf]
 Tip=|cffffcc00U|rnholy Frenzy
 Hotkey=U
-Buttonpos=2,1
+Buttonpos=2,2
 
 [auuf]
 Tip=Incite |cffffcc00U|rnholy Frenzy
@@ -1590,7 +1590,7 @@ Buttonpos=0,2
 [rusl]
 Tip=Research |cffffcc00S|rkeletal Longevity
 Hotkey=S
-Buttonpos=2,1
+Buttonpos=2,2
 
 [rupc]
 Tip=Research |cffffcc00D|risease Cloud

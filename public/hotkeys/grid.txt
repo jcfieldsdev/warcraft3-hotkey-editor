@@ -1522,6 +1522,10 @@ Tip=Train Frost Wyrm (|cffffcc00Q|r)
 Hotkey=Z
 Tip=Research Freezing Breath (|cffffcc00Z|r)
 
+[rusl]
+Hotkey=C
+Tip=Research Skeletal Longevity (|cffffcc00C|r)
+
 [rnec]
 Hotkey=Q
 Tip=Purchase Rod of Necromancy (|cffffcc00Q|r)
