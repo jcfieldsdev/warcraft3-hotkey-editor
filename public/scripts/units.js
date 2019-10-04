@@ -4,8 +4,8 @@ const NEUTRAL="neutral";
 const HUMAN="human";
 const ORC="orc";
 const UNDEAD="undead";
-const NIGHTELF="nightelf";
-const BLOODELF="bloodelf";
+const NIGHT_ELF="nightelf";
+const BLOOD_ELF="bloodelf";
 const DRAENEI="draenei";
 const DEMON="demon";
 const NAGA="naga";
@@ -13,7 +13,7 @@ const NAGA="naga";
 const OTHER=0;
 const UNIT=1;
 const HERO=2;
-const NOATTACK=3;
+const NO_ATTACK=3;
 const BUILDING=4;
 const SUMMON=5;
 const TOWER=6;
@@ -475,7 +475,7 @@ const units={
 	hbot: {
 		name: "Human Transport Ship",
 		race: HUMAN,
-		type: NOATTACK,
+		type: NO_ATTACK,
 		commands: {
 			slo3: "Load",
 			sdro: "Unload"
@@ -618,17 +618,6 @@ const units={
 			ahav: "Avatar"
 		}
 	},
-	hkal: {
-		name: "Kael",
-		race: HUMAN,
-		type: HERO,
-		commands: {
-			ahfs: "Flame Strike",
-			ahbn: "Banish",
-			ahdr: "Siphon Mana",
-			ahpx: "Phoenix"
-		}
-	},
 	hvwd: {
 		name: "Sylvanas Windrunner",
 		race: HUMAN,
@@ -678,10 +667,21 @@ const units={
 			ahmt: "Mass Teleport"
 		}
 	},
+	hkal: {
+		name: "Kael",
+		race: BLOOD_ELF,
+		type: HERO,
+		commands: {
+			ahfs: "Flame Strike",
+			ahbn: "Banish",
+			ahdr: "Siphon Mana",
+			ahpx: "Phoenix"
+		}
+	},
 	bloodelftownhall: {
 		name: "Town Hall",
 		suffix: "Blood Elf",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: BUILDING,
 		commands: {
 			nhew: "Train Worker",
@@ -693,7 +693,7 @@ const units={
 	bloodelfbarracks: {
 		name: "Barracks",
 		suffix: "Blood Elf",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: BUILDING,
 		commands: {
 			hhes: "Train Swordsman",
@@ -707,7 +707,7 @@ const units={
 	},
 	cmdbuildbloodelf: {
 		name: "Build Structure",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: OTHER,
 		commands: {
 			net1: "Build Energy Tower",
@@ -720,7 +720,7 @@ const units={
 	},
 	hhes: {
 		name: "Swordsman",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: UNIT,
 		commands: {
 			adef: "Defend"
@@ -728,12 +728,12 @@ const units={
 	},
 	nhea: {
 		name: "Archer",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: UNIT
 	},
 	nhew: {
 		name: "Worker",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: UNIT,
 		commands: {
 			ahar: "Gather",
@@ -744,7 +744,7 @@ const units={
 	},
 	nbee: {
 		name: "Blood Elf Engineer",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: UNIT,
 		commands: {
 			ahar: "Gather",
@@ -755,7 +755,7 @@ const units={
 	},
 	nbel: {
 		name: "Blood Elf Lieutenant",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: UNIT,
 		commands: {
 			asps: "Spell Steal",
@@ -764,7 +764,7 @@ const units={
 	},
 	net1: {
 		name: "Energy Tower",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: TOWER,
 		commands: {
 			net2: "Upgrade to Advanced Energy Tower"
@@ -772,7 +772,7 @@ const units={
 	},
 	nbt1: {
 		name: "Boulder Tower",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: TOWER,
 		commands: {
 			cmdattackground: "Attack Ground",
@@ -781,7 +781,7 @@ const units={
 	},
 	nft1: {
 		name: "Flame Tower",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: TOWER,
 		commands: {
 			nft2: "Upgrade to Advanced Flame Tower"
@@ -789,7 +789,7 @@ const units={
 	},
 	ndt1: {
 		name: "Cold Tower",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: TOWER,
 		commands: {
 			ndt2: "Upgrade to Advanced Cold Tower"
@@ -797,7 +797,7 @@ const units={
 	},
 	ntt1: {
 		name: "Death Tower",
-		race: BLOODELF,
+		race: BLOOD_ELF,
 		type: TOWER,
 		commands: {
 			ntx2: "Upgrade to Advanced Death Tower"
@@ -1193,7 +1193,7 @@ const units={
 	obot: {
 		name: "Orc Transport Ship",
 		race: ORC,
-		type: NOATTACK,
+		type: NO_ATTACK,
 		commands: {
 			slo3: "Load",
 			sdro: "Unload"
@@ -1676,7 +1676,7 @@ const units={
 	ushd: {
 		name: "Shade",
 		race: UNDEAD,
-		type: NOATTACK,
+		type: NO_ATTACK,
 		commands: {
 			atru: "True Sight"
 		}
@@ -1929,6 +1929,7 @@ const units={
 			rune: "Necromancer Training",
 			ruba: "Banshee Training",
 			rusl: "Research Skeletal Longevity",
+			rusm: "Research Skeletal Mastery",
 			cmdrally: "Set Rally Point",
 			cmdcancelbuild: "Cancel"
 		}
@@ -1998,7 +1999,7 @@ const units={
 	ubot: {
 		name: "Undead Transport Ship",
 		race: UNDEAD,
-		type: NOATTACK,
+		type: NO_ATTACK,
 		commands: {
 			slo3: "Load",
 			sdro: "Unload"
@@ -2205,7 +2206,7 @@ const units={
 	},
 	edem: {
 		name: "Demon Hunter",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: {
 			aemb: "Mana Burn",
@@ -2216,7 +2217,7 @@ const units={
 	},
 	ekee: {
 		name: "Keeper of the Grove",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: {
 			aeer: "Entangling Roots",
@@ -2227,7 +2228,7 @@ const units={
 	},
 	emoo: {
 		name: "Priestess of the Moon",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: {
 			aest: "Scout",
@@ -2239,7 +2240,7 @@ const units={
 	},
 	ewar: {
 		name: "Warden",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: {
 			aefk: "Fan of Knives",
@@ -2251,8 +2252,8 @@ const units={
 	},
 	ewsp: {
 		name: "Wisp",
-		race: NIGHTELF,
-		type: NOATTACK,
+		race: NIGHT_ELF,
+		type: NO_ATTACK,
 		commands: {
 			adtn: "Denotate",
 			aren: "Renew",
@@ -2263,7 +2264,7 @@ const units={
 	},
 	cmdbuildnightelf: {
 		name: "Create Building",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: OTHER,
 		commands: {
 			etol: "Create Tree of Life",
@@ -2281,7 +2282,7 @@ const units={
 	},
 	earc: {
 		name: "Archer",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			aco2: "Mount Hippogryph",
@@ -2291,7 +2292,7 @@ const units={
 	},
 	esen: {
 		name: "Huntress",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			aesn: "Sentinel",
@@ -2301,7 +2302,7 @@ const units={
 	},
 	ebal: {
 		name: "Glaive Thrower",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			cmdattackground: "Attack Ground",
@@ -2310,7 +2311,7 @@ const units={
 	},
 	edry: {
 		name: "Dryad",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			aadm: "Abolish Magic",
@@ -2320,7 +2321,7 @@ const units={
 	},
 	edoc: {
 		name: "Druid of the Claw",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			abrf: "Bear Form",
@@ -2331,7 +2332,7 @@ const units={
 	edcm: {
 		name: "Druid of the Claw",
 		suffix: "Bear Form",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			abrf: "Night Elf Form",
@@ -2340,7 +2341,7 @@ const units={
 	},
 	emtg: {
 		name: "Mountain Giant",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			atau: "Taunt",
@@ -2351,7 +2352,7 @@ const units={
 	},
 	ehip: {
 		name: "Hippogryph",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			aco3: "Pick up Archer"
@@ -2359,7 +2360,7 @@ const units={
 	},
 	ehpr: {
 		name: "Hippogryph Rider",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			adec: "Dismount Archer"
@@ -2367,7 +2368,7 @@ const units={
 	},
 	edot: {
 		name: "Druid of the Talon",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			acyc: "Cyclone",
@@ -2378,7 +2379,7 @@ const units={
 	edtm: {
 		name: "Druid of the Talon",
 		suffix: "Storm Crow Form",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			arav: "Night Elf Form",
@@ -2387,7 +2388,7 @@ const units={
 	},
 	efdr: {
 		name: "Faerie Dragon",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			amim: "Spell Immunity",
@@ -2397,7 +2398,7 @@ const units={
 	},
 	echm: {
 		name: "Chimaera",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			acor: "Corrosive Breath"
@@ -2405,7 +2406,7 @@ const units={
 	},
 	etol: {
 		name: "Tree of Life",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			ewsp: "Train Wisp",
@@ -2419,7 +2420,7 @@ const units={
 	},
 	aroo: {
 		name: "Uprooted Ancient",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			aent: "Entangle Gold Mine",
@@ -2429,7 +2430,7 @@ const units={
 	},
 	etoa: {
 		name: "Tree of Ages",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			ewsp: "Train Wisp",
@@ -2443,7 +2444,7 @@ const units={
 	},
 	etoe: {
 		name: "Tree of Eternity",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			ewsp: "Train Wisp",
@@ -2456,7 +2457,7 @@ const units={
 	},
 	egol: {
 		name: "Entangled Gold Mine",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			slo2: "Load Wisp",
@@ -2465,7 +2466,7 @@ const units={
 	},
 	eaom: {
 		name: "Ancient of War",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			earc: "Train Archer",
@@ -2482,7 +2483,7 @@ const units={
 	},
 	edob: {
 		name: "Hunter's Hall",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			resm: "Upgrade Strength of the Moon",
@@ -2496,7 +2497,7 @@ const units={
 	},
 	etrp: {
 		name: "Ancient Protector",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: TOWER,
 		commands: {
 			aro2: "Uproot"
@@ -2504,7 +2505,7 @@ const units={
 	},
 	emow: {
 		name: "Moon Well",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			ambt: "Replenish Mana and Life"
@@ -2512,7 +2513,7 @@ const units={
 	},
 	eate: {
 		name: "Altar of Elders",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			edem: "Summon Demon Hunter",
@@ -2526,7 +2527,7 @@ const units={
 	eate2: {
 		name: "Altar of Elders",
 		suffix: "Campaign",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			etyr: "Tyrande",
@@ -2541,7 +2542,7 @@ const units={
 	},
 	eaoe: {
 		name: "Ancient of Lore",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			edry: "Train Dryad",
@@ -2558,7 +2559,7 @@ const units={
 	},
 	eaow: {
 		name: "Ancient of Wind",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			ehip: "Train Hippogryph",
@@ -2572,7 +2573,7 @@ const units={
 	},
 	edos: {
 		name: "Chimaera Roost",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			echm: "Train Chimaera",
@@ -2582,7 +2583,7 @@ const units={
 	},
 	eden: {
 		name: "Ancient of Wonders",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			moon: "Purchase Moonstone",
@@ -2600,7 +2601,7 @@ const units={
 	},
 	eshy: {
 		name: "Night Elf Shipyard",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: {
 			etrs: "Hire Transport Ship",
@@ -2611,8 +2612,8 @@ const units={
 	},
 	etrs: {
 		name: "Night Elf Transport Ship",
-		race: NIGHTELF,
-		type: NOATTACK,
+		race: NIGHT_ELF,
+		type: NO_ATTACK,
 		commands: {
 			slo3: "Load",
 			sdro: "Unload"
@@ -2620,23 +2621,23 @@ const units={
 	},
 	edes: {
 		name: "Night Elf Frigate",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT
 	},
 	ebsh: {
 		name: "Night Elf Battleship",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT
 	},
 	efon: {
 		name: "Treant",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: SUMMON
 	},
 	nowl: {
 		name: "Owl Scout",
 		suffix: "Level 1",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: SUMMON,
 		commands: {
 			adtg: "True Sight"
@@ -2645,7 +2646,7 @@ const units={
 	now2: {
 		name: "Owl Scout",
 		suffix: "Level 2",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: SUMMON,
 		commands: {
 			adtg: "True Sight"
@@ -2654,7 +2655,7 @@ const units={
 	now3: {
 		name: "Owl Scout",
 		suffix: "Level 3",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: SUMMON,
 		commands: {
 			adtg: "True Sight"
@@ -2662,7 +2663,7 @@ const units={
 	},
 	espv: {
 		name: "Avatar of Vengeance",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: SUMMON,
 		commands: {
 			avng: "Spirit of Vengeance",
@@ -2672,12 +2673,12 @@ const units={
 	},
 	even: {
 		name: "Spirit of Vengeance",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: SUMMON
 	},
 	nwat: {
 		name: "Sentry",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			acbl: "Bloodlust"
@@ -2686,12 +2687,12 @@ const units={
 	nssn: {
 		name: "Warden",
 		suffix: "Campaign",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT
 	},
 	eshd: {
 		name: "Shandris",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			ashm: "Shadowmeld"
@@ -2699,7 +2700,7 @@ const units={
 	},
 	ensh: {
 		name: "Naisha",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: UNIT,
 		commands: {
 			aesr: "Sentinel",
@@ -2720,7 +2721,7 @@ const units={
 	},
 	efur: {
 		name: "Furion",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: {
 			aeer: "Entangling Roots",
@@ -2731,7 +2732,7 @@ const units={
 	},
 	emns: {
 		name: "Malfurion",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: {
 			aeer: "Entangling Roots",
@@ -2743,7 +2744,7 @@ const units={
 	emfr: {
 		name: "Malfurion",
 		suffix: "with Stag",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: {
 			aeer: "Entangling Roots",
@@ -2754,7 +2755,7 @@ const units={
 	},
 	etyr: {
 		name: "Tyrande",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: {
 			aest: "Scout",
@@ -2766,7 +2767,7 @@ const units={
 	},
 	ewrd: {
 		name: "Maiev",
-		race: NIGHTELF,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: {
 			aefk: "Fan of Knives",
@@ -3290,7 +3291,7 @@ const units={
 	nzep: {
 		name: "Goblin Zeppelin",
 		race: NEUTRAL,
-		type: NOATTACK,
+		type: NO_ATTACK,
 		commands: {
 			aloa: "Load",
 			adro: "Unload All"

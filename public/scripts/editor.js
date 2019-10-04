@@ -286,7 +286,7 @@ Editor.prototype.unitEditor=function() {
 
 	let buttons=this.getCommands(unit);
 
-	for (let id in buttons) {
+	for (let [id, button] of Object.entries(buttons)) {
 		// special exception for build buttons, whose hotkeys and tooltips are
 		// under cmdbuild* but whose buttonpos are under a?bu
 		let idpos=this.convertBuildCommand(id);
@@ -321,15 +321,15 @@ Editor.prototype.unitEditor=function() {
 
 		// re-selects command if selected on previously viewed unit
 		if (this.command==id) {
-			this.setCommand(id, buttons[id]);
+			this.setCommand(id, button);
 		}
 
-		let button=this.createButton(id, buttons[id]);
-		button.id="Y"+y+"X"+x;
-		button.classList.toggle("conflict", conflict);
+		let element=this.createButton(id, button);
+		element.id="y"+y+"x"+x;
+		element.classList.toggle("conflict", conflict);
 
 		let pos=COLS*y+x;
-		document.getElementById("card").children[pos].replaceWith(button);
+		document.getElementById("card").children[pos].replaceWith(element);
 	}
 
 	let divs=document.getElementById("card").getElementsByTagName("div");
@@ -367,7 +367,7 @@ Editor.prototype.getCommands=function(unit) {
 		Object.assign(buttons, common.basic);
 	} else if (unit.type==HERO||unit.type==ITEM) {
 		Object.assign(buttons, common.basic, common.hero);
-	} else if (unit.type==NOATTACK) {
+	} else if (unit.type==NO_ATTACK) {
 		Object.assign(buttons, common.noattack);
 	} else if (unit.type==TOWER) {
 		Object.assign(buttons, common.tower);
@@ -456,8 +456,8 @@ Editor.prototype.clearButtons=function() {
 		this.clear(element);
 	}
 
-	for (let y in this.card) {
-		for (let x in this.card[y]) {
+	for (let y of this.card.keys()) {
+		for (let x of this.card[y].keys()) {
 			this.card[y][x]="";
 		}
 	}
@@ -560,7 +560,7 @@ Editor.prototype.getConflicts=function(id) {
 
 	let buttons=this.getCommands(unit);
 
-	for (let id in buttons) {
+	for (let id of Object.keys(buttons)) {
 		if (!commands.exists(id)) {
 			continue;
 		}
@@ -601,8 +601,8 @@ Editor.prototype.getConflicts=function(id) {
 };
 
 Editor.prototype.setVisibleHotkeys=function() {
-	for (let y in this.card) {
-		for (let x in this.card[y]) {
+	for (let y of this.card.keys()) {
+		for (let x of this.card[y].keys()) {
 			let id=this.card[y][x];
 
 			if (!commands.exists(id)) {
@@ -688,7 +688,7 @@ Editor.prototype.drop=function(from, to, mod) {
 		return;
 	}
 
-	let pattern=/Y(\d)X(\d)/;
+	let pattern=/y(\d)x(\d)/;
 	let oldpos="", newpos="", oldunpos="", newunpos="";
 
 	// trims "img_" prefix
@@ -721,8 +721,8 @@ Editor.prototype.drop=function(from, to, mod) {
 			// stored value (so drag-and-drop operations try to match how the
 			// button positions are displayed over how they are stored, which
 			// is more consistent with user expectations)
-			for (let y in this.card) {
-				for (let x in this.card[y]){
+			for (let y of this.card.keys()) {
+				for (let x of this.card[y].keys()){
 					if (from==this.card[y][x]) {
 						oldpos=x+DELIMITER+y;
 
@@ -1126,12 +1126,12 @@ Editor.prototype.findUnitsNamed=function(query) {
 
 	query=query.toLowerCase();
 
-	for (let unit in units) {
-		if (units[unit].name==undefined) {
+	for (let [unit, properties] of Object.entries(units)) {
+		if (properties.name==undefined) {
 			continue;
 		}
 
-		if (units[unit].name.toLowerCase().indexOf(query)!=-1) {
+		if (properties.name.toLowerCase().indexOf(query)!=-1) {
 			matches.add(unit);
 		}
 	}
@@ -1146,12 +1146,12 @@ Editor.prototype.findUnitsNamed=function(query) {
 Editor.prototype.findUnitsWith=function(command) {
 	let matches=new Set();
 
-	for (let unit in units) {
-		if (units[unit].commands==undefined) {
+	for (let [unit, properties] of Object.entries(units)) {
+		if (properties.commands==undefined) {
 			continue;
 		}
 
-		for (let id in units[unit].commands) {
+		for (let id of Object.keys(properties.commands)) {
 			if (id==command) {
 				matches.add(unit);
 			}
