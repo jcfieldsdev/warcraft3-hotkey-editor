@@ -48,10 +48,10 @@ window.addEventListener("load", function() {
 function init(text) {
 	commands.parse(text);
 
-	let saved=store.load();
+	let mem=store.load();
 
-	if (saved!=null) {
-		commands.load(saved);
+	if (mem!=null) {
+		commands.load(mem);
 	}
 
 	editor.load();
