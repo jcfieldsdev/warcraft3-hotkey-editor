@@ -834,8 +834,8 @@ Hotkey=W,W,W
 Tip=Upgrade to Steel Ranged Weapons (|cffffcc00W|r),Upgrade to Thorium Ranged Weapons (|cffffcc00W|r),Upgrade to Arcanite Ranged Weapons (|cffffcc00W|r)
 
 [rosp]
-Hotkey=E,E
-Tip=Upgrade to Spiked Barricades (|cffffcc00E|r),Upgrade to Improved Spiked Barricades (|cffffcc00E|r)
+Hotkey=E,E,E
+Tip=Upgrade to Spiked Barricades (|cffffcc00E|r),Upgrade to Improved Spiked Barricades (|cffffcc00E|r),Upgrade to Advanced Spiked Barricades (|cffffcc00E|r)
 
 [roar]
 Tip=Upgrade to Steel Unit Armor (|cffffcc00A|r),Upgrade to Thorium Unit Armor (|cffffcc00A|r),Upgrade to Arcanite Unit Armor (|cffffcc00A|r)

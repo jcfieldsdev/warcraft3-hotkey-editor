@@ -834,8 +834,12 @@ Editor.prototype.formatTip=function(key, tip) {
 	tip=tip.replace(/&/g, "&amp;");
 	tip=tip.replace(/</g, "&lt;");
 	tip=tip.replace(/>/g, "&gt;");
-	tip=tip.replace(/\|cffffcc00([^|]+)\|r/g, '<span class="hotkey">$1</span>');
-	tip=tip.replace(/\|cffc3dbff([^|]+)\|r/g, '<span class="note">$1</span>');
+	tip=tip.replace(/\|cffffcc00([^|]+)\|r/gi, '<span class="key">$1</span>');
+	tip=tip.replace(/\|cffc3dbff([^|]+)\|r/gi, '<span class="note">$1</span>');
+	tip=tip.replace(
+		/\|c([[0-9a-f]{2})([[0-9a-f]{6})([^|]+)\|r/gi,
+		'<span style="color:#$2;">$3</span>'
+	); // handles all other colors
 
 	// splits string by comma unless comma is within quotes
 	let tips=tip.split(PATTERN).map(function(tip) {
@@ -856,8 +860,13 @@ Editor.prototype.focusTip=function(key) {
 	tip=tip.replace(/&amp;/g, "&");
 	tip=tip.replace(/&lt;/g, "<");
 	tip=tip.replace(/&gt;/g, ">");
-	tip=tip.replace(/<span class="hotkey">([^<]+)<\/span>/g, "*$1*");
+	tip=tip.replace(/<span class="key">([^<]+)<\/span>/g, "*$1*");
 	tip=tip.replace(/<span class="note">([^<]+)<\/span>/g, "^$1^");
+	tip=tip.replace(
+		/<span style="color:#([[0-9a-f]{6});">([^<]+)<\/span>/gi,
+		"|cff$1$2|r"
+	); // opacity value is not used by game
+
 	element.innerHTML=tip;
 };
 
@@ -950,7 +959,7 @@ Editor.prototype.autoSetTip=function(key, fields) {
 
 			// removes existing highlighting (matches letters and numbers
 			// but not whitespace to avoid matching "Level \d")
-			tip=tip.replace(/\|cffffcc00(\w+)\|r/g, "$1");
+			tip=tip.replace(/\|cffffcc00(\w+)\|r/gi, "$1");
 
 			if (start) {
 				tip=replace+tip;

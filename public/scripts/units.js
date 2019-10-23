@@ -1157,7 +1157,7 @@ const units={
 		commands: {
 			otau: "Train Tauren",
 			ospm: "Train Spirit Walker",
-			rows: "Research Pulverize",
+			rows: "Upgrade Pulverize",
 			rowt: "Spirit Walker Training",
 			cmdrally: "Set Rally Point",
 			cmdcancelbuild: "Cancel"
@@ -2675,6 +2675,14 @@ const units={
 		name: "Spirit of Vengeance",
 		race: NIGHT_ELF,
 		type: SUMMON
+	},
+	enec: {
+		name: "Night Elf Runner",
+		race: NIGHT_ELF,
+		type: NO_ATTACK,
+		commands: {
+			ahea: "Heal"
+		}
 	},
 	nwat: {
 		name: "Sentry",

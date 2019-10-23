@@ -104,7 +104,7 @@ button, input, select {
 	font-family: inherit;
 }
 
-button span.hotkey {
+button span.key {
 	background: none;
 	color: #fff;
 }
@@ -585,7 +585,7 @@ span.button {
 	border-bottom: 1px dotted #fff;
 }
 
-span.hotkey {
+span.key {
 	background: none;
 	color: #ffcc00;
 }
@@ -725,7 +725,7 @@ ul.undead {
 
 	main {
 		margin-left: 200px;
-		padding: 3em 0;
+		padding: 3em 0 4em;
 	}
 
 	nav {
@@ -785,7 +785,7 @@ ul.undead {
 
 	main {
 		margin-left: 125px;
-		padding: 1em 0;
+		padding: 1em 0 3em;
 	}
 
 	nav {

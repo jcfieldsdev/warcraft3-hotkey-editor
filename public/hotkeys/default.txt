@@ -996,8 +996,8 @@ Hotkey=M,M
 Buttonpos=0,2
 
 [rosp]
-Tip=Upgrade to |cffffcc00S|rpiked Barricades,Upgrade to Improved |cffffcc00S|rpiked Barricades
-Hotkey=S,S
+Tip=Upgrade to |cffffcc00S|rpiked Barricades,Upgrade to Improved |cffffcc00S|rpiked Barricades,Upgrade to Advanced |cffffcc00S|rpiked Barricades
+Hotkey=S,S,S
 Buttonpos=2,0
 
 [rotr]
