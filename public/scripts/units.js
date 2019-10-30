@@ -758,7 +758,7 @@ const units={
 		race: BLOOD_ELF,
 		type: UNIT,
 		commands: {
-			asps: "Spell Steal",
+			adef: "Defend",
 			amim: "Spell Immunity"
 		}
 	},

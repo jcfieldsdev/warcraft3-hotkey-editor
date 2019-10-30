@@ -244,7 +244,7 @@ Editor.prototype.setUnit=function(unit) {
 	} else {
 		this.race=units[this.unit].race;
 		this.filter(this.race);
-		console.log("Unit: "+units[this.unit].name+" ("+this.unit+")");
+		console.log(`Unit: ${units[this.unit].name} (${this.unit})`);
 	}
 
 	this.clearSearch(true);
@@ -252,10 +252,12 @@ Editor.prototype.setUnit=function(unit) {
 };
 
 Editor.prototype.setCommand=function(id, name) {
-	this.command=id;
-	this.name=name;
+	if (this.command!=id) {
+		this.command=id;
+		this.name=name;
 
-	console.log("Command: "+name+" ("+id+")");
+		console.log(`Command: ${name} (${id})`);
+	}
 
 	this.commandEditor();
 };
