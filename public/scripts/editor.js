@@ -240,7 +240,7 @@ Editor.prototype.setUnit=function(unit) {
 	this.unit=unit;
 
 	if (units[this.unit]==undefined) {
-		console.error("Undefined: "+this.unit+" (unit)");
+		console.error(`Undefined: ${this.unit} (unit)`);
 	} else {
 		this.race=units[this.unit].race;
 		this.filter(this.race);
@@ -294,7 +294,7 @@ Editor.prototype.unitEditor=function() {
 		let idpos=this.convertBuildCommand(id);
 
 		if (!commands.exists(idpos)) {
-			console.error("Undefined: "+idpos+" (command)");
+			console.error(`Undefined: ${idpos} (command)`);
 			continue;
 		}
 
@@ -306,7 +306,7 @@ Editor.prototype.unitEditor=function() {
 			[x, y]=this.getPosition(pos[0], pos[1]);
 			conflict=pos[0]!=x||pos[1]!=y;
 		} else {
-			console.error("Undefined: "+idpos+" (buttonpos)");
+			console.error(`Undefined: ${idpos} (buttonpos)`);
 
 			[x, y]=this.getPosition(0, 2); // tries to place in bottom row
 			conflict=true;
