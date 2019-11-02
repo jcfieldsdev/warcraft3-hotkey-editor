@@ -681,10 +681,21 @@
 </li></ul></section></main>
 <div id="editor">
 	<h2 id="unit"></h2>
-	<div id="card">
-		<div id="y0x0"></div><div id="y0x1"></div><div id="y0x2"></div><div id="y0x3"></div>
-		<div id="y1x0"></div><div id="y1x1"></div><div id="y1x2"></div><div id="y1x3"></div>
-		<div id="y2x0"></div><div id="y2x1"></div><div id="y2x2"></div><div id="y2x3"></div>
+	<div id="cards">
+		<ul id="tabs">
+			<li><button type="button" value="0" class="tab">Standard</button></li>
+			<li><button type="button" value="1" class="tab">Research</button></li>
+		</ul>
+		<div id="card0" class="card">
+			<div id="n0y0x0"></div><div id="n0y0x1"></div><div id="n0y0x2"></div><div id="n0y0x3"></div>
+			<div id="n0y1x0"></div><div id="n0y1x1"></div><div id="n0y1x2"></div><div id="n0y1x3"></div>
+			<div id="n0y2x0"></div><div id="n0y2x1"></div><div id="n0y2x2"></div><div id="n0y2x3"></div>
+		</div>
+		<div id="card1" class="card hidden">
+			<div id="n1y0x0"></div><div id="n1y0x1"></div><div id="n1y0x2"></div><div id="n1y0x3"></div>
+			<div id="n1y1x0"></div><div id="n1y1x1"></div><div id="n1y1x2"></div><div id="n1y1x3"></div>
+			<div id="n1y2x0"></div><div id="n1y2x1"></div><div id="n1y2x2"></div><div id="n1y2x3"></div>
+		</div>
 	</div>
 	<div class="option"><label title="Changing a hotkey will change all hotkeys for that command simultaneously."><input type="checkbox" id="spiritlink" checked="checked"> Spirit link hotkeys.</label></div>
 	<div class="option"><label title="Changing a hotkey will automatically change the tooltip to include the new hotkey."><input type="checkbox" id="tooltips" checked="checked"> Write tooltips automatically.</label> <label><input type="radio" name="end" id="start"> Beginning</label> <label><input type="radio" name="end" id="end" checked="checked"> End</label></div>

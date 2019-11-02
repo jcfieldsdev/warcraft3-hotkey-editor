@@ -7,7 +7,6 @@ A [hotkey editor for *Warcraft III*](https://jcfields.gitlab.io/warcraft3-hotkey
 There are a few known limitations of the editor:
 
 - The default hotkey settings are for *The Frozen Throne* multiplayer. There are a handful of differences with *Reign of Chaos* multiplayer and both campaigns that the editor does not properly reflect. For example, in *Reign of Chaos*, the Far Seer and Beastiary have their commands in a different order and several units have different names.
-- The editor cannot edit button positions for the "learn hero ability" submenu (i.e., the "Researchbuttonpos" attribute). It is also technically possible for there to be a conflict between a "learn" hotkey (i.e., "Researchhotkey") and the cancel button, which the editor will not be able to detect (though this is highly unlikely since most users will leave the cancel button mapped to the escape key).
 - The icon order algorithm may not be exactly the same as the game in cases where there are button position conflicts (which, by default, includes several creeps).
 - There are some special creeps and other units in the campaign that can potentially be player-controlled (through mind control abilities or otherwise) that may not be available in the editor, though their commands are typically present in the standard multiplayer creeps.
 

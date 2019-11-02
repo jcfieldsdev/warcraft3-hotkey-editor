@@ -34,7 +34,7 @@
 }
 
 *.hidden, a#link, h1, section h2 {
-	display: none;
+	display: none !important;
 }
 
 a {
@@ -122,6 +122,12 @@ button#help {
 	width: 2em;
 }
 
+button.tab {
+	border-radius: 0.5em 0.5em 0 0;
+	border-width: 2px;
+	margin: 0 0.25em 0 0;
+}
+
 cite {
 	font-style: normal;
 	font-variant: small-caps;
@@ -149,39 +155,9 @@ div#buttons {
 	text-align: right;
 }
 
-div#card {
+div#cards {
 	clear: left;
-	display: grid;
-	grid-gap: 5px 5px;
-	grid-template-columns: 64px 64px 64px 64px;
-	grid-template-rows: 64px 64px 64px;
-	line-height: 100%;
 	margin: 0 auto;
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-}
-
-div#card div {
-	justify-self: center;
-	position: relative;
-}
-
-div#card div, div#card img, h2 img {
-	height: 64px;
-	width: 64px;
-}
-
-div#card span {
-	font-weight: bold;
-	left: 5px;
-	pointer-events: none;
-	position: absolute;
-	top: 4px;
-}
-
-div#card span, h2#unit, h3#command, p.hotkey input {
-	text-shadow: 2px 2px #000;
 }
 
 div#editor {
@@ -344,6 +320,39 @@ div#fields {
 
 div#fields, h3#command {
 	padding: 1px 1px 0;
+}
+
+div.card {
+	display: grid;
+	grid-gap: 5px 5px;
+	grid-template-columns: 64px 64px 64px 64px;
+	grid-template-rows: 64px 64px 64px;
+	line-height: 100%;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+div.card div {
+	justify-self: center;
+	position: relative;
+}
+
+div.card div, div.card img, h2 img {
+	height: 64px;
+	width: 64px;
+}
+
+div.card span {
+	font-weight: bold;
+	left: 5px;
+	pointer-events: none;
+	position: absolute;
+	top: 4px;
+}
+
+div.card span, h2#unit, h3#command, p.hotkey input {
+	text-shadow: 2px 2px #000;
 }
 
 div.conflict img {
@@ -648,6 +657,10 @@ ul#results li.selected {
 	color: inherit;
 }
 
+ul#tabs {
+	display: flex;
+}
+
 ul.bloodelf {
 	background: none;
 	color: #ff4020;
@@ -694,21 +707,21 @@ ul.undead {
 }
 
 @media (max-height: 1080px), (orientation: portrait) {
-	div#card {
+	div#editor {
+		bottom: 7em;
+		right: 3em;
+		top: 3em;
+	}
+
+	div.card {
 		grid-gap: 4px 4px;
 		grid-template-columns: 56px 56px 56px 56px;
 		grid-template-rows: 56px 56px 56px;
 	}
 
-	div#card div, div#card img, h2 img {
+	div.card div, div.card img, h2 img {
 		height: 56px;
 		width: 56px;
-	}
-
-	div#editor {
-		bottom: 7em;
-		right: 3em;
-		top: 3em;
 	}
 
 	h2#unit {
@@ -748,27 +761,27 @@ ul.undead {
 		font-size: 1.25rem;
 	}
 
-	div#card {
-		grid-gap: 3px 3px;
-		grid-template-columns: 48px 48px 48px 48px;
-		grid-template-rows: 48px 48px 48px;
-	}
-
-	div#card div, div#card img, h2 img {
-		height: 48px;
-		width: 48px;
-	}
-
-	div#card span {
-		left: 3px;
-		top: 2px;
-	}
-
 	div#editor {
 		bottom: 4.5em;
 		font-size: 1rem;
 		right: 1em;
 		top: 1em;
+	}
+
+	div.card {
+		grid-gap: 3px 3px;
+		grid-template-columns: 48px 48px 48px 48px;
+		grid-template-rows: 48px 48px 48px;
+	}
+
+	div.card div, div.card img, h2 img {
+		height: 48px;
+		width: 48px;
+	}
+
+	div.card span {
+		left: 3px;
+		top: 2px;
 	}
 
 	div.overlay textarea {

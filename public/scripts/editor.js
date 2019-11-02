@@ -5,6 +5,7 @@
  */
 
 // dimensions of command card
+const CARDS=2;
 const ROWS=3;
 const COLS=4;
 
@@ -26,6 +27,11 @@ const STORAGE_NAME="wc3hk";
 const DELIMITER=",";
 // pattern for splitting multi-line tips
 const PATTERN=/,(?=(?:[^"]|"[^"]*")*$)/;
+
+// command cards
+const STANDARD=0, RESEARCH=1;
+// commands
+const CANCEL="cmdcancel";
 
 // objects
 const files=new Files("files");
@@ -166,6 +172,12 @@ function init(text) {
 		});
 	}
 
+	for (let element of document.getElementsByClassName("tab")) {
+		element.addEventListener("click", function() {
+			editor.selectCard(Number.parseInt(this.value));
+		});
+	}
+
 	for (let element of document.getElementsByClassName("close")) {
 		element.addEventListener("click", function() {
 			overlays[this.value].hide();
@@ -208,9 +220,12 @@ function Editor(commands) {
 	this.command="";
 	this.name="";
 	this.race="";
-	this.card=Array(ROWS).fill().map(function() {
-		return Array(COLS).fill();
+	this.card=Array(CARDS).fill().map(function() {
+		return Array(ROWS).fill().map(function() {
+			return Array(COLS).fill();
+		});
 	});
+	this.active=STANDARD; // active command card
 	this.selected=-1; // selected search result
 }
 
@@ -283,7 +298,11 @@ Editor.prototype.unitEditor=function() {
 	h3.textContent="";
 	h3.classList.add("hidden");
 
-	for (let [id, button] of Object.entries(this.getCommands(unit))) {
+	document.getElementById("tabs").classList.toggle("hidden", unit.type!=HERO);
+
+	const self=this;
+
+	for (let [id, name] of Object.entries(this.getCommands(unit))) {
 		// special exception for build buttons, whose hotkeys and tooltips are
 		// under cmdbuild* but whose buttonpos are under a?bu
 		let idpos=this.convertBuildCommand(id);
@@ -293,67 +312,79 @@ Editor.prototype.unitEditor=function() {
 			continue;
 		}
 
-		let conflict=false, x=0, y=0;
 		let buttonpos=this.commands.get(idpos, "Buttonpos");
+		let researchbuttonpos=this.commands.get(idpos, "Researchbuttonpos");
 
-		if (buttonpos) {
-			let pos=buttonpos.split(DELIMITER);
-			[x, y]=this.getPosition(pos[0], pos[1]);
-			conflict=pos[0]!=x||pos[1]!=y;
+		if (buttonpos!="") {
+			placeButton(id, name, STANDARD, buttonpos);
+
+			if (researchbuttonpos) {
+				placeButton(id, name, RESEARCH, researchbuttonpos);
+			}
 		} else {
 			console.error(`Undefined: ${idpos} (buttonpos)`);
-
-			[x, y]=this.getPosition(0, 2); // tries to place in bottom row
-			conflict=true;
 		}
-
-		if (x==null&&y==null) {
-			// could not find position for button;
-			// theoretically should never happen since it would require a unit
-			// have more commands than positions available (i.e., more than 12)
-			continue;
-		}
-
-		this.card[y][x]=id;
 
 		// re-selects command if selected on previously viewed unit
 		if (this.command==id) {
-			this.setCommand(id, button);
+			this.setCommand(id, name);
 		}
-
-		let element=this.createButton(id, button);
-		element.id="y"+y+"x"+x;
-		element.classList.toggle("conflict", conflict);
-
-		let pos=COLS*y+x;
-		document.getElementById("card").children[pos].replaceWith(element);
 	}
 
-	let divs=document.getElementById("card").getElementsByTagName("div");
+	if (unit.type==HERO) { // adds cancel button to hero select skills card
+		placeButton(
+			CANCEL, "Cancel", RESEARCH, this.commands.get(CANCEL, "Buttonpos")
+		);
 
-	// adds listeners for drag-and-drop events
-	for (let element of divs) {
-		element.addEventListener("dragover", function(event) {
-			event.preventDefault();
-		});
-		element.addEventListener("dragenter", function(event) {
-			event.preventDefault();
-			this.classList.add("drag");
-		});
-		element.addEventListener("dragleave", function() {
-			this.classList.remove("drag");
-		});
-		element.addEventListener("drop", function(event) {
-			event.preventDefault();
+		this.selectCard(this.active);
+	} else { // always selects standard command card for non-hero units
+		this.selectCard(STANDARD);
+	}
 
-			let data=event.dataTransfer.getData("text");
-			this.drop(data, event.target.id, event.shiftKey);
-			document.getElementById("card").classList.remove("grid");
-		}.bind(this));
+	for (let card of document.getElementsByClassName("card")) {
+		// adds listeners for drag-and-drop events
+		for (let element of card.getElementsByTagName("div")) {
+			element.addEventListener("dragover", function(event) {
+				event.preventDefault();
+			});
+			element.addEventListener("dragenter", function(event) {
+				event.preventDefault();
+				this.classList.add("drag");
+			});
+			element.addEventListener("dragleave", function() {
+				this.classList.remove("drag");
+			});
+			element.addEventListener("drop", function(event) {
+				event.preventDefault();
+
+				let data=event.dataTransfer.getData("text");
+				this.drop(data, event.target.id, event.shiftKey);
+				card.classList.remove("grid");
+			}.bind(this));
+		}
 	}
 
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
+
+	function placeButton(id, name, n, buttonpos) {
+		let pos=buttonpos.split(DELIMITER);
+		let [x, y]=self.getPosition(n, pos[0], pos[1]);
+		let conflict=pos[0]!=x||pos[1]!=y;
+
+		if (x<0||y<0) {
+			return;
+		}
+
+		self.card[n][y][x]=id;
+
+		let element=self.createButton(id, name, n);
+		element.id="n"+n+"y"+y+"x"+x;
+		element.classList.toggle("conflict", conflict);
+
+		let index=COLS*y+x;
+		document.getElementById("card"+n).children[index].replaceWith(element);
+	}
 };
 
 Editor.prototype.getCommands=function(unit) {
@@ -376,6 +407,20 @@ Editor.prototype.getCommands=function(unit) {
 	}
 
 	return buttons;
+};
+
+Editor.prototype.selectCard=function(n) {
+	this.active=n;
+
+	for (let card of document.getElementsByClassName("card")) {
+		card.classList.toggle("hidden", card.id!="card"+n);
+	}
+
+	for (let tab of document.getElementsByClassName("tab")) {
+		tab.classList.toggle("active", tab.value==n);
+	}
+
+	this.setVisibleHotkeys();
 };
 
 Editor.prototype.convertBuildCommand=function(id) {
@@ -402,10 +447,10 @@ Editor.prototype.convertBuildCommand=function(id) {
 	return id;
 };
 
-Editor.prototype.createButton=function(id, name) {
+Editor.prototype.createButton=function(id, name, n) {
 	let div=document.createElement("div");
 	let img=document.createElement("img");
-	img.id="img_"+id;
+	img.id="img"+n+"_"+id;
 	img.setAttribute("src", ICONS_DIR+id+ICONS_EXT);
 	img.setAttribute("alt", "["+name+"]");
 	img.setAttribute("title", name);
@@ -418,13 +463,13 @@ Editor.prototype.createButton=function(id, name) {
 	// and unit icons (in heading)
 	if (this.unit!=id) {
 		let span=document.createElement("span");
-		span.id="span_"+id;
+		span.id="span"+n+"_"+id;
 		div.appendChild(span);
 
 		img.setAttribute("draggable", "true");
 		img.addEventListener("dragstart", function(event) {
 			event.dataTransfer.setData("text/plain", event.target.id);
-			document.getElementById("card").classList.add("grid");
+			img.parentNode.parentNode.classList.add("grid");
 		});
 	}
 
@@ -447,13 +492,17 @@ Editor.prototype.clear=function(element, removeListeners=true) {
 };
 
 Editor.prototype.clearButtons=function() {
-	for (let element of document.getElementById("card").children) {
-		this.clear(element);
+	for (let card of document.getElementsByClassName("card")) {
+		for (let element of card.children) {
+			this.clear(element);
+		}
 	}
 
-	for (let y of this.card.keys()) {
-		for (let x of this.card[y].keys()) {
-			this.card[y][x]="";
+	for (let n of this.card.keys()) {
+		for (let y of this.card[n].keys()) {
+			for (let x of this.card[n][y].keys()) {
+				this.card[n][y][x]="";
+			}
 		}
 	}
 };
@@ -481,19 +530,23 @@ Editor.prototype.clearSearch=function(clearQuery=false) {
 	document.getElementById("results").classList.add("hidden");
 };
 
-Editor.prototype.getPosition=function(x, y) {
+Editor.prototype.getPosition=function(n, x, y) {
 	let dir=true;
 
+	n=Number.parseInt(n);
 	x=Number.parseInt(x);
 	y=Number.parseInt(y);
 
 	do {
-		if (this.card[y][x]=="") {
+		if (this.card[n][y][x]=="") {
 			return [x, y]; // available position found
 		}
 	} while (iterate());
 
-	return [null, null]; // no position found
+	// could not find position for button;
+	// theoretically should never happen since it would require a unit
+	// have more commands than positions available (i.e., more than 12)
+	return [-1, -1];
 
 	function iterate() {
 		if (dir) {
@@ -570,6 +623,12 @@ Editor.prototype.getConflicts=function(id) {
 		}
 	}
 
+	if (Object.keys(researchhotkeys).length>0) {
+		recordHotkey( // adds cancel button to hero select skills card
+			CANCEL, this.commands.get(CANCEL, "Hotkey"), researchhotkeys
+		);
+	}
+
 	return {hotkeys, researchhotkeys};
 
 	function recordHotkey(id, hotkey, keys) {
@@ -590,33 +649,37 @@ Editor.prototype.getConflicts=function(id) {
 };
 
 Editor.prototype.setVisibleHotkeys=function() {
-	for (let y of this.card.keys()) {
-		for (let x of this.card[y].keys()) {
-			let id=this.card[y][x];
+	for (let n of this.card.keys()) {
+		for (let y of this.card[n].keys()) {
+			for (let x of this.card[n][y].keys()) {
+				let id=this.card[n][y][x];
 
-			if (!this.commands.exists(id)) {
-				continue;
-			}
-
-			let span=document.getElementById("span_"+id);
-
-			let hotkey=this.commands.get(id, "Hotkey");
-			let researchhotkey=this.commands.get(id, "Researchhotkey");
-
-			// shows "Hotkey" if available, else shows "Researchhotkey"
-			// (for passives)
-			if (hotkey!="") {
-				if (hotkey=="512") {
-					span.textContent="Esc";
-				} else { // only show first letter (even if multi-tiered)
-					span.textContent=hotkey.slice(0, 1);
+				if (!this.commands.exists(id)) {
+					continue;
 				}
-			} else if (researchhotkey!="") {
-				span.textContent=researchhotkey.slice(0, 1);
-				span.classList.add("passive");
+
+				let span=document.getElementById("span"+n+"_"+id);
+
+				let hotkey=this.commands.get(id, "Hotkey");
+				let researchhotkey=this.commands.get(id, "Researchhotkey");
+
+				// shows "Hotkey" if available and standard card selected,
+				// else shows "Researchhotkey" (for passives or research card)
+				if (hotkey!=""&&(this.active==STANDARD||id==CANCEL)) {
+					if (hotkey=="512") {
+						span.textContent="Esc";
+					} else { // only show first letter (even if multi-tiered)
+						span.textContent=hotkey.slice(0, 1);
+					}
+				} else if (researchhotkey!="") {
+					span.textContent=researchhotkey.slice(0, 1);
+					span.classList.toggle("passive", hotkey=="");
+				}
 			}
 		}
 	}
+
+	const self=this;
 
 	// tracks conflicts outside of flag functions so conflicts can be detected
 	// in two-state commands and across different hotkey types,
@@ -631,9 +694,9 @@ Editor.prototype.setVisibleHotkeys=function() {
 		for (let values of Object.values(hotkeys)) {
 			for (let value of values) {
 				let conflict=values.size>1;
-				let span=document.getElementById("span_"+value);
+				let span=document.getElementById("span"+self.active+"_"+value);
 
-				if (!conflicts.includes(value)) {
+				if (span!=null&&!conflicts.includes(value)) {
 					span.classList.toggle("conflict", conflict);
 				}
 
@@ -671,42 +734,52 @@ Editor.prototype.drop=function(from, to, mod) {
 		return;
 	}
 
-	let pattern=/y(\d)x(\d)/;
+	let pattern=/n\dy(\d)x(\d)/;
 	let oldpos="", newpos="", oldunpos="", newunpos="";
 
-	// trims "img_" prefix
-	from=from.replace("img_", "");
+	// trims "img#_" prefix
+	from=from.replace(/img\d_/, "");
 	// special case for build buttons
 	from=this.convertBuildCommand(from);
 
 	// must also transfer "Unbuttonpos" for toggleable/two-state abilities
-	oldunpos=this.commands.get(from, "Unbuttonpos");
+	if (this.active==STANDARD) {
+		oldunpos=this.commands.get(from, "Unbuttonpos");
+	}
 
 	// checks if destination ID is div grid coord (for empty spot)
 	// or command (for button swap)
 	if (to.match(pattern)) {
 		newpos=to.replace(pattern, "$2,$1");
 	} else { // if destination is not empty, swap button positions
-		// trims "img_" prefix
-		to=to.replace("img_", "");
+		// trims "img#_" prefix
+		to=to.replace(/img\d_/, "");
 		// special case for build buttons
 		to=this.convertBuildCommand(to);
 
-		newpos=this.commands.get(to, "Buttonpos");
+		if (this.active==STANDARD||to==CANCEL) {
+			newpos=this.commands.get(to, "Buttonpos");
+		} else {
+			newpos=this.commands.get(to, "Researchbuttonpos");
+		}
 
 		// modifier key held during drop overrides swap behavior and allows
 		// position conflict
 		if (!mod) {
-			newunpos=this.commands.get(to, "Unbuttonpos");
-			oldpos=this.commands.get(from, "Buttonpos");
+			if (this.active==STANDARD||from==CANCEL) {
+				newunpos=this.commands.get(to, "Unbuttonpos");
+				oldpos=this.commands.get(from, "Buttonpos");
+			} else {
+				oldpos=this.commands.get(from, "Researchbuttonpos");
+			}
 
 			// uses location of button in card if available, otherwise uses
 			// stored value (so drag-and-drop operations try to match how the
 			// button positions are displayed over how they are stored, which
 			// is more consistent with user expectations)
-			for (let y of this.card.keys()) {
-				for (let x of this.card[y].keys()){
-					if (from==this.card[y][x]) {
+			for (let y of this.card[this.active].keys()) {
+				for (let x of this.card[this.active][y].keys()){
+					if (from==this.card[this.active][y][x]) {
 						oldpos=x+DELIMITER+y;
 
 						if (oldunpos!="") {
@@ -714,7 +787,7 @@ Editor.prototype.drop=function(from, to, mod) {
 						}
 					}
 
-					if (to==this.card[y][x]) {
+					if (to==this.card[this.active][y][x]) {
 						newpos=x+DELIMITER+y;
 
 						if (newunpos!="") {
@@ -730,18 +803,26 @@ Editor.prototype.drop=function(from, to, mod) {
 				oldpos="";
 			}
 
-			this.commands.set(to, "Buttonpos", oldpos);
+			if (this.active==STANDARD||to==CANCEL) {
+				this.commands.set(to, "Buttonpos", oldpos);
 
-			if (newunpos!="") {
-				this.commands.set(to, "Unbuttonpos", oldpos);
+				if (newunpos!="") {
+					this.commands.set(to, "Unbuttonpos", oldpos);
+				}
+			} else {
+				this.commands.set(to, "Researchbuttonpos", oldpos);
 			}
 		}
 	}
 
-	this.commands.set(from, "Buttonpos", newpos);
+	if (this.active==STANDARD||from==CANCEL) {
+		this.commands.set(from, "Buttonpos", newpos);
 
-	if (oldunpos!="") {
-		this.commands.set(from, "Unbuttonpos", newpos);
+		if (oldunpos!="") {
+			this.commands.set(from, "Unbuttonpos", newpos);
+		}
+	} else {
+		this.commands.set(from, "Researchbuttonpos", newpos);
 	}
 
 	this.clearButtons();
@@ -772,9 +853,20 @@ Editor.prototype.commandEditor=function() {
 	this.formatHotkey("Unhotkey", unhotkey);
 	this.formatHotkey("Researchhotkey", researchhotkey);
 
-	// automatically selects first hotkey field
 	if (hotkey||researchhotkey) {
-		let id=hotkey?"Hotkey":"Researchhotkey";
+		// automatically selects first hotkey field
+		let id="Hotkey";
+
+		if (this.active==STANDARD) {
+			if (hotkey=="") { // passive abilities
+				id="Researchhotkey";
+			}
+		} else {
+			if (researchhotkey!="") { // research card except cancel button
+				id="Researchhotkey";
+			}
+		}
+
 		document.getElementById(id).getElementsByTagName("input")[0].select();
 	}
 
@@ -867,7 +959,7 @@ Editor.prototype.editTip=function(key) {
 
 	let tips=tip.split("<br>").map(function(tip) {
 		// quotes strings containing a comma
-		return tip.match(DELIMITER)?"\""+tip+"\"":tip;
+		return tip.match(DELIMITER)?'"'+tip+'"':tip;
 	});
 
 	tip=tips.join(DELIMITER);
@@ -952,7 +1044,7 @@ Editor.prototype.autoSetTip=function(key, fields) {
 		}
 
 		if (tip.match(DELIMITER)) { // quotes strings containing a comma
-			tip="\""+tip+"\"";
+			tip='"'+tip+'"';
 		}
 
 		return tip;
@@ -1001,12 +1093,12 @@ Editor.prototype.formatHotkey=function(type, hotkey) {
 	p.appendChild(label);
 
 	// appends "Set to Esc" button for cancel buttons
-	if (this.command.startsWith("cmdcancel")) {
+	if (this.command.startsWith(CANCEL)) {
 		let button=document.createElement("button");
 		button.setAttribute("type", "button");
 		button.addEventListener("click", function() {
-			this.setHotkey(key, "512");
-			this.formatHotkey(key, "512");
+			this.setHotkey(type, "512");
+			this.formatHotkey(type, "512");
 			this.setVisibleHotkeys();
 			this.checkAllConflicts();
 		}.bind(this));
@@ -1052,7 +1144,7 @@ Editor.prototype.setHotkey=function(key, hotkey="") {
 	}
 
 	let inputs=document.getElementById(key).getElementsByTagName("input");
-	let fields=[], input=null;
+	let fields=[];
 
 	for (let element of inputs) {
 		if (hotkey!="") {
@@ -1410,8 +1502,8 @@ function Files(id) {
 }
 
 Files.prototype.getList=function() {
+	const self=this;
 	let xhr=new XMLHttpRequest();
-	let self=this;
 
 	xhr.addEventListener("readystatechange", function() {
 		if (this.readyState==4&&this.status==200) {
