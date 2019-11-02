@@ -19,6 +19,7 @@ const ICONS_EXT=".png";
 const HOTKEY_DIR="hotkeys/";
 const DIR_LIST="hotkeys/index.json";
 const HELP_PAGE="help.html";
+const MIME_TYPE="text/plain";
 const STORAGE_NAME="wc3hk";
 
 // delimiter for multi-level tips, multi-tier hotkeys, and button positions
@@ -27,14 +28,11 @@ const DELIMITER=",";
 const PATTERN=/,(?=(?:[^"]|"[^"]*")*$)/;
 
 // objects
-const store=new Storage(STORAGE_NAME);
 const files=new Files("files");
 const overlays={
 	load: new Overlay("load"),
 	save: new Overlay("save")
 };
-const commands=new Commands();
-const editor=new Editor();
 
 /*
  * initialization
@@ -46,6 +44,10 @@ window.addEventListener("load", function() {
 });
 
 function init(text) {
+	const store=new Storage(STORAGE_NAME);
+	const commands=new Commands();
+	const editor=new Editor(commands);
+
 	commands.parse(text);
 
 	let mem=store.load();
@@ -83,7 +85,7 @@ function init(text) {
 		document.execCommand("copy");
 	});
 	document.getElementById("download").addEventListener("click", function() {
-		let contents=new Blob([overlays.save.getText()], {type: "text/plain"});
+		let contents=new Blob([overlays.save.getText()], {type: MIME_TYPE});
 
 		let a=document.getElementById("link");
 		a.download=DEFAULT_SAVE_NAME;
@@ -158,25 +160,19 @@ function init(text) {
 	});
 	disableAutocomplete(query);
 
-	let filters=document.getElementsByClassName("filter");
-
-	for (let element of filters) {
+	for (let element of document.getElementsByClassName("filter")) {
 		element.addEventListener("click", function() {
 			editor.filter(this.id);
 		});
 	}
 
-	let close=document.getElementsByClassName("close");
-
-	for (let element of close) {
+	for (let element of document.getElementsByClassName("close")) {
 		element.addEventListener("click", function() {
 			overlays[this.value].hide();
 		});
 	}
 
-	let tips=document.getElementsByClassName("tip");
-
-	for (let element of tips) {
+	for (let element of document.getElementsByClassName("tip")) {
 		element.addEventListener("focus", function() {
 			editor.focusTip(this.id);
 		});
@@ -206,7 +202,8 @@ function init(text) {
  * Editor prototype
  */
 
-function Editor() {
+function Editor(commands) {
+	this.commands=commands;
 	this.unit="";
 	this.command="";
 	this.name="";
@@ -286,20 +283,18 @@ Editor.prototype.unitEditor=function() {
 	h3.textContent="";
 	h3.classList.add("hidden");
 
-	let buttons=this.getCommands(unit);
-
-	for (let [id, button] of Object.entries(buttons)) {
+	for (let [id, button] of Object.entries(this.getCommands(unit))) {
 		// special exception for build buttons, whose hotkeys and tooltips are
 		// under cmdbuild* but whose buttonpos are under a?bu
 		let idpos=this.convertBuildCommand(id);
 
-		if (!commands.exists(idpos)) {
+		if (!this.commands.exists(idpos)) {
 			console.error(`Undefined: ${idpos} (command)`);
 			continue;
 		}
 
 		let conflict=false, x=0, y=0;
-		let buttonpos=commands.get(idpos, "Buttonpos");
+		let buttonpos=this.commands.get(idpos, "Buttonpos");
 
 		if (buttonpos) {
 			let pos=buttonpos.split(DELIMITER);
@@ -452,9 +447,7 @@ Editor.prototype.clear=function(element, removeListeners=true) {
 };
 
 Editor.prototype.clearButtons=function() {
-	let children=document.getElementById("card").children;
-
-	for (let element of children) {
+	for (let element of document.getElementById("card").children) {
 		this.clear(element);
 	}
 
@@ -466,9 +459,7 @@ Editor.prototype.clearButtons=function() {
 };
 
 Editor.prototype.clearFields=function() {
-	let children=document.getElementById("fields").children;
-
-	for (let element of children) {
+	for (let element of document.getElementById("fields").children) {
 		// removes event listeners for hotkey inputs (which are removed and
 		// recreated) but not tips (which are persistent)
 		this.clear(element, !element.classList.contains("tip"));
@@ -560,16 +551,14 @@ Editor.prototype.getConflicts=function(id) {
 		return;
 	}
 
-	let buttons=this.getCommands(unit);
-
-	for (let id of Object.keys(buttons)) {
-		if (!commands.exists(id)) {
+	for (let id of Object.keys(this.getCommands(unit))) {
+		if (!this.commands.exists(id)) {
 			continue;
 		}
 
-		let hotkey=commands.get(id, "Hotkey");
-		let unhotkey=commands.get(id, "Unhotkey");
-		let researchhotkey=commands.get(id, "Researchhotkey");
+		let hotkey=this.commands.get(id, "Hotkey");
+		let unhotkey=this.commands.get(id, "Unhotkey");
+		let researchhotkey=this.commands.get(id, "Researchhotkey");
 
 		// tracks research hotkeys separately
 		recordHotkey(id, hotkey, hotkeys);
@@ -584,20 +573,18 @@ Editor.prototype.getConflicts=function(id) {
 	return {hotkeys, researchhotkeys};
 
 	function recordHotkey(id, hotkey, keys) {
-		let hotkeys=hotkey.split(DELIMITER);
-
-		for (let hotkey of hotkeys) {
-			if (hotkey=="") {
+		for (let key of hotkey.split(DELIMITER)) {
+			if (key=="") {
 				continue;
 			}
 
-			if (keys[hotkey]==undefined) {
+			if (keys[key]==undefined) {
 				// using set to prevent duplicates so a hotkey cannot conflict
 				// with itself
-				keys[hotkey]=new Set();
+				keys[key]=new Set();
 			}
 
-			keys[hotkey].add(id);
+			keys[key].add(id);
 		}
 	}
 };
@@ -607,14 +594,14 @@ Editor.prototype.setVisibleHotkeys=function() {
 		for (let x of this.card[y].keys()) {
 			let id=this.card[y][x];
 
-			if (!commands.exists(id)) {
+			if (!this.commands.exists(id)) {
 				continue;
 			}
 
 			let span=document.getElementById("span_"+id);
 
-			let hotkey=commands.get(id, "Hotkey");
-			let researchhotkey=commands.get(id, "Researchhotkey");
+			let hotkey=this.commands.get(id, "Hotkey");
+			let researchhotkey=this.commands.get(id, "Researchhotkey");
 
 			// shows "Hotkey" if available, else shows "Researchhotkey"
 			// (for passives)
@@ -659,9 +646,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 };
 
 Editor.prototype.checkConflicts=function(unit) {
-	let keys=this.getConflicts(unit);
-
-	for (let hotkeys of Object.values(keys)) {
+	for (let hotkeys of Object.values(this.getConflicts(unit))) {
 		for (let values of Object.values(hotkeys)) {
 			if (values.size>1) {
 				return true;
@@ -673,12 +658,8 @@ Editor.prototype.checkConflicts=function(unit) {
 };
 
 Editor.prototype.checkAllConflicts=function() {
-	let sections=document.getElementsByTagName("section");
-
-	for (let section of sections) {
-		let links=section.getElementsByTagName("a");
-
-		for (let link of links) {
+	for (let section of document.getElementsByTagName("section")) {
+		for (let link of section.getElementsByTagName("a")) {
 			let unit=link.hash.replace("#", "");
 			link.classList.toggle("conflict", this.checkConflicts(unit));
 		}
@@ -699,7 +680,7 @@ Editor.prototype.drop=function(from, to, mod) {
 	from=this.convertBuildCommand(from);
 
 	// must also transfer "Unbuttonpos" for toggleable/two-state abilities
-	oldunpos=commands.get(from, "Unbuttonpos");
+	oldunpos=this.commands.get(from, "Unbuttonpos");
 
 	// checks if destination ID is div grid coord (for empty spot)
 	// or command (for button swap)
@@ -711,13 +692,13 @@ Editor.prototype.drop=function(from, to, mod) {
 		// special case for build buttons
 		to=this.convertBuildCommand(to);
 
-		newpos=commands.get(to, "Buttonpos");
+		newpos=this.commands.get(to, "Buttonpos");
 
 		// modifier key held during drop overrides swap behavior and allows
 		// position conflict
 		if (!mod) {
-			newunpos=commands.get(to, "Unbuttonpos");
-			oldpos=commands.get(from, "Buttonpos");
+			newunpos=this.commands.get(to, "Unbuttonpos");
+			oldpos=this.commands.get(from, "Buttonpos");
 
 			// uses location of button in card if available, otherwise uses
 			// stored value (so drag-and-drop operations try to match how the
@@ -749,18 +730,18 @@ Editor.prototype.drop=function(from, to, mod) {
 				oldpos="";
 			}
 
-			commands.set(to, "Buttonpos", oldpos);
+			this.commands.set(to, "Buttonpos", oldpos);
 
 			if (newunpos!="") {
-				commands.set(to, "Unbuttonpos", oldpos);
+				this.commands.set(to, "Unbuttonpos", oldpos);
 			}
 		}
 	}
 
-	commands.set(from, "Buttonpos", newpos);
+	this.commands.set(from, "Buttonpos", newpos);
 
 	if (oldunpos!="") {
-		commands.set(from, "Unbuttonpos", newpos);
+		this.commands.set(from, "Unbuttonpos", newpos);
 	}
 
 	this.clearButtons();
@@ -768,18 +749,18 @@ Editor.prototype.drop=function(from, to, mod) {
 };
 
 Editor.prototype.commandEditor=function() {
-	if (!commands.exists(this.command)) {
+	if (!this.commands.exists(this.command)) {
 		return;
 	}
 
-	let tip=commands.get(this.command, "Tip");
-	let hotkey=commands.get(this.command, "Hotkey");
-	let untip=commands.get(this.command, "Untip");
-	let unhotkey=commands.get(this.command, "Unhotkey");
-	let researchtip=commands.get(this.command, "Researchtip");
-	let researchhotkey=commands.get(this.command, "Researchhotkey");
-	let revivetip=commands.get(this.command, "Revivetip");
-	let awakentip=commands.get(this.command, "Awakentip");
+	let tip=this.commands.get(this.command, "Tip");
+	let hotkey=this.commands.get(this.command, "Hotkey");
+	let untip=this.commands.get(this.command, "Untip");
+	let unhotkey=this.commands.get(this.command, "Unhotkey");
+	let researchtip=this.commands.get(this.command, "Researchtip");
+	let researchhotkey=this.commands.get(this.command, "Researchhotkey");
+	let revivetip=this.commands.get(this.command, "Revivetip");
+	let awakentip=this.commands.get(this.command, "Awakentip");
 
 	this.formatTip("Tip", tip);
 	this.formatTip("Untip", untip);
@@ -896,7 +877,7 @@ Editor.prototype.editTip=function(key) {
 	}
 
 	this.formatTip(key, tip);
-	commands.set(this.command, key, tip);
+	this.commands.set(this.command, key, tip);
 };
 
 Editor.prototype.autoSetTip=function(key, fields) {
@@ -909,12 +890,12 @@ Editor.prototype.autoSetTip=function(key, fields) {
 		key="Researchtip";
 	}
 
-	if (!commands.exists(this.command, key)) {
+	if (!this.commands.exists(this.command, key)) {
 		return;
 	}
 
 	// splits string by comma unless comma is within quotes
-	let tips=commands.get(this.command, key).split(PATTERN);
+	let tips=this.commands.get(this.command, key).split(PATTERN);
 
 	// handles patterns with hotkey at start (common with many user files)
 	// or at end (Blizzard's convention), depending on user preference
@@ -979,18 +960,18 @@ Editor.prototype.autoSetTip=function(key, fields) {
 
 	let tip=tips.join(DELIMITER);
 
-	commands.set(this.command, key, tip);
+	this.commands.set(this.command, key, tip);
 	this.formatTip(key, tip);
 };
 
-Editor.prototype.formatHotkey=function(key, hotkey) {
+Editor.prototype.formatHotkey=function(type, hotkey) {
 	let p=document.createElement("p");
-	p.id=key;
+	p.id=type;
 	p.classList.add("hotkey");
 
 	if (hotkey=="") { // hides field if empty
-		document.getElementById(key).replaceWith(p);
-		document.getElementById(key).classList.add("hidden");
+		document.getElementById(type).replaceWith(p);
+		document.getElementById(type).classList.add("hidden");
 		return;
 	}
 
@@ -999,21 +980,19 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 	}
 
 	let label=document.createElement("label");
-	label.textContent=key+": ";
+	label.textContent=type+": ";
 
 	// handles multi-tier hotkeys (e.g., weapon/armor upgrades)
-	let hotkeys=hotkey.split(DELIMITER);
-
-	for (let hotkey of hotkeys) {
+	for (let key of hotkey.split(DELIMITER)) {
 		let input=document.createElement("input");
 		input.setAttribute("type", "text");
-		input.setAttribute("value", hotkey);
+		input.setAttribute("value", key);
 		input.addEventListener("click", function(event) {
 			event.preventDefault(); // prevents click from activating label
 			this.select();
 		});
 		input.addEventListener("input", function() {
-			this.editHotkey(input, key);
+			this.editHotkey(input, type);
 		}.bind(this));
 
 		label.appendChild(input);
@@ -1035,8 +1014,8 @@ Editor.prototype.formatHotkey=function(key, hotkey) {
 		p.appendChild(button);
 	}
 
-	document.getElementById(key).classList.remove("hidden");
-	document.getElementById(key).replaceWith(p);
+	document.getElementById(type).classList.remove("hidden");
+	document.getElementById(type).replaceWith(p);
 };
 
 Editor.prototype.editHotkey=function(input, key) {
@@ -1068,7 +1047,7 @@ Editor.prototype.editHotkey=function(input, key) {
 };
 
 Editor.prototype.setHotkey=function(key, hotkey="") {
-	if (!commands.exists(this.command, key)) {
+	if (!this.commands.exists(this.command, key)) {
 		return;
 	}
 
@@ -1087,7 +1066,7 @@ Editor.prototype.setHotkey=function(key, hotkey="") {
 		}
 	}
 
-	commands.set(this.command, key, fields.join(DELIMITER).toUpperCase());
+	this.commands.set(this.command, key, fields.join(DELIMITER).toUpperCase());
 
 	if (document.getElementById("tooltips").checked) {
 		this.autoSetTip(key, fields);
@@ -1097,7 +1076,7 @@ Editor.prototype.setHotkey=function(key, hotkey="") {
 };
 
 Editor.prototype.resetDefaults=function() {
-	commands.clear(this.command);
+	this.commands.clear(this.command);
 
 	this.clearButtons();
 	this.clearFields();
@@ -1116,10 +1095,8 @@ Editor.prototype.filter=function(race) {
 		race="nightelf";
 	}
 
-	let sections=document.getElementsByTagName("section");
-
 	// hides unit lists for races other than selected
-	for (let element of sections) {
+	for (let element of document.getElementsByTagName("section")) {
 		element.classList.toggle("hidden", element.id!="units_"+race);
 	}
 };
