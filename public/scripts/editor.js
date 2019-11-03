@@ -123,8 +123,6 @@ function init(text) {
 			reader.readAsText(file);
 		}
 	});
-	disableAutocomplete(document.getElementById("text_load"));
-	disableAutocomplete(document.getElementById("text_save"));
 
 	window.addEventListener("beforeunload", function() {
 		// saves on close
@@ -164,17 +162,14 @@ function init(text) {
 			editor.highlightResult(false);
 		}
 	});
+
+	disableAutocomplete(document.getElementById("text_load"));
+	disableAutocomplete(document.getElementById("text_save"));
 	disableAutocomplete(query);
 
 	for (let element of document.getElementsByClassName("filter")) {
 		element.addEventListener("click", function() {
 			editor.filter(this.id);
-		});
-	}
-
-	for (let element of document.getElementsByClassName("tab")) {
-		element.addEventListener("click", function() {
-			editor.selectCard(Number.parseInt(this.value));
 		});
 	}
 
@@ -298,7 +293,8 @@ Editor.prototype.unitEditor=function() {
 	h3.textContent="";
 	h3.classList.add("hidden");
 
-	document.getElementById("tabs").classList.toggle("hidden", unit.type!=HERO);
+	let research=document.getElementById("card"+RESEARCH);
+	research.classList.toggle("hidden", unit.type!=HERO);
 
 	const self=this;
 
@@ -316,10 +312,10 @@ Editor.prototype.unitEditor=function() {
 		let researchbuttonpos=this.commands.get(idpos, "Researchbuttonpos");
 
 		if (buttonpos!="") {
-			placeButton(id, name, STANDARD, buttonpos);
+			placeButton(STANDARD, id, name, buttonpos);
 
 			if (researchbuttonpos) {
-				placeButton(id, name, RESEARCH, researchbuttonpos);
+				placeButton(RESEARCH, id, name, researchbuttonpos);
 			}
 		} else {
 			console.error(`Undefined: ${idpos} (buttonpos)`);
@@ -332,13 +328,8 @@ Editor.prototype.unitEditor=function() {
 	}
 
 	if (unit.type==HERO) { // adds cancel button to hero select skills card
-		placeButton(
-			CANCEL, "Cancel", RESEARCH, this.commands.get(CANCEL, "Buttonpos")
-		);
-
-		this.selectCard(this.active);
-	} else { // always selects standard command card for non-hero units
-		this.selectCard(STANDARD);
+		let buttonpos=this.commands.get(CANCEL, "Buttonpos");
+		placeButton(RESEARCH, CANCEL, "Cancel", buttonpos);
 	}
 
 	for (let card of document.getElementsByClassName("card")) {
@@ -367,9 +358,9 @@ Editor.prototype.unitEditor=function() {
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 
-	function placeButton(id, name, n, buttonpos) {
+	function placeButton(n, id, name, buttonpos) {
 		let pos=buttonpos.split(DELIMITER);
-		let [x, y]=self.getPosition(n, pos[0], pos[1]);
+		let [y, x]=self.getPosition(n, pos[1], pos[0]);
 		let conflict=pos[0]!=x||pos[1]!=y;
 
 		if (x<0||y<0) {
@@ -409,20 +400,6 @@ Editor.prototype.getCommands=function(unit) {
 	return buttons;
 };
 
-Editor.prototype.selectCard=function(n) {
-	this.active=n;
-
-	for (let card of document.getElementsByClassName("card")) {
-		card.classList.toggle("hidden", card.id!="card"+n);
-	}
-
-	for (let tab of document.getElementsByClassName("tab")) {
-		tab.classList.toggle("active", tab.value==n);
-	}
-
-	this.setVisibleHotkeys();
-};
-
 Editor.prototype.convertBuildCommand=function(id) {
 	if (id=="cmdbuildhuman") {
 		return "ahbu";
@@ -455,6 +432,7 @@ Editor.prototype.createButton=function(id, name, n) {
 	img.setAttribute("alt", "["+name+"]");
 	img.setAttribute("title", name);
 	img.addEventListener("click", function() {
+		this.active=n;
 		this.setCommand(id, name);
 	}.bind(this));
 	div.appendChild(img);
@@ -468,9 +446,11 @@ Editor.prototype.createButton=function(id, name, n) {
 
 		img.setAttribute("draggable", "true");
 		img.addEventListener("dragstart", function(event) {
+			this.active=n;
+
 			event.dataTransfer.setData("text/plain", event.target.id);
-			img.parentNode.parentNode.classList.add("grid");
-		});
+			document.getElementById("card"+n).classList.add("grid");
+		}.bind(this));
 	}
 
 	return div;
@@ -530,7 +510,7 @@ Editor.prototype.clearSearch=function(clearQuery=false) {
 	document.getElementById("results").classList.add("hidden");
 };
 
-Editor.prototype.getPosition=function(n, x, y) {
+Editor.prototype.getPosition=function(n, y, x) {
 	let dir=true;
 
 	n=Number.parseInt(n);
@@ -539,7 +519,7 @@ Editor.prototype.getPosition=function(n, x, y) {
 
 	do {
 		if (this.card[n][y][x]=="") {
-			return [x, y]; // available position found
+			return [y, x]; // available position found
 		}
 	} while (iterate());
 
@@ -623,10 +603,11 @@ Editor.prototype.getConflicts=function(id) {
 		}
 	}
 
+	// adds cancel button to hero select skills card for the purpose of
+	// identifying conflicts with it
 	if (Object.keys(researchhotkeys).length>0) {
-		recordHotkey( // adds cancel button to hero select skills card
-			CANCEL, this.commands.get(CANCEL, "Hotkey"), researchhotkeys
-		);
+		let hotkey=this.commands.get(CANCEL, "Hotkey");
+		recordHotkey(CANCEL, hotkey, researchhotkeys);
 	}
 
 	return {hotkeys, researchhotkeys};
@@ -665,7 +646,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 
 				// shows "Hotkey" if available and standard card selected,
 				// else shows "Researchhotkey" (for passives or research card)
-				if (hotkey!=""&&(this.active==STANDARD||id==CANCEL)) {
+				if (hotkey!=""&&(n==STANDARD||id==CANCEL)) {
 					if (hotkey=="512") {
 						span.textContent="Esc";
 					} else { // only show first letter (even if multi-tiered)
@@ -687,14 +668,14 @@ Editor.prototype.setVisibleHotkeys=function() {
 	let conflicts=[];
 
 	let keys=this.getConflicts(this.unit);
-	flagHotkeys(keys.hotkeys);
-	flagHotkeys(keys.researchhotkeys);
+	flagHotkeys(STANDARD, keys.hotkeys);
+	flagHotkeys(RESEARCH, keys.researchhotkeys);
 
-	function flagHotkeys(hotkeys) {
+	function flagHotkeys(n, hotkeys) {
 		for (let values of Object.values(hotkeys)) {
 			for (let value of values) {
 				let conflict=values.size>1;
-				let span=document.getElementById("span"+self.active+"_"+value);
+				let span=document.getElementById("span"+n+"_"+value);
 
 				if (span!=null&&!conflicts.includes(value)) {
 					span.classList.toggle("conflict", conflict);

@@ -122,12 +122,6 @@ button#help {
 	width: 2em;
 }
 
-button.tab {
-	border-radius: 0.5em 0.5em 0 0;
-	border-width: 2px;
-	margin: 0 0.25em 0 0;
-}
-
 cite {
 	font-style: normal;
 	font-variant: small-caps;
@@ -157,7 +151,8 @@ div#buttons {
 
 div#cards {
 	clear: left;
-	margin: 0 auto;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 div#editor {
@@ -657,10 +652,6 @@ ul#results li.selected {
 	color: inherit;
 }
 
-ul#tabs {
-	display: flex;
-}
-
 ul.bloodelf {
 	background: none;
 	color: #ff4020;
@@ -706,7 +697,7 @@ ul.undead {
 	color: #a060a0;
 }
 
-@media (max-height: 1080px), (orientation: portrait) {
+@media (max-width: 1600px), (max-height: 1080px), (orientation: portrait) {
 	div#editor {
 		bottom: 7em;
 		right: 3em;
@@ -756,7 +747,7 @@ ul.undead {
 	}
 }
 
-@media (max-height: 900px) {
+@media (max-width: 1366px), (max-height: 900px) {
 	button {
 		font-size: 1.25rem;
 	}
