@@ -14,8 +14,8 @@ const OTHER=0;
 const UNIT=1;
 const HERO=2;
 const NO_ATTACK=3;
-const BUILDING=4;
-const SUMMON=5;
+const SUMMON=4;
+const BUILDING=5;
 const TOWER=6;
 const ITEM=7;
 
@@ -97,7 +97,8 @@ const units={
 			amil: "Call to Arms",
 			cmdbuildhuman: "Build Structure",
 			cmdcancelbuild: "Cancel"
-		}
+		},
+		build: "cmdbuildhuman"
 	},
 	cmdbuildhuman: {
 		name: "Build Structure",
@@ -705,19 +706,6 @@ const units={
 			cmdcancelbuild: "Cancel"
 		}
 	},
-	cmdbuildbloodelf: {
-		name: "Build Structure",
-		race: BLOOD_ELF,
-		type: OTHER,
-		commands: {
-			net1: "Build Energy Tower",
-			nbt1: "Build Boulder Tower",
-			nft1: "Build Flame Tower",
-			ndt1: "Build Cold Tower",
-			ntt1: "Build Death Tower",
-			cmdcancel: "Cancel"
-		}
-	},
 	hhes: {
 		name: "Swordsman",
 		race: BLOOD_ELF,
@@ -751,6 +739,20 @@ const units={
 			ahrp: "Repair",
 			cmdbuildhuman: "Build Structure",
 			cmdcancelbuild: "Cancel"
+		},
+		build: "cmdbuildbloodelf"
+	},
+	cmdbuildbloodelf: {
+		name: "Build Structure",
+		race: BLOOD_ELF,
+		type: OTHER,
+		commands: {
+			net1: "Build Energy Tower",
+			nbt1: "Build Boulder Tower",
+			nft1: "Build Flame Tower",
+			ndt1: "Build Cold Tower",
+			ntt1: "Build Death Tower",
+			cmdcancel: "Cancel"
 		}
 	},
 	nbel: {
@@ -857,7 +859,8 @@ const units={
 			asal: "Pillage",
 			cmdbuildorc: "Build Structure",
 			cmdcancelbuild: "Cancel"
-		}
+		},
+		build: "cmdbuildorc"
 	},
 	cmdbuildorc: {
 		name: "Build Structure",
@@ -1482,7 +1485,8 @@ const units={
 			ahar: "Gather",
 			cmdbuildorc: "Build Structure",
 			cmdcancelbuild: "Cancel"
-		}
+		},
+		build: "cmdbuilddraenei"
 	},
 	cmdbuilddraenei: {
 		name: "Build Structure",
@@ -1652,7 +1656,8 @@ const units={
 			alam: "Sacrifice",
 			auns: "Unsummon Building",
 			cmdbuildundead: "Summon Building"
-		}
+		},
+		build: "cmdbuildundead"
 	},
 	cmdbuildundead: {
 		name: "Summon Building",
@@ -2260,7 +2265,8 @@ const units={
 			awha: "Gather",
 			cmdbuildnightelf: "Create Building",
 			cmdcancelbuild: "Cancel"
-		}
+		},
+		build: "cmdbuildnightelf"
 	},
 	cmdbuildnightelf: {
 		name: "Create Building",
@@ -2817,7 +2823,8 @@ const units={
 			arep: "Repair",
 			cmdbuildnaga: "Build Structure",
 			cmdcancelbuild: "Cancel"
-		}
+		},
+		build: "cmdbuildnaga"
 	},
 	cmdbuildnaga: {
 		name: "Build Structure",

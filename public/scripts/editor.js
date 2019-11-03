@@ -4,8 +4,8 @@
  * constants
  */
 
-// dimensions of command card
-const CARDS=2;
+// dimensions of command cards
+const CARDS=3;
 const ROWS=3;
 const COLS=4;
 
@@ -29,7 +29,7 @@ const DELIMITER=",";
 const PATTERN=/,(?=(?:[^"]|"[^"]*")*$)/;
 
 // command cards
-const STANDARD=0, RESEARCH=1;
+const STANDARD=0, RESEARCH=1, BUILD=2;
 // commands
 const CANCEL="cmdcancel";
 
@@ -293,43 +293,25 @@ Editor.prototype.unitEditor=function() {
 	h3.textContent="";
 	h3.classList.add("hidden");
 
-	let research=document.getElementById("card"+RESEARCH);
-	research.classList.toggle("hidden", unit.type!=HERO);
-
 	const self=this;
 
-	for (let [id, name] of Object.entries(this.getCommands(unit))) {
-		// special exception for build buttons, whose hotkeys and tooltips are
-		// under cmdbuild* but whose buttonpos are under a?bu
-		let idpos=this.convertBuildCommand(id);
+	createCommandCard(STANDARD, unit);
 
-		if (!this.commands.exists(idpos)) {
-			console.error(`Undefined: ${idpos} (command)`);
-			continue;
-		}
-
-		let buttonpos=this.commands.get(idpos, "Buttonpos");
-		let researchbuttonpos=this.commands.get(idpos, "Researchbuttonpos");
-
-		if (buttonpos!="") {
-			placeButton(STANDARD, id, name, buttonpos);
-
-			if (researchbuttonpos) {
-				placeButton(RESEARCH, id, name, researchbuttonpos);
-			}
-		} else {
-			console.error(`Undefined: ${idpos} (buttonpos)`);
-		}
-
-		// re-selects command if selected on previously viewed unit
-		if (this.command==id) {
-			this.setCommand(id, name);
-		}
-	}
+	// shows research card for heroes
+	let research=document.getElementById("card"+RESEARCH);
+	research.classList.toggle("hidden", unit.type!=HERO);
 
 	if (unit.type==HERO) { // adds cancel button to hero select skills card
 		let buttonpos=this.commands.get(CANCEL, "Buttonpos");
 		placeButton(RESEARCH, CANCEL, "Cancel", buttonpos);
+	}
+
+	// shows build card for workers
+	let build=document.getElementById("card"+BUILD);
+	build.classList.toggle("hidden", unit.build==null);
+
+	if (unit.build!=null&&units[unit.build]!=null) {
+		createCommandCard(BUILD, units[unit.build]);
 	}
 
 	for (let card of document.getElementsByClassName("card")) {
@@ -357,6 +339,37 @@ Editor.prototype.unitEditor=function() {
 
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
+
+	function createCommandCard(n, unit) {
+		for (let [id, name] of Object.entries(self.getCommands(unit))) {
+			// special exception for build buttons, whose hotkeys and tooltips
+			// are under cmdbuild* but whose buttonpos are under a?bu
+			let idpos=self.convertBuildCommand(id);
+
+			if (!self.commands.exists(idpos)) {
+				console.error(`Undefined: ${idpos} (command)`);
+				continue;
+			}
+
+			let buttonpos=self.commands.get(idpos, "Buttonpos");
+			let researchbuttonpos=self.commands.get(idpos, "Researchbuttonpos");
+
+			if (buttonpos!="") {
+				placeButton(n, id, name, buttonpos);
+
+				if (researchbuttonpos) {
+					placeButton(RESEARCH, id, name, researchbuttonpos);
+				}
+			} else {
+				console.error(`Undefined: ${idpos} (buttonpos)`);
+			}
+
+			// re-selects command if selected on previously viewed unit
+			if (self.command==id) {
+				self.setCommand(id, name);
+			}
+		}
+	}
 
 	function placeButton(n, id, name, buttonpos) {
 		let pos=buttonpos.split(DELIMITER);
@@ -489,12 +502,12 @@ Editor.prototype.clearButtons=function() {
 
 Editor.prototype.clearFields=function() {
 	for (let element of document.getElementById("fields").children) {
+		// hides element so it does not remain editable
+		element.classList.add("hidden");
+
 		// removes event listeners for hotkey inputs (which are removed and
 		// recreated) but not tips (which are persistent)
 		this.clear(element, !element.classList.contains("tip"));
-
-		// also hides element so it does not remain editable
-		element.classList.add("hidden");
 	}
 
 	this.clear(document.getElementById("default"));
@@ -646,7 +659,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 
 				// shows "Hotkey" if available and standard card selected,
 				// else shows "Researchhotkey" (for passives or research card)
-				if (hotkey!=""&&(n==STANDARD||id==CANCEL)) {
+				if (hotkey!=""&&(n!=RESEARCH||id==CANCEL)) {
 					if (hotkey=="512") {
 						span.textContent="Esc";
 					} else { // only show first letter (even if multi-tiered)
@@ -665,11 +678,17 @@ Editor.prototype.setVisibleHotkeys=function() {
 	// tracks conflicts outside of flag functions so conflicts can be detected
 	// in two-state commands and across different hotkey types,
 	// else class will be toggled an unpredictable amount
-	let conflicts=[];
+	let conflicts=[], keys=null;
 
-	let keys=this.getConflicts(this.unit);
+	keys=this.getConflicts(this.unit);
 	flagHotkeys(STANDARD, keys.hotkeys);
 	flagHotkeys(RESEARCH, keys.researchhotkeys);
+
+	// handles build card for workers
+	if (units[this.unit]!=null&&units[this.unit].build!=null) {
+		keys=this.getConflicts(units[this.unit].build);
+		flagHotkeys(BUILD, keys.hotkeys);
+	}
 
 	function flagHotkeys(n, hotkeys) {
 		for (let values of Object.values(hotkeys)) {
@@ -698,6 +717,10 @@ Editor.prototype.checkConflicts=function(unit) {
 		}
 	}
 
+	if (units[unit]!=null&&units[unit].build!=null) {
+		return this.checkConflicts(units[unit].build);
+	}
+
 	return false;
 };
 
@@ -724,7 +747,7 @@ Editor.prototype.drop=function(from, to, mod) {
 	from=this.convertBuildCommand(from);
 
 	// must also transfer "Unbuttonpos" for toggleable/two-state abilities
-	if (this.active==STANDARD) {
+	if (this.active!=RESEARCH) {
 		oldunpos=this.commands.get(from, "Unbuttonpos");
 	}
 
@@ -738,7 +761,7 @@ Editor.prototype.drop=function(from, to, mod) {
 		// special case for build buttons
 		to=this.convertBuildCommand(to);
 
-		if (this.active==STANDARD||to==CANCEL) {
+		if (this.active!=RESEARCH||to==CANCEL) {
 			newpos=this.commands.get(to, "Buttonpos");
 		} else {
 			newpos=this.commands.get(to, "Researchbuttonpos");
@@ -747,7 +770,7 @@ Editor.prototype.drop=function(from, to, mod) {
 		// modifier key held during drop overrides swap behavior and allows
 		// position conflict
 		if (!mod) {
-			if (this.active==STANDARD||from==CANCEL) {
+			if (this.active!=RESEARCH||from==CANCEL) {
 				newunpos=this.commands.get(to, "Unbuttonpos");
 				oldpos=this.commands.get(from, "Buttonpos");
 			} else {
@@ -784,7 +807,7 @@ Editor.prototype.drop=function(from, to, mod) {
 				oldpos="";
 			}
 
-			if (this.active==STANDARD||to==CANCEL) {
+			if (this.active!=RESEARCH||to==CANCEL) {
 				this.commands.set(to, "Buttonpos", oldpos);
 
 				if (newunpos!="") {
@@ -796,7 +819,7 @@ Editor.prototype.drop=function(from, to, mod) {
 		}
 	}
 
-	if (this.active==STANDARD||from==CANCEL) {
+	if (this.active!=RESEARCH||from==CANCEL) {
 		this.commands.set(from, "Buttonpos", newpos);
 
 		if (oldunpos!="") {
@@ -858,16 +881,8 @@ Editor.prototype.commandEditor=function() {
 	let p=document.createElement("p");
 	p.id="default";
 
-	let button=document.createElement("button");
-	button.setAttribute("type", "button");
-	button.addEventListener("click", function() {
-		this.resetDefaults();
-	}.bind(this));
-	button.appendChild(document.createTextNode("Reset to Default Values"));
-	p.appendChild(button);
-
 	if (!this.command.startsWith("cmd")) { // omits basic commands
-		button=document.createElement("button");
+		let button=document.createElement("button");
 		button.setAttribute("type", "button");
 		button.addEventListener("click", function() {
 			this.findUnitsWith(this.command);
@@ -875,6 +890,14 @@ Editor.prototype.commandEditor=function() {
 		button.appendChild(document.createTextNode("Show Units with Command"));
 		p.appendChild(button);
 	}
+
+	let button=document.createElement("button");
+	button.setAttribute("type", "button");
+	button.addEventListener("click", function() {
+		this.resetDefaults();
+	}.bind(this));
+	button.appendChild(document.createTextNode("Reset to Default Values"));
+	p.appendChild(button);
 
 	document.getElementById("default").replaceWith(p);
 	this.clear(document.getElementById("other"));
@@ -1188,7 +1211,7 @@ Editor.prototype.findUnitsNamed=function(query) {
 	query=query.toLowerCase();
 
 	for (let [unit, properties] of Object.entries(units)) {
-		if (properties.name==undefined) {
+		if (properties.type==OTHER||properties.name==undefined) {
 			continue;
 		}
 
