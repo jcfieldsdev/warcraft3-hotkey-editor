@@ -308,9 +308,9 @@ Editor.prototype.unitEditor=function() {
 
 	// shows build card for workers
 	let build=document.getElementById("card"+BUILD);
-	build.classList.toggle("hidden", unit.build==null);
+	build.classList.toggle("hidden", unit.build==undefined);
 
-	if (unit.build!=null&&units[unit.build]!=null) {
+	if (unit.build!=undefined&&units[unit.build]!=undefined) {
 		createCommandCard(BUILD, units[unit.build]);
 	}
 
@@ -686,13 +686,13 @@ Editor.prototype.setVisibleHotkeys=function() {
 	flagHotkeys(STANDARD, keys.hotkeys);
 	flagHotkeys(STANDARD, keys.researchhotkeys);
 
-	if (units[this.unit]!=null) { // handles secondary command cards
+	if (units[this.unit]!=undefined) { // handles secondary command cards
 		if (units[this.unit].type==HERO) {
 			flagHotkeys(RESEARCH, keys.hotkeys);
 			flagHotkeys(RESEARCH, keys.researchhotkeys);
 		}
 
-		if (units[this.unit].build!=null) {
+		if (units[this.unit].build!=undefined) {
 			let keys=this.getConflicts(units[this.unit].build);
 			flagHotkeys(BUILD, keys.hotkeys);
 		}
@@ -717,16 +717,18 @@ Editor.prototype.setVisibleHotkeys=function() {
 };
 
 Editor.prototype.checkConflicts=function(unit) {
-	for (let hotkeys of Object.values(this.getConflicts(unit))) {
-		for (let values of Object.values(hotkeys)) {
-			if (values.size>1) {
-				return true;
+	if (units[unit]!=undefined) {
+		for (let hotkeys of Object.values(this.getConflicts(unit))) {
+			for (let values of Object.values(hotkeys)) {
+				if (values.size>1) {
+					return true;
+				}
 			}
 		}
-	}
 
-	if (units[unit]!=null&&units[unit].build!=null) {
-		return this.checkConflicts(units[unit].build);
+		if (units[unit].build!=undefined) {
+			return this.checkConflicts(units[unit].build);
+		}
 	}
 
 	return false;
@@ -735,6 +737,10 @@ Editor.prototype.checkConflicts=function(unit) {
 Editor.prototype.checkAllConflicts=function() {
 	for (let section of document.getElementsByTagName("section")) {
 		for (let link of section.getElementsByTagName("a")) {
+			if (link.hash=="") {
+				continue;
+			}
+
 			let unit=link.hash.replace("#", "");
 			link.classList.toggle("conflict", this.checkConflicts(unit));
 		}
