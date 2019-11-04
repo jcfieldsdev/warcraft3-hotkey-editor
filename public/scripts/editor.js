@@ -287,13 +287,13 @@ Editor.prototype.unitEditor=function() {
 		h2.textContent+=" ("+unit.suffix+")";
 	}
 
-	h2.insertBefore(this.createButton(this.unit, unit.name), h2.firstChild);
+	const self=this;
+
+	h2.insertBefore(createButton(this.unit, unit.name), h2.firstChild);
 
 	let h3=document.getElementById("command");
 	h3.textContent="";
 	h3.classList.add("hidden");
-
-	const self=this;
 
 	createCommandCard(STANDARD, unit);
 
@@ -303,7 +303,7 @@ Editor.prototype.unitEditor=function() {
 
 	if (unit.type==HERO) { // adds cancel button to hero select skills card
 		let buttonpos=this.commands.get(CANCEL, "Buttonpos");
-		placeButton(RESEARCH, CANCEL, "Cancel", buttonpos);
+		placeButton(CANCEL, "Cancel", RESEARCH, buttonpos);
 	}
 
 	// shows build card for workers
@@ -355,10 +355,10 @@ Editor.prototype.unitEditor=function() {
 			let researchbuttonpos=self.commands.get(idpos, "Researchbuttonpos");
 
 			if (buttonpos!="") {
-				placeButton(n, id, name, buttonpos);
+				placeButton(id, name, n, buttonpos);
 
 				if (researchbuttonpos) {
-					placeButton(RESEARCH, id, name, researchbuttonpos);
+					placeButton(id, name, RESEARCH, researchbuttonpos);
 				}
 			} else {
 				console.error(`Undefined: ${idpos} (buttonpos)`);
@@ -371,7 +371,7 @@ Editor.prototype.unitEditor=function() {
 		}
 	}
 
-	function placeButton(n, id, name, buttonpos) {
+	function placeButton(id, name, n, buttonpos) {
 		let pos=buttonpos.split(DELIMITER);
 		let [y, x]=self.getPosition(n, pos[1], pos[0]);
 		let conflict=pos[0]!=x||pos[1]!=y;
@@ -382,12 +382,47 @@ Editor.prototype.unitEditor=function() {
 
 		self.card[n][y][x]=id;
 
-		let element=self.createButton(id, name, n);
+		let element=createButton(id, name, n);
 		element.id="n"+n+"y"+y+"x"+x;
 		element.classList.toggle("conflict", conflict);
 
 		let index=COLS*y+x;
 		document.getElementById("card"+n).children[index].replaceWith(element);
+	}
+
+	function createButton(id, name, n) {
+		let div=document.createElement("div");
+		let img=document.createElement("img");
+		img.setAttribute("src", ICONS_DIR+id+ICONS_EXT);
+		img.setAttribute("alt", "["+name+"]");
+		img.setAttribute("title", name);
+		img.addEventListener("click", function() {
+			self.active=n;
+			self.setCommand(id, name);
+		}.bind(self));
+		div.appendChild(img);
+
+		if (n!=undefined) {
+			img.id="img"+n+"_"+id;
+		}
+
+		// distinguishes between buttons (in command card)
+		// and unit icons (in heading)
+		if (self.unit!=id) {
+			let span=document.createElement("span");
+			span.id="span"+n+"_"+id;
+			div.appendChild(span);
+
+			img.setAttribute("draggable", "true");
+			img.addEventListener("dragstart", function(event) {
+				self.active=n;
+
+				event.dataTransfer.setData("text/plain", event.target.id);
+				document.getElementById("card"+n).classList.add("grid");
+			}.bind(self));
+		}
+
+		return div;
 	}
 };
 
@@ -435,92 +470,6 @@ Editor.prototype.convertBuildCommand=function(id) {
 	}
 
 	return id;
-};
-
-Editor.prototype.createButton=function(id, name, n) {
-	let div=document.createElement("div");
-	let img=document.createElement("img");
-	img.id="img"+n+"_"+id;
-	img.setAttribute("src", ICONS_DIR+id+ICONS_EXT);
-	img.setAttribute("alt", "["+name+"]");
-	img.setAttribute("title", name);
-	img.addEventListener("click", function() {
-		this.active=n;
-		this.setCommand(id, name);
-	}.bind(this));
-	div.appendChild(img);
-
-	// distinguishes between buttons (in command card)
-	// and unit icons (in heading)
-	if (this.unit!=id) {
-		let span=document.createElement("span");
-		span.id="span"+n+"_"+id;
-		div.appendChild(span);
-
-		img.setAttribute("draggable", "true");
-		img.addEventListener("dragstart", function(event) {
-			this.active=n;
-
-			event.dataTransfer.setData("text/plain", event.target.id);
-			document.getElementById("card"+n).classList.add("grid");
-		}.bind(this));
-	}
-
-	return div;
-};
-
-Editor.prototype.clear=function(element, removeListeners=true) {
-	if (element==null) {
-		return;
-	}
-
-	while (element.lastChild) { // removes all children
-		element.removeChild(element.lastChild);
-	}
-
-	if (removeListeners) {
-		// clones element to remove all event listeners
-		element.parentNode.replaceChild(element.cloneNode(true), element);
-	}
-};
-
-Editor.prototype.clearButtons=function() {
-	for (let card of document.getElementsByClassName("card")) {
-		for (let element of card.children) {
-			this.clear(element);
-		}
-	}
-
-	for (let n of this.card.keys()) {
-		for (let y of this.card[n].keys()) {
-			for (let x of this.card[n][y].keys()) {
-				this.card[n][y][x]="";
-			}
-		}
-	}
-};
-
-Editor.prototype.clearFields=function() {
-	for (let element of document.getElementById("fields").children) {
-		// hides element so it does not remain editable
-		element.classList.add("hidden");
-
-		// removes event listeners for hotkey inputs (which are removed and
-		// recreated) but not tips (which are persistent)
-		this.clear(element, !element.classList.contains("tip"));
-	}
-
-	this.clear(document.getElementById("default"));
-};
-
-Editor.prototype.clearSearch=function(clearQuery=false) {
-	if (clearQuery) {
-		document.getElementById("query").value="";
-	}
-
-	this.selected=-1;
-	this.clear(document.getElementById("results"));
-	document.getElementById("results").classList.add("hidden");
 };
 
 Editor.prototype.getPosition=function(n, y, x) {
@@ -586,164 +535,6 @@ Editor.prototype.getPosition=function(n, y, x) {
 		}
 
 		return true;
-	}
-};
-
-Editor.prototype.getConflicts=function(id) {
-	let hotkeys={}, researchhotkeys={};
-	let unit=units[id];
-
-	if (unit==undefined) {
-		return;
-	}
-
-	for (let id of Object.keys(this.getCommands(unit))) {
-		if (!this.commands.exists(id)) {
-			continue;
-		}
-
-		let hotkey=this.commands.get(id, "Hotkey");
-		let unhotkey=this.commands.get(id, "Unhotkey");
-		let researchhotkey=this.commands.get(id, "Researchhotkey");
-
-		// tracks research hotkeys separately
-		recordHotkey(id, hotkey, hotkeys);
-		recordHotkey(id, researchhotkey, researchhotkeys);
-
-		// counts unhotkey as hotkey if different (for two-state commands)
-		if (hotkey!=unhotkey) {
-			recordHotkey(id, unhotkey, hotkeys);
-		}
-	}
-
-	// adds cancel button to hero select skills card for the purpose of
-	// identifying conflicts with it
-	if (Object.keys(researchhotkeys).length>0) {
-		let hotkey=this.commands.get(CANCEL, "Hotkey");
-		recordHotkey(CANCEL, hotkey, researchhotkeys);
-	}
-
-	return {hotkeys, researchhotkeys};
-
-	function recordHotkey(id, hotkey, keys) {
-		for (let key of hotkey.split(DELIMITER)) {
-			if (key=="") {
-				continue;
-			}
-
-			if (keys[key]==undefined) {
-				// using set to prevent duplicates so a hotkey cannot conflict
-				// with itself
-				keys[key]=new Set();
-			}
-
-			keys[key].add(id);
-		}
-	}
-};
-
-Editor.prototype.setVisibleHotkeys=function() {
-	for (let n of this.card.keys()) {
-		for (let y of this.card[n].keys()) {
-			for (let x of this.card[n][y].keys()) {
-				let id=this.card[n][y][x];
-
-				if (!this.commands.exists(id)) {
-					continue;
-				}
-
-				let span=document.getElementById("span"+n+"_"+id);
-
-				let hotkey=this.commands.get(id, "Hotkey");
-				let researchhotkey=this.commands.get(id, "Researchhotkey");
-
-				// shows "Hotkey" if available and standard card selected,
-				// else shows "Researchhotkey" (for passives or research card)
-				if (hotkey!=""&&(n!=RESEARCH||id==CANCEL)) {
-					if (hotkey=="512") {
-						span.textContent="Esc";
-					} else { // only show first letter (even if multi-tiered)
-						span.textContent=hotkey.slice(0, 1);
-					}
-				} else if (researchhotkey!="") {
-					span.textContent=researchhotkey.slice(0, 1);
-					span.classList.toggle("passive", hotkey=="");
-				}
-			}
-		}
-	}
-
-	const self=this;
-
-	// tracks conflicts outside of flag functions so conflicts can be detected
-	// in two-state commands and across different hotkey types,
-	// else class will be toggled an unpredictable amount
-	let conflicts=Array(CARDS).fill().map(function() {
-		return [];
-	});
-
-	let keys=this.getConflicts(this.unit);
-	flagHotkeys(STANDARD, keys.hotkeys);
-	flagHotkeys(STANDARD, keys.researchhotkeys);
-
-	if (units[this.unit]!=undefined) { // handles secondary command cards
-		if (units[this.unit].type==HERO) {
-			flagHotkeys(RESEARCH, keys.hotkeys);
-			flagHotkeys(RESEARCH, keys.researchhotkeys);
-		}
-
-		if (units[this.unit].build!=undefined) {
-			let keys=this.getConflicts(units[this.unit].build);
-			flagHotkeys(BUILD, keys.hotkeys);
-		}
-	}
-
-	function flagHotkeys(n, hotkeys) {
-		for (let values of Object.values(hotkeys)) {
-			for (let value of values) {
-				let conflict=values.size>1;
-				let span=document.getElementById("span"+n+"_"+value);
-
-				if (span!=null&&!conflicts[n].includes(value)) {
-					span.classList.toggle("conflict", conflict);
-				}
-
-				if (conflict) {
-					conflicts[n].push(value);
-				}
-			}
-		}
-	}
-};
-
-Editor.prototype.checkConflicts=function(unit) {
-	if (units[unit]!=undefined) {
-		for (let hotkeys of Object.values(this.getConflicts(unit))) {
-			for (let values of Object.values(hotkeys)) {
-				if (values.size>1) {
-					return true;
-				}
-			}
-		}
-
-		if (units[unit].build!=undefined) {
-			return this.checkConflicts(units[unit].build);
-		}
-	}
-
-	return false;
-};
-
-Editor.prototype.checkAllConflicts=function() {
-	for (let section of document.getElementsByTagName("section")) {
-		for (let link of section.getElementsByTagName("a")) {
-			if (link.hash=="") {
-				continue;
-			}
-
-			let unit=link.hash.replace("#", "");
-			link.classList.toggle("conflict", this.checkConflicts(unit));
-		}
 	}
 };
 
@@ -845,6 +636,59 @@ Editor.prototype.drop=function(from, to, mod) {
 
 	this.clearButtons();
 	this.unitEditor();
+};
+
+Editor.prototype.getConflicts=function(id) {
+	let hotkeys={}, researchhotkeys={};
+	let unit=units[id];
+
+	if (unit==undefined) {
+		return;
+	}
+
+	for (let id of Object.keys(this.getCommands(unit))) {
+		if (!this.commands.exists(id)) {
+			continue;
+		}
+
+		let hotkey=this.commands.get(id, "Hotkey");
+		let unhotkey=this.commands.get(id, "Unhotkey");
+		let researchhotkey=this.commands.get(id, "Researchhotkey");
+
+		// tracks research hotkeys separately
+		recordHotkey(id, hotkey, hotkeys);
+		recordHotkey(id, researchhotkey, researchhotkeys);
+
+		// counts unhotkey as hotkey if different (for two-state commands)
+		if (hotkey!=unhotkey) {
+			recordHotkey(id, unhotkey, hotkeys);
+		}
+	}
+
+	// adds cancel button to hero select skills card for the purpose of
+	// identifying conflicts with it
+	if (Object.keys(researchhotkeys).length>0) {
+		let hotkey=this.commands.get(CANCEL, "Hotkey");
+		recordHotkey(CANCEL, hotkey, researchhotkeys);
+	}
+
+	return {hotkeys, researchhotkeys};
+
+	function recordHotkey(id, hotkey, keys) {
+		for (let key of hotkey.split(DELIMITER)) {
+			if (key=="") {
+				continue;
+			}
+
+			if (keys[key]==undefined) {
+				// using set to prevent duplicates so a hotkey cannot conflict
+				// with itself
+				keys[key]=new Set();
+			}
+
+			keys[key].add(id);
+		}
+	}
 };
 
 Editor.prototype.commandEditor=function() {
@@ -1193,6 +1037,109 @@ Editor.prototype.resetDefaults=function() {
 	this.unitEditor();
 };
 
+Editor.prototype.setVisibleHotkeys=function() {
+	for (let n of this.card.keys()) {
+		for (let y of this.card[n].keys()) {
+			for (let x of this.card[n][y].keys()) {
+				let id=this.card[n][y][x];
+
+				if (!this.commands.exists(id)) {
+					continue;
+				}
+
+				let span=document.getElementById("span"+n+"_"+id);
+
+				let hotkey=this.commands.get(id, "Hotkey");
+				let researchhotkey=this.commands.get(id, "Researchhotkey");
+
+				// shows "Hotkey" if available and standard card selected,
+				// else shows "Researchhotkey" (for passives or research card)
+				if (hotkey!=""&&(n!=RESEARCH||id==CANCEL)) {
+					if (hotkey=="512") {
+						span.textContent="Esc";
+					} else { // only show first letter (even if multi-tiered)
+						span.textContent=hotkey.slice(0, 1);
+					}
+				} else if (researchhotkey!="") {
+					span.textContent=researchhotkey.slice(0, 1);
+					span.classList.toggle("passive", hotkey=="");
+				}
+			}
+		}
+	}
+
+	// tracks conflicts outside of flag functions so conflicts can be detected
+	// in two-state commands and across different hotkey types,
+	// else class will be toggled an unpredictable amount
+	let conflicts=Array(CARDS).fill().map(function() {
+		return [];
+	});
+
+	let keys=this.getConflicts(this.unit);
+	flagHotkeys(STANDARD, keys.hotkeys);
+	flagHotkeys(STANDARD, keys.researchhotkeys);
+
+	if (units[this.unit]!=undefined) { // handles secondary command cards
+		if (units[this.unit].type==HERO) {
+			flagHotkeys(RESEARCH, keys.hotkeys);
+			flagHotkeys(RESEARCH, keys.researchhotkeys);
+		}
+
+		if (units[this.unit].build!=undefined) {
+			let keys=this.getConflicts(units[this.unit].build);
+			flagHotkeys(BUILD, keys.hotkeys);
+		}
+	}
+
+	function flagHotkeys(n, hotkeys) {
+		for (let values of Object.values(hotkeys)) {
+			for (let value of values) {
+				let conflict=values.size>1;
+				let span=document.getElementById("span"+n+"_"+value);
+
+				if (span!=null&&!conflicts[n].includes(value)) {
+					span.classList.toggle("conflict", conflict);
+				}
+
+				if (conflict) {
+					conflicts[n].push(value);
+				}
+			}
+		}
+	}
+};
+
+Editor.prototype.checkConflicts=function(unit) {
+	if (units[unit]!=undefined) {
+		for (let hotkeys of Object.values(this.getConflicts(unit))) {
+			for (let values of Object.values(hotkeys)) {
+				if (values.size>1) {
+					return true;
+				}
+			}
+		}
+
+		if (units[unit].build!=undefined) {
+			return this.checkConflicts(units[unit].build);
+		}
+	}
+
+	return false;
+};
+
+Editor.prototype.checkAllConflicts=function() {
+	for (let section of document.getElementsByTagName("section")) {
+		for (let link of section.getElementsByTagName("a")) {
+			if (link.hash=="") {
+				continue;
+			}
+
+			let unit=link.hash.replace("#", "");
+			link.classList.toggle("conflict", this.checkConflicts(unit));
+		}
+	}
+};
+
 Editor.prototype.filter=function(race) {
 	// converts campaign races to multiplayer equivalents
 	if (race=="bloodelf") {
@@ -1352,6 +1299,60 @@ Editor.prototype.openResult=function() {
 	}
 
 	results[this.selected].getElementsByTagName("a")[0].click();
+};
+
+Editor.prototype.clear=function(element, removeListeners=true) {
+	if (element==null) {
+		return;
+	}
+
+	while (element.lastChild) { // removes all children
+		element.removeChild(element.lastChild);
+	}
+
+	if (removeListeners) {
+		// clones element to remove all event listeners
+		element.parentNode.replaceChild(element.cloneNode(true), element);
+	}
+};
+
+Editor.prototype.clearButtons=function() {
+	for (let card of document.getElementsByClassName("card")) {
+		for (let element of card.children) {
+			this.clear(element);
+		}
+	}
+
+	for (let n of this.card.keys()) {
+		for (let y of this.card[n].keys()) {
+			for (let x of this.card[n][y].keys()) {
+				this.card[n][y][x]="";
+			}
+		}
+	}
+};
+
+Editor.prototype.clearFields=function() {
+	for (let element of document.getElementById("fields").children) {
+		// hides element so it does not remain editable
+		element.classList.add("hidden");
+
+		// removes event listeners for hotkey inputs (which are removed and
+		// recreated) but not tips (which are persistent)
+		this.clear(element, !element.classList.contains("tip"));
+	}
+
+	this.clear(document.getElementById("default"));
+};
+
+Editor.prototype.clearSearch=function(clearQuery=false) {
+	if (clearQuery) {
+		document.getElementById("query").value="";
+	}
+
+	this.selected=-1;
+	this.clear(document.getElementById("results"));
+	document.getElementById("results").classList.add("hidden");
 };
 
 /*
