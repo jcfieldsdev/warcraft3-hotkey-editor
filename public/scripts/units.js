@@ -728,7 +728,8 @@ const units={
 			ahrp: "Repair",
 			cmdbuildhuman: "Build Structure",
 			cmdcancelbuild: "Cancel"
-		}
+		},
+		build: "cmdbuildhuman"
 	},
 	nbee: {
 		name: "Blood Elf Engineer",

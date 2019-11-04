@@ -775,3 +775,11 @@ Hotkey=R
 Tip=Transmute (|cffffcc00R|r)
 Researchhotkey=R
 Researchtip=Learn Transmute (|cffffcc00R|r)
+
+[ashm]
+Hotkey=D
+Tip=Hide (|cffffcc00D|r)
+
+[aihm]
+Hotkey=D
+Tip=Hide (|cffffcc00D|r)
