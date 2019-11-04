@@ -677,7 +677,7 @@ ul.naga {
 	color: #40c0c0;
 }
 
-ul.neutral {
+ul.neutral, ul.units li li {
 	background: none;
 	color: #c0c0c0;
 }

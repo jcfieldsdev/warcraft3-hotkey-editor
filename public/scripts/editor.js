@@ -400,7 +400,7 @@ Editor.prototype.getCommands=function(unit) {
 	} else if (unit.type==HERO||unit.type==ITEM) {
 		Object.assign(buttons, common.basic, common.hero);
 	} else if (unit.type==NO_ATTACK) {
-		Object.assign(buttons, common.noattack);
+		Object.assign(buttons, common.noAttack);
 	} else if (unit.type==TOWER) {
 		Object.assign(buttons, common.tower);
 	}

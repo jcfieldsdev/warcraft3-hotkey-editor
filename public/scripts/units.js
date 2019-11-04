@@ -30,7 +30,7 @@ const common={
 	hero: {
 		cmdselectskill: "Hero Abilities"
 	},
-	noattack: {
+	noAttack: {
 		cmdmove: "Move",
 		cmdstop: "Stop",
 		cmdholdpos: "Hold Position",
@@ -1534,6 +1534,11 @@ const units={
 			cmdcancelbuild: "Cancel"
 		}
 	},
+	ndrn: {
+		name: "Draenei Vindicator",
+		race: DRAENEI,
+		type: UNIT
+	},
 	ndrt: {
 		name: "Draenei Stalker",
 		race: DRAENEI,
@@ -1542,11 +1547,6 @@ const units={
 			acev: "Evasion",
 			acen: "Ensnare"
 		}
-	},
-	ndrn: {
-		name: "Draenei Vindicator",
-		race: DRAENEI,
-		type: UNIT
 	},
 	ndsa: {
 		name: "Salamander",
@@ -1565,7 +1565,7 @@ const units={
 	},
 	ndrh: {
 		name: "Draenei Harbinger",
-		race: NEUTRAL,
+		race: DRAENEI,
 		type: UNIT,
 		commands: {
 			ache: "Ray of Disruption",
@@ -1574,7 +1574,7 @@ const units={
 	},
 	ndrs: {
 		name: "Draenei Seer",
-		race: NEUTRAL,
+		race: DRAENEI,
 		type: UNIT,
 		commands: {
 			acsw: "Slow",
