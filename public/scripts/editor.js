@@ -678,16 +678,24 @@ Editor.prototype.setVisibleHotkeys=function() {
 	// tracks conflicts outside of flag functions so conflicts can be detected
 	// in two-state commands and across different hotkey types,
 	// else class will be toggled an unpredictable amount
-	let conflicts=[], keys=null;
+	let conflicts=Array(CARDS).fill().map(function() {
+		return [];
+	});
 
-	keys=this.getConflicts(this.unit);
+	let keys=this.getConflicts(this.unit);
 	flagHotkeys(STANDARD, keys.hotkeys);
-	flagHotkeys(RESEARCH, keys.researchhotkeys);
+	flagHotkeys(STANDARD, keys.researchhotkeys);
 
-	// handles build card for workers
-	if (units[this.unit]!=null&&units[this.unit].build!=null) {
-		keys=this.getConflicts(units[this.unit].build);
-		flagHotkeys(BUILD, keys.hotkeys);
+	if (units[this.unit]!=null) { // handles secondary command cards
+		if (units[this.unit].type==HERO) {
+			flagHotkeys(RESEARCH, keys.hotkeys);
+			flagHotkeys(RESEARCH, keys.researchhotkeys);
+		}
+
+		if (units[this.unit].build!=null) {
+			let keys=this.getConflicts(units[this.unit].build);
+			flagHotkeys(BUILD, keys.hotkeys);
+		}
 	}
 
 	function flagHotkeys(n, hotkeys) {
@@ -696,12 +704,12 @@ Editor.prototype.setVisibleHotkeys=function() {
 				let conflict=values.size>1;
 				let span=document.getElementById("span"+n+"_"+value);
 
-				if (span!=null&&!conflicts.includes(value)) {
+				if (span!=null&&!conflicts[n].includes(value)) {
 					span.classList.toggle("conflict", conflict);
 				}
 
 				if (conflict) {
-					conflicts.push(value);
+					conflicts[n].push(value);
 				}
 			}
 		}
