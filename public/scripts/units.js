@@ -1497,7 +1497,7 @@ const units={
 			ndh2: "Build Draenei Haven",
 			ndh3: "Build Draenei Barracks",
 			ndh4: "Build Seer's Den",
-			nbt1: "Build Advanced Boulder Tower",
+			nbt2: "Build Advanced Boulder Tower",
 			cmdcancel: "Cancel"
 		}
 	},
@@ -3037,7 +3037,8 @@ const units={
 			ansy: "Pocket Factory",
 			ancs: "Cluster Rockets",
 			aneg: "Engineering Upgrade",
-			anrg: "Robo-Goblin"
+			anrg: "Robo-Goblin",
+			ande: "Demolish"
 		}
 	},
 	ntin1: {
@@ -3049,7 +3050,8 @@ const units={
 			ans1: "Pocket Factory",
 			anc1: "Cluster Rockets",
 			aneg: "Engineering Upgrade",
-			ang1: "Robo-Goblin"
+			ang1: "Robo-Goblin",
+			and1: "Demolish"
 		}
 	},
 	ntin2: {
@@ -3061,7 +3063,8 @@ const units={
 			ans2: "Pocket Factory",
 			anc2: "Cluster Rockets",
 			aneg: "Engineering Upgrade",
-			ang2: "Robo-Goblin"
+			ang2: "Robo-Goblin",
+			and2: "Demolish"
 		}
 	},
 	ntin3: {
@@ -3073,7 +3076,8 @@ const units={
 			ans3: "Pocket Factory",
 			anc3: "Cluster Rockets",
 			aneg: "Engineering Upgrade",
-			ang3: "Robo-Goblin"
+			ang3: "Robo-Goblin",
+			and3: "Demolish"
 		}
 	},
 	nalc: {
@@ -3233,6 +3237,33 @@ const units={
 			adsm: "Dispel Magic",
 			accr: "Cripple",
 			acsk: "Resistant Skin"
+		}
+	},
+	nfac: {
+		name: "Pocket Factory",
+		suffix: "Level 1",
+		race: NEUTRAL,
+		type: BUILDING,
+		commands: {
+			cmdrally: "Set Rally Point"
+		}
+	},
+	nfa1: {
+		name: "Pocket Factory",
+		suffix: "Level 2",
+		race: NEUTRAL,
+		type: BUILDING,
+		commands: {
+			cmdrally: "Set Rally Point"
+		}
+	},
+	nfa2: {
+		name: "Pocket Factory",
+		suffix: "Level 3",
+		race: NEUTRAL,
+		type: BUILDING,
+		commands: {
+			cmdrally: "Set Rally Point"
 		}
 	},
 	ncgb: {

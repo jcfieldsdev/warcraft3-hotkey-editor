@@ -3046,27 +3046,19 @@ Researchbuttonpos=3,0
 
 [ande]
 Tip=Demolish
+Buttonpos=1,1
 
 [and1]
 Tip=Demolish - Upgrade Level 1
+Buttonpos=1,1
 
 [and2]
 Tip=Demolish - Upgrade Level 2
+Buttonpos=1,1
 
 [and3]
 Tip=Demolish - Upgrade Level 3
-
-[anfy]
-Tip=Factory
-
-[anf1]
-Tip=Factory - Upgrade Level 1
-
-[anf2]
-Tip=Factory - Upgrade Level 2
-
-[anf3]
-Tip=Factory - Upgrade Level 3
+Buttonpos=1,1
 
 [asdg]
 Tip=Ka|cffffcc00b|room!
@@ -4404,7 +4396,7 @@ Buttonpos=0,0
 
 [ndrf]
 Tip=Hire Draenei Guardian
-Buttonpos=1,0
+Buttonpos=0,0
 
 [ndrm]
 Tip=Hire Draenei |cffffcc00D|risciple
@@ -4413,16 +4405,15 @@ Buttonpos=1,0
 
 [ndrp]
 Tip=Hire Draenei Protector
-Buttonpos=1,0
+Buttonpos=0,0
 
 [ndrw]
 Tip=Hire Draenei Watcher
-Buttonpos=1,0
+Buttonpos=0,0
 
 [ndrh]
-Tip=Train Draenei |cffffcc00H|rarbinger
-Hotkey=H
-Buttonpos=1,0
+Tip=Hire Draenei Harbinger
+Buttonpos=0,0
 
 [ndrd]
 Tip=Hire Draenei Dark|cffffcc00s|rlayer
@@ -4430,8 +4421,7 @@ Hotkey=S
 Buttonpos=3,0
 
 [ndrs]
-Tip=Train Draenei |cffffcc00S|reer
-Hotkey=S
+Tip=Hire Draenei Seer
 Buttonpos=0,0
 
 [nvdl]
@@ -5367,14 +5357,12 @@ Hotkey=D
 Buttonpos=0,0
 
 [ndrt]
-Tip=Train Draenei |cffffcc00S|rtalker
-Hotkey=S
-Buttonpos=1,0
+Tip=Hire Draenei Stalker
+Buttonpos=2,0
 
 [ndrn]
-Tip=Train Draenei |cffffcc00V|rindicator
-Hotkey=V
-Buttonpos=0,0
+Tip=Hire Draenei Vindicator
+Buttonpos=2,0
 
 [ncat]
 Tip=Train Draenei |cffffcc00D|remolisher
@@ -5382,24 +5370,20 @@ Hotkey=D
 Buttonpos=3,0
 
 [ndsa]
-Tip=Train Sa|cffffcc00l|ramander
-Hotkey=L
-Buttonpos=2,0
+Tip=Train Salamander
+Buttonpos=0,0
 
 [ndh2]
-Tip=Build Draenei |cffffcc00H|raven
-Hotkey=H
+Tip=Build Draenei Haven
 Buttonpos=0,0
 
 [ndh3]
-Tip=Build |cffffcc00D|rraenei Barracks
-Hotkey=D
-Buttonpos=0,1
+Tip=Build Draenei Barracks
+Buttonpos=0,0
 
 [ndh4]
-Tip=Build |cffffcc00S|reer's Den
-Hotkey=S
-Buttonpos=1,1
+Tip=Build Seer's Den
+Buttonpos=0,0
 
 [eevi]
 Hotkey=D
