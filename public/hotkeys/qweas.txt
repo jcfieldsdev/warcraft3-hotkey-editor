@@ -1097,10 +1097,12 @@ Tip=Train Chaos Kodo Beast (|cffffcc00W|r)
 Buttonpos=1,0
 
 [acs7]
-Hotkey=Z
-Tip=Feral Spirit - [|cffffcc00Level 1|r] (|cffffcc00Z|r),Feral Spirit - [|cffffcc00Level 2|r] (|cffffcc00Z|r),Feral Spirit - [|cffffcc00Level 3|r] (|cffffcc00Z|r)
-Researchhotkey=Z
-Researchtip=Learn Feral Spirit - [|cffffcc00Level %d|r] (|cffffcc00Z|r)
+Hotkey=X
+Tip=Feral Spirit - [|cffffcc00Level 1|r] (|cffffcc00X|r),Feral Spirit - [|cffffcc00Level 2|r] (|cffffcc00X|r),Feral Spirit - [|cffffcc00Level 3|r] (|cffffcc00X|r)
+Researchhotkey=X
+Researchtip=Learn Feral Spirit - [|cffffcc00Level %d|r] (|cffffcc00X|r)
+Buttonpos=1,2
+Researchbuttonpos=1,0
 
 [aesh]
 Hotkey=C

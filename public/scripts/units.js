@@ -1769,7 +1769,7 @@ const units={
 		race: UNDEAD,
 		type: UNIT,
 		commands: {
-			afrz: "Frost Breath"
+			afrz: "Freezing Breath"
 		}
 	},
 	uobs: {
@@ -2042,6 +2042,23 @@ const units={
 		commands: {
 			acam: "Anti-magic Shell",
 			acrs: "Curse"
+		}
+	},
+	ubdr: {
+		name: "Sapphiron",
+		suffix: "Living",
+		race: NEUTRAL,
+		type: UNIT
+	},
+	ubdd: {
+		name: "Sapphiron",
+		suffix: "Undead",
+		race: UNDEAD,
+		type: UNIT,
+		commands: {
+			acfn: "Frost Nova",
+			afrz: "Freezing Breath",
+			acsk: "Resistant Skin"
 		}
 	},
 	uear: {
