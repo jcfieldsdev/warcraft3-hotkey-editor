@@ -1097,8 +1097,6 @@ Hotkey=X
 Tip=Feral Spirit - [|cffffcc00Level 1|r] (|cffffcc00X|r),Feral Spirit - [|cffffcc00Level 2|r] (|cffffcc00X|r),Feral Spirit - [|cffffcc00Level 3|r] (|cffffcc00X|r)
 Researchhotkey=X
 Researchtip=Learn Feral Spirit - [|cffffcc00Level %d|r] (|cffffcc00X|r)
-Buttonpos=1,2
-Researchbuttonpos=1,0
 
 [aesh]
 Hotkey=C

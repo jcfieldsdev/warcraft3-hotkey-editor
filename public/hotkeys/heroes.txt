@@ -313,8 +313,6 @@ Hotkey=W
 Tip=Feral Spirit - [|cffffcc00Level 1|r] (|cffffcc00Q|r),Feral Spirit - [|cffffcc00Level 2|r] (|cffffcc00Q|r),Feral Spirit - [|cffffcc00Level 3|r] (|cffffcc00Q|r)
 Researchhotkey=W
 Researchtip=Learn Feral Spirit - [|cffffcc00Level %d|r] (|cffffcc00Q|r)
-Buttonpos=1,2
-Researchbuttonpos=1,0
 
 [aesh]
 Hotkey=E

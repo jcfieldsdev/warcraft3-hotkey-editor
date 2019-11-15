@@ -5341,8 +5341,8 @@ Tip=Feral Spiri|cffffcc00t|r - [|cffffcc00Level 1|r],Feral Spiri|cffffcc00t|r - 
 Researchtip=Learn Feral Spiri|cffffcc00t|r - [|cffffcc00Level %d|r]
 Hotkey=T
 Researchhotkey=T
-Buttonpos=0,2
-Researchbuttonpos=0,0
+Buttonpos=1,2
+Researchbuttonpos=1,0
 
 [anr2]
 Tip=Reincarnation
