@@ -299,7 +299,10 @@ Editor.prototype.unitEditor=function() {
 
 	if (unit.type==HERO) { // adds cancel button to hero select skills card
 		let buttonpos=this.commands.get(CANCEL, "Buttonpos");
-		placeButton(CANCEL, "Cancel", RESEARCH, buttonpos);
+
+		if (buttonpos!="") {
+			placeButton(CANCEL, "Cancel", RESEARCH, buttonpos);
+		}
 	}
 
 	// shows build card for workers
@@ -1423,7 +1426,7 @@ Commands.prototype.convert=function() {
 };
 
 Commands.prototype.exists=function(id, key) {
-	if (this.defaults[id]==undefined) {
+	if (this.defaults==null||this.defaults[id]==undefined) {
 		return;
 	}
 
