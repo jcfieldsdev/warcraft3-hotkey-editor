@@ -33,39 +33,35 @@ const STANDARD=0, RESEARCH=1, BUILD=2;
 // commands
 const CANCEL="cmdcancel";
 
-// objects
-const files=new Files("files");
-const overlays={
-	load: new Overlay("load"),
-	save: new Overlay("save")
-};
-
 /*
  * initialization
  */
 
 window.addEventListener("load", function() {
-	// loads default commands and calls init() once retrieved
-	files.load(DEFAULT_HOTKEY_FILE, init);
-});
-
-function init(text) {
+	const files=new Files("files");
 	const store=new Storage(STORAGE_NAME);
+	const overlays={
+		load: new Overlay("load"),
+		save: new Overlay("save")
+	};
 	const commands=new Commands();
 	const editor=new Editor(commands);
 
-	commands.parse(text);
+	// loads default commands
+	files.load(DEFAULT_HOTKEY_FILE, function(text) {
+		commands.parse(text);
 
-	let mem=store.load();
+		let mem=store.load();
 
-	if (mem!=null) {
-		commands.load(mem);
-	}
+		if (mem!=null) {
+			commands.load(mem);
+		}
 
-	editor.load();
+		editor.load();
+	});
 
 	// populates list of sample files on load overlay
-	files.getList();
+	files.getList(overlays.load.setText.bind(overlays.load));
 
 	// sets event listeners
 	document.getElementById("open").addEventListener("click", function() {
@@ -203,7 +199,7 @@ function init(text) {
 		input.setAttribute("autocapitalize", "off");
 		input.setAttribute("spellcheck", "false");
 	}
-}
+});
 
 /*
  * Editor prototype
@@ -1520,7 +1516,7 @@ function Files(id) {
 	this.id=id;
 }
 
-Files.prototype.getList=function() {
+Files.prototype.getList=function(callback) {
 	const self=this;
 	let xhr=new XMLHttpRequest();
 
@@ -1529,10 +1525,7 @@ Files.prototype.getList=function() {
 			let select=document.createElement("select");
 			select.id=self.id;
 			select.addEventListener("change", function() {
-				self.load(
-					select.value,
-					overlays.load.setText.bind(overlays.load)
-				);
+				self.load(select.value, callback);
 			});
 
 			let option=document.createElement("option");
