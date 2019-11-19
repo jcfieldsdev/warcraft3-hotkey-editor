@@ -706,6 +706,19 @@ const units={
 			cmdcancelbuild: "Cancel"
 		}
 	},
+	nheb: {
+		name: "High Elven Barracks",
+		race: BLOOD_ELF,
+		type: BUILDING,
+		commands: {
+			hhes: "Train Swordsman",
+			nhea: "Train Archer",
+			nws1: "Train Dragon Hawk",
+			cmdrally: "Set Rally Point",
+			rhde: "Research Defend",
+			cmdcancelbuild: "Cancel"
+		}
+	},
 	hhes: {
 		name: "Swordsman",
 		race: BLOOD_ELF,
@@ -718,6 +731,15 @@ const units={
 		name: "Archer",
 		race: BLOOD_ELF,
 		type: UNIT
+	},
+	nws1: {
+		name: "Dragon Hawk",
+		suffix: "Campaign",
+		race: BLOOD_ELF,
+		type: UNIT,
+		commands: {
+			acen: "Ensnare"
+		}
 	},
 	nhew: {
 		name: "Worker",
@@ -765,13 +787,20 @@ const units={
 			amim: "Spell Immunity"
 		}
 	},
-	net1: {
-		name: "Energy Tower",
+	negf: {
+		name: "Earth-Fury Tower",
 		race: BLOOD_ELF,
-		type: TOWER,
-		commands: {
-			net2: "Upgrade to Advanced Energy Tower"
-		}
+		type: TOWER
+	},
+	negm: {
+		name: "Sky-Fury Tower",
+		race: BLOOD_ELF,
+		type: TOWER
+	},
+	negt: {
+		name: "High Elven Tower",
+		race: BLOOD_ELF,
+		type: TOWER
 	},
 	nbt1: {
 		name: "Boulder Tower",
@@ -1237,6 +1266,49 @@ const units={
 			acct: "Critical Strike"
 		}
 	},
+	onzg: {
+		name: "Nazgrel",
+		race: ORC,
+		type: UNIT,
+		commands: {
+			aens: "Ensnare",
+			ansk: "Hardened Skin",
+			acrk: "Resistant Skin"
+		}
+	},
+	ovlj: {
+		name: "Vol'jin",
+		race: ORC,
+		type: UNIT,
+		commands: {
+			aeye: "Sentry Ward",
+			ahwd: "Healing Ward",
+			asta: "Stasis Trap"
+		}
+	},
+	o004: {
+		name: "Bovan Windtotem",
+		race: ORC,
+		type: UNIT,
+		commands: {
+			a000: "Corporeal Form",
+			aspl: "Spirit Link",
+			adcn: "Disenchant",
+			aast: "Ancestral Spirit"
+		}
+	},
+	o006: {
+		name: "Bovan Windtotem",
+		suffix: "Ethereal",
+		race: ORC,
+		type: UNIT,
+		commands: {
+			a000: "Corporeal Form",
+			aspl: "Spirit Link",
+			adcn: "Disenchant",
+			aast: "Ancestral Spirit"
+		}
+	},
 	nw2w: {
 		name: "Orc Warlock",
 		race: ORC,
@@ -1249,6 +1321,11 @@ const units={
 	},
 	owar: {
 		name: "Orc Warchief",
+		race: ORC,
+		type: UNIT
+	},
+	omtg: {
+		name: "Mathog",
 		race: ORC,
 		type: UNIT
 	},
@@ -1460,10 +1537,44 @@ const units={
 			aoeq: "Earthquake"
 		}
 	},
-	nmsh: {
+	ngzc: {
 		name: "Misha",
+		suffix: "Level 1",
 		race: ORC,
-		type: SUMMON
+		type: SUMMON,
+		commands: {
+			acrk: "Resistant Skin"
+		}
+	},
+	ngzd: {
+		name: "Misha",
+		suffix: "Level 2",
+		race: ORC,
+		type: SUMMON,
+		commands: {
+			anbh: "Bash",
+			acrk: "Resistant Skin"
+		}
+	},
+	ngza: {
+		name: "Misha",
+		suffix: "Level 3",
+		race: ORC,
+		type: SUMMON,
+		commands: {
+			anb2: "Maul",
+			acrk: "Resistant Skin"
+		}
+	},
+	ngz4: {
+		name: "Misha",
+		suffix: "Level 4",
+		race: ORC,
+		type: SUMMON,
+		commands: {
+			anb2: "Maul",
+			acrk: "Resistant Skin"
+		}
 	},
 	naka: {
 		name: "Akama",
@@ -3211,6 +3322,15 @@ const units={
 	nqb3: {
 		name: "Raging Quilbeast",
 		suffix: "Level 3",
+		race: NEUTRAL,
+		type: SUMMON,
+		commands: {
+			afzy: "Frenzy"
+		}
+	},
+	nqb4: {
+		name: "Berserk Quilbeast",
+		suffix: "Level 4",
 		race: NEUTRAL,
 		type: SUMMON,
 		commands: {
@@ -5643,6 +5763,66 @@ const units={
 		type: UNIT,
 		commands: {
 			actc: "Slam"
+		}
+	},
+	ngfl: {
+		name: "Flesh Golem",
+		race: NEUTRAL,
+		type: UNIT,
+		commands: {
+			acsh: "Shockwave",
+			accr: "Cripple"
+		}
+	},
+	nogn: {
+		name: "Stonemaul Magi",
+		race: NEUTRAL,
+		type: UNIT,
+		commands: {
+			acro: "Roar"
+		}
+	},
+	nogo: {
+		name: "Stonemaul Ogre",
+		race: NEUTRAL,
+		type: UNIT,
+		commands: {
+			acen: "Ensnare"
+		}
+	},
+	noga: {
+		name: "Stonemaul Warchief",
+		race: NEUTRAL,
+		type: UNIT,
+		commands: {
+			scae: "Endurance Aura",
+			anta: "Taunt",
+			acbh: "Bash"
+		}
+	},
+	nsw1: {
+		name: "Lesser Spirit Beast",
+		suffix: "Level 1",
+		race: NEUTRAL,
+		type: UNIT
+	},
+	nsw2: {
+		name: "Spirit Beast",
+		suffix: "Level 2",
+		race: NEUTRAL,
+		type: UNIT,
+		commands: {
+			afbb: "Feedback"
+		}
+	},
+	nsw3: {
+		name: "Greater Spirit Beast",
+		suffix: "Level 3",
+		race: NEUTRAL,
+		type: UNIT,
+		commands: {
+			afbb: "Feedback",
+			ambb: "Mana Burn"
 		}
 	}
 };
