@@ -3071,23 +3071,17 @@ Buttonpos=1,1
 [asdg]
 Tip=Ka|cffffcc00b|room!
 Hotkey=B
-Unhotkey=B
 Buttonpos=0,2
-Unbuttonpos=0,2
 
 [asd2]
 Tip=Ka|cffffcc00b|room!
 Hotkey=B
-Unhotkey=B
 Buttonpos=0,2
-Unbuttonpos=0,2
 
 [asd3]
 Tip=Ka|cffffcc00b|room!
 Hotkey=B
-Unhotkey=B
 Buttonpos=0,2
-Unbuttonpos=0,2
 
 [nalc]
 Hotkey=X
