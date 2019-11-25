@@ -15,7 +15,7 @@ const DEFAULT_UNIT="hpea";
 // file names and locations
 const DEFAULT_HOTKEY_FILE="default.txt";
 const DEFAULT_SAVE_NAME="CustomKeys.txt";
-const ICONS_DIR="icons/";
+const ICONS_DIR="icons/classic/";
 const ICONS_EXT=".png";
 const HOTKEY_DIR="hotkeys/";
 const DIR_LIST="hotkeys/index.json";
