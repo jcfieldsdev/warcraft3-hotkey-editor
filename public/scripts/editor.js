@@ -1584,6 +1584,7 @@ Storage.prototype.load=function() {
 		}
 	} catch (err) {
 		console.error(err);
+		return null;
 	}
 };
 
