@@ -229,7 +229,6 @@ function Editor(commands) {
 }
 
 Editor.prototype.load=function() {
-	console.log(this.commands);
 	let unit="";
 
 	// gets current unit from URL if specified
