@@ -319,6 +319,8 @@ Editor.prototype.unitEditor=function() {
 	}
 
 	for (let element of $$(".card div")) {
+		let card=element.parentNode;
+
 		// adds listeners for drag-and-drop events
 		element.addEventListener("dragover", function(event) {
 			event.preventDefault();
