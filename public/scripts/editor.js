@@ -345,7 +345,7 @@ Editor.prototype.unitEditor=function() {
 	this.checkAllConflicts();
 
 	function createCommandCard(n, unit) {
-		for (let [id, name] of Object.entries(self.getCommands(unit))) {
+		for (let [id, name] of self.getCommands(unit)) {
 			// special exception for build buttons, whose hotkeys and tooltips
 			// are under cmdbuild* but whose buttonpos are under a?bu
 			let idpos=self.convertBuildCommand(id);
@@ -431,25 +431,25 @@ Editor.prototype.unitEditor=function() {
 };
 
 Editor.prototype.getCommands=function(unit) {
-	let buttons={};
+	let buttons=[];
 
 	// adds common commands
 	if (unit.type==UNIT||unit.type==SUMMON) {
-		Object.assign(buttons, common.basic);
+		buttons=buttons.concat(common.basic);
 	} else if (unit.type==HERO||unit.type==ITEM) {
-		Object.assign(buttons, common.basic, common.hero);
+		buttons=buttons.concat(common.basic, common.hero);
 	} else if (unit.type==NO_ATTACK) {
-		Object.assign(buttons, common.noAttack);
+		buttons=buttons.concat(common.noAttack);
 	} else if (unit.type==TOWER) {
-		Object.assign(buttons, common.tower);
+		buttons=buttons.concat(common.tower);
 	}
 
 	// adds unit-specific commands
 	if (unit.commands!=undefined) {
-		Object.assign(buttons, unit.commands);
+		buttons=buttons.concat(unit.commands);
 	}
 
-	return buttons;
+	return new Map(buttons);
 };
 
 Editor.prototype.convertBuildCommand=function(id) {
@@ -650,7 +650,7 @@ Editor.prototype.getConflicts=function(id) {
 		return;
 	}
 
-	for (let id of Object.keys(this.getCommands(unit))) {
+	for (let id of this.getCommands(unit).keys()) {
 		if (!this.commands.exists(id)) {
 			continue;
 		}
