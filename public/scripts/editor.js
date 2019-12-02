@@ -454,23 +454,15 @@ Editor.prototype.getCommands=function(unit) {
 
 Editor.prototype.convertBuildCommand=function(id) {
 	if (id=="cmdbuildhuman") {
-		return "ahbu";
-	}
-
-	if (id=="cmdbuildorc") {
-		return "aobu";
-	}
-
-	if (id=="cmdbuildnightelf") {
-		return "aebu";
-	}
-
-	if (id=="cmdbuildundead") {
-		return "aubu";
-	}
-
-	if (id=="cmdbuildnaga") {
-		return "agbu";
+		id="ahbu";
+	} else if (id=="cmdbuildorc") {
+		id="aobu";
+	} else if (id=="cmdbuildnightelf") {
+		id="aebu";
+	} else if (id=="cmdbuildundead") {
+		id="aubu";
+	} else if (id=="cmdbuildnaga") {
+		id="agbu";
 	}
 
 	return id;
