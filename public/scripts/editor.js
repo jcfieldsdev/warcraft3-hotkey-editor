@@ -1201,10 +1201,10 @@ Editor.prototype.findUnitsWith=function(command) {
 			continue;
 		}
 
-		for (let id of Object.keys(properties.commands)) {
-			if (id==command) {
-				matches.add(unit);
-			}
+		let commands=new Map(properties.commands);
+
+		if (commands.has(command)) {
+			matches.add(unit);
 		}
 	}
 
