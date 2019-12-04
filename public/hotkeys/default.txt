@@ -13,11 +13,6 @@ Tip=Attack |cffffcc00G|rround
 Hotkey=G
 Buttonpos=3,1
 
-[cmdbuild]
-Tip=|cffffcc00B|ruild Structure
-Hotkey=B
-Buttonpos=0,2
-
 [cmdbuildhuman]
 Tip=|cffffcc00B|ruild Structure
 Hotkey=B
@@ -3090,27 +3085,6 @@ Revivetip=Revive Alchemist (|cffffcc00X|r)
 Awakentip=Revive Alchemist (|cffffcc00X|r)
 Buttonpos=3,2
 
-[nalm]
-Hotkey=X
-Tip=Summon Alchemist (|cffffcc00X|r)
-Revivetip=Revive Alchemist (|cffffcc00X|r)
-Awakentip=Revive Alchemist (|cffffcc00X|r)
-Buttonpos=3,2
-
-[nal2]
-Hotkey=X
-Tip=Summon Alchemist (|cffffcc00X|r)
-Revivetip=Revive Alchemist (|cffffcc00X|r)
-Awakentip=Revive Alchemist (|cffffcc00X|r)
-Buttonpos=3,2
-
-[nal3]
-Hotkey=X
-Tip=Summon Alchemist (|cffffcc00X|r)
-Revivetip=Revive Alchemist (|cffffcc00X|r)
-Awakentip=Revive Alchemist (|cffffcc00X|r)
-Buttonpos=3,2
-
 [anhs]
 Tip=H|cffffcc00e|raling Spray - [|cffffcc00Level 1|r],H|cffffcc00e|raling Spray - [|cffffcc00Level 2|r],H|cffffcc00e|raling Spray - [|cffffcc00Level 3|r]
 Hotkey=E
@@ -3572,7 +3546,7 @@ Tip=Hire Forest Troll |cffffcc00H|righ Priest
 Hotkey=H
 Buttonpos=3,0
 
-[ndtw]
+[nftk]
 Tip=Hire Forest Troll |cffffcc00W|rarlord
 Hotkey=W
 Buttonpos=0,0
@@ -3829,7 +3803,7 @@ Buttonpos=0,0
 Tip=Summon Ghost
 Buttonpos=0,0
 
-[ngh1]
+[ngh2]
 Tip=Summon Wraith
 Buttonpos=0,0
 
@@ -4022,6 +3996,10 @@ Buttonpos=3,0
 Tip=Hire Razormane Chieftain
 Buttonpos=0,0
 
+[nspd]
+Tip=Summon Spiderling
+Buttonpos=0,0
+
 [nnwa]
 Tip=Summon Nerubian |cffffcc00W|rarrior
 Hotkey=W
@@ -4142,6 +4120,18 @@ Buttonpos=0,0
 
 [nowk]
 Tip=Summon Berserk Wildkin
+Buttonpos=0,0
+
+[njg1]
+Tip=Summon Jungle Stalker
+Buttonpos=0,0
+
+[njga]
+Tip=Summon Elder Jungle Stalker
+Buttonpos=0,0
+
+[njgb]
+Tip=Summon Enraged Jungle Stalker
 Buttonpos=0,0
 
 [ntrh]
@@ -4489,6 +4479,10 @@ Tip=Summon Reef Elemental
 Buttonpos=0,0
 
 [nele]
+Tip=Summon Enraged Elemental
+Buttonpos=0,0
+
+[nelb]
 Tip=Summon Enraged Elemental
 Buttonpos=0,0
 
@@ -5048,10 +5042,15 @@ Buttonpos=2,2
 Tip=Vampiric Aura
 Buttonpos=2,2
 
+[awrg]
+Tip=War S|cffffcc00t|romp
+Hotkey=T
+Buttonpos=1,2
+
 [awrh]
 Tip=War S|cffffcc00t|romp
 Hotkey=T
-Buttonpos=2,2
+Buttonpos=1,2
 
 [acad]
 Tip=Animate |cffffcc00D|read

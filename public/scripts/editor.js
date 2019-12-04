@@ -215,10 +215,12 @@ function $$(selector) {
 
 function Editor(commands) {
 	this.commands=commands;
+
 	this.unit="";
 	this.command="";
 	this.name="";
 	this.race="";
+
 	this.card=Array(CARDS).fill().map(function() {
 		return Array(ROWS).fill().map(function() {
 			return Array(COLS).fill();
@@ -250,10 +252,10 @@ Editor.prototype.open=function() {
 Editor.prototype.setUnit=function(unit) {
 	this.unit=unit;
 
-	if (units[this.unit]==undefined) {
+	if (data.units[this.unit]==undefined) {
 		console.error(`Undefined: ${this.unit} (unit)`);
 	} else {
-		this.race=units[this.unit].race;
+		this.race=data.units[this.unit].race;
 		this.filter(this.race);
 	}
 
@@ -271,7 +273,7 @@ Editor.prototype.setCommand=function(id, name) {
 };
 
 Editor.prototype.unitEditor=function() {
-	let unit=units[this.unit];
+	let unit=data.units[this.unit];
 
 	if (unit==undefined) {
 		return;
@@ -314,8 +316,8 @@ Editor.prototype.unitEditor=function() {
 	let build=$("#card"+BUILD);
 	build.classList.toggle("hidden", unit.build==undefined);
 
-	if (unit.build!=undefined&&units[unit.build]!=undefined) {
-		createCommandCard(BUILD, units[unit.build]);
+	if (unit.build!=undefined&&data.units[unit.build]!=undefined) {
+		createCommandCard(BUILD, data.units[unit.build]);
 	}
 
 	for (let element of $$(".card div")) {
@@ -397,7 +399,7 @@ Editor.prototype.unitEditor=function() {
 	function createButton(id, name, n) {
 		let div=document.createElement("div");
 		let img=document.createElement("img");
-		img.setAttribute("src", ICONS_DIR+id+ICONS_EXT);
+		img.setAttribute("src", self.getIcon(id, n));
 		img.setAttribute("alt", "["+name+"]");
 		img.setAttribute("title", name);
 		img.addEventListener("click", function() {
@@ -435,13 +437,13 @@ Editor.prototype.getCommands=function(unit) {
 
 	// adds common commands
 	if (unit.type==UNIT||unit.type==SUMMON) {
-		buttons=buttons.concat(common.basic);
+		buttons=buttons.concat(data.common.basic);
 	} else if (unit.type==HERO||unit.type==ITEM) {
-		buttons=buttons.concat(common.basic, common.hero);
+		buttons=buttons.concat(data.common.basic, data.common.hero);
 	} else if (unit.type==NO_ATTACK) {
-		buttons=buttons.concat(common.noAttack);
+		buttons=buttons.concat(data.common.noAttack);
 	} else if (unit.type==TOWER) {
-		buttons=buttons.concat(common.tower);
+		buttons=buttons.concat(data.common.tower);
 	}
 
 	// adds unit-specific commands
@@ -450,6 +452,37 @@ Editor.prototype.getCommands=function(unit) {
 	}
 
 	return new Map(buttons);
+};
+
+Editor.prototype.getIcon=function(id, n=STANDARD) {
+	let icon="";
+
+	// special case for race-specific rally point icons
+	if (id=="cmdrally"&&data.units[this.unit]!=undefined) {
+		let race=data.units[this.unit].race||NEUTRAL;
+
+		if (race==ORC) {
+			icon="btnorcrallypoint";
+		} else if (race==UNDEAD) {
+			icon="btnrallypointundead";
+		} else if (race==NIGHT_ELF) {
+			icon="btnrallypointnightelf";
+		} else {
+			icon="btnrallypoint";
+		}
+	} else {
+		icon=data.icons[id]||"btntemp";
+	}
+
+	if (n==RESEARCH) { // uses different icons for research card sometimes
+		if (icon.startsWith("pas")) { // passive icons
+			icon=icon.slice(3);
+		} else if (icon.endsWith("off")) { // auto-cast icons
+			icon=icon.slice(0, -3);
+		}
+	}
+
+	return ICONS_DIR+icon+ICONS_EXT;
 };
 
 Editor.prototype.convertBuildCommand=function(id) {
@@ -636,7 +669,7 @@ Editor.prototype.drop=function(from, to, mod) {
 
 Editor.prototype.getConflicts=function(id) {
 	let hotkeys={}, researchhotkeys={};
-	let unit=units[id];
+	let unit=data.units[id];
 
 	if (unit==undefined) {
 		return;
@@ -1078,14 +1111,14 @@ Editor.prototype.setVisibleHotkeys=function() {
 	flagHotkeys(STANDARD, keys.hotkeys);
 	flagHotkeys(STANDARD, keys.researchhotkeys);
 
-	if (units[this.unit]!=undefined) { // handles secondary command cards
-		if (units[this.unit].type==HERO) {
+	if (data.units[this.unit]!=undefined) { // handles secondary command cards
+		if (data.units[this.unit].type==HERO) {
 			flagHotkeys(RESEARCH, keys.hotkeys);
 			flagHotkeys(RESEARCH, keys.researchhotkeys);
 		}
 
-		if (units[this.unit].build!=undefined) {
-			let keys=this.getConflicts(units[this.unit].build);
+		if (data.units[this.unit].build!=undefined) {
+			let keys=this.getConflicts(data.units[this.unit].build);
 			flagHotkeys(BUILD, keys.hotkeys);
 		}
 	}
@@ -1109,7 +1142,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 };
 
 Editor.prototype.checkConflicts=function(unit) {
-	if (units[unit]!=undefined) {
+	if (data.units[unit]!=undefined) {
 		for (let hotkeys of Object.values(this.getConflicts(unit))) {
 			for (let values of Object.values(hotkeys)) {
 				if (values.size>1) {
@@ -1118,8 +1151,8 @@ Editor.prototype.checkConflicts=function(unit) {
 			}
 		}
 
-		if (units[unit].build!=undefined) {
-			return this.checkConflicts(units[unit].build);
+		if (data.units[unit].build!=undefined) {
+			return this.checkConflicts(data.units[unit].build);
 		}
 	}
 
@@ -1168,7 +1201,7 @@ Editor.prototype.findUnitsNamed=function(query) {
 
 	query=query.toLowerCase();
 
-	for (let [unit, properties] of Object.entries(units)) {
+	for (let [unit, properties] of Object.entries(data.units)) {
 		if (properties.type==OTHER||properties.name==undefined) {
 			continue;
 		}
@@ -1188,7 +1221,7 @@ Editor.prototype.findUnitsNamed=function(query) {
 Editor.prototype.findUnitsWith=function(command) {
 	let matches=new Set();
 
-	for (let [unit, properties] of Object.entries(units)) {
+	for (let [unit, properties] of Object.entries(data.units)) {
 		if (properties.commands==undefined) {
 			continue;
 		}
@@ -1224,11 +1257,11 @@ Editor.prototype.formatResults=function(id, matches) {
 	ul.id=id;
 
 	for (let match of matches) {
-		let unit=units[match];
+		let unit=data.units[match];
 
 		let li=document.createElement("li");
 		let img=document.createElement("img");
-		img.setAttribute("src", ICONS_DIR+match+ICONS_EXT);
+		img.setAttribute("src", this.getIcon(match));
 		img.setAttribute("alt", "["+unit.name+"]");
 		img.setAttribute("title", unit.name);
 
