@@ -15,8 +15,8 @@ const DEFAULT_UNIT="hpea";
 // file names and locations
 const DEFAULT_HOTKEY_FILE="default.txt";
 const DEFAULT_SAVE_NAME="CustomKeys.txt";
-const ICONS_DIR="icons/classic/";
-const ICONS_EXT=".png";
+const DEFAULT_ICON_SET="classic";
+const ICONS_DIR="icons/";
 const HOTKEY_DIR="hotkeys/";
 const DIR_LIST="hotkeys/index.json";
 const HELP_PAGE="help.html";
@@ -172,6 +172,13 @@ window.addEventListener("load", function() {
 	for (let element of $$(".close")) {
 		element.addEventListener("click", function() {
 			overlays[this.value].hide();
+		});
+	}
+
+	for (let element of $$(".icons")) {
+		element.addEventListener("click", function() {
+			editor.clearButtons();
+			editor.unitEditor();
 		});
 	}
 
@@ -455,6 +462,7 @@ Editor.prototype.getCommands=function(unit) {
 };
 
 Editor.prototype.getIcon=function(id, n=STANDARD) {
+	let dir=$(".icons:checked").value||DEFAULT_ICON_SET;
 	let icon="";
 
 	// special case for race-specific rally point icons
@@ -471,10 +479,16 @@ Editor.prototype.getIcon=function(id, n=STANDARD) {
 			icon="btnrallypoint";
 		}
 	} else {
-		icon=data.icons[id]||"btntemp";
+		icon=data.icons[dir].commands[id];
+
+		if (icon==undefined) {
+			// uses default icon name if not overridden,
+			// otherwise uses filler art for missing icon
+			icon=data.icons[DEFAULT_ICON_SET].commands[id]||"btntemp";
+		}
 	}
 
-	if (n==RESEARCH) { // uses different icons for research card sometimes
+	if (n==RESEARCH) { // uses different icons for research card
 		if (icon.startsWith("pas")) { // passive icons
 			icon=icon.slice(3);
 		} else if (icon.endsWith("off")) { // auto-cast icons
@@ -482,7 +496,7 @@ Editor.prototype.getIcon=function(id, n=STANDARD) {
 		}
 	}
 
-	return ICONS_DIR+icon+ICONS_EXT;
+	return ICONS_DIR+dir+"/"+icon+data.icons[dir].extension;
 };
 
 Editor.prototype.convertBuildCommand=function(id) {
@@ -1094,7 +1108,7 @@ Editor.prototype.setVisibleHotkeys=function() {
 					}
 				} else if (researchhotkey!="") {
 					span.textContent=researchhotkey.slice(0, 1);
-					span.classList.toggle("passive", hotkey=="");
+					span.classList.toggle("passive", n!=RESEARCH&&hotkey=="");
 				}
 			}
 		}
