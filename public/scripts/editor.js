@@ -178,6 +178,7 @@ window.addEventListener("load", function() {
 	for (let element of $$(".icons")) {
 		element.addEventListener("click", function() {
 			editor.clearButtons();
+			editor.clearSearch();
 			editor.unitEditor();
 		});
 	}
@@ -484,7 +485,7 @@ Editor.prototype.getIcon=function(id, n=STANDARD) {
 		if (icon==undefined) {
 			// uses default icon name if not overridden,
 			// otherwise uses filler art for missing icon
-			icon=data.icons[DEFAULT_ICON_SET].commands[id]||"btntemp";
+			icon=data.icons[DEFAULT_ICON_SET].commands[id]||"btnsheep";
 		}
 	}
 

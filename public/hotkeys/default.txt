@@ -2644,6 +2644,13 @@ Revivetip=Revive |cffffcc00D|remon Hunter
 Awakentip=Revive |cffffcc00D|remon Hunter
 Buttonpos=0,2
 
+[ecen]
+Hotkey=C
+Tip=Summon |cffffcc00C|renarius
+Revivetip=Revive |cffffcc00C|renarius
+Awakentip=Revive |cffffcc00C|renarius
+Buttonpos=0,0
+
 [efur]
 Hotkey=K
 Tip=Summon |cffffcc00K|reeper of the Grove
