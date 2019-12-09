@@ -7164,6 +7164,9 @@ data.icons={
 	reforged: {
 		extension: ".jpg",
 		commands: {
+			aell: "btnillidandemonform",
+			aevi: "btnillidandemonform",
+			aihm: "btnambush",
 			arsg: "btnmishalv1",
 			ecen: "btncenarius",
 			eill: "btnillidan",
@@ -7194,6 +7197,7 @@ data.icons={
 			nbdr: "btnblackdragonwhelp",
 			nbds: "btngreendragonspawnsorcerer",
 			nbel: "btnbloodelflieutenant",
+			nbot: "btnorctransport",
 			nbrg: "btnbrigand",
 			nbzk: "btnbronzedrake",
 			nbzw: "btnbronzedragonwhelp",
@@ -7285,6 +7289,7 @@ data.icons={
 			nlsn: "btnlobstrokkredsnapper",
 			nltl: "btnlightninglizard",
 			nlv2: "btnlavaspawnlv2",
+			nlv3: "btnlavaspawnlv2",
 			nmag: "btnmagtheridon",
 			nmcf: "btnmurgulcliffrunner",
 			nmdm: "btnmedivhravenform",
