@@ -1199,14 +1199,12 @@ Researchhotkey=Z
 Researchtip=Learn Impale - [|cffffcc00Level %d|r] (|cffffcc00Z|r)
 
 [aucb]
-Hotkey=X
-Tip=Carrion Beetles - [|cffffcc00Level 1|r] (|cffffcc00X|r),Carrion Beetles - [|cffffcc00Level 2|r] (|cffffcc00X|r),Carrion Beetles - [|cffffcc00Level 3|r] (|cffffcc00X|r)
-Researchhotkey=X
-Researchtip=Learn Carrion Beetles - [|cffffcc00Level %d|r] (|cffffcc00X|r)
+Tip=Carrion Beetles - [|cffffcc00Level 1|r] (|cffffcc00C|r),Carrion Beetles - [|cffffcc00Level 2|r] (|cffffcc00C|r),Carrion Beetles - [|cffffcc00Level 3|r] (|cffffcc00C|r)
+Researchtip=Learn Carrion Beetles - [|cffffcc00Level %d|r] (|cffffcc00C|r)
 
 [auts]
-Researchhotkey=C
-Researchtip=Learn Spiked Carapace - [|cffffcc00Level %d|r] (|cffffcc00C|r)
+Researchhotkey=X
+Researchtip=Learn Spiked Carapace - [|cffffcc00Level %d|r] (|cffffcc00X|r)
 
 [auls]
 Hotkey=V

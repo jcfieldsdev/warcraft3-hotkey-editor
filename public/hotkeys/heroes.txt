@@ -9,8 +9,8 @@ Hotkey=T
 Tip=Hero Abilities (|cffffcc00T|r)
 
 [aamk]
-Researchhotkey=D
-Researchtip=Learn Attribute Bonus - [|cffffcc00Level %d|r] (|cffffcc00D|r)
+Researchhotkey=F
+Researchtip=Learn Attribute Bonus - [|cffffcc00Level %d|r] (|cffffcc00F|r)
 
 [ahhb]
 Hotkey=Q
@@ -398,14 +398,14 @@ Researchhotkey=Q
 Researchtip=Learn Impale - [|cffffcc00Level %d|r] (|cffffcc00Q|r)
 
 [aucb]
-Hotkey=W
-Tip=Carrion Beetles - [|cffffcc00Level 1|r] (|cffffcc00W|r),Carrion Beetles - [|cffffcc00Level 2|r] (|cffffcc00W|r),Carrion Beetles - [|cffffcc00Level 3|r] (|cffffcc00W|r)
-Researchhotkey=W
-Researchtip=Learn Carrion Beetles - [|cffffcc00Level %d|r] (|cffffcc00W|r)
+Hotkey=E
+Tip=Carrion Beetles - [|cffffcc00Level 1|r] (|cffffcc00E|r),Carrion Beetles - [|cffffcc00Level 2|r] (|cffffcc00E|r),Carrion Beetles - [|cffffcc00Level 3|r] (|cffffcc00E|r)
+Researchhotkey=E
+Researchtip=Learn Carrion Beetles - [|cffffcc00Level %d|r] (|cffffcc00E|r)
 
 [auts]
-Researchhotkey=E
-Researchtip=Learn Spiked Carapace - [|cffffcc00Level %d|r] (|cffffcc00E|r)
+Researchhotkey=W
+Researchtip=Learn Spiked Carapace - [|cffffcc00Level %d|r] (|cffffcc00W|r)
 
 [auls]
 Hotkey=R
