@@ -734,6 +734,18 @@ Revivetip=Revive Pa|cffffcc00l|radin
 Awakentip=Revive Pa|cffffcc00l|radin
 Buttonpos=1,1
 
+[ahlh]
+Tip=Improved Lumber Harvesting,Advanced Lumber Harvesting
+Buttonpos=2,1
+
+[ahri]
+Tip=Long Rifles
+Buttonpos=0,2
+
+[ahan]
+Tip=Animal War Training
+Buttonpos=3,2
+
 [adts]
 Tip=Magic Sentry
 Buttonpos=2,1
@@ -1308,9 +1320,25 @@ Revivetip=Revive |cffffcc00T|rauren Chieftain
 Awakentip=Revive |cffffcc00T|rauren Chieftain
 Buttonpos=2,2
 
+[aorb]
+Tip=Reinforced Defenses
+Buttonpos=3,2
+
 [asal]
 Tip=Pillage
 Buttonpos=1,2
+
+[aobs]
+Tip=Brute Strength
+Buttonpos=0,2
+
+[aobk]
+Tip=Berserker Upgrade
+Buttonpos=2,2
+
+[aotr]
+Tip=Troll Regeneration
+Buttonpos=3,2
 
 [abof]
 Tip=Burning Oil
@@ -2012,9 +2040,21 @@ Buttonpos=0,2
 Tip=Frost Attack
 Buttonpos=1,2
 
+[afrc]
+Tip=Frost Attack
+Buttonpos=0,2
+
 [atru]
 Tip=True Sight
 Buttonpos=0,2
+
+[augh]
+Tip=Shade
+Buttonpos=1,2
+
+[augf]
+Tip=Ghoul Frenzy
+Buttonpos=1,2
 
 [apts]
 Tip=Disease Cloud
@@ -2032,9 +2072,13 @@ Buttonpos=1,2
 Tip=Spell Immunity
 Buttonpos=2,2
 
+[ausm]
+Tip=Skeletal Mastery
+Buttonpos=3,2
+
 [afrz]
 Tip=Freezing Breath
-Buttonpos=0,2
+Buttonpos=1,2
 
 [uarb]
 Tip=Summon Sky |cffffcc00B|rarge
@@ -2694,6 +2738,14 @@ Buttonpos=0,2
 Tip=Elune's Grace
 Buttonpos=1,2
 
+[aeib]
+Tip=Improved Bows
+Buttonpos=2,2
+
+[aemk]
+Tip=Marksmanship
+Buttonpos=3,2
+
 [amgl]
 Tip=Moon Glaive
 Buttonpos=1,2
@@ -3277,6 +3329,16 @@ Buttonpos=0,1
 Tip=Purchase Potion of |cffffcc00I|rnvisibility
 Hotkey=I
 Buttonpos=1,1
+
+[wneg]
+Tip=Purchase Wand of |cffffcc00N|regation
+Hotkey=N
+Buttonpos=3,1
+
+[gemt]
+Tip=Purchase |cffffcc00G|rem of True Seeing
+Hotkey=G
+Buttonpos=0,0
 
 [stwp]
 Tip=Purchase Scroll of |cffffcc00T|rown Portal

@@ -31,7 +31,7 @@ const PATTERN=/,(?=(?:[^"]|"[^"]*")*$)/;
 // command cards
 const STANDARD=0, RESEARCH=1, BUILD=2;
 // commands
-const CANCEL="cmdcancel";
+const CANCEL="cmdcancel", RALLY="cmdrally";
 
 /*
  * initialization
@@ -467,7 +467,7 @@ Editor.prototype.getIcon=function(id, n=STANDARD) {
 	let icon="";
 
 	// special case for race-specific rally point icons
-	if (id=="cmdrally"&&data.units[this.unit]!=undefined) {
+	if (id==RALLY&&data.units[this.unit]!=undefined) {
 		let race=data.units[this.unit].race||NEUTRAL;
 
 		if (race==ORC) {
@@ -1003,7 +1003,7 @@ Editor.prototype.formatHotkey=function(type, hotkey) {
 	p.appendChild(label);
 
 	// appends "Set to Esc" button for cancel buttons
-	if (this.command.startsWith(CANCEL)) {
+	if (this.command.startsWith("cmdcancel")) {
 		let button=document.createElement("button");
 		button.setAttribute("type", "button");
 		button.addEventListener("click", function() {
@@ -1187,14 +1187,14 @@ Editor.prototype.checkAllConflicts=function() {
 
 Editor.prototype.filter=function(race) {
 	// converts campaign races to multiplayer equivalents
-	if (race=="bloodelf") {
-		race="human";
-	} else if (race=="draenei") {
-		race="orc";
-	} else if (race=="demon") {
-		race="undead";
-	} else if (race=="naga") {
-		race="nightelf";
+	if (race==BLOOD_ELF) {
+		race=HUMAN;
+	} else if (race==DRAENEI) {
+		race=ORC;
+	} else if (race==DEMON) {
+		race=UNDEAD;
+	} else if (race==NAGA) {
+		race=NIGHT_ELF;
 	}
 
 	// hides unit lists for races other than selected
