@@ -37,8 +37,6 @@ Researchtip=Learn Holy Light - [|cffffcc00Level %d|r] (|cffffcc00Z|r)
 [ahds]
 Hotkey=X
 Tip=Activate Divine Shield - [|cffffcc00Level 1|r] (|cffffcc00X|r),Activate Divine Shield - [|cffffcc00Level 2|r] (|cffffcc00X|r),Activate Divine Shield - [|cffffcc00Level 3|r] (|cffffcc00X|r)
-Unhotkey=X
-Untip=Deactivate Divine Shield (|cffffcc00X|r)
 Researchhotkey=X
 Researchtip=Learn Divine Shield - [|cffffcc00Level %d|r] (|cffffcc00X|r)
 
