@@ -1079,6 +1079,12 @@ Editor.prototype.setHotkey=function(key, hotkey="") {
 Editor.prototype.resetDefaults=function() {
 	this.commands.clear(this.command);
 
+	let build=this.convertBuildCommand(this.command);
+
+	if (this.command!=build) { // resets button position for build icons
+		this.commands.clear(build);
+	}
+
 	this.clearButtons();
 	this.clearFields();
 	this.unitEditor();
