@@ -4,11 +4,9 @@ A [hotkey editor for *Warcraft III*](https://jcfields.gitlab.io/warcraft3-hotkey
 
 ## Limitations
 
-There are a few known limitations of the editor:
+The icon order algorithm may not be exactly the same as the game in cases where there are button position conflicts (which, by default, includes several creeps).
 
-- The default hotkey settings are for *The Frozen Throne* multiplayer. There are a handful of differences with *Reign of Chaos* multiplayer and both campaigns that the editor does not properly reflect. For example, in *Reign of Chaos*, the Far Seer and Beastiary have their commands in a different order and several units have different names.
-- The icon order algorithm may not be exactly the same as the game in cases where there are button position conflicts (which, by default, includes several creeps).
-- There are some special creeps and other units in the campaign that can potentially be player-controlled (through mind control abilities or otherwise) that may not be available in the editor, though their commands are typically present in the standard multiplayer creeps.
+There are some special creeps and other units in the campaign that can potentially be player-controlled (through mind control abilities or otherwise) that may not be available in the editor, though their commands are typically present in the standard multiplayer creeps.
 
 ## Acknowledgments
 

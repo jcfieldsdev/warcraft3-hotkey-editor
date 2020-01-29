@@ -991,7 +991,7 @@ Hotkey=G
 Buttonpos=2,2
 
 [robs]
-Tip=Research |cffffcc00B|rerserker Strength
+Tip=Research |cffffcc00B|rrute Strength
 Hotkey=B
 Buttonpos=0,2
 
@@ -1343,7 +1343,7 @@ Tip=Brute Strength
 Buttonpos=0,2
 
 [aobk]
-Tip=Berserker Upgrade
+Tip=Brute Upgrade
 Buttonpos=2,2
 
 [aotr]

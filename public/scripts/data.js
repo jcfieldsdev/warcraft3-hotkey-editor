@@ -97,6 +97,7 @@ data.units={
 			["ahar", "Gather"],
 			["ahrp", "Repair"],
 			["amil", "Call to Arms"],
+			["ahlh", "Lumber Harvesting"],
 			["cmdbuildhuman", "Build Structure"],
 			["cmdcancelbuild", "Cancel"]
 		],
@@ -140,14 +141,18 @@ data.units={
 	hrif: {
 		name: "Rifleman",
 		race: HUMAN,
-		type: UNIT
+		type: UNIT,
+		commands: [
+			["ahri", "Long Rifles"]
+		]
 	},
 	hkni: {
 		name: "Knight",
 		race: HUMAN,
 		type: UNIT,
 		commands: [
-			["ahsb", "Sundering Blades"]
+			["ahsb", "Sundering Blades"],
+			["ahan", "Animal War Training"]
 		]
 	},
 	hmpr: {
@@ -223,7 +228,8 @@ data.units={
 		race: HUMAN,
 		type: UNIT,
 		commands: [
-			["asth", "Storm Hammers"]
+			["asth", "Storm Hammers"],
+			["ahan", "Animal War Training"]
 		]
 	},
 	hdhw: {
@@ -737,7 +743,11 @@ data.units={
 	nhea: {
 		name: "Archer",
 		race: BLOOD_ELF,
-		type: UNIT
+		type: UNIT,
+		commands: [
+			["aeib", "Improved Bows"],
+			["aemk", "Marksmanship"]
+		]
 	},
 	nws1: {
 		name: "Dragon Hawk",
@@ -943,20 +953,27 @@ data.units={
 		race: ORC,
 		type: UNIT,
 		commands: [
+			["aobs", "Brute Strength"],
 			["asal", "Pillage"]
 		]
 	},
 	ohun: {
 		name: "Troll Headhunter",
 		race: ORC,
-		type: UNIT
+		type: UNIT,
+		commands: [
+			["aobk", "Berserker Upgrade"],
+			["aotr", "Troll Regeneration"]
+		]
 	},
 	otbk: {
 		name: "Troll Berserker",
 		race: ORC,
 		type: UNIT,
 		commands: [
-			["absk", "Berserk"]
+			["absk", "Berserk"],
+			["aobk", "Berserker Upgrade"],
+			["aotr", "Troll Regeneration"]
 		]
 	},
 	ocat: {
@@ -985,7 +1002,8 @@ data.units={
 		commands: [
 			["aeye", "Sentry Ward"],
 			["ahwd", "Healing Ward"],
-			["asta", "Stasis Trap"]
+			["asta", "Stasis Trap"],
+			["aotr", "Troll Regeneration"]
 		]
 	},
 	ospw: {
@@ -1045,7 +1063,8 @@ data.units={
 		type: UNIT,
 		commands: [
 			["aliq", "Liquid Fire"],
-			["auco", "Unstable Concoction"]
+			["auco", "Unstable Concoction"],
+			["aotr", "Troll Regeneration"]
 		]
 	},
 	otau: {
@@ -1102,7 +1121,7 @@ data.units={
 			["ogru", "Train Grunt"],
 			["ohun", "Train Troll Headhunter"],
 			["ocat", "Train Demolisher"],
-			["robs", "Research Berserker Strength"],
+			["robs", "Research Brute Strength"],
 			["rotr", "Research Troll Regeneration"],
 			["robk", "Berserker Upgrade"],
 			["robf", "Burning Oil"],
@@ -1119,7 +1138,7 @@ data.units={
 			["ogru", "Train Grunt"],
 			["otbk", "Train Troll Berserkers"],
 			["ocat", "Train Demolisher"],
-			["robs", "Research Berserker Strength"],
+			["robs", "Research Brute Strength"],
 			["rotr", "Research Troll Regeneration"],
 			["robf", "Burning Oil"],
 			["cmdrally", "Set Rally Point"],
@@ -1150,7 +1169,8 @@ data.units={
 		type: BUILDING,
 		commands: [
 			["abtl", "Battle Stations"],
-			["astd", "Stand Down"]
+			["astd", "Stand Down"],
+			["aorb", "Reinforced Defenses"]
 		]
 	},
 	oalt: {
@@ -1431,7 +1451,7 @@ data.units={
 			["nchg", "Train Chaos Grunt"],
 			["ohun", "Train Troll Headhunter"],
 			["ocat", "Train Demolisher"],
-			["robs", "Research Berserker Strength"],
+			["robs", "Research Brute Strength"],
 			["rotr", "Research Troll Regeneration"],
 			["cmdrally", "Set Rally Point"],
 			["cmdcancelbuild", "Cancel"]
@@ -1883,7 +1903,8 @@ data.units={
 		race: UNDEAD,
 		type: NO_ATTACK,
 		commands: [
-			["atru", "True Sight"]
+			["atru", "True Sight"],
+			["augh", "Shade"]
 		]
 	},
 	ugho: {
@@ -1892,6 +1913,7 @@ data.units={
 		type: UNIT,
 		commands: [
 			["acan", "Cannibalize"],
+			["augf", "Ghoul Frenzy"],
 			["ahrl", "Gather"]
 		]
 	},
@@ -1939,7 +1961,8 @@ data.units={
 		commands: [
 			["acri", "Cripple"],
 			["arai", "Raise Dead"],
-			["auuf", "Unholy Frenzy"]
+			["auuf", "Unholy Frenzy"],
+			["ausm", "Skeletal Mastery"]
 		]
 	},
 	uneccampaign: {
@@ -1950,7 +1973,8 @@ data.units={
 		commands: [
 			["arai", "Raise Dead"],
 			["auhf", "Unholy Frenzy"],
-			["acri", "Cripple"]
+			["acri", "Cripple"],
+			["ausm", "Skeletal Mastery"]
 		]
 	},
 	uban: {
@@ -1968,6 +1992,7 @@ data.units={
 		race: UNDEAD,
 		type: UNIT,
 		commands: [
+			["afra", "Frost Attack"],
 			["afrz", "Freezing Breath"]
 		]
 	},
@@ -2510,7 +2535,9 @@ data.units={
 		commands: [
 			["aco2", "Mount Hippogryph"],
 			["ashm", "Shadowmeld"],
-			["aegr", "Elune's Grace"]
+			["aegr", "Elune's Grace"],
+			["aeib", "Improved Bows"],
+			["aemk", "Marksmanship"]
 		]
 	},
 	esen: {
@@ -2586,7 +2613,9 @@ data.units={
 		race: NIGHT_ELF,
 		type: UNIT,
 		commands: [
-			["adec", "Dismount Archer"]
+			["adec", "Dismount Archer"],
+			["aeib", "Improved Bows"],
+			["aemk", "Marksmanship"]
 		]
 	},
 	edot: {
@@ -3596,6 +3625,23 @@ data.units={
 			["tret", "Purchase Tome of Retraining"],
 			["shea", "Purchase Scroll of Healing"],
 			["pnvl", "Purchase Potion of Lesser Invulnerability"],
+			["anei", "Select User"]
+		]
+	},
+	ngmeoriginal: {
+		name: "Goblin Merchant",
+		suffix: "Original",
+		race: NEUTRAL,
+		type: BUILDING,
+		commands: [
+			["phea", "Purchase Potion of Healing"],
+			["pman", "Purchase Potion of Mana"],
+			["pinv", "Potion of Invisibility"],
+			["shea", "Purchase Scroll of Healing"],
+			["spro", "Purchase Scroll of Protection"],
+			["wneg", "Wand of Negation"],
+			["gemt", "Gem of True Seeing"],
+			["stwp", "Purchase Scroll of Town Portal"],
 			["anei", "Select User"]
 		]
 	},
@@ -6117,10 +6163,12 @@ data.icons={
 			aefk: "btnfanofknives",
 			aefn: "btnent",
 			aegr: "pasbtnelunesblessing",
+			aeib: "pasbtnimprovedbows",
 			aeim: "btnimmolationon",
 			aell: "btnmetamorphosis",
 			aemb: "btnmanaburn",
 			aeme: "btnmetamorphosis",
+			aemk: "pasbtnmarksmanship",
 			aenc: "btnload",
 			aenr: "btnentanglingroots",
 			aens: "btnensnare",
@@ -6147,6 +6195,7 @@ data.icons={
 			aflk: "pasbtnflakcannons",
 			afr2: "pasbtnfrost",
 			afra: "pasbtnfrost",
+			afrc: "pasbtnfrost",
 			afrz: "pasbtnfreezingbreath",
 			afsh: "pasbtnfragmentationbombs",
 			afzy: "btnbloodlustoff",
@@ -6156,6 +6205,7 @@ data.icons={
 			agyv: "pasbtnflyingmachinetruesight",
 			ahab: "pasbtnbrilliance",
 			ahad: "pasbtndevotion",
+			ahan: "pasbtnanimalwartraining",
 			ahar: "btngathergold",
 			ahav: "btnavatar",
 			ahbh: "pasbtnbash",
@@ -6170,10 +6220,12 @@ data.icons={
 			ahfs: "btnwalloffire",
 			ahhb: "btnholybolt",
 			ahid: "btnambush",
+			ahlh: "pasbtnhumanlumberupgrade1",
 			ahmt: "btnmassteleport",
 			ahpx: "btnmarkoffire",
 			ahr3: "btngathergold",
 			ahre: "btnresurrection",
+			ahri: "pasbtndwarvenlongrifle",
 			ahrl: "btngathergold",
 			ahrp: "btnrepairoff",
 			ahsb: "pasbtnsunderingblades",
@@ -6283,6 +6335,8 @@ data.icons={
 			anvc: "btnvolcano",
 			anwk: "btnwindwalkon",
 			aoae: "pasbtncommand",
+			aobk: "pasbtnheadhunterberserker",
+			aobs: "pasbtnberserk",
 			aobu: "btnbasicstruct",
 			aocl: "btnchainlightning",
 			aocr: "pasbtncriticalstrike",
@@ -6294,11 +6348,13 @@ data.icons={
 			aomi: "btnmirrorimage",
 			aor2: "pasbtncommand",
 			aor3: "pasbtnreincarnation",
+			aorb: "pasbtnreinforcedburrows",
 			aore: "pasbtnreincarnation",
 			aos2: "btnshockwave",
 			aosf: "btnspiritwolf",
 			aosh: "btnshockwave",
 			aosw: "btnserpentward",
+			aotr: "pasbtnregenerate",
 			aovd: "btnbigbadvoodoospell",
 			aow2: "btnwarstomp",
 			aowk: "btnwindwalkon",
@@ -6365,12 +6421,15 @@ data.icons={
 			audr: "btndarkritual",
 			aufn: "btnglacier",
 			aufu: "btnfrostarmoroff",
+			augf: "pasbtnghoulfrenzy",
+			augh: "pasbtnshade",
 			auhf: "btnunholyfrenzy",
 			auim: "btnimpale",
 			auin: "btninfernal",
 			auls: "btnlocustswarm",
 			auns: "btnunsummonbuilding",
 			ausl: "btnsleep",
+			ausm: "pasbtnskeletonmage",
 			auts: "pasbtnthornshield",
 			auuf: "btnunholyfrenzy",
 			aven: "pasbtnenvenomedspear",
@@ -6437,6 +6496,7 @@ data.icons={
 			ewar: "btnherowarden",
 			ewrd: "btnwarden2",
 			ewsp: "btnwisp",
+			gemt: "btngem",
 			halt: "btnaltarofkings",
 			haltcampaign: "btnaltarofkings",
 			hamg: "btnheroarchmage",
@@ -6652,6 +6712,7 @@ data.icons={
 			ngh2: "btnghost",
 			ngir: "btnjunkgolem",
 			ngme: "btnmerchant",
+			ngmeoriginal: "btnmerchant",
 			ngna: "btngnollarcher",
 			ngnb: "btngnoll",
 			ngno: "btngnoll",
@@ -7158,6 +7219,7 @@ data.icons={
 			uwar: "btnarchimonde",
 			uzg1: "btnzigguratupgrade",
 			uzg2: "btnfrosttower",
+			wneg: "btnwandskull",
 			uzig: "btnziggurat"
 		}
 	},
