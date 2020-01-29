@@ -592,13 +592,10 @@ Researchbuttonpos=0,0
 
 [ahds]
 Tip=Activate |cffffcc00D|rivine Shield - [|cffffcc00Level 1|r],Activate |cffffcc00D|rivine Shield - [|cffffcc00Level 2|r],Activate |cffffcc00D|rivine Shield - [|cffffcc00Level 3|r]
-Untip=Deactivate |cffffcc00D|rivine Shield
 Hotkey=D
-Unhotkey=D
 Researchtip=Learn |cffffcc00D|rivine Shield - [|cffffcc00Level %d|r]
 Researchhotkey=D
 Buttonpos=1,2
-Unbuttonpos=1,2
 Researchbuttonpos=1,0
 
 [ahad]
