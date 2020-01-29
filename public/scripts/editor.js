@@ -911,7 +911,7 @@ Editor.prototype.autoSetTip=function(key, fields) {
 		tip=tip.replace(/"/g, ""); // removes quotes
 
 		if (tip.startsWith("|cffc3dbff")) {
-			return; // skips hint lines
+			return tip; // skips hint lines
 		}
 
 		// if there are multiple fields,

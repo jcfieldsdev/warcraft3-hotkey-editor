@@ -98,13 +98,17 @@ Unbuttonpos=3,1
 Tip=|cffffcc00R|repair
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=1,1
+Unbuttonpos=1,1
 
 [ahrp]
 Tip=|cffffcc00R|repair
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=1,1
+Unbuttonpos=1,1
 
 [anei]
 Tip=Select |cffffcc00U|rser
@@ -200,13 +204,17 @@ Buttonpos=1,0
 Tip=Inner |cffffcc00F|rire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
+Unhotkey=F
 Buttonpos=2,2
+Unbuttonpos=2,2
 
 [ahea]
 Tip=H|cffffcc00e|ral
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=E
+Unhotkey=E
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [adis]
 Tip=|cffffcc00D|rispel Magic
@@ -261,7 +269,9 @@ Buttonpos=0,0
 Tip=Slo|cffffcc00w|r
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=W
+Unhotkey=W
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [aply]
 Tip=Polym|cffffcc00o|rrph
@@ -282,7 +292,9 @@ Buttonpos=2,0
 Tip=Spell S|cffffcc00t|real
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=T
+Unhotkey=T
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acmg]
 Tip=|cffffcc00C|rontrol Magic
@@ -880,7 +892,9 @@ Buttonpos=0,2
 Tip=|cffffcc00B|rloodlust
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
+Unhotkey=B
 Buttonpos=2,2
+Unbuttonpos=2,2
 
 [alsh]
 Tip=|cffffcc00L|rightning Shield
@@ -899,7 +913,6 @@ Buttonpos=3,0
 
 [auco]
 Tip=Unstable |cffffcc00C|roncoction
-Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
 Buttonpos=0,2
 
@@ -1380,7 +1393,9 @@ Buttonpos=3,1
 Tip=|cffffcc00R|restore
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=1,1
+Unbuttonpos=1,1
 
 [uabo]
 Tip=Train |cffffcc00A|rbomination
@@ -1401,7 +1416,9 @@ Buttonpos=1,0
 Tip=|cffffcc00C|rurse
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
+Unhotkey=C
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [aams]
 Tip=A|cffffcc00n|rti-magic Shell
@@ -1432,7 +1449,9 @@ Buttonpos=1,0
 Tip=|cffffcc00W|reb
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=W
+Unhotkey=W
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [abur]
 Tip=|cffffcc00B|rurrow
@@ -1484,7 +1503,9 @@ Buttonpos=0,2
 Tip=|cffffcc00R|raise Dead
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=1,2
+Unbuttonpos=1,2
 
 [auhf]
 Tip=|cffffcc00U|rnholy Frenzy
@@ -1505,7 +1526,9 @@ Buttonpos=0,0
 Tip=Get |cffffcc00C|rorpse
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
+Unhotkey=C
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [amed]
 Tip=|cffffcc00D|rrop All Corpses
@@ -1521,13 +1544,17 @@ Buttonpos=2,0
 Tip=Spirit Tou|cffffcc00c|rh
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
+Unhotkey=C
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [arpl]
 Tip=Essence of |cffffcc00B|rlight
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
+Unhotkey=B
 Buttonpos=1,2
+Unbuttonpos=1,2
 
 [aave]
 Tip=Morph into Des|cffffcc00t|rroyer
@@ -1543,7 +1570,9 @@ Buttonpos=3,2
 Tip=|cffffcc00O|rrb of Annihilation
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=O
+Unhotkey=O
 Buttonpos=1,2
+Unbuttonpos=1,2
 
 [advm]
 Tip=|cffffcc00D|revour Magic
@@ -1828,9 +1857,11 @@ Researchbuttonpos=0,0
 Tip=|cffffcc00F|rrost Armor - [|cffffcc00Level 1|r],|cffffcc00F|rrost Armor - [|cffffcc00Level 2|r],|cffffcc00F|rrost Armor - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
+Unhotkey=F
 Researchtip=Learn |cffffcc00F|rrost Armor - [|cffffcc00Level %d|r]
 Researchhotkey=F
 Buttonpos=1,2
+Unbuttonpos=1,2
 Researchbuttonpos=1,0
 
 [audr]
@@ -1868,9 +1899,11 @@ Researchbuttonpos=0,0
 Tip=|cffffcc00C|rarrion Beetles - [|cffffcc00Level 1|r],|cffffcc00C|rarrion Beetles - [|cffffcc00Level 2|r],|cffffcc00C|rarrion Beetles - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
+Unhotkey=C
 Researchtip=Learn |cffffcc00C|rarrion Beetles - [|cffffcc00Level %d|r]
 Researchhotkey=C
 Buttonpos=2,2
+Unbuttonpos=2,2
 Researchbuttonpos=2,0
 
 [abu2]
@@ -2147,7 +2180,9 @@ Buttonpos=1,0
 Tip=Fae|cffffcc00r|rie Fire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acyc]
 Tip=|cffffcc00C|ryclone
@@ -2166,7 +2201,9 @@ Unbuttonpos=3,2
 Tip=Fae|cffffcc00r|rie Fire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [ewsp]
 Hotkey=W
@@ -2177,7 +2214,9 @@ Buttonpos=0,0
 Tip=|cffffcc00R|renew
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=1,1
+Unbuttonpos=1,1
 
 [awha]
 Tip=|cffffcc00G|rather
@@ -2228,7 +2267,9 @@ Buttonpos=0,0
 Tip=A|cffffcc00b|rolish Magic
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
+Unhotkey=B
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [ehip]
 Hotkey=H
@@ -2277,7 +2318,9 @@ Unbuttonpos=1,2
 Tip=Phas|cffffcc00e|r Shift
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=E
+Unhotkey=E
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [resm]
 Tip=Upgrade to Strength of the |cffffcc00M|roon,Upgrade to Improved Strength of the |cffffcc00M|roon,Upgrade to Advanced Strength of the |cffffcc00M|roon
@@ -2504,7 +2547,9 @@ Buttonpos=0,1
 Tip=|cffffcc00R|replenish Mana and Life
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=0,0
+Unbuttonpos=0,0
 
 [edem]
 Hotkey=D
@@ -2604,18 +2649,22 @@ Researchbuttonpos=0,0
 Tip=|cffffcc00C|rold Arrows - [|cffffcc00Level 1|r],|cffffcc00C|rold Arrows - [|cffffcc00Level 2|r],|cffffcc00C|rold Arrows - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
+Unhotkey=C
 Researchtip=Learn |cffffcc00C|rold Arrows - [|cffffcc00Level %d|r]
 Researchhotkey=C
 Buttonpos=1,2
+Unbuttonpos=1,2
 Researchbuttonpos=1,0
 
 [ahfa]
 Tip=Sea|cffffcc00r|ring Arrows - [|cffffcc00Level 1|r],Sea|cffffcc00r|ring Arrows - [|cffffcc00Level 2|r],Sea|cffffcc00r|ring Arrows - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Researchtip=Learn Sea|cffffcc00r|ring Arrows - [|cffffcc00Level %d|r]
 Researchhotkey=R
 Buttonpos=1,2
+Unbuttonpos=1,2
 Researchbuttonpos=1,0
 
 [aear]
@@ -2676,7 +2725,9 @@ Researchbuttonpos=3,0
 Tip=Spirit of |cffffcc00V|rengeance
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=V
+Unhotkey=V
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [eill]
 Hotkey=D
@@ -2795,9 +2846,11 @@ Researchbuttonpos=0,0
 Tip=F|cffffcc00r|rost Arrows - [|cffffcc00Level 1|r],F|cffffcc00r|rost Arrows - [|cffffcc00Level 2|r],F|cffffcc00r|rost Arrows - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Researchtip=Learn F|cffffcc00r|rost Arrows - [|cffffcc00Level %d|r]
 Researchhotkey=R
 Buttonpos=1,2
+Unbuttonpos=1,2
 Researchbuttonpos=1,0
 
 [anms]
@@ -2953,9 +3006,11 @@ Researchbuttonpos=0,0
 Tip=|cffffcc00B|rlack Arrow - [|cffffcc00Level 1|r],|cffffcc00B|rlack Arrow - [|cffffcc00Level 2|r],|cffffcc00B|rlack Arrow - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
+Unhotkey=B
 Researchtip=Learn |cffffcc00B|rlack Arrow - [|cffffcc00Level %d|r]
 Researchhotkey=B
 Buttonpos=1,2
+Unbuttonpos=1,2
 Researchbuttonpos=1,0
 
 [andr]
@@ -3197,11 +3252,14 @@ Buttonpos=1,2
 Researchbuttonpos=1,0
 
 [ania]
-Tip=Incinerate - [|cffffcc00Level 1|r],Incinerate - [|cffffcc00Level 2|r],Incinerate - [|cffffcc00Level 3|r]
+Tip=In|cffffcc00c|rinerate - [|cffffcc00Level 1|r],In|cffffcc00c|rinerate - [|cffffcc00Level 2|r],In|cffffcc00c|rinerate - [|cffffcc00Level 3|r]
+Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
+Unhotkey=C
 Researchtip=Learn In|cffffcc00c|rinerate - [|cffffcc00Level %d|r]
 Researchhotkey=C
 Buttonpos=2,2
+Unbuttonpos=2,2
 Researchbuttonpos=2,0
 
 [anvc]
@@ -4702,7 +4760,9 @@ Buttonpos=0,2
 Tip=|cffffcc00F|rrenzy
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
+Unhotkey=F
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [antr]
 Tip=True Sight
@@ -4712,19 +4772,25 @@ Buttonpos=0,2
 Tip=|cffffcc00B|rlack Arrow
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
+Unhotkey=B
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acbb]
 Tip=|cffffcc00B|rloodlust
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
+Unhotkey=B
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acbl]
 Tip=B|cffffcc00l|roodlust
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=L
+Unhotkey=L
 Buttonpos=1,2
+Unbuttonpos=1,2
 
 [acbc]
 Tip=Breath of |cffffcc00F|rire
@@ -4745,13 +4811,17 @@ Buttonpos=0,2
 Tip=|cffffcc00C|rold Arrows
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
+Unhotkey=C
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [accs]
 Tip=|cffffcc00C|rurse
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
+Unhotkey=C
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acdc]
 Tip=Death |cffffcc00C|roil
@@ -4782,7 +4852,9 @@ Buttonpos=0,2
 Tip=Fae|cffffcc00r|rie Fire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acfb]
 Tip=|cffffcc00F|rirebolt
@@ -4803,13 +4875,17 @@ Buttonpos=0,2
 Tip=H|cffffcc00e|ral
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=E
+Unhotkey=E
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [anh2]
 Tip=H|cffffcc00e|ral
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=E
+Unhotkey=E
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [achw]
 Tip=H|cffffcc00e|raling Ward
@@ -4840,7 +4916,9 @@ Buttonpos=0,2
 Tip=Life D|cffffcc00r|rain
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [afbb]
 Tip=Feedback
@@ -4865,7 +4943,9 @@ Buttonpos=0,2
 Tip=Pa|cffffcc00r|rasite
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acpu]
 Tip=Pur|cffffcc00g|re
@@ -4876,7 +4956,9 @@ Buttonpos=0,2
 Tip=|cffffcc00R|raise Dead
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acro]
 Tip=|cffffcc00R|roar
@@ -4892,13 +4974,17 @@ Buttonpos=0,2
 Tip=A|cffffcc00b|rolish Magic
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
+Unhotkey=B
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acd2]
 Tip=A|cffffcc00b|rolish Magic
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
+Unhotkey=B
 Buttonpos=1,2
+Unbuttonpos=1,2
 
 [acca]
 Tip=|cffffcc00C|rarrion Swarm
@@ -4993,7 +5079,9 @@ Buttonpos=0,2
 Tip=Sea|cffffcc00r|ring Arrows
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=1,2
+Unbuttonpos=1,2
 
 [actc]
 Tip=S|cffffcc00l|ram
@@ -5014,7 +5102,9 @@ Buttonpos=1,2
 Tip=Slo|cffffcc00w|r
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=W
+Unhotkey=W
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [awrs]
 Tip=War S|cffffcc00t|romp
@@ -5025,7 +5115,9 @@ Buttonpos=1,2
 Tip=|cffffcc00W|reb
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=W
+Unhotkey=W
 Buttonpos=1,2
+Unbuttonpos=1,2
 
 [ache]
 Tip=Cast |cffffcc00R|ray of Disruption
@@ -5075,7 +5167,9 @@ Buttonpos=2,2
 Tip=Inner |cffffcc00F|rire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
+Unhotkey=F
 Buttonpos=2,2
+Unbuttonpos=2,2
 
 [acps]
 Tip=P|cffffcc00o|rssession
@@ -5619,13 +5713,17 @@ Buttonpos=0,2
 Tip=Pa|cffffcc00r|rasite
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
+Unhotkey=R
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [acfu]
 Tip=|cffffcc00F|rrost Armor
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
+Unhotkey=F
 Buttonpos=1,2
+Unbuttonpos=1,2
 
 [acny]
 Tip=|cffffcc00C|ryclone
@@ -5636,7 +5734,9 @@ Buttonpos=2,2
 Tip=A|cffffcc00b|rolish Magic
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
+Unhotkey=B
 Buttonpos=0,2
+Unbuttonpos=0,2
 
 [accv]
 Tip=|cffffcc00C|rrushing Wave
