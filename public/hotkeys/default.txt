@@ -795,6 +795,10 @@ Buttonpos=0,2
 Tip=Storm Hammers
 Buttonpos=0,2
 
+[ahpe]
+Tip=Phoenix
+Buttonpos=0,2
+
 [amrf]
 Tip=Raven |cffffcc00F|rorm
 Untip=Human |cffffcc00F|rorm
@@ -988,7 +992,7 @@ Buttonpos=2,2
 [ropg]
 Tip=Pilla|cffffcc00g|re
 Hotkey=G
-Buttonpos=2,2
+Buttonpos=2,0
 
 [robs]
 Tip=Research |cffffcc00B|rrute Strength
@@ -1330,6 +1334,10 @@ Revivetip=Revive |cffffcc00T|rauren Chieftain
 Awakentip=Revive |cffffcc00T|rauren Chieftain
 Buttonpos=2,2
 
+[aosp]
+Tip=Spiked Barricades,Improved Spiked Barricades,Advanced Spiked Barricades
+Buttonpos=3,2
+
 [aorb]
 Tip=Reinforced Defenses
 Buttonpos=3,2
@@ -1343,8 +1351,8 @@ Tip=Brute Strength
 Buttonpos=0,2
 
 [aobk]
-Tip=Brute Upgrade
-Buttonpos=2,2
+Tip=Berserker Upgrade
+Buttonpos=1,2
 
 [aotr]
 Tip=Troll Regeneration
@@ -2777,6 +2785,10 @@ Tip=Summon |cffffcc00W|rarden
 Revivetip=Revive |cffffcc00W|rarden
 Awakentip=Revive |cffffcc00W|rarden
 Buttonpos=0,1
+
+[aews]
+Tip=Well Spring
+Buttonpos=1,0
 
 [adtg]
 Tip=True Sight
@@ -5126,7 +5138,7 @@ Buttonpos=1,2
 
 [acbh]
 Tip=Bash
-Buttonpos=2,2
+Buttonpos=1,2
 
 [acba]
 Tip=Brilliance Aura

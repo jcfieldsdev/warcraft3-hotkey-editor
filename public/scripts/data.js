@@ -238,7 +238,8 @@ data.units={
 		type: UNIT,
 		commands: [
 			["aclf", "Cloud"],
-			["amls", "Aerial Shackles"]
+			["amls", "Aerial Shackles"],
+			["ahan", "Animal War Training"]
 		]
 	},
 	htow: {
@@ -523,6 +524,7 @@ data.units={
 		race: HUMAN,
 		type: SUMMON,
 		commands: [
+			["ahpe", "Phoenix"],
 			["acmi", "Spell Immunity"],
 			["acrk", "Resistant Skin"]
 		]
@@ -743,11 +745,7 @@ data.units={
 	nhea: {
 		name: "Archer",
 		race: BLOOD_ELF,
-		type: UNIT,
-		commands: [
-			["aeib", "Improved Bows"],
-			["aemk", "Marksmanship"]
-		]
+		type: UNIT
 	},
 	nws1: {
 		name: "Dragon Hawk",
@@ -962,6 +960,7 @@ data.units={
 		race: ORC,
 		type: UNIT,
 		commands: [
+			["absk", "Berserk"],
 			["aobk", "Berserker Upgrade"],
 			["aotr", "Troll Regeneration"]
 		]
@@ -1085,7 +1084,8 @@ data.units={
 			["ropm", "Backpack"],
 			["cmdrally", "Set Rally Point"],
 			["ostr", "Upgrade to Stronghold"],
-			["cmdcancelbuild", "Cancel"]
+			["cmdcancelbuild", "Cancel"],
+			["aosp", "Spiked Barricades"]
 		]
 	},
 	ostr: {
@@ -1098,7 +1098,8 @@ data.units={
 			["ropm", "Backpack"],
 			["cmdrally", "Set Rally Point"],
 			["ofrt", "Upgrade to Fortress"],
-			["cmdcancelbuild", "Cancel"]
+			["cmdcancelbuild", "Cancel"],
+			["aosp", "Spiked Barricades"]
 		]
 	},
 	ofrt: {
@@ -1110,7 +1111,8 @@ data.units={
 			["ropg", "Research Pillage"],
 			["ropm", "Backpack"],
 			["cmdrally", "Set Rally Point"],
-			["cmdcancelbuild", "Cancel"]
+			["cmdcancelbuild", "Cancel"],
+			["aosp", "Spiked Barricades"]
 		]
 	},
 	obar: {
@@ -1161,7 +1163,10 @@ data.units={
 	owtw: {
 		name: "Watch Tower",
 		race: ORC,
-		type: TOWER
+		type: TOWER,
+		commands: [
+			["aosp", "Spiked Barricades"]
+		]
 	},
 	otrb: {
 		name: "Burrow",
@@ -1932,6 +1937,16 @@ data.units={
 		type: UNIT,
 		commands: [
 			["astn", "Stone Form"]
+		]
+	},
+	ugrm: {
+		name: "Gargoyle",
+		suffix: "Stone Form",
+		race: UNDEAD,
+		type: OTHER,
+		commands: [
+			["astn", "Stone Form"],
+			["acmi", "Spell Immunity"]
 		]
 	},
 	uabo: {
@@ -2760,7 +2775,8 @@ data.units={
 		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: [
-			["ambt", "Replenish Mana and Life"]
+			["ambt", "Replenish Mana and Life"],
+			["aews", "Well Spring"]
 		]
 	},
 	eate: {
@@ -2892,6 +2908,7 @@ data.units={
 		race: NIGHT_ELF,
 		type: SUMMON,
 		commands: [
+			["acmi", "Spell Immunity"],
 			["adtg", "True Sight"]
 		]
 	},
@@ -2901,6 +2918,7 @@ data.units={
 		race: NIGHT_ELF,
 		type: SUMMON,
 		commands: [
+			["acmi", "Spell Immunity"],
 			["adtg", "True Sight"]
 		]
 	},
@@ -2910,6 +2928,7 @@ data.units={
 		race: NIGHT_ELF,
 		type: SUMMON,
 		commands: [
+			["acmi", "Spell Immunity"],
 			["adtg", "True Sight"]
 		]
 	},
@@ -5948,14 +5967,14 @@ data.units={
 	nsw1: {
 		name: "Lesser Spirit Beast",
 		suffix: "Level 1",
-		race: SUMMON,
-		type: UNIT
+		race: NEUTRAL,
+		type: SUMMON
 	},
 	nsw2: {
 		name: "Spirit Beast",
 		suffix: "Level 2",
-		race: SUMMON,
-		type: UNIT,
+		race: NEUTRAL,
+		type: SUMMON,
 		commands: [
 			["afbb", "Feedback"]
 		]
@@ -5963,8 +5982,8 @@ data.units={
 	nsw3: {
 		name: "Greater Spirit Beast",
 		suffix: "Level 3",
-		race: SUMMON,
-		type: UNIT,
+		race: NEUTRAL,
+		type: SUMMON,
 		commands: [
 			["afbb", "Feedback"],
 			["ambb", "Mana Burn"]
@@ -6183,6 +6202,7 @@ data.icons={
 			aetf: "btnspiritwalker",
 			aetq: "btntranquility",
 			aevi: "btnmetamorphosis",
+			aews: "pasbtnwellspring",
 			aexh: "pasbtnexhumecorpses",
 			aeye: "btnsentryward",
 			afa2: "btnfaeriefireoff",
@@ -6222,6 +6242,7 @@ data.icons={
 			ahid: "btnambush",
 			ahlh: "pasbtnhumanlumberupgrade1",
 			ahmt: "btnmassteleport",
+			ahpe: "pasbtnmarkoffire",
 			ahpx: "btnmarkoffire",
 			ahr3: "btngathergold",
 			ahre: "btnresurrection",
@@ -6353,6 +6374,7 @@ data.icons={
 			aos2: "btnshockwave",
 			aosf: "btnspiritwolf",
 			aosh: "btnshockwave",
+			aosp: "pasbtnspikedbarricades",
 			aosw: "btnserpentward",
 			aotr: "pasbtnregenerate",
 			aovd: "btnbigbadvoodoospell",
@@ -7190,6 +7212,7 @@ data.icons={
 			ugar: "btngargoyle",
 			ugho: "btnghoul",
 			ugol: "btnhauntedmine",
+			ugrm: "btnstoneform",
 			ugrv: "btngraveyard",
 			uktl: "btnherolich",
 			ulic: "btnlichversion2",

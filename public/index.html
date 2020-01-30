@@ -88,7 +88,7 @@
 <ul class="units bloodelf"><li>Units
 	<ul><li><a href="#nbee">Blood Elf Engineer</a></li>
 	<li><a href="#hhes">Swordsman</a></li>
-	<li><a href="#nhea">Archer</a></li>
+	<li><a href="#nhea" class="nocmds">Archer</a></li>
 	<li><a href="#nbel">Blood Elf Lieutenant</a></li></ul>
 </li>
 <li>Buildings
@@ -111,9 +111,7 @@
 <li>Units
 	<ul><li><a href="#opeo">Peon</a></li>
 	<li><a href="#ogru">Grunt</a></li>
-	<li><a href="#ohun">Troll Headhunter</a>
-		<ul><li><a href="#otbk">Troll Berserker</a></li></ul>
-	</li>
+	<li><a href="#ohun">Troll Headhunter / Berserker</a></li>
 	<li><a href="#ocat">Demolisher</a></li>
 	<li><a href="#oshm">Shaman</a></li>
 	<li><a href="#odoc">Witch Doctor</a></li>
@@ -134,7 +132,7 @@
 		<ul><li><a href="#obar2">with Berserkers</a></li></ul>
 	</li>
 	<li><a href="#ofor">War Mill</a></li>
-	<li><a href="#owtw" class="nocmds">Watch Tower</a></li>
+	<li><a href="#owtw">Watch Tower</a></li>
 	<li><a href="#otrb">Burrow</a></li>
 	<li><a href="#oalt">Altar of Storms</a></li>
 	<li><a href="#osld">Spirit Lodge</a></li>
@@ -206,7 +204,9 @@
 	</li>
 	<li><a href="#ugho">Ghoul</a></li>
 	<li><a href="#ucry">Crypt Fiend</a></li>
-	<li><a href="#ugar">Gargoyle</a></li>
+	<li><a href="#ugar">Gargoyle</a>
+		<ul><li><a href="#ugrm">Stone Form</a></li></ul>
+	</li>
 	<li><a href="#uabo">Abomination</a></li>
 	<li><a href="#umtw">Meat Wagon</a></li>
 	<li><a href="#unec">Necromancer</a></li>
@@ -742,9 +742,9 @@
 			<div id="n2y2x0"></div><div id="n2y2x1"></div><div id="n2y2x2"></div><div id="n2y2x3"></div>
 		</div>
 	</div>
-	<div class="option">Icons: <label><input type="radio" value="classic" name="icons" class="icons" checked="checked"> Classic</label> <label><input type="radio" value="reforged" name="icons" class="icons"> Reforged</label></div>
-	<div class="option"><label title="Changing a hotkey will change all hotkeys for that command simultaneously."><input type="checkbox" id="spiritlink" checked="checked"> Spirit link hotkeys.</label></div>
-	<div class="option"><label title="Changing a hotkey will automatically change the tooltip to include the new hotkey."><input type="checkbox" id="tooltips" checked="checked"> Write tooltips automatically.</label> <label><input type="radio" name="end" id="start"> Beginning</label> <label><input type="radio" name="end" checked="checked"> End</label></div>
+	<div class="option">Icons: <label><input type="radio" value="classic" name="icons" class="option icons"> Classic</label> <label><input type="radio" value="reforged" name="icons" class="option icons" checked="checked"> Reforged</label></div>
+	<div class="option"><label title="Changing a hotkey will change all hotkeys for that command simultaneously."><input type="checkbox" id="spiritlink" class="option" checked="checked"> Spirit link hotkeys.</label></div>
+	<div class="option"><label title="Changing a hotkey will automatically change the tooltip to include the new hotkey."><input type="checkbox" id="tooltips" class="option" checked="checked"> Write tooltips automatically.</label> <label><input type="radio" name="end" id="start"> Beginning</label> <label><input type="radio" name="end" checked="checked"> End</label></div>
 	<h3 id="command"></h3>
 	<div id="fields">
 		<p id="Tip" class="tip"></p>
