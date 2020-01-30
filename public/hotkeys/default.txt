@@ -245,7 +245,7 @@ Untip=Back to |cffffcc00W|rork
 Hotkey=C
 Unhotkey=W
 Buttonpos=1,2
-Unbuttonpos=1,2
+Unbuttonpos=2,2
 
 [amic]
 Tip=|cffffcc00C|rall to Arms
@@ -253,7 +253,7 @@ Untip=Back to |cffffcc00W|rork
 Hotkey=C
 Unhotkey=W
 Buttonpos=1,2
-Unbuttonpos=1,2
+Unbuttonpos=2,2
 
 [hrif]
 Tip=Train |cffffcc00R|rifleman

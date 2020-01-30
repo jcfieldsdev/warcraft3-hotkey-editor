@@ -1032,8 +1032,13 @@ Editor.prototype.editHotkey=function(input, key) {
 		input.value=input.value.slice(-1);
 	}
 
+	let buttonpos=this.commands.get(this.command, "Buttonpos");
+	let unbuttonpos=this.commands.get(this.command, "Unbuttonpos");
+
 	// sets all hotkeys together if "spirit link" option selected
-	if ($("#spiritlink").checked) {
+	// unless buttonpos and unbuttonpos are in different positions
+	// (otherwise will create conflict)
+	if ($("#spiritlink").checked&&(unbuttonpos==""||buttonpos==unbuttonpos)) {
 		this.setHotkey("Hotkey", input.value);
 		this.setHotkey("Unhotkey", input.value);
 		this.setHotkey("Researchhotkey", input.value);

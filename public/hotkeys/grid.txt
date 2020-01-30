@@ -134,7 +134,7 @@ Tip=Build Structure (|cffffcc00Z|r)
 [amil]
 Hotkey=X
 Tip=Call to Arms (|cffffcc00X|r)
-Unhotkey=X
+Unhotkey=C
 Untip=Back to Work (|cffffcc00X|r)
 
 [htow]
@@ -258,7 +258,7 @@ Tip=Upgrade to Keep (|cffffcc00Z|r)
 [amic]
 Hotkey=X
 Tip=Call to Arms (|cffffcc00X|r)
-Unhotkey=X
+Unhotkey=C
 Untip=Back to Work (|cffffcc00X|r)
 
 [hcas]
