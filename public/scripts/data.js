@@ -991,7 +991,18 @@ data.units={
 		commands: [
 			["ablo", "Bloodlust"],
 			["alsh", "Lightning Shield"],
-			["apg2", "Purge"],
+			["apg2", "Purge"]
+		]
+	},
+	oshmcampaign: {
+		name: "Shaman",
+		suffix: "Campaign",
+		race: ORC,
+		type: UNIT,
+		commands: [
+			["ablo", "Bloodlust"],
+			["alsh", "Lightning Shield"],
+			["aprg", "Purge"]
 		]
 	},
 	odoc: {
