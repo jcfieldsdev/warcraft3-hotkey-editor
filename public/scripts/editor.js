@@ -704,7 +704,7 @@ Editor.prototype.getConflicts=function(id) {
 		recordHotkey(id, researchhotkey, researchhotkeys);
 
 		// counts unhotkey as hotkey if different (for two-state commands)
-		if (hotkey!=unhotkey) {
+		if (unhotkey!=""&&hotkey!=unhotkey) {
 			recordHotkey(id, unhotkey, hotkeys);
 		}
 	}
