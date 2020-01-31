@@ -7057,6 +7057,7 @@ data.icons={
 			osam: "btnheroblademaster",
 			oshd: "btnshadowhunter",
 			oshm: "btnshaman",
+			oshmcampaign: "btnshaman",
 			oshy: "btngoblinshipyard",
 			osld: "btnspiritlodge",
 			osldchaos: "btnspiritlodge",

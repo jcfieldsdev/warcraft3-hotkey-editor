@@ -792,7 +792,7 @@ Hotkey=Z
 Tip=Upgrade to Stronghold (|cffffcc00Z|r)
 
 [ropg]
-Hotkey=C
+Hotkey=E
 Tip=Pillage (|cffffcc00C|r)
 
 [ofrt]

@@ -245,9 +245,9 @@ Hotkey=Q
 Tip=Train Peasant (|cffffcc00Q|r)
 
 [rhpm]
-Hotkey=C
-Tip=Research Backpack (|cffffcc00C|r)
-Buttonpos=2,2
+Hotkey=E
+Tip=Research Backpack (|cffffcc00E|r)
+Buttonpos=2,0
 
 [cmdrally]
 Hotkey=F
@@ -784,9 +784,9 @@ Hotkey=Q
 Tip=Train Peon (|cffffcc00Q|r)
 
 [ropm]
-Hotkey=C
-Tip=Research Backpack (|cffffcc00C|r)
-Buttonpos=2,2
+Hotkey=E
+Tip=Research Backpack (|cffffcc00E|r)
+Buttonpos=2,0
 
 [ostr]
 Hotkey=Z
@@ -796,6 +796,9 @@ Tip=Upgrade to Stronghold (|cffffcc00Z|r)
 Hotkey=X
 Tip=Pillage (|cffffcc00X|r)
 Buttonpos=1,2
+
+[aosp]
+Buttonpos=2,2
 
 [ofrt]
 Hotkey=Z
@@ -1393,9 +1396,9 @@ Hotkey=Q
 Tip=Train Acolyte (|cffffcc00Q|r)
 
 [rupm]
-Hotkey=C
-Tip=Research Backpack (|cffffcc00C|r)
-Buttonpos=2,2
+Hotkey=E
+Tip=Research Backpack (|cffffcc00E|r)
+Buttonpos=2,0
 
 [unp2]
 Hotkey=Z
@@ -1873,9 +1876,9 @@ Tip=Research Nature's Blessing (|cffffcc00V|r)
 Buttonpos=3,2
 
 [repm]
-Hotkey=C
-Tip=Research Backpack (|cffffcc00C|r)
-Buttonpos=2,2
+Hotkey=E
+Tip=Research Backpack (|cffffcc00E|r)
+Buttonpos=2,0
 
 [etoe]
 Hotkey=Z
