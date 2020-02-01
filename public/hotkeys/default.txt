@@ -4732,6 +4732,10 @@ Buttonpos=1,2
 Tip=Spell Immunity
 Buttonpos=2,2
 
+[acm2]
+Tip=Spell Immunity
+Buttonpos=1,1
+
 [acrk]
 Tip=Resistant Skin
 Buttonpos=3,2
@@ -5011,6 +5015,11 @@ Buttonpos=1,2
 Tip=|cffffcc00C|ryclone
 Hotkey=C
 Buttonpos=1,2
+
+[scc1]
+Tip=|cffffcc00C|ryclone
+Hotkey=C
+Buttonpos=1,1
 
 [acde]
 Tip=|cffffcc00D|revour Magic

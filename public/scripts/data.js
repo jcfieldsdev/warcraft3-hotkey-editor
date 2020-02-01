@@ -2397,7 +2397,8 @@ data.units={
 			["anrc", "Rain of Chaos"],
 			["andp", "Dark Portal"],
 			["anfd", "Finger of Death"],
-			["ahbh", "Bash"]
+			["ahbh", "Bash"],
+			["acm2", "Spell Immunity"]
 		]
 	},
 	umal: {
@@ -3017,7 +3018,8 @@ data.units={
 			["aeer", "Entangling Roots"],
 			["aefn", "Force of Nature"],
 			["aeah", "Thorns Aura"],
-			["aetq", "Tranquility"]
+			["aetq", "Tranquility"],
+			["scc1", "Cyclone"]
 		]
 	},
 	efur: {
@@ -3258,6 +3260,28 @@ data.units={
 		type: SUMMON,
 		commands: [
 			["acbh", "Bash"]
+		]
+	},
+	ncfs: {
+		name: "Watery Minion",
+		suffix: "Level 1",
+		race: NAGA,
+		type: SUMMON
+	},
+	ntws: {
+		name: "Watery Minion",
+		suffix: "Level 2",
+		race: NAGA,
+		type: SUMMON
+	},
+	nsns: {
+		name: "Watery Minion",
+		suffix: "Level 3",
+		race: NAGA,
+		type: SUMMON,
+		commands: [
+			["acsw", "Slow"],
+			["acdm", "Abolish Magic"]
 		]
 	},
 	nngs: {
@@ -6000,28 +6024,6 @@ data.units={
 			["ambb", "Mana Burn"]
 		]
 	},
-	ncfs: {
-		name: "Watery Minion",
-		suffix: "Level 1",
-		race: NEUTRAL,
-		type: SUMMON
-	},
-	ntws: {
-		name: "Watery Minion",
-		suffix: "Level 2",
-		race: NEUTRAL,
-		type: SUMMON
-	},
-	nsns: {
-		name: "Watery Minion",
-		suffix: "Level 3",
-		race: NEUTRAL,
-		type: SUMMON,
-		commands: [
-			["acsw", "Slow"],
-			["acdm", "Abolish Magic"]
-		]
-	},
 	nspp: {
 		name: "Spirit Pig",
 		race: NEUTRAL,
@@ -6126,6 +6128,7 @@ data.icons={
 			acim: "btnimmolationon",
 			aclf: "btncloudoffog",
 			acls: "btnlightningshield",
+			acm2: "pasbtngenericspellimmunity",
 			acmf: "btnneutralmanashield",
 			acmg: "btncontrolmagic",
 			acmi: "pasbtngenericspellimmunity",
@@ -7182,6 +7185,7 @@ data.icons={
 			ruwb: "btnweboff",
 			rwdm: "btndrum",
 			scae: "pasbtncommand",
+			scc1: "btncyclone",
 			scri: "btncripple",
 			sdro: "btnunload",
 			shas: "btnscrollofhaste",
@@ -7264,7 +7268,6 @@ data.icons={
 			acef: "btnstormearth&fire",
 			aell: "btnillidandemonform",
 			aevi: "btnillidandemonform",
-			aihm: "btnambush",
 			anef: "btnstormearth&fire",
 			arsg: "btnmishalv1",
 			ecen: "btncenarius",
