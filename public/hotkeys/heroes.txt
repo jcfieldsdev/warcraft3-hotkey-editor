@@ -110,7 +110,6 @@ Researchtip=Learn Trueshot Aura - [|cffffcc00Level %d|r] (|cffffcc00E|r)
 
 [ahca]
 Hotkey=W
-Unhotkey=W
 Tip=Cold Arrows - [|cffffcc00Level 1|r] (|cffffcc00W|r),Cold Arrows - [|cffffcc00Level 2|r] (|cffffcc00W|r),Cold Arrows - [|cffffcc00Level 3|r] (|cffffcc00W|r)
 Researchhotkey=W
 Researchtip=Learn Cold Arrows - [|cffffcc00Level %d|r] (|cffffcc00W|r)
@@ -374,7 +373,6 @@ Researchtip=Learn Frost Nova - [|cffffcc00Level %d|r] (|cffffcc00Q|r)
 
 [aufu]
 Hotkey=W
-Unhotkey=W
 Tip=Frost Armor - [|cffffcc00Level 1|r] (|cffffcc00W|r),Frost Armor - [|cffffcc00Level 2|r] (|cffffcc00W|r),Frost Armor - [|cffffcc00Level 3|r] (|cffffcc00W|r)
 Researchhotkey=W
 Researchtip=Learn Frost Armor - [|cffffcc00Level %d|r] (|cffffcc00W|r)
@@ -399,7 +397,6 @@ Researchtip=Learn Impale - [|cffffcc00Level %d|r] (|cffffcc00Q|r)
 
 [aucb]
 Hotkey=E
-Unhotkey=E
 Tip=Carrion Beetles - [|cffffcc00Level 1|r] (|cffffcc00E|r),Carrion Beetles - [|cffffcc00Level 2|r] (|cffffcc00E|r),Carrion Beetles - [|cffffcc00Level 3|r] (|cffffcc00E|r)
 Researchhotkey=E
 Researchtip=Learn Carrion Beetles - [|cffffcc00Level %d|r] (|cffffcc00E|r)
@@ -507,7 +504,6 @@ Researchtip=Learn Tranquility (|cffffcc00R|r)
 
 [ahfa]
 Hotkey=W
-Unhotkey=W
 Tip=Searing Arrows - [|cffffcc00Level 1|r] (|cffffcc00W|r),Searing Arrows - [|cffffcc00Level 2|r] (|cffffcc00W|r),Searing Arrows - [|cffffcc00Level 3|r] (|cffffcc00W|r)
 Researchhotkey=W
 Researchtip=Learn Searing Arrows - [|cffffcc00Level %d|r] (|cffffcc00W|r)
@@ -550,7 +546,6 @@ Researchtip=Learn Forked Lightning - [|cffffcc00Level %d|r] (|cffffcc00Q|r)
 
 [anfa]
 Hotkey=W
-Unhotkey=W
 Tip=Frost Arrows - [|cffffcc00Level 1|r] (|cffffcc00W|r),Frost Arrows - [|cffffcc00Level 2|r] (|cffffcc00W|r),Frost Arrows - [|cffffcc00Level 3|r] (|cffffcc00W|r)
 Researchhotkey=W
 Researchtip=Learn Frost Arrows - [|cffffcc00Level %d|r] (|cffffcc00W|r)
@@ -745,7 +740,6 @@ Researchtip=Learn Summon Lava Spawn - [|cffffcc00Level %d|r] (|cffffcc00W|r)
 
 [ania]
 Hotkey=E
-Unhotkey=E
 Tip=Incinerate - [|cffffcc00Level 1|r] (|cffffcc00E|r),Incinerate - [|cffffcc00Level 2|r] (|cffffcc00E|r),Incinerate - [|cffffcc00Level 3|r] (|cffffcc00E|r)
 Researchhotkey=E
 Researchtip=Learn Incinerate - [|cffffcc00Level %d|r] (|cffffcc00E|r)

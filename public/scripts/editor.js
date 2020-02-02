@@ -235,6 +235,7 @@ function Editor(commands) {
 		});
 	});
 	this.active=STANDARD; // active command card
+	this.state=false; // button state (for two-state commands)
 	this.selected=-1; // selected search result
 }
 
@@ -316,7 +317,7 @@ Editor.prototype.unitEditor=function() {
 		let buttonpos=this.commands.get(CANCEL, "Buttonpos");
 
 		if (buttonpos!="") {
-			placeButton(CANCEL, "Cancel", RESEARCH, buttonpos);
+			placeButton(CANCEL, "Cancel", RESEARCH, buttonpos, true);
 		}
 	}
 
@@ -366,13 +367,19 @@ Editor.prototype.unitEditor=function() {
 			}
 
 			let buttonpos=self.commands.get(idpos, "Buttonpos");
+			let unbuttonpos=self.commands.get(idpos, "Unbuttonpos");
 			let researchbuttonpos=self.commands.get(idpos, "Researchbuttonpos");
 
 			if (buttonpos!="") {
-				placeButton(id, name, n, buttonpos);
+				placeButton(id, name, n, buttonpos, true);
 
-				if (researchbuttonpos) {
-					placeButton(id, name, RESEARCH, researchbuttonpos);
+				// places separate button for unbutton if in different position
+				if (unbuttonpos!=""&&buttonpos!=unbuttonpos) {
+					placeButton(id, name, STANDARD, unbuttonpos, false);
+				}
+
+				if (researchbuttonpos) { // for hero abilities
+					placeButton(id, name, RESEARCH, researchbuttonpos, true);
 				}
 			} else {
 				console.error(`Undefined: ${idpos} (buttonpos)`);
@@ -385,18 +392,22 @@ Editor.prototype.unitEditor=function() {
 		}
 	}
 
-	function placeButton(id, name, n, buttonpos) {
+	function placeButton(id, name, n, buttonpos, state=true) {
 		let pos=buttonpos.split(DELIMITER);
 		let [y, x]=self.getPosition(n, pos[1], pos[0]);
 		let conflict=pos[0]!=x||pos[1]!=y;
 
-		if (x<0||y<0) {
+		if (x<0||y<0||x>COLS||y>ROWS) {
 			return;
+		}
+
+		if (!state) {
+			id+="_"; // unbutton denoted by underscore at end
 		}
 
 		self.card[n][y][x]=id;
 
-		let element=createButton(id, name, n);
+		let element=createButton(id, name, n, state);
 		element.id="n"+n+"y"+y+"x"+x;
 		element.classList.toggle("conflict", conflict);
 
@@ -404,7 +415,7 @@ Editor.prototype.unitEditor=function() {
 		$("#card"+n).children[index].replaceWith(element);
 	}
 
-	function createButton(id, name, n) {
+	function createButton(id, name, n, state) {
 		let div=document.createElement("div");
 		let img=document.createElement("img");
 		img.setAttribute("src", self.getIcon(id, n));
@@ -412,7 +423,13 @@ Editor.prototype.unitEditor=function() {
 		img.setAttribute("title", name);
 		img.addEventListener("click", function() {
 			self.active=n;
-			self.setCommand(id, name);
+			self.state=state;
+
+			if (state) {
+				self.setCommand(id, name);
+			} else {
+				self.setCommand(id.slice(0, -1), name);
+			}
 		}.bind(self));
 		div.appendChild(img);
 
@@ -476,7 +493,7 @@ Editor.prototype.getIcon=function(id, n=STANDARD) {
 			icon="btnrallypointundead";
 		} else if (race==NIGHT_ELF) {
 			icon="btnrallypointnightelf";
-		} else {
+		} else { // human is default
 			icon="btnrallypoint";
 		}
 	} else {
@@ -604,6 +621,7 @@ Editor.prototype.drop=function(from, to, mod) {
 	// or command (for button swap)
 	if (to.match(pattern)) {
 		newpos=to.replace(pattern, "$2,$1");
+		oldpos=this.commands.get(from, "Buttonpos");
 	} else { // if destination is not empty, swap button positions
 		// trims "img#_" prefix
 		to=to.replace(/img\d_/, "");
@@ -657,7 +675,11 @@ Editor.prototype.drop=function(from, to, mod) {
 			}
 
 			if (this.active!=RESEARCH||to==CANCEL) {
-				this.commands.set(to, "Buttonpos", oldpos);
+				if (to.slice(-1)!="_") {
+					this.commands.set(to, "Buttonpos", oldpos);
+				} else { // moving unbutton by itself
+					this.commands.set(to.slice(0, -1), "Unbuttonpos", oldpos);
+				}
 
 				if (newunpos!="") {
 					this.commands.set(to, "Unbuttonpos", oldpos);
@@ -669,9 +691,13 @@ Editor.prototype.drop=function(from, to, mod) {
 	}
 
 	if (this.active!=RESEARCH||from==CANCEL) {
-		this.commands.set(from, "Buttonpos", newpos);
+		if (from.slice(-1)!="_") {
+			this.commands.set(from, "Buttonpos", newpos);
+		} else { // moving unbutton by itself
+			this.commands.set(from.slice(0, -1), "Unbuttonpos", newpos);
+		}
 
-		if (oldunpos!="") {
+		if (oldunpos!=""&&oldpos==oldunpos) {
 			this.commands.set(from, "Unbuttonpos", newpos);
 		}
 	} else {
@@ -703,9 +729,21 @@ Editor.prototype.getConflicts=function(id) {
 		recordHotkey(id, hotkey, hotkeys);
 		recordHotkey(id, researchhotkey, researchhotkeys);
 
-		// counts unhotkey as hotkey if different (for two-state commands)
-		if (unhotkey!=""&&hotkey!=unhotkey) {
-			recordHotkey(id, unhotkey, hotkeys);
+		if (unhotkey!="") {
+			// counts unhotkey as hotkey if different (for two-state commands)
+			if (hotkey!=unhotkey) {
+				recordHotkey(id, unhotkey, hotkeys);
+			} else {
+				let buttonpos=this.commands.get(id, "Buttonpos");
+				let unbuttonpos=this.commands.get(id, "Unbuttonpos");
+
+				// counts unhotkey separately if positions are different so
+				// button can conflict with itself
+				// (special case for "Call to Arms"/"Back to Work")
+				if (unbuttonpos!=""&&buttonpos!=unbuttonpos) {
+					recordHotkey(id+"_", unhotkey, hotkeys);
+				}
+			}
 		}
 	}
 
@@ -766,6 +804,8 @@ Editor.prototype.commandEditor=function() {
 		if (this.active==STANDARD) {
 			if (hotkey=="") { // passive abilities
 				id="Researchhotkey";
+			} else if (!this.state&&unhotkey!="") { // off state
+				id="Unhotkey";
 			}
 		} else {
 			if (researchhotkey!="") { // research card except cancel button
@@ -1036,8 +1076,7 @@ Editor.prototype.editHotkey=function(input, key) {
 	let unbuttonpos=this.commands.get(this.command, "Unbuttonpos");
 
 	// sets all hotkeys together if "spirit link" option selected
-	// unless buttonpos and unbuttonpos are in different positions
-	// (otherwise will create conflict)
+	// unless button and unbutton are in different positions (prevents conflict)
 	if ($("#spiritlink").checked&&(unbuttonpos==""||buttonpos==unbuttonpos)) {
 		this.setHotkey("Hotkey", input.value);
 		this.setHotkey("Unhotkey", input.value);
@@ -1100,14 +1139,26 @@ Editor.prototype.setVisibleHotkeys=function() {
 		for (let y of this.card[n].keys()) {
 			for (let x of this.card[n][y].keys()) {
 				let id=this.card[n][y][x];
+				let state=id.slice(-1)!="_"; // identifies separate unbuttonpos
+
+				if (!state) {
+					id=id.slice(0, -1);
+				}
 
 				if (!this.commands.exists(id)) {
 					continue;
 				}
 
-				let span=$("#span"+n+"_"+id);
+				let span=null, hotkey="";
 
-				let hotkey=this.commands.get(id, "Hotkey");
+				if (state) {
+					span=$("#span"+n+"_"+id);
+					hotkey=this.commands.get(id, "Hotkey");
+				} else {
+					span=$("#span"+n+"_"+id+"_");
+					hotkey=this.commands.get(id, "Unhotkey");
+				}
+
 				let researchhotkey=this.commands.get(id, "Researchhotkey");
 
 				// shows "Hotkey" if available and standard card selected,
@@ -1157,6 +1208,12 @@ Editor.prototype.setVisibleHotkeys=function() {
 
 				if (span!=null&&!conflicts[n].includes(value)) {
 					span.classList.toggle("conflict", conflict);
+
+					let unspan=$("#span"+n+"_"+value+"_");
+
+					if (unspan!=null) {
+						unspan.classList.toggle("conflict", conflict);
+					}
 				}
 
 				if (conflict) {

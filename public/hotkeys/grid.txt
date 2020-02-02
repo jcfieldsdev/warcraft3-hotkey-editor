@@ -118,7 +118,6 @@ Researchtip=Learn Phoenix (|cffffcc00V|r)
 
 [ahrp]
 Hotkey=S
-Unhotkey=S
 Tip=Repair (|cffffcc00S|r)
 
 [ahar]
@@ -189,7 +188,6 @@ Untip=Stop Defend (|cffffcc00Z|r)
 
 [ahea]
 Hotkey=Z
-Unhotkey=Z
 Tip=Heal (|cffffcc00Z|r)
 
 [adis]
@@ -198,12 +196,10 @@ Tip=Dispel Magic (|cffffcc00X|r)
 
 [ainf]
 Hotkey=C
-Unhotkey=C
 Tip=Inner Fire (|cffffcc00C|r)
 
 [aslo]
 Hotkey=Z
-Unhotkey=Z
 Tip=Slow (|cffffcc00Z|r)
 
 [aivs]
@@ -216,7 +212,6 @@ Tip=Polymorph (|cffffcc00C|r)
 
 [asps]
 Hotkey=Z
-Unhotkey=Z
 Tip=Spell Steal (|cffffcc00Z|r)
 
 [acmg]
@@ -483,7 +478,6 @@ Researchtip=Learn Scout - [|cffffcc00Level %d|r] (|cffffcc00Z|r)
 
 [ahca]
 Hotkey=X
-Unhotkey=X
 Tip=Cold Arrows - [|cffffcc00Level 1|r] (|cffffcc00X|r),Cold Arrows - [|cffffcc00Level 2|r] (|cffffcc00X|r),Cold Arrows - [|cffffcc00Level 3|r] (|cffffcc00X|r)
 Researchhotkey=X
 Researchtip=Learn Cold Arrows - [|cffffcc00Level %d|r] (|cffffcc00X|r)
@@ -674,7 +668,6 @@ Researchtip=Learn Hex - [|cffffcc00Level %d|r] (|cffffcc00X|r)
 
 [arep]
 Hotkey=S
-Unhotkey=S
 Tip=Repair (|cffffcc00S|r)
 
 [cmdbuildorc]
@@ -735,7 +728,6 @@ Tip=Lightning Shield (|cffffcc00X|r)
 
 [ablo]
 Hotkey=C
-Unhotkey=C
 Tip=Bloodlust (|cffffcc00C|r)
 
 [aeye]
@@ -1182,7 +1174,6 @@ Researchtip=Learn Frost Nova - [|cffffcc00Level %d|r] (|cffffcc00Z|r)
 
 [aufu]
 Hotkey=X
-Unhotkey=X
 Tip=Frost Armor - [|cffffcc00Level 1|r] (|cffffcc00X|r),Frost Armor - [|cffffcc00Level 2|r] (|cffffcc00X|r),Frost Armor - [|cffffcc00Level 3|r] (|cffffcc00X|r)
 Researchhotkey=X
 Researchtip=Learn Frost Armor - [|cffffcc00Level %d|r] (|cffffcc00X|r)
@@ -1225,7 +1216,6 @@ Tip=Sacrifice (|cffffcc00C|r)
 
 [arst]
 Hotkey=S
-Unhotkey=S
 Tip=Restore (|cffffcc00S|r)
 
 [aaha]
@@ -1298,7 +1288,6 @@ Untip=Return Resources (|cffffcc00F|r)
 
 [aweb]
 Hotkey=Z
-Unhotkey=Z
 Tip=Web (|cffffcc00Z|r)
 
 [abur]
@@ -1319,7 +1308,6 @@ Tip=Cannibalize (|cffffcc00Z|r)
 
 [amel]
 Hotkey=Z
-Unhotkey=Z
 Tip=Get Corpse (|cffffcc00Z|r)
 
 [amed]
@@ -1332,7 +1320,6 @@ Tip=Cripple (|cffffcc00Z|r)
 
 [arai]
 Hotkey=X
-Unhotkey=X
 Tip=Raise Dead (|cffffcc00X|r)
 
 [auhf]
@@ -1345,7 +1332,6 @@ Tip=Incite Unholy Frenzy (|cffffcc00C|r)
 
 [acrs]
 Hotkey=Z
-Unhotkey=Z
 Tip=Curse (|cffffcc00Z|r)
 
 [aam2]
@@ -1358,12 +1344,10 @@ Tip=Possession (|cffffcc00C|r)
 
 [arpm]
 Hotkey=Z
-Unhotkey=Z
 Tip=Spirit Touch (|cffffcc00Z|r)
 
 [arpl]
 Hotkey=X
-Unhotkey=X
 Tip=Essence of Blight (|cffffcc00X|r)
 
 [ubsp]
@@ -1376,7 +1360,6 @@ Tip=Devour Magic (|cffffcc00Z|r)
 
 [afak]
 Hotkey=X
-Unhotkey=X
 Tip=Orb of Annihilation (|cffffcc00X|r)
 
 [aabs]
@@ -1686,7 +1669,6 @@ Researchtip=Learn Tranquility (|cffffcc00V|r)
 
 [ahfa]
 Hotkey=X
-Unhotkey=X
 Tip=Searing Arrows - [|cffffcc00Level 1|r] (|cffffcc00X|r),Searing Arrows - [|cffffcc00Level 2|r] (|cffffcc00X|r),Searing Arrows - [|cffffcc00Level 3|r] (|cffffcc00X|r)
 Researchhotkey=X
 Researchtip=Learn Searing Arrows - [|cffffcc00Level %d|r] (|cffffcc00X|r)
@@ -1713,7 +1695,6 @@ Tip=Hide (|cffffcc00D|r)
 
 [aren]
 Hotkey=S
-Unhotkey=S
 Tip=Renew (|cffffcc00S|r)
 
 [awha]
@@ -1778,7 +1759,6 @@ Tip=Sentinel (|cffffcc00Z|r)
 
 [aadm]
 Hotkey=Z
-Unhotkey=Z
 Tip=Abolish Magic (|cffffcc00Z|r)
 
 [aroa]
@@ -1817,7 +1797,6 @@ Tip=Dismount Archer & Hippogryph (|cffffcc00Z|r)
 
 [afae]
 Hotkey=Z
-Unhotkey=Z
 Tip=Faerie Fire (|cffffcc00Z|r)
 
 [acyc]
@@ -1832,12 +1811,10 @@ Untip=Night Elf Form (|cffffcc00V|r)
 
 [afa2]
 Hotkey=Z
-Unhotkey=Z
 Tip=Faerie Fire (|cffffcc00Z|r)
 
 [apsh]
 Hotkey=Z
-Unhotkey=Z
 Tip=Phase Shift (|cffffcc00Z|r)
 
 [amfl]
@@ -1942,7 +1919,6 @@ Untip=Uproot (|cffffcc00V|r)
 
 [ambt]
 Hotkey=Q
-Unhotkey=Q
 Tip=Replenish Mana and Life (|cffffcc00Q|r)
 
 [ewar]
@@ -2047,7 +2023,6 @@ Tip=Purchase Anti-magic Potion (|cffffcc00X|r)
 
 [avng]
 Hotkey=Z
-Unhotkey=Z
 Tip=Spirit of Vengeance (|cffffcc00Z|r)
 
 [aell]
@@ -2152,12 +2127,10 @@ Tip=Devour (|cffffcc00Z|r)
 
 [anpa]
 Hotkey=Z
-Unhotkey=Z
 Tip=Parasite (|cffffcc00Z|r)
 
 [acfu]
 Hotkey=X
-Unhotkey=X
 Tip=Frost Armor (|cffffcc00X|r)
 
 [acny]
@@ -2165,7 +2138,6 @@ Tip=Cyclone (|cffffcc00C|r)
 
 [andm]
 Hotkey=Z
-Unhotkey=Z
 Tip=Abolish Magic (|cffffcc00Z|r)
 
 [nmpe]
@@ -2228,7 +2200,6 @@ Researchtip=Learn Forked Lightning - [|cffffcc00Level %d|r] (|cffffcc00Z|r)
 
 [anfa]
 Hotkey=X
-Unhotkey=X
 Tip=Frost Arrows - [|cffffcc00Level 1|r] (|cffffcc00X|r),Frost Arrows - [|cffffcc00Level 2|r] (|cffffcc00X|r),Frost Arrows - [|cffffcc00Level 3|r] (|cffffcc00X|r)
 Researchhotkey=X
 Researchtip=Learn Frost Arrows - [|cffffcc00Level %d|r] (|cffffcc00X|r)
@@ -2255,7 +2226,6 @@ Researchtip=Learn Silence - [|cffffcc00Level %d|r] (|cffffcc00Z|r)
 
 [anba]
 Hotkey=X
-Unhotkey=X
 Tip=Black Arrow - [|cffffcc00Level 1|r] (|cffffcc00X|r),Black Arrow - [|cffffcc00Level 2|r] (|cffffcc00X|r),Black Arrow - [|cffffcc00Level 3|r] (|cffffcc00X|r)
 Researchhotkey=X
 Researchtip=Learn Black Arrow - [|cffffcc00Level %d|r] (|cffffcc00X|r)
@@ -2844,7 +2814,6 @@ Tip=Blink (|cffffcc00Z|r)
 
 [afzy]
 Hotkey=Z
-Unhotkey=Z
 Tip=Frenzy (|cffffcc00Z|r)
 
 [awrs]
@@ -2902,22 +2871,18 @@ Tip=Breath of Frost (|cffffcc00Z|r)
 
 [acsa]
 Hotkey=X
-Unhotkey=X
 Tip=Searing Arrows (|cffffcc00X|r)
 
 [acdm]
 Hotkey=Z
-Unhotkey=Z
 Tip=Abolish Magic (|cffffcc00Z|r)
 
 [acbl]
 Hotkey=X
-Unhotkey=X
 Tip=Bloodlust (|cffffcc00X|r)
 
 [anh1]
 Hotkey=X
-Unhotkey=X
 Tip=Heal (|cffffcc00X|r)
 Buttonpos=1,2
 
@@ -2927,7 +2892,6 @@ Tip=Ensnare (|cffffcc00Z|r)
 
 [anh2]
 Hotkey=Z
-Unhotkey=Z
 Tip=Heal (|cffffcc00Z|r)
 
 [acsl]
@@ -2936,7 +2900,6 @@ Tip=Sleep (|cffffcc00X|r)
 
 [acbb]
 Hotkey=Z
-Unhotkey=Z
 Tip=Bloodlust (|cffffcc00Z|r)
 
 [ache]
@@ -2951,7 +2914,6 @@ Untip=Deactivate Immolation (|cffffcc00X|r)
 
 [acsw]
 Hotkey=X
-Unhotkey=X
 Tip=Slow (|cffffcc00X|r)
 Buttonpos=1,2
 
@@ -2965,7 +2927,6 @@ Buttonpos=2,2
 
 [acrd]
 Hotkey=X
-Unhotkey=X
 Tip=Raise Dead (|cffffcc00X|r)
 Buttonpos=1,2
 
@@ -2975,7 +2936,6 @@ Tip=Entangling Roots (|cffffcc00Z|r)
 
 [acpa]
 Hotkey=Z
-Unhotkey=Z
 Tip=Parasite (|cffffcc00Z|r)
 
 [anfb]
@@ -2997,7 +2957,6 @@ Unbuttonpos=0,2
 
 [accs]
 Hotkey=Z
-Unhotkey=Z
 Tip=Curse (|cffffcc00Z|r)
 
 [acpu]
@@ -3019,7 +2978,6 @@ Tip=Mana Burn (|cffffcc00Z|r)
 
 [acbk]
 Hotkey=Z
-Unhotkey=Z
 Tip=Black Arrow (|cffffcc00Z|r)
 
 [acde]
@@ -3028,12 +2986,10 @@ Tip=Devour Magic (|cffffcc00X|r)
 
 [acd2]
 Hotkey=X
-Unhotkey=X
 Tip=Abolish Magic (|cffffcc00X|r)
 
 [acif]
 Hotkey=C
-Unhotkey=C
 Tip=Inner Fire (|cffffcc00C|r)
 
 [acr2]
@@ -3042,7 +2998,6 @@ Tip=Rejuvenation (|cffffcc00Z|r)
 
 [acff]
 Hotkey=Z
-Unhotkey=Z
 Tip=Faerie Fire (|cffffcc00Z|r)
 
 [acls]
@@ -3119,7 +3074,6 @@ Tip=Cannibalize (|cffffcc00Z|r)
 
 [acwb]
 Hotkey=Z
-Unhotkey=Z
 Tip=Web (|cffffcc00Z|r)
 Buttonpos=0,2
 
@@ -3166,7 +3120,6 @@ Tip=Monsoon (|cffffcc00Z|r)
 
 [acdr]
 Hotkey=Z
-Unhotkey=Z
 Tip=Life Drain (|cffffcc00Z|r)
 
 [acch]
@@ -3183,7 +3136,6 @@ Tip=Unholy Frenzy (|cffffcc00X|r)
 
 [accw]
 Hotkey=Z
-Unhotkey=Z
 Tip=Cold Arrows (|cffffcc00Z|r)
 
 [acfl]

@@ -98,7 +98,6 @@ Unbuttonpos=3,1
 Tip=|cffffcc00R|repair
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=1,1
 Unbuttonpos=1,1
 
@@ -106,7 +105,6 @@ Unbuttonpos=1,1
 Tip=|cffffcc00R|repair
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=1,1
 Unbuttonpos=1,1
 
@@ -204,7 +202,6 @@ Buttonpos=1,0
 Tip=Inner |cffffcc00F|rire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
-Unhotkey=F
 Buttonpos=2,2
 Unbuttonpos=2,2
 
@@ -212,7 +209,6 @@ Unbuttonpos=2,2
 Tip=H|cffffcc00e|ral
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=E
-Unhotkey=E
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -269,7 +265,6 @@ Buttonpos=0,0
 Tip=Slo|cffffcc00w|r
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=W
-Unhotkey=W
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -292,7 +287,6 @@ Buttonpos=2,0
 Tip=Spell S|cffffcc00t|real
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=T
-Unhotkey=T
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -896,7 +890,6 @@ Buttonpos=0,2
 Tip=|cffffcc00B|rloodlust
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Unhotkey=B
 Buttonpos=2,2
 Unbuttonpos=2,2
 
@@ -1401,7 +1394,6 @@ Buttonpos=3,1
 Tip=|cffffcc00R|restore
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=1,1
 Unbuttonpos=1,1
 
@@ -1424,7 +1416,6 @@ Buttonpos=1,0
 Tip=|cffffcc00C|rurse
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
-Unhotkey=C
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -1457,7 +1448,6 @@ Buttonpos=1,0
 Tip=|cffffcc00W|reb
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=W
-Unhotkey=W
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -1511,7 +1501,6 @@ Buttonpos=0,2
 Tip=|cffffcc00R|raise Dead
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=1,2
 Unbuttonpos=1,2
 
@@ -1534,7 +1523,6 @@ Buttonpos=0,0
 Tip=Get |cffffcc00C|rorpse
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
-Unhotkey=C
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -1552,7 +1540,6 @@ Buttonpos=2,0
 Tip=Spirit Tou|cffffcc00c|rh
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
-Unhotkey=C
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -1560,7 +1547,6 @@ Unbuttonpos=0,2
 Tip=Essence of |cffffcc00B|rlight
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Unhotkey=B
 Buttonpos=1,2
 Unbuttonpos=1,2
 
@@ -1578,7 +1564,6 @@ Buttonpos=3,2
 Tip=|cffffcc00O|rrb of Annihilation
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=O
-Unhotkey=O
 Buttonpos=1,2
 Unbuttonpos=1,2
 
@@ -1865,7 +1850,6 @@ Researchbuttonpos=0,0
 Tip=|cffffcc00F|rrost Armor - [|cffffcc00Level 1|r],|cffffcc00F|rrost Armor - [|cffffcc00Level 2|r],|cffffcc00F|rrost Armor - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
-Unhotkey=F
 Researchtip=Learn |cffffcc00F|rrost Armor - [|cffffcc00Level %d|r]
 Researchhotkey=F
 Buttonpos=1,2
@@ -1907,7 +1891,6 @@ Researchbuttonpos=0,0
 Tip=|cffffcc00C|rarrion Beetles - [|cffffcc00Level 1|r],|cffffcc00C|rarrion Beetles - [|cffffcc00Level 2|r],|cffffcc00C|rarrion Beetles - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
-Unhotkey=C
 Researchtip=Learn |cffffcc00C|rarrion Beetles - [|cffffcc00Level %d|r]
 Researchhotkey=C
 Buttonpos=2,2
@@ -2188,7 +2171,6 @@ Buttonpos=1,0
 Tip=Fae|cffffcc00r|rie Fire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -2209,7 +2191,6 @@ Unbuttonpos=3,2
 Tip=Fae|cffffcc00r|rie Fire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -2222,7 +2203,6 @@ Buttonpos=0,0
 Tip=|cffffcc00R|renew
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=1,1
 Unbuttonpos=1,1
 
@@ -2275,7 +2255,6 @@ Buttonpos=0,0
 Tip=A|cffffcc00b|rolish Magic
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Unhotkey=B
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -2326,7 +2305,6 @@ Unbuttonpos=1,2
 Tip=Phas|cffffcc00e|r Shift
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=E
-Unhotkey=E
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -2555,7 +2533,6 @@ Buttonpos=0,1
 Tip=|cffffcc00R|replenish Mana and Life
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=0,0
 Unbuttonpos=0,0
 
@@ -2657,7 +2634,6 @@ Researchbuttonpos=0,0
 Tip=|cffffcc00C|rold Arrows - [|cffffcc00Level 1|r],|cffffcc00C|rold Arrows - [|cffffcc00Level 2|r],|cffffcc00C|rold Arrows - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
-Unhotkey=C
 Researchtip=Learn |cffffcc00C|rold Arrows - [|cffffcc00Level %d|r]
 Researchhotkey=C
 Buttonpos=1,2
@@ -2668,7 +2644,6 @@ Researchbuttonpos=1,0
 Tip=Sea|cffffcc00r|ring Arrows - [|cffffcc00Level 1|r],Sea|cffffcc00r|ring Arrows - [|cffffcc00Level 2|r],Sea|cffffcc00r|ring Arrows - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Researchtip=Learn Sea|cffffcc00r|ring Arrows - [|cffffcc00Level %d|r]
 Researchhotkey=R
 Buttonpos=1,2
@@ -2733,7 +2708,6 @@ Researchbuttonpos=3,0
 Tip=Spirit of |cffffcc00V|rengeance
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=V
-Unhotkey=V
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -2858,7 +2832,6 @@ Researchbuttonpos=0,0
 Tip=F|cffffcc00r|rost Arrows - [|cffffcc00Level 1|r],F|cffffcc00r|rost Arrows - [|cffffcc00Level 2|r],F|cffffcc00r|rost Arrows - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Researchtip=Learn F|cffffcc00r|rost Arrows - [|cffffcc00Level %d|r]
 Researchhotkey=R
 Buttonpos=1,2
@@ -3018,7 +2991,6 @@ Researchbuttonpos=0,0
 Tip=|cffffcc00B|rlack Arrow - [|cffffcc00Level 1|r],|cffffcc00B|rlack Arrow - [|cffffcc00Level 2|r],|cffffcc00B|rlack Arrow - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Unhotkey=B
 Researchtip=Learn |cffffcc00B|rlack Arrow - [|cffffcc00Level %d|r]
 Researchhotkey=B
 Buttonpos=1,2
@@ -3267,7 +3239,6 @@ Researchbuttonpos=1,0
 Tip=In|cffffcc00c|rinerate - [|cffffcc00Level 1|r],In|cffffcc00c|rinerate - [|cffffcc00Level 2|r],In|cffffcc00c|rinerate - [|cffffcc00Level 3|r]
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
-Unhotkey=C
 Researchtip=Learn In|cffffcc00c|rinerate - [|cffffcc00Level %d|r]
 Researchhotkey=C
 Buttonpos=2,2
@@ -4776,7 +4747,6 @@ Buttonpos=0,2
 Tip=|cffffcc00F|rrenzy
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
-Unhotkey=F
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4788,7 +4758,6 @@ Buttonpos=0,2
 Tip=|cffffcc00B|rlack Arrow
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Unhotkey=B
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4796,7 +4765,6 @@ Unbuttonpos=0,2
 Tip=|cffffcc00B|rloodlust
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Unhotkey=B
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4804,7 +4772,6 @@ Unbuttonpos=0,2
 Tip=B|cffffcc00l|roodlust
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=L
-Unhotkey=L
 Buttonpos=1,2
 Unbuttonpos=1,2
 
@@ -4827,7 +4794,6 @@ Buttonpos=0,2
 Tip=|cffffcc00C|rold Arrows
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
-Unhotkey=C
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4835,7 +4801,6 @@ Unbuttonpos=0,2
 Tip=|cffffcc00C|rurse
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
-Unhotkey=C
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4868,7 +4833,6 @@ Buttonpos=0,2
 Tip=Fae|cffffcc00r|rie Fire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4891,7 +4855,6 @@ Buttonpos=0,2
 Tip=H|cffffcc00e|ral
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=E
-Unhotkey=E
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4899,7 +4862,6 @@ Unbuttonpos=0,2
 Tip=H|cffffcc00e|ral
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=E
-Unhotkey=E
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4932,7 +4894,6 @@ Buttonpos=0,2
 Tip=Life D|cffffcc00r|rain
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4959,7 +4920,6 @@ Buttonpos=0,2
 Tip=Pa|cffffcc00r|rasite
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4972,7 +4932,6 @@ Buttonpos=0,2
 Tip=|cffffcc00R|raise Dead
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4990,7 +4949,6 @@ Buttonpos=0,2
 Tip=A|cffffcc00b|rolish Magic
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Unhotkey=B
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -4998,7 +4956,6 @@ Unbuttonpos=0,2
 Tip=A|cffffcc00b|rolish Magic
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Unhotkey=B
 Buttonpos=1,2
 Unbuttonpos=1,2
 
@@ -5100,7 +5057,6 @@ Buttonpos=0,2
 Tip=Sea|cffffcc00r|ring Arrows
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=1,2
 Unbuttonpos=1,2
 
@@ -5123,7 +5079,6 @@ Buttonpos=1,2
 Tip=Slo|cffffcc00w|r
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=W
-Unhotkey=W
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -5136,7 +5091,6 @@ Buttonpos=1,2
 Tip=|cffffcc00W|reb
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=W
-Unhotkey=W
 Buttonpos=1,2
 Unbuttonpos=1,2
 
@@ -5188,7 +5142,6 @@ Buttonpos=2,2
 Tip=Inner |cffffcc00F|rire
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
-Unhotkey=F
 Buttonpos=2,2
 Unbuttonpos=2,2
 
@@ -5734,7 +5687,6 @@ Buttonpos=0,2
 Tip=Pa|cffffcc00r|rasite
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=R
-Unhotkey=R
 Buttonpos=0,2
 Unbuttonpos=0,2
 
@@ -5742,7 +5694,6 @@ Unbuttonpos=0,2
 Tip=|cffffcc00F|rrost Armor
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=F
-Unhotkey=F
 Buttonpos=1,2
 Unbuttonpos=1,2
 
@@ -5755,7 +5706,6 @@ Buttonpos=2,2
 Tip=A|cffffcc00b|rolish Magic
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Unhotkey=B
 Buttonpos=0,2
 Unbuttonpos=0,2
 
