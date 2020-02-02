@@ -415,7 +415,7 @@ Editor.prototype.unitEditor=function() {
 		$("#card"+n).children[index].replaceWith(element);
 	}
 
-	function createButton(id, name, n, state) {
+	function createButton(id, name, n, state=true) {
 		let div=document.createElement("div");
 		let img=document.createElement("img");
 		img.setAttribute("src", self.getIcon(id, n));
@@ -653,7 +653,7 @@ Editor.prototype.drop=function(from, to, mod) {
 					if (from==this.card[this.active][y][x]) {
 						oldpos=x+DELIMITER+y;
 
-						if (oldunpos!="") {
+						if (oldunpos!=""&&oldpos==oldunpos) {
 							oldunpos=oldpos;
 						}
 					}
@@ -661,7 +661,7 @@ Editor.prototype.drop=function(from, to, mod) {
 					if (to==this.card[this.active][y][x]) {
 						newpos=x+DELIMITER+y;
 
-						if (newunpos!="") {
+						if (newunpos!=""&&newpos==newunpos) {
 							newunpos=newpos;
 						}
 					}
@@ -677,12 +677,12 @@ Editor.prototype.drop=function(from, to, mod) {
 			if (this.active!=RESEARCH||to==CANCEL) {
 				if (to.slice(-1)!="_") {
 					this.commands.set(to, "Buttonpos", oldpos);
+
+					if (newunpos!=""&&newpos==newunpos) {
+						this.commands.set(to, "Unbuttonpos", oldpos);
+					}
 				} else { // moving unbutton by itself
 					this.commands.set(to.slice(0, -1), "Unbuttonpos", oldpos);
-				}
-
-				if (newunpos!="") {
-					this.commands.set(to, "Unbuttonpos", oldpos);
 				}
 			} else {
 				this.commands.set(to, "Researchbuttonpos", oldpos);
@@ -693,12 +693,12 @@ Editor.prototype.drop=function(from, to, mod) {
 	if (this.active!=RESEARCH||from==CANCEL) {
 		if (from.slice(-1)!="_") {
 			this.commands.set(from, "Buttonpos", newpos);
+
+			if (oldunpos!=""&&oldpos==oldunpos) {
+				this.commands.set(from, "Unbuttonpos", newpos);
+			}
 		} else { // moving unbutton by itself
 			this.commands.set(from.slice(0, -1), "Unbuttonpos", newpos);
-		}
-
-		if (oldunpos!=""&&oldpos==oldunpos) {
-			this.commands.set(from, "Unbuttonpos", newpos);
 		}
 	} else {
 		this.commands.set(from, "Researchbuttonpos", newpos);
