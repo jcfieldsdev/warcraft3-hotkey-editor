@@ -15,6 +15,7 @@ const DEFAULT_UNIT="hpea";
 // file names and locations
 const DEFAULT_HOTKEY_FILE="default.txt";
 const DEFAULT_SAVE_NAME="CustomKeys.txt";
+const DEFAULT_ICON="btnsheep";
 const DEFAULT_ICON_SET="classic";
 const ICONS_DIR="icons/";
 const HOTKEY_DIR="hotkeys/";
@@ -502,7 +503,7 @@ Editor.prototype.getIcon=function(id, n=STANDARD) {
 		if (icon==undefined) {
 			// uses default icon name if not overridden,
 			// otherwise uses filler art for missing icon
-			icon=data.icons[DEFAULT_ICON_SET].commands[id]||"btnsheep";
+			icon=data.icons[DEFAULT_ICON_SET].commands[id]||DEFAULT_ICON;
 		}
 	}
 
@@ -738,7 +739,7 @@ Editor.prototype.getConflicts=function(id) {
 				let unbuttonpos=this.commands.get(id, "Unbuttonpos");
 
 				// counts unhotkey separately if positions are different so
-				// button can conflict with itself
+				// command can conflict with itself
 				// (special case for "Call to Arms"/"Back to Work")
 				if (unbuttonpos!=""&&buttonpos!=unbuttonpos) {
 					recordHotkey(id+"_", unhotkey, hotkeys);

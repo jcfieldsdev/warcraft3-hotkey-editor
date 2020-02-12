@@ -778,6 +778,10 @@ Researchtip=Learn Transmute (|cffffcc00R|r)
 Hotkey=D
 Tip=Hide (|cffffcc00D|r)
 
+[sshm]
+Hotkey=D
+Tip=Hide (|cffffcc00D|r)
+
 [aihm]
 Hotkey=D
 Tip=Hide (|cffffcc00D|r)

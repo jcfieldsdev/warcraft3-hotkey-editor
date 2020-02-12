@@ -1410,7 +1410,7 @@ data.units={
 		type: UNIT
 	},
 	nchg: {
-		name: "Chaos Grunt",
+		name: "Fel Grunt",
 		race: ORC,
 		type: UNIT,
 		commands: [
@@ -1418,7 +1418,7 @@ data.units={
 		]
 	},
 	nchr: {
-		name: "Chaos Raider",
+		name: "Fel Raider",
 		race: ORC,
 		type: UNIT,
 		commands: [
@@ -1427,7 +1427,7 @@ data.units={
 		]
 	},
 	nckb: {
-		name: "Chaos Kodo Beast",
+		name: "Fel Kodo Beast",
 		race: ORC,
 		type: UNIT,
 		commands: [
@@ -1436,7 +1436,7 @@ data.units={
 		]
 	},
 	nchw: {
-		name: "Chaos Warlock",
+		name: "Fel Warlock",
 		race: ORC,
 		type: UNIT,
 		commands: [
@@ -1447,11 +1447,11 @@ data.units={
 	},
 	ogrechaos: {
 		name: "Great Hall",
-		suffix: "Chaos Orc",
+		suffix: "Fel Orc",
 		race: ORC,
 		type: BUILDING,
 		commands: [
-			["ncpn", "Train Chaos Peon"],
+			["ncpn", "Train Fel Peon"],
 			["ropg", "Research Pillage"],
 			["cmdrally", "Set Rally Point"],
 			["ostr", "Upgrade to Stronghold"],
@@ -1460,11 +1460,11 @@ data.units={
 	},
 	obarchaos: {
 		name: "Barracks",
-		suffix: "Chaos Orc",
+		suffix: "Fel Orc",
 		race: ORC,
 		type: BUILDING,
 		commands: [
-			["nchg", "Train Chaos Grunt"],
+			["nchg", "Train Fel Grunt"],
 			["ohun", "Train Troll Headhunter"],
 			["ocat", "Train Demolisher"],
 			["robs", "Research Brute Strength"],
@@ -1475,11 +1475,11 @@ data.units={
 	},
 	osldchaos: {
 		name: "Spirit Lodge",
-		suffix: "Chaos Orc",
+		suffix: "Fel Orc",
 		race: ORC,
 		type: BUILDING,
 		commands: [
-			["nchw", "Train Chaos Warlock"],
+			["nchw", "Train Fel Warlock"],
 			["odoc", "Train Witch Doctor"],
 			["rost", "Shaman Training"],
 			["rowd", "Witch Doctor Training"],
@@ -1489,12 +1489,12 @@ data.units={
 	},
 	obeachaos: {
 		name: "Beastiary",
-		suffix: "Chaos Orc",
+		suffix: "Fel Orc",
 		race: ORC,
 		type: BUILDING,
 		commands: [
-			["nchr", "Train Raider"],
-			["nckb", "Train Kodo Beast"],
+			["nchr", "Train Fel Raider"],
+			["nckb", "Train Fel Kodo Beast"],
 			["roen", "Research Ensnare"],
 			["rwdm", "Upgrade War Drums"],
 			["cmdrally", "Set Rally Point"],
@@ -2294,6 +2294,18 @@ data.units={
 			["acrs", "Curse"]
 		]
 	},
+	usylreforged: {
+		name: "Sylvanas Windrunner",
+		suffix: "Reforged",
+		race: UNDEAD,
+		type: HERO,
+		commands: [
+			["ansi", "Silence"],
+			["anht", "Howl of Terror"],
+			["andr", "Life Drain"],
+			["anch", "Charm"]
+		]
+	},
 	ubdr: {
 		name: "Sapphiron",
 		suffix: "Living",
@@ -2851,6 +2863,22 @@ data.units={
 			["aro1", "Uproot"]
 		]
 	},
+	eaowcampaign: {
+		name: "Ancient of Wind",
+		suffix: "Campaign",
+		race: NIGHT_ELF,
+		type: BUILDING,
+		commands: [
+			["ehip", "Train Hippogryph"],
+			["edot", "Train Druid of the Talon"],
+			["efdr", "Train Faerie Dragon"],
+			["reht", "Hippogryph Taming"],
+			["redt", "Druid of the Talon Training"],
+			["reec", "Research Mark of the Talon"],
+			["cmdrally", "Set Rally Point"],
+			["aro1", "Uproot"]
+		]
+	},
 	edos: {
 		name: "Chimaera Roost",
 		race: NIGHT_ELF,
@@ -3066,6 +3094,19 @@ data.units={
 			["aear", "Trueshot Aura"],
 			["aesf", "Starfall"],
 			["ashm", "Shadowmeld"]
+		]
+	},
+	etyr2: {
+		name: "Tyrande",
+		suffix: "Mission 2",
+		race: NIGHT_ELF,
+		type: HERO,
+		commands: [
+			["aest", "Scout"],
+			["ahfa", "Searing Arrows"],
+			["aear", "Trueshot Aura"],
+			["aesf", "Starfall"],
+			["sshm", "Shadowmeld (Instant)"]
 		]
 	},
 	ewrd: {
@@ -6487,6 +6528,7 @@ data.icons={
 			eaoe: "btnancientoflore",
 			eaom: "btnancientoftheearth",
 			eaow: "btnancientofthemoon",
+			eaowcampaign: "btnancientofthemoon",
 			earc: "btnarcher",
 			eate: "btnaltarofelders",
 			eatecampaign: "btnaltarofelders",
@@ -6530,6 +6572,7 @@ data.icons={
 			etrp: "btntreant",
 			etrs: "btnnightelftransport",
 			etyr: "btnpriestessofthemoon",
+			etyr2: "btnpriestessofthemoon",
 			even: "btnavengingwatcher",
 			ewar: "btnherowarden",
 			ewrd: "btnwarden2",
@@ -7199,6 +7242,7 @@ data.icons={
 			spro: "btnscroll",
 			sreg: "btnscrollofregenerationgreen",
 			ssan: "btnstaffofsanctuary",
+			sshm: "btnambush",
 			stel: "btnstaffofteleportation",
 			stwp: "btnscrolluber",
 			suhf: "btnunholyfrenzy",
@@ -7251,6 +7295,7 @@ data.icons={
 			uslh: "btnslaughterhouse",
 			uswb: "btnghost",
 			usyl: "btnbansheeranger",
+			usylreforged: "btnbansheeranger",
 			utic: "btntichondrius",
 			utod: "btntempleofthedamned",
 			utodcampaign: "btntempleofthedamned",
@@ -7279,6 +7324,7 @@ data.icons={
 			ensh: "btnnaisha",
 			espv: "btnvengeanceincarnate",
 			etyr: "btntyrande",
+			etyr2: "btntyrande",
 			hant: "btnantonidas",
 			harf: "btnarthasfrost",
 			hc00: "btnhighelfrunner",
@@ -7513,6 +7559,7 @@ data.icons={
 			umal: "btnmalganis",
 			uswb: "btnsylvanasghost",
 			usyl: "btnsylvanas",
+			usylreforged: "btnsylvanasghost",
 			uvar: "btnvarimathras"
 		}
 	}

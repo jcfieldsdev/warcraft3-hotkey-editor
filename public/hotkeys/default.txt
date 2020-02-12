@@ -1540,15 +1540,15 @@ Buttonpos=2,0
 Tip=Spirit Tou|cffffcc00c|rh
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=C
-Buttonpos=0,2
-Unbuttonpos=0,2
+Buttonpos=1,2
+Unbuttonpos=1,2
 
 [arpl]
 Tip=Essence of |cffffcc00B|rlight
 Untip=|cffc3dbffRight-click to activate auto-casting.|r
 Hotkey=B
-Buttonpos=1,2
-Unbuttonpos=1,2
+Buttonpos=0,2
+Unbuttonpos=0,2
 
 [aave]
 Tip=Morph into Des|cffffcc00t|rroyer
@@ -2114,6 +2114,11 @@ Tip=H|cffffcc00i|rde
 Hotkey=I
 Buttonpos=2,1
 
+[sshm]
+Tip=H|cffffcc00i|rde
+Hotkey=I
+Buttonpos=2,1
+
 [ahid]
 Tip=H|cffffcc00i|rde
 Hotkey=I
@@ -2376,6 +2381,7 @@ Buttonpos=0,2
 [reht]
 Tip=Research H|cffffcc00i|rppogryph Taming
 Hotkey=I
+Buttonpos=0,2
 
 [recb]
 Tip=Research Corrosive |cffffcc00B|rreath

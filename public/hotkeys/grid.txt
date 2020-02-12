@@ -1693,6 +1693,10 @@ Researchtip=Learn Vengeance (|cffffcc00V|r)
 Hotkey=D
 Tip=Hide (|cffffcc00D|r)
 
+[sshm]
+Hotkey=D
+Tip=Hide (|cffffcc00D|r)
+
 [aren]
 Hotkey=S
 Tip=Renew (|cffffcc00S|r)
