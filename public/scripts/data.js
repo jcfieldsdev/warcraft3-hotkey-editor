@@ -336,7 +336,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	haltcampaign: {
+	halt_campaign: {
 		name: "Altar of Kings",
 		suffix: "Campaign",
 		race: HUMAN,
@@ -385,7 +385,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	harm2: {
+	harm_barrage: {
 		name: "Workshop",
 		suffix: "with Barrage Tank",
 		race: HUMAN,
@@ -694,7 +694,7 @@ data.units={
 			["ahpx", "Phoenix"]
 		]
 	},
-	htowcampaign: {
+	htow_campaign: {
 		name: "Town Hall",
 		suffix: "Blood Elf",
 		race: BLOOD_ELF,
@@ -706,7 +706,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	hbarcampaign: {
+	hbar_campaign: {
 		name: "Barracks",
 		suffix: "Blood Elf",
 		race: BLOOD_ELF,
@@ -994,7 +994,7 @@ data.units={
 			["apg2", "Purge"]
 		]
 	},
-	oshmcampaign: {
+	oshm_campaign: {
 		name: "Shaman",
 		suffix: "Campaign",
 		race: ORC,
@@ -1142,7 +1142,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	obar2: {
+	obar_berserkers: {
 		name: "Barracks",
 		suffix: "with Berserkers",
 		race: ORC,
@@ -1202,7 +1202,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	oaltcampaign: {
+	oalt_campaign: {
 		name: "Altar of Storms",
 		suffix: "Campaign",
 		race: ORC,
@@ -1445,7 +1445,7 @@ data.units={
 			["scri", "Cripple"]
 		]
 	},
-	ogrechaos: {
+	ogre_chaos: {
 		name: "Great Hall",
 		suffix: "Fel Orc",
 		race: ORC,
@@ -1458,7 +1458,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	obarchaos: {
+	obar_chaos: {
 		name: "Barracks",
 		suffix: "Fel Orc",
 		race: ORC,
@@ -1473,7 +1473,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	osldchaos: {
+	osld_chaos: {
 		name: "Spirit Lodge",
 		suffix: "Fel Orc",
 		race: ORC,
@@ -1487,7 +1487,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	obeachaos: {
+	obea_chaos: {
 		name: "Beastiary",
 		suffix: "Fel Orc",
 		race: ORC,
@@ -1974,6 +1974,7 @@ data.units={
 		race: UNDEAD,
 		type: UNIT,
 		commands: [
+			["cmdattackground", "Attack Ground"],
 			["amel", "Load Corpse"],
 			["amed", "Drop All Corpses"],
 			["apts", "Disease Cloud"],
@@ -1991,7 +1992,7 @@ data.units={
 			["ausm", "Skeletal Mastery"]
 		]
 	},
-	uneccampaign: {
+	unec_campaign: {
 		name: "Necromancer",
 		suffix: "Campaign",
 		race: UNDEAD,
@@ -2145,7 +2146,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	uaodcampaign: {
+	uaod_campaign: {
 		name: "Altar of Darkness",
 		suffix: "Campaign",
 		race: UNDEAD,
@@ -2174,7 +2175,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	utodcampaign: {
+	utod_campaign: {
 		name: "Temple of the Damned",
 		suffix: "Campaign",
 		race: UNDEAD,
@@ -2294,7 +2295,7 @@ data.units={
 			["acrs", "Curse"]
 		]
 	},
-	usylreforged: {
+	usyl_reforged: {
 		name: "Sylvanas Windrunner",
 		suffix: "Reforged",
 		race: UNDEAD,
@@ -2816,7 +2817,7 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
-	eatecampaign: {
+	eate_campaign: {
 		name: "Altar of Elders",
 		suffix: "Campaign",
 		race: NIGHT_ELF,
@@ -2863,7 +2864,7 @@ data.units={
 			["aro1", "Uproot"]
 		]
 	},
-	eaowcampaign: {
+	eaow_campaign: {
 		name: "Ancient of Wind",
 		suffix: "Campaign",
 		race: NIGHT_ELF,
@@ -3096,7 +3097,7 @@ data.units={
 			["ashm", "Shadowmeld"]
 		]
 	},
-	etyr2: {
+	etyr_instant: {
 		name: "Tyrande",
 		suffix: "Mission 2",
 		race: NIGHT_ELF,
@@ -3723,7 +3724,7 @@ data.units={
 			["anei", "Select User"]
 		]
 	},
-	ngmeoriginal: {
+	ngme_original: {
 		name: "Goblin Merchant",
 		suffix: "Original",
 		race: NEUTRAL,
@@ -6090,6 +6091,7 @@ data.icons={
 			cmdpatrol: "btnpatrol",
 			cmdrally: "btnrallypoint",
 			cmdselectskill: "btnskillz",
+			cmdstop: "btnstop",
 			a000: "btnspiritwalker",
 			aabs: "btnabsorbmagic",
 			aadm: "btndryaddispelmagicoff",
@@ -6522,16 +6524,15 @@ data.icons={
 			awrs: "btnwarstomp",
 			bspd: "btnbootsofspeed",
 			clsd: "btncloak",
-			cmdstop: "btnstop",
 			cnob: "btncirclet",
 			dust: "btndustofappearance",
 			eaoe: "btnancientoflore",
 			eaom: "btnancientoftheearth",
 			eaow: "btnancientofthemoon",
-			eaowcampaign: "btnancientofthemoon",
+			eaow_campaign: "btnancientofthemoon",
 			earc: "btnarcher",
 			eate: "btnaltarofelders",
-			eatecampaign: "btnaltarofelders",
+			eate_campaign: "btnaltarofelders",
 			ebal: "btnglaivethrower",
 			ebsh: "btnnightelfbattlecruiser",
 			ecen: "btnkeeperofthegrove",
@@ -6572,25 +6573,25 @@ data.icons={
 			etrp: "btntreant",
 			etrs: "btnnightelftransport",
 			etyr: "btnpriestessofthemoon",
-			etyr2: "btnpriestessofthemoon",
+			etyr_instant: "btnpriestessofthemoon",
 			even: "btnavengingwatcher",
 			ewar: "btnherowarden",
 			ewrd: "btnwarden2",
 			ewsp: "btnwisp",
 			gemt: "btngem",
 			halt: "btnaltarofkings",
-			haltcampaign: "btnaltarofkings",
+			halt_campaign: "btnaltarofkings",
 			hamg: "btnheroarchmage",
 			hant: "btnheroarchmage",
 			hapm: "btnproudmoore",
 			harf: "btnarthas",
 			harm: "btnworkshop",
-			harm2: "btnworkshop",
+			harm_barrage: "btnworkshop",
 			hars: "btnarcanesanctum",
 			hart: "btnarthas",
 			hatw: "btnhumanarcanetower",
 			hbar: "btnhumanbarracks",
-			hbarcampaign: "btnhumanbarracks",
+			hbar_campaign: "btnhumanbarracks",
 			hbla: "btnblacksmith",
 			hblm: "btnherobloodelfprince",
 			hbot: "btnhumantransport",
@@ -6630,7 +6631,7 @@ data.icons={
 			hsor: "btnsorceress",
 			hspt: "btnspellbreaker",
 			htow: "btntownhall",
-			htowcampaign: "btntownhall",
+			htow_campaign: "btntownhall",
 			huth: "btnheropaladin",
 			hvlt: "btnarcanevault",
 			hvsh: "btnnagaseawitch",
@@ -6793,7 +6794,7 @@ data.icons={
 			ngh2: "btnghost",
 			ngir: "btnjunkgolem",
 			ngme: "btnmerchant",
-			ngmeoriginal: "btnmerchant",
+			ngme_original: "btnmerchant",
 			ngna: "btngnollarcher",
 			ngnb: "btngnoll",
 			ngno: "btngnoll",
@@ -7064,11 +7065,11 @@ data.icons={
 			o004: "btnspiritwalker",
 			o006: "btnetherealformon",
 			oalt: "btnaltarofstorms",
-			oaltcampaign: "btnaltarofstorms",
+			oalt_campaign: "btnaltarofstorms",
 			obar: "btnbarracks",
-			obarchaos: "btnbarracks",
+			obar_chaos: "btnbarracks",
 			obea: "btnbeastiary",
-			obeachaos: "btnbeastiary",
+			obea_chaos: "btnbeastiary",
 			obla: "btnheroblademaster",
 			obot: "btnorctransport",
 			ocat: "btndemolisher",
@@ -7085,7 +7086,7 @@ data.icons={
 			ofr2: "btnorboffire",
 			ofrt: "btnfortress",
 			ogre: "btngreathall",
-			ogrechaos: "btngreathall",
+			ogre_chaos: "btngreathall",
 			ogrh: "btnhellscream",
 			ogrk: "btngrunt",
 			ogru: "btngrunt",
@@ -7105,10 +7106,10 @@ data.icons={
 			osam: "btnheroblademaster",
 			oshd: "btnshadowhunter",
 			oshm: "btnshaman",
-			oshmcampaign: "btnshaman",
+			oshm_campaign: "btnshaman",
 			oshy: "btngoblinshipyard",
 			osld: "btnspiritlodge",
-			osldchaos: "btnspiritlodge",
+			osld_chaos: "btnspiritlodge",
 			osp1: "btnserpentward",
 			osp2: "btnserpentward",
 			osp3: "btnserpentward",
@@ -7253,7 +7254,7 @@ data.icons={
 			uaco: "btnacolyte",
 			uanb: "btnherocryptlord",
 			uaod: "btnaltarofdarkness",
-			uaodcampaign: "btnaltarofdarkness",
+			uaod_campaign: "btnaltarofdarkness",
 			uarb: "btnundeadairbarge",
 			uban: "btnbanshee",
 			ubdd: "btnfrostwyrm",
@@ -7281,7 +7282,7 @@ data.icons={
 			umal: "btnherodreadlord",
 			umtw: "btnmeatwagon",
 			unec: "btnnecromancer",
-			uneccampaign: "btnnecromancer",
+			unec_campaign: "btnnecromancer",
 			unp1: "btnhallofthedead",
 			unp2: "btnblackcitadel",
 			unpl: "btnnecropolis",
@@ -7295,10 +7296,10 @@ data.icons={
 			uslh: "btnslaughterhouse",
 			uswb: "btnghost",
 			usyl: "btnbansheeranger",
-			usylreforged: "btnbansheeranger",
+			usyl_reforged: "btnbansheeranger",
 			utic: "btntichondrius",
 			utod: "btntempleofthedamned",
-			utodcampaign: "btntempleofthedamned",
+			utod_campaign: "btntempleofthedamned",
 			utom: "btntombofrelics",
 			uubs: "btnundeadbattleship",
 			uvar: "btnherodreadlord",
@@ -7324,7 +7325,7 @@ data.icons={
 			ensh: "btnnaisha",
 			espv: "btnvengeanceincarnate",
 			etyr: "btntyrande",
-			etyr2: "btntyrande",
+			etyr_instant: "btntyrande",
 			hant: "btnantonidas",
 			harf: "btnarthasfrost",
 			hc00: "btnhighelfrunner",
@@ -7559,7 +7560,7 @@ data.icons={
 			umal: "btnmalganis",
 			uswb: "btnsylvanasghost",
 			usyl: "btnsylvanas",
-			usylreforged: "btnsylvanasghost",
+			usyl_reforged: "btnsylvanasghost",
 			uvar: "btnvarimathras"
 		}
 	}

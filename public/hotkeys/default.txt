@@ -5293,9 +5293,9 @@ Hotkey=S
 Buttonpos=0,0
 
 [nhea]
-Tip=Train |cffffcc00A|rrcher
-Hotkey=A
-Buttonpos=0,0
+Tip=Train A|cffffcc00r|rcher
+Hotkey=R
+Buttonpos=1,0
 
 [nws1]
 Tip=Train |cffffcc00D|rragon Hawk

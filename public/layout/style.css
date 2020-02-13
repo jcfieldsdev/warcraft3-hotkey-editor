@@ -521,6 +521,11 @@ main.doc h4 {
 	font-size: 1.25rem;
 }
 
+main.doc img {
+	height: auto;
+	max-width: 100%;
+}
+
 main.doc section p {
 	margin-left: 2em;
 }

@@ -1044,7 +1044,7 @@ Editor.prototype.formatHotkey=function(type, hotkey) {
 	p.appendChild(label);
 
 	// appends "Set to Esc" button for cancel buttons
-	if (this.command.startsWith("cmdcancel")) {
+	if (this.command.startsWith(CANCEL)) {
 		let button=document.createElement("button");
 		button.setAttribute("type", "button");
 		button.addEventListener("click", function() {
