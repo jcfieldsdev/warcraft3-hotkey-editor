@@ -5295,7 +5295,7 @@ Buttonpos=0,0
 [nhea]
 Tip=Train A|cffffcc00r|rcher
 Hotkey=R
-Buttonpos=1,0
+Buttonpos=0,0
 
 [nws1]
 Tip=Train |cffffcc00D|rragon Hawk
@@ -5361,6 +5361,11 @@ Buttonpos=0,2
 Tip=|cffffcc00U|rpgrade to Advanced Death Tower
 Hotkey=U
 Buttonpos=0,2
+
+[a009]
+Tip=|cffffcc00R|reclaim Tower
+Hotkey=R
+Buttonpos=3,2
 
 [aamk]
 Tip=Attribute Bonus - [|cffffcc00Level %d|r]

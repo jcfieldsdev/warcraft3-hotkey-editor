@@ -835,7 +835,18 @@ data.units={
 		race: BLOOD_ELF,
 		type: TOWER,
 		commands: [
-			["net2", "Upgrade to Advanced Energy Tower"]
+			["net2", "Upgrade to Pulse Tower"],
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
+		]
+	},
+	net2: {
+		name: "Pulse Tower",
+		race: BLOOD_ELF,
+		type: TOWER,
+		commands: [
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
 		]
 	},
 	nbt1: {
@@ -844,7 +855,19 @@ data.units={
 		type: TOWER,
 		commands: [
 			["cmdattackground", "Attack Ground"],
-			["nbt2", "Upgrade to Advanced Boulder Tower"]
+			["nbt2", "Upgrade to Shockwave Tower"],
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
+		]
+	},
+	nbt2: {
+		name: "Shockwave Tower",
+		race: BLOOD_ELF,
+		type: TOWER,
+		commands: [
+			["cmdattackground", "Attack Ground"],
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
 		]
 	},
 	nft1: {
@@ -852,7 +875,18 @@ data.units={
 		race: BLOOD_ELF,
 		type: TOWER,
 		commands: [
-			["nft2", "Upgrade to Advanced Flame Tower"]
+			["nft2", "Upgrade to Blazing Tower"],
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
+		]
+	},
+	nft2: {
+		name: "Blazing Tower",
+		race: BLOOD_ELF,
+		type: TOWER,
+		commands: [
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
 		]
 	},
 	ndt1: {
@@ -860,7 +894,18 @@ data.units={
 		race: BLOOD_ELF,
 		type: TOWER,
 		commands: [
-			["ndt2", "Upgrade to Advanced Cold Tower"]
+			["ndt2", "Upgrade to Arctic Tower"],
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
+		]
+	},
+	ndt2: {
+		name: "Arctic Tower",
+		race: BLOOD_ELF,
+		type: TOWER,
+		commands: [
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
 		]
 	},
 	ntt1: {
@@ -868,7 +913,18 @@ data.units={
 		race: BLOOD_ELF,
 		type: TOWER,
 		commands: [
-			["ntx2", "Upgrade to Advanced Death Tower"]
+			["ntx2", "Upgrade to Extinction Tower"],
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
+		]
+	},
+	ntt2: {
+		name: "Extinction Tower",
+		race: BLOOD_ELF,
+		type: TOWER,
+		commands: [
+			["a009", "Reclaim Tower"],
+			["amim", "Spell Immunity"]
 		]
 	},
 	obla: {
@@ -6093,6 +6149,7 @@ data.icons={
 			cmdselectskill: "btnskillz",
 			cmdstop: "btnstop",
 			a000: "btnspiritwalker",
+			a009: "btnchestofgold",
 			aabs: "btnabsorbmagic",
 			aadm: "btndryaddispelmagicoff",
 			aaha: "btngathergold",
