@@ -2042,18 +2042,6 @@ data.units={
 		race: UNDEAD,
 		type: UNIT,
 		commands: [
-			["acri", "Cripple"],
-			["arai", "Raise Dead"],
-			["auuf", "Unholy Frenzy"],
-			["ausm", "Skeletal Mastery"]
-		]
-	},
-	unec_campaign: {
-		name: "Necromancer",
-		suffix: "Campaign",
-		race: UNDEAD,
-		type: UNIT,
-		commands: [
 			["arai", "Raise Dead"],
 			["auhf", "Unholy Frenzy"],
 			["acri", "Cripple"],
