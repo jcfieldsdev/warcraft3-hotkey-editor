@@ -7361,6 +7361,7 @@ data.icons={
 			acef: "btnstormearth&fire",
 			aell: "btnillidandemonform",
 			aevi: "btnillidandemonform",
+			aihm: "btnambush",
 			anef: "btnstormearth&fire",
 			arsg: "btnmishalv1",
 			ecen: "btncenarius",
