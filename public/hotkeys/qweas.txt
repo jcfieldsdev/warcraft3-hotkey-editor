@@ -552,6 +552,7 @@ Tip=Train Swordsman (|cffffcc00Q|r)
 [nhea]
 Hotkey=W
 Tip=Train Archer (|cffffcc00W|r)
+Buttonpos=1,0
 
 [remk]
 Hotkey=A
@@ -583,6 +584,10 @@ Tip=Upgrade to Advanced Cold Tower (|cffffcc00Z|r)
 [ntx2]
 Hotkey=Z
 Tip=Upgrade to Advanced Death Tower (|cffffcc00Z|r)
+
+[a009]
+Hotkey=V
+Tip=Reclaim Tower (|cffffcc00V|r)
 
 [aowk]
 Hotkey=Z
@@ -1989,6 +1994,10 @@ Tip=Research Hardened Skin (|cffffcc00D|r)
 Hotkey=Z
 Tip=Research Abolish Magic (|cffffcc00Z|r)
 
+[reht]
+Hotkey=Z
+Tip=Research Hippogryph Taming (|cffffcc00Z|r)
+
 [redc]
 Hotkey=X,X
 Tip=Druid of the Claw Adept Training (|cffffcc00X|r),Druid of the Claw Master Training (|cffffcc00X|r)
@@ -2814,6 +2823,11 @@ Buttonpos=1,2
 
 [accy]
 Tip=Cyclone (|cffffcc00C|r)
+Buttonpos=2,2
+
+[scc1]
+Hotkey=D
+Tip=Cyclone (|cffffcc00D|r)
 Buttonpos=2,2
 
 [adsm]
