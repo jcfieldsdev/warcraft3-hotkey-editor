@@ -730,6 +730,41 @@ Revivetip=Revive |cffffcc00R|ranger
 Awakentip=Revive |cffffcc00R|ranger
 Buttonpos=0,0
 
+[hdgo]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=0,0
+
+[hhkl]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=0,0
+
+[hmgd]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=0,0
+
+[hpb1]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=0,0
+
+[hpb2]
+Hotkey=L
+Tip=Summon Pa|cffffcc00l|radin
+Revivetip=Revive Pa|cffffcc00l|radin
+Awakentip=Revive Pa|cffffcc00l|radin
+Buttonpos=0,0
+
 [hlgr]
 Hotkey=L
 Tip=Summon Pa|cffffcc00l|radin
@@ -1326,6 +1361,41 @@ Tip=Summon |cffffcc00T|rauren Chieftain
 Revivetip=Revive |cffffcc00T|rauren Chieftain
 Awakentip=Revive |cffffcc00T|rauren Chieftain
 Buttonpos=2,2
+
+[ocb2]
+Hotkey=T
+Tip=Summon |cffffcc00T|rauren Chieftain
+Revivetip=Revive |cffffcc00T|rauren Chieftain
+Awakentip=Revive |cffffcc00T|rauren Chieftain
+Buttonpos=2,2
+
+[orex]
+Hotkey=B
+Tip=Summon |cffffcc00B|reastmaster
+Revivetip=Revive |cffffcc00B|reastmaster
+Awakentip=Revive |cffffcc00B|reastmaster
+Buttonpos=0,0
+
+[nsjs]
+Hotkey=N
+Tip=Summon Pa|cffffcc00n|rdaren Brewmaster
+Revivetip=Revive Pa|cffffcc00n|rdaren Brewmaster
+Awakentip=Revive Pa|cffffcc00n|rdaren Brewmaster
+Buttonpos=1,1
+
+[orkn]
+Hotkey=S
+Tip=Summon |cffffcc00S|rhadow Hunter
+Revivetip=Revive |cffffcc00S|rhadow Hunter
+Awakentip=Revive |cffffcc00S|rhadow Hunter
+Buttonpos=0,1
+
+[ogld]
+Hotkey=W
+Tip=Summon |cffffcc00W|rarlock
+Revivetip=Revive |cffffcc00W|rarlock
+Awakentip=Revive |cffffcc00W|rarlock
+Buttonpos=0,1
 
 [aosp]
 Tip=Spiked Barricades,Improved Spiked Barricades,Advanced Spiked Barricades
@@ -1953,6 +2023,27 @@ Awakentip=Revive Dr|cffffcc00e|radlord
 Hotkey=E
 Buttonpos=1,2
 
+[ubal]
+Tip=Summon Dr|cffffcc00e|radlord
+Revivetip=Revive Dr|cffffcc00e|radlord
+Awakentip=Revive Dr|cffffcc00e|radlord
+Hotkey=E
+Buttonpos=1,2
+
+[udth]
+Tip=Summon Dr|cffffcc00e|radlord
+Revivetip=Revive Dr|cffffcc00e|radlord
+Awakentip=Revive Dr|cffffcc00e|radlord
+Hotkey=E
+Buttonpos=1,2
+
+[uvng]
+Tip=Summon Dr|cffffcc00e|radlord
+Revivetip=Revive Dr|cffffcc00e|radlord
+Awakentip=Revive Dr|cffffcc00e|radlord
+Hotkey=E
+Buttonpos=1,2
+
 [uktl]
 Tip=Summon |cffffcc00L|rich
 Revivetip=Revive |cffffcc00L|rich
@@ -2025,6 +2116,22 @@ Researchtip=Learn |cffffcc00F|ringer of Death
 Researchhotkey=F
 Buttonpos=3,2
 Researchbuttonpos=3,0
+
+[anr3]
+Tip=|cffffcc00R|rain of Chaos
+Hotkey=R
+Researchtip=Learn |cffffcc00R|rain of Chaos
+Researchhotkey=R
+Buttonpos=0,2
+Researchbuttonpos=0,0
+
+[acf3]
+Tip=|cffffcc00F|ringer of Death
+Hotkey=F
+Researchtip=Learn |cffffcc00F|ringer of Death
+Researchhotkey=F
+Buttonpos=2,1
+Researchbuttonpos=0,1
 
 [anrn]
 Tip=Reincarnation
