@@ -1501,8 +1501,11 @@ Commands.prototype.parse=function(text) {
 				id=id.toLowerCase();
 
 				// if a command has multiple blocks, only first is used
+				// (same behavior as game)
 				if (list[id]==undefined) {
 					list[id]=block;
+				} else {
+					console.error(`Duplicate: ${id}`);
 				}
 
 				block={};

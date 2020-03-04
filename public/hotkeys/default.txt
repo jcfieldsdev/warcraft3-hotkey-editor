@@ -1371,10 +1371,6 @@ Buttonpos=1,2
 Tip=Pulverize,Enhanced Pulverize
 Buttonpos=0,2
 
-[acsk]
-Tip=Resistant Skin
-Buttonpos=3,1
-
 [uaco]
 Tip=Train A|cffffcc00c|rolyte
 Hotkey=C
@@ -2088,10 +2084,6 @@ Buttonpos=3,2
 [aap1]
 Tip=Disease Cloud
 Buttonpos=1,2
-
-[acmi]
-Tip=Spell Immunity
-Buttonpos=2,2
 
 [ausm]
 Tip=Skeletal Mastery
@@ -4671,7 +4663,7 @@ Buttonpos=0,0
 Tip=Summon Doom Guard
 Buttonpos=0,0
 
-[ndqs]
+[ninf]
 Tip=Summon Infernal
 Buttonpos=0,0
 
