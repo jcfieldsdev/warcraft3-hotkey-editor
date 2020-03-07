@@ -449,6 +449,7 @@ data.units={
 		commands: [
 			["hgry", "Train Gryphon Rider"],
 			["hdhw", "Train Dragonhawk Rider"],
+			["cmdrally", "Set Rally Point"],
 			["rhhb", "Research Storm Hammers"],
 			["rhcd", "Research Cloud"],
 			["cmdcancelbuild", "Cancel"]
@@ -2316,6 +2317,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			["asac", "Sacrifice"],
+			["cmdrally", "Set Rally Point"],
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
@@ -2325,6 +2327,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			["ufro", "Train Frost Wyrm"],
+			["cmdrally", "Set Rally Point"],
 			["rufb", "Research Freezing Breath"],
 			["cmdcancelbuild", "Cancel"]
 		]
@@ -3024,6 +3027,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			["echm", "Train Chimaera"],
+			["cmdrally", "Set Rally Point"],
 			["recb", "Research Corrosive Breath"],
 			["cmdcancelbuild", "Cancel"]
 		]
