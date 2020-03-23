@@ -3206,6 +3206,7 @@ data.units={
 	},
 	emns: {
 		name: "Malfurion",
+		suffix: "Expansion",
 		race: NIGHT_ELF,
 		type: HERO,
 		commands: [
