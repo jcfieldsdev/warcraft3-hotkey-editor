@@ -600,16 +600,25 @@ Editor.prototype.getPosition=function(n, y, x) {
 	}
 };
 
-Editor.prototype.drop=function(from, to, mod) {
+Editor.prototype.drop=function(from, to, allowConflict=false) {
 	if (from==to) {
 		return;
 	}
 
-	let pattern=/n\dy(\d)x(\d)/;
+	let coordPattern=/n(\d)y(\d)x(\d)/, imgPattern=/img(\d)_([\w_]+)/;
+
+	let fromCard=from.replace(imgPattern, "$1");
+	let toCardCoord=to.replace(coordPattern, "$1");
+	let toCardImg=to.replace(imgPattern, "$1");
+
+	if (fromCard!=toCardCoord&&fromCard!=toCardImg) { // different cards
+		return;
+	}
+
 	let oldpos="", newpos="", oldunpos="", newunpos="";
 
 	// trims "img#_" prefix
-	from=from.replace(/img\d_/, "");
+	from=from.replace(imgPattern, "$2");
 	// special case for build buttons
 	from=this.convertBuildCommand(from);
 
@@ -620,12 +629,12 @@ Editor.prototype.drop=function(from, to, mod) {
 
 	// checks if destination ID is div grid coord (for empty spot)
 	// or command (for button swap)
-	if (to.match(pattern)) {
-		newpos=to.replace(pattern, "$2,$1");
+	if (to.match(coordPattern)) {
+		newpos=to.replace(coordPattern, "$3,$2");
 		oldpos=this.commands.get(from, "Buttonpos");
 	} else { // if destination is not empty, swap button positions
 		// trims "img#_" prefix
-		to=to.replace(/img\d_/, "");
+		to=to.replace(imgPattern, "$2");
 		// special case for build buttons
 		to=this.convertBuildCommand(to);
 
@@ -637,7 +646,7 @@ Editor.prototype.drop=function(from, to, mod) {
 
 		// modifier key held during drop overrides swap behavior and allows
 		// position conflict
-		if (!mod) {
+		if (!allowConflict) {
 			if (this.active!=RESEARCH||from==CANCEL) {
 				newunpos=this.commands.get(to, "Unbuttonpos");
 				oldpos=this.commands.get(from, "Buttonpos");

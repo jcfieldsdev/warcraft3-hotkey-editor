@@ -3613,6 +3613,11 @@ Tip=Purchase Or|cffffcc00b|r of Corruption
 Hotkey=B
 Buttonpos=0,2
 
+[clsd]
+Tip=Purchase |cffffcc00C|rloak of Shadows
+Hotkey=C
+Buttonpos=0,0
+
 [nrdk]
 Tip=Summon Red Dragon |cffffcc00W|rhelp
 Hotkey=W
