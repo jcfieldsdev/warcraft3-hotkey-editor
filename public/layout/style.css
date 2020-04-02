@@ -79,7 +79,7 @@ a#undead {
 	background-image: url(seal-undead.png);
 }
 
-a.nocmds, span.passive {
+a.nocmds, input:disabled, span.passive {
 	opacity: 0.5;
 }
 
@@ -354,16 +354,16 @@ div.conflict img {
 	outline: 1px solid #f00;
 }
 
+div.control, figcaption, p.note {
+	font-size: 0.8rem;
+}
+
 div.drag img {
 	box-shadow: 0 0 4px 4px #fff;
 }
 
 div.grid>div, p.tip:focus  {
 	outline: 1px solid #606060;
-}
-
-div.option, figcaption, p.note {
-	font-size: 0.8rem;
 }
 
 div.overlay {

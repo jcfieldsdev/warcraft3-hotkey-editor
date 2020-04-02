@@ -23,6 +23,7 @@ const DIR_LIST="hotkeys/index.json";
 const HELP_PAGE="help.html";
 const MIME_TYPE="text/plain";
 const STORAGE_NAME="wc3hk";
+const PREFS_SECTION="HotkeyEditorPreferences";
 
 // delimiter for multi-level tips, multi-tier hotkeys, and button positions
 const DELIMITER=",";
@@ -47,6 +48,8 @@ window.addEventListener("load", function() {
 	};
 	const commands=new Commands();
 	const editor=new Editor(commands);
+
+	store.loadDefaultPrefs();
 
 	// loads default commands
 	files.load(DEFAULT_HOTKEY_FILE, function(text) {
@@ -1697,6 +1700,7 @@ Files.prototype.load=function(file, callback) {
 
 function Storage(name) {
 	this.name=name;
+	this.prefs={};
 }
 
 Storage.prototype.load=function() {
@@ -1704,7 +1708,14 @@ Storage.prototype.load=function() {
 		let contents=localStorage.getItem(this.name);
 
 		if (contents!=null) {
-			return JSON.parse(contents);
+			let list=JSON.parse(contents);
+			let prefs=list[PREFS_SECTION];
+
+			if (prefs!=undefined) {
+				this.setPrefs(prefs);
+			}
+
+			return list;
 		}
 	} catch (err) {
 		console.error(err);
@@ -1716,6 +1727,14 @@ Storage.prototype.load=function() {
 Storage.prototype.save=function(list) {
 	try {
 		if (Object.keys(list).length!=0) {
+			let prefs=this.getPrefs();
+
+			if (Object.keys(prefs).length>0) {
+				list[PREFS_SECTION]=prefs;
+			} else { // only saves prefs if different from defaults
+				delete list[PREFS_SECTION];
+			}
+
 			localStorage.setItem(this.name, JSON.stringify(list));
 		} else {
 			this.reset();
@@ -1725,8 +1744,59 @@ Storage.prototype.save=function(list) {
 	}
 };
 
+Storage.prototype.loadDefaultPrefs=function() {
+	this.prefs=this.getPrefs();
+};
+
+Storage.prototype.getPrefs=function() {
+	let prefs={};
+
+	for (let element of $$(".option")) {
+		if (element.type=="checkbox") { // checkboxes
+			let pref=capitalize(element.id);
+			prefs[pref]=Number(element.checked);
+		} else if (element.type=="radio") { // radio buttons
+			if (element.checked) {
+				let pref=capitalize(element.name);
+				prefs[pref]=element.value;
+			}
+		}
+	}
+
+	for (let pref of Object.keys(prefs)) {
+		if (this.prefs[pref]==prefs[pref]) {
+			delete prefs[pref]; // removes prefs that are same as default values
+		}
+	}
+
+	return prefs;
+
+	function capitalize(str) {
+		return str.charAt(0).toUpperCase()+str.slice(1);
+	}
+};
+
+Storage.prototype.setPrefs=function(prefs) {
+	for (let [key, value] of Object.entries(prefs)) {
+		key=key.toLowerCase();
+
+		if (typeof value=="number") { // checkboxes
+			let element=$("#"+key);
+
+			if (element!=undefined) {
+				element.checked=Boolean(value);
+			}
+		} else if (typeof value=="string") { // radio buttons
+			for (let element of document.getElementsByName(key)) {
+				element.checked=element.value==value;
+			}
+		}
+	}
+};
+
 Storage.prototype.reset=function() {
 	try {
+		this.setPrefs(this.prefs);
 		localStorage.removeItem(this.name);
 	} catch (err) {
 		console.error(err);
