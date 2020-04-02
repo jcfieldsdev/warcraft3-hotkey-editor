@@ -23,7 +23,7 @@ const DIR_LIST="hotkeys/index.json";
 const HELP_PAGE="help.html";
 const MIME_TYPE="text/plain";
 const STORAGE_NAME="wc3hk";
-const PREFS_SECTION="HotkeyEditorPreferences";
+const PREFS_SECTION="hotkeyeditorpreferences";
 
 // delimiter for multi-level tips, multi-tier hotkeys, and button positions
 const DELIMITER=",";
@@ -58,6 +58,7 @@ window.addEventListener("load", function() {
 		let mem=store.load();
 
 		if (mem!=null) {
+			store.loadPrefs(mem);
 			commands.load(mem);
 		}
 
@@ -73,6 +74,7 @@ window.addEventListener("load", function() {
 
 		if (file!="") {
 			commands.parse(file);
+			store.loadPrefs(commands.list);
 			editor.open();
 			overlays.load.hide();
 		}
@@ -106,6 +108,7 @@ window.addEventListener("load", function() {
 		overlays.load.show();
 	});
 	$("#save").addEventListener("click", function() {
+		store.savePrefs(commands.list);
 		store.save(commands.list);
 
 		overlays.save.setText(commands.convert());
@@ -126,6 +129,7 @@ window.addEventListener("load", function() {
 
 	window.addEventListener("beforeunload", function() {
 		// saves on close
+		store.savePrefs(commands.list);
 		store.save(commands.list);
 	});
 	window.addEventListener("hashchange", function() {
@@ -1708,14 +1712,7 @@ Storage.prototype.load=function() {
 		let contents=localStorage.getItem(this.name);
 
 		if (contents!=null) {
-			let list=JSON.parse(contents);
-			let prefs=list[PREFS_SECTION];
-
-			if (prefs!=undefined) {
-				this.setPrefs(prefs);
-			}
-
-			return list;
+			return JSON.parse(contents);
 		}
 	} catch (err) {
 		console.error(err);
@@ -1727,14 +1724,6 @@ Storage.prototype.load=function() {
 Storage.prototype.save=function(list) {
 	try {
 		if (Object.keys(list).length!=0) {
-			let prefs=this.getPrefs();
-
-			if (Object.keys(prefs).length>0) {
-				list[PREFS_SECTION]=prefs;
-			} else { // only saves prefs if different from defaults
-				delete list[PREFS_SECTION];
-			}
-
 			localStorage.setItem(this.name, JSON.stringify(list));
 		} else {
 			this.reset();
@@ -1744,8 +1733,28 @@ Storage.prototype.save=function(list) {
 	}
 };
 
+Storage.prototype.loadPrefs=function(list) {
+	let prefs=list[PREFS_SECTION];
+
+	if (prefs!=undefined) {
+		this.setPrefs(prefs);
+	}
+};
+
 Storage.prototype.loadDefaultPrefs=function() {
 	this.prefs=this.getPrefs();
+};
+
+Storage.prototype.savePrefs=function(list) {
+	let prefs=this.getPrefs();
+
+	if (Object.keys(prefs).length>0) {
+		list[PREFS_SECTION]=prefs;
+	} else { // only saves prefs if different from defaults
+		delete list[PREFS_SECTION];
+	}
+
+	return list
 };
 
 Storage.prototype.getPrefs=function() {
@@ -1796,6 +1805,7 @@ Storage.prototype.setPrefs=function(prefs) {
 
 Storage.prototype.reset=function() {
 	try {
+		console.log(this.prefs);
 		this.setPrefs(this.prefs);
 		localStorage.removeItem(this.name);
 	} catch (err) {
