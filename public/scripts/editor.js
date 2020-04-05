@@ -1561,7 +1561,7 @@ Commands.prototype.exists=function(id, key) {
 		return;
 	}
 
-	if (key!=""&&this.defaults[id][key]==undefined) {
+	if (key!=undefined&&this.defaults[id][key]==undefined) {
 		return;
 	}
 
