@@ -117,7 +117,7 @@ window.addEventListener("load", function() {
 	$("#file").addEventListener("change", function(event) {
 		let file=event.target.files[0];
 
-		if (file) {
+		if (file!=null) {
 			let reader=new FileReader();
 			reader.addEventListener("load", function(event) {
 				$("#files").selectedIndex=0;
@@ -386,7 +386,7 @@ Editor.prototype.unitEditor=function() {
 					placeButton(id, name, STANDARD, unbuttonpos, false);
 				}
 
-				if (researchbuttonpos) { // for hero abilities
+				if (researchbuttonpos!="") { // for hero abilities
 					placeButton(id, name, RESEARCH, researchbuttonpos, true);
 				}
 			} else {
@@ -814,7 +814,7 @@ Editor.prototype.commandEditor=function() {
 	this.formatHotkey("Unhotkey", unhotkey);
 	this.formatHotkey("Researchhotkey", researchhotkey);
 
-	if (hotkey||researchhotkey) {
+	if (hotkey!=""||researchhotkey!="") {
 		// automatically selects first hotkey field
 		let id="Hotkey";
 
@@ -1561,7 +1561,7 @@ Commands.prototype.exists=function(id, key) {
 		return;
 	}
 
-	if (key&&this.defaults[id][key]==undefined) {
+	if (key!=""&&this.defaults[id][key]==undefined) {
 		return;
 	}
 
@@ -1805,7 +1805,6 @@ Storage.prototype.setPrefs=function(prefs) {
 
 Storage.prototype.reset=function() {
 	try {
-		console.log(this.prefs);
 		this.setPrefs(this.prefs);
 		localStorage.removeItem(this.name);
 	} catch (err) {

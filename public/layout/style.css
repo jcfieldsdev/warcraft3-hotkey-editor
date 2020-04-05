@@ -118,7 +118,7 @@ button:hover {
 }
 
 button#help {
-	border-radius: 50%;
+	border-radius: 100%;
 	width: 2em;
 }
 
@@ -755,6 +755,10 @@ ul.undead {
 @media (max-width: 1366px), (max-height: 900px) {
 	button {
 		font-size: 1.25rem;
+	}
+
+	button#help {
+		width: 2.25em;
 	}
 
 	div#editor {
