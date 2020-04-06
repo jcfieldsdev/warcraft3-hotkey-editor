@@ -33,13 +33,74 @@
 	src: url(fonts/SpaceMono-Regular.woff2) format("woff2");
 }
 
+:root {
+	--link: #fc0;
+	--conflict: #f00;
+	--key: #ffcc00;
+	--note: #c3dbff;
+	--neutral-background: #202020;
+	--neutral-border: #404040;
+	--neutral-button: #404040;
+	--neutral-button-dark: #202020;
+	--neutral-button-border: #606060;
+	--neutral-heading: #c0c0c0;
+	--human-background: #002040;
+	--human-border: #004060;
+	--human-button: #004060;
+	--human-button-dark: #002040;
+	--human-button-border: #006080;
+	--human-heading: #40a0ff;
+	--orc-background: #402000;
+	--orc-border: #804020;
+	--orc-button: #604020;
+	--orc-button-dark: #402000;
+	--orc-button-border: #804020;
+	--orc-heading: #c08040;
+	--undead-background: #402040;
+	--undead-border: #604060;
+	--undead-button: #602060;
+	--undead-button-dark: #400040;
+	--undead-button-border: #804080;
+	--undead-heading: #a060a0;
+	--nightelf-background: #204020;
+	--nightelf-border: #408040;
+	--nightelf-button: #206020;
+	--nightelf-button-dark: #204020;
+	--nightelf-button-border: #408040;
+	--nightelf-heading: #60c000;
+	--bloodelf-background: #602000;
+	--bloodelf-border: #804000;
+	--bloodelf-button: #602000;
+	--bloodelf-button-dark: #400000;
+	--bloodelf-button-border: #a06000;
+	--bloodelf-heading: #ff4020;
+	--draenei-background: #404020;
+	--draenei-border: #808040;
+	--draenei-button: #404020;
+	--draenei-button-dark: #202000;
+	--draenei-button-border: #a0a060;
+	--draenei-heading: #c0c080;
+	--demon-background: #600020;
+	--demon-border: #802040;
+	--demon-button: #600020;
+	--demon-button-dark: #802040;
+	--demon-button-border: #a04060;
+	--demon-heading: #a04060;
+	--naga-background: #004040;
+	--naga-border: #006060;
+	--naga-button: #006060;
+	--naga-button-dark: #004040;
+	--naga-button-border: #008080;
+	--naga-heading: #40c0c0;
+}
+
 *.hidden, a#link, div.card.hidden, h1, section h2 {
 	display: none;
 }
 
 a {
 	background: none;
-	color: #fc0;
+	color: var(--link);
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -50,7 +111,7 @@ a, button, div#editor img {
 
 a.conflict, span.conflict {
 	background: none;
-	color: #f00;
+	color: var(--conflict);
 }
 
 a:hover, a:active {
@@ -89,10 +150,10 @@ body {
 }
 
 button {
-	background: #002040 linear-gradient(#004060, #002040);
-	border: 3px solid #006080;
+	background: var(--human-button) linear-gradient(var(--human-button), var(--human-button-dark));
+	border: 3px solid var(--human-button-border);
 	border-radius: 0.5em;
-	color: #fc0;
+	color: var(--link);
 	font-size: 2rem;
 	font-weight: bold;
 	margin: 0 0.25em 0.5em;
@@ -156,8 +217,8 @@ div#cards {
 }
 
 div#editor {
-	background: #202020;
-	border: 2px solid #404040;
+	background: var(--neutral-background);
+	border: 2px solid var(--neutral-border);
 	border-radius: 1em;
 	bottom: 9em;
 	color: inherit;
@@ -171,123 +232,123 @@ div#editor {
 }
 
 div#editor.bloodelf {
-	background: #602000;
-	border-color: #804000;
+	background: var(--bloodelf-background);
+	border-color: var(--bloodelf-border);
 	color: inherit;
 }
 
 div#editor.bloodelf button {
-	background: #602000 linear-gradient(#602000, #400000);
-	border-color: #804000;
+	background: var(--bloodelf-button) linear-gradient(var(--bloodelf-button), var(--bloodelf-button-dark));
+	border-color: var(--bloodelf-button-border);
 }
 
 div#editor.bloodelf div.grid>div, div#editor.bloodelf p.tip:focus {
-	outline-color: #804000;
+	outline-color: var(--bloodelf-border);
 }
 
 div#editor.demon {
-	background: #600020;
-	border-color: #802040;
+	background: var(--demon-background);
+	border-color: var(--demon-border);
 	color: inherit;
 }
 
 div#editor.demon button {
-	background: #600020 linear-gradient(#600020, #802040);
-	border-color: #a04060;
+	background: var(--demon-button) linear-gradient(var(--demon-button), var(--demon-button-dark));
+	border-color: var(--demon-button-border);
 }
 
 div#editor.demon div.grid>div, div#editor.demon p.tip:focus {
-	outline-color: #802040;
+	outline-color: var(--demon-border);
 }
 
 div#editor.draenei {
-	background: #404020;
-	border-color: #808040;
+	background: var(--draenei-background);
+	border-color: var(--draenei-border);
 	color: inherit;
 }
 
 div#editor.draenei button {
-	background: #404020 linear-gradient(#404020, #202000);
-	border-color: #a0a060;
+	background: var(--draenei-button) linear-gradient(var(--draenei-button), var(--draenei-button-dark));
+	border-color: var(--draenei-button-border);
 }
 
 div#editor.draenei div.grid>div, div#editor.draenei p.tip:focus {
-	outline-color: #a0a060;
+	outline-color: var(--draenei-border);
 }
 
 div#editor.human {
-	background: #002040;
-	border-color: #004060;
+	background: var(--human-background);
+	border-color: var(--human-border);
 	color: inherit;
 }
 
 div#editor.human div.grid>div, div#editor.human p.tip:focus {
-	outline-color: #004060;
+	outline-color: var(--human-border);
 }
 
 div#editor.neutral button {
-	background: #404040 linear-gradient(#404040, #202020);
-	border-color: #606060;
+	background: var(--neutral-button) linear-gradient(var(--neutral-button), var(--neutral-button-dark));
+	border-color: var(--neutral-button-border);
 }
 
 div#editor.naga {
-	background: #004040;
-	border-color: #006060;
+	background: var(--naga-background);
+	border-color: var(--naga-border);
 	color: inherit;
 }
 
 div#editor.naga button {
-	background: #006060 linear-gradient(#006060, #004040);
-	border-color: #008080;
+	background: var(--naga-button) linear-gradient(var(--naga-button), var(--naga-button-dark));
+	border-color: var(--naga-button-border);
 }
 
 div#editor.naga div.grid>div, div#editor.naga p.tip:focus {
-	outline-color: #008080;
+	outline-color: var(--naga-border);
 }
 
 div#editor.nightelf {
-	background: #204020;
-	border-color: #408040;
+	background: var(--nightelf-background);
+	border-color: var(--nightelf-border);
 	color: inherit;
 }
 
 div#editor.nightelf button {
-	background: #206020 linear-gradient(#206020, #204020);
-	border-color: #408040;
+	background: var(--nightelf-button) linear-gradient(var(--nightelf-button), var(--nightelf-button-dark));
+	border-color: var(--nightelf-button-border);
 }
 
 div#editor.nightelf div.grid>div, div#editor.nightelf p.tip:focus {
-	outline-color: #408040;
+	outline-color: var(--nightelf-border);
 }
 
 div#editor.orc {
-	background: #402000;
-	border-color: #804020;
+	background: var(--orc-background);
+	border-color: var(--orc-border);
 	color: inherit;
 }
 
 div#editor.orc button {
-	background: #604020 linear-gradient(#604020, #402000);
-	border-color: #804020;
+	background: var(--orc-button) linear-gradient(var(--orc-button), var(--orc-button-dark));
+	border-color: var(--orc-button-border);
 }
 
 div#editor.orc div.grid>div, div#editor.orc p.tip:focus {
-	outline-color: #804020;
+	outline-color: var(--orc-border);
 }
 
 div#editor.undead {
-	background: #402040;
-	border-color: #604060;
+	background: var(--undead-background);
+	border-color: var(--undead-border);
 	color: inherit;
 }
 
 div#editor.undead button {
-	background: #602060 linear-gradient(#602060, #400040);
-	border-color: #804080;
+	background: var(--undead-button) linear-gradient(var(--undead-button), var(--undead-button-dark));
+	border-color: var(--undead-button-border);
 }
 
 div#editor.undead div.grid>div, div#editor.undead p.tip:focus {
-	outline-color: #804080;
+	outline-color: var(--undead-border);
 }
 
 div#editor, div.overlay, select {
@@ -351,7 +412,7 @@ div.card span, h2#unit, h3#command, p.hotkey input {
 }
 
 div.conflict img {
-	outline: 1px solid #f00;
+	outline: 1px solid var(--conflict);
 }
 
 div.control, figcaption, p.note {
@@ -596,12 +657,12 @@ span.button {
 
 span.key {
 	background: none;
-	color: #ffcc00;
+	color: var(--key);
 }
 
 span.note {
 	background: none;
-	color: #c3dbff;
+	color: var(--note);
 }
 
 ul {
@@ -653,53 +714,53 @@ ul#results {
 }
 
 ul#results li.selected {
-	background: transparent linear-gradient(to right, #004060, rgba(0, 64, 96, 0));
+	background: transparent linear-gradient(to right, var(--human-border), rgba(0, 0, 0, 0));
 	color: inherit;
 }
 
 ul.bloodelf {
 	background: none;
-	color: #ff4020;
+	color: var(--bloodelf-heading);
 }
 
 ul.demon {
 	background: none;
-	color: #a04060;
+	color: var(--demon-heading);
 }
 
 ul.draenei {
 	background: none;
-	color: #c0c080;
+	color: var(--draenei-heading);
 }
 
 ul.human {
 	background: none;
-	color: #40a0ff;
+	color: var(--human-heading);
 }
 
 ul.naga {
 	background: none;
-	color: #40c0c0;
+	color: var(--naga-heading);
 }
 
 ul.neutral, ul.units li li {
 	background: none;
-	color: #c0c0c0;
+	color: var(--neutral-heading);
 }
 
 ul.nightelf {
 	background: none;
-	color: #60c000;
+	color: var(--nightelf-heading);
 }
 
 ul.orc {
 	background: none;
-	color: #c08040;
+	color: var(--orc-heading);
 }
 
 ul.undead {
 	background: none;
-	color: #a060a0;
+	color: var(--undead-heading);
 }
 
 @media (max-width: 1600px), (max-height: 1080px), (orientation: portrait) {
