@@ -1,5 +1,7 @@
 # warcraft3-hotkey-editor
 
+<div align="center"><img src="https://gitlab.com/jcfields/warcraft3-hotkey-editor/raw/master/screenshot.png" width="633" height="384" alt="[Warcraft III Hotkey Editor]"></div>
+
 A [hotkey editor for *Warcraft III*](https://jcfields.gitlab.io/warcraft3-hotkey-editor/) written in JavaScript. Includes all units and structures from standard multiplayer and the official campaigns. In addition to editing hotkeys, it also allows editing tooltip text with a simplified syntax and repositioning buttons by drag-and-drop.
 
 ## Limitations
