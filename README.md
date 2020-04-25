@@ -41,7 +41,7 @@ You can also use the game's special mark-up for text color (e.g., `|cffffcc00you
 
 Due to a limitation of the *Warcraft III* hotkey file format, tooltips cannot contain quotation marks.
 
-Hero abilities and upgrades with multiple levels have each level separated by a line break. An ability with three levels, for instance, needs a tooltip three lines long. The tooltip for researching a hero ability uses a format specifier `%d` to represent the next level of the command.
+Hero abilities and upgrades with multiple levels have each level separated by a line break. An ability with three levels, for instance, needs a tooltip three lines long. The tooltip for researching a hero ability uses the format specifier `%d` to represent the next level of the command.
 
 The *Write tooltips automatically* option automatically rewrites all of the tooltips for the command when you change its hotkey to indicate its new hotkey. This option is disabled by default because *Warcraft III Reforged* made two changes to how tooltips are handled: hero commands can no longer have their tooltips modified and all commands automatically have their hotkey displayed after their tooltip.
 
@@ -49,9 +49,9 @@ The "Reset to Default Values" button at the bottom of the editor also resets too
 
 ### Repositioning buttons
 
-Buttons can be repositioned by dragging and dropping them. If dropped onto an empty space, the button is relocated there. If dropped onto another button, both buttons swap positions. If you hold the shift key while dropping a button onto another button, this behavior is overridden and the new button is placed in the same position as the old one (causing a position conflict).
+Buttons can be repositioned by dragging and dropping them. If dropped onto an empty space, the button is relocated there. If dropped onto another button, both buttons swap positions. If you hold the `Shift` key while dropping a button onto another button, this behavior is overridden and the new button is placed in the same position as the old one (causing a position conflict).
 
-Buttons with position conflicts have a red border around them. Position conflicts don't necessarily need to be fixed; the game and the editor both reposition a button where there is room for it in the case of a position conflict. Many creeps have position conflicts in their abilities by default.
+Buttons with position conflicts have a red border around them. Position conflicts don't necessarily need to be fixed; the game and the editor both reposition a button where there is room for it in the case of a position conflict. Some creeps have position conflicts in their abilities by default.
 
 The "Reset to Default Values" button at the bottom of the editor also resets button positions to their default values.
 
@@ -65,6 +65,8 @@ You can load your existing hotkey profile by clicking the `Load` button in the b
 - The `Reset` button resets all hotkeys to their default values.
 
 After customizing your hotkeys, click the `Save` button in the bottom-right corner of the screen to generate a new hotkey file based on your modifications. You can copy the contents of this file by directly copying from the text box or by clicking the `Copy` button, or you can download the file by clicking the `Download` button.
+
+If you've changed any options, they'll be stored in your hotkey file under the `hotkeyeditorpreferences` section. This section is safely ignored by the game, but the editor uses it to reload your preferences the next time you use it.
 
 The `?` button next to the `Load` and `Save` buttons brings up the [help page](https://jcfields.gitlab.io/warcraft3-hotkey-editor/help.html), which explains in detail where the hotkey file is located on your computer and how to enable it in the game.
 
