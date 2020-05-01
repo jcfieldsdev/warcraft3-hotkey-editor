@@ -1306,7 +1306,12 @@ Editor.prototype.findUnitsNamed=function(query) {
 			continue;
 		}
 
-		if (properties.name.toLowerCase().indexOf(query)!=-1) {
+		let name=properties.name.toLowerCase();
+		// replaces curly quotes
+		name=name.replace(/[‘’]/g, "'");
+		name=name.replace(/[“”]/g, "\"");
+
+		if (name.indexOf(query)!=-1) {
 			matches.add(unit);
 		}
 	}
@@ -1754,7 +1759,7 @@ Storage.prototype.savePrefs=function(list) {
 		delete list[PREFS_SECTION];
 	}
 
-	return list
+	return list;
 };
 
 Storage.prototype.getPrefs=function() {

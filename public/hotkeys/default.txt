@@ -1397,6 +1397,11 @@ Revivetip=Revive |cffffcc00W|rarlock
 Awakentip=Revive |cffffcc00W|rarlock
 Buttonpos=0,1
 
+[o002]
+Hotkey=P
+Tip=Hire |cffffcc00P|rack Beast
+Buttonpos=0,0
+
 [aosp]
 Tip=Spiked Barricades,Improved Spiked Barricades,Advanced Spiked Barricades
 Buttonpos=3,2
@@ -3618,6 +3623,136 @@ Tip=Purchase |cffffcc00C|rloak of Shadows
 Hotkey=C
 Buttonpos=0,0
 
+[rspd]
+Tip=Purchase Rune of Spee|cffffcc00d|r
+Hotkey=D
+Buttonpos=0,0
+
+[tdex]
+Tip=Purchase Tome of |cffffcc00A|rgility
+Hotkey=A
+Buttonpos=0,0
+
+[tint]
+Tip=Purchase Tome of |cffffcc00I|rntelligence
+Hotkey=I
+Buttonpos=0,0
+
+[tstr]
+Tip=Purchase Tome of |cffffcc00S|rtrength
+Hotkey=S
+Buttonpos=0,0
+
+[texp]
+Tip=Purchase Tome of |cffffcc00E|rxperience
+Hotkey=E
+Buttonpos=0,0
+
+[sman]
+Tip=Purchase Scroll of |cffffcc00M|rana
+Hotkey=M
+Buttonpos=0,0
+
+[sror]
+Tip=Purchase Scroll of the |cffffcc00B|reast
+Hotkey=B
+Buttonpos=0,0
+
+[arsc]
+Tip=Purchase |cffffcc00A|rrcane Scroll
+Hotkey=A
+Buttonpos=0,0
+
+[pgma]
+Tip=Purchase Potion of Greater |cffffcc00M|rana
+Hotkey=M
+Buttonpos=0,0
+
+[rin1]
+Tip=Purchase Mantle of |cffffcc00I|rntelligence +3
+Hotkey=I
+Buttonpos=0,0
+
+[mlst]
+Tip=Purchase |cffffcc00M|raul of Strength
+Hotkey=M
+Buttonpos=0,0
+
+[rst1]
+Tip=Purchase |cffffcc00G|rauntlets of Ogre Strength +3
+Hotkey=G
+Buttonpos=0,0
+
+[belv]
+Tip=Purchase Boots of Qu|cffffcc00e|rl'Thalas
+Hotkey=E
+Buttonpos=0,0
+
+[sneg]
+Tip=Purchase Staff of |cffffcc00N|regation
+Hotkey=N
+Buttonpos=0,0
+
+[mnsf]
+Tip=Purchase Minds|cffffcc00t|raff
+Hotkey=T
+Buttonpos=0,0
+
+[mnsf]
+Tip=Purchase Wand of |cffffcc00N|reutralization
+Hotkey=N
+Buttonpos=0,0
+
+[hlst]
+Tip=Purchase |cffffcc00H|realth Stone
+Hotkey=H
+Buttonpos=0,0
+
+[mnst]
+Tip=Purchase |cffffcc00M|rana Stone
+Hotkey=M
+Buttonpos=0,0
+
+[rde2]
+Tip=Purchase Ring of |cffffcc00P|rrotection +3
+Hotkey=P
+Buttonpos=0,0
+
+[rwiz]
+Tip=Purchase So|cffffcc00b|ri Mask
+Hotkey=B
+Buttonpos=0,0
+
+[ckng]
+Tip=Purchase Crown of |cffffcc00K|rings
+Hotkey=K
+Buttonpos=0,0
+
+[evtl]
+Tip=Purchase |cffffcc00T|ralisman of Evasion
+Hotkey=T
+Buttonpos=0,0
+
+[hcun]
+Tip=Purchase |cffffcc00H|rood of Cunning
+Hotkey=H
+Buttonpos=0,0
+
+[stwa]
+Tip=Purchase Sturdy |cffffcc00W|rar Axe
+Hotkey=W
+Buttonpos=0,0
+
+[shen]
+Tip=Purchase |cffffcc00E|rnchanted Shield
+Hotkey=E
+Buttonpos=0,0
+
+[shrs]
+Tip=Purchase |cffffcc00S|rhimmerglaze Roast
+Hotkey=S
+Buttonpos=0,0
+
 [nrdk]
 Tip=Summon Red Dragon |cffffcc00W|rhelp
 Hotkey=W
@@ -4947,8 +5082,8 @@ Buttonpos=0,2
 Unbuttonpos=0,2
 
 [acfb]
-Tip=|cffffcc00F|rirebolt
-Hotkey=F
+Tip=Fire|cffffcc00b|rolt
+Hotkey=B
 Buttonpos=0,2
 
 [acfd]

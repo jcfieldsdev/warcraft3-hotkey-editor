@@ -1443,7 +1443,7 @@ data.units={
 		]
 	},
 	ogrk: {
-		name: "Gar'thok",
+		name: "Gar’thok",
 		race: ORC,
 		type: UNIT,
 		commands: [
@@ -1461,7 +1461,7 @@ data.units={
 		]
 	},
 	ovlj: {
-		name: "Vol'jin",
+		name: "Vol’jin",
 		race: ORC,
 		type: UNIT,
 		commands: [
@@ -1469,6 +1469,17 @@ data.units={
 			["ahwd", "Healing Ward"],
 			["asta", "Stasis Trap"]
 		]
+	},
+	oosc: {
+		name: "Kodo Beast",
+		suffix: "Riderless",
+		race: ORC,
+		type: NO_ATTACK
+	},
+	o002: {
+		name: "Pack Beast",
+		race: ORC,
+		type: NO_ATTACK
 	},
 	o004: {
 		name: "Bovan Windtotem",
@@ -1613,6 +1624,109 @@ data.units={
 			["cmdcancelbuild", "Cancel"]
 		]
 	},
+	o001: {
+		name: "Orgrimmar Armory",
+		race: ORC,
+		type: BUILDING,
+		commands: [
+			["mlst", "Purchase Maul of Strength"],
+			["stwa", "Purchase Sturdy War Axe"],
+			["shen", "Purchase Enchanted Shield"],
+			["rst1", "Purchase Gauntlets of Ogre Strength +3"],
+			["hcun", "Purchase Hood of Cunning"],
+			["evtl", "Purchase Talisman of Evasion"],
+			["ckng", "Purchase Crown of Kings +5"],
+			["anei", "Select User"]
+		]
+	},
+	n000: {
+		name: "Orgrimmar Barracks",
+		race: ORC,
+		type: BUILDING,
+		commands: [
+			["ogru", "Hire Grunt"],
+			["otbk", "Hire Berserker"],
+			["o002", "Hire Pack Beast"]
+		]
+	},
+	n002: {
+		name: "Watch Post Barracks",
+		race: ORC,
+		type: BUILDING,
+		commands: [
+			["ogru", "Hire Grunt"],
+			["otbk", "Hire Berserker"],
+			["o002", "Hire Pack Beast"]
+		]
+	},
+
+	ovln_campaign: {
+		name: "Voodoo Lounge",
+		suffix: "Campaign",
+		race: ORC,
+		type: BUILDING,
+		commands: [
+			["rspd", "Purchase Rune of Speed"],
+			["phea", "Purchase Potion of Healing"],
+			["pman", "Purchase Potion of Mana"],
+			["stwp", "Purchase Scroll of Town Portal"],
+			["tdex", "Purchase Tome of Dexterity"],
+			["tint", "Purchase Tome of Intelligence"],
+			["tstr", "Purchase Tome of Strength"],
+			["texp", "Purchase Tome of Experience"],
+			["anei", "Select User"]
+		]
+	},
+	n003: {
+		name: "Neeloc’s Outpost",
+		race: ORC,
+		type: BUILDING,
+		commands: [
+			["rspd", "Purchase Rune of Speed"],
+			["spro", "Purchase Scroll of Protection"],
+			["sman", "Purchase Scroll of Mana"],
+			["shea", "Purchase Scroll of Healing"],
+			["rin1", "Purchase Mantle of Intelligence +3"],
+			["bspd", "Purchase Boots of Speed"],
+			["sneg", "Purchase Staff of Negation"],
+			["arsc", "Purchase Arcane Scroll"],
+			["ofir", "Purchase Orb of Fire"],
+			["mnsf", "Purchase Mindstaff"],
+			["anei", "Select User"]
+		]
+	},
+	n004: {
+		name: "Goblin Storehouse",
+		race: ORC,
+		type: BUILDING,
+		commands: [
+			["rspd", "Purchase Rune of Speed"],
+			["sreg", "Purchase Scroll of Regeneration"],
+			["shas", "Purchase Scroll of Speed"],
+			["pgma", "Purchase Potion of Greater Mana"],
+			["wneu", "Purchase Wand of Neutralization"],
+			["rde2", "Purchase Ring of Protection +3"],
+			["hlst", "Purchase Health Stone"],
+			["rwiz", "Purchase Sobi Mask"],
+			["anei", "Select User"]
+		]
+	},
+	n005: {
+		name: "Aicila’s Marketplace",
+		race: ORC,
+		type: BUILDING,
+		commands: [
+			["rspd", "Purchase Rune of Speed"],
+			["shrs", "Purchase Shimmerglaze Roast"],
+			["sror", "Purchase Scroll of the Beast"],
+			["arsc", "Purchase Arcane Roast"],
+			["mnst", "Purchase Mana Stone"],
+			["cnob", "Purchase Circlet of Nobility"],
+			["belv", "Purchase Boots of Quel’Thalas +6"],
+			["oli2", "Purchase Orb of Lightning"],
+			["anei", "Select User"]
+		]
+	},
 	ogrh: {
 		name: "Grom Hellscream",
 		race: ORC,
@@ -1707,8 +1821,38 @@ data.units={
 			["aamk", "Attribute Bonus"]
 		]
 	},
+	orex_wyvern: {
+		name: "Rexxar",
+		suffix: "Wyvern Form",
+		race: ORC,
+		type: UNIT,
+		commands: [
+			["aroa", "Roar"],
+			["afzy", "Frenzy"]
+		]
+	},
+	orkn_wyvern: {
+		name: "Rokhan",
+		suffix: "Wyvern Form",
+		race: ORC,
+		type: UNIT,
+		commands: [
+			["amls", "Aerial Shackles"],
+			["achv", "Healing Wave"]
+		]
+	},
+	nsjs_wyvern: {
+		name: "Chen Stormstout",
+		suffix: "Wyvern Form",
+		race: ORC,
+		type: UNIT,
+		commands: [
+			["acbc", "Breath of Fire"],
+			["acfb", "Firebolt"]
+		]
+	},
 	ogld: {
-		name: "Gul'dan",
+		name: "Gul’dan",
 		race: ORC,
 		type: HERO
 	},
@@ -1724,7 +1868,7 @@ data.units={
 		]
 	},
 	odrt: {
-		name: "Drek'Thar",
+		name: "Drek’Thar",
 		race: ORC,
 		type: HERO,
 		commands: [
@@ -1848,7 +1992,7 @@ data.units={
 		commands: [
 			["ndh2", "Build Draenei Haven"],
 			["ndh3", "Build Draenei Barracks"],
-			["ndh4", "Build Seer's Den"],
+			["ndh4", "Build Seer’s Den"],
 			["nbt2", "Build Advanced Boulder Tower"],
 			["cmdcancel", "Cancel"]
 		]
@@ -1877,7 +2021,7 @@ data.units={
 		]
 	},
 	ndh4: {
-		name: "Seer's Den",
+		name: "Seer’s Den",
 		race: DRAENEI,
 		type: BUILDING,
 		commands: [
@@ -2259,8 +2403,8 @@ data.units={
 		commands: [
 			["uear", "Arthas"],
 			["uvar", "Varimathras"],
-			["uktl", "Kel'Thuzad"],
-			["uanb", "Anub'arak"],
+			["uktl", "Kel’Thuzad"],
+			["uanb", "Anub’arak"],
 			["usyl", "Sylvanas"],
 			["cmdrally", "Set Rally Point"],
 			["cmdcancelbuild", "Cancel"]
@@ -2443,7 +2587,7 @@ data.units={
 		]
 	},
 	uktl: {
-		name: "Kel'Thuzad",
+		name: "Kel’Thuzad",
 		race: UNDEAD,
 		type: HERO,
 		commands: [
@@ -2454,7 +2598,7 @@ data.units={
 		]
 	},
 	uanb: {
-		name: "Anub'arak",
+		name: "Anub’arak",
 		race: UNDEAD,
 		type: HERO,
 		commands: [
@@ -2522,7 +2666,7 @@ data.units={
 		]
 	},
 	umal: {
-		name: "Mal'Ganis",
+		name: "Mal’Ganis",
 		race: DEMON,
 		type: HERO,
 		commands: [
@@ -2698,7 +2842,7 @@ data.units={
 		commands: [
 			["etol", "Create Tree of Life"],
 			["eaom", "Create Ancient of War"],
-			["edob", "Create Hunter's Hall"],
+			["edob", "Create Hunter’s Hall"],
 			["etrp", "Create Ancient Protector"],
 			["emow", "Create Moon Well"],
 			["eate", "Create Altar of Elders"],
@@ -2716,7 +2860,7 @@ data.units={
 		commands: [
 			["aco2", "Mount Hippogryph"],
 			["ashm", "Shadowmeld"],
-			["aegr", "Elune's Grace"],
+			["aegr", "Elune’s Grace"],
 			["aeib", "Improved Bows"],
 			["aemk", "Marksmanship"]
 		]
@@ -2843,7 +2987,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			["ewsp", "Train Wisp"],
-			["renb", "Research Nature's Blessing"],
+			["renb", "Research Nature’s Blessing"],
 			["repm", "Backpack"],
 			["etoa", "Upgrade to Tree of Ages"],
 			["aent", "Entangle Gold Mine"],
@@ -2867,7 +3011,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			["ewsp", "Train Wisp"],
-			["renb", "Research Nature's Blessing"],
+			["renb", "Research Nature’s Blessing"],
 			["repm", "Backpack"],
 			["etoe", "Upgrade to Tree of Ages"],
 			["aent", "Entangle Gold Mine"],
@@ -2881,7 +3025,7 @@ data.units={
 		type: BUILDING,
 		commands: [
 			["ewsp", "Train Wisp"],
-			["renb", "Research Nature's Blessing"],
+			["renb", "Research Nature’s Blessing"],
 			["repm", "Backpack"],
 			["aent", "Entangle Gold Mine"],
 			["aro1", "Uproot"],
@@ -2915,7 +3059,7 @@ data.units={
 		]
 	},
 	edob: {
-		name: "Hunter's Hall",
+		name: "Hunter’s Hall",
 		race: NIGHT_ELF,
 		type: BUILDING,
 		commands: [
@@ -3289,7 +3433,7 @@ data.units={
 		]
 	},
 	nmpe: {
-		name: "Mur'gul Slave",
+		name: "Mur’gul Slave",
 		race: NAGA,
 		type: UNIT,
 		commands: [
@@ -3315,7 +3459,7 @@ data.units={
 		]
 	},
 	nnmg: {
-		name: "Mur'gul Reaver",
+		name: "Mur’gul Reaver",
 		race: NAGA,
 		type: UNIT
 	},
@@ -3383,8 +3527,8 @@ data.units={
 		race: NAGA,
 		type: BUILDING,
 		commands: [
-			["nmpe", "Train Mur'gul Slave"],
-			["nnmg", "Train Mur'gul Reaver"],
+			["nmpe", "Train Mur’gul Slave"],
+			["nnmg", "Train Mur’gul Reaver"],
 			["cmdrally", "Set Rally Point"],
 			["rnat", "Upgrade Blades"],
 			["rnam", "Upgrade Scales"],
@@ -3826,7 +3970,7 @@ data.units={
 	ngsp: {
 		name: "Goblin Sappers",
 		race: NEUTRAL,
-		type: UNIT,
+		type: NO_ATTACK,
 		commands: [
 			["asds", "Kaboom!"]
 		]
@@ -3881,6 +4025,14 @@ data.units={
 			["wneg", "Wand of Negation"],
 			["gemt", "Gem of True Seeing"],
 			["stwp", "Purchase Scroll of Town Portal"],
+			["anei", "Select User"]
+		]
+	},
+	nmrk: {
+		name: "Marketplace",
+		race: NEUTRAL,
+		type: BUILDING,
+		commands: [
 			["anei", "Select User"]
 		]
 	},
@@ -4126,7 +4278,7 @@ data.units={
 		commands: [
 			["ntrt", "Summon Giant Sea Turtle"],
 			["nlsn", "Hire Makrura Snapper"],
-			["nmsn", "Hire Mur'gul Snarecaster"],
+			["nmsn", "Hire Mur’gul Snarecaster"],
 			["nlds", "Hire Makrura Deepseer"]
 		]
 	},
@@ -5295,12 +5447,12 @@ data.units={
 		type: UNIT
 	},
 	nmcf: {
-		name: "Mur'gul Cliffrunner",
+		name: "Mur’gul Cliffrunner",
 		race: NEUTRAL,
 		type: UNIT
 	},
 	nmbg: {
-		name: "Mur'gul Blood-Gill",
+		name: "Mur’gul Blood-Gill",
 		race: NEUTRAL,
 		type: UNIT,
 		commands: [
@@ -5308,12 +5460,12 @@ data.units={
 		]
 	},
 	nmtw: {
-		name: "Mur'gul Tidewarrior",
+		name: "Mur’gul Tidewarrior",
 		race: NEUTRAL,
 		type: UNIT
 	},
 	nmsn: {
-		name: "Mur'gul Snarecaster",
+		name: "Mur’gul Snarecaster",
 		race: NEUTRAL,
 		type: UNIT,
 		commands: [
@@ -5322,7 +5474,7 @@ data.units={
 		]
 	},
 	nmrv: {
-		name: "Mur'gul Marauder",
+		name: "Mur’gul Marauder",
 		race: NEUTRAL,
 		type: UNIT,
 		commands: [
@@ -5330,7 +5482,7 @@ data.units={
 		]
 	},
 	nmsc: {
-		name: "Mur'gul Shadowcaster",
+		name: "Mur’gul Shadowcaster",
 		race: NEUTRAL,
 		type: UNIT,
 		commands: [
@@ -6607,6 +6759,7 @@ data.icons={
 			aroo: "btnuproot",
 			arpl: "btnreplenishhealthoff",
 			arpm: "btnreplenishmanaoff",
+			arsc: "btnbansheeadept",
 			arsg: "btngrizzlybear",
 			arsk: "pasbtnresistantskin",
 			arsp: "btnstampede",
@@ -6668,7 +6821,9 @@ data.icons={
 			awrg: "btnseagiantwarstomp",
 			awrh: "btnhydrawarstomp",
 			awrs: "btnwarstomp",
+			belv: "btnboots",
 			bspd: "btnbootsofspeed",
+			ckng: "btnhelmutpurple",
 			clsd: "btncloak",
 			cnob: "btncirclet",
 			dust: "btndustofappearance",
@@ -6721,6 +6876,7 @@ data.icons={
 			etyr_instant: "btnpriestessofthemoon",
 			etyr: "btnpriestessofthemoon",
 			even: "btnavengingwatcher",
+			evtl: "btntalisman",
 			ewar: "btnherowarden",
 			ewrd: "btnwarden2",
 			ewsp: "btnwisp",
@@ -6746,6 +6902,7 @@ data.icons={
 			hcas: "btncastle",
 			hcth: "btnthecaptain",
 			hctw: "btncannontower",
+			hcun: "btnhoodofcunning",
 			hdes: "btnhumandestroyer",
 			hdgo: "btnheropaladin",
 			hdhw: "btndragonhawk",
@@ -6762,6 +6919,7 @@ data.icons={
 			hkee: "btnkeep",
 			hkni: "btnknight",
 			hlgr: "btngarithos",
+			hlst: "btnhealthstone",
 			hlum: "btnhumanlumbermill",
 			hmbr: "btnheromountainking",
 			hmgd: "btnheropaladin",
@@ -6792,7 +6950,15 @@ data.icons={
 			hwt3: "btnsummonwaterelemental",
 			hwtw: "btnhumanwatchtower",
 			mcri: "btnmechanicalcritter",
+			mlst: "btnhammer",
+			mnsf: "btnbrilliance",
+			mnst: "btnmanastone",
 			moon: "btnmoonstone",
+			n000: "btnbarracks",
+			n002: "btnbarracks",
+			n003: "btnblackmarket",
+			n004: "btnmerchant",
+			n005: "btnblackmarket",
 			nadk: "btnazuredragon",
 			nadr: "btnazuredragon",
 			nadw: "btnazuredragon",
@@ -7037,6 +7203,7 @@ data.icons={
 			nmrc: "btnmercenarycamp",
 			nmrd: "btnmercenarycamp",
 			nmrf: "btnmercenarycamp",
+			nmrk: "btnblackmarket",
 			nmrl: "btnmurloc",
 			nmrm: "btnmurlocnightcrawler",
 			nmrr: "btnmurloc",
@@ -7118,6 +7285,7 @@ data.icons={
 			nsgn: "btnseagiant",
 			nsgt: "btnspider",
 			nshp: "btngoblinshipyard",
+			nsjs_wyvern: "btnpandarenbrewmaster",
 			nsjs: "btnpandarenbrewmaster",
 			nska: "btnskeletonarcher",
 			nske: "btnskeletonwarrior",
@@ -7213,6 +7381,8 @@ data.icons={
 			nwzr: "btnbanditmage",
 			nzep: "btngoblinzeppelin",
 			nzom: "btnzombie",
+			o001: "btnvoodoolounge",
+			o002: "btnriderlesskodo",
 			o004: "btnspiritwalker",
 			o006: "btnetherealformon",
 			oalt_campaign: "btnaltarofstorms",
@@ -7249,11 +7419,14 @@ data.icons={
 			oli2: "btnorboflightning",
 			omtg: "btnchaoswarlord",
 			onzg: "btnraider",
+			oosc: "btnriderlesskodo",
 			opeo: "btnpeon",
 			opgh: "btnchaosgrom",
 			orai: "btnraider",
 			orbr: "btnreinforcedburrows",
+			orex_wyvern: "btnbeastmaster",
 			orex: "btnbeastmaster",
+			orkn_wyvern: "btnshadowhunter",
 			orkn: "btnshadowhunter",
 			osam: "btnheroblademaster",
 			oshd: "btnshadowhunter",
@@ -7282,17 +7455,20 @@ data.icons={
 			otto: "btntaurentotem",
 			oven: "btnorbofvenom",
 			ovlj: "btnwitchdoctor",
+			ovln_campaign: "btnvoodoolounge",
 			ovln: "btnvoodoolounge",
 			owar: "btnchaoswarlord",
 			owtw: "btnorctower",
 			owyv: "btnwyvernrider",
 			pams: "btnsnazzypotion",
+			pgma: "btnpotionbluebig",
 			phea: "btnpotiongreensmall",
 			pinv: "btnlesserinvisibility",
 			plcl: "btnlesserclaritypotion",
 			pman: "btnpotionbluesmall",
 			pnvl: "btnlesserinvulneralbility",
 			prvt: "btnperiapt",
+			rde2: "btnringgreen",
 			recb: "btncorrosivebreath",
 			redc: "btndocadepttraining",
 			redt: "btndotadepttraining",
@@ -7337,6 +7513,7 @@ data.icons={
 			rhse: "btnmagicalsentry",
 			rhss: "btncontrolmagic",
 			rhst: "btnsorceressadept",
+			rin1: "btnmantleofintelligence",
 			ritd: "btnsacrificialdagger",
 			rnam: "btnnagaarmorup1",
 			rnat: "btnnagaweaponup1",
@@ -7363,6 +7540,8 @@ data.icons={
 			rowd: "btnwitchdoctoradept",
 			rows: "btnsmash",
 			rowt: "btnspiritwalkeradepttraining",
+			rspd: "btnrune",
+			rst1: "btngauntletsofogrepower",
 			ruac: "btncannibalize",
 			ruar: "btnunholyarmor",
 			ruba: "btnbansheeadept",
@@ -7382,26 +7561,37 @@ data.icons={
 			rusp: "btndestroyer",
 			ruwb: "btnweboff",
 			rwdm: "btndrum",
+			rwiz: "btnsobimask",
 			scae: "pasbtncommand",
 			scc1: "btncyclone",
 			scri: "btncripple",
 			sdro: "btnunload",
 			shas: "btnscrollofhaste",
 			shea: "btnscrolloftownportal",
+			shen: "btnthoriumarmor",
+			shrs: "btnmonsterlure",
 			skul: "btnsacrificialskull",
 			slo2: "btnload",
 			slo3: "btnload",
+			sman: "btnscrollofprotection",
+			sneg: "btnstaffofnegation",
 			spre: "btnstaffofpreservation",
 			spro: "btnscroll",
 			sreg: "btnscrollofregenerationgreen",
+			sror: "btnsnazzyscrollgreen",
 			ssan: "btnstaffofsanctuary",
 			sshm: "btnambush",
 			stel: "btnstaffofteleportation",
+			stwa: "btnorcmeleeupone",
 			stwp: "btnscrolluber",
 			suhf: "btnunholyfrenzy",
+			tdex: "btntome",
+			texp: "btntomebrown",
 			tgrh: "btngreathall",
+			tint: "btntome",
 			tret: "btntomeofretraining",
 			tsct: "btnhumanwatchtower",
+			tstr: "btntome",
 			uabo: "btnabomination",
 			uaco: "btnacolyte",
 			uanb: "btnherocryptlord",
@@ -7462,6 +7652,7 @@ data.icons={
 			uzg1: "btnzigguratupgrade",
 			uzg2: "btnfrosttower",
 			wneg: "btnwandskull",
+			wneu: "btnwandofneutralization",
 			uzig: "btnziggurat"
 		}
 	},
@@ -7646,6 +7837,7 @@ data.icons={
 			nsgb: "btnseagiantbehemoth",
 			nsgg: "btnsiegegolem",
 			nsgt: "btngiantspider",
+			nsjs_wyvern: "btnchenstormstout",
 			nsjs: "btnchenstormstout",
 			nske: "btnskeletonminion",
 			nskf: "btnburningarcher",
@@ -7702,7 +7894,9 @@ data.icons={
 			ogrk: "btngarthok",
 			omtg: "btnmathog",
 			onzg: "btnnazgrel",
+			orex_wyvern: "btnrexxar",
 			orex: "btnrexxar",
+			orkn_wyvern: "btnrokhan",
 			orkn: "btnrokhan",
 			osam: "btnsamuro",
 			osp2: "btnserpentwardlv2",
