@@ -79,11 +79,13 @@ The `?` button next to the `Load` and `Save` buttons brings up the [help page](h
 
 Used [RivSoft's Warcraft III data viewer](https://wc3.rivsoft.net/) for data and assets and [WTii's unit tester map](https://www.hiveworkshop.com/threads/wtiis-unit-tester.239333/) for testing.
 
+Uses [Space Mono](https://github.com/googlefonts/spacemono) font by Colophon Foundry.
+
+Includes [QWEASZ hotkey set](https://www.reddit.com/r/WC3/comments/69p3nv/improved_custom_hotkeys_setup_by_wtvr/) by wtvr.
+
 ## Authors
 
 - J.C. Fields <jcfields+gitlab@gmail.com>
-- Uses [Space Mono](https://github.com/googlefonts/spacemono) font by Colophon Foundry
-- Includes [QWEASZ hotkey set](https://www.reddit.com/r/WC3/comments/69p3nv/improved_custom_hotkeys_setup_by_wtvr/) by WTVR
 
 ## License
 
