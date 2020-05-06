@@ -17,10 +17,12 @@ const DEFAULT_HOTKEY_FILE="default.txt";
 const DEFAULT_SAVE_NAME="CustomKeys.txt";
 const DEFAULT_ICON="btnsheep";
 const DEFAULT_ICON_SET="classic";
-const ICONS_DIR="icons/";
-const HOTKEY_DIR="hotkeys/";
+const ICONS_DIR="icons";
+const HOTKEY_DIR="hotkeys";
 const DIR_LIST="hotkeys/index.json";
 const HELP_PAGE="help.html";
+const ANNOYED_CLICKS=10;
+const ANNOYED_SOUND="annoyed.wav"
 const MIME_TYPE="text/plain";
 const STORAGE_NAME="wc3hk";
 const PREFS_SECTION="hotkeyeditorpreferences";
@@ -438,7 +440,7 @@ Editor.prototype.unitEditor=function() {
 			} else {
 				self.setCommand(id.slice(0, -1), name);
 			}
-		}.bind(self));
+		});
 		div.appendChild(img);
 
 		if (n!=undefined) {
@@ -458,7 +460,21 @@ Editor.prototype.unitEditor=function() {
 
 				event.dataTransfer.setData("text/plain", event.target.id);
 				$("#card"+n).classList.add("grid");
-			}.bind(self));
+			});
+		} else {
+			self.clicks=0;
+
+			img.addEventListener("click", function() {
+				self.clicks++;
+
+				if (self.clicks>=ANNOYED_CLICKS) {
+					self.clicks=0;
+
+					let audio=new Audio();
+					audio.src=ICONS_DIR+"/"+ANNOYED_SOUND;
+					audio.play();
+				}
+			});
 		}
 
 		return div;
@@ -522,7 +538,7 @@ Editor.prototype.getIcon=function(id, n=STANDARD) {
 		}
 	}
 
-	return ICONS_DIR+dir+"/"+icon+data.icons[dir].extension;
+	return ICONS_DIR+"/"+dir+"/"+icon+data.icons[dir].extension;
 };
 
 Editor.prototype.convertBuildCommand=function(id) {
@@ -1698,7 +1714,7 @@ Files.prototype.load=function(file, callback) {
 			callback(this.responseText);
 		}
 	});
-	xhr.open("GET", HOTKEY_DIR+file, true);
+	xhr.open("GET", HOTKEY_DIR+"/"+file, true);
 	xhr.responseType="text";
 	xhr.send();
 };

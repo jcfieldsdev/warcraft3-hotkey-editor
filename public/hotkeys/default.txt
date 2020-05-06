@@ -3568,6 +3568,11 @@ Tip=Purchase Scroll of |cffffcc00S|rpeed
 Hotkey=S
 Buttonpos=2,0
 
+[olig]
+Tip=Purchase Orb of |cffffcc00L|rightning
+Hotkey=L
+Buttonpos=2,2
+
 [oli2]
 Tip=Purchase Orb of |cffffcc00L|rightning
 Hotkey=L
@@ -3698,7 +3703,7 @@ Tip=Purchase Minds|cffffcc00t|raff
 Hotkey=T
 Buttonpos=0,0
 
-[mnsf]
+[wneu]
 Tip=Purchase Wand of |cffffcc00N|reutralization
 Hotkey=N
 Buttonpos=0,0
@@ -3750,6 +3755,16 @@ Buttonpos=0,0
 
 [shrs]
 Tip=Purchase |cffffcc00S|rhimmerglaze Roast
+Hotkey=S
+Buttonpos=0,0
+
+[ofro]
+Tip=Purchase Orb of F|cffffcc00r|rost
+Hotkey=R
+Buttonpos=0,0
+
+[oslo]
+Tip=Purchase Orb of |cffffcc00S|rlow
 Hotkey=S
 Buttonpos=0,0
 
