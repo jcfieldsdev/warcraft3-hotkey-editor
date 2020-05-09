@@ -89,7 +89,7 @@ Includes [QWEASZ hotkey set](https://www.reddit.com/r/WC3/comments/69p3nv/improv
 
 ## License
 
-- [MIT license](http://opensource.org/licenses/mit-license.php)
+- [MIT license](https://opensource.org/licenses/mit-license.php)
 
 ## See also
 
