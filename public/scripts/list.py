@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-import json, os
+import json
+import os
 
 dir="../hotkeys/"
 

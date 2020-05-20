@@ -120,26 +120,6 @@ a:hover, a:active {
 	text-decoration: underline;
 }
 
-a#human {
-	background-image: url(seal-human.png);
-}
-
-a#neutral {
-	background-image: url(seal-neutral.png);
-}
-
-a#nightelf {
-	background-image: url(seal-nightelf.png);
-}
-
-a#orc {
-	background-image: url(seal-orc.png);
-}
-
-a#undead {
-	background-image: url(seal-undead.png);
-}
-
 a.nocmds, input:disabled, span.passive {
 	opacity: 0.5;
 }
@@ -174,13 +154,29 @@ button:focus, input:focus, select:focus, textarea:focus {
 	outline: 0;
 }
 
-button:hover {
-	border-color: #fff !important;
-}
-
 button#help {
 	border-radius: 100%;
 	width: 2em;
+}
+
+button#human {
+	background-image: url(seal-human.png);
+}
+
+button#neutral {
+	background-image: url(seal-neutral.png);
+}
+
+button#nightelf {
+	background-image: url(seal-nightelf.png);
+}
+
+button#orc {
+	background-image: url(seal-orc.png);
+}
+
+button#undead {
+	background-image: url(seal-undead.png);
 }
 
 cite {
@@ -361,6 +357,10 @@ div#editor button {
 	width: auto;
 }
 
+div#editor button:hover, footer button:hover {
+	border-color: #fff !important;
+}
+
 div#editor img:hover {
 	outline: 2px solid #fff;
 }
@@ -456,10 +456,16 @@ div.overlay.open {
 figure {
 	background: #202020;
 	border: 1px solid #404040;
+	color: inherit;
 	margin: 1em auto;
 	padding: 0.5em 0.5em 0;
 	width: fit-content;
 	width: -moz-fit-content;
+}
+
+figure img {
+	height: auto;
+	max-width: 100%;
 }
 
 footer {
@@ -582,11 +588,6 @@ main.doc h4 {
 	font-size: 1.25rem;
 }
 
-main.doc img {
-	height: auto;
-	max-width: 100%;
-}
-
 main.doc section p {
 	margin-left: 2em;
 }
@@ -671,22 +672,35 @@ ul {
 	padding: 0;
 }
 
-ul#filters a {
+ul#filters button {
+	background-color: transparent;
 	background-position: 0 100%;
 	background-repeat: no-repeat;
 	background-size: 125px 125px;
+	border: 2px solid #000;
 	color: #fff;
-	display: block;
+	font-size: 1rem;
 	font-variant: small-caps;
-	height: 125px;
-	padding-bottom: 0.5em;
+	height: 0;
+	margin: 0;
+	padding: 0 0 125px;
 	text-align: center;
+	vertical-align: top;
 	width: 125px;
 }
 
-ul#filters a:hover, ul#filters a:active {
+ul#filters button:hover {
 	text-decoration: none;
 	text-shadow: 0 0 8px #fff;
+}
+
+ul#filters button.exclude {
+	opacity: 0.25;
+	transition: 0.2s opacity;
+}
+
+ul#filters button.highlight {
+	border-color: #fff;
 }
 
 ul#other img, ul#results img {
@@ -802,9 +816,9 @@ ul.undead {
 		padding: 3em 0 0 3em;
 	}
 
-	ul#filters a {
+	ul#filters button {
 		background-size: 100px 100px;
-		height: 100px;
+		padding-bottom: 100px;
 		width: 100px;
 	}
 
@@ -866,9 +880,9 @@ ul.undead {
 		padding: 1em 0 0 1em;
 	}
 
-	ul#filters a {
+	ul#filters button {
 		background-size: 75px 75px;
-		height: 75px;
+		padding-bottom: 75px;
 		width: 75px;
 	}
 

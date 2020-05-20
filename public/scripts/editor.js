@@ -22,7 +22,7 @@ const HOTKEY_DIR="hotkeys";
 const DIR_LIST="hotkeys/index.json";
 const HELP_PAGE="help.html";
 const ANNOYED_CLICKS=10;
-const ANNOYED_SOUND="annoyed.wav"
+const ANNOYED_SOUND="annoyed.wav";
 const MIME_TYPE="text/plain";
 const STORAGE_NAME="wc3hk";
 const PREFS_SECTION="hotkeyeditorpreferences";
@@ -175,7 +175,7 @@ window.addEventListener("load", function() {
 
 	for (let element of $$(".filter")) {
 		element.addEventListener("click", function() {
-			editor.filter(this.id);
+			editor.filter(this.value);
 		});
 	}
 
@@ -246,6 +246,8 @@ function Editor(commands) {
 	});
 	this.active=STANDARD; // active command card
 	this.state=false; // button state (for two-state commands)
+
+	this.matches=null;
 	this.selected=-1; // selected search result
 }
 
@@ -470,8 +472,7 @@ Editor.prototype.unitEditor=function() {
 				if (self.clicks>=ANNOYED_CLICKS) {
 					self.clicks=0;
 
-					let audio=new Audio();
-					audio.src=ICONS_DIR+"/"+ANNOYED_SOUND;
+					let audio=new Audio(ICONS_DIR+"/"+ANNOYED_SOUND);
 					audio.play();
 				}
 			});
@@ -539,22 +540,6 @@ Editor.prototype.getIcon=function(id, n=STANDARD) {
 	}
 
 	return ICONS_DIR+"/"+dir+"/"+icon+data.icons[dir].extension;
-};
-
-Editor.prototype.convertBuildCommand=function(id) {
-	if (id=="cmdbuildhuman") {
-		id="ahbu";
-	} else if (id=="cmdbuildorc") {
-		id="aobu";
-	} else if (id=="cmdbuildnightelf") {
-		id="aebu";
-	} else if (id=="cmdbuildundead") {
-		id="aubu";
-	} else if (id=="cmdbuildnaga") {
-		id="agbu";
-	}
-
-	return id;
 };
 
 Editor.prototype.getPosition=function(n, y, x) {
@@ -1287,6 +1272,31 @@ Editor.prototype.checkAllConflicts=function() {
 };
 
 Editor.prototype.filter=function(race) {
+	race=this.convertRace(race);
+
+	// hides unit lists for races other than selected
+	for (let element of $$("section")) {
+		element.classList.toggle("hidden", element.id!="units_"+race);
+	}
+};
+
+Editor.prototype.convertBuildCommand=function(id) {
+	if (id=="cmdbuildhuman") {
+		id="ahbu";
+	} else if (id=="cmdbuildorc") {
+		id="aobu";
+	} else if (id=="cmdbuildnightelf") {
+		id="aebu";
+	} else if (id=="cmdbuildundead") {
+		id="aubu";
+	} else if (id=="cmdbuildnaga") {
+		id="agbu";
+	}
+
+	return id;
+};
+
+Editor.prototype.convertRace=function(race) {
 	// converts campaign races to multiplayer equivalents
 	if (race==BLOOD_ELF) {
 		race=HUMAN;
@@ -1298,10 +1308,7 @@ Editor.prototype.filter=function(race) {
 		race=NIGHT_ELF;
 	}
 
-	// hides unit lists for races other than selected
-	for (let element of $$("section")) {
-		element.classList.toggle("hidden", element.id!="units_"+race);
-	}
+	return race;
 };
 
 Editor.prototype.findUnitsNamed=function(query) {
@@ -1313,7 +1320,7 @@ Editor.prototype.findUnitsNamed=function(query) {
 		return;
 	}
 
-	let matches=new Set();
+	let matches=new Set(), filters=new Set();
 
 	query=query.toLowerCase();
 
@@ -1329,11 +1336,15 @@ Editor.prototype.findUnitsNamed=function(query) {
 
 		if (name.indexOf(query)!=-1) {
 			matches.add(unit);
+			filters.add(properties.race);
 		}
 	}
 
 	if (matches.size>0) {
+		this.matches=Array.from(matches);
+
 		this.formatResults("results", matches);
+		this.dimFilters(filters);
 	} else {
 		this.clearSearch();
 	}
@@ -1434,6 +1445,7 @@ Editor.prototype.highlightResult=function(dir) {
 		if (this.selected==i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
+			this.highlightFilter(i);
 		} else {
 			result.classList.remove("selected");
 		}
@@ -1449,6 +1461,23 @@ Editor.prototype.openResult=function() {
 	}
 
 	results[this.selected].click();
+};
+
+Editor.prototype.dimFilters=function(filters) {
+	filters=Array.from(filters).map(this.convertRace);
+
+	for (let element of $$(".filter")) {
+		element.classList.toggle("exclude", !filters.includes(element.value));
+	}
+};
+
+Editor.prototype.highlightFilter=function(n) {
+	let unit=this.matches[n];
+	let race=this.convertRace(data.units[unit].race);
+
+	for (let element of $$(".filter")) {
+		element.classList.toggle("highlight", element.value==race);
+	}
 };
 
 Editor.prototype.clear=function(element, removeListeners=true) {
@@ -1498,9 +1527,15 @@ Editor.prototype.clearSearch=function(clearQuery=false) {
 		$("#query").value="";
 	}
 
+	this.matches=null;
 	this.selected=-1;
+
 	this.clear($("#results"));
 	$("#results").classList.add("hidden");
+
+	for (let element of $$(".filter")) {
+		element.classList.remove("exclude", "highlight");
+	}
 };
 
 /*
