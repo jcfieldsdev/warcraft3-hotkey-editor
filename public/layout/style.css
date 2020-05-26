@@ -357,7 +357,7 @@ div#editor button {
 	width: auto;
 }
 
-div#editor button:hover, footer button:hover {
+div#editor button:hover, div.overlay button:hover, footer button:hover {
 	border-color: #fff !important;
 }
 

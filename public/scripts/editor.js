@@ -169,10 +169,6 @@ window.addEventListener("load", function() {
 		}
 	});
 
-	disableAutocomplete($("#text_load"));
-	disableAutocomplete($("#text_save"));
-	disableAutocomplete(query);
-
 	for (let element of $$(".filter")) {
 		element.addEventListener("click", function() {
 			editor.filter(this.value);
@@ -207,15 +203,21 @@ window.addEventListener("load", function() {
 				event.preventDefault();
 			}
 		});
-		element.setAttribute("contenteditable", "true");
-		disableAutocomplete(element);
+
+		let contentEditable="true";
+
+		if (window.navigator.userAgent.includes("WebKit")) {
+			contentEditable="plaintext-only";
+		}
+
+		element.setAttribute("contenteditable", contentEditable);
 	}
 
-	function disableAutocomplete(input) {
-		input.setAttribute("autocomplete", "off");
-		input.setAttribute("autocorrect", "off");
-		input.setAttribute("autocapitalize", "off");
-		input.setAttribute("spellcheck", "false");
+	for (let element of $$("#query, .tip, textarea")) {
+		element.setAttribute("autocomplete", "off");
+		element.setAttribute("autocorrect", "off");
+		element.setAttribute("autocapitalize", "off");
+		element.setAttribute("spellcheck", "false");
 	}
 });
 
@@ -831,7 +833,7 @@ Editor.prototype.commandEditor=function() {
 			}
 		}
 
-		$(`#${id} input`).select();
+		$(`#${id} input`).focus();
 	}
 
 	let h3=$("#command");
@@ -863,8 +865,8 @@ Editor.prototype.commandEditor=function() {
 	this.clear($("#other"));
 };
 
-Editor.prototype.formatTip=function(key, tip) {
-	let element=$("#"+key);
+Editor.prototype.formatTip=function(type, tip) {
+	let element=$("#"+type);
 
 	if (tip=="") { // hides empty element so it cannot be edited
 		element.classList.add("hidden");
@@ -893,8 +895,8 @@ Editor.prototype.formatTip=function(key, tip) {
 	element.innerHTML=tip;
 };
 
-Editor.prototype.focusTip=function(key) {
-	let element=$("#"+key);
+Editor.prototype.focusTip=function(type) {
+	let element=$("#"+type);
 	let tip=element.innerHTML;
 
 	// converts from HTML to editing format
@@ -911,49 +913,52 @@ Editor.prototype.focusTip=function(key) {
 	element.innerHTML=tip;
 };
 
-Editor.prototype.editTip=function(key) {
-	let element=$("#"+key);
-	let tip=element.innerHTML;
+Editor.prototype.editTip=function(type) {
+	let element=$("#"+type);
 
-	// converts from editing format to hotkey file format
-	tip=tip.replace(/&amp;/g, "&");
-	tip=tip.replace(/&lt;/g, "<");
-	tip=tip.replace(/&gt;/g, ">");
-	tip=tip.replace(/"/g, ""); // removes quotes
-	tip=tip.replace(/\*([^*]+)\*/g, "|cffffcc00$1|r");
-	tip=tip.replace(/\^([^^]+)\^/g, "|cffc3dbff$1|r");
+	let tips=element.innerHTML.split("<br>").map(function(tip) {
+		// converts from editing format to hotkey file format
+		tip=tip.replace(/&amp;/g, "&");
+		tip=tip.replace(/&lt;/g, "<");
+		tip=tip.replace(/&gt;/g, ">");
+		tip=tip.replace(/"/g, ""); // removes quotes
+		tip=tip.replace(/\*([^*]+)\*/g, "|cffffcc00$1|r");
+		tip=tip.replace(/\^([^^]+)\^/g, "|cffc3dbff$1|r");
 
-	let tips=tip.split("<br>").map(function(tip) {
 		// quotes strings containing a comma
-		return tip.match(DELIMITER)?'"'+tip+'"':tip;
+		if (tip.includes(DELIMITER)) {
+			tip='"'+tip+'"';
+		}
+
+		return tip;
+	});
+	tips=tips.filter(function(tip) {
+		return tip!=""; // removes blank lines
 	});
 
-	tip=tips.join(DELIMITER);
+	let tip=tips.join(DELIMITER);
 
-	if (tip.endsWith(DELIMITER)) { // chops terminal ","
-		tip=tip.slice(0, -1);
+	if (tip=="") { // restores blank tip to previous value
+		tip=this.commands.get(this.command, type);
 	}
 
-	this.formatTip(key, tip);
-	this.commands.set(this.command, key, tip);
+	this.formatTip(type, tip);
+	this.commands.set(this.command, type, tip);
 };
 
-Editor.prototype.autoSetTip=function(key, fields) {
+Editor.prototype.autoSetTip=function(type, fields) {
 	// converts hotkey key to equivalent tip key (if available)
-	if (key=="Hotkey") {
-		key="Tip";
-	} else if (key=="Unhotkey") {
-		key="Untip";
-	} else if (key=="Researchhotkey") {
-		key="Researchtip";
+	if (type=="Hotkey") {
+		type="Tip";
+	} else if (type=="Unhotkey") {
+		type="Untip";
+	} else if (type=="Researchhotkey") {
+		type="Researchtip";
 	}
 
-	if (!this.commands.exists(this.command, key)) {
+	if (!this.commands.exists(this.command, type)) {
 		return;
 	}
-
-	// splits string by comma unless comma is within quotes
-	let tips=this.commands.get(this.command, key).split(PATTERN);
 
 	// handles patterns with hotkey at start (common with many user files)
 	// or at end (Blizzard's convention), depending on user preference
@@ -965,6 +970,8 @@ Editor.prototype.autoSetTip=function(key, fields) {
 	let pattern=start?startPattern:endPattern; // the user-selected pattern
 	let otherPattern=start?endPattern:startPattern; // the non-selected pattern
 
+	// splits string by comma unless comma is within quotes
+	let tips=this.commands.get(this.command, type).split(PATTERN);
 	tips=tips.map(function(tip, i) {
 		tip=tip.replace(/"/g, ""); // removes quotes
 
@@ -1009,7 +1016,7 @@ Editor.prototype.autoSetTip=function(key, fields) {
 			}
 		}
 
-		if (tip.match(DELIMITER)) { // quotes strings containing a comma
+		if (tip.includes(DELIMITER)) { // quotes strings containing a comma
 			tip='"'+tip+'"';
 		}
 
@@ -1018,8 +1025,8 @@ Editor.prototype.autoSetTip=function(key, fields) {
 
 	let tip=tips.join(DELIMITER);
 
-	this.commands.set(this.command, key, tip);
-	this.formatTip(key, tip);
+	this.commands.set(this.command, type, tip);
+	this.formatTip(type, tip);
 };
 
 Editor.prototype.formatHotkey=function(type, hotkey) {
@@ -1049,10 +1056,13 @@ Editor.prototype.formatHotkey=function(type, hotkey) {
 		input.setAttribute("value", key);
 		input.addEventListener("click", function(event) {
 			event.preventDefault(); // prevents click from activating label
-			this.select();
 		});
-		input.addEventListener("input", function() {
-			this.editHotkey(input, type);
+		input.addEventListener("keydown", function(event) {
+			// ignores input if modifier key held
+			if (!event.ctrlKey&&!event.altKey&&!event.metaKey) {
+				event.preventDefault();
+				this.editHotkey(input, type, event);
+			}
 		}.bind(this));
 
 		label.appendChild(input);
@@ -1078,17 +1088,15 @@ Editor.prototype.formatHotkey=function(type, hotkey) {
 	element.replaceWith(p);
 };
 
-Editor.prototype.editHotkey=function(input, key) {
-	// removes non-letter characters
-	if (input.value.match(/[A-Z]/i)==null) {
-		input.value="";
+Editor.prototype.editHotkey=function(input, type, event) {
+	let key=String.fromCharCode(event.keyCode);
+
+	// ignores non-letter characters
+	if (key.match(/[A-Z]/i)==null) {
 		return;
 	}
 
-	// limits input to one character
-	if (input.value.length>1) {
-		input.value=input.value.slice(-1);
-	}
+	input.value=key;
 
 	let buttonpos=this.commands.get(this.command, "Buttonpos");
 	let unbuttonpos=this.commands.get(this.command, "Unbuttonpos");
@@ -1102,22 +1110,21 @@ Editor.prototype.editHotkey=function(input, key) {
 	} else {
 		// does not send input value in this case in order to properly handle
 		// commands with multiple inputs (e.g., weapon/armor upgrades)
-		this.setHotkey(key);
+		this.setHotkey(type);
 	}
 
-	input.select();
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
 
-Editor.prototype.setHotkey=function(key, hotkey="") {
-	if (!this.commands.exists(this.command, key)) {
+Editor.prototype.setHotkey=function(type, hotkey="") {
+	if (!this.commands.exists(this.command, type)) {
 		return;
 	}
 
 	let fields=[];
 
-	for (let element of $$(`#${key} input`)) {
+	for (let element of $$(`#${type} input`)) {
 		if (hotkey!="") {
 			// sets hotkey to the optional function parameter value;
 			// (spirit-linking is on or setting the "Esc" key)
@@ -1129,10 +1136,10 @@ Editor.prototype.setHotkey=function(key, hotkey="") {
 		}
 	}
 
-	this.commands.set(this.command, key, fields.join(DELIMITER).toUpperCase());
+	this.commands.set(this.command, type, fields.join(DELIMITER).toUpperCase());
 
 	if ($("#tooltips").checked) {
-		this.autoSetTip(key, fields);
+		this.autoSetTip(type, fields);
 		this.autoSetTip("Awakentip", fields);
 		this.autoSetTip("Revivetip", fields);
 	}
@@ -1426,7 +1433,7 @@ Editor.prototype.highlightResult=function(dir) {
 	let results=$$("#results li");
 
 	if (dir) { // up arrow
-		if (this.selected==-1) {
+		if (this.selected<0) {
 			// loops back around to bottom
 			this.selected=results.length-1;
 		} else {
@@ -1447,6 +1454,12 @@ Editor.prototype.highlightResult=function(dir) {
 			result.scrollIntoView(); // for long lists with scrollbars
 			this.highlightFilter(i);
 		} else {
+			if (this.selected<0) {
+				for (let element of $$(".filter")) {
+					element.classList.remove("highlight");
+				}
+			}
+
 			result.classList.remove("selected");
 		}
 	}
