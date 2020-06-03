@@ -24,8 +24,16 @@ const HELP_PAGE="help.html";
 const ANNOYED_CLICKS=10;
 const ANNOYED_SOUND="annoyed.wav";
 const MIME_TYPE="text/plain";
+
+// storage and options
 const STORAGE_NAME="wc3hk";
-const PREFS_SECTION="hotkeyeditorpreferences";
+const OPTIONS_SECTION="hotkeyeditorpreferences";
+const DEFAULT_OPTIONS={
+	Icons:      DEFAULT_ICON_SET,
+	Spiritlink: true,
+	Tooltips:   false,
+	End:        "end"
+};
 
 // delimiter for multi-level tips, multi-tier hotkeys, and button positions
 const DELIMITER=",";
@@ -43,6 +51,7 @@ const CANCEL="cmdcancel", RALLY="cmdrally";
 
 window.addEventListener("load", function() {
 	const files=new Files("files");
+	const options=new Options();
 	const store=new Storage(STORAGE_NAME);
 	const overlays={
 		load: new Overlay("load"),
@@ -51,7 +60,7 @@ window.addEventListener("load", function() {
 	const commands=new Commands();
 	const editor=new Editor(commands);
 
-	store.loadDefaultPrefs();
+	options.reset(); // sets elements to default states
 
 	// loads default commands
 	files.load(DEFAULT_HOTKEY_FILE, function(text) {
@@ -60,7 +69,7 @@ window.addEventListener("load", function() {
 		let mem=store.load();
 
 		if (mem!=null) {
-			store.loadPrefs(mem);
+			options.load(mem);
 			commands.load(mem);
 		}
 
@@ -76,13 +85,14 @@ window.addEventListener("load", function() {
 
 		if (file!="") {
 			commands.parse(file);
-			store.loadPrefs(commands.list);
+			options.load(commands.list);
 			editor.open();
 			overlays.load.hide();
 		}
 	});
 	$("#reset").addEventListener("click", function() {
 		commands.reset();
+		options.reset();
 		store.reset();
 		editor.open();
 
@@ -110,7 +120,7 @@ window.addEventListener("load", function() {
 		overlays.load.show();
 	});
 	$("#save").addEventListener("click", function() {
-		store.savePrefs(commands.list);
+		commands.list=options.save(commands.list);
 		store.save(commands.list);
 
 		overlays.save.setText(commands.convert());
@@ -131,7 +141,7 @@ window.addEventListener("load", function() {
 
 	window.addEventListener("beforeunload", function() {
 		// saves on close
-		store.savePrefs(commands.list);
+		commands.list=options.save(commands.list);
 		store.save(commands.list);
 	});
 	window.addEventListener("hashchange", function() {
@@ -1092,7 +1102,7 @@ Editor.prototype.editHotkey=function(input, type, event) {
 	let key=String.fromCharCode(event.keyCode);
 
 	// ignores non-letter characters
-	if (key.match(/[A-Z]/i)==null) {
+	if (key!=""&&key.match(/[A-Z]/i)==null) {
 		return;
 	}
 
@@ -1768,12 +1778,91 @@ Files.prototype.load=function(file, callback) {
 };
 
 /*
+ * Options prototype
+ */
+
+function Options() {
+	this.options={};
+	this.defaults=DEFAULT_OPTIONS;
+}
+
+Options.prototype.load=function(list) {
+	let options={};
+
+	if (list==undefined) {
+		options=this.defaults;
+	} else {
+		options=list[OPTIONS_SECTION];
+	}
+
+	if (options==undefined) {
+		return;
+	}
+
+	for (let [key, value] of Object.entries(options)) {
+		if (this.defaults[key]==undefined) {
+			continue;
+		}
+
+		if (typeof this.defaults[key]=="boolean") { // checkboxes
+			let element=$("#"+key.toLowerCase());
+
+			if (element!=undefined) {
+				element.checked=Boolean(value);
+			}
+		} else if (typeof this.defaults[key]=="string") { // radio buttons
+			for (let element of document.getElementsByName(key.toLowerCase())) {
+				element.checked=element.value==value;
+			}
+		}
+	}
+};
+
+Options.prototype.save=function(list) {
+	let options={};
+
+	for (let element of $$(".option")) {
+		if (element.type=="checkbox") { // checkboxes
+			let option=capitalize(element.id);
+			options[option]=element.checked;
+		} else if (element.type=="radio") { // radio buttons
+			if (element.checked) {
+				let option=capitalize(element.name);
+				options[option]=element.value;
+			}
+		}
+	}
+
+	for (let option of Object.keys(options)) {
+		if (this.defaults[option]==options[option]) {
+			// removes options that are same as default values
+			delete options[option];
+		}
+	}
+
+	if (Object.keys(options).length>0) {
+		list[OPTIONS_SECTION]=options;
+	} else { // only saves options if different from defaults
+		delete list[OPTIONS_SECTION];
+	}
+
+	return list;
+
+	function capitalize(str) {
+		return str.charAt(0).toUpperCase()+str.slice(1);
+	}
+};
+
+Options.prototype.reset=function() {
+	this.load();
+};
+
+/*
  * Storage prototype
  */
 
 function Storage(name) {
 	this.name=name;
-	this.prefs={};
 }
 
 Storage.prototype.load=function() {
@@ -1802,79 +1891,8 @@ Storage.prototype.save=function(list) {
 	}
 };
 
-Storage.prototype.loadPrefs=function(list) {
-	let prefs=list[PREFS_SECTION];
-
-	if (prefs!=undefined) {
-		this.setPrefs(prefs);
-	}
-};
-
-Storage.prototype.loadDefaultPrefs=function() {
-	this.prefs=this.getPrefs();
-};
-
-Storage.prototype.savePrefs=function(list) {
-	let prefs=this.getPrefs();
-
-	if (Object.keys(prefs).length>0) {
-		list[PREFS_SECTION]=prefs;
-	} else { // only saves prefs if different from defaults
-		delete list[PREFS_SECTION];
-	}
-
-	return list;
-};
-
-Storage.prototype.getPrefs=function() {
-	let prefs={};
-
-	for (let element of $$(".option")) {
-		if (element.type=="checkbox") { // checkboxes
-			let pref=capitalize(element.id);
-			prefs[pref]=Number(element.checked);
-		} else if (element.type=="radio") { // radio buttons
-			if (element.checked) {
-				let pref=capitalize(element.name);
-				prefs[pref]=element.value;
-			}
-		}
-	}
-
-	for (let pref of Object.keys(prefs)) {
-		if (this.prefs[pref]==prefs[pref]) {
-			delete prefs[pref]; // removes prefs that are same as default values
-		}
-	}
-
-	return prefs;
-
-	function capitalize(str) {
-		return str.charAt(0).toUpperCase()+str.slice(1);
-	}
-};
-
-Storage.prototype.setPrefs=function(prefs) {
-	for (let [key, value] of Object.entries(prefs)) {
-		key=key.toLowerCase();
-
-		if (typeof value=="number") { // checkboxes
-			let element=$("#"+key);
-
-			if (element!=undefined) {
-				element.checked=Boolean(value);
-			}
-		} else if (typeof value=="string") { // radio buttons
-			for (let element of document.getElementsByName(key)) {
-				element.checked=element.value==value;
-			}
-		}
-	}
-};
-
 Storage.prototype.reset=function() {
 	try {
-		this.setPrefs(this.prefs);
 		localStorage.removeItem(this.name);
 	} catch (err) {
 		console.error(err);

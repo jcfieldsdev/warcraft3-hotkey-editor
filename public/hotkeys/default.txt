@@ -3876,7 +3876,7 @@ Buttonpos=0,0
 [ndtb]
 Tip=Hire Dark Troll |cffffcc00B|rerserker
 Hotkey=B
-Buttonpos=0,0
+Buttonpos=1,0
 
 [ndth]
 Tip=Hire Dark Troll |cffffcc00H|righ Priest
@@ -4010,7 +4010,7 @@ Buttonpos=1,0
 [nass]
 Tip=Hire |cffffcc00A|rssassin
 Hotkey=A
-Buttonpos=0,0
+Buttonpos=1,0
 
 [nenf]
 Tip=Hire |cffffcc00E|rnforcer
@@ -4101,8 +4101,9 @@ Hotkey=F
 Buttonpos=1,0
 
 [nsln]
-Tip=Summon Sludge Monstrosity
-Buttonpos=0,0
+Tip=Summon S|cffffcc00l|rudge Monstrosity
+Hotkey=L
+Buttonpos=1,0
 
 [nfrl]
 Tip=Hire Furbolg
@@ -4282,12 +4283,14 @@ Hotkey=G
 Buttonpos=2,0
 
 [nkot]
-Tip=Hire Kobolt Tunneler
+Tip=Hire Kobolt |cffffcc00T|runneler
+Hotkey=T
 Buttonpos=0,0
 
 [nkol]
-Tip=Hire Kobold Taskmaster
-Buttonpos=0,0
+Tip=Hire Kobold Tas|cffffcc00k|rmaster
+Hotkey=K
+Buttonpos=3,0
 
 [ncea]
 Tip=Hire Centaur |cffffcc00A|rrcher
@@ -4306,7 +4309,7 @@ Buttonpos=0,0
 [ncen]
 Tip=Hire Centaur |cffffcc00O|rutrunner
 Hotkey=O
-Buttonpos=0,0
+Buttonpos=1,0
 
 [ncks]
 Tip=Hire Centaur Sorcerer
@@ -4347,8 +4350,9 @@ Tip=Hire Razormane Scout
 Buttonpos=0,0
 
 [nqbh]
-Tip=Hire Quillboar Hunter
-Buttonpos=0,0
+Tip=Hire Quillboar |cffffcc00H|runter
+Hotkey=H
+Buttonpos=3,0
 
 [nrzb]
 Tip=Hire Razormane Brute
@@ -4378,8 +4382,9 @@ Hotkey=N
 Buttonpos=2,0
 
 [nnwr]
-Tip=Summon Nerubian Seer
-Buttonpos=0,0
+Tip=Hire |cffffcc00N|rerubian Seer
+Hotkey=N
+Buttonpos=2,0
 
 [nnws]
 Tip=Summon Nerubian Spider Lord
@@ -4431,8 +4436,9 @@ Tip=Summon Skeletal Orc
 Buttonpos=0,0
 
 [nsog]
-Tip=Summon Skeletal Orc Grunt
-Buttonpos=0,0
+Tip=Summon Skeletal Orc |cffffcc00G|rrunt
+Hotkey=G
+Buttonpos=3,0
 
 [nsoc]
 Tip=Summon Skeletal Orc Champion
@@ -4443,8 +4449,9 @@ Tip=Summon Stormreaver Apprentice
 Buttonpos=0,0
 
 [nsrh]
-Tip=Summon Stormreaver Hermit
-Buttonpos=0,0
+Tip=Summon Stormreaver |cffffcc00H|rermit
+Hotkey=H
+Buttonpos=1,0
 
 [nsrn]
 Tip=Summon Stormreaver Necrolyte
@@ -4531,8 +4538,9 @@ Tip=Hire Tuskarr Spearman
 Buttonpos=0,0
 
 [ntkh]
-Tip=Hire Tuskarr Healer
-Buttonpos=0,0
+Tip=Hire Tuskarr |cffffcc00H|realer
+Hotkey=H
+Buttonpos=3,0
 
 [ntkt]
 Tip=Hire Tuskarr Trapper
@@ -4559,15 +4567,17 @@ Tip=Hire Unbroken Rager
 Buttonpos=0,0
 
 [nubw]
-Tip=Hire Unbroken Darkweaver
-Buttonpos=0,0
+Tip=Hire Unbroken |cffffcc00D|rarkweaver
+Hotkey=D
+Buttonpos=2,0
 
 [nmcf]
 Tip=Hire Mur'gul Cliffrunner
 Buttonpos=0,0
 
 [nmbg]
-Tip=Hire Mur'gul Blood-Gill
+Tip=Hire Mur'gul |cffffcc00B|rlood-Gill
+Hotkey=B
 Buttonpos=0,0
 
 [nmtw]
@@ -4575,8 +4585,8 @@ Tip=Hire Mur'gul Tidewarrior
 Buttonpos=0,0
 
 [nmsn]
-Tip=Hire Mur'|cffffcc00g|rul Snarecaster
-Hotkey=G
+Tip=Hire Mur'gul |cffffcc00S|rnarecaster
+Hotkey=S
 Buttonpos=2,0
 
 [nmrv]
@@ -4641,7 +4651,8 @@ Tip=Hire Blue Dragonspawn Apprentice
 Buttonpos=0,0
 
 [nbdw]
-Tip=Hire Blue Dragonspawn Warrior
+Tip=Hire Blue Dragonspawn |cffffcc00W|rarrior
+Hotkey=W
 Buttonpos=0,0
 
 [nbds]
@@ -4702,8 +4713,9 @@ Tip=Summon Spider
 Buttonpos=0,0
 
 [nssp]
-Tip=Summon Spitting Spider
-Buttonpos=0,0
+Tip=Summon S|cffffcc00p|ritting Spider
+Hotkey=P
+Buttonpos=3,0
 
 [nsgt]
 Tip=Summon Giant Spider
@@ -4733,8 +4745,9 @@ Tip=Summon Fel Guard
 Buttonpos=0,0
 
 [nfgb]
-Tip=Summon Bloodfiend
-Buttonpos=0,0
+Tip=Hire |cffffcc00B|rloodfiend
+Hotkey=B
+Buttonpos=1,0
 
 [nfov]
 Tip=Summon Overlord
@@ -4760,7 +4773,7 @@ Buttonpos=0,0
 [ndrm]
 Tip=Hire Draenei |cffffcc00D|risciple
 Hotkey=D
-Buttonpos=1,0
+Buttonpos=0,0
 
 [ndrp]
 Tip=Hire Draenei Protector
@@ -4830,8 +4843,9 @@ Tip=Summon Giant Frost Wolf
 Buttonpos=0,0
 
 [nwlg]
-Tip=Summon Giant Wolf
-Buttonpos=0,0
+Tip=Summon Giant |cffffcc00W|rolf
+Hotkey=W
+Buttonpos=3,0
 
 [nwwd]
 Tip=Summon Dire Frost Wolf

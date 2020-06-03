@@ -4160,10 +4160,10 @@ data.units={
 		race: NEUTRAL,
 		type: BUILDING,
 		commands: [
-			["nitt", "Hire Ice Troll Trapper"],
+			["nitp", "Hire Ice Troll Priest"],
 			["nits", "Hire Ice Troll Berserker"],
 			["ngrk", "Summon Mud Golem"],
-			["ngnv", "Hire Gnoll Overseer"]
+			["nogm", "Hire Ogre Mauler"]
 		]
 	},
 	nmr4: {
@@ -4172,10 +4172,10 @@ data.units={
 		race: NEUTRAL,
 		type: BUILDING,
 		commands: [
+			["ncea", "Hire Centaur Archer"],
 			["ncen", "Hire Centaur Outrunner"],
-			["nhrr", "Hire Harpy Rogue"],
 			["nhrw", "Hire Harpy Windwitch"],
-			["nrzm", "Hire Razormane Medicine Man"]
+			["nqbh", "Hire Quillboar Hunter"]
 		]
 	},
 	nmr5: {
@@ -4184,9 +4184,10 @@ data.units={
 		race: NEUTRAL,
 		type: BUILDING,
 		commands: [
-			["nfrs", "Hire Furbolg Shaman"],
-			["nthl", "Hire Thunder Lizard"],
-			["nsts", "Hire Satyr Shadowdancer"]
+			["ndtp", "Hire Dark Troll Shadow Priest"],
+			["ndtb", "Hire Dark Troll Berserker"],
+			["nsts", "Hire Satyr Shadowdancer"],
+			["nwlg", "Summon Giant Wolf"]
 		]
 	},
 	nmr6: {
@@ -4196,8 +4197,9 @@ data.units={
 		type: BUILDING,
 		commands: [
 			["nmfs", "Hire Murloc Flesheater"],
-			["nslf", "Summon Sludge Flinger"],
-			["nstl", "Hire Satyr Soulstealer"]
+			["nsln", "Summon Sludge Monstrosity"],
+			["nsts", "Hire Satyr Shadowdancer"],
+			["nssp", "Summon Spitting Spider"]
 		]
 	},
 	nmr7: {
@@ -4208,7 +4210,7 @@ data.units={
 		commands: [
 			["nnwa", "Hire Nerubian Warrior"],
 			["nits", "Hire Ice Troll Berserker"],
-			["nnwl", "Hire Nerubian Webspinner"],
+			["nnwr", "Hire Nerubian Seer"],
 			["nrvs", "Summon Frost Revenant"]
 		]
 	},
@@ -4242,10 +4244,10 @@ data.units={
 		race: NEUTRAL,
 		type: BUILDING,
 		commands: [
+			["nkot", "Hire Kobold Tunneler"],
 			["nass", "Hire Assassin"],
-			["nkob", "Hire Kobold"],
 			["nkog", "Hire Kobold Geomancer"],
-			["nmrr", "Hire Murloc Huntsman"]
+			["nkol", "Hire Kobold Taskmaster"]
 		]
 	},
 	nmra: {
@@ -4256,7 +4258,8 @@ data.units={
 		commands: [
 			["nskf", "Hire Burning Archer"],
 			["nowb", "Summon Wildkin"],
-			["nkog", "Hire Kobold Geomancer"]
+			["nkog", "Hire Kobold Geomancer"],
+			["nrvs", "Summon Frost Revenant"]
 		]
 	},
 	nmrb: {
@@ -4276,10 +4279,10 @@ data.units={
 		race: NEUTRAL,
 		type: BUILDING,
 		commands: [
-			["ntrt", "Summon Giant Sea Turtle"],
-			["nlsn", "Hire Makrura Snapper"],
+			["nmbg", "Hire Mur’gul Blood-Gill"],
 			["nmsn", "Hire Mur’gul Snarecaster"],
-			["nlds", "Hire Makrura Deepseer"]
+			["nsrh", "Hire Stormreaver Hermit"],
+			["nsog", "Hire Skeletal Orc Grunt"]
 		]
 	},
 	nmrd: {
@@ -4288,10 +4291,10 @@ data.units={
 		race: NEUTRAL,
 		type: BUILDING,
 		commands: [
-			["nanm", "Hire Barbed Arachnathid"],
-			["nbdm", "Hire Blue Dragonspawn Meddler"],
-			["nfps", "Hire Polar Furbolg Shaman"],
-			["nmgw", "Hire Magnataur Warrior"]
+			["nbdw", "Hire Blue Dragonspawn Warrior"],
+			["nits", "Hire Ice Troll Berserker"],
+			["nubw", "Hire Unbroken Darkweaver"],
+			["ntkh", "Hire Tuskarr Healer"]
 		]
 	},
 	nmre: {
@@ -4312,10 +4315,10 @@ data.units={
 		race: NEUTRAL,
 		type: BUILDING,
 		commands: [
-			["npfl", "Summon Fel Beast"],
 			["ndrm", "Hire Draenei Disciple"],
+			["nfgb", "Summon Bloodfiend"],
 			["nvdw", "Hire Voidwalker"],
-			["ndrd", "Hire Draenei Darkslayer"]
+			["nsog", "Hire Skeletal Orc Grunt"]
 		]
 	},
 	nanm: {
@@ -4666,18 +4669,25 @@ data.units={
 	nadw: {
 		name: "Blue Dragon Whelp",
 		race: NEUTRAL,
-		type: UNIT
+		type: UNIT,
+		commands: [
+			["afrc", "Frost Attack"]
+		]
 	},
 	nadk: {
 		name: "Blue Drake",
 		race: NEUTRAL,
-		type: UNIT
+		type: UNIT,
+		commands: [
+			["afrc", "Frost Attack"]
+		]
 	},
 	nadr: {
 		name: "Blue Dragon",
 		race: NEUTRAL,
 		type: UNIT,
 		commands: [
+			["afrc", "Frost Attack"],
 			["acdv", "Devour"],
 			["acmi", "Spell Immunity"]
 		]

@@ -4,14 +4,14 @@
 import json
 import os
 
-dir="../hotkeys/"
+dir='../hotkeys/'
 
 try:
-	files=[f for f in os.listdir(dir) if f.endswith(".txt")]
+	files=[f for f in os.listdir(dir) if f.endswith('.txt')]
 except OSError:
 	files=[]
 
 files.sort()
 
-print("Content-Type: application/json; charset=utf-8\n")
+print('Content-Type: application/json; charset=utf-8\n')
 print(json.dumps(files))
