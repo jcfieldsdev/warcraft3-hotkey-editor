@@ -41,10 +41,10 @@ const START="start", END="end";
 const STORAGE_NAME="wc3hk";
 const OPTIONS_SECTION="hotkeyeditorpreferences";
 const DEFAULT_OPTIONS={
-	Icons:      DEFAULT_ICON_SET,
-	Spiritlink: true,
-	Tooltips:   false,
-	End:        END
+	icons:      DEFAULT_ICON_SET,
+	spiritlink: true,
+	tooltips:   false,
+	end:        END
 };
 
 /*
@@ -526,7 +526,7 @@ Editor.prototype.getCommands=function(unit) {
 };
 
 Editor.prototype.getIcon=function(id, n=STANDARD) {
-	let dir=this.options.read("Icons");
+	let dir=this.options.read("icons");
 	let icon="";
 
 	// special case for race-specific rally point icons
@@ -981,7 +981,7 @@ Editor.prototype.autoSetTip=function(type, fields) {
 
 	// handles patterns with hotkey at start (common with many user files)
 	// or at end (Blizzard's convention), depending on user preference
-	let start=this.options.read("End")==START;
+	let start=this.options.read("end")==START;
 	let replace="", k=0;
 
 	let startPattern=/^\(\|cffffcc00(ESC|\w)\|r\) /g;
@@ -1120,11 +1120,11 @@ Editor.prototype.editHotkey=function(input, type, event) {
 
 	let buttonpos=this.commands.get(this.command, "Buttonpos");
 	let unbuttonpos=this.commands.get(this.command, "Unbuttonpos");
-	let positions=unbuttonpos==""||buttonpos==unbuttonpos;
+	let samePositions=unbuttonpos==""||buttonpos==unbuttonpos;
 
 	// sets all hotkeys together if "spirit link" option selected
 	// unless button and unbutton are in different positions (prevents conflict)
-	if (positions&&this.options.read("Spiritlink")) {
+	if (samePositions&&this.options.read("spiritlink")) {
 		this.setHotkey("Hotkey", key);
 		this.setHotkey("Unhotkey", key);
 		this.setHotkey("Researchhotkey", key);
@@ -1159,7 +1159,7 @@ Editor.prototype.setHotkey=function(type, hotkey="") {
 
 	this.commands.set(this.command, type, fields.join(DELIMITER).toUpperCase());
 
-	if (this.options.read("Tooltips")) {
+	if (this.options.read("tooltips")) {
 		this.autoSetTip(type, fields);
 		this.autoSetTip("Awakentip", fields);
 		this.autoSetTip("Revivetip", fields);
@@ -1798,27 +1798,34 @@ function Options() {
 }
 
 Options.prototype.load=function(list) {
-	let options=list[OPTIONS_SECTION];
+	let options=list[OPTIONS_SECTION]||{};
 
-	if (options!=undefined) {
-		this.values=options;
-		this.setElements();
+	for (let [key, value] of Object.entries(options)) {
+		let lowercase=key.toLowerCase();
+		options[lowercase]=value;
+		delete options[key];
 	}
+
+	this.values=options;
+	this.setElements();
 };
 
 Options.prototype.save=function(list) {
 	let options=this.getValues();
 
-	for (let option of Object.keys(options)) {
-		if (this.defaults[option]==options[option]) {
-			// removes options that are same as default values
-			delete options[option];
+	for (let [key, value] of Object.entries(options)) {
+		// saves options only if different from default values
+		if (this.defaults[key]!=value) {
+			let capitalized=key.charAt(0).toUpperCase()+key.slice(1);
+			options[capitalized]=value;
 		}
+
+		delete options[key];
 	}
 
 	if (Object.keys(options).length>0) {
 		list[OPTIONS_SECTION]=options;
-	} else { // only saves options if different from defaults
+	} else { // deletes section if empty
 		delete list[OPTIONS_SECTION];
 	}
 
@@ -1830,21 +1837,15 @@ Options.prototype.getValues=function() {
 
 	for (let element of $$(".option")) {
 		if (element.type=="checkbox") { // checkboxes
-			let option=capitalize(element.id);
-			options[option]=element.checked;
+			options[element.id]=element.checked;
 		} else if (element.type=="radio") { // radio buttons
 			if (element.checked) {
-				let option=capitalize(element.name);
-				options[option]=element.value;
+				options[element.name]=element.value;
 			}
 		}
 	}
 
 	return options;
-
-	function capitalize(str) {
-		return str.charAt(0).toUpperCase()+str.slice(1);
-	}
 };
 
 Options.prototype.setElements=function() {
@@ -1854,13 +1855,13 @@ Options.prototype.setElements=function() {
 		}
 
 		if (typeof value=="boolean") { // checkboxes
-			let element=$("#"+key.toLowerCase());
+			let element=$("#"+key);
 
 			if (element!=undefined) {
 				element.checked=Boolean(this.read(key));
 			}
 		} else if (typeof value=="string") { // radio buttons
-			for (let element of document.getElementsByName(key.toLowerCase())) {
+			for (let element of document.getElementsByName(key)) {
 				element.checked=element.value==this.read(key);
 			}
 		}
