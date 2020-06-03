@@ -3911,7 +3911,7 @@ Buttonpos=1,0
 [nfsh]
 Tip=Hire Forest Troll |cffffcc00H|righ Priest
 Hotkey=H
-Buttonpos=3,0
+Buttonpos=2,0
 
 [nftk]
 Tip=Hire Forest Troll |cffffcc00W|rarlord
@@ -4005,7 +4005,7 @@ Buttonpos=0,0
 [nrog]
 Tip=Hire |cffffcc00R|rogue
 Hotkey=R
-Buttonpos=1,0
+Buttonpos=0,0
 
 [nass]
 Tip=Hire |cffffcc00A|rssassin

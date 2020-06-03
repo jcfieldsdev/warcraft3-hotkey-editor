@@ -7711,6 +7711,7 @@ data.icons={
 			nbdo: "btndragonspawnoverseer",
 			nbdr: "btnblackdragonwhelp",
 			nbds: "btngreendragonspawnsorcerer",
+			nbdw: "btnpurpledragonspawn",
 			nbel: "btnbloodelflieutenant",
 			nbrg: "btnbrigand",
 			nbzk: "btnbronzedrake",
