@@ -25,16 +25,6 @@ const ANNOYED_CLICKS=10;
 const ANNOYED_SOUND="annoyed.wav";
 const MIME_TYPE="text/plain";
 
-// storage and options
-const STORAGE_NAME="wc3hk";
-const OPTIONS_SECTION="hotkeyeditorpreferences";
-const DEFAULT_OPTIONS={
-	Icons:      DEFAULT_ICON_SET,
-	Spiritlink: true,
-	Tooltips:   false,
-	End:        "end"
-};
-
 // delimiter for multi-level tips, multi-tier hotkeys, and button positions
 const DELIMITER=",";
 // pattern for splitting multi-line tips
@@ -44,6 +34,18 @@ const PATTERN=/,(?=(?:[^"]|"[^"]*")*$)/;
 const STANDARD=0, RESEARCH=1, BUILD=2;
 // commands
 const CANCEL="cmdcancel", RALLY="cmdrally";
+// tooltip positions
+const START="start", END="end";
+
+// storage and options
+const STORAGE_NAME="wc3hk";
+const OPTIONS_SECTION="hotkeyeditorpreferences";
+const DEFAULT_OPTIONS={
+	Icons:      DEFAULT_ICON_SET,
+	Spiritlink: true,
+	Tooltips:   false,
+	End:        END
+};
 
 /*
  * initialization
@@ -58,7 +60,7 @@ window.addEventListener("load", function() {
 		save: new Overlay("save")
 	};
 	const commands=new Commands();
-	const editor=new Editor(commands);
+	const editor=new Editor(commands, options);
 
 	options.reset(); // sets elements to default states
 
@@ -191,6 +193,12 @@ window.addEventListener("load", function() {
 		});
 	}
 
+	for (let element of $$(".option")) {
+		element.addEventListener("click", function() {
+			options.reload(commands.list);
+		});
+	}
+
 	for (let element of $$(".icons")) {
 		element.addEventListener("click", function() {
 			editor.clearButtons();
@@ -243,8 +251,9 @@ function $$(selector) {
  * Editor prototype
  */
 
-function Editor(commands) {
+function Editor(commands, options) {
 	this.commands=commands;
+	this.options=options;
 
 	this.unit="";
 	this.command="";
@@ -517,7 +526,7 @@ Editor.prototype.getCommands=function(unit) {
 };
 
 Editor.prototype.getIcon=function(id, n=STANDARD) {
-	let dir=$(".icons:checked").value||DEFAULT_ICON_SET;
+	let dir=this.options.read("Icons");
 	let icon="";
 
 	// special case for race-specific rally point icons
@@ -972,7 +981,7 @@ Editor.prototype.autoSetTip=function(type, fields) {
 
 	// handles patterns with hotkey at start (common with many user files)
 	// or at end (Blizzard's convention), depending on user preference
-	let start=$("#start").checked;
+	let start=this.options.read("End")==START;
 	let replace="", k=0;
 
 	let startPattern=/^\(\|cffffcc00(ESC|\w)\|r\) /g;
@@ -1111,10 +1120,11 @@ Editor.prototype.editHotkey=function(input, type, event) {
 
 	let buttonpos=this.commands.get(this.command, "Buttonpos");
 	let unbuttonpos=this.commands.get(this.command, "Unbuttonpos");
+	let positions=unbuttonpos==""||buttonpos==unbuttonpos;
 
 	// sets all hotkeys together if "spirit link" option selected
 	// unless button and unbutton are in different positions (prevents conflict)
-	if ($("#spiritlink").checked&&(unbuttonpos==""||buttonpos==unbuttonpos)) {
+	if (positions&&this.options.read("Spiritlink")) {
 		this.setHotkey("Hotkey", key);
 		this.setHotkey("Unhotkey", key);
 		this.setHotkey("Researchhotkey", key);
@@ -1149,7 +1159,7 @@ Editor.prototype.setHotkey=function(type, hotkey="") {
 
 	this.commands.set(this.command, type, fields.join(DELIMITER).toUpperCase());
 
-	if ($("#tooltips").checked) {
+	if (this.options.read("Tooltips")) {
 		this.autoSetTip(type, fields);
 		this.autoSetTip("Awakentip", fields);
 		this.autoSetTip("Revivetip", fields);
@@ -1783,56 +1793,21 @@ Files.prototype.load=function(file, callback) {
  */
 
 function Options() {
-	this.options={};
+	this.values={};
 	this.defaults=DEFAULT_OPTIONS;
 }
 
 Options.prototype.load=function(list) {
-	let options={};
+	let options=list[OPTIONS_SECTION];
 
-	if (list==undefined) {
-		options=this.defaults;
-	} else {
-		options=list[OPTIONS_SECTION];
-	}
-
-	if (options==undefined) {
-		return;
-	}
-
-	for (let [key, value] of Object.entries(options)) {
-		if (this.defaults[key]==undefined) {
-			continue;
-		}
-
-		if (typeof this.defaults[key]=="boolean") { // checkboxes
-			let element=$("#"+key.toLowerCase());
-
-			if (element!=undefined) {
-				element.checked=Boolean(value);
-			}
-		} else if (typeof this.defaults[key]=="string") { // radio buttons
-			for (let element of document.getElementsByName(key.toLowerCase())) {
-				element.checked=element.value==value;
-			}
-		}
+	if (options!=undefined) {
+		this.values=options;
+		this.setElements();
 	}
 };
 
 Options.prototype.save=function(list) {
-	let options={};
-
-	for (let element of $$(".option")) {
-		if (element.type=="checkbox") { // checkboxes
-			let option=capitalize(element.id);
-			options[option]=element.checked;
-		} else if (element.type=="radio") { // radio buttons
-			if (element.checked) {
-				let option=capitalize(element.name);
-				options[option]=element.value;
-			}
-		}
-	}
+	let options=this.getValues();
 
 	for (let option of Object.keys(options)) {
 		if (this.defaults[option]==options[option]) {
@@ -1848,14 +1823,66 @@ Options.prototype.save=function(list) {
 	}
 
 	return list;
+};
+
+Options.prototype.getValues=function() {
+	let options={};
+
+	for (let element of $$(".option")) {
+		if (element.type=="checkbox") { // checkboxes
+			let option=capitalize(element.id);
+			options[option]=element.checked;
+		} else if (element.type=="radio") { // radio buttons
+			if (element.checked) {
+				let option=capitalize(element.name);
+				options[option]=element.value;
+			}
+		}
+	}
+
+	return options;
 
 	function capitalize(str) {
 		return str.charAt(0).toUpperCase()+str.slice(1);
 	}
 };
 
+Options.prototype.setElements=function() {
+	for (let [key, value] of Object.entries(this.defaults)) {
+		if (value==undefined) {
+			continue;
+		}
+
+		if (typeof value=="boolean") { // checkboxes
+			let element=$("#"+key.toLowerCase());
+
+			if (element!=undefined) {
+				element.checked=Boolean(this.read(key));
+			}
+		} else if (typeof value=="string") { // radio buttons
+			for (let element of document.getElementsByName(key.toLowerCase())) {
+				element.checked=element.value==this.read(key);
+			}
+		}
+	}
+};
+
+Options.prototype.read=function(key) {
+	if (this.values[key]!=undefined) {
+		return this.values[key];
+	}
+
+	return this.defaults[key];
+};
+
+Options.prototype.reload=function(list) {
+	this.load(this.save(list));
+};
+
 Options.prototype.reset=function() {
-	this.load();
+	this.values=Object.assign({}, this.defaults); // copies default values
+	this.setElements();
+
 };
 
 /*
