@@ -1099,13 +1099,14 @@ Editor.prototype.formatHotkey=function(type, hotkey) {
 };
 
 Editor.prototype.editHotkey=function(input, type, event) {
-	let key=String.fromCharCode(event.keyCode);
+	let keyCode=event.keyCode;
 
 	// ignores non-letter characters
-	if (key!=""&&key.match(/[A-Z]/i)==null) {
+	if (keyCode<65||keyCode>90) {
 		return;
 	}
 
+	let key=String.fromCharCode(keyCode);
 	input.value=key;
 
 	let buttonpos=this.commands.get(this.command, "Buttonpos");
@@ -1114,9 +1115,9 @@ Editor.prototype.editHotkey=function(input, type, event) {
 	// sets all hotkeys together if "spirit link" option selected
 	// unless button and unbutton are in different positions (prevents conflict)
 	if ($("#spiritlink").checked&&(unbuttonpos==""||buttonpos==unbuttonpos)) {
-		this.setHotkey("Hotkey", input.value);
-		this.setHotkey("Unhotkey", input.value);
-		this.setHotkey("Researchhotkey", input.value);
+		this.setHotkey("Hotkey", key);
+		this.setHotkey("Unhotkey", key);
+		this.setHotkey("Researchhotkey", key);
 	} else {
 		// does not send input value in this case in order to properly handle
 		// commands with multiple inputs (e.g., weapon/armor upgrades)
