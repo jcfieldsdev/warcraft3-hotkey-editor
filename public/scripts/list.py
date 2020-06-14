@@ -4,10 +4,10 @@
 import json
 import os
 
-dir='../hotkeys/'
+path='../hotkeys/'
 
 try:
-	files=[f for f in os.listdir(dir) if f.endswith('.txt')]
+	files=[f for f in os.listdir(path) if f.endswith('.txt')]
 except OSError:
 	files=[]
 

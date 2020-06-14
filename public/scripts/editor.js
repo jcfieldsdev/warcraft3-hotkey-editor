@@ -1883,7 +1883,6 @@ Options.prototype.reload=function(list) {
 Options.prototype.reset=function() {
 	this.values=Object.assign({}, this.defaults); // copies default values
 	this.setElements();
-
 };
 
 /*
