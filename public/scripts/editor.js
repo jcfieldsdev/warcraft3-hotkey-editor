@@ -52,7 +52,6 @@ const DEFAULT_OPTIONS={
  */
 
 window.addEventListener("load", function() {
-	const files=new Files("files");
 	const options=new Options();
 	const store=new Storage(STORAGE_NAME);
 	const overlays={
@@ -65,7 +64,7 @@ window.addEventListener("load", function() {
 	options.reset(); // sets elements to default states
 
 	// loads default commands
-	files.load(DEFAULT_HOTKEY_FILE, function(text) {
+	load(DEFAULT_HOTKEY_FILE, function(text) {
 		commands.parse(text);
 
 		let mem=store.load();
@@ -79,7 +78,9 @@ window.addEventListener("load", function() {
 	});
 
 	// populates list of sample files on load overlay
-	files.getList(overlays.load.setText.bind(overlays.load));
+	getList(function(text) {
+		overlays.load.setText(text);
+	});
 
 	// sets event listeners
 	$("#open").addEventListener("click", function() {
@@ -236,6 +237,55 @@ window.addEventListener("load", function() {
 		element.setAttribute("autocorrect", "off");
 		element.setAttribute("autocapitalize", "off");
 		element.setAttribute("spellcheck", "false");
+	}
+
+	function load(file, callback) {
+		// ignores explanatory "(Select a set...)" option
+		if (file.startsWith("(")) {
+			return;
+		}
+
+		let xhr=new XMLHttpRequest();
+
+		xhr.addEventListener("readystatechange", function() {
+			if (this.readyState==4&&this.status==200) {
+				callback(this.responseText);
+			}
+		});
+		xhr.open("GET", HOTKEY_DIR+"/"+file, true);
+		xhr.responseType="text";
+		xhr.send();
+	}
+
+	function getList(callback) {
+		let xhr=new XMLHttpRequest();
+
+		xhr.addEventListener("readystatechange", function() {
+			if (this.readyState!=4||this.status!=200) {
+				return;
+			}
+
+			let select=document.createElement("select");
+			select.id="files";
+			select.addEventListener("change", function() {
+				load(select.value, callback);
+			});
+
+			let option=document.createElement("option");
+			option.appendChild(document.createTextNode("(Select a set...)"));
+			select.appendChild(option);
+
+			for (let file of this.response) {
+				option=document.createElement("option");
+				option.appendChild(document.createTextNode(file));
+				select.appendChild(option);
+			}
+
+			$("#files").replaceWith(select);
+		});
+		xhr.open("GET", DIR_LIST, true);
+		xhr.responseType="json";
+		xhr.send();
 	}
 });
 
@@ -1730,62 +1780,6 @@ Overlay.prototype.focus=function() {
 
 Overlay.prototype.select=function() {
 	this.textarea.select();
-};
-
-/*
- * Files prototype
- */
-
-function Files(id) {
-	this.id=id;
-}
-
-Files.prototype.getList=function(callback) {
-	const self=this;
-	let xhr=new XMLHttpRequest();
-
-	xhr.addEventListener("readystatechange", function() {
-		if (this.readyState==4&&this.status==200) {
-			let select=document.createElement("select");
-			select.id=self.id;
-			select.addEventListener("change", function() {
-				self.load(select.value, callback);
-			});
-
-			let option=document.createElement("option");
-			option.appendChild(document.createTextNode("(Select a set...)"));
-			select.appendChild(option);
-
-			for (let file of this.response) {
-				option=document.createElement("option");
-				option.appendChild(document.createTextNode(file));
-				select.appendChild(option);
-			}
-
-			$("#"+self.id).replaceWith(select);
-		}
-	});
-	xhr.open("GET", DIR_LIST, true);
-	xhr.responseType="json";
-	xhr.send();
-};
-
-Files.prototype.load=function(file, callback) {
-	// ignores explanatory "(Select a set...)" option
-	if (file.startsWith("(")) {
-		return;
-	}
-
-	let xhr=new XMLHttpRequest();
-
-	xhr.addEventListener("readystatechange", function() {
-		if (this.readyState==4&&this.status==200) {
-			callback(this.responseText);
-		}
-	});
-	xhr.open("GET", HOTKEY_DIR+"/"+file, true);
-	xhr.responseType="text";
-	xhr.send();
 };
 
 /*
