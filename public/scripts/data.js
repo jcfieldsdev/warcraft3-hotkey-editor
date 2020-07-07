@@ -1,27 +1,27 @@
 "use strict";
 
-const NEUTRAL="neutral";
-const HUMAN="human";
-const ORC="orc";
-const UNDEAD="undead";
-const NIGHT_ELF="nightelf";
-const BLOOD_ELF="bloodelf";
-const DRAENEI="draenei";
-const DEMON="demon";
-const NAGA="naga";
+const NEUTRAL = "neutral";
+const HUMAN = "human";
+const ORC = "orc";
+const UNDEAD = "undead";
+const NIGHT_ELF = "nightelf";
+const BLOOD_ELF = "bloodelf";
+const DRAENEI = "draenei";
+const DEMON = "demon";
+const NAGA = "naga";
 
-const OTHER=0;
-const UNIT=1;
-const HERO=2;
-const NO_ATTACK=3;
-const SUMMON=4;
-const BUILDING=5;
-const TOWER=6;
-const ITEM=7;
+const OTHER = 0;
+const UNIT = 1;
+const HERO = 2;
+const NO_ATTACK = 3;
+const SUMMON = 4;
+const BUILDING = 5;
+const TOWER = 6;
+const ITEM = 7;
 
-const data={};
+const data = {};
 
-data.common={
+data.common = {
 	basic: [
 		["cmdmove", "Move"],
 		["cmdstop", "Stop"],
@@ -44,7 +44,7 @@ data.common={
 	]
 };
 
-data.units={
+data.units = {
 	hpal: {
 		name: "Paladin",
 		race: HUMAN,
@@ -6378,7 +6378,7 @@ data.units={
 	}
 };
 
-data.icons={
+data.icons = {
 	classic: {
 		extension: ".png",
 		commands: {
