@@ -165,21 +165,21 @@ window.addEventListener("load", function() {
 		editor.findUnitsNamed(this.value);
 	});
 	query.addEventListener("keydown", function(event) {
-		let key = event.keyCode;
+		let keyCode = event.keyCode;
 
-		if (key == 13) { // return/enter
+		if (keyCode == 13) { // return/enter
 			editor.openResult();
 		}
 
-		if (key == 27) { // Esc
+		if (keyCode == 27) { // Esc
 			editor.clearSearch(true);
 		}
 
-		if (key == 38) { // up arrow
+		if (keyCode == 38) { // up arrow
 			editor.highlightResult(true);
 		}
 
-		if (key == 40) { // down arrow
+		if (keyCode == 40) { // down arrow
 			editor.highlightResult(false);
 		}
 	});
@@ -1730,7 +1730,7 @@ Commands.prototype.get = function(id, key) {
 };
 
 Commands.prototype.set = function(id, key, value) {
-	if (this.exists(id, key)&&this.defaults[id][key] == value) {
+	if (this.exists(id, key) && this.defaults[id][key] == value) {
 		// removes user hotkey if same as default (to avoid redundant entries)
 		if (this.list[id] != undefined && this.list[id][key] != undefined) {
 			delete this.list[id][key];
@@ -1801,7 +1801,7 @@ function Options() {
 }
 
 Options.prototype.load = function(list) {
-	let options = list[OPTIONS_SECTION]||{};
+	let options = list[OPTIONS_SECTION] || {};
 
 	for (let [key, value] of Object.entries(options)) {
 		let lowercase = key.toLowerCase();
