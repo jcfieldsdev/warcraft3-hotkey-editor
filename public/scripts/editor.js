@@ -82,66 +82,6 @@ window.addEventListener("load", function() {
 		overlays.load.setText(text);
 	});
 
-	// sets event listeners
-	$("#open").addEventListener("click", function() {
-		let file = overlays.load.getText();
-
-		if (file != "") {
-			commands.parse(file);
-			options.load(commands.list);
-			editor.open();
-			overlays.load.hide();
-		}
-	});
-	$("#reset").addEventListener("click", function() {
-		commands.reset();
-		options.reset();
-		store.reset();
-		editor.open();
-
-		$("#files").selectedIndex = 0;
-		overlays.load.setText("");
-		overlays.load.hide();
-	});
-	$("#copy").addEventListener("click", function() {
-		overlays[this.value].select();
-		document.execCommand("copy");
-	});
-	$("#download").addEventListener("click", function() {
-		let contents = new Blob([overlays.save.getText()], {type: MIME_TYPE});
-
-		let a = $("#link");
-		a.download = DEFAULT_SAVE_NAME;
-		a.href = window.URL.createObjectURL(contents);
-		a.click();
-		window.URL.revokeObjectURL(contents);
-	});
-	$("#help").addEventListener("click", function() {
-		window.location = HELP_PAGE;
-	});
-	$("#load").addEventListener("click", function() {
-		overlays.load.show();
-	});
-	$("#save").addEventListener("click", function() {
-		commands.list = options.save(commands.list);
-		store.save(commands.list);
-
-		overlays.save.setText(commands.convert());
-		overlays.save.show();
-	});
-	$("#file").addEventListener("change", function(event) {
-		let file = event.target.files[0];
-
-		if (file != null) {
-			let reader = new FileReader();
-			reader.addEventListener("load", function(event) {
-				$("#files").selectedIndex = 0;
-				overlays.load.setText(event.target.result);
-			});
-			reader.readAsText(file);
-		}
-	});
-
 	window.addEventListener("beforeunload", function() {
 		// saves on close
 		commands.list = options.save(commands.list);
@@ -159,12 +99,101 @@ window.addEventListener("load", function() {
 		}
 	});
 
-	let query = $("#query");
+	document.addEventListener("click", function(event) {
+		let element = event.target;
 
-	query.addEventListener("input", function() {
-		editor.findUnitsNamed(this.value);
+		if (element.matches("#open")) {
+			let file = overlays.load.getText();
+
+			if (file != "") {
+				commands.parse(file);
+				options.load(commands.list);
+				editor.open();
+				overlays.load.hide();
+			}
+		}
+
+		if (element.matches("#reset")) {
+			commands.reset();
+			options.reset();
+			store.reset();
+			editor.open();
+
+			$("#files").selectedIndex = 0;
+			overlays.load.setText("");
+			overlays.load.hide();
+		}
+
+		if (element.matches("#copy")) {
+			overlays[element.value].select();
+			document.execCommand("copy");
+		}
+
+		if (element.matches("#download")) {
+			let file = new Blob([overlays.save.getText()], {type: MIME_TYPE});
+
+			let a = $("#link");
+			a.download = DEFAULT_SAVE_NAME;
+			a.href = window.URL.createObjectURL(file);
+			a.click();
+			window.URL.revokeObjectURL(file);
+		}
+
+		if (element.matches("#help")) {
+			window.location = HELP_PAGE;
+		}
+
+		if (element.matches("#load")) {
+			overlays.load.show();
+		}
+
+		if (element.matches("#save")) {
+			commands.list = options.save(commands.list);
+			store.save(commands.list);
+
+			overlays.save.setText(commands.convert());
+			overlays.save.show();
+		}
+
+		if (element.matches(".filter")) {
+			editor.filter(element.value);
+		}
+
+		if (element.matches(".close")) {
+			overlays[element.value].hide();
+		}
+
+		if (element.matches(".option")) {
+			options.reload(commands.list);
+		}
+
+		if (element.matches(".icons")) {
+			editor.clearButtons();
+			editor.clearSearch();
+			editor.unitEditor();
+		}
 	});
-	query.addEventListener("keydown", function(event) {
+	document.addEventListener("input", function(event) {
+		let element = event.target;
+
+		if (element.matches("#query")) {
+			editor.findUnitsNamed(element.value);
+		}
+	});
+
+	$("#file").addEventListener("change", function(event) {
+		let file = event.target.files[0];
+
+		if (file != null) {
+			let reader = new FileReader();
+			reader.addEventListener("load", function(event) {
+				$("#files").selectedIndex = 0;
+				overlays.load.setText(event.target.result);
+			});
+			reader.readAsText(file);
+		}
+	});
+	$("#query").addEventListener("keydown", function(event) {
 		let keyCode = event.keyCode;
 
 		if (keyCode == 13) { // return/enter
@@ -183,32 +212,6 @@ window.addEventListener("load", function() {
 			editor.highlightResult(false);
 		}
 	});
-
-	for (let element of $$(".filter")) {
-		element.addEventListener("click", function() {
-			editor.filter(this.value);
-		});
-	}
-
-	for (let element of $$(".close")) {
-		element.addEventListener("click", function() {
-			overlays[this.value].hide();
-		});
-	}
-
-	for (let element of $$(".option")) {
-		element.addEventListener("click", function() {
-			options.reload(commands.list);
-		});
-	}
-
-	for (let element of $$(".icons")) {
-		element.addEventListener("click", function() {
-			editor.clearButtons();
-			editor.clearSearch();
-			editor.unitEditor();
-		});
-	}
 
 	for (let element of $$(".tip")) {
 		element.addEventListener("focus", function() {
