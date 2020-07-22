@@ -92,7 +92,9 @@ window.addEventListener("load", function() {
 		editor.load();
 	});
 	window.addEventListener("keyup", function(event) {
-		if (event.keyCode == 27) { // Esc
+		let keyCode = event.keyCode;
+
+		if (keyCode == 27) { // Esc
 			for (let overlay of Object.values(overlays)) {
 				overlay.hide();
 			}
