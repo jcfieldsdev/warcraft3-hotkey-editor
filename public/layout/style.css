@@ -198,7 +198,7 @@ code, kbd, textarea {
 
 div#author {
 	flex-grow: 1;
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 	text-align: center;
 }
 
@@ -352,7 +352,7 @@ div#editor, div.overlay, select {
 }
 
 div#editor button {
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 	padding: 0.25em 1em;
 	width: auto;
 }
@@ -416,7 +416,7 @@ div.conflict img {
 }
 
 div.control, figcaption, p.note {
-	font-size: 0.8rem;
+	font-size: 0.75rem;
 }
 
 div.drag img {
