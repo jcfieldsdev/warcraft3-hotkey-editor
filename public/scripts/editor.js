@@ -157,6 +157,29 @@ window.addEventListener("load", function() {
 			window.URL.revokeObjectURL(file);
 		}
 
+		if (element.matches("#show")) {
+			editor.findUnitsWith(editor.command);
+		}
+
+		if (element.matches("#edit")) {
+			editor.commandEditor();
+		}
+
+		if (element.matches("#defaults")) {
+			editor.resetDefaults();
+		}
+
+		if (element.matches("h2#unit img")) {
+			editor.clicks++;
+
+			if (editor.clicks >= ANNOYED_CLICKS) {
+				editor.clicks = 0;
+
+				let audio = new Audio(ICONS_DIR + "/" + ANNOYED_SOUND);
+				audio.play();
+			}
+		}
+
 		if (element.matches(".filter")) {
 			editor.filter(element.value);
 		}
@@ -173,6 +196,13 @@ window.addEventListener("load", function() {
 			editor.clearButtons();
 			editor.clearSearch();
 			editor.unitEditor();
+		}
+
+		if (element.matches(".esc")) {
+			editor.setHotkey(element.value, "512");
+			editor.formatHotkey(element.value, "512");
+			editor.setVisibleHotkeys();
+			editor.checkAllConflicts();
 		}
 	});
 	document.addEventListener("input", function(event) {
@@ -325,7 +355,7 @@ function Editor(commands, options) {
 	this.active = STANDARD; // active command card
 	this.state = false; // button state (for two-state commands)
 
-	this.matches = null;
+	this.matches = [];
 	this.selected = -1; // selected search result
 }
 
@@ -392,6 +422,7 @@ Editor.prototype.unitEditor = function() {
 	const self = this;
 
 	h2.insertBefore(createButton(this.unit, unit.name), h2.firstChild);
+	this.clicks = 0;
 
 	let h3 = $("#command");
 	h3.textContent = "";
@@ -540,19 +571,6 @@ Editor.prototype.unitEditor = function() {
 
 				event.dataTransfer.setData("text/plain", event.target.id);
 				$("#card" + n).classList.add("grid");
-			});
-		} else {
-			self.clicks = 0;
-
-			img.addEventListener("click", function() {
-				self.clicks++;
-
-				if (self.clicks >= ANNOYED_CLICKS) {
-					self.clicks = 0;
-
-					let audio = new Audio(ICONS_DIR + "/" + ANNOYED_SOUND);
-					audio.play();
-				}
 			});
 		}
 
@@ -917,28 +935,12 @@ Editor.prototype.commandEditor = function() {
 	h3.textContent = this.name + " (" + this.command + ")";
 	h3.classList.remove("hidden");
 
-	let p = document.createElement("p");
-	p.id = "default";
+	// omits basic commands
+	$("#show").classList.toggle("hidden", this.command.startsWith("cmd"));
 
-	if (!this.command.startsWith("cmd")) { // omits basic commands
-		let button = document.createElement("button");
-		button.setAttribute("type", "button");
-		button.addEventListener("click", function() {
-			this.findUnitsWith(this.command);
-		}.bind(this));
-		button.appendChild(document.createTextNode("Show Units with Command"));
-		p.appendChild(button);
-	}
+	$("#edit").classList.add("hidden");
+	$("#defaults").classList.remove("hidden");
 
-	let button = document.createElement("button");
-	button.setAttribute("type", "button");
-	button.addEventListener("click", function() {
-		this.resetDefaults();
-	}.bind(this));
-	button.appendChild(document.createTextNode("Reset to Default Values"));
-	p.appendChild(button);
-
-	$("#default").replaceWith(p);
 	this.clear($("#other"));
 };
 
@@ -1153,13 +1155,9 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 	// appends "Set to Esc" button for cancel buttons
 	if (this.command.startsWith(CANCEL)) {
 		let button = document.createElement("button");
+		button.className = "esc";
+		button.value = type;
 		button.setAttribute("type", "button");
-		button.addEventListener("click", function() {
-			this.setHotkey(type, "512");
-			this.formatHotkey(type, "512");
-			this.setVisibleHotkeys();
-			this.checkAllConflicts();
-		}.bind(this));
 		button.appendChild(document.createTextNode("Set to Esc"));
 		p.appendChild(button);
 	}
@@ -1462,18 +1460,9 @@ Editor.prototype.findUnitsWith = function(command) {
 	this.clearFields();
 	this.formatResults("other", matches);
 
-	let p = document.createElement("p");
-	p.id = "default";
-
-	let button = document.createElement("button");
-	button.setAttribute("type", "button");
-	button.addEventListener("click", function() {
-		this.commandEditor();
-	}.bind(this));
-	button.appendChild(document.createTextNode("Edit Command"));
-	p.appendChild(button);
-
-	$("#default").replaceWith(p);
+	$("#show").classList.add("hidden");
+	$("#edit").classList.remove("hidden");
+	$("#defaults").classList.add("hidden");
 };
 
 Editor.prototype.formatResults = function(id, matches) {
@@ -1527,7 +1516,7 @@ Editor.prototype.highlightResult = function(dir) {
 	} else { // down arrow
 		if (this.selected >= results.length - 1) {
 			// loops back around to top
-			this.selected =- 1;
+			this.selected = -1;
 		} else {
 			this.selected++;
 		}
@@ -1617,7 +1606,9 @@ Editor.prototype.clearFields = function() {
 		this.clear(element, !element.classList.contains("tip"));
 	}
 
-	this.clear($("#default"));
+	$("#show").classList.add("hidden");
+	$("#edit").classList.add("hidden");
+	$("#defaults").classList.add("hidden");
 };
 
 Editor.prototype.clearSearch = function(clearQuery=false) {
@@ -1625,7 +1616,7 @@ Editor.prototype.clearSearch = function(clearQuery=false) {
 		$("#query").value = "";
 	}
 
-	this.matches = null;
+	this.matches = [];
 	this.selected = -1;
 
 	this.clear($("#results"));
