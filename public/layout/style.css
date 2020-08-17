@@ -370,7 +370,7 @@ div#editor img:active {
 }
 
 div#fields {
-	margin-bottom: 3em;
+	flex-grow: 1;
 	overflow: auto;
 }
 
@@ -597,12 +597,6 @@ nav {
 	padding: 5em 0 0 5em;
 	position: fixed;
 	top: 0;
-}
-
-p#control {
-	position: absolute;
-	bottom: 1em;
-	margin: 0;
 }
 
 p.hotkey {
