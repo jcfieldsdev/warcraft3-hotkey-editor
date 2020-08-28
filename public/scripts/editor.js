@@ -17,7 +17,7 @@ const DEFAULT_HOTKEY_FILE = "default.txt";
 const DEFAULT_SAVE_NAME = "CustomKeys.txt";
 const DEFAULT_ICON = "btnsheep";
 const DEFAULT_ICON_SET = "classic";
-const ICONS_DIR = "icons";
+const ICON_DIR = "icons";
 const HOTKEY_DIR = "hotkeys";
 const DIR_LIST = "hotkeys/index.json";
 const HELP_PAGE = "help.html";
@@ -175,7 +175,7 @@ window.addEventListener("load", function() {
 			if (editor.clicks >= ANNOYED_CLICKS) {
 				editor.clicks = 0;
 
-				let audio = new Audio(ICONS_DIR + "/" + ANNOYED_SOUND);
+				let audio = new Audio(ICON_DIR + "/" + ANNOYED_SOUND);
 				audio.play();
 			}
 		}
@@ -635,7 +635,7 @@ Editor.prototype.getIcon = function(id, n=STANDARD) {
 		}
 	}
 
-	return ICONS_DIR + "/" + dir + "/" + icon + data.icons[dir].extension;
+	return ICON_DIR + "/" + dir + "/" + icon + data.icons[dir].extension;
 };
 
 Editor.prototype.getPosition = function(n, y, x) {
