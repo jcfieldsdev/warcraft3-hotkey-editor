@@ -238,7 +238,7 @@ div#editor.bloodelf button {
 	border-color: var(--bloodelf-button-border);
 }
 
-div#editor.bloodelf div.grid>div, div#editor.bloodelf p.tip:focus {
+div#editor.bloodelf div.grid>div, div#editor.bloodelf p.tip:focus, div#editor.bloodelf p.tip:hover {
 	outline-color: var(--bloodelf-border);
 }
 
@@ -253,7 +253,7 @@ div#editor.demon button {
 	border-color: var(--demon-button-border);
 }
 
-div#editor.demon div.grid>div, div#editor.demon p.tip:focus {
+div#editor.demon div.grid>div, div#editor.demon p.tip:focus, div#editor.demon p.tip:hover {
 	outline-color: var(--demon-border);
 }
 
@@ -268,7 +268,7 @@ div#editor.draenei button {
 	border-color: var(--draenei-button-border);
 }
 
-div#editor.draenei div.grid>div, div#editor.draenei p.tip:focus {
+div#editor.draenei div.grid>div, div#editor.draenei p.tip:focus, div#editor.draenei p.tip:hover {
 	outline-color: var(--draenei-border);
 }
 
@@ -278,7 +278,7 @@ div#editor.human {
 	color: inherit;
 }
 
-div#editor.human div.grid>div, div#editor.human p.tip:focus {
+div#editor.human div.grid>div, div#editor.human p.tip:focus, div#editor.human p.tip:hover {
 	outline-color: var(--human-border);
 }
 
@@ -298,7 +298,7 @@ div#editor.naga button {
 	border-color: var(--naga-button-border);
 }
 
-div#editor.naga div.grid>div, div#editor.naga p.tip:focus {
+div#editor.naga div.grid>div, div#editor.naga p.tip:focus, div#editor.naga p.tip:hover {
 	outline-color: var(--naga-border);
 }
 
@@ -313,7 +313,7 @@ div#editor.nightelf button {
 	border-color: var(--nightelf-button-border);
 }
 
-div#editor.nightelf div.grid>div, div#editor.nightelf p.tip:focus {
+div#editor.nightelf div.grid>div, div#editor.nightelf p.tip:focus, div#editor.nightelf p.tip:hover {
 	outline-color: var(--nightelf-border);
 }
 
@@ -328,7 +328,7 @@ div#editor.orc button {
 	border-color: var(--orc-button-border);
 }
 
-div#editor.orc div.grid>div, div#editor.orc p.tip:focus {
+div#editor.orc div.grid>div, div#editor.orc p.tip:focus, div#editor.orc p.tip:hover {
 	outline-color: var(--orc-border);
 }
 
@@ -343,7 +343,7 @@ div#editor.undead button {
 	border-color: var(--undead-button-border);
 }
 
-div#editor.undead div.grid>div, div#editor.undead p.tip:focus {
+div#editor.undead div.grid>div, div#editor.undead p.tip:focus, div#editor.undead p.tip:hover {
 	outline-color: var(--undead-border);
 }
 
@@ -423,7 +423,11 @@ div.drag img {
 	box-shadow: 0 0 4px 4px #fff;
 }
 
-div.grid>div, p.tip:focus  {
+div.grid>div, p.tip:hover {
+	outline: 1px dotted #606060;
+}
+
+div.grid>div, p.tip:focus {
 	outline: 1px solid #606060;
 }
 
