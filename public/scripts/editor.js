@@ -169,7 +169,7 @@ window.addEventListener("load", function() {
 			editor.resetDefaults();
 		}
 
-		if (element.matches("h2#unit img")) {
+		if (element.matches("#unit img")) {
 			editor.clicks++;
 
 			if (editor.clicks >= ANNOYED_CLICKS) {
@@ -178,6 +178,14 @@ window.addEventListener("load", function() {
 				let audio = new Audio(ICON_DIR + "/" + ANNOYED_SOUND);
 				audio.play();
 			}
+		}
+
+		if (element.matches(".hotkey input")) {
+			event.preventDefault(); // prevents click from activating label
+		}
+
+		if (element.matches(".clear")) {
+			editor.clearSearch(true);
 		}
 
 		if (element.matches(".filter")) {
@@ -212,6 +220,39 @@ window.addEventListener("load", function() {
 			editor.findUnitsNamed(element.value);
 		}
 	});
+	document.addEventListener("keydown", function(event) {
+		let element = event.target;
+
+		if (element.matches(".hotkey input")) {
+			// ignores input if modifier key held
+			if (!event.ctrlKey && !event.altKey && !event.metaKey) {
+				event.preventDefault();
+
+				let type = element.closest(".hotkey").id;
+				editor.editHotkey(element, type, event);
+			}
+		}
+
+		if (element.matches("#query")) {
+			let keyCode = event.keyCode;
+
+			if (keyCode == 13) { // return/enter
+				editor.openResult();
+			}
+
+			if (keyCode == 27) { // Esc
+				editor.clearSearch(true);
+			}
+
+			if (keyCode == 38) { // up arrow
+				editor.highlightResult(true);
+			}
+
+			if (keyCode == 40) { // down arrow
+				editor.highlightResult(false);
+			}
+		}
+	});
 
 	$("#file").addEventListener("change", function(event) {
 		let file = event.target.files[0];
@@ -223,25 +264,6 @@ window.addEventListener("load", function() {
 				overlays.load.setText(event.target.result);
 			});
 			reader.readAsText(file);
-		}
-	});
-	$("#query").addEventListener("keydown", function(event) {
-		let keyCode = event.keyCode;
-
-		if (keyCode == 13) { // return/enter
-			editor.openResult();
-		}
-
-		if (keyCode == 27) { // Esc
-			editor.clearSearch(true);
-		}
-
-		if (keyCode == 38) { // up arrow
-			editor.highlightResult(true);
-		}
-
-		if (keyCode == 40) { // down arrow
-			editor.highlightResult(false);
 		}
 	});
 
@@ -1136,17 +1158,6 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 		let input = document.createElement("input");
 		input.setAttribute("type", "text");
 		input.setAttribute("value", key);
-		input.addEventListener("click", function(event) {
-			event.preventDefault(); // prevents click from activating label
-		});
-		input.addEventListener("keydown", function(event) {
-			// ignores input if modifier key held
-			if (!event.ctrlKey && !event.altKey && !event.metaKey) {
-				event.preventDefault();
-				this.editHotkey(input, type, event);
-			}
-		}.bind(this));
-
 		label.appendChild(input);
 	}
 
@@ -1486,9 +1497,7 @@ Editor.prototype.formatResults = function(id, matches) {
 		// special case for currently selected unit (which will not fire
 		// hashchange event)
 		if (this.unit == match) {
-			a.addEventListener("click", function() {
-				this.clearSearch(true);
-			}.bind(this));
+			a.classList.add("clear");
 		}
 
 		if (unit.suffix != undefined) {
