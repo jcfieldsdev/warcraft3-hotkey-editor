@@ -536,7 +536,7 @@ Editor.prototype.unitEditor = function() {
 	}
 
 	function placeButton(id, name, n, buttonpos, state=true) {
-		let pos = buttonpos.split(DELIMITER);
+		let pos = buttonpos.split(DELIMITER).map(Number);
 		let [y, x] = self.getPosition(n, pos[1], pos[0]);
 		let conflict = pos[0] != x || pos[1] != y;
 
@@ -662,10 +662,6 @@ Editor.prototype.getIcon = function(id, n=STANDARD) {
 
 Editor.prototype.getPosition = function(n, y, x) {
 	let dir = true;
-
-	n = Number.parseInt(n);
-	x = Number.parseInt(x);
-	y = Number.parseInt(y);
 
 	do {
 		if (this.card[n][y][x] == "") {
