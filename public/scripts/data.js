@@ -2208,6 +2208,7 @@ data.units = {
 		race: UNDEAD,
 		type: UNIT,
 		commands: [
+			["aatp", "Prioritize"],
 			["astn", "Stone Form"]
 		]
 	},
@@ -6409,6 +6410,7 @@ data.icons = {
 			aap1: "pasbtnplaguecloud",
 			aap3: "pasbtnplaguecloud",
 			aast: "btnancestralspirit",
+			aatp: "btnairattackon",
 			aave: "btndestroyer",
 			ablo: "btnbloodlustoff",
 			abof: "pasbtnfirerocks",

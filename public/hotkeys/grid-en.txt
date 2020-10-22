@@ -1301,6 +1301,11 @@ Tip=Burrow (|cffffcc00V|r)
 Unhotkey=V
 Untip=Unburrow (|cffffcc00V|r)
 
+[aatp]
+Hotkey=S
+Unhotkey=S
+Tip=Prioritize (|cffffcc00S|r)
+
 [astn]
 Hotkey=Z
 Tip=Stone Form (|cffffcc00Z|r)

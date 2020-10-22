@@ -1311,6 +1311,10 @@ Tip=Burrow (|cffffcc00V|r)
 Unhotkey=V
 Untip=Unburrow (|cffffcc00V|r)
 
+[aatp]
+Buttonpos=3,0
+Unbuttonpos=3,0
+
 [astn]
 Hotkey=Z
 Tip=Stone Form (|cffffcc00Z|r)

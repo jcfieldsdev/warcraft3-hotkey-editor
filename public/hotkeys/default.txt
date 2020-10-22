@@ -1540,6 +1540,14 @@ Tip=Train G|cffffcc00a|rrgoyle
 Hotkey=A
 Buttonpos=2,0
 
+[aatp]
+Tip=P|cffffcc00r|rioritize
+Untip=|cffc3dbffClick to Deactivate Prioritize|r
+Hotkey=R
+Unhotkey=R
+Buttonpos=1,1
+Unbuttonpos=1,1
+
 [astn]
 Tip=Stone |cffffcc00F|rorm
 Untip=Gargoyle |cffffcc00F|rorm
