@@ -607,7 +607,7 @@ Editor.prototype.getCommands = function(unit) {
 	if (unit.type == UNIT || unit.type == SUMMON) {
 		buttons = buttons.concat(data.common.basic);
 	} else if (unit.type == HERO || unit.type == ITEM) {
-		buttons = buttons.concat(data.common.basic, data.common.hero);
+		buttons = buttons.concat(data.common.hero);
 	} else if (unit.type == NO_ATTACK) {
 		buttons = buttons.concat(data.common.noAttack);
 	} else if (unit.type == TOWER) {
@@ -1671,7 +1671,7 @@ Commands.prototype.parse = function(text) {
 				if (list[id] == undefined) {
 					list[id] = block;
 				} else {
-					console.error(`Duplicate: ${id}`);
+					console.warn(`Duplicate: ${id}`);
 				}
 
 				block = {};
