@@ -94,10 +94,6 @@
 	--naga-heading: #40c0c0;
 }
 
-*.hidden, a#link, div.card.hidden, h1, section h2 {
-	display: none;
-}
-
 a {
 	background: none;
 	color: var(--link);
@@ -107,6 +103,10 @@ a {
 
 a, button, div#editor img {
 	cursor: pointer;
+}
+
+a#link, div.card.hidden, h1, section h2 {
+	display: none;
 }
 
 a.conflict, span.conflict {

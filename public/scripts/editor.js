@@ -107,7 +107,6 @@ window.addEventListener("load", function() {
 	});
 
 	window.addEventListener("beforeunload", function() {
-		// saves on close
 		commands.list = options.save(commands.list);
 		store.save(commands.list);
 	});
@@ -472,13 +471,13 @@ Editor.prototype.unitEditor = function() {
 
 	let h3 = $("#command");
 	h3.textContent = "";
-	h3.classList.add("hidden");
+	h3.hidden = true;
 
 	createCommandCard(STANDARD, unit);
 
 	// shows research card for heroes
 	let research = $("#card" + RESEARCH);
-	research.classList.toggle("hidden", unit.type != HERO);
+	research.hidden = unit.type != HERO;
 
 	if (unit.type == HERO) { // adds cancel button to hero select skills card
 		let buttonpos = this.commands.get(CANCEL, "Buttonpos");
@@ -490,7 +489,7 @@ Editor.prototype.unitEditor = function() {
 
 	// shows build card for workers
 	let build = $("#card" + BUILD);
-	build.classList.toggle("hidden", unit.build == undefined);
+	build.hidden = unit.build == undefined;
 
 	if (unit.build != undefined && data.units[unit.build] != undefined) {
 		createCommandCard(BUILD, data.units[unit.build]);
@@ -975,13 +974,13 @@ Editor.prototype.commandEditor = function() {
 
 	let h3 = $("#command");
 	h3.textContent = this.name + " (" + this.command + ")";
-	h3.classList.remove("hidden");
+	h3.hidden = false;
 
 	// omits basic commands
-	$("#show").classList.toggle("hidden", this.command.startsWith("cmd"));
+	$("#show").hidden = this.command.startsWith("cmd");
 
-	$("#edit").classList.add("hidden");
-	$("#defaults").classList.remove("hidden");
+	$("#edit").hidden = true;
+	$("#defaults").hidden = false;
 
 	this.clear($("#other"));
 };
@@ -990,7 +989,7 @@ Editor.prototype.formatTip = function(type, tip) {
 	let element = $("#" + type);
 
 	if (tip == "") { // hides empty element so it cannot be edited
-		element.classList.add("hidden");
+		element.hidden = true;
 		return;
 	}
 
@@ -1012,7 +1011,7 @@ Editor.prototype.formatTip = function(type, tip) {
 
 	tip = tips.join("<br>");
 
-	element.classList.remove("hidden");
+	element.hidden = false;
 	element.innerHTML = tip;
 };
 
@@ -1162,7 +1161,7 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 
 	if (hotkey == "") { // hides field if empty
 		element.replaceWith(p);
-		element.classList.add("hidden");
+		element.hidden = true;
 		return;
 	}
 
@@ -1193,7 +1192,7 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 		p.appendChild(button);
 	}
 
-	element.classList.remove("hidden");
+	element.hidden = false;
 	element.replaceWith(p);
 };
 
@@ -1397,7 +1396,7 @@ Editor.prototype.filter = function(race) {
 
 	// hides unit lists for races other than selected
 	for (let element of $$("section")) {
-		element.classList.toggle("hidden", element.id != "units_" + race);
+		element.hidden = element.id != "units_" + race;
 	}
 };
 
@@ -1486,14 +1485,14 @@ Editor.prototype.findUnitsWith = function(command) {
 		}
 	}
 
-	$("#command").classList.remove("hidden");
+	$("#command").hidden = false;
 
 	this.clearFields();
 	this.formatResults("other", matches);
 
-	$("#show").classList.add("hidden");
-	$("#edit").classList.remove("hidden");
-	$("#defaults").classList.add("hidden");
+	$("#show").hidden = true;
+	$("#edit").hidden = false;
+	$("#defaults").hidden = true;
 };
 
 Editor.prototype.formatResults = function(id, matches) {
@@ -1628,16 +1627,16 @@ Editor.prototype.clearButtons = function() {
 Editor.prototype.clearFields = function() {
 	for (let element of $$("#fields p, #fields ul")) {
 		// hides element so it does not remain editable
-		element.classList.add("hidden");
+		element.hidden = true;
 
 		// removes event listeners for hotkey inputs (which are removed and
 		// recreated) but not tips (which are persistent)
 		this.clear(element, !element.classList.contains("tip"));
 	}
 
-	$("#show").classList.add("hidden");
-	$("#edit").classList.add("hidden");
-	$("#defaults").classList.add("hidden");
+	$("#show").hidden = true;
+	$("#edit").hidden = true;
+	$("#defaults").hidden = true;
 };
 
 Editor.prototype.clearSearch = function(clearQuery=false) {
@@ -1649,7 +1648,7 @@ Editor.prototype.clearSearch = function(clearQuery=false) {
 	this.selected = -1;
 
 	this.clear($("#results"));
-	$("#results").classList.add("hidden");
+	$("#results").hidden = true;
 
 	for (let element of $$(".filter")) {
 		element.classList.remove("exclude", "highlight");
