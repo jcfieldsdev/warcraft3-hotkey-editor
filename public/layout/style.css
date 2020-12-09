@@ -105,7 +105,7 @@ a, button, div#editor img {
 	cursor: pointer;
 }
 
-a#link, div.card.hidden, h1, section h2 {
+a#link, div.card[hidden], h1, section h2 {
 	display: none;
 }
 
