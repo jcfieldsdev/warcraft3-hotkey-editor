@@ -268,12 +268,22 @@ window.addEventListener("load", function() {
 			}
 
 			if (keyCode == 38) { // up arrow
-				editor.highlightResult(true);
+				editor.selectResult(true);
 			}
 
 			if (keyCode == 40) { // down arrow
-				editor.highlightResult(false);
+				editor.selectResult(false);
 			}
+		}
+	});
+	document.addEventListener("mouseover", function(event) {
+		let element = event.target;
+
+		if (element.matches("#results li")) {
+			editor.selected = $$("#results li").findIndex(function(item) {
+				return item == element;
+			});
+			editor.highlightResult();
 		}
 	});
 
@@ -1531,7 +1541,7 @@ Editor.prototype.formatResults = function(id, matches) {
 	$("#" + id).replaceWith(ul);
 };
 
-Editor.prototype.highlightResult = function(dir) {
+Editor.prototype.selectResult = function(dir) {
 	let results = $$("#results li");
 
 	if (dir) { // up arrow
@@ -1550,7 +1560,11 @@ Editor.prototype.highlightResult = function(dir) {
 		}
 	}
 
-	for (let [i, result] of results.entries()) {
+	this.highlightResult();
+};
+
+Editor.prototype.highlightResult = function() {
+	for (let [i, result] of $$("#results li").entries()) {
 		if (this.selected == i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
