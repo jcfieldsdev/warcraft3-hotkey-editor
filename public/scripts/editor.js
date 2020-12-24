@@ -474,16 +474,15 @@ Editor.prototype.unitEditor = function() {
 		h2.textContent += " (" + unit.suffix + ")";
 	}
 
-	const self = this;
-
-	h2.insertBefore(createButton(this.unit, unit.name), h2.firstChild);
+	const button = createButton.call(this, this.unit, unit.name);
+	h2.insertBefore(button, h2.firstChild);
 	this.clicks = 0;
 
 	let h3 = $("#command");
 	h3.textContent = "";
 	h3.hidden = true;
 
-	createCommandCard(STANDARD, unit);
+	createCommandCard.call(this, STANDARD, unit);
 
 	// shows research card for heroes
 	let research = $("#card" + RESEARCH);
@@ -493,7 +492,7 @@ Editor.prototype.unitEditor = function() {
 		let buttonpos = this.commands.get(CANCEL, "Buttonpos");
 
 		if (buttonpos != "") {
-			placeButton(CANCEL, "Cancel", RESEARCH, buttonpos, true);
+			placeButton.call(this, CANCEL, "Cancel", RESEARCH, buttonpos, true);
 		}
 	}
 
@@ -502,7 +501,7 @@ Editor.prototype.unitEditor = function() {
 	build.hidden = unit.build == undefined;
 
 	if (unit.build != undefined && data.units[unit.build] != undefined) {
-		createCommandCard(BUILD, data.units[unit.build]);
+		createCommandCard.call(this, BUILD, data.units[unit.build]);
 	}
 
 	for (let element of $$(".card div")) {
@@ -532,45 +531,47 @@ Editor.prototype.unitEditor = function() {
 	this.checkAllConflicts();
 
 	function createCommandCard(n, unit) {
-		for (let [id, name] of self.getCommands(unit)) {
+		for (let [id, name] of this.getCommands(unit)) {
 			// special exception for build buttons, whose hotkeys and tooltips
 			// are under cmdbuild* but whose buttonpos are under a?bu
-			let pos = self.convertBuildCommand(id);
+			let pos = this.convertBuildCommand(id);
 
-			if (!self.commands.exists(pos)) {
+			if (!this.commands.exists(pos)) {
 				console.error(`Undefined: ${pos} (command)`);
 				continue;
 			}
 
-			let buttonpos = self.commands.get(pos, "Buttonpos");
-			let unbuttonpos = self.commands.get(pos, "Unbuttonpos");
-			let researchbuttonpos = self.commands.get(pos, "Researchbuttonpos");
+			let buttonpos = this.commands.get(pos, "Buttonpos");
+			let unbuttonpos = this.commands.get(pos, "Unbuttonpos");
+			let researchbuttonpos = this.commands.get(pos, "Researchbuttonpos");
 
 			if (buttonpos != "") {
-				placeButton(id, name, n, buttonpos, true);
+				placeButton.call(this, id, name, n, buttonpos, true);
 
 				// places separate button for unbutton if in different position
 				if (unbuttonpos != "" && buttonpos != unbuttonpos) {
-					placeButton(id, name, STANDARD, unbuttonpos, false);
+					const args = [id, name, STANDARD, unbuttonpos, false];
+					placeButton.apply(this, args);
 				}
 
 				if (researchbuttonpos != "") { // for hero abilities
-					placeButton(id, name, RESEARCH, researchbuttonpos, true);
+					const args = [id, name, RESEARCH, researchbuttonpos, true];
+					placeButton.apply(this, args);
 				}
 			} else {
 				console.error(`Undefined: ${pos} (buttonpos)`);
 			}
 
 			// re-selects command if selected on previously viewed unit
-			if (self.command == id) {
-				self.setCommand(id, name);
+			if (this.command == id) {
+				this.setCommand(id, name);
 			}
 		}
 	}
 
 	function placeButton(id, name, n, buttonpos, state=true) {
 		let pos = buttonpos.split(DELIMITER).map(Number);
-		let [y, x] = self.getPosition(n, pos[1], pos[0]);
+		let [y, x] = this.getPosition(n, pos[1], pos[0]);
 		let conflict = pos[0] != x || pos[1] != y;
 
 		if (x < 0 || y < 0 || x > COLS || y > ROWS) {
@@ -581,9 +582,9 @@ Editor.prototype.unitEditor = function() {
 			id += "_"; // unbutton denoted by underscore at end
 		}
 
-		self.card[n][y][x] = id;
+		this.card[n][y][x] = id;
 
-		let element = createButton(id, name, n, state);
+		let element = createButton.call(this, id, name, n, state);
 		element.id = "n" + n + "y" + y + "x" + x;
 		element.classList.toggle("conflict", conflict);
 
@@ -594,19 +595,19 @@ Editor.prototype.unitEditor = function() {
 	function createButton(id, name, n, state=true) {
 		let div = document.createElement("div");
 		let img = document.createElement("img");
-		img.setAttribute("src", self.getIcon(id, n));
+		img.setAttribute("src", this.getIcon(id, n));
 		img.setAttribute("alt", "[" + name + "]");
 		img.setAttribute("title", name);
 		img.addEventListener("click", function() {
-			self.active = n;
-			self.state = state;
+			this.active = n;
+			this.state = state;
 
 			if (state) {
-				self.setCommand(id, name);
+				this.setCommand(id, name);
 			} else {
-				self.setCommand(id.slice(0, -1), name);
+				this.setCommand(id.slice(0, -1), name);
 			}
-		});
+		}.bind(this));
 		div.appendChild(img);
 
 		if (n != undefined) {
@@ -615,18 +616,18 @@ Editor.prototype.unitEditor = function() {
 
 		// distinguishes between buttons (in command card)
 		// and unit icons (in heading)
-		if (self.unit != id) {
+		if (this.unit != id) {
 			let span = document.createElement("span");
 			span.id = "span" + n + "_" + id;
 			div.appendChild(span);
 
 			img.setAttribute("draggable", "true");
 			img.addEventListener("dragstart", function(event) {
-				self.active = n;
+				this.active = n;
 
 				event.dataTransfer.setData("text/plain", event.target.id);
 				$("#card" + n).classList.add("grid");
-			});
+			}.bind(this));
 		}
 
 		return div;
