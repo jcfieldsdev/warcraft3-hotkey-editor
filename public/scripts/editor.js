@@ -1937,11 +1937,7 @@ function Storage(name) {
 
 Storage.prototype.load = function() {
 	try {
-		let contents = localStorage.getItem(this.name);
-
-		if (contents != null) {
-			return JSON.parse(contents);
-		}
+		return JSON.parse(localStorage.getItem(this.name));
 	} catch (err) {
 		console.error(err);
 		this.reset();
