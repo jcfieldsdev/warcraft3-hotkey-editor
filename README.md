@@ -85,7 +85,7 @@ Includes [QWEASZ hotkey set](https://www.reddit.com/r/WC3/comments/69p3nv/improv
 
 ## Authors
 
-- J.C. Fields <jcfields+gitlab@gmail.com>
+- J.C. Fields <jcfields@jcfields.dev>
 
 ## License
 

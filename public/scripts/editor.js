@@ -1,7 +1,7 @@
 /******************************************************************************
  * Warcraft III Hotkey Editor                                                 *
  *                                                                            *
- * Copyright (C) 2018 J.C. Fields (jcfields@gmail.com).                       *
+ * Copyright (C) 2018 J.C. Fields (jcfields@jcfields.dev).                    *
  *                                                                            *
  * Permission is hereby granted, free of charge, to any person obtaining a    *
  * copy of this software and associated documentation files (the "Software"), *
