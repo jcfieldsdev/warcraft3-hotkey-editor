@@ -675,7 +675,7 @@ ul {
 
 ul#filters button {
 	background-color: transparent;
-	background-position: 0 100%;
+	background-position: 0 5px;
 	background-repeat: no-repeat;
 	background-size: 125px 125px;
 	border: 2px solid #000;
@@ -683,8 +683,8 @@ ul#filters button {
 	font-size: 1rem;
 	font-variant: small-caps;
 	height: 0;
-	margin: 0;
-	padding: 0 0 125px;
+	margin: 0.25em 0;
+	padding: 0 0 120px;
 	text-align: center;
 	vertical-align: top;
 	width: 125px;
@@ -819,7 +819,7 @@ ul.undead {
 
 	ul#filters button {
 		background-size: 100px 100px;
-		padding-bottom: 100px;
+		padding-bottom: 95px;
 		width: 100px;
 	}
 
@@ -883,7 +883,7 @@ ul.undead {
 
 	ul#filters button {
 		background-size: 75px 75px;
-		padding-bottom: 75px;
+		padding-bottom: 70px;
 		width: 75px;
 	}
 

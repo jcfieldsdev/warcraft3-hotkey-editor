@@ -296,7 +296,6 @@ data.units = {
 			["cmdrally", "Set Rally Point"],
 			["rhde", "Research Defend"],
 			["rhri", "Research Long Rifles"],
-			["rhsb", "Research Sundering Blades"],
 			["rhan", "Research Animal War Training"],
 			["cmdcancelbuild", "Cancel"]
 		]
