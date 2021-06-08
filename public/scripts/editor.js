@@ -966,21 +966,21 @@ Editor.prototype.commandEditor = function() {
 
 	if (hotkey != "" || researchhotkey != "") {
 		// automatically selects first hotkey field
-		let id = "Hotkey";
+		let type = "Hotkey";
 
 		if (this.active == STANDARD) {
 			if (hotkey == "") { // passive abilities
-				id = "Researchhotkey";
+				type = "Researchhotkey";
 			} else if (!this.state && unhotkey != "") { // off state
-				id = "Unhotkey";
+				type = "Unhotkey";
 			}
 		} else {
 			if (researchhotkey != "") { // research card except cancel button
-				id = "Researchhotkey";
+				type = "Researchhotkey";
 			}
 		}
 
-		$(`#${id} input`).focus();
+		$(`#${type} input`).focus();
 	}
 
 	let h3 = $("#command");
@@ -1413,30 +1413,44 @@ Editor.prototype.filter = function(race) {
 
 Editor.prototype.convertBuildCommand = function(id) {
 	if (id == "cmdbuildhuman") {
-		id = "ahbu";
-	} else if (id == "cmdbuildorc") {
-		id = "aobu";
-	} else if (id == "cmdbuildnightelf") {
-		id = "aebu";
-	} else if (id == "cmdbuildundead") {
-		id = "aubu";
-	} else if (id == "cmdbuildnaga") {
-		id = "agbu";
+		return "ahbu";
+	}
+
+	if (id == "cmdbuildorc") {
+		return "aobu";
+	}
+
+	if (id == "cmdbuildnightelf") {
+		return "aebu";
+	}
+
+	if (id == "cmdbuildundead") {
+		return "aubu";
+	}
+
+	if (id == "cmdbuildnaga") {
+		return "agbu";
 	}
 
 	return id;
 };
 
+// converts campaign races to multiplayer equivalents
 Editor.prototype.convertRace = function(race) {
-	// converts campaign races to multiplayer equivalents
 	if (race == BLOOD_ELF) {
-		race = HUMAN;
-	} else if (race == DRAENEI) {
-		race = ORC;
-	} else if (race == DEMON) {
-		race = UNDEAD;
-	} else if (race == NAGA) {
-		race = NIGHT_ELF;
+		return HUMAN;
+	}
+
+	if (race == DRAENEI) {
+		return ORC;
+	}
+
+	if (race == DEMON) {
+		return UNDEAD;
+	}
+
+	if (race == NAGA) {
+		return NIGHT_ELF;
 	}
 
 	return race;
@@ -1689,10 +1703,10 @@ Commands.prototype.load = function(list) {
 
 // converts from hotkey file format to object
 Commands.prototype.parse = function(text) {
-	let list = {}, block = {}, id = "", key = "", value = "";
+	let list = {}, block = {}, id = "", type = "", hotkey = "";
 
 	let lines = text.split("\n");
-	let pattern = /^(\w+)=(.+)$/; // pattern for key=value pairs, skips comments
+	let pattern = /^(\w+)=(.+)$/; // skips comments
 
 	// ensures empty line at end of file so final command block is saved
 	lines.push("");
@@ -1718,11 +1732,12 @@ Commands.prototype.parse = function(text) {
 			id = line.slice(1, -1);
 		}
 
-		// matches key=value pairs
+		// matches type=hotkey pairs
 		if (line.match(pattern)) {
-			key = line.replace(pattern, "$1");
-			value = line.replace(pattern, "$2");
-			block[key] = value;
+			type = line.replace(pattern, "$1");
+			hotkey = line.replace(pattern, "$2");
+
+			block[type] = hotkey;
 		}
 	}
 
@@ -1731,48 +1746,48 @@ Commands.prototype.parse = function(text) {
 
 // converts from object to hotkey file format
 Commands.prototype.convert = function() {
-	let text = Object.keys(this.list).reduce(function(text, id) {
+	let text = "";
+
+	for (let [id, block] of Object.entries(this.list)) {
 		text += "\n[" + id + "]\n";
 
-		text = Object.keys(this.list[id]).reduce(function(text, key) {
-			return text + key + "=" + this.list[id][key] + "\n";
-		}.bind(this), text);
-
-		return text;
-	}.bind(this), "");
+		for (let type of Object.keys(block)) {
+			text += type + "=" + block[type] + "\n";
+		}
+	}
 
 	return text.trim();
 };
 
-Commands.prototype.exists = function(id, key) {
+Commands.prototype.exists = function(id, type) {
 	if (this.defaults == null || this.defaults[id] == undefined) {
 		return;
 	}
 
-	if (key != undefined && this.defaults[id][key] == undefined) {
+	if (type != undefined && this.defaults[id][type] == undefined) {
 		return;
 	}
 
 	return true;
 };
 
-Commands.prototype.get = function(id, key) {
-	if (this.list[id] != undefined && this.list[id][key] != undefined) {
-		return this.list[id][key];
+Commands.prototype.get = function(id, type) {
+	if (this.list[id] != undefined && this.list[id][type] != undefined) {
+		return this.list[id][type];
 	}
 
-	if (this.exists(id, key)) {
-		return this.defaults[id][key];
+	if (this.exists(id, type)) {
+		return this.defaults[id][type];
 	}
 
 	return "";
 };
 
-Commands.prototype.set = function(id, key, value) {
-	if (this.exists(id, key) && this.defaults[id][key] == value) {
+Commands.prototype.set = function(id, type, value) {
+	if (this.exists(id, type) && this.defaults[id][type] == value) {
 		// removes user hotkey if same as default (to avoid redundant entries)
-		if (this.list[id] != undefined && this.list[id][key] != undefined) {
-			delete this.list[id][key];
+		if (this.list[id] != undefined && this.list[id][type] != undefined) {
+			delete this.list[id][type];
 
 			if (Object.keys(this.list[id]).length == 0) {
 				delete this.list[id];
@@ -1783,7 +1798,7 @@ Commands.prototype.set = function(id, key, value) {
 			this.list[id] = {};
 		}
 
-		this.list[id][key] = value;
+		this.list[id][type] = value;
 	}
 };
 
