@@ -3321,7 +3321,7 @@ data.units = {
 	},
 	eill: {
 		name: "Illidan",
-		race: NAGA,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: [
 			["aemb", "Mana Burn"],
@@ -3417,7 +3417,7 @@ data.units = {
 	eevi: {
 		name: "Illidan",
 		suffix: "Expansion",
-		race: NAGA,
+		race: NIGHT_ELF,
 		type: HERO,
 		commands: [
 			["aemb", "Mana Burn"],
