@@ -534,7 +534,7 @@ Editor.prototype.unitEditor = function() {
 		for (let [id, name] of this.getCommands(unit)) {
 			// special exception for build buttons, whose hotkeys and tooltips
 			// are under cmdbuild* but whose buttonpos are under a?bu
-			let pos = this.convertBuildCommand(id);
+			let pos = data.buildCommands[id] || id;
 
 			if (!this.commands.exists(pos)) {
 				console.error(`Undefined: ${pos} (command)`);
@@ -638,14 +638,21 @@ Editor.prototype.getCommands = function(unit) {
 	let buttons = [];
 
 	// adds common commands
-	if (unit.type == UNIT || unit.type == SUMMON) {
-		buttons = buttons.concat(data.common.basic);
-	} else if (unit.type == HERO || unit.type == ITEM) {
-		buttons = buttons.concat(data.common.hero);
-	} else if (unit.type == NO_ATTACK) {
-		buttons = buttons.concat(data.common.noAttack);
-	} else if (unit.type == TOWER) {
-		buttons = buttons.concat(data.common.tower);
+	switch (unit.type) {
+		case UNIT:
+		case SUMMON:
+			buttons = buttons.concat(data.common.basic);
+			break;
+		case HERO:
+		case ITEM:
+			buttons = buttons.concat(data.common.hero);
+			break;
+		case NO_ATTACK:
+			buttons = buttons.concat(data.common.noAttack);
+			break;
+		case TOWER:
+			buttons = buttons.concat(data.common.tower);
+			break;
 	}
 
 	// adds unit-specific commands
@@ -664,14 +671,18 @@ Editor.prototype.getIcon = function(id, n=STANDARD) {
 	if (id == RALLY && data.units[this.unit] != undefined) {
 		let race = data.units[this.unit].race || NEUTRAL;
 
-		if (race == ORC) {
-			icon = "btnorcrallypoint";
-		} else if (race == UNDEAD) {
-			icon = "btnrallypointundead";
-		} else if (race == NIGHT_ELF) {
-			icon = "btnrallypointnightelf";
-		} else { // human is default
-			icon = "btnrallypoint";
+		switch (race) {
+			case ORC:
+				icon = "btnorcrallypoint";
+				break;
+			case UNDEAD:
+				icon = "btnrallypointundead";
+				break;
+			case NIGHT_ELF:
+				icon = "btnrallypointnightelf";
+				break;
+			default: // human is default
+				icon = "btnrallypoint";
 		}
 	} else {
 		icon = data.icons[dir].commands[id];
@@ -777,7 +788,7 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 	// trims "img#_" prefix
 	from = from.replace(imgPattern, "$2");
 	// special case for build buttons
-	from = this.convertBuildCommand(from);
+	from = data.buildCommands[from] || from;
 
 	// must also transfer "Unbuttonpos" for toggleable/two-state abilities
 	if (this.active != RESEARCH) {
@@ -793,7 +804,7 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 		// trims "img#_" prefix
 		to = to.replace(imgPattern, "$2");
 		// special case for build buttons
-		to = this.convertBuildCommand(to);
+		to = data.buildCommands[to] || to;
 
 		if (this.active != RESEARCH || to == CANCEL) {
 			newpos = this.commands.get(to, "Buttonpos");
@@ -1079,12 +1090,16 @@ Editor.prototype.editTip = function(type) {
 
 Editor.prototype.autoSetTip = function(type, fields) {
 	// converts hotkey key to equivalent tip key (if available)
-	if (type == "Hotkey") {
-		type = "Tip";
-	} else if (type == "Unhotkey") {
-		type = "Untip";
-	} else if (type == "Researchhotkey") {
-		type = "Researchtip";
+	switch (type) {
+		case "Hotkey":
+			type = "Tip";
+			break;
+		case "Unhotkey":
+			type = "Untip";
+			break;
+		case "Researchhotkey":
+			type = "Researchtip";
+			break;
 	}
 
 	if (!this.commands.exists(this.command, type)) {
@@ -1269,7 +1284,7 @@ Editor.prototype.setHotkey = function(type, hotkey="") {
 Editor.prototype.resetDefaults = function() {
 	this.commands.clear(this.command);
 
-	let build = this.convertBuildCommand(this.command);
+	let build = data.buildCommands[this.command] || this.command;
 
 	if (this.command != build) { // resets button position for build icons
 		this.commands.clear(build);
@@ -1403,57 +1418,12 @@ Editor.prototype.checkAllConflicts = function() {
 };
 
 Editor.prototype.filter = function(race) {
-	race = this.convertRace(race);
+	race = data.campaignRaces[race] || race;
 
 	// hides unit lists for races other than selected
 	for (let element of $$("section")) {
 		element.hidden = element.id != "units_" + race;
 	}
-};
-
-Editor.prototype.convertBuildCommand = function(id) {
-	if (id == "cmdbuildhuman") {
-		return "ahbu";
-	}
-
-	if (id == "cmdbuildorc") {
-		return "aobu";
-	}
-
-	if (id == "cmdbuildnightelf") {
-		return "aebu";
-	}
-
-	if (id == "cmdbuildundead") {
-		return "aubu";
-	}
-
-	if (id == "cmdbuildnaga") {
-		return "agbu";
-	}
-
-	return id;
-};
-
-// converts campaign races to multiplayer equivalents
-Editor.prototype.convertRace = function(race) {
-	if (race == BLOOD_ELF) {
-		return HUMAN;
-	}
-
-	if (race == DRAENEI) {
-		return ORC;
-	}
-
-	if (race == DEMON) {
-		return UNDEAD;
-	}
-
-	if (race == NAGA) {
-		return NIGHT_ELF;
-	}
-
-	return race;
 };
 
 Editor.prototype.findUnitsNamed = function(query) {
@@ -1608,7 +1578,9 @@ Editor.prototype.openResult = function() {
 };
 
 Editor.prototype.dimFilters = function(filters) {
-	filters = Array.from(filters).map(this.convertRace);
+	filters = Array.from(filters).map(function(race) {
+		return data.campaignRaces[race] || race;
+	});
 
 	for (let element of $$(".filter")) {
 		element.classList.toggle("exclude", !filters.includes(element.value));
@@ -1617,7 +1589,9 @@ Editor.prototype.dimFilters = function(filters) {
 
 Editor.prototype.highlightFilter = function(n) {
 	let unit = this.matches[n];
-	let race = this.convertRace(data.units[unit].race);
+
+	let race = data.units[unit].race;
+	race = data.campaignRaces[race] || race;
 
 	for (let element of $$(".filter")) {
 		element.classList.toggle("highlight", element.value == race);
@@ -1749,6 +1723,10 @@ Commands.prototype.convert = function() {
 	let text = "";
 
 	for (let [id, block] of Object.entries(this.list)) {
+		if (id == OPTIONS_SECTION) {
+			continue;
+		}
+
 		text += "\n[" + id + "]\n";
 
 		for (let type of Object.keys(block)) {

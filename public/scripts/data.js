@@ -21,6 +21,21 @@ const ITEM = 7;
 
 const data = {};
 
+data.buildCommands = {
+	cmdbuildhuman:    "ahbu",
+	cmdbuildorc:      "aobu",
+	cmdbuildnightelf: "aebu",
+	cmdbuildundead:   "aubu",
+	cmdbuildnaga:     "agbu"
+};
+
+data.campaignRaces = {
+	bloodelf: HUMAN,
+	draenei:  ORC,
+	demon:    UNDEAD,
+	naga:     NIGHT_ELF
+};
+
 data.common = {
 	basic: [
 		["cmdmove", "Move"],
