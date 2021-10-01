@@ -3566,6 +3566,11 @@ Tip=Purchase Staff of Sa|cffffcc00n|rctuary
 Hotkey=N
 Buttonpos=1,2
 
+[ssil]
+Tip=Purchase Staff of Sil|cffffcc00e|rnce
+Hotkey=E
+Buttonpos=0,0
+
 [hslv]
 Tip=Purchase |cffffcc00H|realing Salve
 Hotkey=H

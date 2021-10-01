@@ -491,6 +491,25 @@ data.units = {
 			["anei", "Select User"]
 		]
 	},
+	hvlt_campaign: {
+		name: "Arcane Vault",
+		suffix: "Campaign",
+		race: HUMAN,
+		type: BUILDING,
+		commands: [
+			["sreg", "Purchase Scroll of Regeneration"],
+			["pams", "Purchase Anti-magic Potion"],
+			["plcl", "Purchase Lesser Clarity Potion"],
+			["phea", "Purchase Potion of Healing"],
+			["pman", "Purchase Potion of Mana"],
+			["stwp", "Purchase Scroll of Town Portal"],
+			["tsct", "Purchase Ivory Tower"],
+			["ofir", "Purchase Orb of Fire"],
+			["ssan", "Purchase Staff of Sanctuary"],
+			["ssil", "Purchase Staff of Silence"],
+			["anei", "Select User"]
+		]
+	},
 	hshy: {
 		name: "Human Shipyard",
 		race: HUMAN,
@@ -2505,6 +2524,23 @@ data.units = {
 			["ritd", "Purchase Ritual Dagger"],
 			["skul", "Purchase Sacrificial Skull"],
 			["dust", "Purchase Dust of Appearance"],
+			["phea", "Purchase Potion of Healing"],
+			["pman", "Purchase Potion of Mana"],
+			["stwp", "Purchase Scroll of Town Portal"],
+			["ocor", "Purchase Orb of Corruption"],
+			["shea", "Purchase Scroll of Healing"],
+			["anei", "Select User"]
+		]
+	},
+	utom_campaign: {
+		name: "Tomb of Relics",
+		suffix: "Campaign",
+		race: UNDEAD,
+		type: BUILDING,
+		commands: [
+			["rnec", "Purchase Rod of Necromancy"],
+			["plcl", "Purchase Lesser Clarity Potion"],
+			["skul", "Purchase Sacrificial Skull"],
 			["phea", "Purchase Potion of Healing"],
 			["pman", "Purchase Potion of Mana"],
 			["stwp", "Purchase Scroll of Town Portal"],
@@ -6974,6 +7010,7 @@ data.icons = {
 			htow: "btntownhall",
 			huth: "btnheropaladin",
 			hvlt: "btnarcanevault",
+			hvlt_campaign: "btnarcanevault",
 			hvsh: "btnnagaseawitch",
 			hvwd: "btnsylvanuswindrunner",
 			hwat: "btnsummonwaterelemental",
@@ -7614,6 +7651,7 @@ data.icons = {
 			sror: "btnsnazzyscrollgreen",
 			ssan: "btnstaffofsanctuary",
 			sshm: "btnambush",
+			ssil: "btnstaffofsilence",
 			stel: "btnstaffofteleportation",
 			stwa: "btnorcmeleeupone",
 			stwp: "btnscrolluber",
@@ -7678,6 +7716,7 @@ data.icons = {
 			utod_campaign: "btntempleofthedamned",
 			utod: "btntempleofthedamned",
 			utom: "btntombofrelics",
+			utom_campaign: "btntombofrelics",
 			uubs: "btnundeadbattleship",
 			uvar: "btnherodreadlord",
 			uvng: "btnherodreadlord",
