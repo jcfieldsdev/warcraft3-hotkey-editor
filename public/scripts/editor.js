@@ -338,7 +338,7 @@ window.addEventListener("load", function() {
 		element.setAttribute("spellcheck", "false");
 	}
 
-	function loadFile(file, callback) {
+	function loadFile(file) {
 		return new Promise(function(resolve) {
 			const xhr = new XMLHttpRequest();
 			xhr.addEventListener("readystatechange", function() {
