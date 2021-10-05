@@ -91,7 +91,7 @@ window.addEventListener("load", function() {
 	loadFile(DEFAULT_HOTKEY_FILE).then(function(text) {
 		commands.parse(text);
 
-		let mem = store.load();
+		const mem = store.load();
 
 		if (mem != null) {
 			options.load(mem);
@@ -113,20 +113,20 @@ window.addEventListener("load", function() {
 		editor.load();
 	});
 	window.addEventListener("keyup", function(event) {
-		let keyCode = event.keyCode;
+		const keyCode = event.keyCode;
 
 		if (keyCode == 27) { // Esc
-			for (let overlay of Object.values(overlays)) {
+			for (const overlay of Object.values(overlays)) {
 				overlay.hide();
 			}
 		}
 	});
 
 	document.addEventListener("click", function(event) {
-		let element = event.target;
+		const element = event.target;
 
 		if (element.closest("#open")) {
-			let file = overlays.load.getText();
+			const file = overlays.load.getText();
 
 			if (file != "") {
 				commands.parse(file);
@@ -169,9 +169,9 @@ window.addEventListener("load", function() {
 		}
 
 		if (element.matches("#download")) {
-			let file = new Blob([overlays.save.getText()], {type: MIME_TYPE});
+			const file = new Blob([overlays.save.getText()], {type: MIME_TYPE});
 
-			let a = $("#link");
+			const a = $("#link");
 			a.download = DEFAULT_SAVE_NAME;
 			a.href = window.URL.createObjectURL(file);
 			a.click();
@@ -196,7 +196,7 @@ window.addEventListener("load", function() {
 			if (editor.clicks >= ANNOYED_CLICKS) {
 				editor.clicks = 0;
 
-				let audio = new Audio([ICON_DIR, ANNOYED_SOUND].join("/"));
+				const audio = new Audio([ICON_DIR, ANNOYED_SOUND].join("/"));
 				audio.play();
 			}
 		}
@@ -235,7 +235,7 @@ window.addEventListener("load", function() {
 		}
 	});
 	document.addEventListener("input", function(event) {
-		let element = event.target;
+		const element = event.target;
 
 		if (element.matches("#files")) {
 			// ignores explanatory "(Select a set...)" option
@@ -251,20 +251,20 @@ window.addEventListener("load", function() {
 		}
 	});
 	document.addEventListener("keydown", function(event) {
-		let element = event.target;
+		const element = event.target;
 
 		if (element.matches(".hotkey input")) {
 			// ignores input if modifier key held
 			if (!event.ctrlKey && !event.altKey && !event.metaKey) {
 				event.preventDefault();
 
-				let type = element.closest(".hotkey").id;
+				const type = element.closest(".hotkey").id;
 				editor.editHotkey(element, type, event);
 			}
 		}
 
 		if (element.matches("#query")) {
-			let keyCode = event.keyCode;
+			const keyCode = event.keyCode;
 
 			if (keyCode == 13) { // return/enter
 				editor.openResult();
@@ -284,7 +284,7 @@ window.addEventListener("load", function() {
 		}
 	});
 	document.addEventListener("mouseover", function(event) {
-		let element = event.target;
+		const element = event.target;
 
 		if (element.matches("#results li")) {
 			editor.selected = $$("#results li").findIndex(function(item) {
@@ -295,10 +295,10 @@ window.addEventListener("load", function() {
 	});
 
 	$("#file").addEventListener("change", function(event) {
-		let file = event.target.files[0];
+		const file = event.target.files[0];
 
 		if (file != null) {
-			let reader = new FileReader();
+			const reader = new FileReader();
 			reader.addEventListener("load", function(event) {
 				$("#files").selectedIndex = 0;
 				overlays.load.setText(event.target.result);
@@ -307,7 +307,7 @@ window.addEventListener("load", function() {
 		}
 	});
 
-	for (let element of $$(".tip")) {
+	for (const element of $$(".tip")) {
 		element.addEventListener("focus", function() {
 			editor.focusTip(this.id);
 		});
@@ -331,7 +331,7 @@ window.addEventListener("load", function() {
 		element.setAttribute("contenteditable", contentEditable);
 	}
 
-	for (let element of $$("#query, .tip, textarea")) {
+	for (const element of $$("#query, .tip, textarea")) {
 		element.setAttribute("autocomplete", "off");
 		element.setAttribute("autocorrect", "off");
 		element.setAttribute("autocapitalize", "off");
@@ -340,7 +340,7 @@ window.addEventListener("load", function() {
 
 	function loadFile(file, callback) {
 		return new Promise(function(resolve) {
-			let xhr = new XMLHttpRequest();
+			const xhr = new XMLHttpRequest();
 			xhr.addEventListener("readystatechange", function() {
 				if (this.readyState == 4 && this.status == 200) {
 					resolve(this.responseText);
@@ -353,17 +353,17 @@ window.addEventListener("load", function() {
 	}
 
 	function loadList() {
-		let xhr = new XMLHttpRequest();
+		const xhr = new XMLHttpRequest();
 		xhr.addEventListener("readystatechange", function() {
 			if (this.readyState == 4 && this.status == 200) {
-				let select = document.createElement("select");
+				const select = document.createElement("select");
 				select.id = "files";
 
-				let options = ["(Select a set...)"].concat(this.response);
+				const options = ["(Select a set...)"].concat(this.response);
 
-				for (let file of options) {
-					let option = document.createElement("option");
-					option.appendChild(document.createTextNode(file));
+				for (const item of options) {
+					const option = document.createElement("option");
+					option.appendChild(document.createTextNode(item));
 					select.appendChild(option);
 				}
 
@@ -452,7 +452,7 @@ Editor.prototype.setCommand = function(id, name) {
 };
 
 Editor.prototype.unitEditor = function() {
-	let unit = data.units[this.unit];
+	const unit = data.units[this.unit];
 
 	if (unit == undefined) {
 		return;
@@ -460,7 +460,7 @@ Editor.prototype.unitEditor = function() {
 
 	$("#editor").className = this.race;
 
-	let h2 = document.createElement("h2");
+	const h2 = document.createElement("h2");
 	h2.id = "unit";
 	h2.appendChild(document.createTextNode(unit.name));
 	$("#unit").replaceWith(h2);
@@ -473,18 +473,18 @@ Editor.prototype.unitEditor = function() {
 	h2.insertBefore(button, h2.firstChild);
 	this.clicks = 0;
 
-	let h3 = $("#command");
+	const h3 = $("#command");
 	h3.textContent = "";
 	h3.hidden = true;
 
 	createCommandCard.call(this, STANDARD, unit);
 
 	// shows research card for heroes
-	let research = $("#card" + RESEARCH);
+	const research = $("#card" + RESEARCH);
 	research.hidden = unit.type != HERO;
 
 	if (unit.type == HERO) { // adds cancel button to hero select skills card
-		let buttonpos = this.commands.get(CANCEL, "Buttonpos", unit);
+		const buttonpos = this.commands.get(CANCEL, "Buttonpos", unit);
 
 		if (buttonpos != "") {
 			placeButton.call(this, CANCEL, "Cancel", RESEARCH, buttonpos, true);
@@ -492,15 +492,15 @@ Editor.prototype.unitEditor = function() {
 	}
 
 	// shows build card for workers
-	let build = $("#card" + BUILD);
+	const build = $("#card" + BUILD);
 	build.hidden = unit.build == undefined;
 
 	if (unit.build != undefined && data.units[unit.build] != undefined) {
 		createCommandCard.call(this, BUILD, data.units[unit.build]);
 	}
 
-	for (let element of $$(".card div")) {
-		let card = element.parentNode;
+	for (const element of $$(".card div")) {
+		const card = element.parentNode;
 
 		// adds listeners for drag-and-drop events
 		element.addEventListener("dragover", function(event) {
@@ -516,7 +516,7 @@ Editor.prototype.unitEditor = function() {
 		element.addEventListener("drop", function(event) {
 			event.preventDefault();
 
-			let data = event.dataTransfer.getData("text");
+			const data = event.dataTransfer.getData("text");
 			this.drop(data, event.target.id, event.shiftKey);
 			card.classList.remove("grid");
 		}.bind(this));
@@ -526,22 +526,24 @@ Editor.prototype.unitEditor = function() {
 	this.checkAllConflicts();
 
 	function createCommandCard(n, unit) {
-		for (let [id, name] of this.getCommands(unit)) {
+		for (const [id, name] of this.getCommands(unit)) {
 			// special exception for build buttons, whose hotkeys and tooltips
 			// are under cmdbuild* but whose buttonpos are under a?bu
-			let idpos = data.buildCommands[id] || id;
+			const idpos = data.buildCommands[id] || id;
 
 			if (!this.commands.exists(idpos)) {
 				console.error(`Undefined: ${idpos} (command)`);
 				continue;
 			}
 
-			let buttonpos = this.commands.get(idpos, "Buttonpos", unit);
+			const buttonpos = this.commands.get(idpos, "Buttonpos", unit);
 
 			if (buttonpos != "") {
 				placeButton.call(this, id, name, n, buttonpos, true);
 
-				let unbuttonpos = this.commands.get(idpos, "Unbuttonpos", unit);
+				const unbuttonpos = this.commands.get(
+					idpos, "Unbuttonpos", unit
+				);
 
 				// places separate button for unbutton if in different position
 				if (unbuttonpos != "" && buttonpos != unbuttonpos) {
@@ -549,7 +551,7 @@ Editor.prototype.unitEditor = function() {
 					placeButton.apply(this, args);
 				}
 
-				let researchbuttonpos = this.commands.get(
+				const researchbuttonpos = this.commands.get(
 					idpos, "Researchbuttonpos", unit
 				);
 
@@ -569,9 +571,9 @@ Editor.prototype.unitEditor = function() {
 	}
 
 	function placeButton(id, name, n, buttonpos, state=true) {
-		let pos = buttonpos.split(DELIMITER).map(Number);
-		let [y, x] = this.getPosition(n, pos[1], pos[0]);
-		let conflict = pos[0] != x || pos[1] != y;
+		const pos = buttonpos.split(DELIMITER).map(Number);
+		const [y, x] = this.getPosition(n, pos[1], pos[0]);
+		const conflict = pos[0] != x || pos[1] != y;
 
 		if (x < 0 || y < 0 || x > COLS || y > ROWS) {
 			return;
@@ -583,17 +585,17 @@ Editor.prototype.unitEditor = function() {
 
 		this.card[n][y][x] = id;
 
-		let element = createButton.call(this, id, name, n, state);
+		const element = createButton.call(this, id, name, n, state);
 		element.id = "n" + n + "y" + y + "x" + x;
 		element.classList.toggle("conflict", conflict);
 
-		let index = COLS * y + x;
+		const index = COLS * y + x;
 		$("#card" + n).children[index].replaceWith(element);
 	}
 
 	function createButton(id, name, n, state=true) {
-		let div = document.createElement("div");
-		let img = document.createElement("img");
+		const div = document.createElement("div");
+		const img = document.createElement("img");
 		img.setAttribute("src", this.getIcon(id, n));
 		img.setAttribute("alt", "[" + name + "]");
 		img.setAttribute("title", name);
@@ -616,7 +618,7 @@ Editor.prototype.unitEditor = function() {
 		// distinguishes between buttons (in command card)
 		// and unit icons (in heading)
 		if (this.unit != id) {
-			let span = document.createElement("span");
+			const span = document.createElement("span");
 			span.id = "span" + n + "_" + id;
 			div.appendChild(span);
 
@@ -663,12 +665,12 @@ Editor.prototype.getCommands = function(unit) {
 };
 
 Editor.prototype.getIcon = function(id, n=STANDARD) {
-	let dir = this.options.read("icons");
+	const dir = this.options.read("icons");
 	let icon = "";
 
 	// special case for race-specific rally point icons
 	if (id == RALLY && data.units[this.unit] != undefined) {
-		let race = data.units[this.unit].race || NEUTRAL;
+		const race = data.units[this.unit].race || NEUTRAL;
 
 		switch (race) {
 			case ORC:
@@ -771,19 +773,19 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 		return;
 	}
 
-	let coordPattern = /n(\d)y(\d)x(\d)/;
-	let imgPattern = /img(\d)_([\w_]+)/;
+	const coordPattern = /n(\d)y(\d)x(\d)/;
+	const imgPattern = /img(\d)_([\w_]+)/;
 
-	let fromCard = from.replace(imgPattern, "$1");
-	let toCardCoord = to.replace(coordPattern, "$1");
-	let toCardImg = to.replace(imgPattern, "$1");
+	const fromCard = from.replace(imgPattern, "$1");
+	const toCardCoord = to.replace(coordPattern, "$1");
+	const toCardImg = to.replace(imgPattern, "$1");
 
 	if (fromCard != toCardCoord && fromCard != toCardImg) { // different cards
 		return;
 	}
 
+	const unit = data.units[this.unit];
 	let oldpos = "", newpos = "", oldunpos = "", newunpos = "";
-	let unit = data.units[this.unit];
 
 	// trims "img#_" prefix
 	from = from.replace(imgPattern, "$2");
@@ -826,8 +828,8 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 			// stored value (so drag-and-drop operations try to match how the
 			// button positions are displayed over how they are stored, which
 			// is more consistent with user expectations)
-			for (let y of this.card[this.active].keys()) {
-				for (let x of this.card[this.active][y].keys()){
+			for (const y of this.card[this.active].keys()) {
+				for (const x of this.card[this.active][y].keys()){
 					if (from == this.card[this.active][y][x]) {
 						oldpos = x + DELIMITER + y;
 
@@ -854,32 +856,34 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 
 			if (this.active != RESEARCH || to == CANCEL) {
 				if (to.slice(-1) != "_") {
-					this.commands.set(to, "Buttonpos", oldpos);
+					this.commands.set(to, "Buttonpos", unit, oldpos);
 
 					if (newunpos != "" && newpos == newunpos) {
-						this.commands.set(to, "Unbuttonpos", oldpos);
+						this.commands.set(to, "Unbuttonpos", unit, oldpos);
 					}
 				} else { // moving unbutton by itself
-					this.commands.set(to.slice(0, -1), "Unbuttonpos", oldpos);
+					const slice = to.slice(0, -1);
+					this.commands.set(slice, "Unbuttonpos", unit, oldpos);
 				}
 			} else {
-				this.commands.set(to, "Researchbuttonpos", oldpos);
+				this.commands.set(to, "Researchbuttonpos", unit, oldpos);
 			}
 		}
 	}
 
 	if (this.active != RESEARCH || from == CANCEL) {
 		if (from.slice(-1) != "_") {
-			this.commands.set(from, "Buttonpos", newpos);
+			this.commands.set(from, "Buttonpos", unit, newpos);
 
 			if (oldunpos != "" && oldpos == oldunpos) {
-				this.commands.set(from, "Unbuttonpos", newpos);
+				this.commands.set(from, "Unbuttonpos", unit, newpos);
 			}
 		} else { // moving unbutton by itself
-			this.commands.set(from.slice(0, -1), "Unbuttonpos", newpos);
+			const slice = from.slice(0, -1);
+			this.commands.set(slice, "Unbuttonpos", unit, newpos);
 		}
 	} else {
-		this.commands.set(from, "Researchbuttonpos", newpos);
+		this.commands.set(from, "Researchbuttonpos", unit, newpos);
 	}
 
 	this.clearButtons();
@@ -887,21 +891,21 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 };
 
 Editor.prototype.getConflicts = function(id) {
-	let hotkeys = {}, researchhotkeys = {};
-	let unit = data.units[id];
+	const unit = data.units[id];
+	const hotkeys = {}, researchhotkeys = {};
 
 	if (unit == undefined) {
 		return;
 	}
 
-	for (let id of this.getCommands(unit).keys()) {
+	for (const id of this.getCommands(unit).keys()) {
 		if (!this.commands.exists(id)) {
 			continue;
 		}
 
-		let hotkey = this.commands.get(id, "Hotkey", unit);
-		let unhotkey = this.commands.get(id, "Unhotkey", unit);
-		let researchhotkey = this.commands.get(id, "Researchhotkey", unit);
+		const hotkey = this.commands.get(id, "Hotkey", unit);
+		const unhotkey = this.commands.get(id, "Unhotkey", unit);
+		const researchhotkey = this.commands.get(id, "Researchhotkey", unit);
 
 		// tracks research hotkeys separately
 		recordHotkey(id, hotkey, hotkeys);
@@ -912,8 +916,8 @@ Editor.prototype.getConflicts = function(id) {
 			if (hotkey != unhotkey) {
 				recordHotkey(id, unhotkey, hotkeys);
 			} else {
-				let buttonpos = this.commands.get(id, "Buttonpos", unit);
-				let unbuttonpos = this.commands.get(id, "Unbuttonpos", unit);
+				const buttonpos = this.commands.get(id, "Buttonpos", unit);
+				const unbuttonpos = this.commands.get(id, "Unbuttonpos", unit);
 
 				// counts unhotkey separately if positions are different so
 				// command can conflict with itself
@@ -928,14 +932,14 @@ Editor.prototype.getConflicts = function(id) {
 	// adds cancel button to hero select skills card for the purpose of
 	// identifying conflicts with it
 	if (Object.keys(researchhotkeys).length > 0) {
-		let hotkey = this.commands.get(CANCEL, "Hotkey", unit);
+		const hotkey = this.commands.get(CANCEL, "Hotkey", unit);
 		recordHotkey(CANCEL, hotkey, researchhotkeys);
 	}
 
 	return {hotkeys, researchhotkeys};
 
 	function recordHotkey(id, hotkey, keys) {
-		for (let key of hotkey.split(DELIMITER)) {
+		for (const key of hotkey.split(DELIMITER)) {
 			if (key == "") {
 				continue;
 			}
@@ -956,17 +960,17 @@ Editor.prototype.commandEditor = function() {
 		return;
 	}
 
-	let id = this.command;
-	let unit = data.units[this.unit];
+	const id = this.command;
+	const unit = data.units[this.unit];
 
-	let tip = this.commands.get(id, "Tip", unit);
-	let hotkey = this.commands.get(id, "Hotkey", unit);
-	let untip = this.commands.get(id, "Untip", unit);
-	let unhotkey = this.commands.get(id, "Unhotkey", unit);
-	let researchtip = this.commands.get(id, "Researchtip", unit);
-	let researchhotkey = this.commands.get(id, "Researchhotkey", unit);
-	let revivetip = this.commands.get(id, "Revivetip", unit);
-	let awakentip = this.commands.get(id, "Awakentip", unit);
+	const tip = this.commands.get(id, "Tip", unit);
+	const hotkey = this.commands.get(id, "Hotkey", unit);
+	const untip = this.commands.get(id, "Untip", unit);
+	const unhotkey = this.commands.get(id, "Unhotkey", unit);
+	const researchtip = this.commands.get(id, "Researchtip", unit);
+	const researchhotkey = this.commands.get(id, "Researchhotkey", unit);
+	const revivetip = this.commands.get(id, "Revivetip", unit);
+	const awakentip = this.commands.get(id, "Awakentip", unit);
 
 	this.formatTip("Tip", tip);
 	this.formatTip("Untip", untip);
@@ -997,7 +1001,7 @@ Editor.prototype.commandEditor = function() {
 		$(`#${type} input`).focus();
 	}
 
-	let h3 = $("#command");
+	const h3 = $("#command");
 	h3.textContent = this.name + " (" + id + ")";
 	h3.hidden = false;
 
@@ -1011,7 +1015,7 @@ Editor.prototype.commandEditor = function() {
 };
 
 Editor.prototype.formatTip = function(type, tip) {
-	let element = $("#" + type);
+	const element = $("#" + type);
 
 	if (tip == "") { // hides empty element so it cannot be edited
 		element.hidden = true;
@@ -1030,7 +1034,7 @@ Editor.prototype.formatTip = function(type, tip) {
 	); // handles all other colors
 
 	// splits string by comma unless comma is within quotes
-	let tips = tip.split(PATTERN).map(function(tip) {
+	const tips = tip.split(PATTERN).map(function(tip) {
 		return tip.replace(/"/g, ""); // removes quotes
 	});
 
@@ -1041,7 +1045,7 @@ Editor.prototype.formatTip = function(type, tip) {
 };
 
 Editor.prototype.focusTip = function(type) {
-	let element = $("#" + type);
+	const element = $("#" + type);
 	let tip = element.innerHTML;
 
 	// converts from HTML to editing format
@@ -1059,9 +1063,7 @@ Editor.prototype.focusTip = function(type) {
 };
 
 Editor.prototype.editTip = function(type) {
-	let element = $("#" + type);
-
-	let tips = element.innerHTML.split("<br>").map(function(tip) {
+	let tips = $("#" + type).innerHTML.split("<br>").map(function(tip) {
 		// converts from editing format to hotkey file format
 		tip = tip.replace(/&amp;/g, "&");
 		tip = tip.replace(/&lt;/g, "<");
@@ -1081,14 +1083,15 @@ Editor.prototype.editTip = function(type) {
 		return tip != ""; // removes blank lines
 	});
 
+	const unit = data.units[this.unit];
 	let tip = tips.join(DELIMITER);
 
 	if (tip == "") { // restores blank tip to previous value
-		tip = this.commands.get(this.command, type, data.units[this.unit]);
+		tip = this.commands.get(this.command, type, unit);
 	}
 
 	this.formatTip(type, tip);
-	this.commands.set(this.command, type, tip);
+	this.commands.set(this.command, type, unit, tip);
 };
 
 Editor.prototype.autoSetTip = function(type, fields) {
@@ -1111,18 +1114,18 @@ Editor.prototype.autoSetTip = function(type, fields) {
 
 	// handles patterns with hotkey at start (common with many user files)
 	// or at end (Blizzard's convention), depending on user preference
-	let start = this.options.read("end") == START;
+	const start = this.options.read("end") == START;
 	let replace = "", k = 0;
 
-	let startPattern = /^\(\|cffffcc00(ESC|\w)\|r\) /g;
-	let endPattern = / \(\|cffffcc00(ESC|\w)\|r\)$/g;
+	const startPattern = /^\(\|cffffcc00(ESC|\w)\|r\) /g;
+	const endPattern = / \(\|cffffcc00(ESC|\w)\|r\)$/g;
 
 	// the user-selected pattern
-	let pattern = start ? startPattern : endPattern;
+	const pattern = start ? startPattern : endPattern;
 	// the non-selected pattern
-	let otherPattern = start ? endPattern : startPattern;
+	const otherPattern = start ? endPattern : startPattern;
 
-	let unit = data.units[this.unit];
+	const unit = data.units[this.unit];
 
 	// splits string by comma unless comma is within quotes
 	let tips = this.commands.get(this.command, type, unit).split(PATTERN);
@@ -1177,18 +1180,18 @@ Editor.prototype.autoSetTip = function(type, fields) {
 		return tip;
 	});
 
-	let tip = tips.join(DELIMITER);
+	const tip = tips.join(DELIMITER);
 
-	this.commands.set(this.command, type, tip);
+	this.commands.set(this.command, type, unit, tip);
 	this.formatTip(type, tip);
 };
 
 Editor.prototype.formatHotkey = function(type, hotkey) {
-	let p = document.createElement("p");
+	const p = document.createElement("p");
 	p.id = type;
 	p.classList.add("hotkey");
 
-	let element = $("#" + type);
+	const element = $("#" + type);
 
 	if (hotkey == "") { // hides field if empty
 		element.replaceWith(p);
@@ -1200,12 +1203,12 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 		hotkey = "\u238b"; // escape symbol (for display)
 	}
 
-	let label = document.createElement("label");
+	const label = document.createElement("label");
 	label.textContent = type + ": ";
 
 	// handles multi-tier hotkeys (e.g., weapon/armor upgrades)
-	for (let key of hotkey.split(DELIMITER)) {
-		let input = document.createElement("input");
+	for (const key of hotkey.split(DELIMITER)) {
+		const input = document.createElement("input");
 		input.setAttribute("type", "text");
 		input.setAttribute("value", key);
 		label.appendChild(input);
@@ -1215,7 +1218,7 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 
 	// appends "Set to Esc" button for cancel buttons
 	if (this.command.startsWith(CANCEL)) {
-		let button = document.createElement("button");
+		const button = document.createElement("button");
 		button.className = "esc";
 		button.value = type;
 		button.setAttribute("type", "button");
@@ -1228,21 +1231,21 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 };
 
 Editor.prototype.editHotkey = function(input, type, event) {
-	let keyCode = event.keyCode;
+	const keyCode = event.keyCode;
 
 	// ignores non-letter characters
 	if (keyCode < 65 || keyCode > 90) {
 		return;
 	}
 
-	let key = String.fromCharCode(keyCode);
+	const key = String.fromCharCode(keyCode);
 	input.value = key;
 
-	let unit = data.units[this.unit];
+	const unit = data.units[this.unit];
 
-	let buttonpos = this.commands.get(this.command, "Buttonpos", unit);
-	let unbuttonpos = this.commands.get(this.command, "Unbuttonpos", unit);
-	let samePositions = unbuttonpos == "" || buttonpos == unbuttonpos;
+	const buttonpos = this.commands.get(this.command, "Buttonpos", unit);
+	const unbuttonpos = this.commands.get(this.command, "Unbuttonpos", unit);
+	const samePositions = unbuttonpos == "" || buttonpos == unbuttonpos;
 
 	// sets all hotkeys together if "spirit link" option selected
 	// unless button and unbutton are in different positions (prevents conflict)
@@ -1265,9 +1268,9 @@ Editor.prototype.setHotkey = function(type, hotkey="") {
 		return;
 	}
 
-	let fields = [];
+	const fields = [];
 
-	for (let element of $$(`#${type} input`)) {
+	for (const element of $$(`#${type} input`)) {
 		if (hotkey != "") {
 			// sets hotkey to the optional function parameter value;
 			// (spirit-linking is on or setting the "Esc" key)
@@ -1279,7 +1282,8 @@ Editor.prototype.setHotkey = function(type, hotkey="") {
 		}
 	}
 
-	this.commands.set(this.command, type, fields.join(DELIMITER).toUpperCase());
+	const value = fields.join(DELIMITER).toUpperCase();
+	this.commands.set(this.command, type, data.units[this.unit], value);
 
 	if (this.options.read("tooltips")) {
 		this.autoSetTip(type, fields);
@@ -1291,7 +1295,7 @@ Editor.prototype.setHotkey = function(type, hotkey="") {
 Editor.prototype.resetDefaults = function() {
 	this.commands.clear(this.command);
 
-	let build = data.buildCommands[this.command] || this.command;
+	const build = data.buildCommands[this.command] || this.command;
 
 	if (this.command != build) { // resets button position for build icons
 		this.commands.clear(build);
@@ -1303,13 +1307,13 @@ Editor.prototype.resetDefaults = function() {
 };
 
 Editor.prototype.setVisibleHotkeys = function() {
-	for (let n of this.card.keys()) {
-		for (let y of this.card[n].keys()) {
-			for (let x of this.card[n][y].keys()) {
+	for (const n of this.card.keys()) {
+		for (const y of this.card[n].keys()) {
+			for (const x of this.card[n][y].keys()) {
 				let id = this.card[n][y][x];
 
 				// identifies separate unbuttonpos
-				let state = id.slice(-1) != "_";
+				const state = id.slice(-1) != "_";
 
 				if (!state) {
 					id = id.slice(0, -1);
@@ -1319,8 +1323,8 @@ Editor.prototype.setVisibleHotkeys = function() {
 					continue;
 				}
 
+				const unit = data.units[this.unit];
 				let span = null, hotkey = "";
-				let unit = data.units[this.unit];
 
 				if (state) {
 					span = $("#span" + n + "_" + id);
@@ -1330,7 +1334,7 @@ Editor.prototype.setVisibleHotkeys = function() {
 					hotkey = this.commands.get(id, "Unhotkey", unit);
 				}
 
-				let researchhotkey = this.commands.get(
+				const researchhotkey = this.commands.get(
 					id, "Researchhotkey", unit
 				);
 
@@ -1343,7 +1347,7 @@ Editor.prototype.setVisibleHotkeys = function() {
 						span.textContent = hotkey.slice(0, 1);
 					}
 				} else if (researchhotkey != "") {
-					let state = n != RESEARCH && hotkey == "";
+					const state = n != RESEARCH && hotkey == "";
 					span.textContent = researchhotkey.slice(0, 1);
 					span.classList.toggle("passive", state);
 				}
@@ -1354,11 +1358,11 @@ Editor.prototype.setVisibleHotkeys = function() {
 	// tracks conflicts outside of flag functions so conflicts can be detected
 	// in two-state commands and across different hotkey types,
 	// else class will be toggled an unpredictable amount
-	let conflicts = Array(CARDS).fill().map(function() {
+	const conflicts = Array(CARDS).fill().map(function() {
 		return [];
 	});
 
-	let keys = this.getConflicts(this.unit);
+	const keys = this.getConflicts(this.unit);
 	flagHotkeys(STANDARD, keys.hotkeys);
 	flagHotkeys(STANDARD, keys.researchhotkeys);
 
@@ -1369,21 +1373,21 @@ Editor.prototype.setVisibleHotkeys = function() {
 		}
 
 		if (data.units[this.unit].build != undefined) {
-			let keys = this.getConflicts(data.units[this.unit].build);
+			const keys = this.getConflicts(data.units[this.unit].build);
 			flagHotkeys(BUILD, keys.hotkeys);
 		}
 	}
 
 	function flagHotkeys(n, hotkeys) {
-		for (let values of Object.values(hotkeys)) {
-			for (let value of values) {
-				let conflict = values.size > 1;
-				let span = $("#span" + n + "_" + value);
+		for (const values of Object.values(hotkeys)) {
+			for (const value of values) {
+				const conflict = values.size > 1;
+				const span = $("#span" + n + "_" + value);
 
 				if (span != null && !conflicts[n].includes(value)) {
 					span.classList.toggle("conflict", conflict);
 
-					let unspan = $("#span" + n + "_" + value + "_");
+					const unspan = $("#span" + n + "_" + value + "_");
 
 					if (unspan != null) {
 						unspan.classList.toggle("conflict", conflict);
@@ -1400,8 +1404,8 @@ Editor.prototype.setVisibleHotkeys = function() {
 
 Editor.prototype.checkConflicts = function(unit) {
 	if (data.units[unit] != undefined) {
-		for (let hotkeys of Object.values(this.getConflicts(unit))) {
-			for (let values of Object.values(hotkeys)) {
+		for (const hotkeys of Object.values(this.getConflicts(unit))) {
+			for (const values of Object.values(hotkeys)) {
 				if (values.size > 1) {
 					return true;
 				}
@@ -1417,12 +1421,12 @@ Editor.prototype.checkConflicts = function(unit) {
 };
 
 Editor.prototype.checkAllConflicts = function() {
-	for (let element of $$("section a")) {
+	for (const element of $$("section a")) {
 		if (element.hash == "") {
 			continue;
 		}
 
-		let unit = element.hash.replace("#", "");
+		const unit = element.hash.replace("#", "");
 		element.classList.toggle("conflict", this.checkConflicts(unit));
 	}
 };
@@ -1431,7 +1435,7 @@ Editor.prototype.filter = function(race) {
 	race = data.campaignRaces[race] || race;
 
 	// hides unit lists for races other than selected
-	for (let element of $$("section")) {
+	for (const element of $$("section")) {
 		element.hidden = element.id != "units_" + race;
 	}
 };
@@ -1445,11 +1449,11 @@ Editor.prototype.findUnitsNamed = function(query) {
 		return;
 	}
 
-	let matches = new Set(), filters = new Set();
+	const matches = new Set(), filters = new Set();
 
 	query = query.toLowerCase();
 
-	for (let [unit, properties] of Object.entries(data.units)) {
+	for (const [unit, properties] of Object.entries(data.units)) {
 		if (properties.type == OTHER || properties.name == undefined) {
 			continue;
 		}
@@ -1476,14 +1480,14 @@ Editor.prototype.findUnitsNamed = function(query) {
 };
 
 Editor.prototype.findUnitsWith = function(command) {
-	let matches = new Set();
+	const matches = new Set();
 
-	for (let [unit, properties] of Object.entries(data.units)) {
+	for (const [unit, properties] of Object.entries(data.units)) {
 		if (properties.commands == undefined) {
 			continue;
 		}
 
-		let commands = new Map(properties.commands);
+		const commands = new Map(properties.commands);
 
 		if (commands.has(command)) {
 			matches.add(unit);
@@ -1501,19 +1505,19 @@ Editor.prototype.findUnitsWith = function(command) {
 };
 
 Editor.prototype.formatResults = function(id, matches) {
-	let ul = document.createElement("ul");
+	const ul = document.createElement("ul");
 	ul.id = id;
 
-	for (let match of matches) {
-		let unit = data.units[match];
+	for (const match of matches) {
+		const unit = data.units[match];
 
-		let li = document.createElement("li");
-		let img = document.createElement("img");
+		const li = document.createElement("li");
+		const img = document.createElement("img");
 		img.setAttribute("src", this.getIcon(match));
 		img.setAttribute("alt", "[" + unit.name + "]");
 		img.setAttribute("title", unit.name);
 
-		let a = document.createElement("a");
+		const a = document.createElement("a");
 		a.href = "#" + match;
 		a.appendChild(document.createTextNode(unit.name));
 		a.classList.toggle("conflict", this.checkConflicts(match));
@@ -1537,7 +1541,7 @@ Editor.prototype.formatResults = function(id, matches) {
 };
 
 Editor.prototype.selectResult = function(dir) {
-	let results = $$("#results li");
+	const results = $$("#results li");
 
 	if (dir) { // up arrow
 		if (this.selected < 0) {
@@ -1559,14 +1563,14 @@ Editor.prototype.selectResult = function(dir) {
 };
 
 Editor.prototype.highlightResult = function() {
-	for (let [i, result] of $$("#results li").entries()) {
+	for (const [i, result] of $$("#results li").entries()) {
 		if (this.selected == i) {
 			result.classList.add("selected");
 			result.scrollIntoView(); // for long lists with scrollbars
 			this.highlightFilter(i);
 		} else {
 			if (this.selected < 0) {
-				for (let element of $$(".filter")) {
+				for (const element of $$(".filter")) {
 					element.classList.remove("highlight");
 				}
 			}
@@ -1577,7 +1581,7 @@ Editor.prototype.highlightResult = function() {
 };
 
 Editor.prototype.openResult = function() {
-	let results = $$("#results a");
+	const results = $$("#results a");
 
 	// ignores invalid array indices
 	if (this.selected < 0 || this.selected >= results.length) {
@@ -1592,18 +1596,18 @@ Editor.prototype.dimFilters = function(filters) {
 		return data.campaignRaces[race] || race;
 	});
 
-	for (let element of $$(".filter")) {
+	for (const element of $$(".filter")) {
 		element.classList.toggle("exclude", !filters.includes(element.value));
 	}
 };
 
 Editor.prototype.highlightFilter = function(n) {
-	let unit = this.matches[n];
+	const unit = this.matches[n];
 
 	let race = data.units[unit].race;
 	race = data.campaignRaces[race] || race;
 
-	for (let element of $$(".filter")) {
+	for (const element of $$(".filter")) {
 		element.classList.toggle("highlight", element.value == race);
 	}
 };
@@ -1624,13 +1628,13 @@ Editor.prototype.clear = function(element, removeListeners=true) {
 };
 
 Editor.prototype.clearButtons = function() {
-	for (let element of $$(".card div")) {
+	for (const element of $$(".card div")) {
 		this.clear(element);
 	}
 
-	for (let n of this.card.keys()) {
-		for (let y of this.card[n].keys()) {
-			for (let x of this.card[n][y].keys()) {
+	for (const n of this.card.keys()) {
+		for (const y of this.card[n].keys()) {
+			for (const x of this.card[n][y].keys()) {
 				this.card[n][y][x] = "";
 			}
 		}
@@ -1638,7 +1642,7 @@ Editor.prototype.clearButtons = function() {
 };
 
 Editor.prototype.clearFields = function() {
-	for (let element of $$("#fields p, #fields ul")) {
+	for (const element of $$("#fields p, #fields ul")) {
 		// hides element so it does not remain editable
 		element.hidden = true;
 
@@ -1663,7 +1667,7 @@ Editor.prototype.clearSearch = function(clearQuery=false) {
 	this.clear($("#results"));
 	$("#results").hidden = true;
 
-	for (let element of $$(".filter")) {
+	for (const element of $$(".filter")) {
 		element.classList.remove("exclude", "highlight");
 	}
 };
@@ -1687,15 +1691,16 @@ Commands.prototype.load = function(list) {
 
 // converts from hotkey file format to object
 Commands.prototype.parse = function(text) {
-	let list = {}, block = {}, id = "", type = "", hotkey = "";
+	const list = {};
+	let block = {}, id = "", type = "", hotkey = "";
 
-	let lines = text.split("\n");
-	let pattern = /^(\w+)=(.+)$/; // skips comments
+	const lines = text.split("\n");
+	const pattern = /^(\w+)=(.+)$/; // skips comments
 
 	// ensures empty line at end of file so final command block is saved
 	lines.push("");
 
-	for (let [i, line] of lines.entries()) {
+	for (const [i, line] of lines.entries()) {
 		// adds command block to object whenever new command block is found
 		// or at end of file (for the last command block)
 		if (lines.length == i + 1 || line.match(/^\[(\w+)\]$/)) {
@@ -1732,14 +1737,14 @@ Commands.prototype.parse = function(text) {
 Commands.prototype.convert = function() {
 	let text = "";
 
-	for (let [id, block] of Object.entries(this.list)) {
+	for (const [id, block] of Object.entries(this.list)) {
 		if (id == OPTIONS_SECTION) {
 			continue;
 		}
 
 		text += "\n[" + id + "]\n";
 
-		for (let type of Object.keys(block)) {
+		for (const type of Object.keys(block)) {
 			text += type + "=" + block[type] + "\n";
 		}
 	}
@@ -1757,41 +1762,6 @@ Commands.prototype.exists = function(id, type) {
 	}
 
 	return true;
-};
-
-Commands.prototype.get = function(id, type, unit) {
-	if (this.checkUserOverride(id, type)) {
-		return this.list[id][type];
-	}
-
-	if (this.checkUnitOverride(id, type, unit)) {
-		return unit.overrides[id][type];
-	}
-
-	if (this.exists(id, type)) {
-		return this.defaults[id][type];
-	}
-
-	return "";
-};
-
-Commands.prototype.set = function(id, type, value) {
-	if (this.exists(id, type) && this.defaults[id][type] == value) {
-		// removes user hotkey if same as default (to avoid redundant entries)
-		if (this.list[id] != undefined && this.list[id][type] != undefined) {
-			delete this.list[id][type];
-
-			if (Object.keys(this.list[id]).length == 0) {
-				delete this.list[id];
-			}
-		}
-	} else {
-		if (this.list[id] == undefined && id.match(/^\w+$/)) {
-			this.list[id] = {};
-		}
-
-		this.list[id][type] = value;
-	}
 };
 
 Commands.prototype.checkUserOverride = function(id, type) {
@@ -1820,6 +1790,48 @@ Commands.prototype.checkUnitOverride = function(id, type, unit) {
 	}
 
 	return true;
+};
+
+Commands.prototype.get = function(id, type, unit) {
+	if (this.checkUserOverride(id, type)) {
+		return this.list[id][type];
+	}
+
+	if (this.checkUnitOverride(id, type, unit)) {
+		return unit.overrides[id][type];
+	}
+
+	if (this.exists(id, type)) {
+		return this.defaults[id][type];
+	}
+
+	return "";
+};
+
+Commands.prototype.set = function(id, type, unit, value) {
+	// value is same as default value
+	const sameAsDefault = this.defaults[id][type] == value;
+	// value is same as unit override value,
+	// or no unit override value exists for this command
+	const sameAsUnitOverride = !this.checkUnitOverride(id, type, unit)
+		|| unit.overrides[id][type] == value;
+
+	if (this.exists(id, type) && sameAsDefault && sameAsUnitOverride) {
+		// removes user hotkey if same as default (to avoid redundant entries)
+		if (this.checkUserOverride(id, type)) {
+			delete this.list[id][type];
+
+			if (Object.keys(this.list[id]).length == 0) {
+				delete this.list[id];
+			}
+		}
+	} else {
+		if (this.list[id] == undefined && id.match(/^\w+$/)) {
+			this.list[id] = {};
+		}
+
+		this.list[id][type] = value;
+	}
 };
 
 Commands.prototype.clear = function(id) {
@@ -1875,10 +1887,10 @@ function Options() {
 }
 
 Options.prototype.load = function(list) {
-	let options = list[OPTIONS_SECTION] || {};
+	const options = list[OPTIONS_SECTION] || {};
 
-	for (let [key, value] of Object.entries(options)) {
-		let lowercase = key.toLowerCase();
+	for (const [key, value] of Object.entries(options)) {
+		const lowercase = key.toLowerCase();
 		options[lowercase] = value;
 		delete options[key];
 	}
@@ -1888,12 +1900,12 @@ Options.prototype.load = function(list) {
 };
 
 Options.prototype.save = function(list) {
-	let options = this.getValues();
+	const options = this.getValues();
 
-	for (let [key, value] of Object.entries(options)) {
+	for (const [key, value] of Object.entries(options)) {
 		// saves options only if different from default values
 		if (this.defaults[key] != value) {
-			let capitalized = key.charAt(0).toUpperCase() + key.slice(1);
+			const capitalized = key.charAt(0).toUpperCase() + key.slice(1);
 			options[capitalized] = value;
 		}
 
@@ -1910,9 +1922,9 @@ Options.prototype.save = function(list) {
 };
 
 Options.prototype.getValues = function() {
-	let options = {};
+	const options = {};
 
-	for (let element of $$(".option")) {
+	for (const element of $$(".option")) {
 		if (element.type == "checkbox") { // checkboxes
 			options[element.id] = element.checked;
 		} else if (element.type == "radio") { // radio buttons
@@ -1926,19 +1938,19 @@ Options.prototype.getValues = function() {
 };
 
 Options.prototype.setElements = function() {
-	for (let [key, value] of Object.entries(this.defaults)) {
+	for (const [key, value] of Object.entries(this.defaults)) {
 		if (value == undefined) {
 			continue;
 		}
 
 		if (typeof value == "boolean") { // checkboxes
-			let element = $("#" + key);
+			const element = $("#" + key);
 
 			if (element != undefined) {
 				element.checked = Boolean(this.read(key));
 			}
 		} else if (typeof value == "string") { // radio buttons
-			for (let element of document.getElementsByName(key)) {
+			for (const element of document.getElementsByName(key)) {
 				element.checked = element.value == this.read(key);
 			}
 		}
