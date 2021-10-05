@@ -552,12 +552,12 @@ Tip=Train Archer (|cffffcc00Z|r)
 Buttonpos=1,0
 
 [remk]
-Hotkey=Q
-Tip=Research Marksmanship (|cffffcc00Q|r)
+Hotkey=W
+Tip=Research Marksmanship (|cffffcc00W|r)
 
 [reib]
-Hotkey=W
-Tip=Research Improved Bows (|cffffcc00W|r)
+Hotkey=Q
+Tip=Research Improved Bows (|cffffcc00Q|r)
 
 [_hhes]
 Buttonpos=0,0

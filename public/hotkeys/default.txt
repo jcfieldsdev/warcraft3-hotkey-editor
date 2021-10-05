@@ -2458,12 +2458,12 @@ Buttonpos=2,0
 [reib]
 Tip=Research |cffffcc00I|rmproved Bows
 Hotkey=I
-Buttonpos=0,2
+Buttonpos=0,1
 
 [remk]
 Tip=Research |cffffcc00M|rarksmanship
 Hotkey=M
-Buttonpos=0,1
+Buttonpos=0,2
 
 [remg]
 Tip=Upgrade Moon |cffffcc00G|rlaive
