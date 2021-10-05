@@ -369,7 +369,24 @@ data.units = {
 			["hlgr", "Lord Garithos"],
 			["cmdrally", "Set Rally Point"],
 			["cmdcancelbuild", "Cancel"]
-		]
+		],
+		overrides: {
+			hart: {
+				Buttonpos: "2,2"
+			},
+			harf: {
+				Buttonpos: "2,1"
+			},
+			hjai: {
+				Buttonpos: "0,2"
+			},
+			hmbr: {
+				Buttonpos: "1,2"
+			},
+			hlgr: {
+				Buttonpos: "1,1"
+			}
+		}
 	},
 	hars: {
 		name: "Arcane Sanctum",
@@ -508,7 +525,15 @@ data.units = {
 			["ssan", "Purchase Staff of Sanctuary"],
 			["ssil", "Purchase Staff of Silence"],
 			["anei", "Select User"]
-		]
+		],
+		overrides: {
+			pams: {
+				Buttonpos: "3,1"
+			},
+			tsct: {
+				Buttonpos: "3,0"
+			}
+		}
 	},
 	hshy: {
 		name: "Human Shipyard",
@@ -813,7 +838,15 @@ data.units = {
 			["reib", "Research Improved Bows"],
 			["remk", "Research Marksmanship"],
 			["cmdcancelbuild", "Cancel"]
-		]
+		],
+		overrides: {
+			reib: {
+				Buttonpos: "1,1"
+			},
+			remk: {
+				Buttonpos: "1,2"
+			}
+		}
 	},
 	nheb: {
 		name: "High Elven Barracks",
@@ -1365,7 +1398,24 @@ data.units = {
 			["naka", "Akama"],
 			["cmdrally", "Set Rally Point"],
 			["cmdcancelbuild", "Cancel"]
-		]
+		],
+		overrides: {
+			ogrh: {
+				Buttonpos: "0,2"
+			},
+			opgh: {
+				Buttonpos: "0,1"
+			},
+			othr: {
+				Buttonpos: "1,2"
+			},
+			ocbh: {
+				Buttonpos: "2,2"
+			},
+			naka: {
+				Buttonpos: "1,1"
+			}
+		}
 	},
 	osld: {
 		name: "Spirit Lodge",
@@ -1660,7 +1710,12 @@ data.units = {
 			["rwdm", "Upgrade War Drums"],
 			["cmdrally", "Set Rally Point"],
 			["cmdcancelbuild", "Cancel"]
-		]
+		],
+		overrides: {
+			rwdm: {
+				Buttonpos: "1,2"
+			}
+		}
 	},
 	o001: {
 		name: "Orgrimmar Armory",
@@ -1877,7 +1932,12 @@ data.units = {
 		commands: [
 			["amls", "Aerial Shackles"],
 			["achv", "Healing Wave"]
-		]
+		],
+		overrides: {
+			amls: {
+				Hotkey: "R"
+			}
+		}
 	},
 	nsjs_wyvern: {
 		name: "Chen Stormstout",
@@ -2447,7 +2507,21 @@ data.units = {
 			["usyl", "Sylvanas"],
 			["cmdrally", "Set Rally Point"],
 			["cmdcancelbuild", "Cancel"]
-		]
+		],
+		overrides: {
+			uear: {
+				Buttonpos: "0,2"
+			},
+			uvar: {
+				Buttonpos: "1,2"
+			},
+			uktl: {
+				Buttonpos: "2,2"
+			},
+			usyl: {
+				Buttonpos: "1,1"
+			}
+		}
 	},
 	utod: {
 		name: "Temple of the Damned",
@@ -3172,7 +3246,27 @@ data.units = {
 			["ewrd", "Maiev"],
 			["cmdrally", "Set Rally Point"],
 			["cmdcancelbuild", "Cancel"]
-		]
+		],
+		overrides: {
+			etyr: {
+				Buttonpos: "2,2"
+			},
+			efur: {
+				Buttonpos: "1,2"
+			},
+			emns: {
+				Buttonpos: "1,1"
+			},
+			emfr: {
+				Buttonpos: "2,1"
+			},
+			eill: {
+				Buttonpos: "0,2"
+			},
+			ewrd: {
+				Buttonpos: "0,1"
+			}
+		}
 	},
 	eaoe: {
 		name: "Ancient of Lore",
@@ -3637,7 +3731,15 @@ data.units = {
 			["hvsh", "Lady Vashj"],
 			["cmdrally", "Set Rally Point"],
 			["cmdcancelbuild", "Cancel"]
-		]
+		],
+		overrides: {
+			eevi: {
+				Buttonpos: "0,2"
+			},
+			hvsh: {
+				Buttonpos: "1,2"
+			}
+		}
 	},
 	nsel: {
 		name: "Sea Elemental",
@@ -4082,7 +4184,30 @@ data.units = {
 			["gemt", "Gem of True Seeing"],
 			["stwp", "Purchase Scroll of Town Portal"],
 			["anei", "Select User"]
-		]
+		],
+		overrides: {
+			phea: {
+				Buttonpos: "0,0"
+			},
+			pman: {
+				Buttonpos: "1,0"
+			},
+			pinv: {
+				Buttonpos: "2,0"
+			},
+			shea: {
+				Buttonpos: "3,0"
+			},
+			wneg: {
+				Buttonpos: "1,1"
+			},
+			gemt: {
+				Buttonpos: "2,1"
+			},
+			stwp: {
+				Buttonpos: "3,1"
+			}
+		}
 	},
 	nmrk: {
 		name: "Marketplace",

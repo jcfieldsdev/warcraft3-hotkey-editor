@@ -679,14 +679,14 @@ Hotkey=L
 Tip=Summon Pa|cffffcc00l|radin
 Revivetip=Revive Pa|cffffcc00l|radin
 Awakentip=Revive Pa|cffffcc00l|radin
-Buttonpos=2,2
+Buttonpos=0,0
 
 [harf]
 Hotkey=L
 Tip=Summon Pa|cffffcc00l|radin
 Revivetip=Revive Pa|cffffcc00l|radin
 Awakentip=Revive Pa|cffffcc00l|radin
-Buttonpos=2,1
+Buttonpos=0,0
 
 [huth]
 Hotkey=L
@@ -700,7 +700,7 @@ Hotkey=A
 Tip=Summon |cffffcc00A|rrchmage
 Revivetip=Revive |cffffcc00A|rrchmage
 Awakentip=Revive |cffffcc00A|rrchmage
-Buttonpos=0,2
+Buttonpos=0,0
 
 [hant]
 Hotkey=A
@@ -714,7 +714,7 @@ Hotkey=M
 Tip=Summon |cffffcc00M|rountain King
 Revivetip=Revive |cffffcc00M|rountain King
 Awakentip=Revive |cffffcc00M|rountain King
-Buttonpos=1,2
+Buttonpos=0,0
 
 [hkal]
 Hotkey=B
@@ -770,7 +770,7 @@ Hotkey=L
 Tip=Summon Pa|cffffcc00l|radin
 Revivetip=Revive Pa|cffffcc00l|radin
 Awakentip=Revive Pa|cffffcc00l|radin
-Buttonpos=1,1
+Buttonpos=0,0
 
 [ahlh]
 Tip=Improved Lumber Harvesting,Advanced Lumber Harvesting
@@ -1325,14 +1325,14 @@ Hotkey=B
 Tip=Summon |cffffcc00B|rlademaster
 Revivetip=Revive |cffffcc00B|rlademaster
 Awakentip=Revive |cffffcc00B|rlademaster
-Buttonpos=0,2
+Buttonpos=0,0
 
 [opgh]
 Hotkey=B
 Tip=Summon |cffffcc00B|rlademaster
 Revivetip=Revive |cffffcc00B|rlademaster
 Awakentip=Revive |cffffcc00B|rlademaster
-Buttonpos=0,1
+Buttonpos=0,0
 
 [osam]
 Hotkey=B
@@ -1346,28 +1346,28 @@ Hotkey=F
 Tip=Summon |cffffcc00F|rar Seer
 Revivetip=Revive |cffffcc00F|rar Seer
 Awakentip=Revive |cffffcc00F|rar Seer
-Buttonpos=1,2
+Buttonpos=0,0
 
 [odrt]
 Hotkey=F
 Tip=Summon |cffffcc00F|rar Seer
 Revivetip=Revive |cffffcc00F|rar Seer
 Awakentip=Revive |cffffcc00F|rar Seer
-Buttonpos=1,2
+Buttonpos=0,0
 
 [ocbh]
 Hotkey=T
 Tip=Summon |cffffcc00T|rauren Chieftain
 Revivetip=Revive |cffffcc00T|rauren Chieftain
 Awakentip=Revive |cffffcc00T|rauren Chieftain
-Buttonpos=2,2
+Buttonpos=0,0
 
 [ocb2]
 Hotkey=T
 Tip=Summon |cffffcc00T|rauren Chieftain
 Revivetip=Revive |cffffcc00T|rauren Chieftain
 Awakentip=Revive |cffffcc00T|rauren Chieftain
-Buttonpos=2,2
+Buttonpos=0,0
 
 [orex]
 Hotkey=B
@@ -2020,7 +2020,7 @@ Tip=Summon |cffffcc00D|reath Knight
 Revivetip=Revive |cffffcc00D|reath Knight
 Awakentip=Revive |cffffcc00D|reath Knight
 Hotkey=D
-Buttonpos=0,2
+Buttonpos=0,0
 
 [umal]
 Tip=Summon Dr|cffffcc00e|radlord
@@ -2034,35 +2034,35 @@ Tip=Summon Dr|cffffcc00e|radlord
 Revivetip=Revive Dr|cffffcc00e|radlord
 Awakentip=Revive Dr|cffffcc00e|radlord
 Hotkey=E
-Buttonpos=1,2
+Buttonpos=0,0
 
 [ubal]
 Tip=Summon Dr|cffffcc00e|radlord
 Revivetip=Revive Dr|cffffcc00e|radlord
 Awakentip=Revive Dr|cffffcc00e|radlord
 Hotkey=E
-Buttonpos=1,2
+Buttonpos=0,0
 
 [udth]
 Tip=Summon Dr|cffffcc00e|radlord
 Revivetip=Revive Dr|cffffcc00e|radlord
 Awakentip=Revive Dr|cffffcc00e|radlord
 Hotkey=E
-Buttonpos=1,2
+Buttonpos=0,0
 
 [uvng]
 Tip=Summon Dr|cffffcc00e|radlord
 Revivetip=Revive Dr|cffffcc00e|radlord
 Awakentip=Revive Dr|cffffcc00e|radlord
 Hotkey=E
-Buttonpos=1,2
+Buttonpos=0,0
 
 [uktl]
 Tip=Summon |cffffcc00L|rich
 Revivetip=Revive |cffffcc00L|rich
 Awakentip=Revive |cffffcc00L|rich
 Hotkey=L
-Buttonpos=2,2
+Buttonpos=0,0
 
 [uanb]
 Tip=Summon |cffffcc00C|rrypt Lord
@@ -2076,7 +2076,7 @@ Hotkey=R
 Tip=Summon Dark |cffffcc00R|ranger
 Revivetip=Revive Dark |cffffcc00R|ranger
 Awakentip=Revive Dark |cffffcc00R|ranger
-Buttonpos=1,1
+Buttonpos=0,0
 
 [npld]
 Hotkey=P
@@ -2834,7 +2834,7 @@ Hotkey=D
 Tip=Summon |cffffcc00D|remon Hunter
 Revivetip=Revive |cffffcc00D|remon Hunter
 Awakentip=Revive |cffffcc00D|remon Hunter
-Buttonpos=0,2
+Buttonpos=0,0
 
 [ecen]
 Hotkey=C
@@ -2848,28 +2848,28 @@ Hotkey=K
 Tip=Summon |cffffcc00K|reeper of the Grove
 Revivetip=Revive |cffffcc00K|reeper of the Grove
 Awakentip=Revive |cffffcc00K|reeper of the Grove
-Buttonpos=1,2
+Buttonpos=0,0
 
 [emns]
 Hotkey=K
 Tip=Summon |cffffcc00K|reeper of the Grove
 Revivetip=Revive |cffffcc00K|reeper of the Grove
 Awakentip=Revive |cffffcc00K|reeper of the Grove
-Buttonpos=1,1
+Buttonpos=0,0
 
 [emfr]
 Hotkey=K
 Tip=Summon |cffffcc00K|reeper of the Grove
 Revivetip=Revive |cffffcc00K|reeper of the Grove
 Awakentip=Revive |cffffcc00K|reeper of the Grove
-Buttonpos=2,1
+Buttonpos=0,0
 
 [etyr]
 Hotkey=P
 Tip=Summon |cffffcc00P|rriestess of the Moon
 Revivetip=Revive |cffffcc00P|rriestess of the Moon
 Awakentip=Revive |cffffcc00P|rriestess of the Moon
-Buttonpos=2,2
+Buttonpos=0,0
 
 [ewrd]
 Hotkey=W
@@ -5536,7 +5536,7 @@ Buttonpos=0,0
 [nckb]
 Tip=Train Chaos |cffffcc00K|rodo Beast
 Hotkey=K
-Buttonpos=2,0
+Buttonpos=1,0
 
 [nchw]
 Tip=Train Chao|cffffcc00s|r Warlock
@@ -5786,7 +5786,7 @@ Hotkey=K
 Tip=Summon A|cffffcc00k|rama
 Revivetip=Revive A|cffffcc00k|rama
 Awakentip=Revive A|cffffcc00k|rama
-Buttonpos=1,1
+Buttonpos=0,0
 
 [acs7]
 Tip=Feral Spiri|cffffcc00t|r - [|cffffcc00Level 1|r],Feral Spiri|cffffcc00t|r - [|cffffcc00Level 2|r],Feral Spiri|cffffcc00t|r - [|cffffcc00Level 3|r]
@@ -5842,14 +5842,14 @@ Hotkey=D
 Tip=Summon |cffffcc00D|remon Hunter
 Revivetip=Revive |cffffcc00D|remon Hunter
 Awakentip=Revive |cffffcc00D|remon Hunter
-Buttonpos=0,2
+Buttonpos=0,0
 
 [hvsh]
 Hotkey=G
 Tip=Summon Na|cffffcc00g|ra Sea Witch
 Revivetip=Revive Na|cffffcc00g|ra Sea Witch
 Awakentip=Revive Na|cffffcc00g|ra Sea Witch
-Buttonpos=1,2
+Buttonpos=0,0
 
 [aell]
 Tip=Me|cffffcc00t|ramorphosis

@@ -88,7 +88,7 @@ window.addEventListener("load", function() {
 	options.reset(); // sets elements to default states
 
 	// loads default commands
-	load(DEFAULT_HOTKEY_FILE, function(text) {
+	loadFile(DEFAULT_HOTKEY_FILE).then(function(text) {
 		commands.parse(text);
 
 		let mem = store.load();
@@ -102,9 +102,7 @@ window.addEventListener("load", function() {
 	});
 
 	// populates list of sample files on load overlay
-	getList(function(text) {
-		overlays.load.setText(text);
-	});
+	loadList();
 
 	window.addEventListener("beforeunload", function() {
 		commands.list = options.save(commands.list);
@@ -198,7 +196,7 @@ window.addEventListener("load", function() {
 			if (editor.clicks >= ANNOYED_CLICKS) {
 				editor.clicks = 0;
 
-				let audio = new Audio(ICON_DIR + "/" + ANNOYED_SOUND);
+				let audio = new Audio([ICON_DIR, ANNOYED_SOUND].join("/"));
 				audio.play();
 			}
 		}
@@ -238,6 +236,15 @@ window.addEventListener("load", function() {
 	});
 	document.addEventListener("input", function(event) {
 		let element = event.target;
+
+		if (element.matches("#files")) {
+			// ignores explanatory "(Select a set...)" option
+			if (element.selectedIndex > 0) {
+				loadFile(element.value).then(function(text) {
+					overlays.load.setText(text);
+				});
+			}
+		}
 
 		if (element.matches("#query")) {
 			editor.findUnitsNamed(element.value);
@@ -331,49 +338,37 @@ window.addEventListener("load", function() {
 		element.setAttribute("spellcheck", "false");
 	}
 
-	function load(file, callback) {
-		// ignores explanatory "(Select a set...)" option
-		if (file.startsWith("(")) {
-			return;
-		}
-
-		let xhr = new XMLHttpRequest();
-
-		xhr.addEventListener("readystatechange", function() {
-			if (this.readyState == 4 && this.status == 200) {
-				callback(this.responseText);
-			}
+	function loadFile(file, callback) {
+		return new Promise(function(resolve) {
+			let xhr = new XMLHttpRequest();
+			xhr.addEventListener("readystatechange", function() {
+				if (this.readyState == 4 && this.status == 200) {
+					resolve(this.responseText);
+				}
+			});
+			xhr.open("GET", [HOTKEY_DIR, file].join("/"), true);
+			xhr.responseType = "text";
+			xhr.send();
 		});
-		xhr.open("GET", HOTKEY_DIR + "/" + file, true);
-		xhr.responseType = "text";
-		xhr.send();
 	}
 
-	function getList(callback) {
+	function loadList() {
 		let xhr = new XMLHttpRequest();
-
 		xhr.addEventListener("readystatechange", function() {
-			if (this.readyState != 4 || this.status != 200) {
-				return;
+			if (this.readyState == 4 && this.status == 200) {
+				let select = document.createElement("select");
+				select.id = "files";
+
+				let options = ["(Select a set...)"].concat(this.response);
+
+				for (let file of options) {
+					let option = document.createElement("option");
+					option.appendChild(document.createTextNode(file));
+					select.appendChild(option);
+				}
+
+				$("#files").replaceWith(select);
 			}
-
-			let select = document.createElement("select");
-			select.id = "files";
-			select.addEventListener("change", function() {
-				load(select.value, callback);
-			});
-
-			let option = document.createElement("option");
-			option.appendChild(document.createTextNode("(Select a set...)"));
-			select.appendChild(option);
-
-			for (let file of this.response) {
-				option = document.createElement("option");
-				option.appendChild(document.createTextNode(file));
-				select.appendChild(option);
-			}
-
-			$("#files").replaceWith(select);
 		});
 		xhr.open("GET", DIR_LIST, true);
 		xhr.responseType = "json";
@@ -489,7 +484,7 @@ Editor.prototype.unitEditor = function() {
 	research.hidden = unit.type != HERO;
 
 	if (unit.type == HERO) { // adds cancel button to hero select skills card
-		let buttonpos = this.commands.get(CANCEL, "Buttonpos");
+		let buttonpos = this.commands.get(CANCEL, "Buttonpos", unit);
 
 		if (buttonpos != "") {
 			placeButton.call(this, CANCEL, "Cancel", RESEARCH, buttonpos, true);
@@ -534,19 +529,19 @@ Editor.prototype.unitEditor = function() {
 		for (let [id, name] of this.getCommands(unit)) {
 			// special exception for build buttons, whose hotkeys and tooltips
 			// are under cmdbuild* but whose buttonpos are under a?bu
-			let pos = data.buildCommands[id] || id;
+			let idpos = data.buildCommands[id] || id;
 
-			if (!this.commands.exists(pos)) {
-				console.error(`Undefined: ${pos} (command)`);
+			if (!this.commands.exists(idpos)) {
+				console.error(`Undefined: ${idpos} (command)`);
 				continue;
 			}
 
-			let buttonpos = this.commands.get(pos, "Buttonpos");
-			let unbuttonpos = this.commands.get(pos, "Unbuttonpos");
-			let researchbuttonpos = this.commands.get(pos, "Researchbuttonpos");
+			let buttonpos = this.commands.get(idpos, "Buttonpos", unit);
 
 			if (buttonpos != "") {
 				placeButton.call(this, id, name, n, buttonpos, true);
+
+				let unbuttonpos = this.commands.get(idpos, "Unbuttonpos", unit);
 
 				// places separate button for unbutton if in different position
 				if (unbuttonpos != "" && buttonpos != unbuttonpos) {
@@ -554,12 +549,16 @@ Editor.prototype.unitEditor = function() {
 					placeButton.apply(this, args);
 				}
 
+				let researchbuttonpos = this.commands.get(
+					idpos, "Researchbuttonpos", unit
+				);
+
 				if (researchbuttonpos != "") { // for hero abilities
 					const args = [id, name, RESEARCH, researchbuttonpos, true];
 					placeButton.apply(this, args);
 				}
 			} else {
-				console.error(`Undefined: ${pos} (buttonpos)`);
+				console.error(`Undefined: ${idpos} (buttonpos)`);
 			}
 
 			// re-selects command if selected on previously viewed unit
@@ -702,7 +701,7 @@ Editor.prototype.getIcon = function(id, n=STANDARD) {
 		}
 	}
 
-	return ICON_DIR + "/" + dir + "/" + icon + data.icons[dir].extension;
+	return [ICON_DIR, dir, icon + data.icons[dir].extension].join("/");
 };
 
 Editor.prototype.getPosition = function(n, y, x) {
@@ -784,6 +783,7 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 	}
 
 	let oldpos = "", newpos = "", oldunpos = "", newunpos = "";
+	let unit = data.units[this.unit];
 
 	// trims "img#_" prefix
 	from = from.replace(imgPattern, "$2");
@@ -792,14 +792,14 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 
 	// must also transfer "Unbuttonpos" for toggleable/two-state abilities
 	if (this.active != RESEARCH) {
-		oldunpos = this.commands.get(from, "Unbuttonpos");
+		oldunpos = this.commands.get(from, "Unbuttonpos", unit);
 	}
 
 	// checks if destination ID is div grid coord (for empty spot)
 	// or command (for button swap)
 	if (to.match(coordPattern)) {
 		newpos = to.replace(coordPattern, "$3,$2");
-		oldpos = this.commands.get(from, "Buttonpos");
+		oldpos = this.commands.get(from, "Buttonpos", unit);
 	} else { // if destination is not empty, swap button positions
 		// trims "img#_" prefix
 		to = to.replace(imgPattern, "$2");
@@ -807,19 +807,19 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 		to = data.buildCommands[to] || to;
 
 		if (this.active != RESEARCH || to == CANCEL) {
-			newpos = this.commands.get(to, "Buttonpos");
+			newpos = this.commands.get(to, "Buttonpos", unit);
 		} else {
-			newpos = this.commands.get(to, "Researchbuttonpos");
+			newpos = this.commands.get(to, "Researchbuttonpos", unit);
 		}
 
 		// modifier key held during drop overrides swap behavior and allows
 		// position conflict
 		if (!allowConflict) {
 			if (this.active != RESEARCH || from == CANCEL) {
-				newunpos = this.commands.get(to, "Unbuttonpos");
-				oldpos = this.commands.get(from, "Buttonpos");
+				newunpos = this.commands.get(to, "Unbuttonpos", unit);
+				oldpos = this.commands.get(from, "Buttonpos", unit);
 			} else {
-				oldpos = this.commands.get(from, "Researchbuttonpos");
+				oldpos = this.commands.get(from, "Researchbuttonpos", unit);
 			}
 
 			// uses location of button in card if available, otherwise uses
@@ -899,9 +899,9 @@ Editor.prototype.getConflicts = function(id) {
 			continue;
 		}
 
-		let hotkey = this.commands.get(id, "Hotkey");
-		let unhotkey = this.commands.get(id, "Unhotkey");
-		let researchhotkey = this.commands.get(id, "Researchhotkey");
+		let hotkey = this.commands.get(id, "Hotkey", unit);
+		let unhotkey = this.commands.get(id, "Unhotkey", unit);
+		let researchhotkey = this.commands.get(id, "Researchhotkey", unit);
 
 		// tracks research hotkeys separately
 		recordHotkey(id, hotkey, hotkeys);
@@ -912,8 +912,8 @@ Editor.prototype.getConflicts = function(id) {
 			if (hotkey != unhotkey) {
 				recordHotkey(id, unhotkey, hotkeys);
 			} else {
-				let buttonpos = this.commands.get(id, "Buttonpos");
-				let unbuttonpos = this.commands.get(id, "Unbuttonpos");
+				let buttonpos = this.commands.get(id, "Buttonpos", unit);
+				let unbuttonpos = this.commands.get(id, "Unbuttonpos", unit);
 
 				// counts unhotkey separately if positions are different so
 				// command can conflict with itself
@@ -928,7 +928,7 @@ Editor.prototype.getConflicts = function(id) {
 	// adds cancel button to hero select skills card for the purpose of
 	// identifying conflicts with it
 	if (Object.keys(researchhotkeys).length > 0) {
-		let hotkey = this.commands.get(CANCEL, "Hotkey");
+		let hotkey = this.commands.get(CANCEL, "Hotkey", unit);
 		recordHotkey(CANCEL, hotkey, researchhotkeys);
 	}
 
@@ -956,14 +956,17 @@ Editor.prototype.commandEditor = function() {
 		return;
 	}
 
-	let tip = this.commands.get(this.command, "Tip");
-	let hotkey = this.commands.get(this.command, "Hotkey");
-	let untip = this.commands.get(this.command, "Untip");
-	let unhotkey = this.commands.get(this.command, "Unhotkey");
-	let researchtip = this.commands.get(this.command, "Researchtip");
-	let researchhotkey = this.commands.get(this.command, "Researchhotkey");
-	let revivetip = this.commands.get(this.command, "Revivetip");
-	let awakentip = this.commands.get(this.command, "Awakentip");
+	let id = this.command;
+	let unit = data.units[this.unit];
+
+	let tip = this.commands.get(id, "Tip", unit);
+	let hotkey = this.commands.get(id, "Hotkey", unit);
+	let untip = this.commands.get(id, "Untip", unit);
+	let unhotkey = this.commands.get(id, "Unhotkey", unit);
+	let researchtip = this.commands.get(id, "Researchtip", unit);
+	let researchhotkey = this.commands.get(id, "Researchhotkey", unit);
+	let revivetip = this.commands.get(id, "Revivetip", unit);
+	let awakentip = this.commands.get(id, "Awakentip", unit);
 
 	this.formatTip("Tip", tip);
 	this.formatTip("Untip", untip);
@@ -995,11 +998,11 @@ Editor.prototype.commandEditor = function() {
 	}
 
 	let h3 = $("#command");
-	h3.textContent = this.name + " (" + this.command + ")";
+	h3.textContent = this.name + " (" + id + ")";
 	h3.hidden = false;
 
 	// omits basic commands
-	$("#show").hidden = this.command.startsWith("cmd");
+	$("#show").hidden = id.startsWith("cmd");
 
 	$("#edit").hidden = true;
 	$("#defaults").hidden = false;
@@ -1081,7 +1084,7 @@ Editor.prototype.editTip = function(type) {
 	let tip = tips.join(DELIMITER);
 
 	if (tip == "") { // restores blank tip to previous value
-		tip = this.commands.get(this.command, type);
+		tip = this.commands.get(this.command, type, data.units[this.unit]);
 	}
 
 	this.formatTip(type, tip);
@@ -1119,8 +1122,10 @@ Editor.prototype.autoSetTip = function(type, fields) {
 	// the non-selected pattern
 	let otherPattern = start ? endPattern : startPattern;
 
+	let unit = data.units[this.unit];
+
 	// splits string by comma unless comma is within quotes
-	let tips = this.commands.get(this.command, type).split(PATTERN);
+	let tips = this.commands.get(this.command, type, unit).split(PATTERN);
 	tips = tips.map(function(tip, i) {
 		tip = tip.replace(/"/g, ""); // removes quotes
 
@@ -1233,8 +1238,10 @@ Editor.prototype.editHotkey = function(input, type, event) {
 	let key = String.fromCharCode(keyCode);
 	input.value = key;
 
-	let buttonpos = this.commands.get(this.command, "Buttonpos");
-	let unbuttonpos = this.commands.get(this.command, "Unbuttonpos");
+	let unit = data.units[this.unit];
+
+	let buttonpos = this.commands.get(this.command, "Buttonpos", unit);
+	let unbuttonpos = this.commands.get(this.command, "Unbuttonpos", unit);
 	let samePositions = unbuttonpos == "" || buttonpos == unbuttonpos;
 
 	// sets all hotkeys together if "spirit link" option selected
@@ -1313,16 +1320,19 @@ Editor.prototype.setVisibleHotkeys = function() {
 				}
 
 				let span = null, hotkey = "";
+				let unit = data.units[this.unit];
 
 				if (state) {
 					span = $("#span" + n + "_" + id);
-					hotkey = this.commands.get(id, "Hotkey");
+					hotkey = this.commands.get(id, "Hotkey", unit);
 				} else {
 					span = $("#span" + n + "_" + id + "_");
-					hotkey = this.commands.get(id, "Unhotkey");
+					hotkey = this.commands.get(id, "Unhotkey", unit);
 				}
 
-				let researchhotkey = this.commands.get(id, "Researchhotkey");
+				let researchhotkey = this.commands.get(
+					id, "Researchhotkey", unit
+				);
 
 				// shows "Hotkey" if available and standard card selected,
 				// else shows "Researchhotkey" (for passives or research card)
@@ -1449,7 +1459,7 @@ Editor.prototype.findUnitsNamed = function(query) {
 		name = name.replace(/[‘’]/g, "'");
 		name = name.replace(/[“”]/g, "\"");
 
-		if (name.indexOf(query) != -1) {
+		if (name.includes(query)) {
 			matches.add(unit);
 			filters.add(properties.race);
 		}
@@ -1749,9 +1759,13 @@ Commands.prototype.exists = function(id, type) {
 	return true;
 };
 
-Commands.prototype.get = function(id, type) {
-	if (this.list[id] != undefined && this.list[id][type] != undefined) {
+Commands.prototype.get = function(id, type, unit) {
+	if (this.checkUserOverride(id, type)) {
 		return this.list[id][type];
+	}
+
+	if (this.checkUnitOverride(id, type, unit)) {
+		return unit.overrides[id][type];
 	}
 
 	if (this.exists(id, type)) {
@@ -1778,6 +1792,34 @@ Commands.prototype.set = function(id, type, value) {
 
 		this.list[id][type] = value;
 	}
+};
+
+Commands.prototype.checkUserOverride = function(id, type) {
+	if (this.list[id] == undefined) {
+		return;
+	}
+
+	if (this.list[id][type] == undefined) {
+		return;
+	}
+
+	return true;
+};
+
+Commands.prototype.checkUnitOverride = function(id, type, unit) {
+	if (unit.overrides == undefined) {
+		return;
+	}
+
+	if (unit.overrides[id] == undefined) {
+		return;
+	}
+
+	if (unit.overrides[id][type] == undefined) {
+		return;
+	}
+
+	return true;
 };
 
 Commands.prototype.clear = function(id) {
