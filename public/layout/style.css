@@ -101,7 +101,7 @@ a {
 	text-decoration: none;
 }
 
-a, button, div#editor img {
+a, button {
 	cursor: pointer;
 }
 
@@ -114,14 +114,14 @@ a.conflict, span.conflict {
 	color: var(--conflict);
 }
 
+a.nocmds, input:disabled, span.passive {
+	opacity: 0.5;
+}
+
 a:hover, a:active {
 	background: none;
 	color: #fff;
 	text-decoration: underline;
-}
-
-a.nocmds, input:disabled, span.passive {
-	opacity: 0.5;
 }
 
 body {
@@ -134,11 +134,10 @@ button {
 	border: 3px solid var(--human-button-border);
 	border-radius: 0.5em;
 	color: var(--link);
-	font-size: 2rem;
 	font-weight: bold;
+	line-height: 125%;
 	margin: 0 0.25em 0.5em;
 	padding: 0.25em;
-	width: 8em;
 }
 
 button, input, select {
@@ -148,15 +147,6 @@ button, input, select {
 button span.key {
 	background: none;
 	color: #fff;
-}
-
-button:focus, input:focus, select:focus, textarea:focus {
-	outline: 0;
-}
-
-button#help {
-	border-radius: 100%;
-	width: 2em;
 }
 
 button#human {
@@ -177,6 +167,51 @@ button#orc {
 
 button#undead {
 	background-image: url(seal-undead.png);
+}
+
+button.icon {
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	color: inherit;
+	line-height: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+button.icon, button.icon img, h2 img {
+	height: 64px;
+	width: 64px;
+}
+
+button.icon, div#editor, div.overlay, select {
+	font-size: 1.25rem;
+}
+
+button.icon span {
+	font-size: inherit;
+	font-weight: bold;
+	left: 5px;
+	pointer-events: none;
+	position: absolute;
+	top: 4px;
+}
+
+button.icon span, h2#name, h3#command, p.hotkey input {
+	text-shadow: 2px 2px #000;
+}
+
+button.icon:hover {
+	outline: 2px solid #fff;
+}
+
+button.icon:active
+	cursor: move;
+}
+
+button:focus, input:focus, select:focus, textarea:focus {
+	outline: 0;
 }
 
 cite {
@@ -206,10 +241,31 @@ div#buttons {
 	text-align: right;
 }
 
+div#buttons button, div.overlay button {
+	font-size: 2rem;
+	width: 8em;
+}
+
+div#buttons button#help {
+	border-radius: 100%;
+	width: 2em;
+}
+
 div#cards {
 	clear: left;
 	display: flex;
 	justify-content: space-evenly;
+}
+
+div#control button, div#fields button {
+	font-size: 0.75rem;
+	padding: 0.25em 1em;
+	width: auto;
+}
+
+div#control button:hover, div#fields button:hover,
+div.overlay button:hover, footer button:hover {
+	border-color: #fff !important;
 }
 
 div#editor {
@@ -238,7 +294,8 @@ div#editor.bloodelf button {
 	border-color: var(--bloodelf-button-border);
 }
 
-div#editor.bloodelf div.grid>div, div#editor.bloodelf p.tip:focus, div#editor.bloodelf p.tip:hover {
+div#editor.bloodelf div.grid div.cell,
+div#editor.bloodelf p.tip:focus, div#editor.bloodelf p.tip:hover {
 	outline-color: var(--bloodelf-border);
 }
 
@@ -253,7 +310,8 @@ div#editor.demon button {
 	border-color: var(--demon-button-border);
 }
 
-div#editor.demon div.grid>div, div#editor.demon p.tip:focus, div#editor.demon p.tip:hover {
+div#editor.demon div.grid div.cell,
+div#editor.demon p.tip:focus, div#editor.demon p.tip:hover {
 	outline-color: var(--demon-border);
 }
 
@@ -268,7 +326,8 @@ div#editor.draenei button {
 	border-color: var(--draenei-button-border);
 }
 
-div#editor.draenei div.grid>div, div#editor.draenei p.tip:focus, div#editor.draenei p.tip:hover {
+div#editor.draenei div.grid div.cell,
+div#editor.draenei p.tip:focus, div#editor.draenei p.tip:hover {
 	outline-color: var(--draenei-border);
 }
 
@@ -278,7 +337,8 @@ div#editor.human {
 	color: inherit;
 }
 
-div#editor.human div.grid>div, div#editor.human p.tip:focus, div#editor.human p.tip:hover {
+div#editor.human div.grid div.cell,
+div#editor.human p.tip:focus, div#editor.human p.tip:hover {
 	outline-color: var(--human-border);
 }
 
@@ -298,7 +358,8 @@ div#editor.naga button {
 	border-color: var(--naga-button-border);
 }
 
-div#editor.naga div.grid>div, div#editor.naga p.tip:focus, div#editor.naga p.tip:hover {
+div#editor.naga div.grid div.cell,
+div#editor.naga p.tip:focus, div#editor.naga p.tip:hover {
 	outline-color: var(--naga-border);
 }
 
@@ -313,7 +374,8 @@ div#editor.nightelf button {
 	border-color: var(--nightelf-button-border);
 }
 
-div#editor.nightelf div.grid>div, div#editor.nightelf p.tip:focus, div#editor.nightelf p.tip:hover {
+div#editor.nightelf div.grid div.cell,
+div#editor.nightelf p.tip:focus, div#editor.nightelf p.tip:hover {
 	outline-color: var(--nightelf-border);
 }
 
@@ -328,7 +390,8 @@ div#editor.orc button {
 	border-color: var(--orc-button-border);
 }
 
-div#editor.orc div.grid>div, div#editor.orc p.tip:focus, div#editor.orc p.tip:hover {
+div#editor.orc div.grid div.cell,
+div#editor.orc p.tip:focus, div#editor.orc p.tip:hover {
 	outline-color: var(--orc-border);
 }
 
@@ -343,30 +406,9 @@ div#editor.undead button {
 	border-color: var(--undead-button-border);
 }
 
-div#editor.undead div.grid>div, div#editor.undead p.tip:focus, div#editor.undead p.tip:hover {
+div#editor.undead div.grid div.cell,
+div#editor.undead p.tip:focus, div#editor.undead p.tip:hover {
 	outline-color: var(--undead-border);
-}
-
-div#editor, div.overlay, select {
-	font-size: 1.25rem;
-}
-
-div#editor button {
-	font-size: 0.75rem;
-	padding: 0.25em 1em;
-	width: auto;
-}
-
-div#editor button:hover, div.overlay button:hover, footer button:hover {
-	border-color: #fff !important;
-}
-
-div#editor img:hover {
-	outline: 2px solid #fff;
-}
-
-div#editor img:active {
-	cursor: move;
 }
 
 div#fields {
@@ -378,40 +420,23 @@ div#fields, h3#command {
 	padding: 1px 1px 0;
 }
 
+div#unit {
+	display: flex;
+	line-height: 125%;
+	margin-bottom: 1em;
+}
+
 div.card {
 	display: grid;
 	grid-gap: 5px 5px;
 	grid-template-columns: 64px 64px 64px 64px;
 	grid-template-rows: 64px 64px 64px;
-	line-height: 100%;
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 }
 
-div.card div {
-	justify-self: center;
-	position: relative;
-}
-
-div.card div, div.card img, h2 img {
-	height: 64px;
-	width: 64px;
-}
-
-div.card span {
-	font-weight: bold;
-	left: 5px;
-	pointer-events: none;
-	position: absolute;
-	top: 4px;
-}
-
-div.card span, h2#unit, h3#command, p.hotkey input {
-	text-shadow: 2px 2px #000;
-}
-
-div.conflict img {
+div.conflict {
 	outline: 1px solid var(--conflict);
 }
 
@@ -423,11 +448,7 @@ div.drag img {
 	box-shadow: 0 0 4px 4px #fff;
 }
 
-div.grid>div, p.tip:hover {
-	outline: 1px dotted #606060;
-}
-
-div.grid>div, p.tip:focus {
+div.grid div.cell, p.tip:focus {
 	outline: 1px solid #606060;
 }
 
@@ -455,9 +476,11 @@ div.overlay textarea {
 }
 
 div.overlay.open {
+	backdrop-filter: sepia(1);
 	opacity: 1;
 	transition: 0.3s opacity;
 	visibility: visible;
+	-webkit-backdrop-filter: sepia(1);
 }
 
 figure {
@@ -490,19 +513,12 @@ h2, h3, h4 {
 	font-weight: bold;
 }
 
-h2#unit {
+h2#name {
 	font-size: 1.5rem;
-	line-height: 64px;
-	margin: 0 0 1em;
+	margin-left: 0.5em;
 	overflow: hidden;
-	padding: 2px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-}
-
-h2#unit img {
-	float: left;
-	margin-right: 0.5em;
 }
 
 h3#command {
@@ -627,6 +643,10 @@ p.hotkey input:focus {
 p.tip {
 	cursor: text;
 	margin: 0 0 1em;
+}
+
+p.tip:hover {
+	outline: 1px dotted #606060;
 }
 
 section h3 {
@@ -779,6 +799,11 @@ ul.undead {
 }
 
 @media (max-width: 1600px), (max-height: 1080px), (orientation: portrait) {
+	button.icon, button.icon img, div.cell, h2 img {
+		height: 56px;
+		width: 56px;
+	}
+
 	div#editor {
 		bottom: 7em;
 		right: 3em;
@@ -789,15 +814,6 @@ ul.undead {
 		grid-gap: 4px 4px;
 		grid-template-columns: 56px 56px 56px 56px;
 		grid-template-rows: 56px 56px 56px;
-	}
-
-	div.card div, div.card img, h2 img {
-		height: 56px;
-		width: 56px;
-	}
-
-	h2#unit {
-		line-height: 56px;
 	}
 
 	html {
@@ -833,7 +849,17 @@ ul.undead {
 		font-size: 1.25rem;
 	}
 
-	button#help {
+	button.icon, button.icon img, div.cell, h2 img {
+		height: 48px;
+		width: 48px;
+	}
+
+	button.icon span {
+		left: 3px;
+		top: 2px;
+	}
+
+	div#buttons button#help {
 		width: 2.25em;
 	}
 
@@ -850,22 +876,8 @@ ul.undead {
 		grid-template-rows: 48px 48px 48px;
 	}
 
-	div.card div, div.card img, h2 img {
-		height: 48px;
-		width: 48px;
-	}
-
-	div.card span {
-		left: 3px;
-		top: 2px;
-	}
-
 	div.overlay textarea {
 		height: 60%;
-	}
-
-	h2#unit {
-		line-height: 48px;
 	}
 
 	html {

@@ -45,7 +45,7 @@ const ICON_DIR = "icons";
 const HOTKEY_DIR = "hotkeys";
 const DIR_LIST = "hotkeys/index.json";
 const HELP_PAGE = "help.html";
-const ANNOYED_CLICKS = 10;
+const ANNOYED_CLICKS = 5;
 const ANNOYED_SOUND = "annoyed.wav";
 const MIME_TYPE = "text/plain";
 
@@ -122,6 +122,8 @@ window.addEventListener("load", function() {
 		}
 	});
 
+	let clicks = 0;
+
 	document.addEventListener("click", function(event) {
 		const element = event.target;
 
@@ -191,13 +193,12 @@ window.addEventListener("load", function() {
 		}
 
 		if (element.matches("#unit img")) {
-			editor.clicks++;
+			clicks++;
 
-			if (editor.clicks >= ANNOYED_CLICKS) {
-				editor.clicks = 0;
-
+			if (clicks >= ANNOYED_CLICKS) {
 				const audio = new Audio([ICON_DIR, ANNOYED_SOUND].join("/"));
 				audio.play();
+				clicks = 0;
 			}
 		}
 
@@ -206,11 +207,11 @@ window.addEventListener("load", function() {
 		}
 
 		if (element.matches(".clear")) {
-			editor.clearSearch(true);
+			editor.clearSearchAndQuery();
 		}
 
 		if (element.matches(".filter")) {
-			editor.filter(element.value);
+			editor.filterUnits(element.value);
 		}
 
 		if (element.closest(".close")) {
@@ -271,7 +272,7 @@ window.addEventListener("load", function() {
 			}
 
 			if (keyCode == 27) { // Esc
-				editor.clearSearch(true);
+				editor.clearSearchAndQuery();
 			}
 
 			if (keyCode == 38) { // up arrow
@@ -353,26 +354,29 @@ window.addEventListener("load", function() {
 	}
 
 	function loadList() {
-		const xhr = new XMLHttpRequest();
-		xhr.addEventListener("readystatechange", function() {
-			if (this.readyState == 4 && this.status == 200) {
-				const select = document.createElement("select");
-				select.id = "files";
+		return new Promise(function(resolve) {
+			const xhr = new XMLHttpRequest();
+			xhr.addEventListener("readystatechange", function() {
+				if (this.readyState == 4 && this.status == 200) {
+					const select = document.createElement("select");
+					select.id = "files";
 
-				const options = ["(Select a set...)"].concat(this.response);
+					const options = ["(Select a set...)"].concat(this.response);
 
-				for (const item of options) {
-					const option = document.createElement("option");
-					option.appendChild(document.createTextNode(item));
-					select.appendChild(option);
+					for (const item of options) {
+						const option = document.createElement("option");
+						option.appendChild(document.createTextNode(item));
+						select.appendChild(option);
+					}
+
+					$("#files").replaceWith(select);
+					resolve();
 				}
-
-				$("#files").replaceWith(select);
-			}
+			});
+			xhr.open("GET", DIR_LIST, true);
+			xhr.responseType = "json";
+			xhr.send();
 		});
-		xhr.open("GET", DIR_LIST, true);
-		xhr.responseType = "json";
-		xhr.send();
 	}
 });
 
@@ -435,10 +439,10 @@ Editor.prototype.setUnit = function(unit) {
 		console.error(`Undefined: ${this.unit} (unit)`);
 	} else {
 		this.race = data.units[this.unit].race;
-		this.filter(this.race);
+		this.filterUnits(this.race);
 	}
 
-	this.clearSearch(true);
+	this.clearSearchAndQuery();
 	this.open();
 };
 
@@ -460,18 +464,14 @@ Editor.prototype.unitEditor = function() {
 
 	$("#editor").className = this.race;
 
-	const h2 = document.createElement("h2");
-	h2.id = "unit";
-	h2.appendChild(document.createTextNode(unit.name));
-	$("#unit").replaceWith(h2);
+	const h2 = $("#name");
+	h2.textContent = unit.name;
 
 	if (unit.suffix != undefined) {
 		h2.textContent += " (" + unit.suffix + ")";
 	}
 
-	const button = createButton.call(this, this.unit, unit.name);
-	h2.insertBefore(button, h2.firstChild);
-	this.clicks = 0;
+	$("#unit .cell").replaceWith(createButton.call(this, this.unit, unit.name));
 
 	const h3 = $("#command");
 	h3.textContent = "";
@@ -499,7 +499,7 @@ Editor.prototype.unitEditor = function() {
 		createCommandCard.call(this, BUILD, data.units[unit.build]);
 	}
 
-	for (const element of $$(".card div")) {
+	for (const element of $$(".cell")) {
 		const card = element.parentNode;
 
 		// adds listeners for drag-and-drop events
@@ -517,6 +517,7 @@ Editor.prototype.unitEditor = function() {
 			event.preventDefault();
 
 			const data = event.dataTransfer.getData("text");
+
 			this.drop(data, event.target.id, event.shiftKey);
 			card.classList.remove("grid");
 		}.bind(this));
@@ -594,12 +595,20 @@ Editor.prototype.unitEditor = function() {
 	}
 
 	function createButton(id, name, n, state=true) {
-		const div = document.createElement("div");
 		const img = document.createElement("img");
 		img.setAttribute("src", this.getIcon(id, n));
 		img.setAttribute("alt", "[" + name + "]");
 		img.setAttribute("title", name);
-		img.addEventListener("click", function() {
+
+		if (n != undefined) {
+			img.id = "img" + n + "_" + id;
+		}
+
+		const button = document.createElement("button");
+		button.className = "icon";
+		button.setAttribute("type", "button");
+		button.setAttribute("value", id);
+		button.addEventListener("click", function() {
 			this.active = n;
 			this.state = state;
 
@@ -609,27 +618,27 @@ Editor.prototype.unitEditor = function() {
 				this.setCommand(id.slice(0, -1), name);
 			}
 		}.bind(this));
-		div.appendChild(img);
-
-		if (n != undefined) {
-			img.id = "img" + n + "_" + id;
-		}
+		button.appendChild(img);
 
 		// distinguishes between buttons (in command card)
 		// and unit icons (in heading)
 		if (this.unit != id) {
-			const span = document.createElement("span");
-			span.id = "span" + n + "_" + id;
-			div.appendChild(span);
-
-			img.setAttribute("draggable", "true");
-			img.addEventListener("dragstart", function(event) {
+			button.setAttribute("draggable", "true");
+			button.addEventListener("dragstart", function(event) {
 				this.active = n;
 
 				event.dataTransfer.setData("text/plain", event.target.id);
 				$("#card" + n).classList.add("grid");
 			}.bind(this));
+
+			const span = document.createElement("span");
+			span.id = "span" + n + "_" + id;
+			button.appendChild(span);
 		}
+
+		const div = document.createElement("div");
+		div.className = "cell";
+		div.appendChild(button);
 
 		return div;
 	}
@@ -1011,7 +1020,7 @@ Editor.prototype.commandEditor = function() {
 	$("#edit").hidden = true;
 	$("#defaults").hidden = false;
 
-	this.clear($("#other"));
+	this.clearElements($("#other"));
 };
 
 Editor.prototype.formatTip = function(type, tip) {
@@ -1431,7 +1440,7 @@ Editor.prototype.checkAllConflicts = function() {
 	}
 };
 
-Editor.prototype.filter = function(race) {
+Editor.prototype.filterUnits = function(race) {
 	race = data.campaignRaces[race] || race;
 
 	// hides unit lists for races other than selected
@@ -1449,7 +1458,8 @@ Editor.prototype.findUnitsNamed = function(query) {
 		return;
 	}
 
-	const matches = new Set(), filters = new Set();
+	const matches = new Set();
+	const filters = new Set();
 
 	query = query.toLowerCase();
 
@@ -1612,7 +1622,7 @@ Editor.prototype.highlightFilter = function(n) {
 	}
 };
 
-Editor.prototype.clear = function(element, removeListeners=true) {
+Editor.prototype.clearElements = function(element, removeListeners=true) {
 	if (element == null) {
 		return;
 	}
@@ -1629,7 +1639,7 @@ Editor.prototype.clear = function(element, removeListeners=true) {
 
 Editor.prototype.clearButtons = function() {
 	for (const element of $$(".card div")) {
-		this.clear(element);
+		this.clearElements(element);
 	}
 
 	for (const n of this.card.keys()) {
@@ -1648,7 +1658,7 @@ Editor.prototype.clearFields = function() {
 
 		// removes event listeners for hotkey inputs (which are removed and
 		// recreated) but not tips (which are persistent)
-		this.clear(element, !element.classList.contains("tip"));
+		this.clearElements(element, !element.classList.contains("tip"));
 	}
 
 	$("#show").hidden = true;
@@ -1656,20 +1666,21 @@ Editor.prototype.clearFields = function() {
 	$("#defaults").hidden = true;
 };
 
-Editor.prototype.clearSearch = function(clearQuery=false) {
-	if (clearQuery) {
-		$("#query").value = "";
-	}
-
+Editor.prototype.clearSearch = function() {
 	this.matches = [];
 	this.selected = -1;
 
-	this.clear($("#results"));
+	this.clearElements($("#results"));
 	$("#results").hidden = true;
 
 	for (const element of $$(".filter")) {
 		element.classList.remove("exclude", "highlight");
 	}
+};
+
+Editor.prototype.clearSearchAndQuery = function() {
+	$("#query").value = "";
+	this.clearSearch();
 };
 
 /*
