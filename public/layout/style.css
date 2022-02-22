@@ -206,7 +206,7 @@ button.icon:hover {
 	outline: 2px solid #fff;
 }
 
-button.icon:active
+button.icon:active {
 	cursor: move;
 }
 
