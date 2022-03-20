@@ -296,13 +296,13 @@ div#editor.bloodelf button {
 }
 
 div#editor.bloodelf div.drag {
-	background: var(--bloodelf-button-border);
+	background: var(--bloodelf-border);
 	color: inherit;
 }
 
 div#editor.bloodelf div.grid div.cell,
 div#editor.bloodelf p.tip:focus, div#editor.bloodelf p.tip:hover {
-	outline-color: var(--bloodelf-border);
+	outline-color: var(--bloodelf-button-border);
 }
 
 div#editor.demon {
@@ -317,13 +317,13 @@ div#editor.demon button {
 }
 
 div#editor.demon div.drag {
-	background: var(--demon-button-border);
+	background: var(--demon-border);
 	color: inherit;
 }
 
 div#editor.demon div.grid div.cell,
 div#editor.demon p.tip:focus, div#editor.demon p.tip:hover {
-	outline-color: var(--demon-border);
+	outline-color: var(--demon-button-border);
 }
 
 div#editor.draenei {
@@ -338,13 +338,13 @@ div#editor.draenei button {
 }
 
 div#editor.draenei div.drag {
-	background: var(--draenei-button-border);
+	background: var(--draenei-border);
 	color: inherit;
 }
 
 div#editor.draenei div.grid div.cell,
 div#editor.draenei p.tip:focus, div#editor.draenei p.tip:hover {
-	outline-color: var(--draenei-border);
+	outline-color: var(--draenei-button-border);
 }
 
 div#editor.human {
@@ -354,13 +354,13 @@ div#editor.human {
 }
 
 div#editor.human div.drag {
-	background: var(--human-button-border);
+	background: var(--human-border);
 	color: inherit;
 }
 
 div#editor.human div.grid div.cell,
 div#editor.human p.tip:focus, div#editor.human p.tip:hover {
-	outline-color: var(--human-border);
+	outline-color: var(--human-button-border);
 }
 
 div#editor.neutral button {
@@ -380,13 +380,13 @@ div#editor.naga button {
 }
 
 div#editor.naga div.drag {
-	background: var(--naga-button-border);
+	background: var(--naga-border);
 	color: inherit;
 }
 
 div#editor.naga div.grid div.cell,
 div#editor.naga p.tip:focus, div#editor.naga p.tip:hover {
-	outline-color: var(--naga-border);
+	outline-color: var(--naga-button-border);
 }
 
 div#editor.nightelf {
@@ -401,13 +401,13 @@ div#editor.nightelf button {
 }
 
 div#editor.nightelf div.drag {
-	background: var(--nightelf-button-border);
+	background: var(--nightelf-border);
 	color: inherit;
 }
 
 div#editor.nightelf div.grid div.cell,
 div#editor.nightelf p.tip:focus, div#editor.nightelf p.tip:hover {
-	outline-color: var(--nightelf-border);
+	outline-color: var(--nightelf-button-border);
 }
 
 div#editor.orc {
@@ -422,13 +422,13 @@ div#editor.orc button {
 }
 
 div#editor.orc div.drag {
-	background: var(--orc-button-border);
+	background: var(--orc-border);
 	color: inherit;
 }
 
 div#editor.orc div.grid div.cell,
 div#editor.orc p.tip:focus, div#editor.orc p.tip:hover {
-	outline-color: var(--orc-border);
+	outline-color: var(--orc-button-border);
 }
 
 div#editor.undead {
@@ -443,13 +443,13 @@ div#editor.undead button {
 }
 
 div#editor.undead div.drag {
-	background: var(--undead-button-border);
+	background: var(--undead-border);
 	color: inherit;
 }
 
 div#editor.undead div.grid div.cell,
 div#editor.undead p.tip:focus, div#editor.undead p.tip:hover {
-	outline-color: var(--undead-border);
+	outline-color: var(--undead-button-border);
 }
 
 div#fields {
