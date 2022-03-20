@@ -211,14 +211,6 @@ button.icon span, h2#name, h3#command, p.hotkey input {
 	text-shadow: 2px 2px #000;
 }
 
-button.icon:hover {
-	outline: 2px solid #fff;
-}
-
-button.icon:active {
-	cursor: move;
-}
-
 button:focus, input:focus, select:focus, textarea:focus {
 	outline: 0;
 }
@@ -475,6 +467,10 @@ div#unit {
 	margin-bottom: 1em;
 }
 
+div#unit button.icon {
+	cursor: default;
+}
+
 div.card {
 	display: grid;
 	grid-gap: 5px 5px;
@@ -483,6 +479,14 @@ div.card {
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
+}
+
+div.card button.icon:hover {
+	outline: 2px solid #fff;
+}
+
+div.card button.icon:active {
+	cursor: move;
 }
 
 div.conflict {

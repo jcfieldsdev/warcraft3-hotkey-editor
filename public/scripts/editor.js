@@ -217,8 +217,11 @@ window.addEventListener("load", function() {
 
 		if (element.closest(".icon")) {
 			const card = element.closest(".card");
-			const n = Array.from(card.parentElement.children).indexOf(card);
-			editor.setCommand(n, element.closest(".icon").value);
+
+			if (card != null) {
+				const n = Array.from(card.parentElement.children).indexOf(card);
+				editor.setCommand(n, element.closest(".icon").value);
+			}
 		}
 
 		if (element.matches(".hotkey input")) {
@@ -354,10 +357,13 @@ window.addEventListener("load", function() {
 
 		if (element.closest(".icon")) {
 			const card = element.closest(".card");
-			const n = Array.from(card.parentElement.children).indexOf(card);
-			editor.drag(n);
 
-			event.dataTransfer.setData("text/plain", event.target.id);
+			if (card != null) {
+				const n = Array.from(card.parentElement.children).indexOf(card);
+				editor.drag(n);
+
+				event.dataTransfer.setData("text/plain", event.target.id);
+			}
 		}
 	});
 	document.addEventListener("drop", function(event) {
