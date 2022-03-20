@@ -102,7 +102,20 @@ window.addEventListener("load", function() {
 	});
 
 	// populates list of sample files on load overlay
-	loadList();
+	loadList().then(function(files) {
+		const select = document.createElement("select");
+		select.id = "files";
+
+		const options = ["(Select a set...)"].concat(files);
+
+		for (const item of options) {
+			const option = document.createElement("option");
+			option.appendChild(document.createTextNode(item));
+			select.appendChild(option);
+		}
+
+		$("#files").replaceWith(select);
+	});
 
 	window.addEventListener("beforeunload", function() {
 		commands.list = options.save(commands.list);
@@ -413,19 +426,7 @@ window.addEventListener("load", function() {
 			const xhr = new XMLHttpRequest();
 			xhr.addEventListener("readystatechange", function() {
 				if (this.readyState == 4 && this.status == 200) {
-					const select = document.createElement("select");
-					select.id = "files";
-
-					const options = ["(Select a set...)"].concat(this.response);
-
-					for (const item of options) {
-						const option = document.createElement("option");
-						option.appendChild(document.createTextNode(item));
-						select.appendChild(option);
-					}
-
-					$("#files").replaceWith(select);
-					resolve();
+					resolve(this.response);
 				}
 			});
 			xhr.open("GET", DIR_LIST, true);
@@ -997,7 +998,11 @@ Editor.prototype.commandEditor = function() {
 	}
 
 	const id = this.command;
-	const unit = data.units[this.unit];
+	let unit = data.units[this.unit];
+
+	if (this.activeCard == BUILD) {
+		unit = data.units[unit.build];
+	}
 
 	const tip = this.commands.get(id, "Tip", unit);
 	const hotkey = this.commands.get(id, "Hotkey", unit);
@@ -1038,7 +1043,7 @@ Editor.prototype.commandEditor = function() {
 	}
 
 	const h3 = $("#command");
-	const name = this.getCommands(data.units[this.unit]).get(id);
+	const name = this.getCommands(unit).get(id);
 	h3.textContent = name + " (" + id + ")";
 	h3.hidden = false;
 
