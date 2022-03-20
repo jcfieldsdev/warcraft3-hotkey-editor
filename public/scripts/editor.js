@@ -202,6 +202,12 @@ window.addEventListener("load", function() {
 			}
 		}
 
+		if (element.closest(".icon")) {
+			const card = element.closest(".card");
+			const n = Array.from(card.parentElement.children).indexOf(card);
+			editor.setCommand(n, element.closest(".icon").value);
+		}
+
 		if (element.matches(".hotkey input")) {
 			event.preventDefault(); // prevents click from activating label
 		}
@@ -294,6 +300,73 @@ window.addEventListener("load", function() {
 			editor.highlightResult();
 		}
 	});
+	document.addEventListener("focusin", function(event) {
+		const element = event.target;
+
+		if (element.matches(".tip")) {
+			editor.focusTip(element.id);
+		}
+	});
+	document.addEventListener("focusout", function(event) {
+		const element = event.target;
+
+		if (element.matches(".tip")) {
+			editor.editTip(element.id);
+		}
+	});
+	document.addEventListener("dragover", function(event) {
+		const element = event.target;
+
+		if (element.closest(".cell")) {
+			event.preventDefault();
+		}
+	});
+	document.addEventListener("dragenter", function(event) {
+		const element = event.target;
+
+		if (element.closest(".cell")) {
+			event.preventDefault();
+			element.closest(".cell").classList.add("drag");
+		}
+	});
+	document.addEventListener("dragleave", function(event) {
+		const element = event.target;
+
+		if (element.closest(".cell")) {
+			element.closest(".cell").classList.remove("drag");
+		}
+	});
+	document.addEventListener("dragstart", function(event) {
+		const element = event.target;
+
+		if (element.closest(".icon")) {
+			const card = element.closest(".card");
+			const n = Array.from(card.parentElement.children).indexOf(card);
+			editor.drag(n);
+
+			event.dataTransfer.setData("text/plain", event.target.id);
+		}
+	});
+	document.addEventListener("drop", function(event) {
+		const element = event.target;
+
+		if (element.matches(".tip")) {
+			// prevents dropping HTML-formatted objects (namely images)
+			// onto tooltip text
+			if (event.dataTransfer.getData("text/html") != "") {
+				event.preventDefault();
+			}
+		}
+
+		if (element.closest(".cell")) {
+			event.preventDefault();
+
+			const data = event.dataTransfer.getData("text");
+			const card = element.closest(".cell").parentNode;
+			editor.drop(data, event.target.id, event.shiftKey);
+			card.classList.remove("grid");
+		}
+	});
 
 	$("#file").addEventListener("change", function(event) {
 		const file = event.target.files[0];
@@ -309,27 +382,9 @@ window.addEventListener("load", function() {
 	});
 
 	for (const element of $$(".tip")) {
-		element.addEventListener("focus", function() {
-			editor.focusTip(this.id);
-		});
-		element.addEventListener("blur", function() {
-			editor.editTip(this.id);
-		});
-		element.addEventListener("drop", function(event) {
-			// prevents dropping HTML-formatted objects (namely images)
-			// onto tooltip text
-			if (event.dataTransfer.getData("text/html") != "") {
-				event.preventDefault();
-			}
-		});
-
-		let contentEditable = "true";
-
-		if (window.navigator.userAgent.includes("WebKit")) {
-			contentEditable = "plaintext-only";
-		}
-
-		element.setAttribute("contenteditable", contentEditable);
+		element.contentEditable = window.navigator.userAgent.includes("WebKit")
+			? "plaintext-only"
+			: "true";
 	}
 
 	for (const element of $$("#query, .tip, textarea")) {
@@ -398,7 +453,6 @@ function Editor(commands, options) {
 
 	this.unit = "";
 	this.command = "";
-	this.name = "";
 	this.race = "";
 
 	this.card = Array(CARDS).fill().map(function() {
@@ -406,8 +460,8 @@ function Editor(commands, options) {
 			return Array(COLS).fill();
 		});
 	});
-	this.active = STANDARD; // active command card
-	this.state = false; // button state (for two-state commands)
+	this.activeCard = STANDARD;
+	this.buttonState = false; // button state (for two-state commands)
 
 	this.matches = [];
 	this.selected = -1; // selected search result
@@ -446,10 +500,16 @@ Editor.prototype.setUnit = function(unit) {
 	this.open();
 };
 
-Editor.prototype.setCommand = function(id, name) {
+Editor.prototype.setCommand = function(n, id) {
+	this.buttonState = id.slice(-1) != "_";
+
+	if (!this.buttonState) {
+		id = id.slice(0, -1);
+	}
+
 	if (this.command != id) {
 		this.command = id;
-		this.name = name;
+		this.activeCard = n;
 	}
 
 	this.commandEditor();
@@ -499,30 +559,6 @@ Editor.prototype.unitEditor = function() {
 		createCommandCard.call(this, BUILD, data.units[unit.build]);
 	}
 
-	for (const element of $$(".cell")) {
-		const card = element.parentNode;
-
-		// adds listeners for drag-and-drop events
-		element.addEventListener("dragover", function(event) {
-			event.preventDefault();
-		});
-		element.addEventListener("dragenter", function(event) {
-			event.preventDefault();
-			this.classList.add("drag");
-		});
-		element.addEventListener("dragleave", function() {
-			this.classList.remove("drag");
-		});
-		element.addEventListener("drop", function(event) {
-			event.preventDefault();
-
-			const data = event.dataTransfer.getData("text");
-
-			this.drop(data, event.target.id, event.shiftKey);
-			card.classList.remove("grid");
-		}.bind(this));
-	}
-
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 
@@ -566,7 +602,7 @@ Editor.prototype.unitEditor = function() {
 
 			// re-selects command if selected on previously viewed unit
 			if (this.command == id) {
-				this.setCommand(id, name);
+				this.setCommand(n, id);
 			}
 		}
 	}
@@ -608,28 +644,12 @@ Editor.prototype.unitEditor = function() {
 		button.className = "icon";
 		button.setAttribute("type", "button");
 		button.setAttribute("value", id);
-		button.addEventListener("click", function() {
-			this.active = n;
-			this.state = state;
-
-			if (state) {
-				this.setCommand(id, name);
-			} else {
-				this.setCommand(id.slice(0, -1), name);
-			}
-		}.bind(this));
 		button.appendChild(img);
 
 		// distinguishes between buttons (in command card)
 		// and unit icons (in heading)
 		if (this.unit != id) {
 			button.setAttribute("draggable", "true");
-			button.addEventListener("dragstart", function(event) {
-				this.active = n;
-
-				event.dataTransfer.setData("text/plain", event.target.id);
-				$("#card" + n).classList.add("grid");
-			}.bind(this));
 
 			const span = document.createElement("span");
 			span.id = "span" + n + "_" + id;
@@ -777,8 +797,15 @@ Editor.prototype.getPosition = function(n, y, x) {
 	}
 };
 
+Editor.prototype.drag = function(n) {
+	this.activeCard = n;
+	$("#card" + n).classList.add("grid");
+};
+
 Editor.prototype.drop = function(from, to, allowConflict=false) {
 	if (from == to) {
+		this.clearButtons();
+		this.unitEditor();
 		return;
 	}
 
@@ -802,7 +829,7 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 	from = data.buildCommands[from] || from;
 
 	// must also transfer "Unbuttonpos" for toggleable/two-state abilities
-	if (this.active != RESEARCH) {
+	if (this.activeCard != RESEARCH) {
 		oldunpos = this.commands.get(from, "Unbuttonpos", unit);
 	}
 
@@ -817,7 +844,7 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 		// special case for build buttons
 		to = data.buildCommands[to] || to;
 
-		if (this.active != RESEARCH || to == CANCEL) {
+		if (this.activeCard != RESEARCH || to == CANCEL) {
 			newpos = this.commands.get(to, "Buttonpos", unit);
 		} else {
 			newpos = this.commands.get(to, "Researchbuttonpos", unit);
@@ -826,7 +853,7 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 		// modifier key held during drop overrides swap behavior and allows
 		// position conflict
 		if (!allowConflict) {
-			if (this.active != RESEARCH || from == CANCEL) {
+			if (this.activeCard != RESEARCH || from == CANCEL) {
 				newunpos = this.commands.get(to, "Unbuttonpos", unit);
 				oldpos = this.commands.get(from, "Buttonpos", unit);
 			} else {
@@ -837,9 +864,9 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 			// stored value (so drag-and-drop operations try to match how the
 			// button positions are displayed over how they are stored, which
 			// is more consistent with user expectations)
-			for (const y of this.card[this.active].keys()) {
-				for (const x of this.card[this.active][y].keys()){
-					if (from == this.card[this.active][y][x]) {
+			for (const y of this.card[this.activeCard].keys()) {
+				for (const x of this.card[this.activeCard][y].keys()){
+					if (from == this.card[this.activeCard][y][x]) {
 						oldpos = x + DELIMITER + y;
 
 						if (oldunpos != "" && oldpos == oldunpos) {
@@ -847,7 +874,7 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 						}
 					}
 
-					if (to == this.card[this.active][y][x]) {
+					if (to == this.card[this.activeCard][y][x]) {
 						newpos = x + DELIMITER + y;
 
 						if (newunpos != "" && newpos == newunpos) {
@@ -863,7 +890,7 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 				oldpos = "";
 			}
 
-			if (this.active != RESEARCH || to == CANCEL) {
+			if (this.activeCard != RESEARCH || to == CANCEL) {
 				if (to.slice(-1) != "_") {
 					this.commands.set(to, "Buttonpos", unit, oldpos);
 
@@ -880,7 +907,7 @@ Editor.prototype.drop = function(from, to, allowConflict=false) {
 		}
 	}
 
-	if (this.active != RESEARCH || from == CANCEL) {
+	if (this.activeCard != RESEARCH || from == CANCEL) {
 		if (from.slice(-1) != "_") {
 			this.commands.set(from, "Buttonpos", unit, newpos);
 
@@ -995,10 +1022,10 @@ Editor.prototype.commandEditor = function() {
 		// automatically selects first hotkey field
 		let type = "Hotkey";
 
-		if (this.active == STANDARD) {
+		if (this.activeCard == STANDARD) {
 			if (hotkey == "") { // passive abilities
 				type = "Researchhotkey";
-			} else if (!this.state && unhotkey != "") { // off state
+			} else if (!this.buttonState && unhotkey != "") { // off state
 				type = "Unhotkey";
 			}
 		} else {
@@ -1011,7 +1038,8 @@ Editor.prototype.commandEditor = function() {
 	}
 
 	const h3 = $("#command");
-	h3.textContent = this.name + " (" + id + ")";
+	const name = this.getCommands(data.units[this.unit]).get(id);
+	h3.textContent = name + " (" + id + ")";
 	h3.hidden = false;
 
 	// omits basic commands
@@ -1622,7 +1650,7 @@ Editor.prototype.highlightFilter = function(n) {
 	}
 };
 
-Editor.prototype.clearElements = function(element, removeListeners=true) {
+Editor.prototype.clearElements = function(element) {
 	if (element == null) {
 		return;
 	}
@@ -1630,16 +1658,16 @@ Editor.prototype.clearElements = function(element, removeListeners=true) {
 	while (element.lastChild) { // removes all children
 		element.removeChild(element.lastChild);
 	}
-
-	if (removeListeners) {
-		// clones element to remove all event listeners
-		element.parentNode.replaceChild(element.cloneNode(true), element);
-	}
 };
 
 Editor.prototype.clearButtons = function() {
-	for (const element of $$(".card div")) {
+	for (const element of $$(".card")) {
+		element.classList.remove("grid");
+	}
+
+	for (const element of $$(".cell")) {
 		this.clearElements(element);
+		element.classList.remove("conflict", "drag");
 	}
 
 	for (const n of this.card.keys()) {
@@ -1656,9 +1684,7 @@ Editor.prototype.clearFields = function() {
 		// hides element so it does not remain editable
 		element.hidden = true;
 
-		// removes event listeners for hotkey inputs (which are removed and
-		// recreated) but not tips (which are persistent)
-		this.clearElements(element, !element.classList.contains("tip"));
+		this.clearElements(element);
 	}
 
 	$("#show").hidden = true;

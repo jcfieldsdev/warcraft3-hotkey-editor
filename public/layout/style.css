@@ -39,54 +39,63 @@
 	--key: #ffcc00;
 	--note: #c3dbff;
 	--neutral-background: #202020;
+	--neutral-background-dark: #101010;
 	--neutral-border: #404040;
 	--neutral-button: #404040;
 	--neutral-button-dark: #202020;
 	--neutral-button-border: #606060;
 	--neutral-heading: #c0c0c0;
 	--human-background: #002040;
+	--human-background-dark: #001020;
 	--human-border: #004060;
 	--human-button: #004060;
 	--human-button-dark: #002040;
 	--human-button-border: #006080;
 	--human-heading: #40a0ff;
 	--orc-background: #402000;
+	--orc-background-dark: #201000;
 	--orc-border: #804020;
 	--orc-button: #604020;
 	--orc-button-dark: #402000;
 	--orc-button-border: #804020;
 	--orc-heading: #c08040;
 	--undead-background: #402040;
+	--undead-background-dark: #201020;
 	--undead-border: #604060;
 	--undead-button: #602060;
 	--undead-button-dark: #400040;
 	--undead-button-border: #804080;
 	--undead-heading: #a060a0;
 	--nightelf-background: #204020;
+	--nightelf-background-dark: #102010;
 	--nightelf-border: #408040;
 	--nightelf-button: #206020;
 	--nightelf-button-dark: #204020;
 	--nightelf-button-border: #408040;
 	--nightelf-heading: #60c000;
 	--bloodelf-background: #602000;
+	--bloodelf-background-dark: #301000;
 	--bloodelf-border: #804000;
 	--bloodelf-button: #602000;
 	--bloodelf-button-dark: #400000;
 	--bloodelf-button-border: #a06000;
 	--bloodelf-heading: #ff4020;
 	--draenei-background: #404020;
+	--draenei-background-dark: #202010;
 	--draenei-border: #808040;
 	--draenei-button: #404020;
 	--draenei-button-dark: #202000;
 	--draenei-button-border: #a0a060;
 	--draenei-heading: #c0c080;
 	--demon-background: #600020;
+	--demon-background-dark: #300010;
 	--demon-border: #802040;
 	--demon-button: #600020;
 	--demon-button-dark: #802040;
 	--demon-button-border: #a04060;
 	--demon-heading: #a04060;
 	--naga-background: #004040;
+	--naga-background-dark: #002020;
 	--naga-border: #006060;
 	--naga-button: #006060;
 	--naga-button-dark: #004040;
@@ -269,7 +278,7 @@ div.overlay button:hover, footer button:hover {
 }
 
 div#editor {
-	background: var(--neutral-background);
+	background: var(--neutral-background) linear-gradient(to bottom right, var(--neutral-background), var(--neutral-background-dark));
 	border: 2px solid var(--neutral-border);
 	border-radius: 1em;
 	bottom: 9em;
@@ -284,7 +293,7 @@ div#editor {
 }
 
 div#editor.bloodelf {
-	background: var(--bloodelf-background);
+	background: var(--bloodelf-background) linear-gradient(to bottom right, var(--bloodelf-background), var(--bloodelf-background-dark));
 	border-color: var(--bloodelf-border);
 	color: inherit;
 }
@@ -294,13 +303,18 @@ div#editor.bloodelf button {
 	border-color: var(--bloodelf-button-border);
 }
 
+div#editor.bloodelf div.drag {
+	background: var(--bloodelf-button-border);
+	color: inherit;
+}
+
 div#editor.bloodelf div.grid div.cell,
 div#editor.bloodelf p.tip:focus, div#editor.bloodelf p.tip:hover {
 	outline-color: var(--bloodelf-border);
 }
 
 div#editor.demon {
-	background: var(--demon-background);
+	background: var(--demon-background) linear-gradient(to bottom right, var(--demon-background), var(--demon-background-dark));
 	border-color: var(--demon-border);
 	color: inherit;
 }
@@ -310,13 +324,18 @@ div#editor.demon button {
 	border-color: var(--demon-button-border);
 }
 
+div#editor.demon div.drag {
+	background: var(--demon-button-border);
+	color: inherit;
+}
+
 div#editor.demon div.grid div.cell,
 div#editor.demon p.tip:focus, div#editor.demon p.tip:hover {
 	outline-color: var(--demon-border);
 }
 
 div#editor.draenei {
-	background: var(--draenei-background);
+	background: var(--draenei-background) linear-gradient(to bottom right, var(--draenei-background), var(--draenei-background-dark));
 	border-color: var(--draenei-border);
 	color: inherit;
 }
@@ -326,14 +345,24 @@ div#editor.draenei button {
 	border-color: var(--draenei-button-border);
 }
 
+div#editor.draenei div.drag {
+	background: var(--draenei-button-border);
+	color: inherit;
+}
+
 div#editor.draenei div.grid div.cell,
 div#editor.draenei p.tip:focus, div#editor.draenei p.tip:hover {
 	outline-color: var(--draenei-border);
 }
 
 div#editor.human {
-	background: var(--human-background);
+	background: var(--human-background) linear-gradient(to bottom right, var(--human-background), var(--human-background-dark));
 	border-color: var(--human-border);
+	color: inherit;
+}
+
+div#editor.human div.drag {
+	background: var(--human-button-border);
 	color: inherit;
 }
 
@@ -348,7 +377,7 @@ div#editor.neutral button {
 }
 
 div#editor.naga {
-	background: var(--naga-background);
+	background: var(--naga-background) linear-gradient(to bottom right, var(--naga-background), var(--naga-background-dark));
 	border-color: var(--naga-border);
 	color: inherit;
 }
@@ -358,13 +387,18 @@ div#editor.naga button {
 	border-color: var(--naga-button-border);
 }
 
+div#editor.naga div.drag {
+	background: var(--naga-button-border);
+	color: inherit;
+}
+
 div#editor.naga div.grid div.cell,
 div#editor.naga p.tip:focus, div#editor.naga p.tip:hover {
 	outline-color: var(--naga-border);
 }
 
 div#editor.nightelf {
-	background: var(--nightelf-background);
+	background: var(--nightelf-background) linear-gradient(to bottom right, var(--nightelf-background), var(--nightelf-background-dark));
 	border-color: var(--nightelf-border);
 	color: inherit;
 }
@@ -374,13 +408,18 @@ div#editor.nightelf button {
 	border-color: var(--nightelf-button-border);
 }
 
+div#editor.nightelf div.drag {
+	background: var(--nightelf-button-border);
+	color: inherit;
+}
+
 div#editor.nightelf div.grid div.cell,
 div#editor.nightelf p.tip:focus, div#editor.nightelf p.tip:hover {
 	outline-color: var(--nightelf-border);
 }
 
 div#editor.orc {
-	background: var(--orc-background);
+	background: var(--orc-background) linear-gradient(to bottom right, var(--orc-background), var(--orc-background-dark));
 	border-color: var(--orc-border);
 	color: inherit;
 }
@@ -390,13 +429,18 @@ div#editor.orc button {
 	border-color: var(--orc-button-border);
 }
 
+div#editor.orc div.drag {
+	background: var(--orc-button-border);
+	color: inherit;
+}
+
 div#editor.orc div.grid div.cell,
 div#editor.orc p.tip:focus, div#editor.orc p.tip:hover {
 	outline-color: var(--orc-border);
 }
 
 div#editor.undead {
-	background: var(--undead-background);
+	background: var(--undead-background) linear-gradient(to bottom right, var(--undead-background), var(--undead-background-dark));
 	border-color: var(--undead-border);
 	color: inherit;
 }
@@ -404,6 +448,11 @@ div#editor.undead {
 div#editor.undead button {
 	background: var(--undead-button) linear-gradient(var(--undead-button), var(--undead-button-dark));
 	border-color: var(--undead-button-border);
+}
+
+div#editor.undead div.drag {
+	background: var(--undead-button-border);
+	color: inherit;
 }
 
 div#editor.undead div.grid div.cell,
@@ -444,12 +493,17 @@ div.control, figcaption, p.note {
 	font-size: 0.75rem;
 }
 
+div.drag {
+	background: var(--neutral-border);
+	color: inherit;
+}
+
 div.drag img {
 	box-shadow: 0 0 4px 4px #fff;
 }
 
 div.grid div.cell, p.tip:focus {
-	outline: 1px solid #606060;
+	outline: 1px solid var(--neutral-button-border);
 }
 
 div.overlay {
@@ -585,6 +639,12 @@ kbd {
 	color: inherit;
 	margin: 0 0.25em;
 	padding: 0.1em 0.5em;
+}
+
+label {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
 
 main {
