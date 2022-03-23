@@ -145,7 +145,6 @@ window.addEventListener("load", function() {
 
 			if (file != "") {
 				commands.parse(file);
-				options.load(commands.list);
 				editor.open();
 				overlays.load.hide();
 			}
@@ -153,7 +152,6 @@ window.addEventListener("load", function() {
 
 		if (element.closest("#reset")) {
 			commands.reset();
-			options.reset();
 			store.reset();
 			editor.open();
 
