@@ -1109,7 +1109,7 @@ Editor.prototype.focusTip = function(type) {
 };
 
 Editor.prototype.editTip = function(type) {
-	let tips = $("#" + type).innerHTML.split("<br>").map(function(tip) {
+	const tips = $("#" + type).innerHTML.split("<br>").map(function(tip) {
 		// converts from editing format to hotkey file format
 		tip = tip.replace(/&amp;/g, "&");
 		tip = tip.replace(/&lt;/g, "<");
@@ -1124,8 +1124,7 @@ Editor.prototype.editTip = function(type) {
 		}
 
 		return tip;
-	});
-	tips = tips.filter(function(tip) {
+	}).filter(function(tip) {
 		return tip != ""; // removes blank lines
 	});
 
@@ -1174,8 +1173,8 @@ Editor.prototype.autoSetTip = function(type, fields) {
 	const unit = data.units[this.unit];
 
 	// splits string by comma unless comma is within quotes
-	let tips = this.commands.get(this.command, type, unit).split(PATTERN);
-	tips = tips.map(function(tip, i) {
+	const tips = this.commands.get(this.command, type, unit).split(PATTERN);
+	const tip = tips.map(function(tip, i) {
 		tip = tip.replace(/"/g, ""); // removes quotes
 
 		if (tip.startsWith("|cffc3dbff")) {
@@ -1224,9 +1223,7 @@ Editor.prototype.autoSetTip = function(type, fields) {
 		}
 
 		return tip;
-	});
-
-	const tip = tips.join(DELIMITER);
+	}).join(DELIMITER);
 
 	this.commands.set(this.command, type, unit, tip);
 	this.formatTip(type, tip);
