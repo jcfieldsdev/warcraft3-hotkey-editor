@@ -66,9 +66,9 @@ const STORAGE_NAME = "wc3hk";
 const OPTIONS_SECTION = "hotkeyeditorpreferences";
 const DEFAULT_OPTIONS = {
 	icons:      DEFAULT_ICON_SET,
-	spiritlink: true,
+	spiritLink: true,
 	tooltips:   false,
-	end:        END
+	position:   END
 };
 
 /*
@@ -1159,7 +1159,7 @@ Editor.prototype.autoSetTip = function(type, fields) {
 
 	// handles patterns with hotkey at start (common with many user files)
 	// or at end (Blizzard's convention), depending on user preference
-	const start = this.options.read("end") == START;
+	const start = this.options.read("position") == START;
 	let replace = "", k = 0;
 
 	const startPattern = /^\(\|cffffcc00(ESC|\w)\|r\) /g;
@@ -1292,7 +1292,7 @@ Editor.prototype.editHotkey = function(input, type, event) {
 
 	// sets all hotkeys together if "spirit link" option selected
 	// unless button and unbutton are in different positions (prevents conflict)
-	if (samePositions && this.options.read("spiritlink")) {
+	if (samePositions && this.options.read("spiritLink")) {
 		this.setHotkey("Hotkey", key);
 		this.setHotkey("Unhotkey", key);
 		this.setHotkey("Researchhotkey", key);
@@ -1931,29 +1931,12 @@ function Options() {
 
 Options.prototype.load = function(list) {
 	const options = list[OPTIONS_SECTION] || {};
-
-	for (const [key, value] of Object.entries(options)) {
-		const lowercase = key.toLowerCase();
-		options[lowercase] = value;
-		delete options[key];
-	}
-
 	this.values = options;
 	this.setElements();
 };
 
 Options.prototype.save = function(list) {
 	const options = this.getValues();
-
-	for (const [key, value] of Object.entries(options)) {
-		// saves options only if different from default values
-		if (this.defaults[key] != value) {
-			const capitalized = key.charAt(0).toUpperCase() + key.slice(1);
-			options[capitalized] = value;
-		}
-
-		delete options[key];
-	}
 
 	if (Object.keys(options).length > 0) {
 		list[OPTIONS_SECTION] = options;
