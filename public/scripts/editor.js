@@ -358,7 +358,7 @@ window.addEventListener("load", function() {
 
 			if (card != null) {
 				const n = Array.from(card.parentElement.children).indexOf(card);
-				editor.drag(n);
+				editor.drag(n, element.closest(".icon").value);
 
 				event.dataTransfer.setData("text/plain", event.target.id);
 			}
@@ -802,8 +802,8 @@ Editor.prototype.getPosition = function(n, y, x) {
 	}
 };
 
-Editor.prototype.drag = function(n) {
-	this.activeCard = n;
+Editor.prototype.drag = function(n, id) {
+	this.setCommand(n, id);
 	$("#card" + n).classList.add("grid");
 };
 
