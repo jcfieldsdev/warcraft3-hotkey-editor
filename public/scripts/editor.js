@@ -482,6 +482,7 @@ Editor.prototype.load = function() {
 		unit = DEFAULT_UNIT;
 	}
 
+	this.activeCard = STANDARD;
 	this.setUnit(unit);
 };
 
@@ -1047,8 +1048,7 @@ Editor.prototype.commandEditor = function() {
 	}
 
 	const h3 = $("#command");
-	const name = this.getCommands(unit).get(id);
-	h3.textContent = name + " (" + id + ")";
+	h3.textContent = this.getCommands(unit).get(id) + " (" + id + ")";
 	h3.hidden = false;
 
 	// omits basic commands
