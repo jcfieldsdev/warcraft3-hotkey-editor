@@ -1,8 +1,8 @@
 # warcraft3-hotkey-editor
 
-<div align="center"><img src="https://gitlab.com/jcfields/warcraft3-hotkey-editor/raw/master/screenshot.png" width="633" height="384" alt="[Warcraft III Hotkey Editor]"></div>
+A [hotkey editor for *Warcraft III*](https://jcfieldsdev.github.io/warcraft3-hotkey-editor/). Written in JavaScript. Includes all units and structures from standard multiplayer and the official campaigns. In addition to editing hotkeys, it also allows editing tooltip text with a simplified syntax and repositioning buttons by drag-and-drop.
 
-A [hotkey editor for *Warcraft III*](https://jcfields.gitlab.io/warcraft3-hotkey-editor/). Written in JavaScript. Includes all units and structures from standard multiplayer and the official campaigns. In addition to editing hotkeys, it also allows editing tooltip text with a simplified syntax and repositioning buttons by drag-and-drop.
+![Warcraft III Hotkey Editor](screenshot.png)
 
 ## Guide
 
@@ -68,7 +68,7 @@ After customizing your hotkeys, click the `Save` button in the bottom-right corn
 
 If you've changed any options, they'll be stored in your hotkey file under the `hotkeyeditorpreferences` section. This section is safely ignored by the game, but the editor uses it to reload your preferences the next time you use it.
 
-The `?` button next to the `Load` and `Save` buttons brings up the [help page](https://jcfields.gitlab.io/warcraft3-hotkey-editor/help.html), which explains in detail where the hotkey file is located on your computer and how to enable it in the game.
+The `?` button next to the `Load` and `Save` buttons brings up the [help page](https://jcfieldsdev.github.io/warcraft3-hotkey-editor/help.html), which explains in detail where the hotkey file is located on your computer and how to enable it in the game.
 
 ## Limitations
 
@@ -93,4 +93,4 @@ Includes [QWEASZ hotkey set](https://www.reddit.com/r/WC3/comments/69p3nv/improv
 
 ## See also
 
-- [*Starcraft II* Hotkey Editor](https://gitlab.com/jcfields/starcraft2-hotkey-editor)—A similar editor derived from this project.
+- [*Starcraft II* Hotkey Editor](https://github.com/jcfieldsdev/starcraft2-hotkey-editor)—A similar editor derived from this project.
