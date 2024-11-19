@@ -50,7 +50,8 @@ data.common = {
 		["cmdholdpos", "Hold Position"],
 		["cmdattack", "Attack"],
 		["cmdpatrol", "Patrol"],
-		["cmdselectskill", "Hero Abilities"]
+		["cmdselectskill", "Hero Abilities"],
+		["cmdcancel", "Cancel"],
 	],
 	noAttack: [
 		["cmdmove", "Move"],

@@ -36,7 +36,7 @@
 :root {
 	--link: #fc0;
 	--conflict: #f00;
-	--key: #ffcc00;
+	--key: #fc0;
 	--note: #c3dbff;
 	--neutral-background: #202020;
 	--neutral-background-dark: #101010;
@@ -114,7 +114,7 @@ a, button {
 	cursor: pointer;
 }
 
-a#link, div.card[hidden], h1, section h2 {
+a#link, div.card[hidden], h1, input[type="file"], section h2 {
 	display: none;
 }
 
@@ -267,6 +267,25 @@ div#control button, div#fields button {
 div#control button:hover, div#fields button:hover,
 div.overlay button:hover, footer button:hover {
 	border-color: #fff !important;
+}
+
+div#dropzone {
+	background: var(--human-button-dark) url(file.svg) 85% 50% no-repeat;
+	background-size: 3.5em;
+	border: 3px dashed var(--human-button-border);
+	border-radius: 1rem;
+	color: inherit;
+	font-size: 0.75rem;
+	line-height: 150%;
+	margin: 1em auto;
+	padding: 1.5em 8em 1.5em 3em;
+	text-align: left;
+	width: 12em;
+}
+
+div#dropzone.hover {
+	background-color: var(--human-button);
+	border-style: solid;
 }
 
 div#editor {
@@ -476,6 +495,9 @@ div.card {
 	grid-gap: 5px 5px;
 	grid-template-columns: 64px 64px 64px 64px;
 	grid-template-rows: 64px 64px 64px;
+}
+
+div.card, input[type="file"], label {
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -493,7 +515,7 @@ div.conflict {
 	outline: 1px solid var(--conflict);
 }
 
-div.control, figcaption, p.note {
+div.control, figcaption {
 	font-size: 0.75rem;
 }
 
@@ -534,11 +556,11 @@ div.overlay textarea {
 }
 
 div.overlay.open {
-	backdrop-filter: sepia(1);
+	backdrop-filter: blur(2px);
 	opacity: 1;
 	transition: 0.3s opacity;
 	visibility: visible;
-	-webkit-backdrop-filter: sepia(1);
+	-webkit-backdrop-filter: blur(2px);
 }
 
 figure {
@@ -643,12 +665,6 @@ kbd {
 	color: inherit;
 	margin: 0 0.25em;
 	padding: 0.1em 0.5em;
-}
-
-label {
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
 }
 
 main {
@@ -964,6 +980,6 @@ ul.undead {
 	}
 
 	ul#results {
-		bottom: 2.75em;
+		bottom: 3.5em;
 	}
 }

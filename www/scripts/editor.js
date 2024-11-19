@@ -43,7 +43,7 @@ const DEFAULT_ICON = "btnsheep";
 const DEFAULT_ICON_SET = "classic";
 const ICON_DIR = "icons";
 const HOTKEY_DIR = "hotkeys";
-const DIR_LIST = "hotkeys/index.json";
+const INDEX_FILE = "index.json";
 const HELP_PAGE = "help.html";
 const ANNOYED_CLICKS = 5;
 const ANNOYED_SOUND = "annoyed.wav";
@@ -117,25 +117,27 @@ window.addEventListener("load", function() {
 		$("#files").replaceWith(select);
 	});
 
+	let clicks = 0;
+
 	window.addEventListener("beforeunload", function() {
 		commands.list = options.save(commands.list);
 		store.save(commands.list);
 	});
 	window.addEventListener("hashchange", function() {
+		clicks = 0;
+
 		// changes on link or browser back/forward
 		editor.load();
 	});
 	window.addEventListener("keyup", function(event) {
-		const keyCode = event.keyCode;
+		const {key} = event;
 
-		if (keyCode == 27) { // Esc
+		if (key == "Escape") {
 			for (const overlay of Object.values(overlays)) {
 				overlay.hide();
 			}
 		}
 	});
-
-	let clicks = 0;
 
 	document.addEventListener("click", function(event) {
 		const element = event.target;
@@ -179,6 +181,10 @@ window.addEventListener("load", function() {
 
 			overlays.save.setText(commands.convert());
 			overlays.save.show();
+		}
+
+		if (element.matches("#dropzone")) {
+			$("#file").click();
 		}
 
 		if (element.matches("#download")) {
@@ -285,21 +291,21 @@ window.addEventListener("load", function() {
 		}
 
 		if (element.matches("#query")) {
-			const keyCode = event.keyCode;
+			const {key} = event;
 
-			if (keyCode == 13) { // return/enter
+			if (key == "Enter") {
 				editor.openResult();
 			}
 
-			if (keyCode == 27) { // Esc
+			if (key == "Escape") {
 				editor.clearSearchAndQuery();
 			}
 
-			if (keyCode == 38) { // up arrow
+			if (key == "ArrowUp") {
 				editor.selectResult(true);
 			}
 
-			if (keyCode == 40) { // down arrow
+			if (key == "ArrowDown") {
 				editor.selectResult(false);
 			}
 		}
@@ -311,7 +317,7 @@ window.addEventListener("load", function() {
 			editor.selected = $$("#results li").findIndex(function(item) {
 				return item == element;
 			});
-			editor.highlightResult();
+			editor.highlightResult(false);
 		}
 	});
 	document.addEventListener("focusin", function(event) {
@@ -331,6 +337,10 @@ window.addEventListener("load", function() {
 	document.addEventListener("dragover", function(event) {
 		const element = event.target;
 
+		if (element.matches("#dropzone")) {
+			event.preventDefault();
+		}
+
 		if (element.closest(".cell")) {
 			event.preventDefault();
 		}
@@ -338,13 +348,20 @@ window.addEventListener("load", function() {
 	document.addEventListener("dragenter", function(event) {
 		const element = event.target;
 
+		if (element.matches("#dropzone")) {
+			$("#dropzone").classList.add("hover");
+		}
+
 		if (element.closest(".cell")) {
-			event.preventDefault();
 			element.closest(".cell").classList.add("drag");
 		}
 	});
 	document.addEventListener("dragleave", function(event) {
 		const element = event.target;
+
+		if (element.matches("#dropzone")) {
+			$("#dropzone").classList.remove("hover");
+		}
 
 		if (element.closest(".cell")) {
 			element.closest(".cell").classList.remove("drag");
@@ -366,6 +383,16 @@ window.addEventListener("load", function() {
 	});
 	document.addEventListener("drop", function(event) {
 		const element = event.target;
+
+		if (element.matches("#dropzone")) {
+			event.preventDefault();
+			$("#dropzone").classList.remove("hover");
+
+			const files = event.dataTransfer.files;
+			const input = $("#file");
+			input.files = files;
+			input.dispatchEvent(new Event('change'));
+		}
 
 		if (element.matches(".tip")) {
 			// prevents dropping HTML-formatted objects (namely images)
@@ -398,10 +425,12 @@ window.addEventListener("load", function() {
 		}
 	});
 
+	const contentEditable = window.navigator.userAgent.includes("WebKit")
+		? "plaintext-only"
+		: "true";
+
 	for (const element of $$(".tip")) {
-		element.contentEditable = window.navigator.userAgent.includes("WebKit")
-			? "plaintext-only"
-			: "true";
+		element.contentEditable = contentEditable;
 	}
 
 	for (const element of $$("#query, .tip, textarea")) {
@@ -412,30 +441,18 @@ window.addEventListener("load", function() {
 	}
 
 	function loadFile(file) {
-		return new Promise(function(resolve) {
-			const xhr = new XMLHttpRequest();
-			xhr.addEventListener("readystatechange", function() {
-				if (this.readyState == 4 && this.status == 200) {
-					resolve(this.responseText);
-				}
-			});
-			xhr.open("GET", [HOTKEY_DIR, file].join("/"), true);
-			xhr.responseType = "text";
-			xhr.send();
+		const path = [HOTKEY_DIR, file].join("/");
+
+		return window.fetch(path).then(function(response) {
+			return response.text();
 		});
 	}
 
 	function loadList() {
-		return new Promise(function(resolve) {
-			const xhr = new XMLHttpRequest();
-			xhr.addEventListener("readystatechange", function() {
-				if (this.readyState == 4 && this.status == 200) {
-					resolve(this.response);
-				}
-			});
-			xhr.open("GET", DIR_LIST, true);
-			xhr.responseType = "json";
-			xhr.send();
+		const path = [HOTKEY_DIR, INDEX_FILE].join("/");
+
+		return window.fetch(path).then(function(response) {
+			return response.json();
 		});
 	}
 });
@@ -549,14 +566,6 @@ Editor.prototype.unitEditor = function() {
 	const research = $("#card" + RESEARCH);
 	research.hidden = unit.type != HERO;
 
-	if (unit.type == HERO) { // adds cancel button to hero select skills card
-		const buttonpos = this.commands.get(CANCEL, "Buttonpos", unit);
-
-		if (buttonpos != "") {
-			placeButton.call(this, CANCEL, "Cancel", RESEARCH, buttonpos, true);
-		}
-	}
-
 	// shows build card for workers
 	const build = $("#card" + BUILD);
 	build.hidden = unit.build == undefined;
@@ -569,6 +578,7 @@ Editor.prototype.unitEditor = function() {
 	this.checkAllConflicts();
 
 	function createCommandCard(n, unit) {
+		const commands = this.getCommands(unit);
 		for (const [id, name] of this.getCommands(unit)) {
 			// special exception for build buttons, whose hotkeys and tooltips
 			// are under cmdbuild* but whose buttonpos are under a?bu
@@ -582,7 +592,12 @@ Editor.prototype.unitEditor = function() {
 			const buttonpos = this.commands.get(idpos, "Buttonpos", unit);
 
 			if (buttonpos != "") {
-				placeButton.call(this, id, name, n, buttonpos, true);
+				// puts cancel button on select skills card for heroes
+				if (unit.type == HERO && id == CANCEL) {
+					placeButton.call(this, id, name, RESEARCH, buttonpos, true);
+				} else {
+					placeButton.call(this, id, name, n, buttonpos, true);
+				}
 
 				const unbuttonpos = this.commands.get(
 					idpos, "Unbuttonpos", unit
@@ -949,9 +964,14 @@ Editor.prototype.getConflicts = function(id) {
 		const unhotkey = this.commands.get(id, "Unhotkey", unit);
 		const researchhotkey = this.commands.get(id, "Researchhotkey", unit);
 
-		// tracks research hotkeys separately
-		recordHotkey(id, hotkey, hotkeys);
-		recordHotkey(id, researchhotkey, researchhotkeys);
+		// considers cancel button part of select skills card for heroes
+		if (unit.type == HERO && id == CANCEL) {
+			recordHotkey(id, hotkey, researchhotkeys);
+		} else {
+			// tracks research hotkeys separately
+			recordHotkey(id, hotkey, hotkeys);
+			recordHotkey(id, researchhotkey, researchhotkeys);
+		}
 
 		if (unhotkey != "") {
 			// counts unhotkey as hotkey if different (for two-state commands)
@@ -969,13 +989,6 @@ Editor.prototype.getConflicts = function(id) {
 				}
 			}
 		}
-	}
-
-	// adds cancel button to hero select skills card for the purpose of
-	// identifying conflicts with it
-	if (Object.keys(researchhotkeys).length > 0) {
-		const hotkey = this.commands.get(CANCEL, "Hotkey", unit);
-		recordHotkey(CANCEL, hotkey, researchhotkeys);
 	}
 
 	return {hotkeys, researchhotkeys};
@@ -1274,15 +1287,14 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 };
 
 Editor.prototype.editHotkey = function(input, type, event) {
-	const keyCode = event.keyCode;
+	const {key} = event;
 
 	// ignores non-letter characters
-	if (keyCode < 65 || keyCode > 90) {
+	if (key.length > 1 || !key.match(/[A-Z]/i)) {
 		return;
 	}
 
-	const key = String.fromCharCode(keyCode);
-	input.value = key;
+	input.value = key.toUpperCase();
 
 	const unit = data.units[this.unit];
 
@@ -1407,11 +1419,9 @@ Editor.prototype.setVisibleHotkeys = function() {
 
 	const keys = this.getConflicts(this.unit);
 	flagHotkeys(STANDARD, keys.hotkeys);
-	flagHotkeys(STANDARD, keys.researchhotkeys);
 
 	if (data.units[this.unit] != undefined) { // handles secondary command cards
 		if (data.units[this.unit].type == HERO) {
-			flagHotkeys(RESEARCH, keys.hotkeys);
 			flagHotkeys(RESEARCH, keys.researchhotkeys);
 		}
 
@@ -1584,7 +1594,7 @@ Editor.prototype.formatResults = function(id, matches) {
 	$("#" + id).replaceWith(ul);
 };
 
-Editor.prototype.selectResult = function(dir) {
+Editor.prototype.selectResult = function(dir=false) {
 	const results = $$("#results li");
 
 	if (dir) { // up arrow
@@ -1603,15 +1613,18 @@ Editor.prototype.selectResult = function(dir) {
 		}
 	}
 
-	this.highlightResult();
+	this.highlightResult(true);
 };
 
-Editor.prototype.highlightResult = function() {
+Editor.prototype.highlightResult = function(scroll=false) {
 	for (const [i, result] of $$("#results li").entries()) {
 		if (this.selected == i) {
 			result.classList.add("selected");
-			result.scrollIntoView(); // for long lists with scrollbars
 			this.highlightFilter(i);
+
+			if (scroll) {
+				result.scrollIntoView(); // for long lists with scrollbars
+			}
 		} else {
 			if (this.selected < 0) {
 				for (const element of $$(".filter")) {
