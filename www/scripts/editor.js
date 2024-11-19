@@ -524,6 +524,7 @@ Editor.prototype.setUnit = function(unit) {
 };
 
 Editor.prototype.setCommand = function(n, id) {
+	this.activeCard = n;
 	this.buttonState = id.slice(-1) != "_";
 
 	if (!this.buttonState) {
@@ -532,7 +533,6 @@ Editor.prototype.setCommand = function(n, id) {
 
 	if (this.command != id) {
 		this.command = id;
-		this.activeCard = n;
 	}
 
 	this.commandEditor();
@@ -578,7 +578,6 @@ Editor.prototype.unitEditor = function() {
 	this.checkAllConflicts();
 
 	function createCommandCard(n, unit) {
-		const commands = this.getCommands(unit);
 		for (const [id, name] of this.getCommands(unit)) {
 			// special exception for build buttons, whose hotkeys and tooltips
 			// are under cmdbuild* but whose buttonpos are under a?bu

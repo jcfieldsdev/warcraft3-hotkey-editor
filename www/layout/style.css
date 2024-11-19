@@ -114,7 +114,7 @@ a, button {
 	cursor: pointer;
 }
 
-a#link, div.card[hidden], h1, input[type="file"], section h2 {
+a#link, div.card[hidden], h1, input#file, section h2 {
 	display: none;
 }
 
@@ -281,6 +281,12 @@ div#dropzone {
 	padding: 1.5em 8em 1.5em 3em;
 	text-align: left;
 	width: 12em;
+}
+
+div#dropzone, div.card, label {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
 
 div#dropzone.hover {
@@ -495,12 +501,6 @@ div.card {
 	grid-gap: 5px 5px;
 	grid-template-columns: 64px 64px 64px 64px;
 	grid-template-rows: 64px 64px 64px;
-}
-
-div.card, input[type="file"], label {
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
 }
 
 div.card button.icon:hover {
