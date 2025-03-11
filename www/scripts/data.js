@@ -1798,7 +1798,7 @@ data.units = {
 			["sreg", "Purchase Scroll of Regeneration"],
 			["shas", "Purchase Scroll of Speed"],
 			["pgma", "Purchase Potion of Greater Mana"],
-			["wneu", "Purchase Wand of Neutralization"],
+			["wneg", "Purchase Wand of Neutralization"],
 			["rde2", "Purchase Ring of Protection +3"],
 			["hlst", "Purchase Health Stone"],
 			["rwiz", "Purchase Sobi Mask"],
@@ -2602,6 +2602,7 @@ data.units = {
 			["phea", "Purchase Potion of Healing"],
 			["pman", "Purchase Potion of Mana"],
 			["stwp", "Purchase Scroll of Town Portal"],
+			["wneg", "Purchase Wand Of Negation"],
 			["ocor", "Purchase Orb of Corruption"],
 			["shea", "Purchase Scroll of Healing"],
 			["anei", "Select User"]
@@ -4181,7 +4182,7 @@ data.units = {
 			["pinv", "Potion of Invisibility"],
 			["shea", "Purchase Scroll of Healing"],
 			["spro", "Purchase Scroll of Protection"],
-			["wneg", "Wand of Negation"],
+			["wneu", "Wand of Negation"],
 			["gemt", "Gem of True Seeing"],
 			["stwp", "Purchase Scroll of Town Portal"],
 			["anei", "Select User"]
@@ -4199,7 +4200,7 @@ data.units = {
 			shea: {
 				Buttonpos: "3,0"
 			},
-			wneg: {
+			wneu: {
 				Buttonpos: "1,1"
 			},
 			gemt: {
@@ -7849,8 +7850,8 @@ data.icons = {
 			uwar: "btnarchimonde",
 			uzg1: "btnzigguratupgrade",
 			uzg2: "btnfrosttower",
-			wneg: "btnwandskull",
-			wneu: "btnwandofneutralization",
+			wneg: "btnwandofneutralization",
+			wneu: "btnwandskull",
 			uzig: "btnziggurat"
 		}
 	},
