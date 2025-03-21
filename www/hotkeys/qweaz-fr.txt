@@ -16,6 +16,7 @@
 //  Works great combined with Warkey for Inventory items!
 ///////////////////////////////////////////////////////////
 
+
 [cmdcancel]
 Tip=(|cffffcc00ESC|r) Cancel
 Hotkey=512
@@ -29,7 +30,8 @@ Buttonpos=3,2
 [cmdrally]
 Tip=(|cffffcc00F|r) Set Rally Point
 Hotkey=F
-[ARal]
+
+[aral]
 Buttonpos=3,1
 
 [cmdattack]
@@ -190,28 +192,28 @@ Tip=(|cffffcc00W|r) Upgrade to Castle
 Hotkey=W
 Buttonpos=0,2
 
-[Hamg]
+[hamg]
 Tip=(|cffffcc00W|r) Summon Archmage
 Revivetip=(|cffffcc00W|r) Revive Archmage
 Awakentip=(|cffffcc00W|r) Awaken Archmage
 Hotkey=W
 Buttonpos=0,2
 
-[Hmkg]
+[hmkg]
 Tip=(|cffffcc00X|r) Summon Mountain King
 Revivetip=(|cffffcc00X|r) Revive Mountain King
 Awakentip=(|cffffcc00X|r) Awaken Mountain King
 Hotkey=X
 Buttonpos=1,2
 
-[Hpal]
+[hpal]
 Tip=(|cffffcc00C|r) Summon Paladin
 Revivetip=(|cffffcc00C|r) Revive Paladin
 Awakentip=(|cffffcc00C|r) Awaken Paladin
 Hotkey=C
 Buttonpos=2,2
 
-[Hblm]
+[hblm]
 Tip=(|cffffcc00Q|r) Summon Blood Mage
 Revivetip=(|cffffcc00Q|r) Revive Blood Mage
 Awakentip=(|cffffcc00Q|r) Awaken Blood Mage
@@ -350,7 +352,7 @@ Buttonpos=1,2
 
 [rhlh]
 Tip=(|cffffcc00A|r) Improved Lumber Harvesting,(|cffffcc00A|r) Advanced Lumber Harvesting
-Hotkey=A,P
+Hotkey=A,A
 Buttonpos=0,0
 
 [rhac]
@@ -360,7 +362,7 @@ Buttonpos=1,0
 
 [rhme]
 Tip=(|cffffcc00A|r) Upgrade to Iron Forged Swords,(|cffffcc00A|r) Upgrade to Steel Forged Swords,(|cffffcc00A|r) Upgrade to Mithril Forged Swords
-Hotkey=A,P,P
+Hotkey=A,A,A
 Buttonpos=0,0
 
 [rhra]
@@ -436,17 +438,17 @@ Tip=(|cffffcc00R|r) Purchase Ritual Dagger
 Hotkey=R
 Buttonpos=3,0
 
-[AIhm]
+[aihm]
 Tip=(|cffffcc00D|r) Hide
 Hotkey=D
 Buttonpos=2,1
 
-[Ahsb]
+[ahsb]
 Tip=(|cffffcc00A|r) Sundering Blades
 Hotkey=A
 Buttonpos=0,0
 
-[Rhsb]
+[rhsb]
 Tip=(|cffffcc00D|r) Research Sundering Blades
 Hotkey=D
 Buttonpos=2,1
@@ -459,7 +461,8 @@ Buttonpos=1,2
 [cmdbuildhuman]
 Tip=(|cffffcc00A|r) Build Structure
 Hotkey=A
-[AHbu]
+
+[ahbu]
 Buttonpos=0,0
 
 [ahrp]
@@ -662,7 +665,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[AHfs]
+[ahfs]
 Tip=(|cffffcc00E|r) Flame Strike - [|cffffcc00Level 1|r],(|cffffcc00E|r) Flame Strike - [|cffffcc00Level 2|r],(|cffffcc00E|r) Flame Strike - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00E|r) Learn Flame Strike - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -670,7 +673,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[AHbn]
+[ahbn]
 Tip=(|cffffcc00Z|r) Banish - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Banish - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Banish - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00Z|r) Learn Banish - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -678,7 +681,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[AHdr]
+[ahdr]
 Tip=(|cffffcc00A|r) Siphon Mana - [|cffffcc00Level 1|r],(|cffffcc00A|r) Siphon Mana - [|cffffcc00Level 2|r],(|cffffcc00A|r) Siphon Mana - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00A|r) Learn Siphon Mana - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -686,7 +689,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[AHpx]
+[ahpx]
 Tip=(|cffffcc00R|r) Summon Phoenix
 Researchtip=(|cffffcc00R|r) Learn Summon Phoenix
 Hotkey=R
@@ -694,7 +697,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[AHtb]
+[ahtb]
 Tip=(|cffffcc00A|r) Storm Bolt - [|cffffcc00Level 1|r],(|cffffcc00A|r) Storm Bolt - [|cffffcc00Level 2|r],(|cffffcc00A|r) Storm Bolt - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00A|r) Learn Storm Bolt - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -702,7 +705,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[AHtc]
+[ahtc]
 Tip=(|cffffcc00Z|r) Thunder Clap - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Thunder Clap - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Thunder Clap - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00Z|r) Learn Thunder Clap - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -710,14 +713,14 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[AHbh]
+[ahbh]
 Tip=Bash - [|cffffcc00Level 1|r],Bash - [|cffffcc00Level 2|r],Bash - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00E|r) Learn Bash - [|cffffcc00Level %d|r]
 Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[AHav]
+[ahav]
 Tip=(|cffffcc00R|r) Avatar
 Researchtip=(|cffffcc00R|r) Learn Avatar
 Hotkey=R
@@ -725,7 +728,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[AHhb]
+[ahhb]
 Tip=(|cffffcc00A|r) Holy Light - [|cffffcc00Level 1|r],(|cffffcc00A|r) Holy Light - [|cffffcc00Level 2|r],(|cffffcc00A|r) Holy Light - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00A|r) Learn Holy Light - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -733,7 +736,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[AHds]
+[ahds]
 Tip=(|cffffcc00Z|r) Divine Shield - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Divine Shield - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Divine Shield - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00Z|r) Learn Divine Shield - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -741,14 +744,14 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[AHad]
+[ahad]
 Tip=Devotion Aura - [|cffffcc00Level 1|r],Devotion Aura - [|cffffcc00Level 2|r],Devotion Aura - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00E|r) Learn Devotion Aura - [|cffffcc00Level %d|r]
 Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[AHre]
+[ahre]
 Tip=(|cffffcc00R|r) Resurrection
 Researchtip=(|cffffcc00R|r) Learn Resurrection
 Hotkey=R
@@ -756,28 +759,28 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[Oshd]
+[oshd]
 Tip=(|cffffcc00Q|r) Summon Shadow Hunter
 Revivetip=(|cffffcc00Q|r) Revive Shadow Hunter
 Awakentip=(|cffffcc00Q|r) Awaken Shadow Hunter
 Hotkey=Q
 Buttonpos=0,1
 
-[Obla]
+[obla]
 Tip=(|cffffcc00W|r) Summon Blademaster
 Revivetip=(|cffffcc00W|r) Revive Blademaster
 Awakentip=(|cffffcc00W|r) Awaken Blademaster
 Hotkey=W
 Buttonpos=0,2
 
-[Ofar]
+[ofar]
 Tip=(|cffffcc00X|r) Summon Far Seer
 Revivetip=(|cffffcc00X|r) Revive Far Seer
 Awakentip=(|cffffcc00X|r) Awaken Far Seer
 Hotkey=X
 Buttonpos=1,2
 
-[Otch]
+[otch]
 Tip=(|cffffcc00C|r) Summon Tauren Chieftain
 Revivetip=(|cffffcc00C|r) Revive Tauren Chieftain
 Awakentip=(|cffffcc00C|r) Awaken Tauren Chieftain
@@ -961,7 +964,7 @@ Buttonpos=1,2
 
 [rome]
 Tip=(|cffffcc00A|r) Upgrade to Steel Melee Weapons,(|cffffcc00A|r) Upgrade to Thorium Melee Weapons,(|cffffcc00A|r) Upgrade to Arcanite Melee Weapons
-Hotkey=A,P,P
+Hotkey=A,A,A
 Buttonpos=0,0
 
 [rora]
@@ -994,7 +997,8 @@ Unbuttonpos=3,0
 [cmdbuildorc]
 Tip=(|cffffcc00A|r) Build Structure
 Hotkey=A
-[AObu]
+
+[aobu]
 Buttonpos=0,0
 
 [ogre]
@@ -1296,28 +1300,28 @@ Buttonpos=0,2
 Tip=Frost Attack
 Buttonpos=1,0
 
-[Udea]
+[udea]
 Tip=(|cffffcc00W|r) Summon Death Knight
 Revivetip=(|cffffcc00W|r) Revive Death Knight
 Awakentip=(|cffffcc00W|r) Awaken Death Knight
 Hotkey=W
 Buttonpos=0,2
 
-[Udre]
+[udre]
 Tip=(|cffffcc00X|r) Summon Dreadlord
 Revivetip=(|cffffcc00X|r) Revive Dreadlord
 Awakentip=(|cffffcc00X|r) Awaken Dreadlord
 Hotkey=X
 Buttonpos=1,2
 
-[Ulic]
+[ulic]
 Tip=(|cffffcc00C|r) Summon Lich
 Revivetip=(|cffffcc00C|r) Revive Lich
 Awakentip=(|cffffcc00C|r) Awaken Lich
 Hotkey=C
 Buttonpos=2,2
 
-[Ucrl]
+[ucrl]
 Tip=(|cffffcc00Q|r) Summon Crypt Lord
 Revivetip=(|cffffcc00Q|r) Revive Crypt Lord
 Awakentip=(|cffffcc00Q|r) Awaken Crypt Lord
@@ -1441,7 +1445,7 @@ Buttonpos=0,2
 
 [rume]
 Tip=(|cffffcc00A|r) Upgrade to Unholy Strength,(|cffffcc00A|r) Improved Unholy Strength,(|cffffcc00A|r) Advanced Unholy Strength
-Hotkey=A,P,P
+Hotkey=A,A,A
 Buttonpos=0,0
 
 [ruar]
@@ -1491,7 +1495,8 @@ Buttonpos=0,2
 [cmdbuildundead]
 Tip=(|cffffcc00A|r) Summon Building
 Hotkey=A
-[AUbu]
+
+[aubu]
 Buttonpos=0,0
 
 [auns]
@@ -1702,7 +1707,8 @@ Unbuttonpos=1,0
 [ubsp]
 Tip=(|cffffcc00R|r) Morph into Destroyer
 Hotkey=R
-[Aave]
+
+[aave]
 Buttonpos=3,0
 
 [advm]
@@ -1947,28 +1953,28 @@ Hotkey=A
 Buttonpos=0,0
 Unbuttonpos=0,0
 
-[Edem]
+[edem]
 Tip=(|cffffcc00W|r) Summon Demon Hunter
 Revivetip=(|cffffcc00W|r) Revive Demon Hunter
 Awakentip=(|cffffcc00W|r) Awaken Demon Hunter
 Hotkey=W
 Buttonpos=0,2
 
-[Ekee]
+[ekee]
 Tip=(|cffffcc00X|r) Summon Keeper of the Grove
 Revivetip=(|cffffcc00X|r) Revive Keeper of the Grove
 Awakentip=(|cffffcc00X|r) Awaken Keeper of the Grove
 Hotkey=X
 Buttonpos=1,2
 
-[Emoo]
+[emoo]
 Tip=(|cffffcc00C|r) Summon Priestess of the Moon
 Revivetip=(|cffffcc00C|r) Revive Priestess of the Moon
 Awakentip=(|cffffcc00C|r) Awaken Priestess of the Moon
 Hotkey=C
 Buttonpos=2,2
 
-[Ewar]
+[ewar]
 Tip=(|cffffcc00Q|r) Summon Warden
 Revivetip=(|cffffcc00Q|r) Revive Warden
 Awakentip=(|cffffcc00Q|r) Awaken Warden
@@ -2017,7 +2023,7 @@ Buttonpos=2,1
 
 [resm]
 Tip=(|cffffcc00A|r) Upgrade to Strength of the Moon,(|cffffcc00A|r) Upgrade to Improved Strength of the Moon,(|cffffcc00A|r) Upgrade to Advanced Strength of the Moon
-Hotkey=A,P,P
+Hotkey=A,A,A
 Buttonpos=0,0
 
 [rema]
@@ -2148,7 +2154,8 @@ Buttonpos=1,2
 [cmdbuildnightelf]
 Tip=(|cffffcc00A|r) Create Building
 Hotkey=A
-[AEbu]
+
+[aebu]
 Buttonpos=0,0
 
 [aren]
@@ -2487,27 +2494,27 @@ Hotkey=A
 Buttonpos=0,0
 Unbuttonpos=0,0
 
-[NCpn]
+[ncpn]
 Tip=(|cffffcc00A|r) Train Chaos Peon
 Hotkey=A
 Buttonpos=0,0
 
-[NChg]
+[nchg]
 Tip=(|cffffcc00A|r) Train Chaos Grunt
 Hotkey=A
 Buttonpos=0,0
 
-[NChr]
+[nchr]
 Tip=(|cffffcc00A|r) Train Chaos Rider
 Hotkey=A
 Buttonpos=0,0
 
-[NCkb]
+[nckb]
 Tip=(|cffffcc00Z|r) Train Chaos Kodo Beast
 Hotkey=Z
 Buttonpos=1,0
 
-[NChw]
+[nchw]
 Tip=(|cffffcc00A|r) Train Chaos Warlock
 Hotkey=A
 Buttonpos=0,0
@@ -2668,7 +2675,8 @@ Researchbuttonpos=3,0
 [cmdbuildnaga]
 Tip=(|cffffcc00A|r) Build Structure
 Hotkey=A
-[AAbu]
+
+[aabu]
 Buttonpos=0,0
 
 [anha]
@@ -3359,7 +3367,7 @@ Tip=(|cffffcc00Z|r) Feral Spirit
 Hotkey=Z
 Buttonpos=1,0
 
-[ANsg]
+[ansg]
 Tip=(|cffffcc00A|r) Summon Bear - [|cffffcc00Level 1|r],(|cffffcc00A|r) Summon Bear - [|cffffcc00Level 2|r],(|cffffcc00A|r) Summon Bear - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00A|r) Learn Summon Bear - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -3367,7 +3375,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[ANsq]
+[ansq]
 Tip=(|cffffcc00Z|r) Quilbeast - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Quilbeast - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Quilbeast - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00Z|r) Learn Quilbeast - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -3375,7 +3383,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[ANsw]
+[answ]
 Tip=(|cffffcc00E|r) Summon Hawk - [|cffffcc00Level 1|r],(|cffffcc00E|r) Summon Hawk - [|cffffcc00Level 2|r],(|cffffcc00E|r) Summon Hawk - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00E|r) Learn Summon Hawk - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -3383,7 +3391,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[ANst]
+[anst]
 Tip=(|cffffcc00R|r) Stampede
 Researchtip=(|cffffcc00R|r) Learn Stampede
 Hotkey=R
@@ -4245,27 +4253,27 @@ Buttonpos=0,0
 Tip=Pulverize
 Buttonpos=3,0
 
-[H06s]
+[h06s]
 Tip=Qdmiral
 Buttonpos=0,0
 
-[H00d]
+[h00d]
 Tip=Beastmaster
 Buttonpos=1,0
 
-[H000]
+[h000]
 Tip=Centaur Warchief
 Buttonpos=2,0
 
-[N01i]
+[n01i]
 Tip=Qlchemist
 Buttonpos=3,2
 
-[H001]
+[h001]
 Tip=Rogue Knight
 Buttonpos=1,1
 
-[O015]
+[o015]
 Tip=Tauren Chieftain
 Buttonpos=1,2
 
@@ -4273,127 +4281,127 @@ Buttonpos=1,2
 Tip=Guardian Wisp
 Buttonpos=3,0
 
-[Harf]
+[harf]
 Tip=Omniknight
 Buttonpos=3,1
 
-[H00t]
+[h00t]
 Tip=Clockwork Goblin
 Buttonpos=0,0
 
-[E02F]
+[e02f]
 Tip=Phoenix
 Buttonpos=0,1
 
-[Hlgr]
+[hlgr]
 Tip=Dragon Knight
 Buttonpos=1,0
 
-[E02I]
+[e02i]
 Tip=Tuskarr
 Buttonpos=1,1
 
-[H00A]
+[h00a]
 Tip=Sacred Warrior
 Buttonpos=2,0
 
-[E02K]
+[e02k]
 Tip=Legion Commander
 Buttonpos=2,1
 
-[H008]
+[h008]
 Tip=Bristleback
 Buttonpos=3,0
 
-[E032]
+[e032]
 Tip=Goblin Shredder
 Buttonpos=3,1
 
-[Opgh]
+[opgh]
 Tip=Qxe
 Buttonpos=0,0
 
-[U00a]
+[u00a]
 Tip=Chaos Knight
 Buttonpos=1,0
 
-[U008]
+[u008]
 Tip=Lycanthrope
 Buttonpos=1,1
 
-[Uc42]
+[uc42]
 Tip=Doom Bringer
 Buttonpos=2,0
 
-[Uc91]
+[uc91]
 Tip=Slithereen Guard
 Buttonpos=2,2
 
-[U00c]
+[u00c]
 Tip=Lifestealer
 Buttonpos=3,0
 
-[N00r]
+[n00r]
 Tip=Pit Lord
 Buttonpos=3,1
 
-[H00r]
+[h00r]
 Tip=Unydying
 Buttonpos=3,2
 
-[U00f]
+[u00f]
 Tip=Butcher
 Buttonpos=0,1
 
-[Nc00]
+[nc00]
 Tip=Skeleton King
 Buttonpos=2,1
 
-[Uc11]
+[uc11]
 Tip=Magnataur
 Buttonpos=1,0
 
-[O00j]
+[o00j]
 Tip=Spiritbreaker
 Buttonpos=2,0
 
-[U00k]
+[u00k]
 Tip=Sand King
 Buttonpos=3,0
 
-[E005]
+[e005]
 Tip=Moon Rider
 Buttonpos=0,1
 
-[Usyl]
+[usyl]
 Tip=Dwarven Sniper
 Buttonpos=1,0
 
-[O00A]
+[o00a]
 Tip=Morphling
 Buttonpos=1,1
 
-[Hc92]
+[hc92]
 Tip=Stealth Assassin
 Buttonpos=1,2
 
-[Nbbc]
+[nbbc]
 Tip=Juggernaut
 Buttonpos=2,0
 
-[Hc49]
+[hc49]
 Tip=Naga Siren
 Buttonpos=2,1
 
-[N016]
+[n016]
 Tip=Troll Warlord
 Buttonpos=2,2
 
-[N01o]
+[n01o]
 Tip=Lone Druid
 Buttonpos=3,0
 
-[Ogrh]
+[ogrh]
 Tip=Phantom Lancer
 Buttonpos=3,1
 
@@ -4401,79 +4409,75 @@ Buttonpos=3,1
 Tip=Gyrocopter
 Buttonpos=3,2
 
-[N01v]
+[n01v]
 Tip=Priestess of the Moon
 Buttonpos=0,0
 
-[Naka]
+[naka]
 Tip=Bounty Hunter
 Buttonpos=0,1
 
-[E01y]
+[e01y]
 Tip=Templar Assassin
 Buttonpos=1,0
 
-[N0M0]
+[n0m0]
 Tip=Ember Spirit
 Buttonpos=1,1
 
-[Huth]
+[huth]
 Tip=Ursa Warrior
 Buttonpos=2,0
 
-[Hvwd]
+[hvwd]
 Tip=Vengeful Spirit
 Buttonpos=3,0
 
-[Hvsh]
+[hvsh]
 Tip=Bloodseeker
 Buttonpos=0,0
 
-[E01b]
+[e01b]
 Tip=Spectre
 Buttonpos=0,2
 
-[E004]
+[e004]
 Tip=Bone Fletcher
 Buttonpos=1,0
 
-[Ec57]
+[ec57]
 Tip=Venomancer
 Buttonpos=1,2
 
-[U006]
+[u006]
 Tip=Broodmother
 Buttonpos=2,0
 
-[Nfir]
-Tip=Firelord
-Buttonpos=3,1
-
-[Ec77]
+[ec77]
 Tip=Netherdrake
 Buttonpos=2,2
 
-[U000]
+[u000]
 Tip=Nerubian Assassin
 Buttonpos=3,0
 
-[Eevi]
+[eevi]
 Tip=Soul Keeper
 Buttonpos=3,1
 
-[H00i]
+[h00i]
 Tip=Geomancer
 Buttonpos=3,2
 
-[Ubal]
+[ubal]
 Tip=Nerubian Weaver
 Buttonpos=1,1
 
-[E002]
+[e002]
 Tip=Lightning Revenant
 Buttonpos=0,0
 
-[N0MK]
+[n0mk]
 Tip=Qrc Warden
 Buttonpos=0,1
 
@@ -4481,43 +4485,39 @@ Buttonpos=0,1
 Tip=Murloc Nightcrawler
 Buttonpos=1,0
 
-[Ec45]
+[ec45]
 Tip=Faceless Void
 Buttonpos=2,0
 
-[H00v]
+[h00v]
 Tip=Gorgon
 Buttonpos=3,0
 
-[Hjai]
+[hjai]
 Tip=Crystal Maiden
 Buttonpos=0,0
 
-[H004]
+[h004]
 Tip=Slayer
 Buttonpos=0,2
 
-[Hmbr]
+[hmbr]
 Tip=Lord of Olympia
 Buttonpos=1,1
 
-[H00s]
+[h00s]
 Tip=Storm Spirit
 Buttonpos=1,2
 
-[N00b]
+[n00b]
 Tip=Faerie Dragon
 Buttonpos=2,0
 
-[Emns]
+[emns]
 Tip=Prophet
 Buttonpos=2,1
 
-[H00a]
-Tip=Holy Knight
-Buttonpos=3,0
-
-[N01a]
+[n01a]
 Tip=Silencer
 Buttonpos=3,1
 
@@ -4525,59 +4525,51 @@ Buttonpos=3,1
 Tip=Thrall
 Buttonpos=3,2
 
-[N0eg]
+[n0eg]
 Tip=Zind Runner
 Buttonpos=1,0
 
-[Orkn]
+[orkn]
 Tip=Shadow Shaman
 Buttonpos=0,1
 
-[H00k]
+[h00k]
 Tip=Goblin Techies
 Buttonpos=1,0
 
-[E02X]
+[e02x]
 Tip=Grand Magus
 Buttonpos=1,1
 
-[E00A]
+[e00a]
 Tip=Twin Head Dragon
 Buttonpos=2,0
 
-[H0Do]
+[h0do]
 Tip=Skywrath Mage
 Buttonpos=2,1
 
-[Ntin]
-Tip=Tinker
-Buttonpos=2,2
-
-[U00A]
-Tip=Obsidian Destroyer
-Buttonpos=0,2
-
-[H00n]
+[h00n]
 Tip=Dark Seer
 Buttonpos=1,0
 
-[Uc01]
+[uc01]
 Tip=Pueen of Pain
 Buttonpos=1,2
 
-[Uc76]
+[uc76]
 Tip=Death Prophet
 Buttonpos=2,0
 
-[U00e]
+[u00e]
 Tip=Necrolyte
 Buttonpos=2,1
 
-[Uc18]
+[uc18]
 Tip=Demon Witch
 Buttonpos=3,0
 
-[H00h]
+[h00h]
 Tip=Oblivion
 Buttonpos=3,1
 
@@ -4585,27 +4577,27 @@ Buttonpos=3,1
 Tip=Shadow Demon
 Buttonpos=3,2
 
-[Uktl]
+[uktl]
 Tip=Enigma
 Buttonpos=0,0
 
-[E01c]
+[e01c]
 Tip=Zarlock
 Buttonpos=1,1
 
-[O016]
+[o016]
 Tip=Batrider
 Buttonpos=0,0
 
-[N01w]
+[n01w]
 Tip=Shadow Priest
 Buttonpos=1,0
 
-[E01a]
+[e01a]
 Tip=Zitch Doctor
 Buttonpos=1,1
 
-[H00u]
+[h00u]
 Tip=Invoker
 Buttonpos=2,0
 
@@ -4613,38 +4605,38 @@ Buttonpos=2,0
 Tip=Qncient Apparition
 Buttonpos=2,1
 
-[Uc60]
+[uc60]
 Tip=Necro´lic
 Buttonpos=3,0
 
-[N0M7]
+[n0m7]
 Tip=Zinter Wyvern
 Buttonpos=3,1
 
-[h03S]
+[h03s]
 Tip=(|cffffcc00A|r) Assault Cuirass
 Hotkey=A
 Buttonpos=0,0
 
-[h03W]
+[h03w]
 Tip=(|cffffcc00Q|r) Shiva's Guard
 Hotkey=Q
 Buttonpos=0,1
 
-[h02T]
+[h02t]
 Tip=Blade Mail
 Buttonpos=0,2
 
-[h03G]
+[h03g]
 Tip=(|cffffcc00Z|r) Heart of Tarrasque
 Hotkey=Z
 Buttonpos=1,0
 
-[h03T]
+[h03t]
 Tip=Bloodstone
 Buttonpos=1,1
 
-[h02Z]
+[h02z]
 Tip=Soul Booster
 Buttonpos=1,2
 
@@ -4653,20 +4645,20 @@ Tip=(|cffffcc00E|r) Black King Bar
 Hotkey=E
 Buttonpos=2,0
 
-[h03A]
+[h03a]
 Tip=(|cffffcc00D|r) Linken's Sphere
 Hotkey=D
 Buttonpos=2,1
 
-[h03U]
+[h03u]
 Tip=Hood of Defiance
 Buttonpos=2,2
 
-[h03B]
+[h03b]
 Tip=Qegis of the Immortal
 Buttonpos=3,0
 
-[h03N]
+[h03n]
 Tip=Vanguard
 Buttonpos=3,1
 
@@ -4675,7 +4667,7 @@ Tip=(|cffffcc00V|r) Manta Style
 Hotkey=V
 Buttonpos=3,2
 
-[h03M]
+[h03m]
 Tip=Guinsoo's Scythe of Vyse
 Buttonpos=0,0
 
@@ -4684,12 +4676,12 @@ Tip=(|cffffcc00Q|r) Dagon
 Hotkey=Q
 Buttonpos=0,1
 
-[H0DD]
+[h0dd]
 Tip=(|cffffcc00W|r) Veil of Discord
 Hotkey=W
 Buttonpos=0,2
 
-[h03X]
+[h03x]
 Tip=Orchid Malevolence
 Buttonpos=1,0
 
@@ -4698,25 +4690,25 @@ Tip=(|cffffcc00S|r) Necronomicon
 Hotkey=S
 Buttonpos=1,1
 
-[H0DV]
+[h0dv]
 Tip=Rod of Atos
 Buttonpos=1,2
 
-[h02Y]
+[h02y]
 Tip=(|cffffcc00E|r) Eul's Scepter of Divinity
 Hotkey=E
 Buttonpos=2,0
 
-[h03K]
+[h03k]
 Tip=Qghanim's Scepter
 Buttonpos=2,1
 
-[H07t]
+[h07t]
 Tip=(|cffffcc00R|r) Force Staff
 Hotkey=R
 Buttonpos=3,0
 
-[h03L]
+[h03l]
 Tip=(|cffffcc00F|r) Refresher Orb
 Hotkey=F
 Buttonpos=3,1
@@ -4726,45 +4718,45 @@ Tip=(|cffffcc00A|r) Mekansm
 Hotkey=A
 Buttonpos=0,0
 
-[H02i]
+[h02i]
 Tip=(|cffffcc00Q|r) Nathrezim Buckler
 Hotkey=Q
 Buttonpos=0,1
 
-[h02H]
+[h02h]
 Tip=(|cffffcc00W|r) Headdress of Rejuvenation
 Hotkey=W
 Buttonpos=0,2
 
-[h03R]
+[h03r]
 Tip=(|cffffcc00Z|r) Vladmir's Offering
 Hotkey=Z
 Buttonpos=1,0
 
-[h02J]
+[h02j]
 Tip=Ring of Basilius
 Buttonpos=1,1
 
-[H0CY]
+[h0cy]
 Tip=(|cffffcc00X|r) Medallion of Courage
 Hotkey=X
 Buttonpos=1,2
 
-[H0CO]
+[h0co]
 Tip=Qrcane Boots
 Buttonpos=2,0
 
-[H07x]
+[h07x]
 Tip=(|cffffcc00D|r) Khadgar's Pipe of Insight
 Hotkey=D
 Buttonpos=2,1
 
-[H0D1]
+[h0d1]
 Tip=(|cffffcc00C|r) Ancient Janggo of Endurance
 Hotkey=C
 Buttonpos=2,2
 
-[H0EC]
+[h0ec]
 Tip=Ring of Aquila
 Buttonpos=3,0
 
@@ -4773,15 +4765,15 @@ Tip=(|cffffcc00F|r) Urn of Shadows
 Hotkey=F
 Buttonpos=3,1
 
-[H0DU]
+[h0du]
 Tip=Tranquil Boots
 Buttonpos=3,2
 
-[h03C]
+[h03c]
 Tip=Divine Rapier
 Buttonpos=0,0
 
-[h03D]
+[h03d]
 Tip=(|cffffcc00Q|r) Buriza-do Kyanon
 Hotkey=Q
 Buttonpos=0,1
@@ -4791,21 +4783,21 @@ Tip=(|cffffcc00W|r) Crystalys
 Hotkey=W
 Buttonpos=0,2
 
-[h03E]
+[h03e]
 Tip=Monkey King Bar
 Buttonpos=1,0
 
-[h02S]
+[h02s]
 Tip=(|cffffcc00S|r) Cranium Basher
 Hotkey=S
 Buttonpos=1,1
 
-[h03V]
+[h03v]
 Tip=(|cffffcc00X|r) Armlet of Mordiggian
 Hotkey=X
 Buttonpos=1,2
 
-[h03F]
+[h03f]
 Tip=(|cffffcc00E|r) Radiance
 Hotkey=E
 Buttonpos=2,0
@@ -4819,11 +4811,11 @@ Tip=(|cffffcc00C|r) Lothar's Edge
 Hotkey=C
 Buttonpos=2,2
 
-[h03J]
+[h03j]
 Tip=The Butterfly
 Buttonpos=3,0
 
-[H0EA]
+[h0ea]
 Tip=Qbyssal Blade
 Buttonpos=3,1
 
@@ -4835,46 +4827,46 @@ Buttonpos=3,2
 Tip=Sange and Yasha
 Buttonpos=0,0
 
-[h02R]
+[h02r]
 Tip=(|cffffcc00Q|r) Sange
 Hotkey=Q
 Buttonpos=0,1
 
-[h02Q]
+[h02q]
 Tip=(|cffffcc00W|r) Yasha
 Hotkey=W
 Buttonpos=0,2
 
-[h03H]
+[h03h]
 Tip=(|cffffcc00Z|r) Satanic
 Hotkey=Z
 Buttonpos=1,0
 
-[h02W]
+[h02w]
 Tip=Helm of the Dominator
 Buttonpos=1,1
 
-[h02X]
+[h02x]
 Tip=(|cffffcc00X|r) Mask of Madness
 Hotkey=X
 Buttonpos=1,2
 
-[h03P]
+[h03p]
 Tip=(|cffffcc00E|r) Mjollnir
 Hotkey=E
 Buttonpos=2,0
 
-[h02U]
+[h02u]
 Tip=(|cffffcc00D|r) Maelstrom
 Hotkey=D
 Buttonpos=2,1
 
-[h02V]
+[h02v]
 Tip=(|cffffcc00C|r) Diffusal Blade
 Hotkey=C
 Buttonpos=2,2
 
-[h03I]
+[h03i]
 Tip=Eye of Skadi
 Buttonpos=3,0
 
@@ -4883,47 +4875,47 @@ Tip=(|cffffcc00F|r) Stygian Desolator
 Hotkey=F
 Buttonpos=3,1
 
-[H0E9]
+[h0e9]
 Tip=Heaven's Halberd
 Buttonpos=3,2
 
-[H02k]
+[h02k]
 Tip=(|cffffcc00A|r) Boots of Travel
 Hotkey=A
 Buttonpos=0,0
 
-[H02l]
+[h02l]
 Tip=(|cffffcc00Q|r) Hand of Midas
 Hotkey=Q
 Buttonpos=0,1
 
-[H02n]
+[h02n]
 Tip=(|cffffcc00W|r) Bracer
 Hotkey=W
 Buttonpos=0,2
 
-[H079]
+[h079]
 Tip=Phase Boots
 Buttonpos=1,0
 
-[H02m]
+[h02m]
 Tip=Oblivion Staff
 Buttonpos=1,1
 
-[H02o]
+[h02o]
 Tip=(|cffffcc00X|r) Wraith Band
 Hotkey=X
 Buttonpos=1,2
 
-[H014]
+[h014]
 Tip=Power Treads
 Buttonpos=2,0
 
-[H02g]
+[h02g]
 Tip=Perseverance
 Buttonpos=2,1
 
-[H02p]
+[h02p]
 Tip=(|cffffcc00C|r) Null Talisman
 Hotkey=C
 Buttonpos=2,2
@@ -4933,11 +4925,11 @@ Tip=(|cffffcc00R|r) Soul Ring
 Hotkey=R
 Buttonpos=3,0
 
-[H086]
+[h086]
 Tip=Poor Man's Shield
 Buttonpos=3,1
 
-[H07s]
+[h07s]
 Tip=(|cffffcc00V|r) Magic Wand
 Hotkey=V
 Buttonpos=3,2
@@ -4957,7 +4949,7 @@ Tip=(|cffffcc00W|r) Purchase Magic Stick
 Hotkey=W
 Buttonpos=0,2
 
-[h01M]
+[h01m]
 Tip=(|cffffcc00Z|r) Purchase Mask of Death
 Hotkey=Z
 Buttonpos=1,0
@@ -4967,37 +4959,37 @@ Tip=(|cffffcc00S|r) Purchase Boots of Speed
 Hotkey=S
 Buttonpos=1,1
 
-[H083]
+[h083]
 Tip=(|cffffcc00X|r) Purchase Talisman of Evasion
 Hotkey=X
 Buttonpos=1,2
 
-[h01X]
+[h01x]
 Tip=(|cffffcc00E|r) Purchase Ring of Regeneration
 Hotkey=E
 Buttonpos=2,0
 
-[h01G]
+[h01g]
 Tip=(|cffffcc00D|r) Purchase Gem of True Sight
 Hotkey=D
 Buttonpos=2,1
 
-[H087]
+[h087]
 Tip=(|cffffcc00C|r) Purchase Ghost Scepter
 Hotkey=C
 Buttonpos=2,2
 
-[h01K]
+[h01k]
 Tip=(|cffffcc00R|r) Purchase Kelen's Dagger
 Hotkey=R
 Buttonpos=3,0
 
-[h01R]
+[h01r]
 Tip=(|cffffcc00F|r) Purchase Planeswalker's Cloak
 Hotkey=F
 Buttonpos=3,1
 
-[H0EI]
+[h0ei]
 Tip=(|cffffcc00V|r) Purchase Shadow Amulet
 Hotkey=V
 Buttonpos=3,2
@@ -5007,12 +4999,12 @@ Tip=(|cffffcc00A|r) Purchase Clarity Potion
 Hotkey=A
 Buttonpos=0,0
 
-[h02C]
+[h02c]
 Tip=(|cffffcc00Q|r) Purchase Observer Wards
 Hotkey=Q
 Buttonpos=0,1
 
-[h02E]
+[h02e]
 Tip=(|cffffcc00W|r) Purchase Scroll of Town Portal
 Hotkey=W
 Buttonpos=0,2
@@ -5022,17 +5014,17 @@ Tip=(|cffffcc00Z|r) Purchase Healing Salve
 Hotkey=Z
 Buttonpos=1,0
 
-[h02D]
+[h02d]
 Tip=(|cffffcc00S|r) Purchase Sentry Wards
 Hotkey=S
 Buttonpos=1,1
 
-[H0D3]
+[h0d3]
 Tip=(|cffffcc00X|r) Purchase Smoke of Deceit
 Hotkey=X
 Buttonpos=1,2
 
-[h02A]
+[h02a]
 Tip=(|cffffcc00E|r) Purchase Ancient Tango of Essifation
 Hotkey=E
 Buttonpos=2,0
@@ -5042,22 +5034,22 @@ Tip=(|cffffcc00D|r) Purchase Dust of Appearance
 Hotkey=D
 Buttonpos=2,1
 
-[h02B]
+[h02b]
 Tip=(|cffffcc00R|r) Purchase Empty Bottle
 Hotkey=R
 Buttonpos=3,0
 
-[h02F]
+[h02f]
 Tip=(|cffffcc00F|r) Purchase Animal Courier
 Hotkey=F
 Buttonpos=3,1
 
-[H03q]
+[h03q]
 Tip=(|cffffcc00V|r) Flying Courier
 Hotkey=V
 Buttonpos=3,2
 
-[h01F]
+[h01f]
 Tip=(|cffffcc00A|r) Purchase Gauntlets of Strength
 Hotkey=A
 Buttonpos=0,0
@@ -5067,7 +5059,7 @@ Tip=(|cffffcc00Q|r) Purchase Belt of Giant Strength
 Hotkey=Q
 Buttonpos=0,1
 
-[h01Q]
+[h01q]
 Tip=(|cffffcc00W|r) Purchase Ogre Axe
 Hotkey=W
 Buttonpos=0,2
@@ -5087,12 +5079,12 @@ Tip=(|cffffcc00X|r) Purchase Blade of Alacrity
 Hotkey=X
 Buttonpos=1,2
 
-[h01L]
+[h01l]
 Tip=(|cffffcc00E|r) Purchase Mantle of Intelligence
 Hotkey=E
 Buttonpos=2,0
 
-[h01Y]
+[h01y]
 Tip=(|cffffcc00D|r) Purchase Robe of the Magi
 Hotkey=D
 Buttonpos=2,1
@@ -5102,7 +5094,7 @@ Tip=(|cffffcc00C|r) Purchase Staff of Wizardry
 Hotkey=C
 Buttonpos=2,2
 
-[h01J]
+[h01j]
 Tip=(|cffffcc00R|r) Purchase Ironwood Branch
 Hotkey=R
 Buttonpos=3,0
@@ -5122,12 +5114,12 @@ Tip=(|cffffcc00A|r) Purchase Claws of Attack
 Hotkey=A
 Buttonpos=0,0
 
-[h01W]
+[h01w]
 Tip=(|cffffcc00Q|r) Purchase Ring of Protection
 Hotkey=Q
 Buttonpos=0,1
 
-[h01A]
+[h01a]
 Tip=(|cffffcc00W|r) Purchase Chainmail
 Hotkey=W
 Buttonpos=0,2
@@ -5142,12 +5134,12 @@ Tip=(|cffffcc00S|r) Purchase Stout Shield
 Hotkey=S
 Buttonpos=1,1
 
-[h01H]
+[h01h]
 Tip=(|cffffcc00X|r) Purchase Helm of Iron Will
 Hotkey=X
 Buttonpos=1,2
 
-[h01U]
+[h01u]
 Tip=(|cffffcc00E|r) Purchase Quarterstaff
 Hotkey=E
 Buttonpos=2,0
@@ -5157,17 +5149,17 @@ Tip=(|cffffcc00D|r) Purchase Javelin
 Hotkey=D
 Buttonpos=2,1
 
-[h01S]
+[h01s]
 Tip=(|cffffcc00C|r) Purchase Plate Mail
 Hotkey=C
 Buttonpos=2,2
 
-[h01B]
+[h01b]
 Tip=(|cffffcc00R|r) Purchase Claymore
 Hotkey=R
 Buttonpos=3,0
 
-[h01O]
+[h01o]
 Tip=(|cffffcc00F|r) Purchase Mithril Hammer
 Hotkey=F
 Buttonpos=3,1
@@ -5177,37 +5169,37 @@ Tip=(|cffffcc00V|r) Purchase Quelling Blade
 Hotkey=V
 Buttonpos=3,2
 
-[h01C]
+[h01c]
 Tip=(|cffffcc00A|r) Purchase Demon Edge
 Hotkey=A
 Buttonpos=0,0
 
-[h01I]
+[h01i]
 Tip=(|cffffcc00Q|r) Purchase Hyperstone
 Hotkey=Q
 Buttonpos=0,1
 
-[h01E]
+[h01e]
 Tip=(|cffffcc00W|r) Purchase Energy Booster
 Hotkey=W
 Buttonpos=0,2
 
-[h01D]
+[h01d]
 Tip=(|cffffcc00Z|r) Purchase Eaglehorn
 Hotkey=Z
 Buttonpos=1,0
 
-[h01V]
+[h01v]
 Tip=(|cffffcc00S|r) Purchase Ring of Health
 Hotkey=S
 Buttonpos=1,1
 
-[h01T]
+[h01t]
 Tip=(|cffffcc00X|r) Purchase Point Booster
 Hotkey=X
 Buttonpos=1,2
 
-[h01N]
+[h01n]
 Tip=(|cffffcc00E|r) Purchase Messerschmidt's Reaver
 Hotkey=E
 Buttonpos=2,0
@@ -5222,12 +5214,12 @@ Tip=(|cffffcc00C|r) Purchase Vitality Booster
 Hotkey=C
 Buttonpos=2,2
 
-[h01Z]
+[h01z]
 Tip=(|cffffcc00R|r) Purchase Sacred Relic
 Hotkey=R
 Buttonpos=3,0
 
-[h01P]
+[h01p]
 Tip=(|cffffcc00F|r) Purchase Mystic Staff
 Hotkey=F
 Buttonpos=3,1
@@ -5245,7 +5237,7 @@ Buttonpos=0,0
 Tip=Purchase Quelling Blade
 Buttonpos=0,1
 
-[H08v]
+[h08v]
 Tip=Purchase Talisman of Evasion
 Buttonpos=0,2
 
@@ -5281,7 +5273,7 @@ Buttonpos=3,0
 Tip=Purchase Quarterstaff
 Buttonpos=3,1
 
-[H0D0]
+[h0d0]
 Tip=Purchase Chainmail
 Buttonpos=3,2
 
@@ -5290,7 +5282,7 @@ Tip=(|cffffcc00A|r) Purchase Scroll of Town Portal
 Hotkey=A
 Buttonpos=0,0
 
-[h08L]
+[h08l]
 Tip=Purchase Ring of Regeneration
 Buttonpos=0,1
 
@@ -5335,36 +5327,36 @@ Buttonpos=3,1
 Tip=Purchase Orb of Venom
 Buttonpos=3,2
 
-[H0A3]
+[h0a3]
 Tip=Revive Hero
 Buttonpos=0,0
 
-[A14D]
+[a14d]
 Tip=(|cffffcc00W|r) Pickup All Items
 Hotkey=W
 Buttonpos=0,2
 
-[A14C]
+[a14c]
 Tip=(|cffffcc00X|r) Drop Items
 Hotkey=X
 Buttonpos=1,2
 
-[A0K5]
+[a0k5]
 Tip=(|cffffcc00C|r) Disassemble
 Hotkey=C
 Buttonpos=2,2
 
-[A141]
+[a141]
 Tip=(|cffffcc00R|r) Activate Glyph of Fortification
 Hotkey=R
 Buttonpos=3,0
 
-[A0HU]
+[a0hu]
 Tip=(|cffffcc00F|r) Freeze Hero
 Hotkey=F
 Buttonpos=3,1
 
-[A0HX]
+[a0hx]
 Tip=(|cffffcc00V|r) Unfreeze Hero
 Hotkey=V
 Buttonpos=3,2
@@ -5504,7 +5496,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A2MC]
+[a2mc]
 Tip=(|cffffcc00Z|r) Test of Faith - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Test of Faith - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Test of Faith - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Test of Faith - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00W|r) Learn Test of Faith - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -5512,7 +5504,7 @@ Researchhotkey=W
 Buttonpos=1,0
 Researchbuttonpos=0,2
 
-[A28T]
+[a28t]
 Tip=(|cffffcc00E|r) Holy Persuasion - [|cffffcc00Level 1|r],(|cffffcc00E|r) Holy Persuasion - [|cffffcc00Level 2|r],(|cffffcc00E|r) Holy Persuasion - [|cffffcc00Level 3|r],(|cffffcc00E|r) Holy Persuasion - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Holy Persuasion - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -5520,7 +5512,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[a0Lt]
+[a0lt]
 Tip=(|cffffcc00R|r) Hand of God - [|cffffcc00Level 1|r],(|cffffcc00R|r) Hand of God - [|cffffcc00Level 2|r],(|cffffcc00R|r) Hand of God - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Hand of God - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -5544,27 +5536,27 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A121]
+[a121]
 Tip=(|cffffcc00A|r) Discharge Illuminate
 Hotkey=A
 Buttonpos=0,0
 
-[A10U]
+[a10u]
 Tip=(|cffffcc00E|r) Recall
 Hotkey=E
 Buttonpos=2,0
 
-[A11Y]
+[a11y]
 Tip=(|cffffcc00E|r) Recall
 Hotkey=E
 Buttonpos=2,0
 
-[A11Z]
+[a11z]
 Tip=(|cffffcc00E|r) Recall
 Hotkey=E
 Buttonpos=2,0
 
-[A10X]
+[a10x]
 Tip=(|cffffcc00Z|r) Mana Leak - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Mana Leak - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Mana Leak - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Mana Leak - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Mana Leak - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -5572,22 +5564,22 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A11X]
+[a11x]
 Tip=(|cffffcc00D|r) Blinding Light
 Hotkey=D
 Buttonpos=2,1
 
-[A11V]
+[a11v]
 Tip=(|cffffcc00D|r) Blinding Light
 Hotkey=D
 Buttonpos=2,1
 
-[A11W]
+[a11w]
 Tip=(|cffffcc00D|r) Blinding Light
 Hotkey=D
 Buttonpos=2,1
 
-[A112]
+[a112]
 Tip=(|cffffcc00X|r) Chakra Magic - [|cffffcc00Level 1|r],(|cffffcc00X|r) Chakra Magic - [|cffffcc00Level 2|r],(|cffffcc00X|r) Chakra Magic - [|cffffcc00Level 3|r],(|cffffcc00X|r) Chakra Magic - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Chakra Magic - [|cffffcc00Level %d|r]
 Hotkey=X
@@ -5595,7 +5587,7 @@ Researchhotkey=E
 Buttonpos=1,2
 Researchbuttonpos=2,0
 
-[A11T]
+[a11t]
 Tip=(|cffffcc00R|r) Spirit Form - [|cffffcc00Level 1|r],(|cffffcc00R|r) Spirit Form - [|cffffcc00Level 2|r],(|cffffcc00R|r) Spirit Form - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Spirit Form - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -5626,7 +5618,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A29G]
+[a29g]
 Tip=(|cffffcc00R|r) Thundergod's Wrath - [|cffffcc00Level 1|r],(|cffffcc00R|r) Thundergod's Wrath - [|cffffcc00Level 2|r],(|cffffcc00R|r) Thundergod's Wrath - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Thundergod's Wrath - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -5634,7 +5626,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A29H]
+[a29h]
 Tip=(|cffffcc00R|r) Thundergod's Wrath (Aghanim's Scepter) - [|cffffcc00Level 1|r],(|cffffcc00R|r) Thundergod's Wrath (Aghanim's Scepter) - [|cffffcc00Level 2|r],(|cffffcc00R|r) Thundergod's Wrath (Aghanim's Scepter) - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Thundergod's Wrath (Aghanim's Scepter) - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -5642,7 +5634,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A21E]
+[a21e]
 Tip=(|cffffcc00A|r) Sprout - [|cffffcc00Level 1|r],(|cffffcc00A|r) Sprout - [|cffffcc00Level 2|r],(|cffffcc00A|r) Sprout - [|cffffcc00Level 3|r],(|cffffcc00A|r) Sprout - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Sprout - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -5674,7 +5666,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A14L]
+[a14l]
 Tip=(|cffffcc00A|r) Curse of the Silent - [|cffffcc00Level 1|r],(|cffffcc00A|r) Curse of the Silent - [|cffffcc00Level 2|r],(|cffffcc00A|r) Curse of the Silent - [|cffffcc00Level 3|r],(|cffffcc00A|r) Curse of the Silent - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Curse of the Silent - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -5682,7 +5674,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[a0Lz]
+[a0lz]
 Tip=(|cffffcc00Z|r) Glaives of Wisdom - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Glaives of Wisdom - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Glaives of Wisdom - [|cffffcc00Level 3|r]
 UnTip=|cffc3dbffRight-click to activate auto-casting.|r
 Researchtip=(|cffffcc00Z|r) Learn Glaives of Wisdom - [|cffffcc00Level %d|r]
@@ -5692,7 +5684,7 @@ Buttonpos=1,0
 Unbuttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2NT]
+[a2nt]
 Tip=(|cffffcc00E|r) Last Word - [|cffffcc00Level 1|r],(|cffffcc00E|r) Last Word - [|cffffcc00Level 2|r],(|cffffcc00E|r) Last Word - [|cffffcc00Level 3|r],(|cffffcc00E|r) Last Word - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Last Word - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -5700,7 +5692,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[a0L3]
+[a0l3]
 Tip=(|cffffcc00R|r) Global Silence - [|cffffcc00Level 1|r],(|cffffcc00R|r) Global Silence - [|cffffcc00Level 2|r],(|cffffcc00R|r) Global Silence - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Global Silence - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -5747,7 +5739,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A14P]
+[a14p]
 Tip=(|cffffcc00A|r) Static Remnant - [|cffffcc00Level 1|r],(|cffffcc00A|r) Static Remnant - [|cffffcc00Level 2|r],(|cffffcc00A|r) Static Remnant - [|cffffcc00Level 3|r],(|cffffcc00A|r) Static Remnant - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Static Remnant - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -5755,7 +5747,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A14R]
+[a14r]
 Tip=(|cffffcc00Z|r) Electric Vortex - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Electric Vortex - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Electric Vortex - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Electric Vortex - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Electric Vortex - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -5763,14 +5755,14 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A0QW]
+[a0qw]
 Tip=Overload - [|cffffcc00Level 1|r],Overload - [|cffffcc00Level 2|r],Overload - [|cffffcc00Level 3|r],Overload - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Overload - [|cffffcc00Level %d|r]
 Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A14O]
+[a14o]
 Tip=(|cffffcc00R|r) Ball Lightning - [|cffffcc00Level 1|r],(|cffffcc00R|r) Ball Lightning - [|cffffcc00Level 2|r],(|cffffcc00R|r) Ball Lightning - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Ball Lightning - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -5778,7 +5770,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A12J]
+[a12j]
 Tip=(|cffffcc00A|r) Shackleshot - [|cffffcc00Level 1|r],(|cffffcc00A|r) Shackleshot - [|cffffcc00Level 2|r],(|cffffcc00A|r) Shackleshot - [|cffffcc00Level 3|r],(|cffffcc00A|r) Shackleshot - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Shackleshot - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -5786,7 +5778,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A12K]
+[a12k]
 Tip=(|cffffcc00Z|r) Powershot - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Powershot - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Powershot - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Powershot - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Powershot - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -5794,7 +5786,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A14i]
+[a14i]
 Tip=(|cffffcc00E|r) Windrunner - [|cffffcc00Level 1|r],(|cffffcc00E|r) Windrunner - [|cffffcc00Level 2|r],(|cffffcc00E|r) Windrunner - [|cffffcc00Level 3|r],(|cffffcc00E|r) Windrunner - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Windrunner - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -5802,7 +5794,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A12P]
+[a12p]
 Tip=(|cffffcc00R|r) Focus Fire - [|cffffcc00Level 1|r],(|cffffcc00R|r) Focus Fire - [|cffffcc00Level 2|r],(|cffffcc00R|r) Focus Fire - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Focus Fire - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -5810,7 +5802,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A1D6]
+[a1d6]
 Tip=(|cffffcc00R|r) Focus Fire (Aghanim's Scepter) - [|cffffcc00Level 1|r],(|cffffcc00R|r) Focus Fire (Aghanim's Scepter) - [|cffffcc00Level 2|r],(|cffffcc00R|r) Focus Fire (Aghanim's Scepter) - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Focus Fire (Aghanim's Scepter) - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -5850,7 +5842,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A27F]
+[a27f]
 Tip=(|cffffcc00A|r) Telekinesis - [|cffffcc00Level 1|r],(|cffffcc00A|r) Telekinesis - [|cffffcc00Level 2|r],(|cffffcc00A|r) Telekinesis - [|cffffcc00Level 3|r],(|cffffcc00A|r) Telekinesis - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Telekinesis - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -5858,7 +5850,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A27X]
+[a27x]
 Tip=(|cffffcc00A|r) Telekinesis Land - [|cffffcc00Level 1|r],(|cffffcc00A|r) Telekinesis Land - [|cffffcc00Level 2|r],(|cffffcc00A|r) Telekinesis Land - [|cffffcc00Level 3|r],(|cffffcc00A|r) Telekinesis Land - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Telekinesis Land - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -5866,7 +5858,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A27G]
+[a27g]
 Tip=(|cffffcc00Z|r) Fade Bolt - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Fade Bolt - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Fade Bolt - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Fade Bolt - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Fade Bolt - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -5874,14 +5866,14 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A27V]
+[a27v]
 Tip=Null Field - [|cffffcc00Level 1|r],Null Field - [|cffffcc00Level 2|r],Null Field - [|cffffcc00Level 3|r],Null Field - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Null Field - [|cffffcc00Level %d|r]
 Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A27H]
+[a27h]
 Tip=(|cffffcc00R|r) Spell Steal - [|cffffcc00Level 1|r],(|cffffcc00R|r) Spell Steal - [|cffffcc00Level 2|r],(|cffffcc00R|r) Spell Steal - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Spell Steal - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -5889,7 +5881,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[a1eL]
+[a1el]
 Tip=(|cffffcc00A|r) Sticky Napalm - [|cffffcc00Level 1|r],(|cffffcc00A|r) Sticky Napalm - [|cffffcc00Level 2|r],(|cffffcc00A|r) Sticky Napalm - [|cffffcc00Level 3|r],(|cffffcc00A|r) Sticky Napalm - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Sticky Napalm - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -5993,7 +5985,7 @@ Tip=(|cffffcc00A|r) Detonate
 Hotkey=A
 Buttonpos=0,0
 
-[A21W]
+[a21w]
 Tip=(|cffffcc00A|r) Quas - [|cffffcc00Level 1|r],(|cffffcc00A|r) Quas - [|cffffcc00Level 2|r],(|cffffcc00A|r) Quas - [|cffffcc00Level 3|r],(|cffffcc00A|r) Quas - [|cffffcc00Level 4|r],(|cffffcc00A|r) Quas - [|cffffcc00Level 5|r],(|cffffcc00A|r) Quas - [|cffffcc00Level 6|r],(|cffffcc00A|r) Quas - [|cffffcc00Level 7|r]
 Researchtip=(|cffffcc00A|r) Learn Quas - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -6001,7 +5993,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A21X]
+[a21x]
 Tip=(|cffffcc00Z|r) Wex - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Wex - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Wex - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Wex - [|cffffcc00Level 4|r],(|cffffcc00Z|r) Wex - [|cffffcc00Level 5|r],(|cffffcc00Z|r) Wex - [|cffffcc00Level 6|r],(|cffffcc00Z|r) Wex - [|cffffcc00Level 7|r]
 Researchtip=(|cffffcc00Z|r) Learn Wex - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -6009,7 +6001,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A21V]
+[a21v]
 Tip=(|cffffcc00E|r) Exort - [|cffffcc00Level 1|r],(|cffffcc00E|r) Exort - [|cffffcc00Level 2|r],(|cffffcc00E|r) Exort - [|cffffcc00Level 3|r],(|cffffcc00E|r) Exort - [|cffffcc00Level 4|r],(|cffffcc00E|r) Exort - [|cffffcc00Level 5|r],(|cffffcc00E|r) Exort - [|cffffcc00Level 6|r],(|cffffcc00E|r) Exort - [|cffffcc00Level 7|r]
 Researchtip=(|cffffcc00E|r) Learn Exort - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -6017,7 +6009,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A21Y]
+[a21y]
 Tip=(|cffffcc00R|r) Invoke - [|cffffcc00Level 1|r],(|cffffcc00R|r) Invoke - [|cffffcc00Level 2|r],(|cffffcc00R|r) Invoke - [|cffffcc00Level 3|r],(|cffffcc00R|r) Invoke - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00R|r) Learn Invoke - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6025,7 +6017,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A1GU]
+[a1gu]
 Tip=(|cffffcc00R|r) Invoke (Aghanim's Scepter) - [|cffffcc00Level 1|r],(|cffffcc00R|r) Invoke (Aghanim's Scepter) - [|cffffcc00Level 2|r],(|cffffcc00R|r) Invoke (Aghanim's Scepter) - [|cffffcc00Level 3|r],(|cffffcc00R|r) Invoke (Aghanim's Scepter) - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00R|r) Learn Invoke (Aghanim's Scepter) - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6170,7 +6162,7 @@ Unhotkey=A
 Buttonpos=0,0
 Unbuttonpos=0,0
 
-[a1nL]
+[a1nl]
 Tip=(|cffffcc00A|r) Stone Form
 UnTip=(|cffffcc00A|r) Stone Form
 Hotkey=A
@@ -6305,7 +6297,7 @@ Buttonpos=2,0
 Unbuttonpos=2,0
 Researchbuttonpos=2,0
 
-[A2KQ]
+[a2kq]
 Tip=(|cffffcc00D|r) Unrefined Fireblast - [|cffffcc00Level 1|r],(|cffffcc00D|r) Unrefined Fireblast - [|cffffcc00Level 2|r],(|cffffcc00D|r) Unrefined Fireblast - [|cffffcc00Level 3|r],(|cffffcc00D|r) Unrefined Fireblast - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00X|r) Learn Unrefined Fireblast - [|cffffcc00Level %d|r]
 Hotkey=D
@@ -6321,7 +6313,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A10L]
+[a10l]
 Tip=(|cffffcc00Z|r) Shallow Grave - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Shallow Grave - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Shallow Grave - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Shallow Grave - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Shallow Grave - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -6337,7 +6329,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A10Q]
+[a10q]
 Tip=(|cffffcc00R|r) Weave - [|cffffcc00Level 1|r],(|cffffcc00R|r) Weave - [|cffffcc00Level 2|r],(|cffffcc00R|r) Weave - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Weave - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6345,7 +6337,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A1db]
+[a1db]
 Tip=(|cffffcc00R|r) Weave (Aghanim's Scepter) - [|cffffcc00Level 1|r],(|cffffcc00R|r) Weave (Aghanim's Scepter) - [|cffffcc00Level 2|r],(|cffffcc00R|r) Weave (Aghanim's Scepter) - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Weave (Aghanim's Scepter) - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6369,7 +6361,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[a00A]
+[a00a]
 Tip=(|cffffcc00E|r) Shackles - [|cffffcc00Level 1|r],(|cffffcc00E|r) Shackles - [|cffffcc00Level 2|r],(|cffffcc00E|r) Shackles - [|cffffcc00Level 3|r],(|cffffcc00E|r) Shackles - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Shackles - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -6433,7 +6425,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A035]
+[a035]
 Tip=(|cffffcc00Z|r) Diabolic Edict - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Diabolic Edict - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Diabolic Edict - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Diabolic Edict - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Diabolic Edict - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -6449,7 +6441,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A21F]
+[a21f]
 Tip=(|cffffcc00R|r) Activate Pulse Nova - [|cffffcc00Level 1|r],(|cffffcc00R|r) Activate Pulse Nova - [|cffffcc00Level 2|r],(|cffffcc00R|r) Activate Pulse Nova - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Activate Pulse Nova - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6457,7 +6449,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A21H]
+[a21h]
 Tip=(|cffffcc00R|r) Deactivate Pulse Nova - [|cffffcc00Level 1|r],(|cffffcc00R|r) Deactivate Pulse Nova - [|cffffcc00Level 2|r],(|cffffcc00R|r) Deactivate Pulse Nova - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Deactivate Pulse Nova - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6465,7 +6457,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A21G]
+[a21g]
 Tip=(|cffffcc00R|r) Activate Pulse Nova - [|cffffcc00Level 1|r],(|cffffcc00R|r) Activate Pulse Nova - [|cffffcc00Level 2|r],(|cffffcc00R|r) Activate Pulse Nova - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Activate Pulse Nova - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6512,7 +6504,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A2BE]
+[a2be]
 Tip=(|cffffcc00A|r) Arcane Bolt - [|cffffcc00Level 1|r],(|cffffcc00A|r) Arcane Bolt - [|cffffcc00Level 2|r],(|cffffcc00A|r) Arcane Bolt - [|cffffcc00Level 3|r],(|cffffcc00A|r) Arcane Bolt - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Arcane Bolt - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -6520,7 +6512,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A2IT]
+[a2it]
 Tip=(|cffffcc00Z|r) Concussive Shot - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Concussive Shot - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Concussive Shot - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Concussive Shot - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Concussive Shot - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -6528,7 +6520,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2HN]
+[a2hn]
 Tip=(|cffffcc00E|r) Ancient Seal - [|cffffcc00Level 1|r],(|cffffcc00E|r) Ancient Seal - [|cffffcc00Level 2|r],(|cffffcc00E|r) Ancient Seal - [|cffffcc00Level 3|r],(|cffffcc00E|r) Ancient Seal - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Ancient Seal - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -6536,7 +6528,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A2BG]
+[a2bg]
 Tip=(|cffffcc00R|r) Mystic Flare - [|cffffcc00Level 1|r],(|cffffcc00R|r) Mystic Flare - [|cffffcc00Level 2|r],(|cffffcc00R|r) Mystic Flare - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Mystic Flare - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6624,7 +6616,7 @@ Tip=(|cffffcc00R|r) Ice Blast - activate
 Hotkey=R
 Buttonpos=3,0
 
-[A2NE]
+[a2ne]
 Tip=(|cffffcc00A|r) Arctic Burn - [|cffffcc00Level 1|r],(|cffffcc00A|r) Arctic Burn - [|cffffcc00Level 2|r],(|cffffcc00A|r) Arctic Burn - [|cffffcc00Level 3|r],(|cffffcc00A|r) Arctic Burn - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Arctic Burn - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -6632,7 +6624,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A2LA]
+[a2la]
 Tip=(|cffffcc00Z|r) Splinter Blast - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Splinter Blast - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Splinter Blast - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Splinter Blast - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Splinter Blast - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -6640,7 +6632,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2LB]
+[a2lb]
 Tip=(|cffffcc00E|r) Cold Embrace - [|cffffcc00Level 1|r],(|cffffcc00E|r) Cold Embrace - [|cffffcc00Level 2|r],(|cffffcc00E|r) Cold Embrace - [|cffffcc00Level 3|r],(|cffffcc00E|r) Cold Embrace - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Cold Embrace - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -6648,7 +6640,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A0Z0]
+[a0z0]
 Tip=(|cffffcc00R|r) Winter's Curse - [|cffffcc00Level 1|r],(|cffffcc00R|r) Winter's Curse - [|cffffcc00Level 2|r],(|cffffcc00R|r) Winter's Curse - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Winter's Curse - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6733,7 +6725,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A21Q]
+[a21q]
 Tip=(|cffffcc00R|r) Wall of Replica - [|cffffcc00Level 1|r],(|cffffcc00R|r) Wall of Replica - [|cffffcc00Level 2|r],(|cffffcc00R|r) Wall of Replica - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Wall of Replica - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -6916,7 +6908,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A180]
+[a180]
 Tip=(|cffffcc00Z|r) Demonic Conversion - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Demonic Conversion - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Demonic Conversion - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Demonic Conversion - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Demonic Conversion - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -6990,7 +6982,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A01N]
+[a01n]
 Tip=Heartstopper Aura - [|cffffcc00Level 1|r],Heartstopper Aura - [|cffffcc00Level 2|r],Heartstopper Aura - [|cffffcc00Level 3|r],Heartstopper Aura - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Heartstopper Aura - [|cffffcc00Level %d|r]
 Researchhotkey=Z
@@ -7093,7 +7085,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[a1VW]
+[a1vw]
 Tip=(|cffffcc00R|r) Sanity's Eclipse (Aghanim's Scepter) - [|cffffcc00Level 1|r],(|cffffcc00R|r) Sanity's Eclipse (Aghanim's Scepter) - [|cffffcc00Level 2|r],(|cffffcc00R|r) Sanity's Eclipse (Aghanim's Scepter) - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Sanity's Eclipse (Aghanim's Scepter) - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -7125,7 +7117,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A28R]
+[a28r]
 Tip=(|cffffcc00R|r) Sonic Wave - [|cffffcc00Level 1|r],(|cffffcc00R|r) Sonic Wave - [|cffffcc00Level 2|r],(|cffffcc00R|r) Sonic Wave - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Sonic Wave - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -7133,7 +7125,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A28S]
+[a28s]
 Tip=(|cffffcc00R|r) Sonic Wave (Aghanim's Scepter) - [|cffffcc00Level 1|r],(|cffffcc00R|r) Sonic Wave (Aghanim's Scepter) - [|cffffcc00Level 2|r],(|cffffcc00R|r) Sonic Wave (Aghanim's Scepter) - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Sonic Wave (Aghanim's Scepter) - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -7173,7 +7165,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[s00U]
+[s00u]
 Tip=(|cffffcc00R|r) Rain of Chaos (Aghanim's Scepter) - [|cffffcc00Level 1|r],(|cffffcc00R|r) Rain of Chaos (Aghanim's Scepter) - [|cffffcc00Level 2|r],(|cffffcc00R|r) Rain of Chaos (Aghanim's Scepter) - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Rain of Chaos (Aghanim's Scepter) - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -7218,7 +7210,7 @@ Tip=(|cffffcc00D|r) Release Poison
 Hotkey=D
 Buttonpos=2,1
 
-[A136]
+[a136]
 Tip=(|cffffcc00A|r) Torrent - [|cffffcc00Level 1|r],(|cffffcc00A|r) Torrent - [|cffffcc00Level 2|r],(|cffffcc00A|r) Torrent - [|cffffcc00Level 3|r],(|cffffcc00A|r) Torrent - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Torrent - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -7226,14 +7218,14 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A13T]
+[a13t]
 Tip=Tidebringer - [|cffffcc00Level 1|r],Tidebringer - [|cffffcc00Level 2|r],Tidebringer - [|cffffcc00Level 3|r],Tidebringer - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Tidebringer - [|cffffcc00Level %d|r]
 Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A11N]
+[a11n]
 Tip=(|cffffcc00E|r) X Marks The Spot - [|cffffcc00Level 1|r],(|cffffcc00E|r) X Marks The Spot - [|cffffcc00Level 2|r],(|cffffcc00E|r) X Marks The Spot - [|cffffcc00Level 3|r],(|cffffcc00E|r) X Marks The Spot - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn X Marks The Spot - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -7241,12 +7233,12 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A13D]
+[a13d]
 Tip=(|cffffcc00E|r) X Marks The Spot Return
 Hotkey=E
 Buttonpos=2,0
 
-[A11K]
+[a11k]
 Tip=(|cffffcc00R|r) Ghost Ship - [|cffffcc00Level 1|r],(|cffffcc00R|r) Ghost Ship - [|cffffcc00Level 2|r],(|cffffcc00R|r) Ghost Ship - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Ghost Ship - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -7285,7 +7277,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A289]
+[a289]
 Tip=(|cffffcc00R|r) Primal Roar - [|cffffcc00Level 1|r],(|cffffcc00R|r) Primal Roar - [|cffffcc00Level 2|r],(|cffffcc00R|r) Primal Roar - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Primal Roar - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -7293,7 +7285,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A13Z]
+[a13z]
 Tip=(|cffffcc00R|r) Invisibility
 Hotkey=R
 Buttonpos=3,0
@@ -7337,7 +7329,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[a0dL]
+[a0dl]
 Tip=(|cffffcc00Z|r) Enchant Totem - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Enchant Totem - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Enchant Totem - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Enchant Totem - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Enchant Totem - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -7445,7 +7437,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2IS]
+[a2is]
 Tip=(|cffffcc00E|r) Warcry - [|cffffcc00Level 1|r],(|cffffcc00E|r) Warcry - [|cffffcc00Level 2|r],(|cffffcc00E|r) Warcry - [|cffffcc00Level 3|r],(|cffffcc00E|r) Warcry - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Warcry - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -7461,7 +7453,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[a0LL]
+[a0ll]
 Tip=(|cffffcc00A|r) Avalanche - [|cffffcc00Level 1|r],(|cffffcc00A|r) Avalanche - [|cffffcc00Level 2|r],(|cffffcc00A|r) Avalanche - [|cffffcc00Level 3|r],(|cffffcc00A|r) Avalanche - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Avalanche - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -7491,7 +7483,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[a1VH]
+[a1vh]
 Tip=(|cffffcc00D|r) War Club
 Hotkey=D
 Buttonpos=2,1
@@ -7512,7 +7504,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2NI]
+[a2ni]
 Tip=(|cffffcc00Z|r) End Ancestral Spirit - [|cffffcc00Level 1|r],(|cffffcc00Z|r) End Ancestral Spirit - [|cffffcc00Level 2|r],(|cffffcc00Z|r) End Ancestral Spirit - [|cffffcc00Level 3|r],(|cffffcc00Z|r) End Ancestral Spirit - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn End Ancestral Spirit - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -7535,12 +7527,12 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A2LK]
+[a2lk]
 Tip=(|cffffcc00A|r) Echo Stomp
 Hotkey=A
 Buttonpos=0,0
 
-[AETL]
+[aetl]
 Tip=Etheral
 Buttonpos=2,0
 
@@ -7552,7 +7544,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A26N]
+[a26n]
 Tip=(|cffffcc00Z|r) Leech Seed - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Leech Seed - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Leech Seed - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Leech Seed - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Leech Seed - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -7560,7 +7552,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2ML]
+[a2ml]
 Tip=(|cffffcc00E|r) Living Armor - [|cffffcc00Level 1|r],(|cffffcc00E|r) Living Armor - [|cffffcc00Level 2|r],(|cffffcc00E|r) Living Armor - [|cffffcc00Level 3|r],(|cffffcc00E|r) Living Armor - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Living Armor - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -7597,7 +7589,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A28Q]
+[a28q]
 Tip=(|cffffcc00R|r) Overcharge - [|cffffcc00Level 1|r],(|cffffcc00R|r) Overcharge - [|cffffcc00Level 2|r],(|cffffcc00R|r) Overcharge - [|cffffcc00Level 3|r],(|cffffcc00R|r) Overcharge - [|cffffcc00Level 4|r]
 UnTip=(|cffffcc00C|r) Deactivate Overcharge - [|cffffcc00Level 1|r],(|cffffcc00C|r) Deactivate Overcharge - [|cffffcc00Level 2|r],(|cffffcc00C|r) Deactivate Overcharge - [|cffffcc00Level 3|r],(|cffffcc00C|r) Deactivate Overcharge - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Overcharge - [|cffffcc00Level %d|r]
@@ -7616,17 +7608,17 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A24B]
+[a24b]
 Tip=(|cffffcc00E|r) Pull Out
 Hotkey=E
 Buttonpos=2,0
 
-[A24A]
+[a24a]
 Tip=(|cffffcc00D|r) Pull In
 Hotkey=D
 Buttonpos=2,1
 
-[A1RJ]
+[a1rj]
 Tip=(|cffffcc00W|r) Icarus Dive - [|cffffcc00Level 1|r],(|cffffcc00W|r) Icarus Dive - [|cffffcc00Level 2|r],(|cffffcc00W|r) Icarus Dive - [|cffffcc00Level 3|r],(|cffffcc00W|r) Icarus Dive - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Icarus Dive - [|cffffcc00Level %d|r]
 Hotkey=W
@@ -7634,7 +7626,7 @@ Researchhotkey=A
 Buttonpos=0,2
 Researchbuttonpos=0,0
 
-[A1YX]
+[a1yx]
 Tip=(|cffffcc00X|r) Fire Spirits - [|cffffcc00Level 1|r],(|cffffcc00X|r) Fire Spirits - [|cffffcc00Level 2|r],(|cffffcc00X|r) Fire Spirits - [|cffffcc00Level 3|r],(|cffffcc00X|r) Fire Spirits - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Fire Spirits - [|cffffcc00Level %d|r]
 Hotkey=X
@@ -7642,7 +7634,7 @@ Researchhotkey=Z
 Buttonpos=1,2
 Researchbuttonpos=1,0
 
-[A205]
+[a205]
 Tip=(|cffffcc00D|r) Activate Sunray Movement
 UnTip=(|cffffcc00D|r) Deactivate Sunray Movement
 Hotkey=D
@@ -7650,7 +7642,7 @@ Unhotkey=D
 Buttonpos=2,1
 Unbuttonpos=2,1
 
-[A1YY]
+[a1yy]
 Tip=(|cffffcc00C|r) Sun Ray - [|cffffcc00Level 1|r],(|cffffcc00C|r) Sun Ray - [|cffffcc00Level 2|r],(|cffffcc00C|r) Sun Ray - [|cffffcc00Level 3|r],(|cffffcc00C|r) Sun Ray - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Sun Ray - [|cffffcc00Level %d|r]
 Hotkey=C
@@ -7658,7 +7650,7 @@ Researchhotkey=E
 Buttonpos=2,2
 Researchbuttonpos=2,0
 
-[A1RK]
+[a1rk]
 Tip=(|cffffcc00V|r) Supernova - [|cffffcc00Level 1|r],(|cffffcc00V|r) Supernova - [|cffffcc00Level 2|r],(|cffffcc00V|r) Supernova - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Supernova - [|cffffcc00Level %d|r]
 Hotkey=V
@@ -7666,22 +7658,22 @@ Researchhotkey=R
 Buttonpos=3,2
 Researchbuttonpos=3,0
 
-[A20N]
+[a20n]
 Tip=(|cffffcc00W|r) Icarus Dive
 Hotkey=W
 Buttonpos=0,2
 
-[A1Z2]
+[a1z2]
 Tip=(|cffffcc00X|r) Target Fire Spirits
 Hotkey=X
 Buttonpos=1,2
 
-[A1Z3]
+[a1z3]
 Tip=(|cffffcc00C|r) Sun Ray
 Hotkey=C
 Buttonpos=2,2
 
-[A2JB]
+[a2jb]
 Tip=(|cffffcc00W|r) Overwhelming Odds - [|cffffcc00Level 1|r],(|cffffcc00W|r) Overwhelming Odds - [|cffffcc00Level 2|r],(|cffffcc00W|r) Overwhelming Odds - [|cffffcc00Level 3|r],(|cffffcc00W|r) Overwhelming Odds - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Overwhelming Odds - [|cffffcc00Level %d|r]
 Hotkey=W
@@ -7689,7 +7681,7 @@ Researchhotkey=A
 Buttonpos=0,2
 Researchbuttonpos=0,0
 
-[A2J2]
+[a2j2]
 Tip=(|cffffcc00X|r) Press The Attack - [|cffffcc00Level 1|r],(|cffffcc00X|r) Press The Attack - [|cffffcc00Level 2|r],(|cffffcc00X|r) Press The Attack - [|cffffcc00Level 3|r],(|cffffcc00X|r) Press The Attack - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Press The Attack - [|cffffcc00Level %d|r]
 Hotkey=X
@@ -7697,14 +7689,14 @@ Researchhotkey=Z
 Buttonpos=1,2
 Researchbuttonpos=1,0
 
-[A2EY]
+[a2ey]
 Tip=Moment of Courage - [|cffffcc00Level 1|r],Moment of Courage - [|cffffcc00Level 2|r],Moment of Courage - [|cffffcc00Level 3|r],Moment of Courage - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Moment of Courage - [|cffffcc00Level %d|r]
 Researchhotkey=E
 Buttonpos=2,2
 Researchbuttonpos=2,0
 
-[A2CI]
+[a2ci]
 Tip=(|cffffcc00V|r) Duel - [|cffffcc00Level 1|r],(|cffffcc00V|r) Duel - [|cffffcc00Level 2|r],(|cffffcc00V|r) Duel - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Duel - [|cffffcc00Level %d|r]
 Hotkey=V
@@ -7712,7 +7704,7 @@ Researchhotkey=R
 Buttonpos=3,2
 Researchbuttonpos=3,0
 
-[A1YO]
+[a1yo]
 Tip=(|cffffcc00W|r) Ice Shards - [|cffffcc00Level 1|r],(|cffffcc00W|r) Ice Shards - [|cffffcc00Level 2|r],(|cffffcc00W|r) Ice Shards - [|cffffcc00Level 3|r],(|cffffcc00W|r) Ice Shards - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Ice Shards - [|cffffcc00Level %d|r]
 Hotkey=W
@@ -7720,7 +7712,7 @@ Researchhotkey=A
 Buttonpos=0,2
 Researchbuttonpos=0,0
 
-[A1S7]
+[a1s7]
 Tip=(|cffffcc00X|r) Snowball - [|cffffcc00Level 1|r],(|cffffcc00X|r) Snowball - [|cffffcc00Level 2|r],(|cffffcc00X|r) Snowball - [|cffffcc00Level 3|r],(|cffffcc00X|r) Snowball - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Snowball - [|cffffcc00Level %d|r]
 Hotkey=X
@@ -7728,7 +7720,7 @@ Researchhotkey=Z
 Buttonpos=1,2
 Researchbuttonpos=1,0
 
-[A1YR]
+[a1yr]
 Tip=(|cffffcc00C|r) Frozen Sigil - [|cffffcc00Level 1|r],(|cffffcc00C|r) Frozen Sigil - [|cffffcc00Level 2|r],(|cffffcc00C|r) Frozen Sigil - [|cffffcc00Level 3|r],(|cffffcc00C|r) Frozen Sigil - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Frozen Sigil - [|cffffcc00Level %d|r]
 Hotkey=C
@@ -7736,7 +7728,7 @@ Researchhotkey=E
 Buttonpos=2,2
 Researchbuttonpos=2,0
 
-[A1YQ]
+[a1yq]
 Tip=(|cffffcc00V|r) Walrus Punch - [|cffffcc00Level 1|r],(|cffffcc00V|r) Walrus Punch - [|cffffcc00Level 2|r],(|cffffcc00V|r) Walrus Punch - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Walrus Punch - [|cffffcc00Level %d|r]
 Hotkey=V
@@ -7744,7 +7736,7 @@ Researchhotkey=R
 Buttonpos=3,2
 Researchbuttonpos=3,0
 
-[A2FK]
+[a2fk]
 Tip=(|cffffcc00W|r) Whirling Death - [|cffffcc00Level 1|r],(|cffffcc00W|r) Whirling Death - [|cffffcc00Level 2|r],(|cffffcc00W|r) Whirling Death - [|cffffcc00Level 3|r],(|cffffcc00W|r) Whirling Death - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Whirling Death - [|cffffcc00Level %d|r]
 Hotkey=W
@@ -7752,7 +7744,7 @@ Researchhotkey=A
 Buttonpos=0,2
 Researchbuttonpos=0,0
 
-[A2E3]
+[a2e3]
 Tip=(|cffffcc00X|r) Timber Chain - [|cffffcc00Level 1|r],(|cffffcc00X|r) Timber Chain - [|cffffcc00Level 2|r],(|cffffcc00X|r) Timber Chain - [|cffffcc00Level 3|r],(|cffffcc00X|r) Timber Chain - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Timber Chain - [|cffffcc00Level %d|r]
 Hotkey=X
@@ -7760,14 +7752,14 @@ Researchhotkey=Z
 Buttonpos=1,2
 Researchbuttonpos=1,0
 
-[A2E4]
+[a2e4]
 Tip=Reactive Armor - [|cffffcc00Level 1|r],Reactive Armor - [|cffffcc00Level 2|r],Reactive Armor - [|cffffcc00Level 3|r],Reactive Armor - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Reactive Armor - [|cffffcc00Level %d|r]
 Researchhotkey=E
 Buttonpos=2,2
 Researchbuttonpos=2,0
 
-[A2E5]
+[a2e5]
 Tip=(|cffffcc00V|r) Chakram - [|cffffcc00Level 1|r],(|cffffcc00V|r) Chakram - [|cffffcc00Level 2|r],(|cffffcc00V|r) Chakram - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Chakram - [|cffffcc00Level %d|r]
 Hotkey=V
@@ -7775,7 +7767,7 @@ Researchhotkey=R
 Buttonpos=3,2
 Researchbuttonpos=3,0
 
-[A2FX]
+[a2fx]
 Tip=(|cffffcc00V|r) Return Chakram
 Hotkey=V
 Buttonpos=3,2
@@ -7894,7 +7886,7 @@ Researchhotkey=Z
 Buttonpos=1,2
 Researchbuttonpos=1,0
 
-[a0cL]
+[a0cl]
 Tip=Dragon Blood - [|cffffcc00Level 1|r],Dragon Blood - [|cffffcc00Level 2|r],Dragon Blood - [|cffffcc00Level 3|r],Dragon Blood - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Dragon Blood - [|cffffcc00Level %d|r]
 Researchhotkey=E
@@ -7937,7 +7929,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A29L]
+[a29l]
 Tip=(|cffffcc00R|r) Reverse Polarity - [|cffffcc00Level 1|r],(|cffffcc00R|r) Reverse Polarity - [|cffffcc00Level 2|r],(|cffffcc00R|r) Reverse Polarity - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Reverse Polarity - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -8083,7 +8075,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A226]
+[a226]
 Tip=(|cffffcc00E|r) Anchor Smash - [|cffffcc00Level 1|r],(|cffffcc00E|r) Anchor Smash - [|cffffcc00Level 2|r],(|cffffcc00E|r) Anchor Smash - [|cffffcc00Level 3|r],(|cffffcc00E|r) Anchor Smash - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Anchor Smash - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -8091,7 +8083,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A29I]
+[a29i]
 Tip=(|cffffcc00R|r) Ravage - [|cffffcc00Level 1|r],(|cffffcc00R|r) Ravage - [|cffffcc00Level 2|r],(|cffffcc00R|r) Ravage - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Ravage - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -8169,7 +8161,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A10R]
+[a10r]
 Tip=(|cffffcc00A|r) Devour - [|cffffcc00Level 1|r],(|cffffcc00A|r) Devour - [|cffffcc00Level 2|r],(|cffffcc00A|r) Devour - [|cffffcc00Level 3|r],(|cffffcc00A|r) Devour - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Devour - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -8462,7 +8454,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A01I]
+[a01i]
 Tip=(|cffffcc00A|r) FireStorm - [|cffffcc00Level 1|r],(|cffffcc00A|r) FireStorm - [|cffffcc00Level 2|r],(|cffffcc00A|r) FireStorm - [|cffffcc00Level 3|r],(|cffffcc00A|r) FireStorm - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn FireStorm - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -8478,7 +8470,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[AIcd]
+[aicd]
 Tip=Qtrophy Aura - [|cffffcc00Level 1|r],Atrophy Aura - [|cffffcc00Level 2|r],Atrophy Aura - [|cffffcc00Level 3|r],Atrophy Aura - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Atrophy Aura - [|cffffcc00Level %d|r]
 Researchhotkey=E
@@ -8519,7 +8511,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[a0fL]
+[a0fl]
 Tip=(|cffffcc00R|r) Dismember - [|cffffcc00Level 1|r],(|cffffcc00R|r) Dismember - [|cffffcc00Level 2|r],(|cffffcc00R|r) Dismember - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Dismember - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -8550,7 +8542,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A29K]
+[a29k]
 Tip=(|cffffcc00Z|r) Slithereen Crush - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Slithereen Crush - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Slithereen Crush - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Slithereen Crush - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Slithereen Crush - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -8575,7 +8567,7 @@ Buttonpos=3,0
 Unbuttonpos=3,0
 Researchbuttonpos=3,0
 
-[A15S]
+[a15s]
 Tip=(|cffffcc00A|r) Decay - [|cffffcc00Level 1|r],(|cffffcc00A|r) Decay - [|cffffcc00Level 2|r],(|cffffcc00A|r) Decay - [|cffffcc00Level 3|r],(|cffffcc00A|r) Decay - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Decay - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -8591,7 +8583,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A15V]
+[a15v]
 Tip=(|cffffcc00E|r) Tombstone - [|cffffcc00Level 1|r],(|cffffcc00E|r) Tombstone - [|cffffcc00Level 2|r],(|cffffcc00E|r) Tombstone - [|cffffcc00Level 3|r],(|cffffcc00E|r) Tombstone - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Tombstone - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -8599,7 +8591,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A15J]
+[a15j]
 Tip=(|cffffcc00R|r) Flesh Golem - [|cffffcc00Level 1|r],(|cffffcc00R|r) Flesh Golem - [|cffffcc00Level 2|r],(|cffffcc00R|r) Flesh Golem - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Flesh Golem - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -8607,7 +8599,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A15K]
+[a15k]
 Tip=Plague - [|cffffcc00Level 1|r],Plague - [|cffffcc00Level 2|r],Plague - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00W|r) Learn Plague - [|cffffcc00Level %d|r]
 Researchhotkey=W
@@ -8644,21 +8636,21 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[a03S]
+[a03s]
 Tip=Headshot - [|cffffcc00Level 1|r],Headshot - [|cffffcc00Level 2|r],Headshot - [|cffffcc00Level 3|r],Headshot - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Headshot - [|cffffcc00Level %d|r]
 Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[a03U]
+[a03u]
 Tip=Take Aim - [|cffffcc00Level 1|r],Take Aim - [|cffffcc00Level 2|r],Take Aim - [|cffffcc00Level 3|r],Take Aim - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Take Aim - [|cffffcc00Level %d|r]
 Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[a04P]
+[a04p]
 Tip=(|cffffcc00R|r) Assassinate - [|cffffcc00Level 1|r],(|cffffcc00R|r) Assassinate - [|cffffcc00Level 2|r],(|cffffcc00R|r) Assassinate - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Assassinate - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -8904,7 +8896,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A24D]
+[a24d]
 Tip=(|cffffcc00Z|r) Ensnare - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Ensnare - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Ensnare - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Ensnare - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Ensnare - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -8912,7 +8904,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2KU]
+[a2ku]
 Tip=(|cffffcc00E|r) Rip Tide - [|cffffcc00Level 1|r],(|cffffcc00E|r) Rip Tide - [|cffffcc00Level 2|r],(|cffffcc00E|r) Rip Tide - [|cffffcc00Level 3|r],(|cffffcc00E|r) Rip Tide - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Rip Tide - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -8920,7 +8912,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A07U]
+[a07u]
 Tip=(|cffffcc00R|r) Song of the Siren - [|cffffcc00Level 1|r],(|cffffcc00R|r) Song of the Siren - [|cffffcc00Level 2|r],(|cffffcc00R|r) Song of the Siren - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Song of the Siren - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -8928,7 +8920,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A24E]
+[a24e]
 Tip=(|cffffcc00V|r) Song of the Siren End - [|cffffcc00Level 1|r],(|cffffcc00V|r) Song of the Siren End - [|cffffcc00Level 2|r],(|cffffcc00V|r) Song of the Siren End - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Song of the Siren End - [|cffffcc00Level %d|r]
 Hotkey=V
@@ -8936,7 +8928,7 @@ Researchhotkey=R
 Buttonpos=3,2
 Researchbuttonpos=3,0
 
-[A10D]
+[a10d]
 Tip=(|cffffcc00A|r) Spirit Lance - [|cffffcc00Level 1|r],(|cffffcc00A|r) Spirit Lance - [|cffffcc00Level 2|r],(|cffffcc00A|r) Spirit Lance - [|cffffcc00Level 3|r],(|cffffcc00A|r) Spirit Lance - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Spirit Lance - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -8974,7 +8966,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[a0L8]
+[a0l8]
 Tip=(|cffffcc00Z|r) Elune's Arrow - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Elune's Arrow - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Elune's Arrow - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Elune's Arrow - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Elune's Arrow - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -8982,7 +8974,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[a0Ln]
+[a0ln]
 Tip=(|cffffcc00E|r) Leap - [|cffffcc00Level 1|r],(|cffffcc00E|r) Leap - [|cffffcc00Level 2|r],(|cffffcc00E|r) Leap - [|cffffcc00Level 3|r],(|cffffcc00E|r) Leap - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Leap - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -9050,17 +9042,17 @@ Researchbuttonpos=0,0
 Tip=Bash
 Buttonpos=2,1
 
-[A21M]
+[a21m]
 Tip=(|cffffcc00Z|r) Whirling Axes
 Hotkey=Z
 Buttonpos=1,0
 
-[A21N]
+[a21n]
 Tip=(|cffffcc00Z|r) Whirling Axes
 Hotkey=Z
 Buttonpos=1,0
 
-[A21L]
+[a21l]
 Tip=(|cffffcc00X|r) Whirling Axes - [|cffffcc00Level 1|r],(|cffffcc00X|r) Whirling Axes - [|cffffcc00Level 2|r],(|cffffcc00X|r) Whirling Axes - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00Z|r) Learn Whirling Axes - [|cffffcc00Level %d|r]
 Hotkey=X
@@ -9115,7 +9107,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A235]
+[a235]
 Tip=(|cffffcc00R|r) Call Down - [|cffffcc00Level 1|r],(|cffffcc00R|r) Call Down - [|cffffcc00Level 2|r],(|cffffcc00R|r) Call Down - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Call Down - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -9188,7 +9180,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[a0Lk]
+[a0lk]
 Tip=(|cffffcc00A|r) Time Walk - [|cffffcc00Level 1|r],(|cffffcc00A|r) Time Walk - [|cffffcc00Level 2|r],(|cffffcc00A|r) Time Walk - [|cffffcc00Level 3|r],(|cffffcc00A|r) Time Walk - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Time Walk - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -9256,7 +9248,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A27C]
+[a27c]
 Tip=Divided We Stand - [|cffffcc00Level 1|r],Divided We Stand - [|cffffcc00Level 2|r],Divided We Stand - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Divided We Stand - [|cffffcc00Level %d|r]
 Researchhotkey=R
@@ -9286,7 +9278,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A1ao]
+[a1ao]
 Tip=(|cffffcc00R|r) Eye of the Storm - [|cffffcc00Level 1|r],(|cffffcc00R|r) Eye of the Storm - [|cffffcc00Level 2|r],(|cffffcc00R|r) Eye of the Storm - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Eye of the Storm - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -9294,7 +9286,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A1UV]
+[a1uv]
 Tip=(|cffffcc00R|r) Eye of the Storm (Aghanim's Scepter) - [|cffffcc00Level 1|r],(|cffffcc00R|r) Eye of the Storm (Aghanim's Scepter) - [|cffffcc00Level 2|r],(|cffffcc00R|r) Eye of the Storm (Aghanim's Scepter) - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Eye of the Storm (Aghanim's Scepter) - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -9385,7 +9377,7 @@ Tip=(|cffffcc00W|r) Trap
 Hotkey=W
 Buttonpos=0,2
 
-[A2H3]
+[a2h3]
 Tip=(|cffffcc00A|r) Searing Chains - [|cffffcc00Level 1|r],(|cffffcc00A|r) Searing Chains - [|cffffcc00Level 2|r],(|cffffcc00A|r) Searing Chains - [|cffffcc00Level 3|r],(|cffffcc00A|r) Searing Chains - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Searing Chains - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -9393,7 +9385,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A2H0]
+[a2h0]
 Tip=(|cffffcc00Z|r) Sleight of Fist - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Sleight of Fist - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Sleight of Fist - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Sleight of Fist - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Sleight of Fist - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -9401,15 +9393,14 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2JL]
+[a2jl]
 Tip=(|cffffcc00D|r) Fire Remnant - [|cffffcc00Level 1|r],(|cffffcc00D|r) Fire Remnant - [|cffffcc00Level 2|r],(|cffffcc00D|r) Fire Remnant - [|cffffcc00Level 3|r],(|cffffcc00D|r) Fire Remnant - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00|r)
 Hotkey=D
-Researchhotkey=
 Buttonpos=2,1
 Researchbuttonpos=,
 
-[A2HS]
+[a2hs]
 Tip=(|cffffcc00E|r) Flame Guard - [|cffffcc00Level 1|r],(|cffffcc00E|r) Flame Guard - [|cffffcc00Level 2|r],(|cffffcc00E|r) Flame Guard - [|cffffcc00Level 3|r],(|cffffcc00E|r) Flame Guard - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Flame Guard - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -9417,39 +9408,35 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A2JR]
+[a2jr]
 Tip=(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 1|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 2|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 3|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00|r)
 Hotkey=R
-Researchhotkey=
 Buttonpos=3,0
 Researchbuttonpos=,
 
-[A2JP]
+[a2jp]
 Tip=(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 1|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 2|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 3|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00|r)
 Hotkey=R
-Researchhotkey=
 Buttonpos=3,0
 Researchbuttonpos=,
 
-[A2JQ]
+[a2jq]
 Tip=(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 1|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 2|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 3|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00|r)
 Hotkey=R
-Researchhotkey=
 Buttonpos=3,0
 Researchbuttonpos=,
 
-[A2JO]
+[a2jo]
 Tip=(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 1|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 2|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 3|r],(|cffffcc00R|r) Fire Remnant - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00|r)
 Hotkey=R
-Researchhotkey=
 Buttonpos=3,0
 Researchbuttonpos=,
 
-[A2JK]
+[a2jk]
 Tip=(|cffffcc00V|r) Fire Remnant - [|cffffcc00Level 1|r],(|cffffcc00V|r) Fire Remnant - [|cffffcc00Level 2|r],(|cffffcc00V|r) Fire Remnant - [|cffffcc00Level 3|r],(|cffffcc00V|r) Fire Remnant - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00R|r) Learn Fire Remnant - [|cffffcc00Level %d|r]
 Hotkey=V
@@ -9465,7 +9452,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A1N4]
+[a1n4]
 Tip=(|cffffcc00Z|r) Overpower - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Overpower - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Overpower - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Overpower - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Overpower - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -9480,7 +9467,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[a0Lc]
+[a0lc]
 Tip=(|cffffcc00R|r) Enrage - [|cffffcc00Level 1|r],(|cffffcc00R|r) Enrage - [|cffffcc00Level 2|r],(|cffffcc00R|r) Enrage - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Enrage - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -9566,7 +9553,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[a0Le]
+[a0le]
 Tip=Blood Bath - [|cffffcc00Level 1|r],Blood Bath - [|cffffcc00Level 2|r],Blood Bath - [|cffffcc00Level 3|r],Blood Bath - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Blood Bath - [|cffffcc00Level %d|r]
 Researchhotkey=Z
@@ -9580,7 +9567,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[a0Lh]
+[a0lh]
 Tip=(|cffffcc00R|r) Rupture - [|cffffcc00Level 1|r],(|cffffcc00R|r) Rupture - [|cffffcc00Level 2|r],(|cffffcc00R|r) Rupture - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Rupture - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -9688,7 +9675,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2KO]
+[a2ko]
 Tip=(|cffffcc00E|r) Spiked Carapace - [|cffffcc00Level 1|r],(|cffffcc00E|r) Spiked Carapace - [|cffffcc00Level 2|r],(|cffffcc00E|r) Spiked Carapace - [|cffffcc00Level 3|r],(|cffffcc00E|r) Spiked Carapace - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Spiked Carapace - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -9772,7 +9759,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[a0pL]
+[a0pl]
 Tip=(|cffffcc00Z|r) Blink Strike - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Blink Strike - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Blink Strike - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Blink Strike - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Blink Strike - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -9806,7 +9793,6 @@ Researchbuttonpos=0,0
 Tip=(|cffffcc00Z|r) Shadowraze - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Shadowraze - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Shadowraze - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Shadowraze - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00|r)
 Hotkey=Z
-Researchhotkey=
 Buttonpos=1,0
 Researchbuttonpos=,
 
@@ -9814,7 +9800,6 @@ Researchbuttonpos=,
 Tip=(|cffffcc00E|r) Shadowraze - [|cffffcc00Level 1|r],(|cffffcc00E|r) Shadowraze - [|cffffcc00Level 2|r],(|cffffcc00E|r) Shadowraze - [|cffffcc00Level 3|r],(|cffffcc00E|r) Shadowraze - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00|r)
 Hotkey=E
-Researchhotkey=
 Buttonpos=2,0
 Researchbuttonpos=,
 
@@ -9832,7 +9817,7 @@ Researchhotkey=E
 Buttonpos=2,1
 Researchbuttonpos=2,0
 
-[A29J]
+[a29j]
 Tip=(|cffffcc00R|r) Requiem of Souls - [|cffffcc00Level 1|r],(|cffffcc00R|r) Requiem of Souls - [|cffffcc00Level 2|r],(|cffffcc00R|r) Requiem of Souls - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Requiem of Souls - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -9848,7 +9833,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2KZ]
+[a2kz]
 Tip=(|cffffcc00A|r) Reflection - [|cffffcc00Level 1|r],(|cffffcc00A|r) Reflection - [|cffffcc00Level 2|r],(|cffffcc00A|r) Reflection - [|cffffcc00Level 3|r],(|cffffcc00A|r) Reflection - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Reflection - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -9910,7 +9895,7 @@ Researchhotkey=X
 Buttonpos=2,1
 Researchbuttonpos=1,2
 
-[A173]
+[a173]
 Tip=(|cffffcc00A|r) Venomous Gale - [|cffffcc00Level 1|r],(|cffffcc00A|r) Venomous Gale - [|cffffcc00Level 2|r],(|cffffcc00A|r) Venomous Gale - [|cffffcc00Level 3|r],(|cffffcc00A|r) Venomous Gale - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Venomous Gale - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -9981,7 +9966,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[a1UZ]
+[a1uz]
 Tip=(|cffffcc00R|r) Viper Strike (Aghanim's Scepter) - [|cffffcc00Level 1|r],(|cffffcc00R|r) Viper Strike (Aghanim's Scepter) - [|cffffcc00Level 2|r],(|cffffcc00R|r) Viper Strike (Aghanim's Scepter) - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Viper Strike (Aghanim's Scepter) - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -9989,7 +9974,7 @@ Researchhotkey=R
 Buttonpos=3,0
 Researchbuttonpos=3,0
 
-[A2M1]
+[a2m1]
 Tip=(|cffffcc00A|r) Flux - [|cffffcc00Level 1|r],(|cffffcc00A|r) Flux - [|cffffcc00Level 2|r],(|cffffcc00A|r) Flux - [|cffffcc00Level 3|r],(|cffffcc00A|r) Flux - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00A|r) Learn Flux - [|cffffcc00Level %d|r]
 Hotkey=A
@@ -9997,7 +9982,7 @@ Researchhotkey=A
 Buttonpos=0,0
 Researchbuttonpos=0,0
 
-[A2LM]
+[a2lm]
 Tip=(|cffffcc00Z|r) Magnetic Field - [|cffffcc00Level 1|r],(|cffffcc00Z|r) Magnetic Field - [|cffffcc00Level 2|r],(|cffffcc00Z|r) Magnetic Field - [|cffffcc00Level 3|r],(|cffffcc00Z|r) Magnetic Field - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00Z|r) Learn Magnetic Field - [|cffffcc00Level %d|r]
 Hotkey=Z
@@ -10005,7 +9990,7 @@ Researchhotkey=Z
 Buttonpos=1,0
 Researchbuttonpos=1,0
 
-[A2LL]
+[a2ll]
 Tip=(|cffffcc00E|r) Spark Wraith - [|cffffcc00Level 1|r],(|cffffcc00E|r) Spark Wraith - [|cffffcc00Level 2|r],(|cffffcc00E|r) Spark Wraith - [|cffffcc00Level 3|r],(|cffffcc00E|r) Spark Wraith - [|cffffcc00Level 4|r]
 Researchtip=(|cffffcc00E|r) Learn Spark Wraith - [|cffffcc00Level %d|r]
 Hotkey=E
@@ -10013,7 +9998,7 @@ Researchhotkey=E
 Buttonpos=2,0
 Researchbuttonpos=2,0
 
-[A2M0]
+[a2m0]
 Tip=(|cffffcc00R|r) Tempest Double - [|cffffcc00Level 1|r],(|cffffcc00R|r) Tempest Double - [|cffffcc00Level 2|r],(|cffffcc00R|r) Tempest Double - [|cffffcc00Level 3|r]
 Researchtip=(|cffffcc00R|r) Learn Tempest Double - [|cffffcc00Level %d|r]
 Hotkey=R
@@ -10035,7 +10020,7 @@ Researchhotkey=X
 Buttonpos=1,1
 Researchbuttonpos=1,2
 
-[A0WZ]
+[a0wz]
 Tip=(|cffffcc00A|r) Thunder Clap
 Hotkey=A
 Buttonpos=0,0
@@ -10113,22 +10098,22 @@ Hotkey=A
 Buttonpos=0,0
 Unbuttonpos=0,0
 
-[A1as]
+[a1as]
 Tip=(|cffffcc00W|r) Return Home
 Hotkey=W
 Buttonpos=0,2
 
-[A0OT]
+[a0ot]
 Tip=(|cffffcc00S|r) Change Courier Type
 Hotkey=S
 Buttonpos=1,1
 
-[A138]
+[a138]
 Tip=(|cffffcc00X|r) Drop Items
 Hotkey=X
 Buttonpos=1,2
 
-[H0DE]
+[h0de]
 Tip=(|cffffcc00C|r) Resume Delivery
 Hotkey=C
 Buttonpos=2,2
