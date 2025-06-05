@@ -21,6 +21,293 @@ const ITEM = 7;
 
 const data = {};
 
+data.keyInfo = {
+	27: {
+		hotkey: "27",
+		symbol: "Esc"
+	},
+	48: {
+		hotkey: "48",
+		symbol: "0"
+	},
+	49: {
+		hotkey: "49",
+		symbol: "1"
+	},
+	50: {
+		hotkey: "50",
+		symbol: "2"
+	},
+	51: {
+		hotkey: "51",
+		symbol: "3"
+	},
+	52: {
+		hotkey: "52",
+		symbol: "4"
+	},
+	53: {
+		hotkey: "53",
+		symbol: "5"
+	},
+	54: {
+		hotkey: "54",
+		symbol: "6"
+	},
+	55: {
+		hotkey: "55",
+		symbol: "7"
+	},
+	56: {
+		hotkey: "56",
+		symbol: "8"
+	},
+	57: {
+		hotkey: "57",
+		symbol: "9"
+	},
+	65: {
+		hotkey: "A",
+		symbol: "A"
+	},
+	66: {
+		hotkey: "B",
+		symbol: "B"
+	},
+	67: {
+		hotkey: "C",
+		symbol: "C"
+	},
+	68: {
+		hotkey: "D",
+		symbol: "D"
+	},
+	69: {
+		hotkey: "E",
+		symbol: "E"
+	},
+	70: {
+		hotkey: "F",
+		symbol: "F"
+	},
+	71: {
+		hotkey: "G",
+		symbol: "G"
+	},
+	72: {
+		hotkey: "H",
+		symbol: "H"
+	},
+	73: {
+		hotkey: "I",
+		symbol: "I"
+	},
+	74: {
+		hotkey: "J",
+		symbol: "J"
+	},
+	75: {
+		hotkey: "K",
+		symbol: "K"
+	},
+	76: {
+		hotkey: "L",
+		symbol: "L"
+	},
+	77: {
+		hotkey: "M",
+		symbol: "M"
+	},
+	78: {
+		hotkey: "N",
+		symbol: "N"
+	},
+	79: {
+		hotkey: "O",
+		symbol: "O"
+	},
+	80: {
+		hotkey: "P",
+		symbol: "P"
+	},
+	81: {
+		hotkey: "Q",
+		symbol: "Q"
+	},
+	82: {
+		hotkey: "R",
+		symbol: "R"
+	},
+	83: {
+		hotkey: "S",
+		symbol: "S"
+	},
+	84: {
+		hotkey: "T",
+		symbol: "T"
+	},
+	85: {
+		hotkey: "U",
+		symbol: "U"
+	},
+	86: {
+		hotkey: "V",
+		symbol: "V"
+	},
+	87: {
+		hotkey: "W",
+		symbol: "W"
+	},
+	88: {
+		hotkey: "X",
+		symbol: "X"
+	},
+	89: {
+		hotkey: "Y",
+		symbol: "Y"
+	},
+	90: {
+		hotkey: "Z",
+		symbol: "Z"
+	},
+	96: {
+		hotkey: "96",
+		symbol: "N 0"
+	},
+	97: {
+		hotkey: "97",
+		symbol: "N 1"
+	},
+	98: {
+		hotkey: "98",
+		symbol: "N 2"
+	},
+	99: {
+		hotkey: "99",
+		symbol: "N 3"
+	},
+	100: {
+		hotkey: "100",
+		symbol: "N 4"
+	},
+	101: {
+		hotkey: "101",
+		symbol: "N 5"
+	},
+	102: {
+		hotkey: "102",
+		symbol: "N 6"
+	},
+	103: {
+		hotkey: "103",
+		symbol: "N 7"
+	},
+	104: {
+		hotkey: "104",
+		symbol: "N 8"
+	},
+	105: {
+		hotkey: "105",
+		symbol: "N 9"
+	},
+	112: {
+		hotkey: "112",
+		symbol: "F1"
+	},
+	113: {
+		hotkey: "113",
+		symbol: "F2"
+	},
+	114: {
+		hotkey: "114",
+		symbol: "F3"
+	},
+	115: {
+		hotkey: "115",
+		symbol: "F4"
+	},
+	116: {
+		hotkey: "116",
+		symbol: "F5"
+	},
+	117: {
+		hotkey: "117",
+		symbol: "F6"
+	},
+	118: {
+		hotkey: "118",
+		symbol: "F7"
+	},
+	119: {
+		hotkey: "119",
+		symbol: "F8"
+	},
+	120: {
+		hotkey: "120",
+		symbol: "F9"
+	},
+	121: {
+		hotkey: "121",
+		symbol: "F10"
+	},
+	122: {
+		hotkey: "122",
+		symbol: "F11"
+	},
+	123: {
+		hotkey: "123",
+		symbol: "F12"
+	},
+	124: {
+		hotkey: "124",
+		symbol: "F13"
+	},
+	125: {
+		hotkey: "125",
+		symbol: "F14"
+	},
+	126: {
+		hotkey: "126",
+		symbol: "F15"
+	},
+	127: {
+		hotkey: "127",
+		symbol: "F16"
+	},
+	128: {
+		hotkey: "128",
+		symbol: "F17"
+	},
+	129: {
+		hotkey: "129",
+		symbol: "F18"
+	},
+	130: {
+		hotkey: "130",
+		symbol: "F19"
+	},
+	131: {
+		hotkey: "131",
+		symbol: "F20"
+	},
+	132: {
+		hotkey: "132",
+		symbol: "F21"
+	},
+	133: {
+		hotkey: "133",
+		symbol: "F22"
+	},
+	134: {
+		hotkey: "134",
+		symbol: "F23"
+	},
+	135: {
+		hotkey: "135",
+		symbol: "F24"
+	}
+};
+
 data.buildCommands = {
 	cmdbuildhuman:    "ahbu",
 	cmdbuildorc:      "aobu",
@@ -2603,7 +2890,7 @@ data.units = {
 			["pman", "Purchase Potion of Mana"],
 			["stwp", "Purchase Scroll of Town Portal"],
 			["ocor", "Purchase Orb of Corruption"],
-			["shea", "Purchase Scroll of Healing"],
+			["wneg", "Purchase Wand of Negation"],
 			["anei", "Select User"]
 		]
 	},
@@ -7849,7 +8136,7 @@ data.icons = {
 			uwar: "btnarchimonde",
 			uzg1: "btnzigguratupgrade",
 			uzg2: "btnfrosttower",
-			wneg: "btnwandskull",
+			wneg: "btnwandofneutralization",
 			wneu: "btnwandofneutralization",
 			uzig: "btnziggurat"
 		}

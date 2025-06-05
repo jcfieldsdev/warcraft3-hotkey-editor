@@ -58,6 +58,7 @@ const PATTERN = /,(?=(?:[^"]|"[^"]*")*$)/;
 const STANDARD = 0, RESEARCH = 1, BUILD = 2;
 // commands
 const CANCEL = "cmdcancel", RALLY = "cmdrally";
+const OLD_ESC_KEY = "512";
 // tooltip positions
 const START = "start", END = "end";
 
@@ -255,8 +256,8 @@ window.addEventListener("load", function() {
 		}
 
 		if (element.matches(".esc")) {
-			editor.setHotkey(element.value, "512");
-			editor.formatHotkey(element.value, "512");
+			editor.setHotkey(element.value, OLD_ESC_KEY);
+			editor.formatHotkey(element.value, OLD_ESC_KEY);
 			editor.setVisibleHotkeys();
 			editor.checkAllConflicts();
 		}
@@ -1198,7 +1199,7 @@ Editor.prototype.autoSetTip = function(type, fields) {
 		// otherwise set all lines to the same hotkey (e.g., hero abilities)
 		k = fields.length > 1 ? i : 0;
 
-		if (fields[k] == "512") {
+		if (fields[k] == OLD_ESC_KEY) {
 			fields[k] = "ESC";
 		}
 
@@ -1254,7 +1255,7 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 		return;
 	}
 
-	if (hotkey == "512") {
+	if (hotkey == "27" || hotkey == OLD_ESC_KEY) {
 		hotkey = "\u238b"; // escape symbol (for display)
 	}
 
@@ -1395,7 +1396,7 @@ Editor.prototype.setVisibleHotkeys = function() {
 				// shows "Hotkey" if available and standard card selected,
 				// else shows "Researchhotkey" (for passives or research card)
 				if (hotkey != "" && (n != RESEARCH || id == CANCEL)) {
-					if (hotkey == "512") {
+					if (hotkey == "27" || hotkey == OLD_ESC_KEY) {
 						span.textContent = "Esc";
 					} else { // only show first letter (even if multi-tiered)
 						span.textContent = hotkey.slice(0, 1);

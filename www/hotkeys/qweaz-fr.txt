@@ -350,7 +350,7 @@ Buttonpos=1,2
 
 [rhlh]
 Tip=(|cffffcc00A|r) Improved Lumber Harvesting,(|cffffcc00A|r) Advanced Lumber Harvesting
-Hotkey=A,P
+Hotkey=A,A
 Buttonpos=0,0
 
 [rhac]
@@ -360,7 +360,7 @@ Buttonpos=1,0
 
 [rhme]
 Tip=(|cffffcc00A|r) Upgrade to Iron Forged Swords,(|cffffcc00A|r) Upgrade to Steel Forged Swords,(|cffffcc00A|r) Upgrade to Mithril Forged Swords
-Hotkey=A,P,P
+Hotkey=A,A,A
 Buttonpos=0,0
 
 [rhra]
@@ -961,7 +961,7 @@ Buttonpos=1,2
 
 [rome]
 Tip=(|cffffcc00A|r) Upgrade to Steel Melee Weapons,(|cffffcc00A|r) Upgrade to Thorium Melee Weapons,(|cffffcc00A|r) Upgrade to Arcanite Melee Weapons
-Hotkey=A,P,P
+Hotkey=A,A,A
 Buttonpos=0,0
 
 [rora]
@@ -1441,7 +1441,7 @@ Buttonpos=0,2
 
 [rume]
 Tip=(|cffffcc00A|r) Upgrade to Unholy Strength,(|cffffcc00A|r) Improved Unholy Strength,(|cffffcc00A|r) Advanced Unholy Strength
-Hotkey=A,P,P
+Hotkey=A,A,A
 Buttonpos=0,0
 
 [ruar]
@@ -2017,7 +2017,7 @@ Buttonpos=2,1
 
 [resm]
 Tip=(|cffffcc00A|r) Upgrade to Strength of the Moon,(|cffffcc00A|r) Upgrade to Improved Strength of the Moon,(|cffffcc00A|r) Upgrade to Advanced Strength of the Moon
-Hotkey=A,P,P
+Hotkey=A,A,A
 Buttonpos=0,0
 
 [rema]
