@@ -791,7 +791,7 @@ data.units = {
 			["pman", "Purchase Potion of Mana"],
 			["stwp", "Purchase Scroll of Town Portal"],
 			["tsct", "Purchase Ivory Tower"],
-			["ofr2", "Purchase Orb of Fire"],
+			["oslo", "Purchase Orb of Fire"],
 			["ssan", "Purchase Staff of Sanctuary"],
 			["anei", "Select User"]
 		]
@@ -1553,7 +1553,8 @@ data.units = {
 		race: ORC,
 		type: UNIT,
 		commands: [
-			["awar", "Pulverize"]
+			["awar", "Pulverize"],
+			["acsk", "Resistant Skin"]
 		]
 	},
 	ogre: {
@@ -5212,7 +5213,6 @@ data.units = {
 		race: NEUTRAL,
 		type: UNIT,
 		commands: [
-			["aenr", "Entangling Roots"],
 			["acvs", "Envenomed Weapons"]
 		]
 	},
@@ -5741,7 +5741,8 @@ data.units = {
 		race: NEUTRAL,
 		type: UNIT,
 		commands: [
-			["acbc", "Breath of Fire"]
+			["acbc", "Breath of Fire"],
+			["acua", "Unholy Aura"]
 		]
 	},
 	nina: {
@@ -6394,7 +6395,8 @@ data.units = {
 		race: NEUTRAL,
 		type: UNIT,
 		commands: [
-			["acdc", "Death Coil"]
+			["accr", "Cripple"],
+			["acvp", "Vampiric Aura"]
 		]
 	},
 	nslm: {

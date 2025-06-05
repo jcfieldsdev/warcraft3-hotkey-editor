@@ -3806,7 +3806,7 @@ Buttonpos=0,0
 [oslo]
 Tip=Purchase Orb of |cffffcc00S|rlow
 Hotkey=S
-Buttonpos=0,0
+Buttonpos=0,2
 
 [nrdk]
 Tip=Summon Red Dragon |cffffcc00W|rhelp

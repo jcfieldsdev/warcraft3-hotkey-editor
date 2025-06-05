@@ -461,6 +461,10 @@ Tip=Purchase Orb of Fire (|cffffcc00Y|r)
 Hotkey=Y
 Tip=Purchase Orb of Fire (|cffffcc00Y|r)
 
+[oslo]
+Hotkey=Y
+Tip=Purchase Orb of Slow (|cffffcc00Y|r)
+
 [ssan]
 Hotkey=X
 Tip=Purchase Staff of Sanctuary (|cffffcc00X|r)
