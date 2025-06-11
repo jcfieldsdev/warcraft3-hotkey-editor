@@ -72,12 +72,12 @@ Buttonpos=0,2
 
 [cmdcancel]
 Tip=Cancel (|cffffcc00ESC|r)
-Hotkey=512
+Hotkey=27
 Buttonpos=3,2
 
 [cmdcancelbuild]
 Tip=Cancel (|cffffcc00ESC|r)
-Hotkey=512
+Hotkey=27
 Buttonpos=3,2
 
 [cmdholdpos]

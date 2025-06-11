@@ -305,6 +305,10 @@ data.keyInfo = {
 	135: {
 		hotkey: "135",
 		symbol: "F24"
+	},
+	512: { // code in old hotkey format
+		hotkey: "512",
+		symbol: "Esc"
 	}
 };
 

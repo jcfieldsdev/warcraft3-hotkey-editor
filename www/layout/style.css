@@ -285,8 +285,6 @@ div#dropzone {
 
 div#dropzone, div.card, label {
 	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
 }
 
 div#dropzone.hover {
@@ -709,11 +707,13 @@ p.hotkey {
 p.hotkey input {
 	border-radius: 0.25em;
 	box-shadow: 2px 2px #606060;
+	caret-color: transparent;
+	cursor: default;
 	height: 1em;
 	margin-right: 0.5em;
 	text-align: center;
 	text-transform: uppercase;
-	width: 1em;
+	width: 3em;
 }
 
 p.hotkey input:focus {

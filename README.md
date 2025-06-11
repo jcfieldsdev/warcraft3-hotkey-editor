@@ -18,7 +18,7 @@ You can also use the search box in the bottom-left of the page to search for a p
 
 Once a unit has been selected, its associated commands appear in the editor view on the right side of the screen. Heroes also display their "Hero Abilities" commands and workers display their "Build Structure" commands in an adjacent command card.
 
-Clicking a command button in one of the command cards brings up all of the tooltips and hotkeys for that command (as well as the name of the command with its editor code in parenthesis). The hotkey currently being edited is highlighted with a white border. Any letter key can be used as a hotkey by pressing the desired key while the box is highlighted.
+Clicking a command button in one of the command cards brings up all of the tooltips and hotkeys for that command (as well as the name of the command with its editor code in parenthesis). The hotkey currently being edited is highlighted with a white border. Any letter key can be used as a hotkey by pressing the desired key while the box is highlighted. In *Warcraft III Reforged*, numbers and function keys can be used as well.
 
 If there is more than one hotkey for the command, there will be multiple boxes. Hotkey groups have labels that indicate their purpose: "Hotkey" for standard hotkeys, "Unhotkey" for hotkeys that disable two-state abilities (such as "Defend"), and "Researchhotkey" for hotkeys that select hero abilities.
 
@@ -65,8 +65,6 @@ You can load your existing hotkey profile by clicking the `Load` button in the b
 - The `Reset` button resets all hotkeys to their default values.
 
 After customizing your hotkeys, click the `Save` button in the bottom-right corner of the screen to generate a new hotkey file based on your modifications. You can copy the contents of this file by directly copying from the text box or by clicking the `Copy` button, or you can download the file by clicking the `Download` button.
-
-If you've changed any options, they'll be stored in your hotkey file under the `hotkeyeditorpreferences` section. This section is safely ignored by the game, but the editor uses it to reload your preferences the next time you use it.
 
 The `?` button next to the `Load` and `Save` buttons brings up the [help page](https://jcfieldsdev.github.io/warcraft3-hotkey-editor/help.html), which explains in detail where the hotkey file is located on your computer and how to enable it in the game.
 

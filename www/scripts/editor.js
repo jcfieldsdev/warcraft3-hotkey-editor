@@ -52,13 +52,15 @@ const MIME_TYPE = "text/plain";
 // delimiter for multi-level tips, multi-tier hotkeys, and button positions
 const DELIMITER = ",";
 // pattern for splitting multi-line tips
-const PATTERN = /,(?=(?:[^"]|"[^"]*")*$)/;
+const LINE_SPLIT = /,(?=(?:[^"]|"[^"]*")*$)/;
+// patterns for highlighted hotkeys at beginning or end of tooltips
+const START_PATTERN = /^\(\|cffffcc00(ESC|[A-Z0-9]|F\d{1,2}|N \d)\|r\) /g;
+const END_PATTERN = / \(\|cffffcc00(ESC|[A-Z0-9]|F\d{1,2}|N \d)\|r\)$/g;
 
 // command cards
 const STANDARD = 0, RESEARCH = 1, BUILD = 2;
 // commands
 const CANCEL = "cmdcancel", RALLY = "cmdrally";
-const OLD_ESC_KEY = "512";
 // tooltip positions
 const START = "start", END = "end";
 
@@ -254,13 +256,6 @@ window.addEventListener("load", function() {
 			editor.clearSearch();
 			editor.unitEditor();
 		}
-
-		if (element.matches(".esc")) {
-			editor.setHotkey(element.value, OLD_ESC_KEY);
-			editor.formatHotkey(element.value, OLD_ESC_KEY);
-			editor.setVisibleHotkeys();
-			editor.checkAllConflicts();
-		}
 	});
 	document.addEventListener("input", function(event) {
 		const element = event.target;
@@ -287,7 +282,11 @@ window.addEventListener("load", function() {
 				event.preventDefault();
 
 				const type = element.closest(".hotkey").id;
-				editor.editHotkey(element, type, event);
+				const inputs = element.parentElement.querySelectorAll("input");
+				const index = Array.from(inputs).findIndex(function(input) {
+					return input == element;
+				});
+				editor.editHotkey(type, index, event);
 			}
 		}
 
@@ -1093,7 +1092,7 @@ Editor.prototype.formatTip = function(type, tip) {
 	); // handles all other colors
 
 	// splits string by comma unless comma is within quotes
-	const tips = tip.split(PATTERN).map(function(tip) {
+	const tips = tip.split(LINE_SPLIT).map(function(tip) {
 		return tip.replace(/"/g, ""); // removes quotes
 	});
 
@@ -1175,18 +1174,15 @@ Editor.prototype.autoSetTip = function(type, fields) {
 	const start = this.options.read("position") == START;
 	let replace = "", k = 0;
 
-	const startPattern = /^\(\|cffffcc00(ESC|\w)\|r\) /g;
-	const endPattern = / \(\|cffffcc00(ESC|\w)\|r\)$/g;
-
 	// the user-selected pattern
-	const pattern = start ? startPattern : endPattern;
+	const pattern = start ? START_PATTERN : END_PATTERN;
 	// the non-selected pattern
-	const otherPattern = start ? endPattern : startPattern;
+	const otherPattern = start ? END_PATTERN : START_PATTERN;
 
 	const unit = data.units[this.unit];
 
 	// splits string by comma unless comma is within quotes
-	const tips = this.commands.get(this.command, type, unit).split(PATTERN);
+	const tips = this.commands.get(this.command, type, unit).split(LINE_SPLIT);
 	const tip = tips.map(function(tip, i) {
 		tip = tip.replace(/"/g, ""); // removes quotes
 
@@ -1199,11 +1195,13 @@ Editor.prototype.autoSetTip = function(type, fields) {
 		// otherwise set all lines to the same hotkey (e.g., hero abilities)
 		k = fields.length > 1 ? i : 0;
 
-		if (fields[k] == OLD_ESC_KEY) {
-			fields[k] = "ESC";
+		const keyInfo = this.getKeyInfo(fields[k]);
+
+		if (keyInfo == undefined) {
+			return tip;
 		}
 
-		replace = "(|cffffcc00" + fields[k].toUpperCase() + "|r)";
+		replace = "(|cffffcc00" + keyInfo.symbol.toUpperCase() + "|r)";
 
 		if (start) {
 			replace += " ";
@@ -1236,7 +1234,7 @@ Editor.prototype.autoSetTip = function(type, fields) {
 		}
 
 		return tip;
-	}).join(DELIMITER);
+	}.bind(this)).join(DELIMITER);
 
 	this.commands.set(this.command, type, unit, tip);
 	this.formatTip(type, tip);
@@ -1255,10 +1253,6 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 		return;
 	}
 
-	if (hotkey == "27" || hotkey == OLD_ESC_KEY) {
-		hotkey = "\u238b"; // escape symbol (for display)
-	}
-
 	const label = document.createElement("label");
 	label.textContent = type + ": ";
 
@@ -1266,36 +1260,27 @@ Editor.prototype.formatHotkey = function(type, hotkey) {
 	for (const key of hotkey.split(DELIMITER)) {
 		const input = document.createElement("input");
 		input.setAttribute("type", "text");
-		input.setAttribute("value", key);
 		label.appendChild(input);
+
+		const keyInfo = this.getKeyInfo(key);
+
+		if (keyInfo != undefined) {
+			input.setAttribute("value", keyInfo.symbol);
+		}
 	}
 
 	p.appendChild(label);
-
-	// appends "Set to Esc" button for cancel buttons
-	if (this.command.startsWith(CANCEL)) {
-		const button = document.createElement("button");
-		button.className = "esc";
-		button.value = type;
-		button.setAttribute("type", "button");
-		button.appendChild(document.createTextNode("Set to Esc"));
-		p.appendChild(button);
-	}
 
 	element.hidden = false;
 	element.replaceWith(p);
 };
 
-Editor.prototype.editHotkey = function(input, type, event) {
-	const {key} = event;
-
-	// ignores non-letter characters
-	if (key.length > 1 || !key.match(/[A-Z]/i)) {
+Editor.prototype.editHotkey = function(type, index, event) {
+	if (!(event.keyCode in data.keyInfo)) {
 		return;
 	}
 
-	input.value = key.toUpperCase();
-
+	const keyInfo = data.keyInfo[event.keyCode];
 	const unit = data.units[this.unit];
 
 	const buttonpos = this.commands.get(this.command, "Buttonpos", unit);
@@ -1305,46 +1290,50 @@ Editor.prototype.editHotkey = function(input, type, event) {
 	// sets all hotkeys together if "spirit link" option selected
 	// unless button and unbutton are in different positions (prevents conflict)
 	if (samePositions && this.options.read("spiritLink")) {
-		this.setHotkey("Hotkey", key);
-		this.setHotkey("Unhotkey", key);
-		this.setHotkey("Researchhotkey", key);
+		this.setHotkey("Hotkey", keyInfo, -1);
+		this.setHotkey("Unhotkey", keyInfo, -1);
+		this.setHotkey("Researchhotkey", keyInfo, -1);
 	} else {
-		// does not send input value in this case in order to properly handle
+		// sends the index of the selected input field to properly handle
 		// commands with multiple inputs (e.g., weapon/armor upgrades)
-		this.setHotkey(type);
+		this.setHotkey(type, keyInfo, index);
 	}
 
 	this.setVisibleHotkeys();
 	this.checkAllConflicts();
 };
 
-Editor.prototype.setHotkey = function(type, hotkey="") {
+Editor.prototype.setHotkey = function(type, keyInfo, index) {
 	if (!this.commands.exists(this.command, type)) {
 		return;
 	}
 
-	const fields = [];
+	const unit = data.units[this.unit];
+	const keys = this.commands.get(this.command, type, unit).split(DELIMITER);
 
-	for (const element of $$(`#${type} input`)) {
-		if (hotkey != "") {
-			// sets hotkey to the optional function parameter value;
-			// (spirit-linking is on or setting the "Esc" key)
-			fields.push(hotkey);
-			element.value = hotkey;
-		} else {
-			// uses input field value (spirit-linking is off)
-			fields.push(element.value);
+	const fields = $$(`#${type} input`).map(function(element, i) {
+		if (index < 0 || i == index) {
+			element.value = keyInfo.symbol;
+			return keyInfo.hotkey;
 		}
-	}
+
+		return keys[i];
+	});
 
 	const value = fields.join(DELIMITER).toUpperCase();
-	this.commands.set(this.command, type, data.units[this.unit], value);
+	this.commands.set(this.command, type, unit, value);
 
 	if (this.options.read("tooltips")) {
 		this.autoSetTip(type, fields);
 		this.autoSetTip("Awakentip", fields);
 		this.autoSetTip("Revivetip", fields);
 	}
+};
+
+Editor.prototype.getKeyInfo =function(hotkey) {
+	return Object.values(data.keyInfo).find(function(value) {
+		return hotkey == value.hotkey;
+	});
 };
 
 Editor.prototype.resetDefaults = function() {
@@ -1396,14 +1385,21 @@ Editor.prototype.setVisibleHotkeys = function() {
 				// shows "Hotkey" if available and standard card selected,
 				// else shows "Researchhotkey" (for passives or research card)
 				if (hotkey != "" && (n != RESEARCH || id == CANCEL)) {
-					if (hotkey == "27" || hotkey == OLD_ESC_KEY) {
-						span.textContent = "Esc";
-					} else { // only show first letter (even if multi-tiered)
-						span.textContent = hotkey.slice(0, 1);
+					const firstHotkey = hotkey.split(DELIMITER)[0];
+					const keyInfo = this.getKeyInfo(firstHotkey);
+
+					if (keyInfo != undefined) {
+						span.textContent = keyInfo.symbol;
 					}
 				} else if (researchhotkey != "") {
+					const firstHotkey = researchhotkey.split(DELIMITER)[0];
+					const keyInfo = this.getKeyInfo(firstHotkey);
+
+					if (keyInfo != undefined) {
+						span.textContent = keyInfo.symbol;
+					}
+
 					const state = n != RESEARCH && hotkey == "";
-					span.textContent = researchhotkey.slice(0, 1);
 					span.classList.toggle("passive", state);
 				}
 			}
